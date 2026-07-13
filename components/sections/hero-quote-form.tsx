@@ -1,12 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { ArrowRight, Lock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { VEHICLE_TYPES } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 const DURATIONS = [
@@ -17,7 +19,21 @@ const DURATIONS = [
 ]
 
 export function HeroQuoteForm() {
+  const router = useRouter()
+  const [category, setCategory] = useState("")
   const [duration, setDuration] = useState("7")
+  const [email, setEmail] = useState("")
+
+  function handleContinue() {
+    if (!category) return
+
+    const params = new URLSearchParams()
+    if (duration) params.set("duree", duration)
+    if (email) params.set("email", email)
+
+    const query = params.toString()
+    router.push(`/assurance/${category}${query ? `?${query}` : ""}#souscription`)
+  }
 
   return (
     <div className="rounded-3xl border border-border bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
@@ -26,8 +42,19 @@ export function HeroQuoteForm() {
 
       <div className="mt-6 flex flex-col gap-5">
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor="hero-plate">Immatriculation</Label>
-          <Input id="hero-plate" placeholder="AB-123-CD" className="h-11 uppercase" />
+          <Label htmlFor="hero-category">Catégorie de véhicule</Label>
+          <Select value={category} onValueChange={setCategory}>
+            <SelectTrigger id="hero-category" className="h-11 w-full rounded-lg">
+              <SelectValue placeholder="Sélectionnez une catégorie" />
+            </SelectTrigger>
+            <SelectContent>
+              {VEHICLE_TYPES.map((vehicle) => (
+                <SelectItem key={vehicle.slug} value={vehicle.slug}>
+                  {vehicle.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="flex flex-col gap-1.5">
@@ -52,27 +79,28 @@ export function HeroQuoteForm() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="hero-date">Date de début</Label>
-            <Input id="hero-date" type="date" className="h-11" />
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="hero-time">Heure</Label>
-            <Input id="hero-time" type="time" defaultValue="08:00" className="h-11" />
-          </div>
-        </div>
-
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="hero-email">Email</Label>
-          <Input id="hero-email" type="email" placeholder="vous@email.com" className="h-11" />
+          <Input
+            id="hero-email"
+            type="email"
+            placeholder="vous@email.com"
+            className="h-11"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
 
-        <Button asChild size="xl" variant="cta" className="w-full rounded-full">
-          <Link href="/#quote">
-            Comparer les offres
-            <ArrowRight data-icon="inline-end" />
-          </Link>
+        <Button
+          type="button"
+          size="xl"
+          variant="cta"
+          className="w-full rounded-full"
+          disabled={!category}
+          onClick={handleContinue}
+        >
+          Continuez
+          <ArrowRight data-icon="inline-end" />
         </Button>
 
         <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">

@@ -1,0 +1,115 @@
+A1=catégorie | B1=Durée | C1=Prix de vente  | D1=Prix DOM-TOM | F1=catégorie | G1=Durée | H1=Prix de vente  | I1=Prix DOM-TOM | K1=catégorie | L1=Durée | M1=prix vente fr | N1=prix vente dom-tom
+A2=CAM,TRR | B2=1 | C2=109 | D2=137 | F2=Tracteur Agricole | G2=1 | H2=109 | I2=137 | K2=TCP_Bus_Car | L2=1 | M2=112 | N2=140
+A3=CAM,TRR | B3=2 | C3=123 | D3=149 | F3=Tracteur Agricole | G3=2 | H3=123 | I3=149 | K3=TCP_Bus_Car | L3=2 | M3=122 | N3=152
+A4=CAM,TRR | B4=3 | C4=131 | D4=158 | F4=Tracteur Agricole | G4=3 | H4=131 | I4=158 | K4=TCP_Bus_Car | L4=3 | M4=125 | N4=161
+A5=CAM,TRR | B5=4 | C5=139 | D5=168 | F5=Tracteur Agricole | G5=4 | H5=139 | I5=168 | K5=TCP_Bus_Car | L5=4 | M5=137 | N5=171
+A6=CAM,TRR | B6=5 | C6=145 | D6=174 | F6=Tracteur Agricole | G6=5 | H6=145 | I6=174 | K6=TCP_Bus_Car | L6=5 | M6=140 | N6=177
+A7=CAM,TRR | B7=6 | C7=159 | D7=184 | F7=Tracteur Agricole | G7=6 | H7=159 | I7=184 | K7=TCP_Bus_Car | L7=6 | M7=153 | N7=188
+A8=CAM,TRR | B8=7 | C8=166 | D8=192 | F8=Tracteur Agricole | G8=7 | H8=166 | I8=192 | K8=TCP_Bus_Car | L8=7 | M8=169 | N8=206
+A9=CAM,TRR | B9=8 | C9=170 | D9=199 | F9=Tracteur Agricole | G9=8 | H9=170 | I9=199 | K9=TCP_Bus_Car | L9=8 | M9=176 | N9=213
+A10=CAM,TRR | B10=9 | C10=178 | D10=225 | F10=Tracteur Agricole | G10=9 | H10=178 | I10=225 | K10=TCP_Bus_Car | L10=9 | M10=184 | N10=230
+A11=CAM,TRR | B11=10 | C11=182 | D11=232 | F11=Tracteur Agricole | G11=10 | H11=182 | I11=232 | K11=TCP_Bus_Car | L11=10 | M11=188 | N11=237
+A12=CAM,TRR | B12=15 | C12=195 | D12=261 | F12=Tracteur Agricole | G12=15 | H12=195 | I12=261 | K12=TCP_Bus_Car | L12=15 | M12=199 | N12=269
+A14=catégorie | B14=Durée | C14=Prix de vente  | D14=Prix DOM-TOM | F14=catégorie | G14=Durée | H14=Prix de vente  | I14=Prix DOM-TOM | K14=catégorie | L14=Durée | M14=Prix fr | N14=Prix DOM-TOM
+A15=REM-SREM | B15=1 | C15=74 | D15=99 | F15=camping-car>3,5T | G15=1 | H15=109 | I15=137 | K15=Voiturette sans permis <=8cv | L15=10 | M15=119 | N15=159
+A16=REM-SREM | B16=2 | C16=78 | D16=113 | F16=camping-car>3,5T | G16=2 | H16=123 | I16=149 | K16=Voiturette sans permis <=8cv | L16=15 | M16=129 | N16=179
+A17=REM-SREM | B17=3 | C17=85 | D17=121 | F17=camping-car>3,5T | G17=3 | H17=131 | I17=158 | K17=Voiturette sans permis <=8cv | L17=20 | M17=149 | N17=194
+A18=REM-SREM | B18=4 | C18=87 | D18=137 | F18=camping-car>3,5T | G18=4 | H18=139 | I18=168 | K18=Voiturette sans permis <=8cv | L18=30 | M18=189 | N18=249
+A19=REM-SREM | B19=5 | C19=89 | D19=149 | F19=camping-car>3,5T | G19=5 | H19=145 | I19=174
+A20=REM-SREM | B20=6 | C20=93 | D20=156 | F20=camping-car>3,5T | G20=6 | H20=159 | I20=184 | K20=catégorie | L20=Durée | M20=Prix de vente  | N20=Prix DOM-TOM
+A21=REM-SREM | B21=7 | C21=95 | D21=164 | F21=camping-car>3,5T | G21=7 | H21=166 | I21=192 | K21=BUGGY 50cc <= 8cv | L21=10 | M21=109 | N21=159
+A22=REM-SREM | B22=8 | C22=97 | D22=168 | F22=camping-car>3,5T | G22=8 | H22=170 | I22=199 | K22=BUGGY 50cc <= 8cv | L22=15 | M22=129 | N22=179
+A23=REM-SREM | B23=9 | C23=106 | D23=181 | F23=camping-car>3,5T | G23=9 | H23=178 | I23=225 | K23=BUGGY 50cc <= 8cv | L23=20 | M23=149 | N23=194
+A24=REM-SREM | B24=10 | C24=109 | D24=188 | F24=camping-car>3,5T | G24=10 | H24=182 | I24=232 | K24=BUGGY 50cc <= 8cv | L24=30 | M24=189 | N24=249
+A25=REM-SREM | B25=15 | C25=116 | D25=211 | F25=camping-car>3,5T | G25=15 | H25=195 | I25=261
+K26=catégorie | L26=Durée | M26=Prix de vente  | N26=Prix DOM-TOM
+K27=Voiturette sans permis <=8cv | L27=10 | M27=119 | N27=159
+A28=catégorie | B28=Durée | C28=< 16 cv | D28=< 30 cv | E28=>= 30 cv | F28=Prix DOM-tom < 16 | G28=DOM-TOM < 30 | H28=DOM-TOM >= 30 | K28=Voiturette sans permis <=8cv | L28=15 | M28=129 | N28=179
+A29=Frontière | B29=30 | C29=179 | D29=219 | E29=239 | F29=237 | G29=267 | H29=297 | K29=Voiturette sans permis <=8cv | L29=20 | M29=149 | N29=194
+A30=Frontière | B30=90 | C30=389 | D30=449 | E30=479 | F30=499 | G30=519 | H30=559 | K30=Voiturette sans permis <=8cv | L30=30 | M30=189 | N30=249
+A32=catégorie | B32=Durée | C32=Tarif de base | D32=avec assistance | E32=avec garantie conducteur | F32=avec extension tn | G32=DOM-Tom
+A33=Véhicule leger < 16 | B33=1 | C33=54 | D33=15 | E33=15 | G33=89
+A34=Véhicule leger < 16 | B34=3 | C34=69 | D34=15 | E34=15 | F34=15 | G34=109
+A35=Véhicule leger < 16 | B35=5 | C35=84 | D35=15 | E35=15 | F35=15 | G35=119
+A36=Véhicule leger < 16 | B36=8 | C36=94 | D36=15 | E36=15 | F36=15 | G36=129
+A37=Véhicule leger < 16 | B37=10 | C37=100 | D37=15 | E37=15 | F37=15 | G37=139
+A38=Véhicule leger < 16 | B38=15 | C38=119 | D38=25 | E38=25 | F38=25 | G38=158
+A39=Véhicule leger < 16 | B39=21 | C39=139 | D39=30 | E39=25 | F39=30 | G39=198
+A40=Véhicule leger < 16 | B40=30 | C40=179 | D40=45 | E40=45 | F40=45 | G40=219
+A41=Véhicule leger < 16 | B41=45 | C41=259 | D41=45 | E41=45 | F41=55 | G41=309
+A42=Véhicule leger < 16 | B42=60 | C42=299 | D42=60 | E42=60 | F42=65 | G42=399
+A43=Véhicule leger < 16 | B43=90 | C43=429 | D43=60 | E43=60 | F43=70 | G43=559
+A44=catégorie | B44=Durée | C44=Tarif de base | D44=avec assistance | E44=avec garantie conducteur | F44=avec extension tn | G44=DOM-Tom
+A45=Véhicule leger < 30 | B45=1 | C45=69 | D45=15 | E45=15 | G45=104
+A46=Véhicule leger < 30 | B46=3 | C46=79 | D46=15 | E46=15 | F46=15 | G46=124
+A47=Véhicule leger < 30 | B47=5 | C47=95 | D47=15 | E47=15 | F47=15 | G47=134
+A48=Véhicule leger < 30 | B48=8 | C48=105 | D48=15 | E48=15 | F48=15 | G48=144
+A49=Véhicule leger < 30 | B49=10 | C49=119 | D49=15 | E49=15 | F49=15 | G49=154
+A50=Véhicule leger < 30 | B50=15 | C50=132 | D50=25 | E50=25 | F50=25 | G50=173
+A51=Véhicule leger < 30 | B51=21 | C51=169 | D51=30 | E51=25 | F51=30 | G51=213
+A52=Véhicule leger < 30 | B52=30 | C52=199 | D52=45 | E52=45 | F52=45 | G52=234
+A53=Véhicule leger < 30 | B53=45 | C53=289 | D53=45 | E53=45 | F53=55 | G53=324
+A54=Véhicule leger < 30 | B54=60 | C54=360 | D54=60 | E54=60 | F54=65 | G54=414
+A55=Véhicule leger < 30 | B55=90 | C55=399 | D55=60 | E55=60 | F55=70 | G55=574
+A56=catégorie | B56=Durée | C56=Tarif de base | D56=avec assistance | E56=avec garantie conducteur | F56=avec extension tn | G56=DOM-Tom
+A57=Véhicule leger >= 30 | B57=1 | C57=74 | D57=15 | E57=15 | G57=119
+A58=Véhicule leger >= 30 | B58=3 | C58=102 | D58=15 | E58=15 | F58=15 | G58=139
+A59=Véhicule leger >= 30 | B59=5 | C59=109 | D59=15 | E59=15 | F59=15 | G59=149
+A60=Véhicule leger >= 30 | B60=8 | C60=121 | D60=15 | E60=15 | F60=15 | G60=159
+A61=Véhicule leger >= 30 | B61=10 | C61=139 | D61=15 | E61=15 | F61=15 | G61=169
+A62=Véhicule leger >= 30 | B62=15 | C62=149 | D62=25 | E62=25 | F62=25 | G62=188
+A63=Véhicule leger >= 30 | B63=21 | C63=169 | D63=30 | E63=25 | F63=30 | G63=228
+A64=Véhicule leger >= 30 | B64=30 | C64=231 | D64=45 | E64=45 | F64=45 | G64=249
+A65=Véhicule leger >= 30 | B65=45 | C65=319 | D65=45 | E65=45 | F65=55 | G65=339
+A66=Véhicule leger >= 30 | B66=60 | C66=416 | D66=60 | E66=60 | F66=65 | G66=429
+A67=Véhicule leger >= 30 | B67=90 | C67=599 | D67=60 | E67=60 | F67=70 | G67=589
+A71=catégorie | B71=Durée | C71=La meme chose pour véhicule leger + 20€ sans options juste tarif FR et DOM-TOM
+A72=camping-car<=3,5T | B72=1
+A73=camping-car<=3,5T | B73=2
+A74=camping-car<=3,5T | B74=3
+A75=camping-car<=3,5T | B75=4
+A76=camping-car<=3,5T | B76=5
+A77=camping-car<=3,5T | B77=6
+A78=camping-car<=3,5T | B78=7
+A79=camping-car<=3,5T | B79=8
+A80=camping-car<=3,5T | B80=9
+A81=camping-car<=3,5T | B81=10
+A82=camping-car<=3,5T | B82=15
+A84=catégorie | B84=Durée | D84=Prix DOM-TOM
+A85=QM-QUAD Ac permis <=9cv | B85=1 | C85=80 | D85=94
+A86=QM-QUAD Ac permis <=9cv | B86=2 | C86=87 | D86=109
+A87=QM-QUAD Ac permis <=9cv | B87=3 | C87=89 | D87=110
+A88=QM-QUAD Ac permis <=9cv | B88=4 | C88=92 | D88=115
+A89=QM-QUAD Ac permis <=9cv | B89=5 | C89=96 | D89=119
+A90=QM-QUAD Ac permis <=9cv | B90=6 | C90=100 | D90=126
+A91=QM-QUAD Ac permis <=9cv | B91=7 | C91=103 | D91=132
+A92=QM-QUAD Ac permis <=9cv | B92=8 | C92=108 | D92=135
+A93=QM-QUAD Ac permis <=9cv | B93=9 | C93=111 | D93=141
+A94=QM-QUAD Ac permis <=9cv | B94=10 | C94=115 | D94=147
+A95=QM-QUAD Ac permis <=9cv | B95=11 | C95=121 | D95=148
+A96=QM-QUAD Ac permis <=9cv | B96=12 | C96=125 | D96=154
+A97=QM-QUAD Ac permis <=9cv | B97=13 | C97=126 | D97=156
+A98=QM-QUAD Ac permis <=9cv | B98=14 | C98=129 | D98=159
+A99=QM-QUAD Ac permis <=9cv | B99=15 | C99=132 | D99=158
+A100=QM-QUAD Ac permis <=9cv | B100=16 | C100=133 | D100=167
+A101=QM-QUAD Ac permis <=9cv | B101=17 | C101=135 | D101=169
+A102=QM-QUAD Ac permis <=9cv | B102=18 | C102=136 | D102=173
+A103=QM-QUAD Ac permis <=9cv | B103=19 | C103=139 | D103=178
+A104=QM-QUAD Ac permis <=9cv | B104=20 | C104=144 | D104=184
+A105=QM-QUAD Ac permis <=9cv | B105=21 | C105=147 | D105=193
+A106=QM-QUAD Ac permis <=9cv | B106=22 | C106=149 | D106=179
+A107=QM-QUAD Ac permis <=9cv | B107=23 | C107=157 | D107=201
+A108=QM-QUAD Ac permis <=9cv | B108=24 | C108=159 | D108=207
+A109=QM-QUAD Ac permis <=9cv | B109=25 | C109=164 | D109=211
+A110=QM-QUAD Ac permis <=9cv | B110=26 | C110=168 | D110=219
+A111=QM-QUAD Ac permis <=9cv | B111=27 | C111=173 | D111=225
+A112=QM-QUAD Ac permis <=9cv | B112=28 | C112=177 | D112=228
+A113=QM-QUAD Ac permis <=9cv | B113=29 | C113=215 | D113=229
+A114=QM-QUAD Ac permis <=9cv | B114=30 | C114=209 | D114=229
+A115=QM-QUAD Ac permis <=9cv | B115=35 | C115=239 | D115=263
+A116=QM-QUAD Ac permis <=9cv | B116=40 | C116=259 | D116=284
+A117=QM-QUAD Ac permis <=9cv | B117=45 | C117=279 | D117=307
+A118=QM-QUAD Ac permis <=9cv | B118=50 | C118=299 | D118=335
+A119=QM-QUAD Ac permis <=9cv | B119=55 | C119=319 | D119=376
+A120=QM-QUAD Ac permis <=9cv | B120=60 | C120=329 | D120=407
+A121=QM-QUAD Ac permis <=9cv | B121=90 | C121=429 | D121=572

@@ -6,8 +6,18 @@ export interface NavLink {
   children?: NavLink[]
 }
 
+export type VehicleSlug =
+  | "automobiles"
+  | "tracteurs-agricoles"
+  | "quadricycles"
+  | "bus-autocars"
+  | "poids-lourds"
+  | "remorques"
+  | "camping-cars"
+  | "assurance-frontiere"
+
 export interface VehicleType {
-  slug: string
+  slug: VehicleSlug
   label: string
   description: string
   icon: LucideIcon

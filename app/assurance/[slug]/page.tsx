@@ -6,6 +6,7 @@ import { Check, LifeBuoy, Scale, ShieldCheck } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
 import { Button } from "@/components/ui/button"
+import { SubscriptionWizard } from "@/components/forms/subscription/subscription-wizard"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { VEHICLE_CONTENT } from "@/lib/vehicle-content"
 
@@ -32,6 +33,7 @@ const GUARANTEES = [
 
 interface VehicleTypePageProps {
   params: Promise<{ slug: string }>
+  searchParams: Promise<{ duree?: string; email?: string }>
 }
 
 export function generateStaticParams() {
@@ -50,8 +52,9 @@ export async function generateMetadata({ params }: VehicleTypePageProps): Promis
   }
 }
 
-export default async function VehicleTypePage({ params }: VehicleTypePageProps) {
+export default async function VehicleTypePage({ params, searchParams }: VehicleTypePageProps) {
   const { slug } = await params
+  const { duree, email } = await searchParams
   const vehicle = VEHICLE_TYPES.find((item) => item.slug === slug)
   const content = VEHICLE_CONTENT[slug]
 
@@ -80,7 +83,7 @@ export default async function VehicleTypePage({ params }: VehicleTypePageProps) 
           </ul>
 
           <Button asChild size="lg" variant="cta" className="rounded-full">
-            <Link href="/#quote">Demander un devis</Link>
+            <Link href="#souscription">Souscrire en ligne</Link>
           </Button>
         </Container>
       </section>
@@ -127,6 +130,27 @@ export default async function VehicleTypePage({ params }: VehicleTypePageProps) 
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{content.price}</p>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section id="souscription" className="section-y bg-surface">
+        <Container>
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <h2 className="text-balance text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">
+              Souscrivez votre assurance temporaire {vehicle.label.toLowerCase()}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Complétez le formulaire en quelques étapes : le montant de votre cotisation se met à jour en temps
+              réel dans le récapitulatif ci-contre.
+            </p>
+          </div>
+
+          <SubscriptionWizard
+            slug={vehicle.slug}
+            vehicleLabel={vehicle.label}
+            initialDuree={duree ? Number(duree) : undefined}
+            initialEmail={email}
+          />
         </Container>
       </section>
     </>

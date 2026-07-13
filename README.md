@@ -111,5 +111,3 @@ orange-for-action / blue-for-structure rule requested in the brief (≈70% white
 
 
 
-home page -> 1. categorie (type de vehicule) liste deroulante
-            2. 
