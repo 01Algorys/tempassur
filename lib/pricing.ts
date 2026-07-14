@@ -1,7 +1,11 @@
 import {
   AUTO_TARIFFS,
   CAMPING_CAR_TARIFFS,
+  CV_TIER_OPTIONS,
+  FRANCE_TERRITORIES,
   FRONTIERE_TARIFFS,
+  PTAC_TIER_OPTIONS,
+  QUAD_SUBTYPE_OPTIONS,
   QUAD_TARIFFS,
   SIMPLE_TARIFFS,
   type CvTier,
@@ -9,6 +13,14 @@ import {
   type QuadSubtype,
 } from "@/lib/pricing-data"
 import type { VehicleSlug } from "@/types"
+
+// Un pays/territoire est en zone DOM-TOM s'il s'agit de la France ET que le territoire
+// précisé en est un (dossier §1.1/§4.1). Le tunnel bascule en DOM-TOM si le pays
+// d'IMMATRICULATION OU de RÉSIDENCE l'est.
+export function isDomTomTerritory(pays: string, territoire?: string): boolean {
+  if (pays !== "FR") return false
+  return FRANCE_TERRITORIES.find((t) => t.value === territoire)?.isDomTom === true
+}
 
 export interface FormulaSelection {
   duree: number | null
@@ -49,6 +61,13 @@ export function getPricingConfig(slug: VehicleSlug): PricingConfig {
   }
 }
 
+// Options (garantie du conducteur, assistance, extension de pays) only exist for the
+// automobile category, and are never available in the DOM-TOM regardless of category
+// (dossier §1.1: "les options [...] ne sont pas disponibles dans les DOM-TOM").
+export function areOptionsEligible(slug: VehicleSlug, isDomTom: boolean): boolean {
+  return getPricingConfig(slug).hasOptions && !isDomTom
+}
+
 function isSimpleSlug(
   slug: VehicleSlug
 ): slug is keyof typeof SIMPLE_TARIFFS {
@@ -83,14 +102,15 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
 
     const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
     const lines: PriceLine[] = []
+    const optionsEligible = areOptionsEligible(slug, selection.isDomTom)
 
-    if (selection.optionAssistance && row.optionAssistance) {
+    if (optionsEligible && selection.optionAssistance && row.optionAssistance) {
       lines.push({ label: "Assistance", amount: row.optionAssistance })
     }
-    if (selection.optionGarantieConducteur && row.optionGarantieConducteur) {
+    if (optionsEligible && selection.optionGarantieConducteur && row.optionGarantieConducteur) {
       lines.push({ label: "Garantie du conducteur", amount: row.optionGarantieConducteur })
     }
-    if (selection.optionExtensionTn && row.optionExtensionTn) {
+    if (optionsEligible && selection.optionExtensionTn && row.optionExtensionTn) {
       lines.push({ label: "Extension TN", amount: row.optionExtensionTn })
     }
 
@@ -131,4 +151,73 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
   }
 
   return null
+}
+
+/** Every "sub-selection" (CV tier / PTAC tier / quad subtype) applicable to a category, or a single empty one if it needs none. */
+function subSelections(slug: VehicleSlug): Partial<FormulaSelection>[] {
+  const config = getPricingConfig(slug)
+  if (config.needsCvTier) return CV_TIER_OPTIONS.map((o) => ({ cvTier: o.value }))
+  if (config.needsPtacTier) return PTAC_TIER_OPTIONS.map((o) => ({ ptacTier: o.value }))
+  if (config.needsQuadSubtype) return QUAD_SUBTYPE_OPTIONS.map((o) => ({ quadSubtype: o.value }))
+  return [{}]
+}
+
+// Tarificateur "à partir de" price for a specific duration (dossier §3.2: "prix minimum
+// pour cette durée"), taking the cheapest sub-tier/subtype at that duration.
+export function getMinPriceForDuration(slug: VehicleSlug, duree: number, isDomTom = false): number | null {
+  let best: number | null = null
+  for (const sub of subSelections(slug)) {
+    const price = calculatePrice(slug, { ...sub, duree, isDomTom })?.basePrice
+    if (price != null) best = best == null ? price : Math.min(best, price)
+  }
+  return best
+}
+
+// "à partir de" price for the whole category (dossier §3.4/§11: MIN(prix) across every
+// duration and sub-tier/subtype), used for vignettes, product pages and schema.org.
+export function getMinPrice(slug: VehicleSlug, isDomTom = false): number {
+  let best = Infinity
+  for (const sub of subSelections(slug)) {
+    for (const duree of getAvailableDurations(slug, { duree: null, isDomTom, ...sub })) {
+      const price = calculatePrice(slug, { ...sub, duree, isDomTom })?.basePrice
+      if (price != null) best = Math.min(best, price)
+    }
+  }
+  return best
+}
+
+export interface DurationShortcuts {
+  candidates: number[]
+  preselect: number
+}
+
+// Raccourcis de durée par catégorie (dossier §3.2) — la liste de candidats est celle
+// définie par le client ; on ne garde que ceux qui existent réellement dans la grille
+// pour la sélection courante (jamais un raccourci sans tarif correspondant).
+const DURATION_SHORTCUT_CANDIDATES: Record<VehicleSlug, DurationShortcuts> = {
+  automobiles: { candidates: [8, 15, 30, 90], preselect: 30 },
+  "camping-cars": { candidates: [8, 15, 30, 90], preselect: 30 },
+  "poids-lourds": { candidates: [8, 15], preselect: 15 },
+  "tracteurs-agricoles": { candidates: [8, 15], preselect: 15 },
+  "bus-autocars": { candidates: [8, 15], preselect: 15 },
+  remorques: { candidates: [8, 15], preselect: 15 },
+  quadricycles: { candidates: [10, 15, 20, 30], preselect: 30 },
+  "assurance-frontiere": { candidates: [30, 90], preselect: 30 },
+}
+
+export function getDurationShortcuts(slug: VehicleSlug, selection: Partial<FormulaSelection> = {}): number[] {
+  const { candidates } = DURATION_SHORTCUT_CANDIDATES[slug]
+  const available = new Set(getAvailableDurations(slug, { duree: null, isDomTom: false, ...selection }))
+  return candidates.filter((d) => available.has(d))
+}
+
+export function getPreselectedDuration(slug: VehicleSlug): number {
+  return DURATION_SHORTCUT_CANDIDATES[slug].preselect
+}
+
+// Substitue les placeholders [PRIX] / [PRIX_GRILLE] du dossier par le MIN(prix) réel de
+// la catégorie — jamais de prix codé en dur dans les textes des pages produit.
+export function fillPricePlaceholders(text: string, slug: VehicleSlug): string {
+  const price = getMinPrice(slug)
+  return text.replace(/\[PRIX_GRILLE\]|\[PRIX\]/g, String(price))
 }

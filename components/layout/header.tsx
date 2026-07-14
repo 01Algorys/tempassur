@@ -3,9 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Menu } from "lucide-react"
+import { Menu, Phone } from "lucide-react"
 
 import { Logo } from "@/components/shared/logo"
+import { TelLink } from "@/components/shared/tel-link"
+import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
@@ -26,6 +28,7 @@ import {
 } from "@/components/ui/sheet"
 import { useScrolled } from "@/hooks/use-scrolled"
 import { NAV_LINKS } from "@/lib/constants"
+import { siteConfig } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 import { LanguageSwitcher } from "./language-switcher"
@@ -86,7 +89,18 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          <TelLink
+            phone={siteConfig.phone}
+            className="rounded-full px-3 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy"
+          >
+            <Phone className="mr-1.5 inline size-3.5" strokeWidth={2.2} />
+            {siteConfig.phone}
+          </TelLink>
+          <WhatsappButton className="h-9 rounded-full px-4 text-xs">Souscrire par WhatsApp</WhatsappButton>
+          <Button asChild size="sm" className="h-9 rounded-full px-4 text-xs">
+            <Link href="/souscription">Souscrire en ligne</Link>
+          </Button>
           <LanguageSwitcher />
         </div>
 
@@ -140,6 +154,19 @@ export function Header() {
                   )
                 )}
               </nav>
+              <div className="mt-4 flex flex-col gap-2 border-t border-border px-4 pt-4">
+                <TelLink
+                  phone={siteConfig.phone}
+                  className="flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-foreground"
+                >
+                  <Phone className="size-4" strokeWidth={2.2} />
+                  {siteConfig.phone}
+                </TelLink>
+                <WhatsappButton className="justify-center py-2.5" />
+                <Button asChild className="rounded-lg">
+                  <Link href="/souscription">Souscrire en ligne</Link>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>

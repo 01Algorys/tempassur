@@ -1,9 +1,15 @@
 import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
+import Script from "next/script"
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { siteConfig } from "@/lib/site"
+import { FloatingWhatsappButton } from "@/components/shared/floating-whatsapp-button"
+import { isPreprodEnv, siteConfig } from "@/lib/site"
+
+// Placeholder en attente du token de vérification Search Console existant du client
+// (dossier §8 : "réutiliser le token google-site-verification existant").
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 import "./globals.css"
 
@@ -53,19 +59,22 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: isPreprodEnv
+    ? { index: false, follow: false }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
   icons: {
     icon: "/favicon.ico",
   },
+  verification: GOOGLE_SITE_VERIFICATION ? { google: GOOGLE_SITE_VERIFICATION } : undefined,
 }
 
 const jsonLd = {
@@ -79,11 +88,18 @@ const jsonLd = {
   telephone: siteConfig.phone,
   address: {
     "@type": "PostalAddress",
-    streetAddress: siteConfig.address,
+    streetAddress: "Bureau 3, 6 Rue des Bateliers",
+    postalCode: "92110",
+    addressLocality: "Clichy",
+    addressCountry: "FR",
   },
+  sameAs: [siteConfig.googleMapsUrl],
   areaServed: "FR",
   priceRange: "€€",
 }
+
+// Placeholder en attente de l'identifiant GTM réel du client (dossier §8).
+const GTM_CONTAINER_ID = process.env.NEXT_PUBLIC_GTM_ID
 
 export default function RootLayout({
   children,
@@ -97,9 +113,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {GTM_CONTAINER_ID ? (
+          <Script id="gtm" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`}
+          </Script>
+        ) : null}
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingWhatsappButton />
       </body>
     </html>
   )

@@ -1,73 +1,85 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
+import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Qui sommes nous ?",
-  description: `Découvrez ${siteConfig.name}, courtier d'assurance temporaire 100 % en ligne pour tous types de véhicules, régulé ORIAS n°${siteConfig.orias}.`,
+  title: { absolute: "Qui sommes-nous ? Courtier en assurance temporaire | TempAssur" },
+  description:
+    "TempAssur (WN Conseil), courtier français ORIAS n° 24004933, spécialiste de l'assurance temporaire de 1 à 90 jours pour tous les véhicules.",
+  alternates: { canonical: `${siteConfig.url}/qui-sommes-nous` },
 }
 
-const VALUES = [
+const PROMISES = [
   {
-    title: "Engagement",
+    title: "La rapidité",
     description:
-      "Fournir des solutions efficaces adaptées aux besoins de chaque client, pour une couverture rapide et fiable.",
+      "Souscription 100 % en ligne en 5 minutes, attestation envoyée immédiatement par e-mail ou WhatsApp — même le week-end.",
   },
   {
-    title: "Collaboration",
+    title: "La disponibilité",
     description:
-      "Placer le client au centre et développer des solutions personnalisées grâce à une écoute active.",
+      "Une vraie équipe joignable 7j/7 par téléphone et WhatsApp au +33 6 05 93 84 79. Un blocage au paiement, une urgence, une question ? Nous répondons.",
   },
   {
-    title: "Plateforme innovante",
+    title: "La transparence",
     description:
-      "Des outils optimisés par l'analyse de données pour proposer des tarifs compétitifs et une expérience fluide.",
+      "Les prix s'affichent avant que vous ne laissiez la moindre coordonnée, et vos contrats sont portés par des entreprises d'assurance agréées, régies par le Code des assurances.",
   },
 ]
 
 export default function QuiSommesNousPage() {
   return (
     <>
-      <PageHero
-        eyebrow="À propos"
-        title="Qui sommes-nous ?"
-        description={`${siteConfig.name} est une plateforme en ligne dédiée à l'assurance temporaire pour véhicules.`}
-      />
+      <PageHero eyebrow="À propos" title="Qui sommes-nous ?" />
       <section className="section-y">
-        <Container className="mx-auto flex max-w-3xl flex-col gap-6 text-center">
+        <Container className="mx-auto flex max-w-3xl flex-col gap-10">
           <p className="text-balance leading-relaxed text-muted-foreground">
-            {siteConfig.name} propose des solutions d&apos;assurance flexibles et 100&nbsp;% digitales
-            pour automobiles, quadricycles, tracteurs agricoles, camping-cars, remorques, poids
-            lourds, bus et autocars, avec des contrats de 1 à 90 jours. Nous proposons également
-            l&apos;assurance frontière pour les véhicules immatriculés hors Union européenne, avec
-            une attestation d&apos;assurance immédiate et une souscription simple et sécurisée.
+            TempAssur est la marque de WN Conseil, cabinet de courtage en assurances français basé à
+            Clichy (Hauts-de-Seine), immatriculé à l&apos;ORIAS sous le n° {siteConfig.orias}. Notre
+            spécialité : l&apos;assurance temporaire, de 1 à 90 jours, pour tous les véhicules —
+            automobile, poids lourd, camping-car, quadricycle, bus, tracteur agricole, remorque — et
+            l&apos;assurance frontière pour les véhicules immatriculés à l&apos;étranger.
           </p>
-          <p className="text-balance leading-relaxed text-muted-foreground">
-            Notre service client est disponible 24h/24 et 7j/7, avec la possibilité de souscrire
-            par téléphone accompagné d&apos;un conseiller.
-          </p>
-          <p className="text-balance leading-relaxed text-muted-foreground">
-            {siteConfig.name} est exploité par {siteConfig.legalName}, courtier d&apos;assurance
-            immatriculé auprès de l&apos;ORIAS sous le n°{siteConfig.orias} (
-            <a href="https://www.orias.fr" target="_blank" rel="noreferrer noopener" className="underline hover:text-primary">
-              orias.fr
-            </a>
-            ), sous le contrôle de l&apos;Autorité de Contrôle Prudentiel et de Résolution (ACPR).
-          </p>
-        </Container>
 
-        <Container className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-3">
-          {VALUES.map((value) => (
-            <div
-              key={value.title}
-              className="flex h-full flex-col gap-2 rounded-2xl border border-border bg-white p-6 text-center shadow-sm"
-            >
-              <h2 className="text-lg font-bold text-navy">{value.title}</h2>
-              <p className="text-sm leading-relaxed text-muted-foreground">{value.description}</p>
+          <div>
+            <h2 className="text-xl font-bold text-navy">Notre promesse</h2>
+            <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {PROMISES.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+                  <h3 className="font-bold text-navy">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-navy">Où nous trouver</h2>
+            <p className="mt-3 text-muted-foreground">{siteConfig.address}</p>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="TempAssur — WN Conseil sur Google Maps"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.address)}&output=embed`}
+                width="100%"
+                height="320"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="lg" variant="cta" className="rounded-full">
+              <Link href="/#tarificateur">Estimer mon tarif en 30 secondes</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-full">
+              <Link href="/contact">Nous contacter</Link>
+            </Button>
+          </div>
         </Container>
       </section>
     </>

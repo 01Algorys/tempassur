@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
+import { TelLink } from "@/components/shared/tel-link"
+import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import {
   Accordion,
   AccordionContent,
@@ -12,18 +14,29 @@ import { FAQ_CATEGORIES } from "@/lib/faq-content"
 import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "FAQ — Assurance temporaire auto",
-  description: `Toutes les réponses sur l'assurance auto temporaire ${siteConfig.name} : pays couverts, éligibilité, documents requis, véhicules de location et assurance frontière.`,
+  title: "Questions fréquentes",
+  description:
+    "Toutes les réponses sur la souscription, les prix, la couverture, les documents et l'annulation de votre assurance temporaire TempAssur.",
+  alternates: { canonical: `${siteConfig.url}/faq` },
+}
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_CATEGORIES.flatMap((category) =>
+    category.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    }))
+  ),
 }
 
 export default function FaqPage() {
   return (
     <>
-      <PageHero
-        eyebrow="FAQ"
-        title="Questions fréquentes"
-        description="Toutes les réponses sur l'assurance auto temporaire, l'assurance frontière, les pays couverts et les conditions de souscription."
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <PageHero eyebrow="FAQ" title="Questions fréquentes" />
       <section className="section-y">
         <Container className="mx-auto flex max-w-3xl flex-col gap-14">
           {FAQ_CATEGORIES.map((category) => (
@@ -49,6 +62,21 @@ export default function FaqPage() {
               </Accordion>
             </div>
           ))}
+
+          <div className="flex flex-col items-center gap-3 text-center">
+            <p className="text-sm text-muted-foreground">
+              Une autre question ?{" "}
+              <TelLink phone={siteConfig.phone} className="font-semibold text-primary hover:underline">
+                {siteConfig.phone}
+              </TelLink>{" "}
+              (7j/7) ou{" "}
+              <a href={`mailto:${siteConfig.email}`} className="font-semibold text-primary hover:underline">
+                {siteConfig.email}
+              </a>
+              .
+            </p>
+            <WhatsappButton />
+          </div>
         </Container>
       </section>
     </>

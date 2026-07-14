@@ -1,56 +1,69 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Mail, MapPin, Phone } from "lucide-react"
 
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
-import { Button } from "@/components/ui/button"
+import { TelLink } from "@/components/shared/tel-link"
+import { WhatsappButton } from "@/components/shared/whatsapp-button"
+import { ContactForm } from "@/components/forms/contact-form"
 import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contactez l'équipe ${siteConfig.name}.`,
+  title: { absolute: "Contactez TempAssur — 7j/7 par WhatsApp, téléphone ou e-mail" },
+  alternates: { canonical: `${siteConfig.url}/contact` },
 }
-
-const CONTACT_DETAILS = [
-  { icon: Phone, label: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, "")}` },
-  {
-    icon: Phone,
-    label: siteConfig.phoneSecondary,
-    href: `tel:${siteConfig.phoneSecondary.replace(/\s/g, "")}`,
-  },
-  { icon: Mail, label: siteConfig.email, href: `mailto:${siteConfig.email}` },
-  { icon: MapPin, label: siteConfig.address, href: undefined },
-]
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        title="Contactez-nous"
-        description="Une question sur votre contrat ou votre devis ? Notre équipe est disponible 24h/24 et 7j/7 pour vous répondre."
-      />
+      <PageHero title="Contactez-nous — nous répondons 7j/7" />
       <section className="section-y">
-        <Container className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
-          <ul className="flex flex-col gap-4">
-            {CONTACT_DETAILS.map((detail) => (
-              <li key={detail.label} className="flex items-center justify-center gap-3 text-muted-foreground">
-                <span className="flex size-9 items-center justify-center rounded-full bg-secondary text-navy">
-                  <detail.icon className="size-4" />
-                </span>
-                {detail.href ? (
-                  <a href={detail.href} className="text-sm font-medium text-foreground hover:text-primary">
-                    {detail.label}
-                  </a>
-                ) : (
-                  <span className="text-sm font-medium text-foreground">{detail.label}</span>
-                )}
+        <Container className="mx-auto grid max-w-4xl grid-cols-1 gap-10 lg:grid-cols-2">
+          <div className="flex flex-col gap-6">
+            <div>
+              <p className="text-sm font-semibold text-muted-foreground">Le plus rapide</p>
+              <WhatsappButton className="mt-2" />
+            </div>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li className="flex items-center gap-2">
+                <Phone className="size-4 text-primary" />
+                <TelLink phone={siteConfig.phone} className="font-medium text-foreground hover:text-primary">
+                  {siteConfig.phone}
+                </TelLink>
+                {" · "}
+                <TelLink phone={siteConfig.phoneSecondary} className="font-medium text-foreground hover:text-primary">
+                  {siteConfig.phoneSecondary}
+                </TelLink>
               </li>
-            ))}
-          </ul>
-          <Button asChild size="lg" variant="cta" className="rounded-full">
-            <Link href="/#quote">Demander un devis</Link>
-          </Button>
+              <li className="flex items-center gap-2">
+                <Mail className="size-4 text-primary" />
+                <a href={`mailto:${siteConfig.email}`} className="font-medium text-foreground hover:text-primary">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
+                <span className="font-medium text-foreground">
+                  WN Conseil / TempAssur, {siteConfig.address}
+                </span>
+              </li>
+            </ul>
+
+            <div className="overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="TempAssur — WN Conseil sur Google Maps"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.address)}&output=embed`}
+                width="100%"
+                height="260"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8">
+            <ContactForm />
+          </div>
         </Container>
       </section>
     </>

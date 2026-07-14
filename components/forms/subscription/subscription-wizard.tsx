@@ -8,41 +8,55 @@ import { useForm } from "react-hook-form"
 
 import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
+import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { submitSubscription } from "@/lib/subscription"
-import { calculatePrice, getAvailableDurations, getPricingConfig, type FormulaSelection } from "@/lib/pricing"
-import { CV_TIER_OPTIONS, FRANCE_TERRITORIES, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
+import { calculatePrice, getPricingConfig, isDomTomTerritory, type FormulaSelection } from "@/lib/pricing"
+import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
 import { subscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
 import { StepIndicator } from "./step-indicator"
 import { BillingSummary } from "./billing-summary"
-import { FormulaStep } from "./steps/formula-step"
+import { DeclarationsDialog } from "./declarations-dialog"
+import { LocalisationStep } from "./steps/localisation-step"
 import { VehicleStep } from "./steps/vehicle-step"
+import { DurationStep } from "./steps/duration-step"
 import { DriverStep } from "./steps/driver-step"
-import { GuaranteeStep } from "./steps/guarantee-step"
-import { DocumentsStep } from "./steps/documents-step"
+import { OptionsStep } from "./steps/options-step"
+import { RecapStep } from "./steps/recap-step"
 
 interface SubscriptionWizardProps {
-  slug: VehicleSlug
-  vehicleLabel: string
+  initialCategory?: VehicleSlug
   initialDuree?: number
-  initialEmail?: string
 }
 
-type StepId = "formula" | "vehicle" | "driver" | "guarantee" | "documents"
+type StepId = "localisation" | "vehicle" | "duration" | "driver" | "options" | "recap"
 
 const STEPS: { id: StepId; title: string }[] = [
-  { id: "formula", title: "Formule" },
+  { id: "localisation", title: "Localisation" },
   { id: "vehicle", title: "Véhicule" },
+  { id: "duration", title: "Durée" },
   { id: "driver", title: "Conducteur" },
-  { id: "guarantee", title: "Garantie" },
-  { id: "documents", title: "Documents" },
+  { id: "options", title: "Options" },
+  { id: "recap", title: "Paiement" },
 ]
 
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
-  formula: ["duree", "cvTier", "ptacTier", "quadSubtype"],
-  vehicle: ["immatriculation", "marque", "modele", "dateMiseEnCirculation", "nomAgenceLocation", "paysObtentionVehicule"],
+  localisation: ["paysImmatriculation", "territoireImmatriculation", "paysResidence", "territoireResidence"],
+  vehicle: [
+    "categorie",
+    "cvTier",
+    "ptacTier",
+    "quadSubtype",
+    "immatriculation",
+    "marque",
+    "modele",
+    "dateMiseEnCirculation",
+    "estVehiculeLocation",
+    "nomAgenceLocation",
+  ],
+  duration: ["duree", "dateEffet", "heureEffet"],
   driver: [
     "civilite",
     "nom",
@@ -54,56 +68,45 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "adresse",
     "codePostal",
     "ville",
-    "pays",
-    "territoire",
     "numeroPermis",
     "dateObtentionPermis",
     "paysObtentionPermis",
   ],
-  guarantee: ["dateEffet", "heureEffet"],
-  documents: ["consentIpid", "consentAttestation", "consentCgv"],
+  options: ["optionAssistance", "optionGarantieConducteur", "optionExtensionTn"],
+  recap: ["consentCgv", "consentIpid", "consentContrat"],
 }
 
-export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEmail }: SubscriptionWizardProps) {
+export function SubscriptionWizard({ initialCategory = "automobiles", initialDuree }: SubscriptionWizardProps) {
   const [stepIndex, setStepIndex] = useState(0)
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
   const [referenceId, setReferenceId] = useState<string | null>(null)
+  const [declarationsOpen, setDeclarationsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-
-  const pricingConfig = useMemo(() => getPricingConfig(slug), [slug])
-  const icon = VEHICLE_TYPES.find((vehicle) => vehicle.slug === slug)?.icon
-
-  const defaultCvTier = pricingConfig.needsCvTier ? "moins-16cv" : undefined
-  const defaultPtacTier = pricingConfig.needsPtacTier ? "moins-3500kg" : undefined
-  const defaultQuadSubtype = pricingConfig.needsQuadSubtype ? "voiturette-sans-permis" : undefined
-
-  const availableDefaultDurations = getAvailableDurations(slug, {
-    duree: null,
-    cvTier: defaultCvTier,
-    ptacTier: defaultPtacTier,
-    quadSubtype: defaultQuadSubtype,
-    isDomTom: false,
-  })
-  const validInitialDuree = initialDuree && availableDefaultDurations.includes(initialDuree) ? initialDuree : 0
 
   const form = useForm<SubscriptionFormValues>({
     resolver: zodResolver(subscriptionSchema),
     mode: "onTouched",
     defaultValues: {
-      duree: validInitialDuree,
-      cvTier: defaultCvTier,
-      ptacTier: defaultPtacTier,
-      quadSubtype: defaultQuadSubtype,
-      optionAssistance: false,
-      optionGarantieConducteur: false,
-      optionExtensionTn: false,
+      paysImmatriculation: "",
+      territoireImmatriculation: "",
+      paysResidence: "",
+      territoireResidence: "",
+      categorie: initialCategory,
+      duree: initialDuree ?? 0,
+      cvTier: getPricingConfig(initialCategory).needsCvTier ? "moins-16cv" : undefined,
+      ptacTier: getPricingConfig(initialCategory).needsPtacTier ? "moins-3500kg" : undefined,
+      quadSubtype: getPricingConfig(initialCategory).needsQuadSubtype ? "voiturette-sans-permis" : undefined,
       immatriculation: "",
       marque: "",
       modele: "",
       dateMiseEnCirculation: "",
       estVehiculeLocation: false,
       nomAgenceLocation: "",
-      paysObtentionVehicule: "",
+      dateEffet: "",
+      heureEffet: "",
+      optionAssistance: false,
+      optionGarantieConducteur: false,
+      optionExtensionTn: false,
       civilite: "",
       nom: "",
       prenom: "",
@@ -111,24 +114,28 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
       paysNaissance: "",
       telephoneFixe: "",
       telephoneMobile: "",
-      email: initialEmail ?? "",
+      email: "",
       adresse: "",
       codePostal: "",
       ville: "",
-      pays: "",
-      territoire: "",
       numeroPermis: "",
       dateObtentionPermis: "",
       paysObtentionPermis: "",
-      dateEffet: "",
-      heureEffet: "",
-      consentIpid: false,
-      consentAttestation: false,
       consentCgv: false,
+      consentIpid: false,
+      consentContrat: false,
+      consentDeclarations: false,
+      declarationsAcceptedAt: "",
     },
   })
 
   const values = form.watch()
+  const pricingConfig = useMemo(() => getPricingConfig(values.categorie), [values.categorie])
+  const vehicle = VEHICLE_TYPES.find((v) => v.slug === values.categorie)
+
+  const isDomTom =
+    isDomTomTerritory(values.paysImmatriculation, values.territoireImmatriculation) ||
+    isDomTomTerritory(values.paysResidence, values.territoireResidence)
 
   const selection: FormulaSelection = {
     duree: values.duree || null,
@@ -138,10 +145,10 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
     optionAssistance: values.optionAssistance,
     optionGarantieConducteur: values.optionGarantieConducteur,
     optionExtensionTn: values.optionExtensionTn,
-    isDomTom: values.pays === "FR" && FRANCE_TERRITORIES.find((t) => t.value === values.territoire)?.isDomTom === true,
+    isDomTom,
   }
 
-  const breakdown = calculatePrice(slug, selection)
+  const breakdown = calculatePrice(values.categorie, selection)
 
   let tierLabel: string | undefined
   if (pricingConfig.needsCvTier) {
@@ -171,15 +178,34 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
     scrollToTop()
   }
 
+  function goToStep(index: number) {
+    setStepIndex(Math.max(0, Math.min(index, STEPS.length - 1)))
+    scrollToTop()
+  }
+
+  async function handlePayerClick() {
+    const isValid = await form.trigger(STEP_FIELDS.recap)
+    if (!isValid) return
+    setDeclarationsOpen(true)
+  }
+
   async function onSubmit(data: SubscriptionFormValues) {
     setStatus("idle")
     try {
       const { referenceId } = await submitSubscription(data)
       setReferenceId(referenceId)
       setStatus("success")
+      setDeclarationsOpen(false)
     } catch {
       setStatus("error")
+      setDeclarationsOpen(false)
     }
+  }
+
+  function handleDeclarationsConfirm() {
+    form.setValue("consentDeclarations", true)
+    form.setValue("declarationsAcceptedAt", new Date().toISOString())
+    void form.handleSubmit(onSubmit)()
   }
 
   if (status === "success") {
@@ -194,9 +220,12 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
         <div>
           <h3 className="text-xl font-bold text-navy">Votre demande de souscription est enregistrée !</h3>
           <p className="mt-2 max-w-md text-sm text-muted-foreground">
-            Référence <span className="font-mono font-semibold text-orange">{referenceId}</span>. Vous recevrez
-            votre attestation par email dès validation de votre dossier.
+            Référence <span className="font-mono font-semibold text-orange">{referenceId}</span>. Rendez-vous sur
+            la page de confirmation pour la suite des démarches.
           </p>
+          <Button asChild variant="cta" className="mt-4 rounded-full">
+            <a href="/merci">Continuer</a>
+          </Button>
         </div>
       </div>
     )
@@ -214,19 +243,20 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
             onSubmit={(event) => {
               event.preventDefault()
               if (isLastStep) {
-                void form.handleSubmit(onSubmit)(event)
+                void handlePayerClick()
               } else {
                 void goNext()
               }
             }}
           >
-            {currentStep.id === "formula" ? (
-              <FormulaStep form={form} slug={slug} pricingConfig={pricingConfig} />
-            ) : null}
-            {currentStep.id === "vehicle" ? <VehicleStep form={form} slug={slug} /> : null}
+            {currentStep.id === "localisation" ? <LocalisationStep form={form} /> : null}
+            {currentStep.id === "vehicle" ? <VehicleStep form={form} /> : null}
+            {currentStep.id === "duration" ? <DurationStep form={form} /> : null}
             {currentStep.id === "driver" ? <DriverStep form={form} /> : null}
-            {currentStep.id === "guarantee" ? <GuaranteeStep form={form} /> : null}
-            {currentStep.id === "documents" ? <DocumentsStep form={form} /> : null}
+            {currentStep.id === "options" ? <OptionsStep form={form} /> : null}
+            {currentStep.id === "recap" ? (
+              <RecapStep form={form} vehicleLabel={vehicle?.label ?? ""} breakdown={breakdown} onEdit={goToStep} />
+            ) : null}
 
             <AnimatePresence>
               {status === "error" ? (
@@ -237,7 +267,8 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
                   className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
                 >
                   <AlertCircle className="size-4 shrink-0" />
-                  Une erreur est survenue lors de l&apos;envoi. Merci de réessayer.
+                  Le paiement n&apos;a pas abouti. Aucune somme n&apos;a été débitée. Réessayez ou contactez-nous :
+                  WhatsApp +33 6 05 93 84 79 — nous trouvons une solution immédiatement.
                 </motion.div>
               ) : null}
             </AnimatePresence>
@@ -260,7 +291,7 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
                     Envoi...
                   </>
                 ) : isLastStep ? (
-                  "Souscrire"
+                  `Payer ${breakdown ? breakdown.total.toFixed(2) : "—"} € en toute sécurité`
                 ) : (
                   <>
                     Continuer
@@ -269,17 +300,26 @@ export function SubscriptionWizard({ slug, vehicleLabel, initialDuree, initialEm
                 )}
               </Button>
             </div>
+
+            {isLastStep ? <PaymentHelp variant="tunnel" className="border-t border-border pt-4" /> : null}
           </form>
         </Form>
       </div>
 
       <BillingSummary
-        vehicleLabel={vehicleLabel}
-        icon={icon}
+        vehicleLabel={vehicle?.label ?? ""}
+        icon={vehicle?.icon}
         duree={values.duree || null}
         tierLabel={tierLabel}
-        isDomTom={selection.isDomTom}
+        isDomTom={isDomTom}
         breakdown={breakdown}
+      />
+
+      <DeclarationsDialog
+        open={declarationsOpen}
+        onOpenChange={setDeclarationsOpen}
+        onConfirm={handleDeclarationsConfirm}
+        isSubmitting={form.formState.isSubmitting}
       />
     </div>
   )

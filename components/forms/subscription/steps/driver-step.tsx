@@ -6,7 +6,6 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { COUNTRIES } from "@/lib/countries"
-import { FRANCE_TERRITORIES } from "@/lib/pricing-data"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 const fieldClass = "h-11 rounded-lg"
@@ -17,12 +16,10 @@ interface DriverStepProps {
 }
 
 export function DriverStep({ form }: DriverStepProps) {
-  const pays = form.watch("pays")
-
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-5">
-        <h3 className="text-lg font-bold text-navy">Informations client</h3>
+        <h3 className="text-lg font-bold text-navy">Informations conducteur</h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
@@ -83,6 +80,7 @@ export function DriverStep({ form }: DriverStepProps) {
                 <FormControl>
                   <Input type="date" className={fieldClass} {...field} />
                 </FormControl>
+                <FormDescription>Nos contrats sont réservés aux conducteurs d&apos;au moins 21 ans.</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -155,7 +153,7 @@ export function DriverStep({ form }: DriverStepProps) {
             name="adresse"
             render={({ field }) => (
               <FormItem className="sm:col-span-2">
-                <FormLabel>Adresse de résidence *</FormLabel>
+                <FormLabel>Adresse *</FormLabel>
                 <FormControl>
                   <Input placeholder="Votre adresse" className={fieldClass} {...field} />
                 </FormControl>
@@ -189,66 +187,6 @@ export function DriverStep({ form }: DriverStepProps) {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="pays"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Pays *</FormLabel>
-                <Select
-                  onValueChange={(value) => {
-                    field.onChange(value)
-                    if (value !== "FR") form.setValue("territoire", "")
-                  }}
-                  value={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez un pays" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {COUNTRIES.map((country) => (
-                      <SelectItem key={country.code} value={country.code}>
-                        {country.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {pays === "FR" ? (
-            <FormField
-              control={form.control}
-              name="territoire"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Département / territoire *</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value}>
-                    <FormControl>
-                      <SelectTrigger className={triggerClass}>
-                        <SelectValue placeholder="Sélectionnez" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {FRANCE_TERRITORIES.map((territory) => (
-                        <SelectItem key={territory.value} value={territory.value}>
-                          {territory.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormDescription>
-                    Un tarif spécifique DOM-TOM s&apos;applique aux départements et collectivités d&apos;outre-mer.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          ) : null}
         </div>
       </div>
 

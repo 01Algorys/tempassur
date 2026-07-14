@@ -6,15 +6,18 @@ export interface NavLink {
   children?: NavLink[]
 }
 
-export type VehicleSlug =
-  | "automobiles"
-  | "tracteurs-agricoles"
-  | "quadricycles"
-  | "bus-autocars"
-  | "poids-lourds"
-  | "remorques"
-  | "camping-cars"
-  | "assurance-frontiere"
+export const VEHICLE_SLUGS = [
+  "automobiles",
+  "tracteurs-agricoles",
+  "quadricycles",
+  "bus-autocars",
+  "poids-lourds",
+  "remorques",
+  "camping-cars",
+  "assurance-frontiere",
+] as const
+
+export type VehicleSlug = (typeof VEHICLE_SLUGS)[number]
 
 export interface VehicleType {
   slug: VehicleSlug
@@ -23,41 +26,8 @@ export interface VehicleType {
   icon: LucideIcon
 }
 
-export interface InsuranceCategory {
-  id: string
-  title: string
-  icon: LucideIcon
-}
-
-export interface PricingPackage {
-  id: string
-  name: string
-  tagline: string
-  href: string
-  icon: LucideIcon
-  featured: boolean
-}
-
-export interface Testimonial {
-  id: string
-  name: string
-  location: string
-  rating: number
-  quote: string
-  initials: string
-}
-
 export interface FaqItem {
   id: string
   question: string
   answer: string
-}
-
-export type QuoteFormValues = {
-  insuranceType: string
-  fullName: string
-  email: string
-  phone: string
-  vehicleInfo?: string
-  message?: string
 }

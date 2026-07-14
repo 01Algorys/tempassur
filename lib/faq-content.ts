@@ -4,149 +4,104 @@ export interface FaqCategory {
   items: { id: string; question: string; answer: string }[]
 }
 
+// Texte intégral repris du dossier développeur §6.11.
 export const FAQ_CATEGORIES: FaqCategory[] = [
   {
-    id: "pays-couverts",
-    title: "Pays couverts par l'assurance auto temporaire",
+    id: "souscription",
+    title: "La souscription",
     items: [
       {
-        id: "pays-couverts-1",
-        question: "Dans quels pays mon véhicule est-il couvert par la responsabilité civile ?",
+        id: "souscription-1",
+        question: "En combien de temps suis-je assuré ?",
         answer:
-          "L'assurance temporaire auto couvre la responsabilité civile en Autriche, Belgique, Bulgarie, Chypre, République Tchèque, Allemagne, Danemark, Espagne, Estonie, France, Finlande, Grèce, Hongrie, Croatie, Italie, Irlande, Islande, Luxembourg, Lituanie, Lettonie, Malte, Norvège, Pays-Bas, Portugal, Pologne, Roumanie, Suède, Slovaquie, Slovénie, Suisse et Royaume-Uni.",
+          "En quelques minutes : estimation du tarif, souscription en ligne, paiement par carte, signature électronique — puis votre attestation arrive par e-mail ou WhatsApp.",
+      },
+      {
+        id: "souscription-2",
+        question: "Qui peut souscrire ?",
+        answer:
+          "Tout conducteur d'au moins 21 ans, titulaire du permis depuis au moins 2 ans, répondant aux déclarations présentées avant le paiement (sinistres, résiliation, condamnations, malus).",
+      },
+      {
+        id: "souscription-3",
+        question: "Puis-je souscrire pour quelqu'un d'autre ?",
+        answer: "Oui, mais le conducteur doit être déclaré et remplir toutes les conditions d'éligibilité.",
+      },
+      {
+        id: "souscription-4",
+        question: "Puis-je choisir l'heure d'effet ?",
+        answer: "Oui, à la souscription — la garantie démarre après signature des documents.",
       },
     ],
   },
   {
-    id: "assurance-frontiere",
-    title: "Assurance frontière",
+    id: "prix",
+    title: "Les prix",
     items: [
       {
-        id: "frontiere-1",
-        question: "Quels sont les pays accessibles avec une assurance frontière ?",
+        id: "prix-1",
+        question: "Comment le prix est-il calculé ?",
         answer:
-          "L'assurance frontière couvre les mêmes 31 pays que l'assurance temporaire, plus quatre pays supplémentaires : la Serbie, l'Andorre, la Bosnie-Herzégovine et le Monténégro.",
+          "Selon la catégorie de véhicule, la durée, la zone (métropole ou DOM-TOM) et les options. Le prix des options dépend de la durée. Tout s'affiche dans le tarificateur, sans laisser votre e-mail.",
       },
       {
-        id: "frontiere-2",
-        question: "Qui doit souscrire une assurance frontière ?",
+        id: "prix-2",
+        question: "Les tarifs DOM-TOM sont-ils les mêmes ?",
         answer:
-          "Les conducteurs de véhicules terrestres à moteur qui ne sont pas immatriculés dans un pays membre du système carte verte doivent la souscrire. Cela concerne les véhicules immatriculés en dehors de l'Espace Économique Européen.",
-      },
-      {
-        id: "frontiere-3",
-        question: "Quelle est la durée du contrat d'assurance frontière ?",
-        answer:
-          "L'assurance frontière ne peut être souscrite que pour une durée de 30 jours ou 90 jours, conformément au Code des assurances.",
+          "Non, ils diffèrent de la métropole ; ils s'affichent automatiquement dès que vous indiquez votre pays de résidence ou d'immatriculation. Les options n'y sont pas disponibles.",
       },
     ],
   },
   {
-    id: "eligibilite",
-    title: "Conditions d'éligibilité à l'assurance auto temporaire",
+    id: "couverture",
+    title: "La couverture",
     items: [
       {
-        id: "eligibilite-1",
-        question: "Puis-je souscrire une assurance auto temporaire si j'ai eu plusieurs sinistres récents ?",
+        id: "couverture-1",
+        question: "Dans quels pays suis-je couvert ?",
         answer:
-          "Non, si vous avez déclaré au cours des 36 derniers mois plus de 2 sinistres matériels (responsables ou partiellement responsables) ou un sinistre corporel.",
+          "En France et dans 35 pays — la même liste pour l'assurance temporaire et l'assurance frontière.",
       },
       {
-        id: "eligibilite-2",
-        question: "Puis-je souscrire si mon précédent assureur m'a résilié pour sinistre ?",
-        answer:
-          "Non, vous ne serez pas éligible si vous avez été résilié pour sinistre par un assureur au cours des 5 dernières années.",
+        id: "couverture-2",
+        question: "Puis-je aller au Maroc, en Tunisie ou en Turquie ?",
+        answer: "Oui, avec l'option extension de circulation (automobiles uniquement).",
       },
       {
-        id: "eligibilite-3",
-        question: "Que se passe-t-il si j'ai eu une condamnation pénale liée à la conduite ?",
+        id: "couverture-3",
+        question: "Quelles garanties sont incluses ?",
         answer:
-          "Si vous avez été condamné pour infraction au Code de la route, alcoolémie ou usage de stupéfiants, vous ne pourrez pas souscrire cette assurance.",
-      },
-      {
-        id: "eligibilite-4",
-        question: "Mon malus peut-il m'empêcher d'obtenir une assurance temporaire ?",
-        answer:
-          "Oui, si vous êtes malussé ou en attente d'une décision du Bureau Central de Tarification, vous ne pourrez pas souscrire.",
+          "La responsabilité civile obligatoire et la défense pénale et recours. Pour l'automobile, des options existent : garantie du conducteur, extension de pays, assistance.",
       },
     ],
   },
   {
     id: "documents",
-    title: "Documents nécessaires pour souscrire une assurance temporaire",
+    title: "Les documents",
     items: [
       {
         id: "documents-1",
-        question: "Quels documents sont requis pour le conducteur assuré ?",
+        question: "Quels documents vais-je recevoir ?",
         answer:
-          "Le permis de conduire national (recto-verso), valide pour la catégorie du véhicule, délivré depuis au moins 2 ans, pour un conducteur âgé de 21 à 90 ans. Une carte d'identité est requise uniquement pour les voiturettes sans permis.",
+          "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance — par e-mail ou WhatsApp, au choix.",
       },
       {
         id: "documents-2",
-        question: "Quels documents sont nécessaires pour le véhicule assuré ?",
+        question: "Je n'ai pas reçu mon attestation.",
         answer:
-          "Vous devez fournir l'un des documents suivants : carte grise (recto-verso), certificat provisoire d'immatriculation en cours de validité, facture d'adjudication datant de moins de 2 mois, fiche d'immobilisation police datant de moins de 2 mois, ou certificat de cession accompagné du talon de la carte grise.",
-      },
-      {
-        id: "documents-3",
-        question: "Y a-t-il des documents spécifiques pour certains types de véhicules ?",
-        answer:
-          "Oui. Pour les véhicules de plus de 30 CV fiscaux ou valant plus de 45 000 €, des photos sous plusieurs angles sont demandées. Pour les remorques de moins de 3,5 T, la carte grise du véhicule tracteur est requise.",
+          "Vérifiez vos spams. Si l'heure d'effet approche, contactez-nous immédiatement : WhatsApp / tél. +33 6 05 93 84 79 — nous accélérons le traitement.",
       },
     ],
   },
   {
-    id: "location",
-    title: "Assurance auto temporaire pour véhicules de location",
+    id: "annulation",
+    title: "L'annulation",
     items: [
       {
-        id: "location-1",
-        question: "Puis-je assurer un véhicule de location ?",
+        id: "annulation-1",
+        question: "Puis-je annuler ou me faire rembourser ?",
         answer:
-          "Oui, mais TempAssur ne peut pas assurer les véhicules loués auprès de Hertz, Europcar, Sixt, Budget, Avis, Enterprise, Thrifty ou National Car Rental.",
-      },
-      {
-        id: "location-2",
-        question: "Que faire si le véhicule est loué auprès d'une autre agence ?",
-        answer:
-          "Si le véhicule est loué à l'étranger, l'assurance ne peut pas être souscrite. S'il est loué en France auprès d'une autre agence, l'assurance temporaire est possible.",
-      },
-    ],
-  },
-  {
-    id: "pays-non-couverts",
-    title: "Pays non couverts par l'assurance temporaire",
-    items: [
-      {
-        id: "non-couverts-1",
-        question: "Dans quels pays mon véhicule n'est-il pas couvert par l'assurance temporaire ?",
-        answer:
-          "L'assurance ne couvre pas l'Albanie, l'Azerbaïdjan, la Biélorussie, l'Iran, le Maroc, la Moldavie, la Macédoine du Nord, la Russie, la Tunisie, la Turquie et l'Ukraine.",
-      },
-      {
-        id: "non-couverts-2",
-        question: "Que se passe-t-il si je me rends dans un pays non couvert ?",
-        answer:
-          "Vous ne serez pas protégé en cas d'accident ou de sinistre et pourriez être contraint de payer tous les frais liés aux dommages.",
-      },
-      {
-        id: "non-couverts-3",
-        question: "Comment savoir si mon trajet est bien assuré ?",
-        answer:
-          "Avant de souscrire, vérifiez la liste des pays couverts ou contactez le service client.",
-      },
-      {
-        id: "non-couverts-4",
-        question: "Que faire si j'ai besoin d'une assurance pour l'un des pays exclus ?",
-        answer:
-          "TempAssur conseille de souscrire auprès d'un assureur local ou de vérifier la disponibilité d'une assurance frontière au point d'entrée.",
-      },
-      {
-        id: "non-couverts-5",
-        question:
-          "Je viens de Tunisie et je souhaite voyager en France avec mon véhicule : comment faire pour être assuré ?",
-        answer:
-          "Deux options : souscrire une assurance frontière à l'entrée du territoire (15 à 90 jours) ou souscrire une assurance auto temporaire directement en ligne avant l'arrivée en France, avec attestation immédiate et conformité aux exigences légales françaises.",
+          "Les contrats temporaires sont à durée ferme, sans tacite reconduction ; une fois la garantie en vigueur, ils ne peuvent être ni annulés ni remboursés (voir CGV).",
       },
     ],
   },

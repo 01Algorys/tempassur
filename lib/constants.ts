@@ -1,265 +1,153 @@
 import { Bus, Car, CarFront, Caravan, Container, Flag, Tractor, Truck } from "lucide-react"
 
-import type {
-  FaqItem,
-  InsuranceCategory,
-  NavLink,
-  PricingPackage,
-  Testimonial,
-  VehicleType,
-} from "@/types"
+import type { FaqItem, NavLink, VehicleSlug, VehicleType } from "@/types"
 
+// Mini-définitions et libellés exacts du tarificateur (dossier §3.2) — repris tels
+// quels partout où une catégorie est présentée (accueil, header, vignettes).
 export const VEHICLE_TYPES: VehicleType[] = [
   {
     slug: "automobiles",
-    label: "Automobiles",
-    description:
-      "Assurance temporaire pour voitures particulières et utilitaires légers, de 1 à 90 jours, dès 4,10 €/jour.",
+    label: "Automobile",
+    description: "Véhicules privés et utilitaires de moins de 3,5 T.",
     icon: Car,
   },
   {
-    slug: "tracteurs-agricoles",
-    label: "Tracteurs agricoles",
-    description:
-      "Couverture temporaire adaptée aux tracteurs agricoles (type TRA) et engins assimilés, dès 12,35 €/jour.",
-    icon: Tractor,
+    slug: "poids-lourds",
+    label: "Poids lourd",
+    description: "Camions, tracteurs routiers et porteurs de plus de 3,5 T.",
+    icon: Truck,
+  },
+  {
+    slug: "camping-cars",
+    label: "Camping-car",
+    description: "Camping-cars et fourgons aménagés.",
+    icon: Caravan,
   },
   {
     slug: "quadricycles",
     label: "Quadricycles",
-    description:
-      "Assurance courte durée pour voiturettes sans permis, buggies et quads à moteur, dès 3,50 €/jour.",
+    description: "Quads homologués, voiturettes sans permis, buggys.",
     icon: CarFront,
   },
   {
     slug: "bus-autocars",
     label: "Bus, autocars",
-    description:
-      "Solutions temporaires pour le transport de voyageurs (véhicules type TCP), dès 11,69 €/jour.",
+    description: "Transport de personnes.",
     icon: Bus,
   },
   {
-    slug: "poids-lourds",
-    label: "Poids lourds",
-    description:
-      "Couverture flexible pour camions et tracteurs routiers de transport de marchandises, dès 11,60 €/jour.",
-    icon: Truck,
+    slug: "tracteurs-agricoles",
+    label: "Tracteur agricole",
+    description: "Tracteurs et engins agricoles.",
+    icon: Tractor,
   },
   {
     slug: "remorques",
     label: "Remorques",
-    description:
-      "Assurance temporaire pour remorques, semi-remorques et caravanes, dès 7,10 €/jour.",
+    description: "Remorques, semi-remorques et caravanes (poids lourd et léger).",
     icon: Container,
-  },
-  {
-    slug: "camping-cars",
-    label: "Camping cars",
-    description:
-      "Protégez votre camping-car (PTAC ≤ ou > 3,5 T) le temps d'un voyage ou d'une saison, dès 4,25 €/jour.",
-    icon: Caravan,
   },
   {
     slug: "assurance-frontiere",
     label: "Assurance frontière",
     description:
-      "Attestation d'assurance pour véhicules immatriculés hors Union européenne, 30 ou 90 jours, dès 3,90 €/jour.",
+      "Véhicules immatriculés hors Union européenne et hors système carte verte, ou véhicules immatriculés à l'étranger devant circuler en France et en Europe.",
     icon: Flag,
   },
 ]
 
+// URLs finales par catégorie (dossier §2) — une page dédiée par produit, jamais de slug dynamique générique.
+export const PRODUCT_ROUTES: Record<VehicleSlug, string> = {
+  automobiles: "/assurance-temporaire-automobile",
+  "poids-lourds": "/assurance-temporaire-poids-lourd",
+  "camping-cars": "/assurance-temporaire-camping-car",
+  quadricycles: "/assurance-temporaire-quadricycle",
+  "bus-autocars": "/assurance-temporaire-bus-autocar",
+  "tracteurs-agricoles": "/assurance-temporaire-tracteur-agricole",
+  remorques: "/assurance-temporaire-remorque",
+  "assurance-frontiere": "/assurance-frontiere",
+}
+
+// Menu du header (dossier §2.1) : Accueil · Nos assurances (8 catégories) · Pays couverts · Blog · FAQ · Contact.
 export const NAV_LINKS: NavLink[] = [
   { label: "Accueil", href: "/" },
   {
-    label: "Je m'assure",
-    href: "/#insurance",
+    label: "Nos assurances",
+    href: "/#tarificateur",
     children: VEHICLE_TYPES.map((vehicle) => ({
       label: vehicle.label,
-      href: `/assurance/${vehicle.slug}`,
+      href: PRODUCT_ROUTES[vehicle.slug],
     })),
   },
-  { label: "Qui sommes nous ?", href: "/qui-sommes-nous" },
+  { label: "Pays couverts", href: "/pays-couverts" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-  { label: "Mon compte", href: "/mon-compte" },
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ]
 
-export const INSURANCE_CATEGORIES: InsuranceCategory[] = VEHICLE_TYPES.map((vehicle) => ({
-  id: vehicle.slug,
-  title: vehicle.label,
-  icon: vehicle.icon,
-}))
+// Bandeau de réassurance sous le hero (dossier §3.3) — 5 points fournis.
+export const REASSURANCE_ITEMS = [
+  "Attestation immédiate par e-mail ou WhatsApp",
+  "Paiement 100 % sécurisé (CB)",
+  "Courtier français — ORIAS n° 24004933",
+  "Assureurs agréés — entreprises régies par le Code des assurances",
+  "7j/7 par téléphone et WhatsApp : +33 6 05 93 84 79",
+]
 
-export const PACKAGES: PricingPackage[] = [
+// Bloc « Dans quelles situations ? » (dossier §3.5) — 10 cartes.
+export const USE_CASES = [
+  "Achat / vente d'un véhicule",
+  "Plaque provisoire WW",
+  "Import / export",
+  "Sortie de fourrière",
+  "Résiliation par votre assureur",
+  "Véhicule en succession",
+  "Passage du contrôle technique",
+  "Prêt ou emprunt d'un véhicule",
+  "Véhicule immatriculé à l'étranger (assurance frontière)",
+  "Conduite occasionnelle d'un second véhicule",
+]
+
+// Bloc « Comment ça marche » (dossier §3.6) — 3 étapes.
+export const HOW_IT_WORKS = [
+  { title: "Estimez", description: "Estimez votre tarif en 30 secondes, sans laisser vos coordonnées." },
+  { title: "Souscrivez", description: "Souscrivez en ligne en 5 minutes, payez par carte bancaire." },
   {
-    id: "automobiles",
-    name: "Automobiles",
-    tagline: "Voitures particulières et utilitaires légers, dès 4,10 €/jour.",
-    href: "/assurance/automobiles",
-    icon: Car,
-    featured: true,
-  },
-  {
-    id: "poids-lourds",
-    name: "Poids lourds",
-    tagline: "Camions et tracteurs routiers, dès 11,60 €/jour.",
-    href: "/assurance/poids-lourds",
-    icon: Truck,
-    featured: false,
-  },
-  {
-    id: "camping-cars",
-    name: "Camping-cars",
-    tagline: "PTAC léger ou lourd, dès 4,25 €/jour.",
-    href: "/assurance/camping-cars",
-    icon: Caravan,
-    featured: false,
-  },
-  {
-    id: "remorques",
-    name: "Remorques",
-    tagline: "Remorques, semi-remorques et caravanes, dès 7,10 €/jour.",
-    href: "/assurance/remorques",
-    icon: Container,
-    featured: false,
-  },
-  {
-    id: "tracteurs-agricoles",
-    name: "Tracteurs agricoles",
-    tagline: "Tracteurs et engins agricoles, dès 12,35 €/jour.",
-    href: "/assurance/tracteurs-agricoles",
-    icon: Tractor,
-    featured: false,
-  },
-  {
-    id: "bus-autocars",
-    name: "Bus, autocars",
-    tagline: "Transport de voyageurs, dès 11,69 €/jour.",
-    href: "/assurance/bus-autocars",
-    icon: Bus,
-    featured: false,
-  },
-  {
-    id: "quadricycles",
-    name: "Quadricycles",
-    tagline: "Voiturettes sans permis, buggies et quads, dès 3,50 €/jour.",
-    href: "/assurance/quadricycles",
-    icon: CarFront,
-    featured: false,
-  },
-  {
-    id: "assurance-frontiere",
-    name: "Assurance frontière",
-    tagline: "Véhicules immatriculés hors UE, dès 3,90 €/jour.",
-    href: "/assurance/assurance-frontiere",
-    icon: Flag,
-    featured: false,
+    title: "Recevez votre attestation",
+    description:
+      "Recevez votre attestation par e-mail ou WhatsApp, signez électroniquement — vous êtes couvert.",
   },
 ]
 
-export const TESTIMONIALS: Testimonial[] = [
+// FAQ courte de l'accueil (dossier §3.9) — 5 questions, balisage schema.org FAQPage.
+export const HOME_FAQ: FaqItem[] = [
   {
-    id: "t1",
-    name: "Camille Laurent",
-    location: "Paris, France",
-    rating: 5,
-    quote:
-      "I needed cover for a rental car in under ten minutes and TempAssur delivered. The whole process felt more like using a banking app than buying insurance.",
-    initials: "CL",
-  },
-  {
-    id: "t2",
-    name: "Julien Moreau",
-    location: "Lyon, France",
-    rating: 5,
-    quote:
-      "My claim after a minor accident was approved in a day. No back and forth, no endless calls — just a clear dashboard telling me exactly what was happening.",
-    initials: "JM",
-  },
-  {
-    id: "t3",
-    name: "Sofia Bernard",
-    location: "Marseille, France",
-    rating: 5,
-    quote:
-      "I switched my motorcycle policy to TempAssur for the flexibility alone. Being able to pause coverage over winter and reactivate it in spring is brilliant.",
-    initials: "SB",
-  },
-  {
-    id: "t4",
-    name: "Thomas Girard",
-    location: "Bordeaux, France",
-    rating: 4,
-    quote:
-      "As a small business owner, getting liability coverage used to take weeks. With TempAssur I had a compliant policy the same afternoon.",
-    initials: "TG",
-  },
-  {
-    id: "t5",
-    name: "Elise Petit",
-    location: "Nantes, France",
-    rating: 5,
-    quote:
-      "The app is genuinely well designed. I can see my policy, file a claim and chat with support without ever picking up the phone.",
-    initials: "EP",
-  },
-]
-
-export const FAQS: FaqItem[] = [
-  {
-    id: "faq-1",
-    question: "Pourquoi choisir TempAssur ?",
+    id: "home-faq-1",
+    question: "En combien de temps suis-je assuré ?",
     answer:
-      "Une souscription en moins de 2 minutes, une couverture immédiate, des tarifs transparents à partir de 3,50 €/jour, tous types de véhicules assurables et une assistance disponible 24h/24 et 7j/7.",
+      "En quelques minutes : souscription en ligne, paiement CB, signature électronique, attestation envoyée par e-mail ou WhatsApp.",
   },
   {
-    id: "faq-2",
-    question: "Quels véhicules puis-je assurer avec TempAssur ?",
+    id: "home-faq-2",
+    question: "Qui peut souscrire ?",
     answer:
-      "Automobiles, quadricycles, tracteurs agricoles, camping-cars, remorques, poids lourds, bus et autocars, ainsi que les véhicules immatriculés hors Union européenne via l'assurance frontière. Toutes nos formules courent de 1 à 90 jours.",
+      "Tout conducteur d'au moins 21 ans, titulaire du permis depuis au moins 2 ans, répondant aux conditions déclarées lors de la souscription.",
   },
   {
-    id: "faq-3",
-    question: "Quelles garanties sont incluses dans le contrat d'assurance temporaire ?",
-    answer:
-      "Le contrat comprend la responsabilité civile obligatoire (dommages matériels et corporels causés à des tiers), la défense pénale et recours suite à accident, ainsi qu'une garantie assistance : incluse automatiquement pour les contrats de moins de 15 jours sous conditions d'éligibilité, et optionnelle au-delà.",
-  },
-  {
-    id: "faq-4",
-    question: "Quels documents dois-je fournir pour souscrire ?",
-    answer:
-      "Le permis de conduire national recto-verso, valide depuis au moins 2 ans, pour un conducteur âgé de 21 à 90 ans, ainsi que la carte grise du véhicule (ou un document équivalent : certificat provisoire d'immatriculation, facture d'adjudication, certificat de cession).",
-  },
-  {
-    id: "faq-5",
-    question: "Puis-je assurer un véhicule de location ?",
-    answer:
-      "Oui, sauf les véhicules loués auprès de Hertz, Europcar, Sixt, Budget, Avis, Enterprise, Thrifty ou National Car Rental. Un véhicule loué à l'étranger ne peut pas être assuré en assurance temporaire.",
-  },
-  {
-    id: "faq-6",
+    id: "home-faq-3",
     question: "Dans quels pays suis-je couvert ?",
     answer:
-      "La responsabilité civile est couverte dans 31 pays d'Europe (dont la France, l'ensemble de l'Union européenne, la Suisse, la Norvège, l'Islande et le Royaume-Uni). L'assurance frontière étend cette couverture à la Serbie, l'Andorre, la Bosnie-Herzégovine et le Monténégro.",
+      "En France et dans 35 pays (même liste pour la temporaire et la frontière). Extension possible vers 7 pays supplémentaires pour les automobiles.",
   },
   {
-    id: "faq-7",
-    question: "Qu'est-ce que l'assurance frontière et qui doit la souscrire ?",
-    answer:
-      "L'assurance frontière s'adresse aux conducteurs de véhicules non immatriculés dans un pays du système carte verte. Elle ne peut être souscrite que pour une durée de 30 ou 90 jours, conformément au Code des assurances.",
+    id: "home-faq-4",
+    question: "Puis-je annuler mon contrat ?",
+    answer: "Les contrats temporaires sont à durée ferme, sans tacite reconduction (voir CGV).",
   },
   {
-    id: "faq-8",
-    question: "Puis-je annuler ou me faire rembourser après la souscription ?",
+    id: "home-faq-5",
+    question: "L'assurance frontière, c'est pour qui ?",
     answer:
-      "Une fois la garantie prise d'effet, aucune annulation ni remboursement n'est possible, conformément à nos conditions générales de vente. Vérifiez bien la date et l'heure d'effet avant de valider votre commande.",
+      "Pour les véhicules immatriculés hors UE et hors système carte verte qui doivent circuler en France et en Europe.",
   },
-]
-
-export const PARTNER_NAMES = [
-  "Courtier ORIAS n°24004933",
-  "Régulé par l'ACPR",
-  "Médiation IEAM",
-  "Paiement en ligne sécurisé",
 ]

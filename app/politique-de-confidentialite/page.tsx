@@ -7,40 +7,48 @@ import { siteConfig } from "@/lib/site"
 export const metadata: Metadata = {
   title: "Politique de confidentialité et de cookies",
   description: `Comment ${siteConfig.name} collecte, utilise et protège vos données personnelles, et quels cookies sont utilisés sur le site.`,
+  alternates: { canonical: `${siteConfig.url}/politique-de-confidentialite` },
 }
 
+// Texte intégral repris du dossier développeur §7.3. À faire valider par un avocat avant
+// mise en ligne définitive (voir rapport final, point ouvert §10).
 const SECTIONS = [
   {
-    title: "Responsable du traitement",
-    body: `Le responsable du traitement des données collectées sur ${siteConfig.url} est ${siteConfig.legalName}, courtier d'assurance immatriculé ORIAS n°${siteConfig.orias}.`,
+    title: "1. Responsable de traitement",
+    body: "La présente politique décrit comment WN Conseil (opérant sous le nom TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — collecte, utilise, stocke et protège vos données personnelles via le site www.tempassur.com.",
   },
   {
-    title: "Données collectées",
-    body: "Nous collectons les données transmises via le formulaire de contact (nom, prénom, coordonnées, adresse IP et user agent du navigateur) et lors de la souscription d'un contrat (nom, prénom, coordonnées, informations relatives au véhicule et données nécessaires au traitement de votre demande). Si vous importez des photos de votre véhicule, veillez à ne pas transmettre de données de géolocalisation EXIF.",
+    title: "2. Données collectées",
+    body: "Devis et souscription : identité, coordonnées, date de naissance, informations du permis de conduire, informations du véhicule, antécédents déclarés (sinistres, résiliation, condamnations, malus). Paiement : les données bancaires sont traitées directement par notre prestataire de paiement sécurisé ; TempAssur ne les stocke jamais. Formulaires de contact : les données saisies, votre adresse IP et l'agent utilisateur de votre navigateur (prévention de la fraude et des messages indésirables). Navigation : cookies et mesure d'audience (voir §7).",
   },
   {
-    title: "Finalités du traitement",
-    body: "Vos données sont utilisées pour traiter votre demande et gérer votre contrat d'assurance, améliorer nos services, et assurer la sécurité du site et la prévention de la fraude.",
+    title: "3. Finalités et bases légales",
+    body: "Établissement des devis et exécution du contrat (exécution contractuelle) ; obligations légales du courtier, dont le devoir de conseil et la lutte contre le blanchiment (obligation légale) ; gestion de la relation client, statistiques et amélioration du site (intérêt légitime) ; communications commerciales (consentement, retirable à tout moment).",
   },
   {
-    title: "Durée de conservation",
-    body: "Les données liées à un contrat d'assurance sont conservées pendant une durée minimale de 5 ans, conformément à nos obligations légales.",
+    title: "4. Destinataires",
+    body: "Les entreprises d'assurance partenaires, pour l'établissement et la gestion de vos contrats ; nos prestataires techniques (hébergement, paiement, signature électronique, envoi d'e-mails et de messages WhatsApp). WN Conseil ne vend jamais vos données personnelles.",
   },
   {
-    title: "Cookies utilisés",
-    body: "Le site utilise des cookies techniques : cookies de commentaires (1 an), cookies de connexion (2 jours), cookies de préférence d'affichage (1 an), et un cookie de détection d'acceptation du navigateur (durée de session).",
+    title: "5. Durées de conservation",
+    body: "Données contractuelles : pendant la durée du contrat puis conformément aux prescriptions légales (5 ans minimum, jusqu'à 10 ans pour les documents comptables). Prospects : 3 ans après le dernier contact.",
   },
   {
-    title: "Partage des données",
-    body: `${siteConfig.legalName} ne partage ni ne vend vos données personnelles à des tiers à des fins commerciales.`,
+    title: "6. Vos droits",
+    body: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition : écrivez à contact@tempassur.com. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr).",
   },
   {
-    title: "Sécurité",
-    body: "Des mesures de sécurité appropriées sont mises en place pour protéger vos données contre tout accès non autorisé ou toute destruction illégale.",
+    title: "7. Cookies",
+    id: "cookies",
+    body: "Lors de votre première visite, un bandeau vous permet d'accepter ou de refuser les cookies par catégorie : cookies nécessaires au fonctionnement du site, mesure d'audience, marketing. Durée de vie maximale : 13 mois. Vous pouvez modifier vos choix à tout moment via le lien « Gérer mes cookies » en bas de page.",
   },
   {
-    title: "Vos droits",
-    body: `Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles. Les données liées à un contrat en cours peuvent être conservées pour des raisons administratives et légales. Pour exercer vos droits, contactez-nous à ${siteConfig.email} ou au ${siteConfig.phone} / ${siteConfig.phoneSecondary}.`,
+    title: "8. Sécurité",
+    body: "Nous mettons en œuvre des mesures de sécurité appropriées (chiffrement TLS, accès restreints, prestataires certifiés) pour protéger vos données contre tout accès non autorisé, divulgation ou destruction.",
+  },
+  {
+    title: "9. Modifications et contact",
+    body: "Cette politique peut être mise à jour à tout moment ; la version en vigueur est celle publiée sur cette page. Pour toute question : contact@tempassur.com · +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41.",
   },
 ]
 
@@ -51,7 +59,7 @@ export default function PolitiqueConfidentialitePage() {
       <section className="section-y">
         <Container className="mx-auto flex max-w-3xl flex-col gap-10">
           {SECTIONS.map((section) => (
-            <div key={section.title} className="flex flex-col gap-3">
+            <div key={section.title} id={section.id} className="flex flex-col gap-3 scroll-mt-28">
               <h2 className="text-lg font-bold text-navy">{section.title}</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{section.body}</p>
             </div>

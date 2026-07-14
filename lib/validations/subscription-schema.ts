@@ -1,5 +1,7 @@
 import { z } from "zod"
 
+import { VEHICLE_SLUGS } from "@/types"
+
 export const CIVILITE_OPTIONS = [
   { value: "M.", label: "M." },
   { value: "Mme", label: "Mme" },
@@ -14,23 +16,33 @@ const optionalFile = z
 
 export const subscriptionSchema = z
   .object({
-    // Formula
+    // Localisation (dossier §4.1)
+    paysImmatriculation: z.string().min(1, "Le pays d'immatriculation est requis"),
+    territoireImmatriculation: z.string().optional().or(z.literal("")),
+    paysResidence: z.string().min(1, "Le pays de résidence est requis"),
+    territoireResidence: z.string().optional().or(z.literal("")),
+
+    // Vehicle
+    categorie: z.enum(VEHICLE_SLUGS),
     duree: z.number().positive("Sélectionnez une durée"),
     cvTier: z.enum(["moins-16cv", "moins-30cv", "plus-30cv"]).optional(),
     ptacTier: z.enum(["moins-3500kg", "plus-3500kg"]).optional(),
     quadSubtype: z.enum(["voiturette-sans-permis", "buggy", "quad-avec-permis"]).optional(),
-    optionAssistance: z.boolean(),
-    optionGarantieConducteur: z.boolean(),
-    optionExtensionTn: z.boolean(),
-
-    // Vehicle
     immatriculation: z.string().min(1, "L'immatriculation est requise").max(20),
     marque: z.string().min(1, "La marque est requise").max(50),
     modele: z.string().min(1, "Le modèle est requis").max(50),
     dateMiseEnCirculation: z.string().min(1, "La date de 1ère mise en circulation est requise"),
     estVehiculeLocation: z.boolean(),
     nomAgenceLocation: z.string().max(80).optional().or(z.literal("")),
-    paysObtentionVehicule: z.string().min(1, "Le pays d'obtention est requis"),
+
+    // Duration & effect date
+    dateEffet: z.string().min(1, "La date d'effet est requise"),
+    heureEffet: z.string().min(1, "L'heure d'effet est requise"),
+
+    // Options
+    optionAssistance: z.boolean(),
+    optionGarantieConducteur: z.boolean(),
+    optionExtensionTn: z.boolean(),
 
     // Driver
     civilite: z.string().min(1, "Sélectionnez une civilité"),
@@ -53,17 +65,11 @@ export const subscriptionSchema = z
     adresse: z.string().min(1, "L'adresse est requise").max(120),
     codePostal: z.string().min(1, "Le code postal est requis").max(10),
     ville: z.string().min(1, "La ville est requise").max(60),
-    pays: z.string().min(1, "Le pays est requis"),
-    territoire: z.string().optional().or(z.literal("")),
 
     // Driving licence
     numeroPermis: z.string().min(1, "Le numéro de permis est requis").max(30),
     dateObtentionPermis: z.string().min(1, "La date d'obtention est requise"),
     paysObtentionPermis: z.string().min(1, "Le pays d'obtention est requis"),
-
-    // Guarantee
-    dateEffet: z.string().min(1, "La date d'effet est requise"),
-    heureEffet: z.string().min(1, "L'heure d'effet est requise"),
 
     // Documents (optional at submission time)
     permisRecto: optionalFile,
@@ -71,22 +77,49 @@ export const subscriptionSchema = z
     carteGrise: optionalFile,
     autresDocuments: optionalFile,
 
-    // Consents
-    consentIpid: z.boolean().refine((v) => v === true, { message: "Ce document doit être accepté" }),
-    consentAttestation: z
-      .boolean()
-      .refine((v) => v === true, { message: "Cette attestation doit être acceptée" }),
+    // Consents (dossier §4.6/§4.7)
     consentCgv: z
       .boolean()
-      .refine((v) => v === true, { message: "Les conditions générales doivent être acceptées" }),
+      .refine((v) => v === true, { message: "Les conditions générales de vente doivent être acceptées" }),
+    consentIpid: z
+      .boolean()
+      .refine((v) => v === true, { message: "Le document d'information IPID doit être accepté" }),
+    consentContrat: z
+      .boolean()
+      .refine((v) => v === true, { message: "Les conditions générales du contrat doivent être acceptées" }),
+    consentDeclarations: z
+      .boolean()
+      .refine((v) => v === true, { message: "Vous devez certifier les déclarations du conducteur" }),
+    declarationsAcceptedAt: z.string().optional().or(z.literal("")),
   })
   .superRefine((data, ctx) => {
-    if (data.pays === "FR" && !data.territoire) {
+    if (data.paysImmatriculation === "FR" && !data.territoireImmatriculation) {
       ctx.addIssue({
         code: "custom",
-        message: "Précisez le département ou territoire",
-        path: ["territoire"],
+        message: "Précisez le département ou territoire d'immatriculation",
+        path: ["territoireImmatriculation"],
       })
+    }
+
+    if (data.paysResidence === "FR" && !data.territoireResidence) {
+      ctx.addIssue({
+        code: "custom",
+        message: "Précisez le département ou territoire de résidence",
+        path: ["territoireResidence"],
+      })
+    }
+
+    if (data.dateNaissance) {
+      const born = new Date(data.dateNaissance)
+      const twentyOneYearsAgo = new Date()
+      twentyOneYearsAgo.setFullYear(twentyOneYearsAgo.getFullYear() - 21)
+      if (!Number.isNaN(born.getTime()) && born > twentyOneYearsAgo) {
+        ctx.addIssue({
+          code: "custom",
+          message: "Nos contrats sont réservés aux conducteurs d'au moins 21 ans.",
+          path: ["dateNaissance"],
+        })
+      }
     }
 
     if (data.dateObtentionPermis) {
@@ -96,7 +129,7 @@ export const subscriptionSchema = z
       if (!Number.isNaN(obtained.getTime()) && obtained > twoYearsAgo) {
         ctx.addIssue({
           code: "custom",
-          message: "Le permis doit avoir au moins 2 ans pour assurer le véhicule",
+          message: "Nos contrats exigent au moins 2 ans de permis.",
           path: ["dateObtentionPermis"],
         })
       }
@@ -104,11 +137,11 @@ export const subscriptionSchema = z
 
     if (data.dateEffet && data.heureEffet) {
       const effectDate = new Date(`${data.dateEffet}T${data.heureEffet}`)
-      const minEffectDate = new Date(Date.now() + 20 * 60 * 1000)
+      const minEffectDate = new Date()
       if (!Number.isNaN(effectDate.getTime()) && effectDate < minEffectDate) {
         ctx.addIssue({
           code: "custom",
-          message: "L'heure d'effet doit être au moins 20 minutes après l'heure actuelle",
+          message: "La date et l'heure d'effet ne peuvent pas être antérieures à maintenant.",
           path: ["heureEffet"],
         })
       }

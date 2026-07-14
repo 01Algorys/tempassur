@@ -9,21 +9,28 @@ import {
 } from "@/components/ui/accordion"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Reveal } from "@/components/shared/reveal"
-import { FAQS } from "@/lib/constants"
+import { HOME_FAQ } from "@/lib/constants"
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: HOME_FAQ.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+}
 
 export function Faq() {
   return (
     <section id="faq" className="section-y bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mx-auto max-w-3xl container-px">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Questions fréquentes"
-          description="Les réponses aux questions les plus posées sur l'assurance temporaire TempAssur."
-        />
+        <SectionHeading eyebrow="FAQ" title="Questions fréquentes" />
 
         <Reveal delay={0.1} className="mt-12">
-          <Accordion type="single" collapsible defaultValue="faq-1" className="flex flex-col gap-3">
-            {FAQS.map((faq) => (
+          <Accordion type="single" collapsible defaultValue="home-faq-1" className="flex flex-col gap-3">
+            {HOME_FAQ.map((faq) => (
               <AccordionItem
                 key={faq.id}
                 value={faq.id}
