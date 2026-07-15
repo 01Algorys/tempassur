@@ -98,7 +98,6 @@ export function Tarificateur() {
                 return (
                   <SelectItem key={d} value={String(d)}>
                     {d} jour{d > 1 ? "s" : ""}
-                    {durationPrice != null ? ` — ${currency.format(durationPrice)}` : ""}
                   </SelectItem>
                 )
               })}
@@ -108,7 +107,7 @@ export function Tarificateur() {
 
         <div className="rounded-2xl bg-surface p-4">
           <p className="text-2xl font-extrabold tracking-tight text-navy">
-            {price != null ? `À partir de ${currency.format(price)}` : "—"}
+            {price != null ? `À partir de ${currency.format(price / duree)}/jour` : "—"}
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             Prix minimum pour cette durée. Le tarif définitif dépend du véhicule, des options

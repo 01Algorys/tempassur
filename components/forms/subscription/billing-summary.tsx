@@ -56,6 +56,15 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
               <span className="text-muted-foreground">Tarif de base</span>
               <span className="font-medium text-foreground">{breakdown.basePrice.toFixed(2)} €</span>
             </div>
+            {breakdown.zoneSurcharge != null ? (
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">Zone DOM-TOM</span>
+                <span className="font-medium text-foreground">
+                  {breakdown.zoneSurcharge >= 0 ? "+" : ""}
+                  {breakdown.zoneSurcharge.toFixed(2)} €
+                </span>
+              </div>
+            ) : null}
             {breakdown.lines.map((line) => (
               <div key={line.label} className="flex items-center justify-between">
                 <span className="text-muted-foreground">{line.label}</span>

@@ -11,6 +11,7 @@ import {
   type CvTier,
   type PtacTier,
   type QuadSubtype,
+  type TariffRow,
 } from "@/lib/pricing-data"
 import type { VehicleSlug } from "@/types"
 
@@ -39,7 +40,10 @@ export interface PriceLine {
 }
 
 export interface PriceBreakdown {
+  /** Tarif de base en France métropolitaine, hors options et hors majoration de zone. */
   basePrice: number
+  /** Écart de tarif DOM-TOM par rapport au tarif métropole (peut être négatif), ou null hors DOM-TOM. */
+  zoneSurcharge: number | null
   lines: PriceLine[]
   total: number
   isDomTom: boolean
@@ -100,7 +104,7 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
     const row = AUTO_TARIFFS[selection.cvTier ?? "moins-16cv"].find((r) => r.duree === selection.duree)
     if (!row) return null
 
-    const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
+    const zoneSurcharge = selection.isDomTom ? row.prixDomTom - row.prixFr : null
     const lines: PriceLine[] = []
     const optionsEligible = areOptionsEligible(slug, selection.isDomTom)
 
@@ -115,9 +119,10 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
     }
 
     return {
-      basePrice,
+      basePrice: row.prixFr,
+      zoneSurcharge,
       lines,
-      total: basePrice + lines.reduce((sum, line) => sum + line.amount, 0),
+      total: row.prixFr + (zoneSurcharge ?? 0) + lines.reduce((sum, line) => sum + line.amount, 0),
       isDomTom: selection.isDomTom,
     }
   }
@@ -125,32 +130,39 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
   if (slug === "assurance-frontiere") {
     const row = FRONTIERE_TARIFFS[selection.cvTier ?? "moins-16cv"].find((r) => r.duree === selection.duree)
     if (!row) return null
-    const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
-    return { basePrice, lines: [], total: basePrice, isDomTom: selection.isDomTom }
+    return buildSimpleBreakdown(row, selection.isDomTom)
   }
 
   if (slug === "camping-cars") {
     const row = CAMPING_CAR_TARIFFS[selection.ptacTier ?? "moins-3500kg"].find((r) => r.duree === selection.duree)
     if (!row) return null
-    const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
-    return { basePrice, lines: [], total: basePrice, isDomTom: selection.isDomTom }
+    return buildSimpleBreakdown(row, selection.isDomTom)
   }
 
   if (slug === "quadricycles") {
     const row = QUAD_TARIFFS[selection.quadSubtype ?? "voiturette-sans-permis"].find((r) => r.duree === selection.duree)
     if (!row) return null
-    const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
-    return { basePrice, lines: [], total: basePrice, isDomTom: selection.isDomTom }
+    return buildSimpleBreakdown(row, selection.isDomTom)
   }
 
   if (isSimpleSlug(slug)) {
     const row = SIMPLE_TARIFFS[slug].find((r) => r.duree === selection.duree)
     if (!row) return null
-    const basePrice = selection.isDomTom ? row.prixDomTom : row.prixFr
-    return { basePrice, lines: [], total: basePrice, isDomTom: selection.isDomTom }
+    return buildSimpleBreakdown(row, selection.isDomTom)
   }
 
   return null
+}
+
+function buildSimpleBreakdown(row: TariffRow, isDomTom: boolean): PriceBreakdown {
+  const zoneSurcharge = isDomTom ? row.prixDomTom - row.prixFr : null
+  return {
+    basePrice: row.prixFr,
+    zoneSurcharge,
+    lines: [],
+    total: row.prixFr + (zoneSurcharge ?? 0),
+    isDomTom,
+  }
 }
 
 /** Every "sub-selection" (CV tier / PTAC tier / quad subtype) applicable to a category, or a single empty one if it needs none. */

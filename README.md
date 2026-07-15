@@ -110,4 +110,33 @@ orange-for-action / blue-for-structure rule requested in the brief (≈70% white
   primitives as the product grows.
 
 
+UPDATES !!!!!!!!!!!
+X - tarificateur -> par jour 
+api pays du monde
+user should not change category when pre selected before 
+nos assurance != je m'assure
+tarificateur direct
 
+
+tarfication ->  3-> 1
+tarif de base est le base
+
+we should show anything added  ( + + +)
+vehicule de location radio button
+
+option 9bal conducteur
+
+european format date range
+
+
+divide the informations
+email last field
+
+documents in the form
+accept the condition and check boxes in the form 
+
+
+payment alone page nothing in it
+after payment only the thank you page appears no other page
+
+souscrire whatsapp in thank you page remove it

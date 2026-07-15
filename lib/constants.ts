@@ -68,21 +68,22 @@ export const PRODUCT_ROUTES: Record<VehicleSlug, string> = {
   "assurance-frontiere": "/assurance-frontiere",
 }
 
-// Menu du header (dossier §2.1) : Accueil · Nos assurances (8 catégories) · Pays couverts · Blog · FAQ · Contact.
+// Menu du header : Accueil · Je m'assure (8 catégories) · Qui sommes nous ? · Blog · Contact · Mon compte · FAQ.
 export const NAV_LINKS: NavLink[] = [
   { label: "Accueil", href: "/" },
   {
-    label: "Nos assurances",
+    label: "Je m'assure",
     href: "/#tarificateur",
     children: VEHICLE_TYPES.map((vehicle) => ({
       label: vehicle.label,
       href: PRODUCT_ROUTES[vehicle.slug],
     })),
   },
-  { label: "Pays couverts", href: "/pays-couverts" },
+  { label: "Qui sommes nous ?", href: "/qui-sommes-nous" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+  { label: "Mon compte", href: "/mon-compte" },
+  { label: "FAQ", href: "/faq" },
 ]
 
 // Bandeau de réassurance sous le hero (dossier §3.3) — 5 points fournis.

@@ -11,7 +11,7 @@ import { Tarificateur } from "./tarificateur"
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-gradient-to-b from-[#fdf3ea] via-white to-white pt-32 pb-16 sm:pt-40">
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 container-px lg:grid-cols-2 lg:gap-16">
+      <div className="relative mx-auto grid max-w-[120rem] grid-cols-1 items-center gap-14 container-px lg:grid-cols-2 lg:gap-16">
         <motion.div
           initial="hidden"
           animate="visible"

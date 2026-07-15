@@ -21,43 +21,40 @@ import { BillingSummary } from "./billing-summary"
 import { DeclarationsDialog } from "./declarations-dialog"
 import { LocalisationStep } from "./steps/localisation-step"
 import { VehicleStep } from "./steps/vehicle-step"
+import { VehicleTierStep } from "./steps/vehicle-tier-step"
 import { DurationStep } from "./steps/duration-step"
 import { DriverStep } from "./steps/driver-step"
 import { OptionsStep } from "./steps/options-step"
-import { RecapStep } from "./steps/recap-step"
+import { DocumentsConsentsStep } from "./steps/documents-consents-step"
+import { PaymentStep } from "./steps/payment-step"
 
 interface SubscriptionWizardProps {
   initialCategory?: VehicleSlug
   initialDuree?: number
 }
 
-type StepId = "localisation" | "vehicle" | "duration" | "driver" | "options" | "recap"
+type StepId = "duration" | "details" | "payment"
 
 const STEPS: { id: StepId; title: string }[] = [
-  { id: "localisation", title: "Localisation" },
-  { id: "vehicle", title: "Véhicule" },
-  { id: "duration", title: "Durée" },
-  { id: "driver", title: "Conducteur" },
-  { id: "options", title: "Options" },
-  { id: "recap", title: "Paiement" },
+  { id: "duration", title: "Durée & localisation" },
+  { id: "details", title: "Vos informations" },
+  { id: "payment", title: "Paiement" },
 ]
 
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
-  localisation: ["paysImmatriculation", "territoireImmatriculation", "paysResidence", "territoireResidence"],
-  vehicle: [
-    "categorie",
+  duration: [
+    "duree",
+    "dateEffet",
+    "heureEffet",
     "cvTier",
     "ptacTier",
     "quadSubtype",
-    "immatriculation",
-    "marque",
-    "modele",
-    "dateMiseEnCirculation",
-    "estVehiculeLocation",
-    "nomAgenceLocation",
+    "paysImmatriculation",
+    "territoireImmatriculation",
+    "paysResidence",
+    "territoireResidence",
   ],
-  duration: ["duree", "dateEffet", "heureEffet"],
-  driver: [
+  details: [
     "civilite",
     "nom",
     "prenom",
@@ -71,9 +68,21 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "numeroPermis",
     "dateObtentionPermis",
     "paysObtentionPermis",
+    "categorie",
+    "immatriculation",
+    "marque",
+    "modele",
+    "dateMiseEnCirculation",
+    "estVehiculeLocation",
+    "nomAgenceLocation",
+    "optionAssistance",
+    "optionGarantieConducteur",
+    "optionExtensionTn",
+    "consentCgv",
+    "consentIpid",
+    "consentContrat",
   ],
-  options: ["optionAssistance", "optionGarantieConducteur", "optionExtensionTn"],
-  recap: ["consentCgv", "consentIpid", "consentContrat"],
+  payment: [],
 }
 
 export function SubscriptionWizard({ initialCategory = "automobiles", initialDuree }: SubscriptionWizardProps) {
@@ -184,7 +193,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   }
 
   async function handlePayerClick() {
-    const isValid = await form.trigger(STEP_FIELDS.recap)
+    const isValid = await form.trigger(STEP_FIELDS.payment)
     if (!isValid) return
     setDeclarationsOpen(true)
   }
@@ -249,13 +258,23 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
               }
             }}
           >
-            {currentStep.id === "localisation" ? <LocalisationStep form={form} /> : null}
-            {currentStep.id === "vehicle" ? <VehicleStep form={form} /> : null}
-            {currentStep.id === "duration" ? <DurationStep form={form} /> : null}
-            {currentStep.id === "driver" ? <DriverStep form={form} /> : null}
-            {currentStep.id === "options" ? <OptionsStep form={form} /> : null}
-            {currentStep.id === "recap" ? (
-              <RecapStep form={form} vehicleLabel={vehicle?.label ?? ""} breakdown={breakdown} onEdit={goToStep} />
+            {currentStep.id === "duration" ? (
+              <div className="flex flex-col gap-8">
+                <DurationStep form={form} />
+                <VehicleTierStep form={form} />
+                <LocalisationStep form={form} />
+              </div>
+            ) : null}
+            {currentStep.id === "details" ? (
+              <div className="flex flex-col gap-8">
+                <DriverStep form={form} />
+                <VehicleStep form={form} />
+                <OptionsStep form={form} />
+                <DocumentsConsentsStep form={form} />
+              </div>
+            ) : null}
+            {currentStep.id === "payment" ? (
+              <PaymentStep form={form} vehicleLabel={vehicle?.label ?? ""} breakdown={breakdown} onEdit={goToStep} />
             ) : null}
 
             <AnimatePresence>

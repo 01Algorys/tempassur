@@ -2,13 +2,12 @@
 
 import type { UseFormReturn } from "react-hook-form"
 
-import { Checkbox } from "@/components/ui/checkbox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { VEHICLE_TYPES } from "@/lib/constants"
-import { getPricingConfig } from "@/lib/pricing"
-import { CV_TIER_OPTIONS, EXCLUDED_RENTAL_AGENCIES, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
+import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 const fieldClass = "h-11 rounded-lg"
@@ -21,7 +20,6 @@ interface VehicleStepProps {
 export function VehicleStep({ form }: VehicleStepProps) {
   const categorie = form.watch("categorie")
   const estVehiculeLocation = form.watch("estVehiculeLocation")
-  const pricingConfig = getPricingConfig(categorie)
   const showRentalBlock = RENTAL_ELIGIBLE_SLUGS.includes(categorie)
 
   return (
@@ -63,87 +61,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {pricingConfig.needsCvTier ? (
-          <FormField
-            control={form.control}
-            name="cvTier"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Puissance fiscale *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {CV_TIER_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        ) : null}
-
-        {pricingConfig.needsPtacTier ? (
-          <FormField
-            control={form.control}
-            name="ptacTier"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Poids total autorisé en charge *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {PTAC_TIER_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        ) : null}
-
-        {pricingConfig.needsQuadSubtype ? (
-          <FormField
-            control={form.control}
-            name="quadSubtype"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Type de véhicule *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {QUAD_SUBTYPE_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        ) : null}
-
         <FormField
           control={form.control}
           name="immatriculation"
@@ -204,11 +121,24 @@ export function VehicleStep({ form }: VehicleStepProps) {
             control={form.control}
             name="estVehiculeLocation"
             render={({ field }) => (
-              <FormItem className="flex flex-row items-center gap-3">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
+              <FormItem className="flex flex-col gap-2">
                 <FormLabel className="font-medium text-foreground">Véhicule de location</FormLabel>
+                <FormControl>
+                  <RadioGroup
+                    value={field.value ? "oui" : "non"}
+                    onValueChange={(value) => field.onChange(value === "oui")}
+                    className="flex items-center gap-6"
+                  >
+                    <label className="flex items-center gap-2 text-sm font-medium text-foreground">
+                      <RadioGroupItem value="oui" />
+                      Oui
+                    </label>
+                    <label className="flex items-center gap-2 text-sm font-medium text-foreground">
+                      <RadioGroupItem value="non" />
+                      Non
+                    </label>
+                  </RadioGroup>
+                </FormControl>
               </FormItem>
             )}
           />

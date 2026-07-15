@@ -50,7 +50,7 @@ export function Header() {
         scrolled ? "border-border shadow-[0_1px_0_rgba(15,23,42,0.04)]" : "border-transparent"
       )}
     >
-      <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between container-px py-3">
+      <div className="mx-auto flex h-18 w-full max-w-[120rem] items-center justify-between container-px py-3">
         <Logo />
 
         <NavigationMenu viewport={false} className="hidden max-w-none flex-1 justify-center lg:flex" aria-label="Primary">
