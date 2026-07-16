@@ -1,9 +1,12 @@
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { ArrowRight, Globe2 } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { Reveal } from "@/components/shared/reveal"
 
 export function CoveredCountriesSummary() {
+  const t = useTranslations("home.coveredCountries")
+
   return (
     <section className="section-y bg-white">
       <div className="mx-auto max-w-3xl container-px text-center">
@@ -11,17 +14,12 @@ export function CoveredCountriesSummary() {
           <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-navy">
             <Globe2 className="size-5" strokeWidth={1.8} />
           </span>
-          <p className="text-balance text-lg leading-relaxed text-foreground/80">
-            Votre assurance temporaire vous couvre en France et dans 35 pays d&apos;Europe et du
-            pourtour méditerranéen — la même liste pour l&apos;assurance temporaire et
-            l&apos;assurance frontière. Besoin du Maroc, de la Tunisie ou de la Turquie ? Une
-            extension est possible pour les automobiles.
-          </p>
+          <p className="text-balance text-lg leading-relaxed text-foreground/80">{t("description")}</p>
           <Link
             href="/pays-couverts"
             className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
-            Voir la liste complète des pays couverts
+            {t("cta")}
             <ArrowRight className="size-3.5" />
           </Link>
         </Reveal>

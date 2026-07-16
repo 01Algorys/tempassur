@@ -1,12 +1,12 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import { ArrowRight } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import {
   getAvailableDurations,
@@ -14,18 +14,21 @@ import {
   getMinPriceForDuration,
   getPreselectedDuration,
 } from "@/lib/pricing"
-import { whatsappQuoteMessage } from "@/lib/site"
 import { cn } from "@/lib/utils"
 import type { VehicleSlug } from "@/types"
 
-const currency = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
-
 export function Tarificateur() {
+  const t = useTranslations("home.tarificateur")
+  const tVehicles = useTranslations("vehicleTypes")
+  const locale = useLocale()
+  const currency = useMemo(
+    () => new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 }),
+    [locale]
+  )
   const router = useRouter()
   const [category, setCategory] = useState<VehicleSlug>("automobiles")
   const [duree, setDuree] = useState<number>(getPreselectedDuration("automobiles"))
 
-  const vehicle = VEHICLE_TYPES.find((v) => v.slug === category)!
   const shortcuts = useMemo(() => getDurationShortcuts(category), [category])
   const preselected = useMemo(() => getPreselectedDuration(category), [category])
   const allDurations = useMemo(() => getAvailableDurations(category, { duree: null, isDomTom: false }), [category])
@@ -43,30 +46,30 @@ export function Tarificateur() {
 
   return (
     <div id="tarificateur" className="scroll-mt-28 rounded-3xl border border-border bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
-      <h2 className="text-lg font-bold text-navy">Estimez votre assurance en 30 secondes</h2>
+      <h2 className="text-lg font-bold text-navy">{t("title")}</h2>
 
       <div className="mt-6 flex flex-col gap-5">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="tarificateur-category" className="text-sm font-medium text-foreground">
-            Catégorie de véhicule
+            {t("categoryLabel")}
           </label>
           <Select value={category} onValueChange={handleCategoryChange}>
             <SelectTrigger id="tarificateur-category" className="h-11 w-full rounded-lg">
-              <SelectValue placeholder="Sélectionnez une catégorie" />
+              <SelectValue placeholder={t("categoryPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
               {VEHICLE_TYPES.map((v) => (
                 <SelectItem key={v.slug} value={v.slug}>
-                  {v.label}
+                  {tVehicles(`${v.slug}.label`)}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
-          <p className="text-xs text-muted-foreground">{vehicle.description}</p>
+          <p className="text-xs text-muted-foreground">{tVehicles(`${category}.description`)}</p>
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm font-medium text-foreground">Durée</label>
+          <label className="text-sm font-medium text-foreground">{t("durationLabel")}</label>
           <div className="flex flex-wrap gap-2">
             {shortcuts.map((d) => (
               <button
@@ -79,10 +82,10 @@ export function Tarificateur() {
                   duree === d ? "border-primary bg-primary text-white" : "border-border text-foreground/70 hover:border-primary/40"
                 )}
               >
-                {d} j
+                {t("durationDays", { count: d })}
                 {d === preselected ? (
                   <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap text-white">
-                    La plus choisie
+                    {t("mostChosen")}
                   </span>
                 ) : null}
               </button>
@@ -90,37 +93,29 @@ export function Tarificateur() {
           </div>
           <Select value={String(duree)} onValueChange={(v) => setDuree(Number(v))}>
             <SelectTrigger className="h-11 w-full rounded-lg">
-              <SelectValue placeholder="Choisir votre durée" />
+              <SelectValue placeholder={t("durationPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
-              {allDurations.map((d) => {
-                const durationPrice = getMinPriceForDuration(category, d, false)
-                return (
-                  <SelectItem key={d} value={String(d)}>
-                    {d} jour{d > 1 ? "s" : ""}
-                  </SelectItem>
-                )
-              })}
+              {allDurations.map((d) => (
+                <SelectItem key={d} value={String(d)}>
+                  {t("durationOption", { count: d })}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
 
         <div className="rounded-2xl bg-surface p-4">
           <p className="text-2xl font-extrabold tracking-tight text-navy">
-            {price != null ? `À partir de ${currency.format(price / duree)}/jour` : "—"}
+            {price != null ? t("priceFrom", { price: currency.format(price / duree) }) : t("pricePlaceholder")}
           </p>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            Prix minimum pour cette durée. Le tarif définitif dépend du véhicule, des options
-            choisies — et le prix des options dépend de la durée.
-          </p>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("priceNote")}</p>
         </div>
 
         <Button type="button" size="xl" variant="cta" className="w-full rounded-full" onClick={handleSouscription}>
-          Aller vers la souscription
+          {t("cta")}
           <ArrowRight data-icon="inline-end" />
         </Button>
-
-        
       </div>
     </div>
   )

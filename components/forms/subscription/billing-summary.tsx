@@ -1,8 +1,9 @@
 import { Info, ShieldCheck } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import type { PriceBreakdown } from "@/lib/pricing"
+import { PRICE_LINE_TRANSLATION_KEYS, type PriceBreakdown } from "@/lib/pricing"
 
 interface BillingSummaryProps {
   vehicleLabel: string
@@ -14,6 +15,9 @@ interface BillingSummaryProps {
 }
 
 export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isDomTom, breakdown }: BillingSummaryProps) {
+  const t = useTranslations("wizard.billingSummary")
+  const tOptions = useTranslations("wizard.options")
+
   return (
     <Card className="rounded-3xl border border-border bg-white shadow-xl shadow-slate-900/10 lg:sticky lg:top-28">
       <CardHeader className="gap-3">
@@ -25,7 +29,7 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
           ) : null}
           <div>
             <CardTitle className="text-base font-bold text-navy">{vehicleLabel}</CardTitle>
-            <p className="text-xs text-muted-foreground">Assurance temporaire</p>
+            <p className="text-xs text-muted-foreground">{t("subtitle")}</p>
           </div>
         </div>
       </CardHeader>
@@ -33,18 +37,18 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
       <CardContent className="flex flex-col gap-4">
         <dl className="flex flex-col gap-2 text-sm">
           <div className="flex items-center justify-between">
-            <dt className="text-muted-foreground">Durée</dt>
-            <dd className="font-semibold text-navy">{duree ? `${duree} jour${duree > 1 ? "s" : ""}` : "—"}</dd>
+            <dt className="text-muted-foreground">{t("duree")}</dt>
+            <dd className="font-semibold text-navy">{duree ? t("durationValue", { count: duree }) : t("noValue")}</dd>
           </div>
           {tierLabel ? (
             <div className="flex items-center justify-between">
-              <dt className="text-muted-foreground">Formule</dt>
+              <dt className="text-muted-foreground">{t("formule")}</dt>
               <dd className="font-semibold text-navy">{tierLabel}</dd>
             </div>
           ) : null}
           <div className="flex items-center justify-between">
-            <dt className="text-muted-foreground">Zone</dt>
-            <dd className="font-semibold text-navy">{isDomTom ? "DOM-TOM" : "France métropolitaine"}</dd>
+            <dt className="text-muted-foreground">{t("zone")}</dt>
+            <dd className="font-semibold text-navy">{isDomTom ? t("zoneDomTom") : t("zoneMetropole")}</dd>
           </div>
         </dl>
 
@@ -53,12 +57,12 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
         {breakdown ? (
           <div className="flex flex-col gap-2 text-sm">
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">Tarif de base</span>
+              <span className="text-muted-foreground">{t("tarifBase")}</span>
               <span className="font-medium text-foreground">{breakdown.basePrice.toFixed(2)} €</span>
             </div>
             {breakdown.zoneSurcharge != null ? (
               <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Zone DOM-TOM</span>
+                <span className="text-muted-foreground">{t("zoneDomTomSurcharge")}</span>
                 <span className="font-medium text-foreground">
                   {breakdown.zoneSurcharge >= 0 ? "+" : ""}
                   {breakdown.zoneSurcharge.toFixed(2)} €
@@ -66,8 +70,8 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
               </div>
             ) : null}
             {breakdown.lines.map((line) => (
-              <div key={line.label} className="flex items-center justify-between">
-                <span className="text-muted-foreground">{line.label}</span>
+              <div key={line.key} className="flex items-center justify-between">
+                <span className="text-muted-foreground">{tOptions(PRICE_LINE_TRANSLATION_KEYS[line.key])}</span>
                 <span className="font-medium text-foreground">+{line.amount.toFixed(2)} €</span>
               </div>
             ))}
@@ -75,22 +79,22 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
         ) : (
           <div className="flex items-start gap-2 rounded-xl bg-secondary px-3 py-2.5 text-xs text-muted-foreground">
             <Info className="mt-0.5 size-3.5 shrink-0" />
-            Sélectionnez une durée pour afficher le tarif.
+            {t("selectDuration")}
           </div>
         )}
 
         <div className="h-px bg-border" />
 
         <div className="flex items-end justify-between">
-          <span className="text-sm font-semibold text-navy">Total à payer</span>
+          <span className="text-sm font-semibold text-navy">{t("totalToPay")}</span>
           <span className="text-3xl font-extrabold tracking-tight text-orange">
-            {breakdown ? `${breakdown.total.toFixed(2)} €` : "— €"}
+            {breakdown ? `${breakdown.total.toFixed(2)} €` : `— €`}
           </span>
         </div>
 
         <div className="flex items-center gap-2 rounded-xl bg-secondary px-3 py-2.5 text-xs font-medium text-navy">
           <ShieldCheck className="size-4 shrink-0 text-primary" />
-          Paiement sécurisé, prise d&apos;effet immédiate.
+          {t("securePayment")}
         </div>
       </CardContent>
     </Card>

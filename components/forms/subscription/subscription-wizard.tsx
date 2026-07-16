@@ -1,10 +1,12 @@
 "use client"
 
 import { useMemo, useRef, useState } from "react"
+import { useRouter } from "@/i18n/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AnimatePresence, motion } from "framer-motion"
-import { AlertCircle, ArrowLeft, ArrowRight, Loader2, PartyPopper } from "lucide-react"
+import { AlertCircle, ArrowLeft, ArrowRight, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
@@ -13,7 +15,7 @@ import { VEHICLE_TYPES } from "@/lib/constants"
 import { submitSubscription } from "@/lib/subscription"
 import { calculatePrice, getPricingConfig, isDomTomTerritory, type FormulaSelection } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
-import { subscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
+import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
 import { StepIndicator } from "./step-indicator"
@@ -34,12 +36,6 @@ interface SubscriptionWizardProps {
 }
 
 type StepId = "duration" | "details" | "payment"
-
-const STEPS: { id: StepId; title: string }[] = [
-  { id: "duration", title: "Durée & localisation" },
-  { id: "details", title: "Vos informations" },
-  { id: "payment", title: "Paiement" },
-]
 
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
@@ -86,11 +82,25 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
 }
 
 export function SubscriptionWizard({ initialCategory = "automobiles", initialDuree }: SubscriptionWizardProps) {
+  const router = useRouter()
+  const t = useTranslations("wizard")
+  const tVehicles = useTranslations("vehicleTypes")
+  const tCvTier = useTranslations("pricingLabels.cvTier")
+  const tPtacTier = useTranslations("pricingLabels.ptacTier")
+  const tQuadSubtype = useTranslations("pricingLabels.quadSubtype")
+  const tValidation = useTranslations("validation")
   const [stepIndex, setStepIndex] = useState(0)
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
-  const [referenceId, setReferenceId] = useState<string | null>(null)
+  const [status, setStatus] = useState<"idle" | "error">("idle")
   const [declarationsOpen, setDeclarationsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const STEPS: { id: StepId; title: string }[] = [
+    { id: "duration", title: t("steps.duration") },
+    { id: "details", title: t("steps.details") },
+    { id: "payment", title: t("steps.payment") },
+  ]
+
+  const subscriptionSchema = useMemo(() => createSubscriptionSchema(tValidation), [tValidation])
 
   const form = useForm<SubscriptionFormValues>({
     resolver: zodResolver(subscriptionSchema),
@@ -141,6 +151,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   const values = form.watch()
   const pricingConfig = useMemo(() => getPricingConfig(values.categorie), [values.categorie])
   const vehicle = VEHICLE_TYPES.find((v) => v.slug === values.categorie)
+  const vehicleLabel = vehicle ? tVehicles(`${vehicle.slug}.label`) : ""
 
   const isDomTom =
     isDomTomTerritory(values.paysImmatriculation, values.territoireImmatriculation) ||
@@ -161,11 +172,14 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
 
   let tierLabel: string | undefined
   if (pricingConfig.needsCvTier) {
-    tierLabel = CV_TIER_OPTIONS.find((t) => t.value === values.cvTier)?.label
+    const tier = CV_TIER_OPTIONS.find((o) => o.value === values.cvTier)
+    tierLabel = tier ? tCvTier(tier.value) : undefined
   } else if (pricingConfig.needsPtacTier) {
-    tierLabel = PTAC_TIER_OPTIONS.find((t) => t.value === values.ptacTier)?.label
+    const tier = PTAC_TIER_OPTIONS.find((o) => o.value === values.ptacTier)
+    tierLabel = tier ? tPtacTier(tier.value) : undefined
   } else if (pricingConfig.needsQuadSubtype) {
-    tierLabel = QUAD_SUBTYPE_OPTIONS.find((t) => t.value === values.quadSubtype)?.label
+    const tier = QUAD_SUBTYPE_OPTIONS.find((o) => o.value === values.quadSubtype)
+    tierLabel = tier ? tQuadSubtype(tier.value) : undefined
   }
 
   const currentStep = STEPS[stepIndex]
@@ -202,9 +216,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     setStatus("idle")
     try {
       const { referenceId } = await submitSubscription(data)
-      setReferenceId(referenceId)
-      setStatus("success")
-      setDeclarationsOpen(false)
+      router.push(`/merci?ref=${encodeURIComponent(referenceId)}`)
     } catch {
       setStatus("error")
       setDeclarationsOpen(false)
@@ -215,29 +227,6 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     form.setValue("consentDeclarations", true)
     form.setValue("declarationsAcceptedAt", new Date().toISOString())
     void form.handleSubmit(onSubmit)()
-  }
-
-  if (status === "success") {
-    return (
-      <div
-        ref={containerRef}
-        className="flex flex-col items-center gap-4 rounded-3xl border border-border bg-white p-10 text-center shadow-xl shadow-slate-900/10"
-      >
-        <span className="flex size-16 items-center justify-center rounded-full bg-orange/10 text-orange">
-          <PartyPopper className="size-8" />
-        </span>
-        <div>
-          <h3 className="text-xl font-bold text-navy">Votre demande de souscription est enregistrée !</h3>
-          <p className="mt-2 max-w-md text-sm text-muted-foreground">
-            Référence <span className="font-mono font-semibold text-orange">{referenceId}</span>. Rendez-vous sur
-            la page de confirmation pour la suite des démarches.
-          </p>
-          <Button asChild variant="cta" className="mt-4 rounded-full">
-            <a href="/merci">Continuer</a>
-          </Button>
-        </div>
-      </div>
-    )
   }
 
   return (
@@ -274,7 +263,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
               </div>
             ) : null}
             {currentStep.id === "payment" ? (
-              <PaymentStep form={form} vehicleLabel={vehicle?.label ?? ""} breakdown={breakdown} onEdit={goToStep} />
+              <PaymentStep form={form} vehicleLabel={vehicleLabel} breakdown={breakdown} onEdit={goToStep} />
             ) : null}
 
             <AnimatePresence>
@@ -286,8 +275,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
                 >
                   <AlertCircle className="size-4 shrink-0" />
-                  Le paiement n&apos;a pas abouti. Aucune somme n&apos;a été débitée. Réessayez ou contactez-nous :
-                  WhatsApp +33 6 05 93 84 79 — nous trouvons une solution immédiatement.
+                  {t("paymentError")}
                 </motion.div>
               ) : null}
             </AnimatePresence>
@@ -301,19 +289,19 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                 disabled={stepIndex === 0}
               >
                 <ArrowLeft data-icon="inline-start" />
-                Précédent
+                {t("buttons.previous")}
               </Button>
               <Button type="submit" variant="cta" className="rounded-full" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
                   <>
                     <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
-                    Envoi...
+                    {t("buttons.sending")}
                   </>
                 ) : isLastStep ? (
-                  `Payer ${breakdown ? breakdown.total.toFixed(2) : "—"} € en toute sécurité`
+                  t("buttons.payLabel", { amount: breakdown ? breakdown.total.toFixed(2) : "—" })
                 ) : (
                   <>
-                    Continuer
+                    {t("buttons.continueLabel")}
                     <ArrowRight data-icon="inline-end" />
                   </>
                 )}
@@ -326,7 +314,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       </div>
 
       <BillingSummary
-        vehicleLabel={vehicle?.label ?? ""}
+        vehicleLabel={vehicleLabel}
         icon={vehicle?.icon}
         duree={values.duree || null}
         tierLabel={tierLabel}

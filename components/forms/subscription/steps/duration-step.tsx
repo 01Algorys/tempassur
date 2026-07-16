@@ -1,6 +1,7 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -17,6 +18,7 @@ interface DurationStepProps {
 }
 
 export function DurationStep({ form }: DurationStepProps) {
+  const t = useTranslations("wizard.duration")
   const categorie = form.watch("categorie")
   const cvTier = form.watch("cvTier")
   const ptacTier = form.watch("ptacTier")
@@ -30,14 +32,14 @@ export function DurationStep({ form }: DurationStepProps) {
 
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-bold text-navy">Durée et date d&apos;effet</h3>
+      <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <FormField
         control={form.control}
         name="duree"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Durée du contrat *</FormLabel>
+            <FormLabel>{t("contractDuration")}</FormLabel>
             <div className="flex flex-wrap gap-2">
               {shortcuts.map((d) => (
                 <button
@@ -52,10 +54,10 @@ export function DurationStep({ form }: DurationStepProps) {
                       : "border-border text-foreground/70 hover:border-primary/40"
                   )}
                 >
-                  {d} j
+                  {t("durationUnit", { count: d })}
                   {d === preselected ? (
                     <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap text-white">
-                      La plus choisie
+                      {t("mostChosen")}
                     </span>
                   ) : null}
                 </button>
@@ -67,13 +69,13 @@ export function DurationStep({ form }: DurationStepProps) {
             >
               <FormControl>
                 <SelectTrigger className={triggerClass}>
-                  <SelectValue placeholder="Choisir votre durée" />
+                  <SelectValue placeholder={t("durationPlaceholder")} />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
                 {durations.map((d) => (
                   <SelectItem key={d} value={String(d)}>
-                    {d} jour{d > 1 ? "s" : ""}
+                    {t("durationOption", { count: d })}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -89,7 +91,7 @@ export function DurationStep({ form }: DurationStepProps) {
           name="dateEffet"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Date d&apos;effet *</FormLabel>
+              <FormLabel>{t("effectDate")}</FormLabel>
               <FormControl>
                 <Input type="date" className={fieldClass} {...field} />
               </FormControl>
@@ -102,11 +104,11 @@ export function DurationStep({ form }: DurationStepProps) {
           name="heureEffet"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Heure d&apos;effet *</FormLabel>
+              <FormLabel>{t("effectTime")}</FormLabel>
               <FormControl>
                 <Input type="time" className={fieldClass} {...field} />
               </FormControl>
-              <FormDescription>La date et l&apos;heure d&apos;effet ne peuvent pas être antérieures à maintenant.</FormDescription>
+              <FormDescription>{t("effectTimeHint")}</FormDescription>
               <FormMessage />
             </FormItem>
           )}

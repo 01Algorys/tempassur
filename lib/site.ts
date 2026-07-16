@@ -16,11 +16,6 @@ export const siteConfig = {
   address: "Bureau 3, 6 Rue des Bateliers, 92110 Clichy, France",
   orias: "24004933",
   googleMapsUrl: "https://maps.app.goo.gl/7fc1hB29zkNHGjbZ8",
-  // « Assureurs agréés — vos contrats sont portés par des entreprises d'assurance
-  // régies par le Code des assurances. » — formule imposée, ne jamais écrire
-  // « partenaires certifiés ACPR ».
-  reassuranceStatement:
-    "Assureurs agréés — vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
   keywords: [
     "assurance temporaire",
     "assurance auto temporaire",

@@ -1,6 +1,7 @@
 "use client"
 
 import { Mail, MessageCircle, Phone } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { TelLink } from "@/components/shared/tel-link"
 import { siteConfig, whatsappUrl } from "@/lib/site"
@@ -13,13 +14,13 @@ interface PaymentHelpProps {
 }
 
 export function PaymentHelp({ variant = "home", className }: PaymentHelpProps) {
+  const t = useTranslations("paymentHelp")
+
   return (
     <div className={className}>
-      <p className="text-sm font-bold text-navy">Besoin d&apos;aide pour finaliser votre paiement ?</p>
+      <p className="text-sm font-bold text-navy">{t("heading")}</p>
       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-        {variant === "tunnel"
-          ? "Vous rencontrez une difficulté pour finaliser votre souscription ou votre paiement ? Nous sommes là 7j/7 : appelez-nous ou écrivez-nous sur WhatsApp, ou par e-mail. Nous vous accompagnons étape par étape et pouvons vous proposer une solution personnalisée."
-          : "Nous sommes disponibles 7j/7 : appelez-nous ou écrivez-nous sur WhatsApp, ou par e-mail. Nous vous accompagnons étape par étape et pouvons vous proposer une solution personnalisée."}
+        {variant === "tunnel" ? t("bodyTunnel") : t("bodyHome")}
       </p>
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold">
         <TelLink phone={siteConfig.phone} className="flex items-center gap-1.5 text-primary hover:underline">

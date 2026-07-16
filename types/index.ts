@@ -19,15 +19,9 @@ export const VEHICLE_SLUGS = [
 
 export type VehicleSlug = (typeof VEHICLE_SLUGS)[number]
 
+// Label/description are translated (see messages/*.json "vehicleTypes.<slug>") — only
+// the structural slug + icon live in code.
 export interface VehicleType {
   slug: VehicleSlug
-  label: string
-  description: string
   icon: LucideIcon
-}
-
-export interface FaqItem {
-  id: string
-  question: string
-  answer: string
 }

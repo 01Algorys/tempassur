@@ -1,51 +1,67 @@
 export interface Country {
   code: string
-  label: string
 }
 
 // France is handled separately in the driver step so the DOM-TOM territory
 // selector (which drives pricing) can be shown right underneath it.
+// Labels are NOT stored here: they're resolved at render time via `getCountryLabel`
+// (Intl.DisplayNames), which gives us accurate names in all 8 supported languages for
+// free instead of hand-translating ~40 country names per locale.
 export const COUNTRIES: Country[] = [
-  { code: "FR", label: "France" },
-  { code: "DE", label: "Allemagne" },
-  { code: "AT", label: "Autriche" },
-  { code: "BE", label: "Belgique" },
-  { code: "BG", label: "Bulgarie" },
-  { code: "CY", label: "Chypre" },
-  { code: "HR", label: "Croatie" },
-  { code: "DK", label: "Danemark" },
-  { code: "ES", label: "Espagne" },
-  { code: "EE", label: "Estonie" },
-  { code: "FI", label: "Finlande" },
-  { code: "GR", label: "Grèce" },
-  { code: "HU", label: "Hongrie" },
-  { code: "IE", label: "Irlande" },
-  { code: "IS", label: "Islande" },
-  { code: "IT", label: "Italie" },
-  { code: "LV", label: "Lettonie" },
-  { code: "LI", label: "Liechtenstein" },
-  { code: "LT", label: "Lituanie" },
-  { code: "LU", label: "Luxembourg" },
-  { code: "MT", label: "Malte" },
-  { code: "NO", label: "Norvège" },
-  { code: "NL", label: "Pays-Bas" },
-  { code: "PL", label: "Pologne" },
-  { code: "PT", label: "Portugal" },
-  { code: "CZ", label: "République tchèque" },
-  { code: "RO", label: "Roumanie" },
-  { code: "GB", label: "Royaume-Uni" },
-  { code: "SK", label: "Slovaquie" },
-  { code: "SI", label: "Slovénie" },
-  { code: "SE", label: "Suède" },
-  { code: "CH", label: "Suisse" },
-  { code: "AD", label: "Andorre" },
-  { code: "BA", label: "Bosnie-Herzégovine" },
-  { code: "ME", label: "Monténégro" },
-  { code: "RS", label: "Serbie" },
-  { code: "MA", label: "Maroc" },
-  { code: "DZ", label: "Algérie" },
-  { code: "TN", label: "Tunisie" },
-  { code: "US", label: "États-Unis" },
-  { code: "CA", label: "Canada" },
-  { code: "OTHER", label: "Autre pays" },
+  { code: "FR" },
+  { code: "DE" },
+  { code: "AT" },
+  { code: "BE" },
+  { code: "BG" },
+  { code: "CY" },
+  { code: "HR" },
+  { code: "DK" },
+  { code: "ES" },
+  { code: "EE" },
+  { code: "FI" },
+  { code: "GR" },
+  { code: "HU" },
+  { code: "IE" },
+  { code: "IS" },
+  { code: "IT" },
+  { code: "LV" },
+  { code: "LI" },
+  { code: "LT" },
+  { code: "LU" },
+  { code: "MT" },
+  { code: "NO" },
+  { code: "NL" },
+  { code: "PL" },
+  { code: "PT" },
+  { code: "CZ" },
+  { code: "RO" },
+  { code: "GB" },
+  { code: "SK" },
+  { code: "SI" },
+  { code: "SE" },
+  { code: "CH" },
+  { code: "AD" },
+  { code: "BA" },
+  { code: "ME" },
+  { code: "RS" },
+  { code: "MA" },
+  { code: "DZ" },
+  { code: "TN" },
+  { code: "US" },
+  { code: "CA" },
+  { code: "OTHER" },
 ]
+
+const displayNamesCache = new Map<string, Intl.DisplayNames>()
+
+export function getCountryLabel(code: string, locale: string, otherLabel: string): string {
+  if (code === "OTHER") return otherLabel
+
+  let displayNames = displayNamesCache.get(locale)
+  if (!displayNames) {
+    displayNames = new Intl.DisplayNames([locale], { type: "region" })
+    displayNamesCache.set(locale, displayNames)
+  }
+
+  return displayNames.of(code) ?? code
+}

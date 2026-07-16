@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { Paperclip, X } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -15,6 +16,7 @@ interface FileUploadFieldProps {
 }
 
 export function FileUploadField({ id, label, value, onChange, accept = "image/*,.pdf" }: FileUploadFieldProps) {
+  const t = useTranslations("wizard.documents")
   const inputRef = useRef<HTMLInputElement>(null)
 
   return (
@@ -29,17 +31,17 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
           onClick={() => inputRef.current?.click()}
         >
           <Paperclip data-icon="inline-start" className="size-3.5" />
-          Choisir un fichier
+          {t("chooseFile")}
         </Button>
         <span className="flex-1 truncate text-sm text-muted-foreground">
-          {value ? value.name : "Aucun fichier sélectionné"}
+          {value ? value.name : t("noFile")}
         </span>
         {value ? (
           <Button
             type="button"
             variant="ghost"
             size="icon-sm"
-            aria-label={`Retirer le fichier ${label}`}
+            aria-label={t("removeFile", { label })}
             onClick={() => {
               onChange(undefined)
               if (inputRef.current) inputRef.current.value = ""

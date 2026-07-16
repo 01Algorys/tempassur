@@ -1,6 +1,7 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -15,6 +16,10 @@ interface VehicleTierStepProps {
 }
 
 export function VehicleTierStep({ form }: VehicleTierStepProps) {
+  const t = useTranslations("wizard.vehicleTier")
+  const tCvTier = useTranslations("pricingLabels.cvTier")
+  const tPtacTier = useTranslations("pricingLabels.ptacTier")
+  const tQuadSubtype = useTranslations("pricingLabels.quadSubtype")
   const categorie = form.watch("categorie")
   const pricingConfig = getPricingConfig(categorie)
 
@@ -24,7 +29,7 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
 
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-bold text-navy">Puissance fiscale</h3>
+      <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {pricingConfig.needsCvTier ? (
@@ -33,17 +38,17 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
             name="cvTier"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Puissance fiscale *</FormLabel>
+                <FormLabel>{t("cvLabel")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
+                      <SelectValue placeholder={t("selectPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {CV_TIER_OPTIONS.map((option) => (
                       <SelectItem key={option.value} value={option.value}>
-                        {option.label}
+                        {tCvTier(option.value)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -60,17 +65,17 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
             name="ptacTier"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Poids total autorisé en charge *</FormLabel>
+                <FormLabel>{t("ptacLabel")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
+                      <SelectValue placeholder={t("selectPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {PTAC_TIER_OPTIONS.map((option) => (
                       <SelectItem key={option.value} value={option.value}>
-                        {option.label}
+                        {tPtacTier(option.value)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -87,17 +92,17 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
             name="quadSubtype"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Type de véhicule *</FormLabel>
+                <FormLabel>{t("quadLabel")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
+                      <SelectValue placeholder={t("selectPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {QUAD_SUBTYPE_OPTIONS.map((option) => (
                       <SelectItem key={option.value} value={option.value}>
-                        {option.label}
+                        {tQuadSubtype(option.value)}
                       </SelectItem>
                     ))}
                   </SelectContent>

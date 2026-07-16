@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { motion } from "framer-motion"
 import { Menu, Phone } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { Logo } from "@/components/shared/logo"
 import { TelLink } from "@/components/shared/tel-link"
@@ -27,18 +28,39 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useScrolled } from "@/hooks/use-scrolled"
-import { NAV_LINKS } from "@/lib/constants"
+import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
 import { siteConfig } from "@/lib/site"
 import { cn } from "@/lib/utils"
+import type { NavLink } from "@/types"
 
 import { LanguageSwitcher } from "./language-switcher"
 
 const navItemClass =
-  "rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy"
+  "rounded-full px-2.5 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy whitespace-nowrap"
 
 export function Header() {
   const scrolled = useScrolled(32)
   const [open, setOpen] = useState(false)
+  const t = useTranslations("nav")
+  const tHeader = useTranslations("header")
+  const tVehicles = useTranslations("vehicleTypes")
+
+  const navLinks: NavLink[] = [
+    { label: t("accueil"), href: "/" },
+    {
+      label: t("jeMAssure"),
+      href: "/#tarificateur",
+      children: VEHICLE_TYPES.map((vehicle) => ({
+        label: tVehicles(`${vehicle.slug}.label`),
+        href: PRODUCT_ROUTES[vehicle.slug],
+      })),
+    },
+    { label: t("quiSommesNous"), href: "/qui-sommes-nous" },
+    { label: t("blog"), href: "/blog" },
+    { label: t("contact"), href: "/contact" },
+    { label: t("monCompte"), href: "/mon-compte" },
+    { label: t("faq"), href: "/faq" },
+  ]
 
   return (
     <motion.header
@@ -53,9 +75,9 @@ export function Header() {
       <div className="mx-auto flex h-18 w-full max-w-[120rem] items-center justify-between container-px py-3">
         <Logo />
 
-        <NavigationMenu viewport={false} className="hidden max-w-none flex-1 justify-center lg:flex" aria-label="Primary">
+        <NavigationMenu viewport={false} className="hidden max-w-none flex-1 justify-center xl:flex" aria-label="Primary">
           <NavigationMenuList>
-            {NAV_LINKS.map((link) =>
+            {navLinks.map((link) =>
               link.children ? (
                 <NavigationMenuItem key={link.label}>
                   <NavigationMenuTrigger className={cn(navItemClass, "bg-transparent")}>
@@ -89,26 +111,26 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
           <TelLink
             phone={siteConfig.phone}
-            className="rounded-full px-3 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy"
+            className="hidden shrink-0 rounded-full px-3 py-2 text-xs font-semibold tracking-wide whitespace-nowrap text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy 2xl:inline-flex"
           >
             <Phone className="mr-1.5 inline size-3.5" strokeWidth={2.2} />
             {siteConfig.phone}
           </TelLink>
-          <WhatsappButton className="h-9 rounded-full px-4 text-xs">Souscrire par WhatsApp</WhatsappButton>
+          <WhatsappButton className="h-9 rounded-full px-4 text-xs" />
           <Button asChild size="sm" className="h-9 rounded-full px-4 text-xs">
-            <Link href="/souscription">Souscrire en ligne</Link>
+            <Link href="/souscription">{tHeader("onlineCta")}</Link>
           </Button>
           <LanguageSwitcher />
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <LanguageSwitcher />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button variant="ghost" size="icon" aria-label={tHeader("openMenu")}>
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
@@ -119,7 +141,7 @@ export function Header() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-4 flex flex-col gap-1 px-4" aria-label="Mobile">
-                {NAV_LINKS.map((link) =>
+                {navLinks.map((link) =>
                   link.children ? (
                     <Accordion key={link.label} type="single" collapsible>
                       <AccordionItem value={link.label} className="border-none">
@@ -164,7 +186,7 @@ export function Header() {
                 </TelLink>
                 <WhatsappButton className="justify-center py-2.5" />
                 <Button asChild className="rounded-lg">
-                  <Link href="/souscription">Souscrire en ligne</Link>
+                  <Link href="/souscription">{tHeader("onlineCta")}</Link>
                 </Button>
               </div>
             </SheetContent>

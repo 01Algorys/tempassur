@@ -1,17 +1,20 @@
 import { BadgeCheck, CreditCard, MailCheck, Phone, ShieldCheck } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { Reveal } from "@/components/shared/reveal"
-import { REASSURANCE_ITEMS } from "@/lib/constants"
 
 const ICONS = [MailCheck, CreditCard, BadgeCheck, ShieldCheck, Phone]
 
 export function ReassuranceBanner() {
+  const t = useTranslations("home.reassurance")
+  const items = t.raw("items") as string[]
+
   return (
     <section className="border-b border-border bg-white py-8">
       <div className="mx-auto max-w-7xl container-px">
         <Reveal>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {REASSURANCE_ITEMS.map((item, index) => {
+            {items.map((item, index) => {
               const Icon = ICONS[index]
               return (
                 <div key={item} className="flex items-center gap-3">

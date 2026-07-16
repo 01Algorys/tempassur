@@ -1,6 +1,7 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -18,20 +19,22 @@ interface VehicleStepProps {
 }
 
 export function VehicleStep({ form }: VehicleStepProps) {
+  const t = useTranslations("wizard.vehicle")
+  const tVehicles = useTranslations("vehicleTypes")
   const categorie = form.watch("categorie")
   const estVehiculeLocation = form.watch("estVehiculeLocation")
   const showRentalBlock = RENTAL_ELIGIBLE_SLUGS.includes(categorie)
 
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-bold text-navy">Véhicule</h3>
+      <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <FormField
         control={form.control}
         name="categorie"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Catégorie *</FormLabel>
+            <FormLabel>{t("categorie")}</FormLabel>
             <Select
               onValueChange={(value) => {
                 field.onChange(value)
@@ -44,13 +47,13 @@ export function VehicleStep({ form }: VehicleStepProps) {
             >
               <FormControl>
                 <SelectTrigger className={triggerClass}>
-                  <SelectValue placeholder="Sélectionnez une catégorie" />
+                  <SelectValue placeholder={t("categoriePlaceholder")} />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
                 {VEHICLE_TYPES.map((vehicle) => (
                   <SelectItem key={vehicle.slug} value={vehicle.slug}>
-                    {vehicle.label}
+                    {tVehicles(`${vehicle.slug}.label`)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -66,7 +69,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
           name="immatriculation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Immatriculation *</FormLabel>
+              <FormLabel>{t("immatriculation")}</FormLabel>
               <FormControl>
                 <Input placeholder="AA-123-AA" className={fieldClass} {...field} />
               </FormControl>
@@ -79,9 +82,9 @@ export function VehicleStep({ form }: VehicleStepProps) {
           name="marque"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Marque *</FormLabel>
+              <FormLabel>{t("marque")}</FormLabel>
               <FormControl>
-                <Input placeholder="Marque" className={fieldClass} {...field} />
+                <Input placeholder={t("marque")} className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -92,9 +95,9 @@ export function VehicleStep({ form }: VehicleStepProps) {
           name="modele"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Modèle *</FormLabel>
+              <FormLabel>{t("modele")}</FormLabel>
               <FormControl>
-                <Input placeholder="Modèle" className={fieldClass} {...field} />
+                <Input placeholder={t("modele")} className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +108,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
           name="dateMiseEnCirculation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Date de 1ère mise en circulation *</FormLabel>
+              <FormLabel>{t("dateMiseEnCirculation")}</FormLabel>
               <FormControl>
                 <Input type="date" className={fieldClass} {...field} />
               </FormControl>
@@ -122,7 +125,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
             name="estVehiculeLocation"
             render={({ field }) => (
               <FormItem className="flex flex-col gap-2">
-                <FormLabel className="font-medium text-foreground">Véhicule de location</FormLabel>
+                <FormLabel className="font-medium text-foreground">{t("location")}</FormLabel>
                 <FormControl>
                   <RadioGroup
                     value={field.value ? "oui" : "non"}
@@ -131,11 +134,11 @@ export function VehicleStep({ form }: VehicleStepProps) {
                   >
                     <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                       <RadioGroupItem value="oui" />
-                      Oui
+                      {t("locationOui")}
                     </label>
                     <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                       <RadioGroupItem value="non" />
-                      Non
+                      {t("locationNon")}
                     </label>
                   </RadioGroup>
                 </FormControl>
@@ -144,9 +147,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
           />
 
           <p className="text-xs leading-relaxed text-muted-foreground">
-            Nous vous informons que nous n&apos;assurons pas les véhicules loués hors agence en France, ni les
-            véhicules loués à l&apos;étranger, ni les véhicules loués dans les agences suivantes :{" "}
-            {EXCLUDED_RENTAL_AGENCIES.join(", ")}.
+            {t("locationExclusion", { agencies: EXCLUDED_RENTAL_AGENCIES.join(", ") })}
           </p>
 
           {estVehiculeLocation ? (
@@ -155,9 +156,9 @@ export function VehicleStep({ form }: VehicleStepProps) {
               name="nomAgenceLocation"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nom de l&apos;agence de location</FormLabel>
+                  <FormLabel>{t("nomAgence")}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Nom de l'agence" className={fieldClass} {...field} />
+                    <Input placeholder={t("nomAgencePlaceholder")} className={fieldClass} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

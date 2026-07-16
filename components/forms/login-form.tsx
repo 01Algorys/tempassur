@@ -4,6 +4,7 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ArrowRight, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,6 +19,7 @@ import {
 import { loginSchema, type LoginSchema } from "@/lib/validations/auth-schema"
 
 export function LoginForm() {
+  const t = useTranslations("forms.login")
   const [submitted, setSubmitted] = useState(false)
 
   const form = useForm<LoginSchema>({
@@ -33,7 +35,7 @@ export function LoginForm() {
   if (submitted) {
     return (
       <div className="rounded-xl border border-primary/15 bg-primary/5 p-5 text-center text-sm text-navy">
-        You&apos;re signed in. Redirecting to your dashboard...
+        {t("successMessage")}
       </div>
     )
   }
@@ -46,9 +48,9 @@ export function LoginForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("emailLabel")}</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="jane@example.com" {...field} />
+                <Input type="email" placeholder={t("emailPlaceholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -59,7 +61,7 @@ export function LoginForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>{t("passwordLabel")}</FormLabel>
               <FormControl>
                 <Input type="password" placeholder="••••••••" {...field} />
               </FormControl>
@@ -72,7 +74,7 @@ export function LoginForm() {
             <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
           ) : (
             <>
-              Sign In
+              {t("submit")}
               <ArrowRight data-icon="inline-end" className="size-4" />
             </>
           )}

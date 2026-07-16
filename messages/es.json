@@ -1,0 +1,1123 @@
+{
+  "common": {
+    "whatsappDefaultCta": "Contratar por WhatsApp",
+    "whatsappFloatingAria": "Contratar por WhatsApp",
+    "logoAria": "TempAssur, inicio",
+    "otherCountry": "Otro país"
+  },
+  "nav": {
+    "accueil": "Inicio",
+    "jeMAssure": "Me aseguro",
+    "quiSommesNous": "¿Quiénes somos?",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "monCompte": "Mi cuenta",
+    "faq": "Preguntas frecuentes"
+  },
+  "vehicleTypes": {
+    "automobiles": { "label": "Automóvil", "description": "Vehículos particulares y comerciales de menos de 3,5 T." },
+    "poids-lourds": { "label": "Vehículo pesado", "description": "Camiones, tractocamiones y vehículos de carga de más de 3,5 T." },
+    "camping-cars": { "label": "Autocaravana", "description": "Autocaravanas y furgonetas camper." },
+    "quadricycles": { "label": "Cuadriciclos", "description": "Quads homologados, coches sin carné y buggies." },
+    "bus-autocars": { "label": "Autobuses, autocares", "description": "Transporte de personas." },
+    "tracteurs-agricoles": { "label": "Tractor agrícola", "description": "Tractores y maquinaria agrícola." },
+    "remorques": { "label": "Remolques", "description": "Remolques, semirremolques y caravanas (pesados y ligeros)." },
+    "assurance-frontiere": {
+      "label": "Seguro de frontera",
+      "description": "Vehículos matriculados fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o vehículos matriculados en el extranjero que deban circular por Francia y Europa."
+    }
+  },
+  "header": {
+    "onlineCta": "Contratar en línea",
+    "openMenu": "Abrir el menú"
+  },
+  "footer": {
+    "description": "TempAssur — El seguro temporal de 1 a 90 días, para todos los vehículos. Certificado inmediato por correo electrónico o WhatsApp.",
+    "insuranceHeading": "Nuestros seguros",
+    "coveredCountries": "Países cubiertos",
+    "informationHeading": "Información",
+    "quiSommesNous": "Quiénes somos",
+    "faq": "Preguntas frecuentes",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "reclamation": "Reclamación",
+    "mentionsLegales": "Aviso legal",
+    "cgv": "Condiciones generales de venta",
+    "politiqueConfidentialite": "Política de privacidad",
+    "gererCookies": "Gestionar mis cookies",
+    "contactHeading": "Contacto",
+    "phoneSuffix": "(todos los días)",
+    "googleMapsSuffix": "Encuéntranos en Google Maps",
+    "brokerLine": "Corredor de seguros",
+    "reassuranceStatement": "Aseguradoras autorizadas — sus contratos están respaldados por compañías de seguros reguladas por el Código de Seguros.",
+    "securePayment": "Pago seguro",
+    "copyright": "© {name} {year} — Todos los derechos reservados"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Elegir el idioma"
+  },
+  "forms": {
+    "contact": {
+      "subjects": { "souscription": "Contratación", "paiement": "Pago", "attestation": "Certificado", "reclamation": "Reclamación", "autre": "Otro" },
+      "nomRequired": "El nombre es obligatorio",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "Introduzca una dirección de correo electrónico válida",
+      "messageRequired": "El mensaje es obligatorio",
+      "successTitle": "¡Gracias! Su mensaje se ha enviado correctamente, nos pondremos en contacto con usted en breve.",
+      "successUrgent": "¿Es urgente?",
+      "successWhatsapp": "WhatsApp: {phone}",
+      "nomLabel": "Nombre *",
+      "nomPlaceholder": "Su nombre",
+      "emailLabel": "Correo electrónico *",
+      "emailPlaceholder": "usted@email.com",
+      "telephoneLabel": "Teléfono",
+      "telephonePlaceholder": "Su teléfono",
+      "sujetLabel": "Asunto *",
+      "sujetPlaceholder": "Seleccione un asunto",
+      "messageLabel": "Mensaje *",
+      "messagePlaceholder": "Su mensaje",
+      "submit": "Enviar"
+    },
+    "login": {
+      "successMessage": "Ha iniciado sesión. Redirigiendo a su espacio...",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "juana@ejemplo.com",
+      "passwordLabel": "Contraseña",
+      "submit": "Iniciar sesión"
+    },
+    "register": {
+      "successMessage": "¡Cuenta creada! Revise su correo electrónico para confirmar su dirección y obtener su primer presupuesto.",
+      "fullNameLabel": "Nombre completo",
+      "fullNamePlaceholder": "Juana Pérez",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "juana@ejemplo.com",
+      "passwordLabel": "Contraseña",
+      "confirmPasswordLabel": "Confirmar contraseña",
+      "submit": "Crear cuenta"
+    }
+  },
+  "paymentHelp": {
+    "heading": "¿Necesita ayuda para finalizar su pago?",
+    "bodyHome": "Estamos disponibles los 7 días de la semana: llámenos o escríbanos por WhatsApp, o por correo electrónico. Le acompañamos paso a paso y podemos ofrecerle una solución personalizada.",
+    "bodyTunnel": "¿Tiene alguna dificultad para finalizar su contratación o su pago? Estamos disponibles los 7 días de la semana: llámenos o escríbanos por WhatsApp, o por correo electrónico. Le acompañamos paso a paso y podemos ofrecerle una solución personalizada."
+  },
+  "home": {
+    "meta": {
+      "title": "Seguro temporal de coche y todos los vehículos de 1 a 90 días | TempAssur",
+      "description": "Seguro temporal inmediato de 1 a 90 días: coche, vehículo pesado, autocaravana, quad, remolque, seguro de frontera. Certificado por correo electrónico o WhatsApp en pocos minutos. Desde {price} €/día."
+    },
+    "hero": {
+      "title": "Seguro temporal de 1 a 90 días: certificado inmediato por correo electrónico o WhatsApp",
+      "description": "Coche, vehículo pesado, autocaravana, quad, autobús, tractor, remolque y seguro de frontera. Contratación 100 % en línea, los 7 días de la semana. Aseguradoras autorizadas: sus contratos están respaldados por compañías de seguros reguladas por el Código de Seguros.",
+      "ctaEstimate": "Calcule su seguro en 30 segundos"
+    },
+    "tarificateur": {
+      "title": "Calcule su seguro en 30 segundos",
+      "categoryLabel": "Categoría de vehículo",
+      "categoryPlaceholder": "Seleccione una categoría",
+      "durationLabel": "Duración",
+      "durationDays": "{count} d",
+      "durationPlaceholder": "Elija su duración",
+      "mostChosen": "La más elegida",
+      "durationOption": "{count, plural, one {# día} other {# días}}",
+      "priceFrom": "Desde {price}/día",
+      "pricePlaceholder": "—",
+      "priceNote": "Precio mínimo para esta duración. La tarifa definitiva depende del vehículo y de las opciones elegidas, y el precio de las opciones depende de la duración.",
+      "cta": "Ir a la contratación"
+    },
+    "reassurance": {
+      "items": [
+        "Certificado inmediato por correo electrónico o WhatsApp",
+        "Pago 100 % seguro (tarjeta bancaria)",
+        "Corredor francés — ORIAS n.º 24004933",
+        "Aseguradoras autorizadas — compañías reguladas por el Código de Seguros",
+        "Los 7 días de la semana por teléfono y WhatsApp: +33 6 05 93 84 79"
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Casos de uso",
+      "title": "¿En qué situaciones?",
+      "items": [
+        "Compra o venta de un vehículo",
+        "Matrícula provisional WW",
+        "Importación / exportación",
+        "Salida del depósito municipal",
+        "Resolución del contrato por su aseguradora",
+        "Vehículo en sucesión/herencia",
+        "Paso de la inspección técnica",
+        "Préstamo de un vehículo",
+        "Vehículo matriculado en el extranjero (seguro de frontera)",
+        "Conducción ocasional de un segundo vehículo"
+      ]
+    },
+    "howItWorks": {
+      "eyebrow": "Sencillo y rápido",
+      "title": "Cómo funciona",
+      "steps": [
+        { "title": "Calcule", "description": "Calcule su tarifa en 30 segundos, sin dejar sus datos de contacto." },
+        { "title": "Contrate", "description": "Contrate en línea en 5 minutos y pague con tarjeta bancaria." },
+        { "title": "Reciba su certificado", "description": "Reciba su certificado por correo electrónico o WhatsApp, firme electrónicamente: ya está cubierto." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Preguntas frecuentes",
+      "seeAll": "Ver todas las preguntas",
+      "items": [
+        {
+          "id": "home-faq-1",
+          "question": "¿En cuánto tiempo estoy asegurado?",
+          "answer": "En pocos minutos: contratación en línea, pago con tarjeta, firma electrónica y certificado enviado por correo electrónico o WhatsApp."
+        },
+        {
+          "id": "home-faq-2",
+          "question": "¿Quién puede contratar?",
+          "answer": "Cualquier conductor de al menos 21 años, con el permiso de conducción desde hace al menos 2 años, que cumpla las condiciones declaradas en el momento de la contratación."
+        },
+        {
+          "id": "home-faq-3",
+          "question": "¿En qué países estoy cubierto?",
+          "answer": "En Francia y en 35 países (la misma lista para el seguro temporal y el de frontera). Es posible ampliar la cobertura a 7 países adicionales para automóviles."
+        },
+        {
+          "id": "home-faq-4",
+          "question": "¿Puedo cancelar mi contrato?",
+          "answer": "Los contratos temporales tienen una duración fija, sin renovación tácita (véanse las condiciones generales de venta)."
+        },
+        {
+          "id": "home-faq-5",
+          "question": "¿Para quién es el seguro de frontera?",
+          "answer": "Para los vehículos matriculados fuera de la UE y fuera del sistema de la tarjeta verde que deban circular por Francia y Europa."
+        }
+      ]
+    },
+    "reviews": {
+      "eyebrow": "Opiniones de clientes",
+      "title": "Lo que dicen nuestros clientes",
+      "address": "WN Conseil / TempAssur — {address}",
+      "cta": "Ver todas nuestras opiniones en Google →"
+    },
+    "coveredCountries": {
+      "description": "Su seguro temporal le cubre en Francia y en 35 países de Europa y la cuenca mediterránea — la misma lista para el seguro temporal y el seguro de frontera. ¿Necesita Marruecos, Túnez o Turquía? Es posible ampliar la cobertura para automóviles.",
+      "cta": "Ver la lista completa de países cubiertos"
+    },
+    "vehicleVignettes": {
+      "eyebrow": "Nuestros vehículos",
+      "title": "Nuestros seguros",
+      "priceFrom": "desde {price}/día",
+      "cta": "Saber más"
+    }
+  },
+  "pricingLabels": {
+    "civilite": { "monsieur": "Sr.", "madame": "Sra." },
+    "cvTier": {
+      "moins-16cv": "Menos de 16 CV",
+      "moins-30cv": "De 16 a 29 CV",
+      "plus-30cv": "30 CV o más"
+    },
+    "ptacTier": {
+      "moins-3500kg": "MMA ≤ 3,5 toneladas",
+      "plus-3500kg": "MMA > 3,5 toneladas"
+    },
+    "quadSubtype": {
+      "voiturette-sans-permis": "Coche sin carné (≤ 8 CV)",
+      "buggy": "Buggy 50 cc (≤ 8 CV)",
+      "quad-avec-permis": "Quad con carné (≤ 9 CV)"
+    },
+    "territory": {
+      "metropole": "Francia metropolitana",
+      "guadeloupe": "Guadalupe",
+      "martinique": "Martinica",
+      "guyane": "Guayana Francesa",
+      "reunion": "La Reunión",
+      "mayotte": "Mayotte",
+      "saint-martin": "San Martín",
+      "saint-barthelemy": "San Bartolomé",
+      "saint-pierre-et-miquelon": "San Pedro y Miquelón"
+    }
+  },
+  "validation": {
+    "paysImmatriculationRequired": "El país de matriculación es obligatorio",
+    "paysResidenceRequired": "El país de residencia es obligatorio",
+    "dureeRequired": "Seleccione una duración",
+    "immatriculationRequired": "La matrícula es obligatoria",
+    "marqueRequired": "La marca es obligatoria",
+    "modeleRequired": "El modelo es obligatorio",
+    "dateMiseEnCirculationRequired": "La fecha de primera matriculación es obligatoria",
+    "dateEffetRequired": "La fecha de efecto es obligatoria",
+    "heureEffetRequired": "La hora de efecto es obligatoria",
+    "civiliteRequired": "Seleccione un tratamiento",
+    "nomRequired": "El apellido es obligatorio",
+    "prenomRequired": "El nombre es obligatorio",
+    "dateNaissanceRequired": "La fecha de nacimiento es obligatoria",
+    "paysNaissanceRequired": "El país de nacimiento es obligatorio",
+    "telephoneInvalid": "Introduzca un número válido",
+    "emailRequired": "El correo electrónico es obligatorio",
+    "emailInvalid": "Introduzca una dirección de correo electrónico válida",
+    "adresseRequired": "La dirección es obligatoria",
+    "codePostalRequired": "El código postal es obligatorio",
+    "villeRequired": "La ciudad es obligatoria",
+    "numeroPermisRequired": "El número de permiso de conducción es obligatorio",
+    "dateObtentionPermisRequired": "La fecha de obtención es obligatoria",
+    "paysObtentionPermisRequired": "El país de obtención es obligatorio",
+    "consentCgvRequired": "Debe aceptar las condiciones generales de venta",
+    "consentIpidRequired": "Debe aceptar el documento de información IPID",
+    "consentContratRequired": "Debe aceptar las condiciones generales del contrato",
+    "consentDeclarationsRequired": "Debe certificar las declaraciones del conductor",
+    "territoireImmatriculationRequired": "Indique el departamento o territorio de matriculación",
+    "territoireResidenceRequired": "Indique el departamento o territorio de residencia",
+    "minAge": "Nuestros contratos están reservados a conductores de al menos 21 años.",
+    "minLicenseAge": "Nuestros contratos exigen al menos 2 años de permiso de conducción.",
+    "effectDateInPast": "La fecha y la hora de efecto no pueden ser anteriores al momento actual.",
+    "nomAgenceRequired": "Indique el nombre de la agencia de alquiler"
+  },
+  "wizard": {
+    "steps": {
+      "duration": "Duración y ubicación",
+      "details": "Sus datos",
+      "payment": "Pago"
+    },
+    "buttons": {
+      "previous": "Anterior",
+      "continueLabel": "Continuar",
+      "sending": "Enviando...",
+      "payLabel": "Pagar {amount} € de forma segura"
+    },
+    "paymentError": "El pago no se ha completado. No se ha cargado ningún importe. Inténtelo de nuevo o contáctenos: WhatsApp +33 6 05 93 84 79 — encontramos una solución de inmediato.",
+    "duration": {
+      "heading": "Duración y fecha de efecto",
+      "contractDuration": "Duración del contrato *",
+      "mostChosen": "La más elegida",
+      "durationUnit": "{count} d",
+      "durationPlaceholder": "Elija su duración",
+      "durationOption": "{count, plural, one {# día} other {# días}}",
+      "effectDate": "Fecha de efecto *",
+      "effectTime": "Hora de efecto *",
+      "effectTimeHint": "La fecha y la hora de efecto no pueden ser anteriores al momento actual."
+    },
+    "vehicleTier": {
+      "heading": "Potencia fiscal",
+      "cvLabel": "Potencia fiscal *",
+      "ptacLabel": "Peso total autorizado en carga *",
+      "quadLabel": "Tipo de vehículo *",
+      "selectPlaceholder": "Seleccione"
+    },
+    "localisation": {
+      "heading": "Ubicación",
+      "registrationCountry": "País de matriculación del vehículo *",
+      "countryPlaceholder": "Seleccione un país",
+      "registrationTerritory": "Departamento / territorio de matriculación *",
+      "territoryPlaceholder": "Seleccione",
+      "residenceCountry": "País / territorio de residencia *",
+      "residenceTerritory": "Departamento / territorio de residencia *",
+      "domTomHint": "Se aplica una tarifa específica DOM-TOM a los departamentos y colectividades de ultramar.",
+      "domTomNotice": "Las tarifas aplicables a los DOM-TOM difieren de las de Francia metropolitana."
+    },
+    "driver": {
+      "heading": "Información del conductor",
+      "identity": "Identidad",
+      "civilite": "Tratamiento *",
+      "civilitePlaceholder": "Seleccione",
+      "nom": "Apellidos *",
+      "nomPlaceholder": "Sus apellidos",
+      "prenom": "Nombre *",
+      "prenomPlaceholder": "Su nombre",
+      "dateNaissance": "Fecha de nacimiento *",
+      "dateNaissanceHint": "Nuestros contratos están reservados a conductores de al menos 21 años.",
+      "paysNaissance": "País de nacimiento *",
+      "paysNaissancePlaceholder": "Seleccione un país",
+      "coordonnees": "Datos de contacto",
+      "mobile": "Móvil *",
+      "mobilePlaceholder": "Número de teléfono móvil",
+      "fixe": "Teléfono (fijo)",
+      "fixePlaceholder": "Número de teléfono fijo",
+      "email": "Correo electrónico *",
+      "emailPlaceholder": "Su correo electrónico",
+      "adresseHeading": "Dirección",
+      "adresse": "Dirección *",
+      "adressePlaceholder": "Su dirección",
+      "codePostal": "Código postal *",
+      "codePostalPlaceholder": "Su código postal",
+      "ville": "Ciudad *",
+      "villePlaceholder": "Su ciudad",
+      "permisHeading": "Permiso de conducción",
+      "numeroPermis": "Número de permiso *",
+      "numeroPermisPlaceholder": "Número de permiso",
+      "dateObtention": "Fecha de obtención *",
+      "dateObtentionHint": "El permiso debe tener al menos 2 años de antigüedad para asegurar su vehículo.",
+      "paysObtention": "País de obtención *"
+    },
+    "vehicle": {
+      "heading": "Vehículo",
+      "categorie": "Categoría *",
+      "categoriePlaceholder": "Seleccione una categoría",
+      "immatriculation": "Matrícula *",
+      "marque": "Marca *",
+      "modele": "Modelo *",
+      "dateMiseEnCirculation": "Fecha de primera matriculación *",
+      "location": "Vehículo de alquiler",
+      "locationOui": "Sí",
+      "locationNon": "No",
+      "locationExclusion": "Le informamos de que no aseguramos vehículos alquilados fuera de agencia en Francia, ni vehículos alquilados en el extranjero, ni vehículos alquilados en las siguientes agencias: {agencies}.",
+      "nomAgence": "Nombre de la agencia de alquiler",
+      "nomAgencePlaceholder": "Nombre de la agencia"
+    },
+    "options": {
+      "heading": "Opciones",
+      "notAvailable": "No hay opciones disponibles para esta categoría de vehículo.",
+      "priceHint": "El precio de las opciones depende de la duración.",
+      "notEligible": "No disponible para este país",
+      "notAvailableForDuration": "No disponible para esta duración",
+      "garantieConducteur": "Garantía del conductor",
+      "assistance": "Asistencia",
+      "extensionPays": "Extensión de países ({countries})",
+      "extensionPaysShort": "Extensión de países"
+    },
+    "documents": {
+      "heading": "Documentos",
+      "optional": "Documentos (opcional en esta etapa)",
+      "permisRecto": "Permiso de conducción (anverso)",
+      "permisVerso": "Permiso de conducción (reverso)",
+      "carteGrise": "Permiso de circulación",
+      "chooseFile": "Elegir un archivo",
+      "noFile": "Ningún archivo seleccionado",
+      "removeFile": "Eliminar el archivo {label}",
+      "consentsHeading": "Aceptación de las condiciones",
+      "acceptCgv": "Acepto las <link>Condiciones generales de venta</link>",
+      "acceptIpid": "He tomado conocimiento del documento de información (IPID)",
+      "acceptContrat": "He tomado conocimiento de las condiciones generales del contrato"
+    },
+    "payment": {
+      "heading": "Resumen y pago seguro",
+      "vehicle": "Vehículo",
+      "categorie": "Categoría",
+      "duree": "Duración",
+      "dateEffet": "Fecha y hora de efecto",
+      "optionsChoisies": "Opciones elegidas",
+      "aucune": "Ninguna",
+      "totalTtc": "Total (impuestos incluidos)",
+      "edit": "Modificar",
+      "note": "Verifique el resumen anterior y, a continuación, valide el pago de forma segura a continuación. No se necesita ninguna información adicional en esta etapa.",
+      "dateAt": "{date} a las {time}",
+      "durationValue": "{count, plural, one {# día} other {# días}}"
+    },
+    "billingSummary": {
+      "subtitle": "Seguro temporal",
+      "duree": "Duración",
+      "formule": "Modalidad",
+      "zone": "Zona",
+      "zoneDomTom": "DOM-TOM",
+      "zoneMetropole": "Francia metropolitana",
+      "tarifBase": "Tarifa base",
+      "zoneDomTomSurcharge": "Zona DOM-TOM",
+      "selectDuration": "Seleccione una duración para ver la tarifa.",
+      "totalToPay": "Total a pagar",
+      "securePayment": "Pago seguro, efecto inmediato.",
+      "durationValue": "{count, plural, one {# día} other {# días}}",
+      "noValue": "—"
+    },
+    "declarations": {
+      "title": "Declaraciones del conductor",
+      "description": "Para validar su contratación, debe poder responder NO a las cuatro preguntas siguientes sobre el conductor:",
+      "questions": [
+        "¿Ha declarado, durante los últimos 36 meses, más de 2 siniestros materiales con responsabilidad total o parcial Y/O 1 siniestro corporal, con o sin responsabilidad?",
+        "¿Le ha resuelto el contrato por siniestralidad una aseguradora anterior en los últimos 5 años?",
+        "¿Ha sido objeto de una condena penal por infracción del código de circulación, alcoholemia o consumo de estupefacientes?",
+        "¿Se encuentra entre los conductores con recargo por siniestralidad (malus) que buscan una nueva aseguradora, o está a la espera de una decisión de la Oficina Central de Tarificación (BCT)?"
+      ],
+      "certify": "Certifico que respondo NO a todas estas preguntas. Entiendo que una declaración falsa puede acarrear la nulidad del contrato (art. L.113-8 del Código de Seguros).",
+      "contactPrompt": "¿Se encuentra en alguna de estas situaciones?",
+      "contactCta": "Contáctenos",
+      "contactSuffix": ", quizás sea posible una solución personalizada.",
+      "contactMessage": "Hola, me gustaría hablar sobre mi situación antes de contratar un seguro temporal.",
+      "cancel": "Cancelar",
+      "confirm": "Certifico y continúo",
+      "sending": "Enviando..."
+    }
+  },
+  "product": {
+    "sectionHeadings": {
+      "vehiclesHeading": "¿Qué vehículos?",
+      "borderVehiclesHeading": "¿A quién va dirigido el seguro de frontera?",
+      "guaranteesHeading": "Sus garantías",
+      "whereCoveredHeading": "¿Dónde está cubierto?",
+      "coveredCountriesCta": "Ver la lista completa de países cubiertos →",
+      "useCasesHeading": "¿En qué situaciones?",
+      "eligibilityHeading": "¿Quién puede contratar?",
+      "faqHeading": "Preguntas frecuentes",
+      "ctaEstimate": "Calcular mi tarifa en 30 segundos",
+      "seeAlso": "Ver también",
+      "coveredCountriesLink": "Países cubiertos",
+      "priceFrom": "Desde {price}/día",
+      "durationsAvailable": "Duraciones disponibles: {durations} día{plural}"
+    },
+    "automobiles": {
+      "title": "Seguro de coche temporal de 1 a 90 días desde [PRIX] €/día | TempAssur",
+      "metaDescription": "Asegure un coche o un vehículo comercial de 1 a 90 días. Contratación en línea en 5 minutos, certificado inmediato por correo electrónico o WhatsApp. Desde [PRIX] €/día.",
+      "h1": "Seguro de coche temporal de 1 a 90 días",
+      "intro": "¿Necesita asegurar un coche o un vehículo comercial de menos de 3,5 toneladas durante unos días? El seguro de coche temporal de TempAssur le cubre de 1 a 90 días, sin permanencia y sin renovación tácita. Contratación 100 % en línea en 5 minutos, certificado enviado de inmediato por correo electrónico o WhatsApp.",
+      "vehiclesParagraph": "Todos los vehículos particulares y comerciales de menos de 3,5 toneladas, sea cual sea su potencia: utilitario urbano, berlina, SUV, furgoneta... La tarifa depende de la potencia fiscal y de la duración elegida.",
+      "guaranteesIncluded": "Incluidas: responsabilidad civil (obligatoria — daños causados a terceros) y defensa penal y reclamación tras accidente.",
+      "options": [
+        { "label": "Garantía del conductor", "description": "también le protege en caso de accidente del que sea responsable." },
+        { "label": "Extensión de circulación", "description": "Albania, Azerbaiyán, Macedonia del Norte, Marruecos, Moldavia, Túnez, Turquía." },
+        { "label": "Asistencia", "description": "" }
+      ],
+      "whereCovered": "En Francia y en 35 países de Europa y la cuenca mediterránea. Con la extensión, añada Marruecos, Túnez, Turquía y otros 4 países.",
+      "useCases": [
+        "Compra o venta de un vehículo",
+        "matrícula provisional WW",
+        "préstamo de vehículo",
+        "importación / exportación",
+        "salida del depósito municipal",
+        "resolución del contrato por su aseguradora",
+        "vehículo en sucesión/herencia",
+        "paso de la inspección técnica",
+        "conducción ocasional"
+      ],
+      "eligibility": "Cualquier conductor de al menos 21 años, con el permiso de conducción desde hace al menos 2 años, que cumpla las declaraciones presentadas en el momento de la contratación.",
+      "faq": [
+        { "question": "¿Cuál es el precio de un seguro de coche temporal?", "answer": "Desde [PRIX_GRILLE] €/día; la tarifa exacta depende de la duración y de la potencia fiscal, y se muestra de inmediato en nuestro calculador de tarifas." },
+        { "question": "¿Puedo ir a Marruecos, Túnez o Turquía?", "answer": "Sí, con la opción de extensión de circulación (solo automóviles)." },
+        { "question": "¿Estoy cubierto en los DOM-TOM?", "answer": "Sí — las tarifas DOM-TOM difieren de las de Francia metropolitana y las opciones no están disponibles allí." },
+        { "question": "¿Qué documentos voy a recibir?", "answer": "Su contrato, su certificado de seguro y su tarjeta internacional de seguro, por correo electrónico o WhatsApp, tras la firma electrónica." }
+      ]
+    },
+    "poids-lourds": {
+      "title": "Seguro temporal de vehículo pesado desde [PRIX] €/día | TempAssur",
+      "metaDescription": "Camión, vehículo de carga, tractocamión: seguro temporal de vehículo pesado en línea. Certificado inmediato por correo electrónico o WhatsApp.",
+      "h1": "Seguro temporal de vehículo pesado (+ de 3,5 T)",
+      "intro": "Camión de carga, tractocamión, semirremolque: asegure su vehículo pesado para un traslado, una compra, una importación o una misión puntual, con las duraciones previstas en nuestra tabla de tarifas. Certificado inmediato por correo electrónico o WhatsApp.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, con tarifas específicas.",
+      "useCases": ["Traslado tras compra o venta", "matrícula WW", "importación / exportación", "salida del depósito municipal", "espera entre dos contratos anuales"],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción, permiso adecuado al vehículo, declaraciones conformes (véase contratación).",
+      "faq": [
+        { "question": "¿Qué duraciones?", "answer": "Las de nuestra tabla de tarifas (accesos rápidos de 8 y 15 días) — el calculador de tarifas muestra todas las duraciones disponibles con su precio." },
+        { "question": "¿Debe el conductor ser el tomador del contrato?", "answer": "No, pero debe estar declarado y cumplir las condiciones de elegibilidad." },
+        { "question": "¿Qué documentos se reciben?", "answer": "Contrato, certificado y tarjeta internacional de seguro, por correo electrónico o WhatsApp." }
+      ]
+    },
+    "camping-cars": {
+      "title": "Seguro temporal de autocaravana de 1 a 90 días | TempAssur",
+      "metaDescription": "Seguro temporal de autocaravana y furgoneta camper, de 1 a 90 días. Contratación en línea, certificado por correo electrónico o WhatsApp.",
+      "h1": "Seguro temporal de autocaravana y furgoneta camper",
+      "intro": "Viaje tranquilo: seguro temporal de autocaravana de 1 a 90 días, ideal para un viaje puntual, un préstamo, una compra o una repatriación. El precio mostrado corresponde a los modelos de menos de 3,5 T; se ajusta según el peso en el momento de la contratación.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países de Europa — perfecto para un road trip. DOM-TOM: sí, tarifas específicas.",
+      "useCases": ["Viaje puntual", "alquiler o préstamo entre particulares", "compra / venta", "repatriación", "salida de la hibernación", "inspección técnica"],
+      "eligibility": "Conductor de al menos 21 años con 2 años de permiso de conducción.",
+      "faq": [
+        { "question": "¿Se acepta mi furgoneta camper?", "answer": "Sí, las furgonetas camper se aseguran igual que las autocaravanas." },
+        { "question": "¿Mi autocaravana supera las 3,5 T?", "answer": "Es asegurable: la tarifa se ajusta según el peso en el momento de la contratación." },
+        { "question": "¿Quién puede contratar?", "answer": "Conductor de al menos 21 años con 2 años de permiso de conducción." }
+      ]
+    },
+    "quadricycles": {
+      "title": "Seguro temporal de quad, coche sin carné y buggy | TempAssur",
+      "metaDescription": "Quad homologado, coche sin carné o buggy: seguro temporal en línea, certificado por correo electrónico o WhatsApp.",
+      "h1": "Seguro temporal de cuadriciclos: quad, coche sin carné, buggy",
+      "intro": "Quad homologado, coche sin carné o buggy: asegure su cuadriciclo durante la duración que realmente necesita. El precio de referencia mostrado corresponde al subtipo más económico; la tarifa exacta se ajusta según su vehículo en el momento de la contratación.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
+      "useCases": ["Compra / venta", "temporada de verano", "salida del depósito municipal", "vehículo de ocio utilizado algunas semanas al año", "inspección técnica"],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción.",
+      "faq": [
+        { "question": "¿Qué permiso se necesita para un coche sin carné?", "answer": "Desde los 14 años, el permiso AM (antiguo BSR) es suficiente para conducir — pero para contratar con nosotros, el conductor debe tener 21 años y 2 años de permiso de conducción." },
+        { "question": "¿Mi quad no está homologado para circular por carretera?", "answer": "No es asegurable para circular por la vía pública." },
+        { "question": "¿Qué duraciones?", "answer": "Las de la tabla de tarifas — accesos rápidos de 10, 15, 20 y 30 días." }
+      ]
+    },
+    "bus-autocars": {
+      "title": "Seguro temporal de autobús y autocar | TempAssur",
+      "metaDescription": "Asegure un autobús o un autocar para un traslado, una compra o una venta. Contratación en línea, certificado inmediato.",
+      "h1": "Seguro temporal de autobuses y autocares",
+      "intro": "Asegure un autobús o un autocar para un traslado, una compra, una venta o una transferencia de vehículo. Contratación 100 % en línea, certificado inmediato por correo electrónico o WhatsApp.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
+      "useCases": ["Traslado tras compra o venta en subasta", "importación / exportación", "reposicionamiento de flota", "salida del depósito municipal"],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción, declaraciones conformes.",
+      "faq": [
+        { "question": "¿Qué duraciones?", "answer": "Las de la tabla de tarifas (accesos rápidos de 8 y 15 días)." },
+        { "question": "¿Está cubierto el transporte de pasajeros?", "answer": "La garantía cubre la responsabilidad civil del vehículo; para un uso comercial con pasajeros, contáctenos antes de contratar: +33 6 05 93 84 79." }
+      ]
+    },
+    "tracteurs-agricoles": {
+      "title": "Seguro temporal de tractor agrícola desde [PRIX] €/día | TempAssur",
+      "metaDescription": "Cosechas, traslado, compra: seguro temporal de tractor agrícola en línea, certificado por correo electrónico o WhatsApp.",
+      "h1": "Seguro temporal de tractor agrícola",
+      "intro": "Cosechas, traslado, compra o venta: asegure su tractor o maquinaria agrícola durante unos días, sin permanencia anual. Contratación en línea, certificado por correo electrónico o WhatsApp.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
+      "useCases": ["Época de cosecha o recolección", "traslado tras compra / venta", "préstamo entre agricultores", "desplazamiento excepcional por carretera"],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción.",
+      "faq": [
+        { "question": "¿Qué duraciones?", "answer": "Las de la tabla de tarifas (accesos rápidos de 8 y 15 días)." },
+        { "question": "¿Se acepta un tractor antiguo o de colección?", "answer": "Sí, si está matriculado." }
+      ]
+    },
+    "remorques": {
+      "title": "Seguro temporal de remolque, semirremolque y caravana | TempAssur",
+      "metaDescription": "Remolque, semirremolque o caravana: seguro temporal obligatorio a partir de 750 kg. Contratación en línea inmediata.",
+      "h1": "Seguro temporal de remolques, semirremolques y caravanas",
+      "intro": "Remolque ligero o pesado, semirremolque, caravana: a partir de 750 kg de MMA, es obligatorio un seguro de responsabilidad civil específico — el del vehículo tractor ya no es suficiente. Asegure el suyo para un traslado, una compra o un desplazamiento puntual.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
+      "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
+      "useCases": ["Compra / venta", "mudanza", "salida de vacaciones con una caravana", "transporte puntual de material", "importación / exportación"],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción.",
+      "faq": [
+        { "question": "¿Mi remolque pesa menos de 750 kg?", "answer": "En principio está cubierto por el seguro del vehículo tractor — verifique su contrato." },
+        { "question": "¿Qué duraciones?", "answer": "Las de la tabla de tarifas (accesos rápidos de 8 y 15 días)." }
+      ]
+    },
+    "assurance-frontiere": {
+      "title": "Seguro de frontera: circular por Francia y Europa con un vehículo extranjero | TempAssur",
+      "metaDescription": "¿Vehículo matriculado fuera de la UE o en el extranjero? El seguro de frontera le cubre en Francia y en 35 países. 30 o 90 días, certificado inmediato.",
+      "h1": "Seguro de frontera — para circular por Francia y Europa",
+      "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria para poder circular. Y en TempAssur no cubre solo Francia: está cubierto en 35 países, la misma lista que nuestros seguros temporales. Disponible en 30 o 90 días — certificado por correo electrónico o WhatsApp.",
+      "vehiclesParagraph": "A los viajeros que llegan a Europa con su vehículo (Magreb, Balcanes fuera de la tarjeta verde, Oriente Medio, América...), a los franceses residentes en el extranjero que regresan temporalmente con un vehículo matriculado fuera de la UE, y a los vehículos en tránsito o en proceso de importación.",
+      "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente. Recibirá una tarjeta internacional de seguro válida en los 35 países cubiertos.",
+      "whereCovered": "En 35 países, no solo en Francia — es una de las grandes ventajas de nuestro contrato de frontera.",
+      "useCases": [],
+      "eligibility": "Conductor de al menos 21 años, 2 años de permiso de conducción.",
+      "faq": [
+        { "question": "¿Estoy cubierto solo en Francia?", "answer": "No: su seguro de frontera TempAssur le cubre en los 35 países de la lista común (Alemania, España, Italia, Suiza...)." },
+        { "question": "¿Qué documentos hay que aportar?", "answer": "El documento de identidad o el pasaporte del conductor, su permiso de conducción y el certificado de matriculación del vehículo." },
+        { "question": "¿Puedo contratar antes de llegar a Francia?", "answer": "Sí, 100 % en línea, con una fecha de efecto diferida: sus documentos le esperan en su correo electrónico o en WhatsApp." },
+        { "question": "¿Qué duraciones?", "answer": "30 o 90 días (30 días es la modalidad más elegida)." }
+      ]
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Blog",
+      "metaDescription": "Noticias y consejos sobre el seguro temporal: vehículos, países cubiertos, elegibilidad y trámites.",
+      "heading": "Blog",
+      "description": "Nuestros consejos y noticias sobre el seguro temporal."
+    },
+    "articleUi": {
+      "ctaEstimate": "Calcule su tarifa en 30 segundos",
+      "seeAlso": "Ver también",
+      "allArticles": "Todos los artículos"
+    },
+    "articles": {
+      "assurance-temporaire-caravane-remorque-semi": {
+        "title": "Seguro temporal para remolque, semirremolque o caravana",
+        "metaDescription": "¿Remolque, semirremolque o caravana que asegurar durante unos días? La solución temporal de TempAssur, sin permanencia anual.",
+        "body": [
+          { "type": "p", "text": "Mudanza, préstamo entre particulares, salida de vacaciones con una caravana o traslado antes de una venta: estos usos puntuales no siempre justifican un contrato anual. A partir de 750 kg de MMA, un remolque o una caravana debe contar con su propia responsabilidad civil — la del vehículo tractor ya no es suficiente." },
+          { "type": "h2", "text": "Lo que cubre el contrato" },
+          { "type": "p", "text": "El contrato temporal de remolque incluye la responsabilidad civil obligatoria y la defensa penal y reclamación tras accidente. No se ofrece ninguna opción para esta categoría." },
+          { "type": "h2", "text": "¿Qué duración elegir?" },
+          { "type": "p", "text": "La tabla de tarifas ofrece duraciones de 1 a 15 días, con dos accesos rápidos prácticos: 8 y 15 días. El calculador de tarifas muestra todas las duraciones disponibles con su precio." },
+          { "type": "p", "text": "La contratación se realiza totalmente en línea, y el certificado se envía por correo electrónico o WhatsApp en cuanto se firma electrónicamente el contrato." }
+        ]
+      },
+      "souscrire-assurance-temporaire-plaque-ww": {
+        "title": "¿Se puede asegurar temporalmente un vehículo con matrícula WW?",
+        "metaDescription": "Certificado provisional de matriculación (matrícula WW): cómo asegurarlo temporalmente con TempAssur.",
+        "body": [
+          { "type": "p", "text": "Un vehículo recién comprado o importado suele circular, durante algunas semanas, con un certificado provisional de matriculación (CPI), reconocible por su matrícula «WW». Mientras se espera el permiso de circulación definitivo, este vehículo debe estar asegurado en cuanto sale a la carretera." },
+          { "type": "h2", "text": "Un vehículo con matrícula WW se asegura como los demás" },
+          { "type": "p", "text": "TempAssur asegura los vehículos con matrícula WW en las mismas condiciones que un vehículo con matriculación definitiva: responsabilidad civil, contratación en línea, certificado inmediato. Un único punto de atención: la duración de la garantía no puede superar la fecha de fin de validez del CPI. Si el certificado caduca en 10 días, la duración máxima asegurable es de 10 días." },
+          { "type": "h2", "text": "Cómo contratar" },
+          { "type": "p", "text": "Elija la categoría de su vehículo en el calculador de tarifas, indique su fecha de matriculación y sus datos, y pague en línea: el certificado llega por correo electrónico o WhatsApp a los pocos minutos de la firma electrónica." }
+        ]
+      },
+      "suppression-vignette-assurance-temporaire": {
+        "title": "Supresión del distintivo verde: lo que cambia para el seguro temporal",
+        "metaDescription": "Desde abril de 2024, el distintivo verde ha desaparecido: ¿cómo demostrar su seguro temporal durante un control?",
+        "body": [
+          { "type": "p", "text": "Desde el 1 de abril de 2024, ya no es obligatorio colocar el distintivo verde en el parabrisas: las fuerzas del orden verifican ahora el seguro de un vehículo directamente a través del Fichero de Vehículos Asegurados (FVA)." },
+          { "type": "h2", "text": "Lo que sustituye a la tarjeta verde" },
+          { "type": "p", "text": "Para un contrato temporal, el certificado digital enviado por correo electrónico o WhatsApp tras la contratación cumple esta función: indica el período de validez, el vehículo asegurado y la aseguradora, y puede presentarse impreso o en el teléfono móvil en caso de control." },
+          { "type": "h2", "text": "Lo que no cambia" },
+          { "type": "p", "text": "La duración de la garantía temporal sigue siendo de 1 a 90 días, y la responsabilidad civil sigue siendo obligatoria desde el primer kilómetro. Lleve consigo un documento de identidad, el certificado de matriculación y su certificado de seguro." }
+        ]
+      },
+      "garanties-assurance-auto-provisoire": {
+        "title": "¿Qué garantías incluye un seguro de coche temporal?",
+        "metaDescription": "Responsabilidad civil, defensa penal y reclamación, opciones para automóviles: el detalle de las garantías de TempAssur.",
+        "body": [
+          { "type": "p", "text": "Un seguro temporal no es una versión reducida de un contrato clásico: debe cubrir las mismas obligaciones legales, durante una duración elegida de 1 a 90 días." },
+          { "type": "h2", "text": "La responsabilidad civil, garantía obligatoria" },
+          { "type": "p", "text": "Cubre los daños materiales y corporales causados a un tercero en caso de accidente del que se sea responsable. Circular sin esta garantía expone a una multa que puede alcanzar los 3750 €, a la suspensión del permiso de conducción y a la inmovilización del vehículo." },
+          { "type": "h2", "text": "La defensa penal y reclamación" },
+          { "type": "p", "text": "Incluida en todos nuestros contratos, se hace cargo de su defensa en caso de proceso judicial relacionado con un accidente, y permite emprender una reclamación contra el tercero responsable." },
+          { "type": "h2", "text": "Las opciones, reservadas al automóvil" },
+          { "type": "p", "text": "Solo para la categoría de automóvil existen tres opciones, cuyo precio depende de la duración elegida: la garantía del conductor, la asistencia y la extensión de circulación a 7 países adicionales (Albania, Azerbaiyán, Macedonia del Norte, Marruecos, Moldavia, Túnez, Turquía). No están disponibles en los DOM-TOM. Las demás categorías de vehículos (vehículo pesado, autocaravana, cuadriciclo, autobús, tractor agrícola, remolque, seguro de frontera) no incluyen opciones: solo se ofrecen la responsabilidad civil y la defensa penal y reclamación, conforme a la tabla tarifaria." }
+        ]
+      },
+      "assurance-frontiere-temporaire-auto": {
+        "title": "¿Qué es el seguro de frontera?",
+        "metaDescription": "¿Vehículo matriculado fuera de la UE o sin tarjeta verde? El seguro de frontera de TempAssur cubre 35 países, no solo Francia.",
+        "body": [
+          { "type": "p", "text": "Un vehículo matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde no puede circular legalmente por Francia sin una cobertura específica: esa es la función del seguro de frontera." },
+          { "type": "h2", "text": "Una cobertura que va más allá de Francia" },
+          { "type": "p", "text": "En TempAssur, el seguro de frontera no se limita al territorio francés: cubre los mismos 35 países de Europa y la cuenca mediterránea que nuestros seguros temporales clásicos. Está disponible en 30 o 90 días, e incluye la responsabilidad civil, así como la defensa penal y reclamación." },
+          { "type": "h2", "text": "¿A quién va dirigido?" },
+          { "type": "p", "text": "A los viajeros que llegan a Europa con su vehículo, a los franceses residentes en el extranjero que regresan temporalmente con un vehículo matriculado fuera de la UE, y a los vehículos en tránsito o en proceso de importación." },
+          { "type": "p", "text": "La contratación se realiza 100 % en línea, incluso antes de su llegada a Francia, con una fecha de efecto diferida si es necesario." }
+        ]
+      },
+      "assurance-temporaire-auto-maghreb-turquie": {
+        "title": "Circular por Marruecos, Túnez o Turquía con un seguro temporal: la opción de extensión de países",
+        "metaDescription": "Seguro temporal Marruecos, seguro de coche Túnez, tarjeta verde Turquía: cómo contratar la opción de extensión de circulación con TempAssur.",
+        "body": [
+          { "type": "p", "text": "¿Se va al Magreb o a Turquía con su coche? Desde Francia, su seguro temporal estándar cubre 35 países europeos, pero no Marruecos, Túnez ni Turquía. La solución: la opción de extensión de circulación, disponible en TempAssur para automóviles de menos de 3,5 toneladas." },
+          { "type": "h2", "text": "Lo que cubre la extensión" },
+          { "type": "p", "text": "Además de los 35 países básicos, la extensión permite circular por 7 países: Albania, Azerbaiyán, Macedonia del Norte, Marruecos, Moldavia, Túnez y Turquía. Recibirá una tarjeta internacional de seguro que menciona estos países — es la que da fe al cruzar la frontera y durante los controles." },
+          { "type": "h2", "text": "Atención: Argelia no está cubierta" },
+          { "type": "p", "text": "Ninguna de nuestras modalidades, con o sin extensión, cubre Argelia. Para circular allí, debe contratarse un seguro local en la frontera argelina. Del mismo modo, Bielorrusia, Irán, Rusia y Ucrania nunca están cubiertos." },
+          { "type": "h2", "text": "Cómo contratar" },
+          { "type": "p", "text": "Elija «Automóvil» en nuestro calculador de tarifas, su duración (1 a 90 días) y marque la opción «Extensión de países»: el precio se ajusta según la duración elegida. Recibirá su certificado y su tarjeta internacional por correo electrónico o WhatsApp en pocos minutos — práctico cuando se prepara un embarque en Sète, Marsella o Génova." },
+          { "type": "h2", "text": "Bueno saberlo" },
+          { "type": "p", "text": "La extensión se aplica únicamente a los automóviles: para un vehículo pesado o una autocaravana, contáctenos al +33 6 05 93 84 79 (WhatsApp), estudiaremos una solución personalizada." }
+        ]
+      },
+      "assurance-temporaire-pour-tracteur-agricole": {
+        "title": "Seguro temporal para tractor agrícola",
+        "metaDescription": "Cosechas, traslado, compra o venta: seguro temporal de tractor agrícola en línea con TempAssur.",
+        "body": [
+          { "type": "p", "text": "Un tractor o una máquina agrícola no siempre necesita estar asegurado durante todo el año: la época de cosecha, el traslado tras una compra o venta, el préstamo entre agricultores o un desplazamiento excepcional por carretera son situaciones en las que una cobertura puntual es suficiente." },
+          { "type": "h2", "text": "Una cobertura sencilla" },
+          { "type": "p", "text": "El contrato temporal de tractor agrícola incluye la responsabilidad civil obligatoria y la defensa penal y reclamación tras accidente, sin opciones adicionales. Las duraciones disponibles llegan hasta 15 días, con dos accesos rápidos prácticos: 8 y 15 días." },
+          { "type": "p", "text": "La contratación se realiza en línea, sin desplazamientos: indique el vehículo y el conductor, pague en línea y reciba su certificado por correo electrónico o WhatsApp." }
+        ]
+      },
+      "assurance-provisoire-automobile": {
+        "title": "Seguro temporal de automóvil para profesionales",
+        "metaDescription": "Transportistas, autónomos, importadores: el seguro temporal de automóvil de TempAssur para sus necesidades puntuales.",
+        "body": [
+          { "type": "p", "text": "Un vehículo en tránsito, una operación de importación-exportación, una misión excepcional o un período de espera antes de un contrato anual: los profesionales también necesitan a menudo una cobertura puntual en lugar de un compromiso anual." },
+          { "type": "h2", "text": "Una solución adaptada a la actividad profesional" },
+          { "type": "p", "text": "Transportistas, autónomos, comerciantes, profesionales independientes o importadores de vehículos pueden contratar un seguro temporal para un turismo, un vehículo comercial o un vehículo pesado, de 1 a 90 días, con las mismas garantías que para un particular: responsabilidad civil y defensa penal y reclamación, más las opciones para automóviles si es necesario." },
+          { "type": "p", "text": "La contratación sigue siendo 100 % en línea, con un certificado recibido inmediatamente después del pago y la firma electrónica." }
+        ]
+      },
+      "assurance-automobile-temporaire": {
+        "title": "5 situaciones en las que el seguro de coche temporal marca la diferencia",
+        "metaDescription": "Compra/venta, uso puntual, vehículo en tránsito: las situaciones en las que el seguro temporal es la mejor opción.",
+        "body": [
+          { "type": "h2", "text": "Una compra o venta de vehículo" },
+          { "type": "p", "text": "Desplazar un vehículo para una prueba, un trámite administrativo o una entrega, sin permiso de circulación definitivo: el seguro temporal permite circular inmediatamente después de la compra, sin contratar un seguro anual innecesario si el vehículo va a revenderse rápidamente." },
+          { "type": "h2", "text": "Un uso ocasional" },
+          { "type": "p", "text": "Un vehículo secundario utilizado solo unas semanas al año — autocaravana, remolque o coche de colección — resulta más económico de asegurar por la duración real de uso que de forma anual." },
+          { "type": "h2", "text": "Un alquiler entre particulares" },
+          { "type": "p", "text": "Cuando un vehículo se alquila fuera de una gran agencia, la cobertura de seguro no siempre está incluida: un seguro temporal cubre este vacío en pocos minutos." },
+          { "type": "h2", "text": "Un vehículo en tránsito" },
+          { "type": "p", "text": "Importación desde el extranjero, cambio de permiso de circulación en curso: mientras se regulariza la situación administrativa, el vehículo debe seguir asegurado." },
+          { "type": "h2", "text": "Una situación particular" },
+          { "type": "p", "text": "Un conductor en busca de una nueva aseguradora puede necesitar una solución puntual. En TempAssur, la elegibilidad sigue condicionada a las declaraciones presentadas en el momento de la contratación — si tiene dudas sobre su situación, contáctenos antes de contratar." }
+        ]
+      },
+      "assurance-temporaire-vs-annuelle": {
+        "title": "Seguro temporal o anual: ¿cómo elegir?",
+        "metaDescription": "Seguro temporal o seguro anual: ¿qué diferencias hay y cuál elegir según su uso?",
+        "body": [
+          { "type": "p", "text": "Ambas modalidades responden a necesidades diferentes: una cubre un uso puntual de unos días, la otra un uso regular durante todo el año." },
+          { "type": "h2", "text": "El seguro temporal: pagar por el uso real" },
+          { "type": "p", "text": "De 1 a 90 días, sin permanencia, contratado en línea en pocos minutos: es adecuado para un vehículo utilizado ocasionalmente, para una necesidad transitoria (importación/exportación, vacaciones) o para una espera antes de un contrato anual." },
+          { "type": "h2", "text": "El seguro anual: para un uso diario" },
+          { "type": "p", "text": "Con un compromiso de 12 meses y más garantías disponibles, resulta más adecuado para un vehículo utilizado todo el año." },
+          { "type": "p", "text": "Para un uso ocasional o una situación temporal, el seguro de coche temporal — rápido de contratar y sin permanencia — sigue siendo la solución más económica." }
+        ]
+      },
+      "voiture-achetee-week-end-assurance-jour-meme": {
+        "title": "Coche comprado el fin de semana: cómo volver a circular asegurado el mismo día",
+        "metaDescription": "Seguro de coche inmediato, asegurar coche el mismo día, seguro de compra de coche: la solución de TempAssur.",
+        "body": [
+          { "type": "p", "text": "¿Acaba de comprar un coche de segunda mano un sábado por la noche y el vendedor vive a 300 km? Sin seguro, es imposible volver a circular legalmente: la responsabilidad civil es obligatoria desde el primer metro, y circular sin seguro cuesta hasta 3750 € de multa, con posible suspensión del permiso de conducción." },
+          { "type": "h2", "text": "El seguro temporal, la solución inmediata" },
+          { "type": "p", "text": "En TempAssur, la contratación es 100 % en línea, los 7 días de la semana: calcule su tarifa en 30 segundos, contrate en 5 minutos, pague con tarjeta y reciba su certificado por correo electrónico o WhatsApp — incluso en domingo. Usted elige la duración exacta que necesita, de 1 a 90 días, el tiempo de repatriar el vehículo y luego contratar su seguro anual con conocimiento de causa." },
+          { "type": "h2", "text": "Las condiciones" },
+          { "type": "p", "text": "Tener al menos 21 años, 2 años de permiso de conducción, y cumplir las declaraciones de antecedentes presentadas en el momento de la contratación. El vehículo debe estar matriculado (una matrícula provisional WW es válida)." },
+          { "type": "h2", "text": "¿Cuánto cuesta?" },
+          { "type": "p", "text": "Desde unos pocos euros al día para un automóvil, según la duración y la potencia; la tarifa exacta se muestra de inmediato en nuestro calculador de tarifas, sin dejar su correo electrónico. Un día de seguro temporal cuesta mucho menos que un compromiso anual contratado con prisas." }
+        ]
+      },
+      "assurance-sortie-fourriere": {
+        "title": "Salida del depósito municipal: ¿qué seguro para recuperar su vehículo?",
+        "metaDescription": "Seguro para salida del depósito municipal, certificado de seguro para el depósito, recuperar el coche del depósito con TempAssur.",
+        "body": [
+          { "type": "p", "text": "Para recuperar un vehículo del depósito municipal, la ley exige presentar un certificado de seguro en vigor (junto con el permiso de conducción y el permiso de circulación). El problema: si su vehículo fue llevado al depósito precisamente porque ya no estaba asegurado, o si su aseguradora resolvió el contrato mientras tanto, se encuentra bloqueado." },
+          { "type": "h2", "text": "El seguro temporal desbloquea la situación en pocos minutos" },
+          { "type": "p", "text": "Contrate en línea un seguro de 1 a 90 días, reciba el certificado por correo electrónico o WhatsApp, preséntelo en el depósito y recupere su vehículo. Como cada día de depósito cuesta dinero, la rapidez importa: en TempAssur, el certificado se envía inmediatamente después del pago y la firma electrónica." },
+          { "type": "h2", "text": "¿Qué duración elegir?" },
+          { "type": "p", "text": "El tiempo de recuperar el vehículo y contratar un seguro clásico: 8 o 15 días suelen ser suficientes; 30 días si además debe pasar la inspección técnica o vender el vehículo." },
+          { "type": "h2", "text": "Las condiciones" },
+          { "type": "p", "text": "Conductor de al menos 21 años con 2 años de permiso de conducción, y declaraciones de antecedentes conformes (en particular: sin resolución de contrato por siniestralidad en los últimos 5 años). Si tiene dudas sobre su situación, escríbanos por WhatsApp al +33 6 05 93 84 79: le respondemos los 7 días de la semana." }
+        ]
+      }
+    }
+  },
+  "pages": {
+    "souscription": {
+      "metaTitle": "Contratación — seguro temporal en línea",
+      "metaDescription": "Contrate su seguro temporal en línea en pocos minutos: ubicación, vehículo, duración, conductor, opciones y pago seguro.",
+      "title": "Su solicitud de contratación",
+      "description": "El precio se recalcula en cada etapa y permanece visible de forma permanente en el recuadro adjunto. El precio de las opciones depende de la duración.",
+      "guaranteesHeading": "Garantías y países cubiertos",
+      "guaranteesParagraph": "Todos nuestros seguros temporales incluyen la responsabilidad civil (obligatoria) y la defensa penal y reclamación tras accidente. Solo para el automóvil existen opciones: garantía del conductor, extensión de países, asistencia (no disponibles en los DOM-TOM).",
+      "coverageParagraph": "Está cubierto en Francia y en {count} países de Europa y la cuenca mediterránea, la misma lista para todos nuestros seguros temporales y el seguro de frontera.",
+      "coverageVariationNotice": "La cobertura de algunos países puede variar según la compañía, el vehículo, la duración y las opciones elegidas. ¿Piensa circular por un país que no aparece en la lista? Contáctenos: WhatsApp / tel. +33 6 05 93 84 79.",
+      "coveredCountriesCta": "Ver la lista completa de países cubiertos →"
+    },
+    "merci": {
+      "metaTitle": "Gracias por su confianza",
+      "title": "¡Gracias por su confianza!",
+      "reference": "Referencia",
+      "registered": "Su solicitud de contratación ha sido registrada y está en proceso.",
+      "checkEmail": "<b>Revise su correo electrónico</b> (incluida la carpeta de spam): recibirá en los próximos minutos un enlace seguro para <b>firmar electrónicamente sus documentos</b>.",
+      "nextStep": "<b>Próximo paso: firme los documentos recibidos por correo electrónico</b> para que la garantía entre en vigor.",
+      "urgentHeading": "¿Hora de efecto inminente o ya pasada?",
+      "urgentBody": "Si no ha recibido el correo electrónico, contáctenos de inmediato para acelerar el proceso: <b>WhatsApp (recomendado)</b> o teléfono:"
+    },
+    "notFound": {
+      "title": "Vaya, esta página no existe.",
+      "subtitle": "Sin pánico: su seguro sí está aquí.",
+      "ctaEstimate": "Calcular mi tarifa en 30 segundos",
+      "ctaHome": "Volver al inicio",
+      "contactPrompt": "O escríbanos por WhatsApp:"
+    },
+    "paysCouverts": {
+      "metaTitle": "Países cubiertos por su seguro temporal y de frontera | TempAssur",
+      "metaDescription": "La lista completa de los 35 países cubiertos por nuestros seguros temporales y de frontera, y los 7 países accesibles con la opción de extensión.",
+      "heroTitle": "¿En qué países está cubierto?",
+      "intro": "Buenas noticias: nuestros seguros temporales y nuestro seguro de frontera cubren la misma lista de 35 países. Una sola lista que recordar, sea cual sea su contrato.",
+      "coveredHeading": "Los 35 países cubiertos",
+      "assimilatedNote": "Mónaco, San Marino y Liechtenstein están asimilados (Francia / Italia / Suiza).",
+      "extensionHeading": "¿Necesita ir más lejos? La opción de extensión de circulación",
+      "extensionParagraph": "Solo para automóviles (excepto DOM-TOM), la opción de extensión abre 7 países adicionales: {countries}. Su precio depende de la duración del contrato.",
+      "neverCoveredHeading": "Nunca cubiertos, sea cual sea la opción",
+      "coverageVariationNotice": "La cobertura de algunos países puede variar según la compañía, el vehículo, la duración y las opciones elegidas. ¿Piensa circular por un país que no aparece en la lista? Contáctenos: WhatsApp / tel. +33 6 05 93 84 79.",
+      "internationalCardNote": "La tarjeta internacional de seguro entregada con su contrato es el documento válido.",
+      "ctaEstimate": "Calcular mi tarifa en 30 segundos"
+    },
+    "quiSommesNous": {
+      "metaTitle": "¿Quiénes somos? Corredor de seguros temporales | TempAssur",
+      "metaDescription": "TempAssur (WN Conseil), corredor francés ORIAS n.º 24004933, especialista en seguros temporales de 1 a 90 días para todos los vehículos.",
+      "eyebrow": "Acerca de",
+      "heroTitle": "¿Quiénes somos?",
+      "intro": "TempAssur es la marca de WN Conseil, correduría de seguros francesa con sede en Clichy (Hauts-de-Seine), inscrita en el ORIAS con el n.º {orias}. Nuestra especialidad: el seguro temporal, de 1 a 90 días, para todos los vehículos — automóvil, vehículo pesado, autocaravana, cuadriciclo, autobús, tractor agrícola, remolque — y el seguro de frontera para vehículos matriculados en el extranjero.",
+      "promisesHeading": "Nuestro compromiso",
+      "promises": [
+        { "title": "La rapidez", "description": "Contratación 100 % en línea en 5 minutos, certificado enviado de inmediato por correo electrónico o WhatsApp, incluso los fines de semana." },
+        { "title": "La disponibilidad", "description": "Un equipo real, disponible los 7 días de la semana por teléfono y WhatsApp al +33 6 05 93 84 79. ¿Un problema con el pago, una urgencia, una pregunta? Respondemos." },
+        { "title": "La transparencia", "description": "Los precios se muestran antes de que deje cualquier dato de contacto, y sus contratos están respaldados por compañías de seguros autorizadas, reguladas por el Código de Seguros." }
+      ],
+      "whereHeading": "Dónde encontrarnos",
+      "mapTitle": "TempAssur — WN Conseil en Google Maps",
+      "ctaEstimate": "Calcular mi tarifa en 30 segundos",
+      "ctaContact": "Contáctenos"
+    },
+    "contact": {
+      "metaTitle": "Contacte con TempAssur — los 7 días de la semana por WhatsApp, teléfono o correo electrónico",
+      "heroTitle": "Contáctenos — respondemos los 7 días de la semana",
+      "fastest": "Lo más rápido",
+      "mapTitle": "TempAssur — WN Conseil en Google Maps",
+      "addressLine": "WN Conseil / TempAssur, {address}"
+    },
+    "monCompte": {
+      "metaTitle": "Mi cuenta",
+      "metaDescription": "Inicie sesión o cree una cuenta para gestionar sus contratos.",
+      "heroTitle": "Mi cuenta",
+      "heroDescription": "Inicie sesión para gestionar sus contratos, o cree una cuenta en pocos segundos.",
+      "login": "Iniciar sesión",
+      "register": "Crear una cuenta"
+    },
+    "login": {
+      "metaTitle": "Inicio de sesión",
+      "metaDescription": "Inicie sesión en su cuenta de TempAssur para gestionar sus contratos y certificados.",
+      "title": "Bienvenido de nuevo",
+      "description": "Inicie sesión para gestionar sus contratos, encontrar sus certificados y consultar sus garantías.",
+      "footerText": "¿No tiene una cuenta?",
+      "footerLinkLabel": "Crear una cuenta"
+    },
+    "register": {
+      "metaTitle": "Crear una cuenta",
+      "metaDescription": "Cree gratis su cuenta de TempAssur para obtener un presupuesto instantáneo y gestionar sus contratos en línea.",
+      "title": "Cree su cuenta",
+      "description": "Únase a los conductores que gestionan su seguro temporal en línea con TempAssur.",
+      "footerText": "¿Ya tiene una cuenta?",
+      "footerLinkLabel": "Iniciar sesión"
+    }
+  },
+  "authShell": {
+    "dataPrivacy": "Sus datos están cifrados de extremo a extremo y nunca se comparten sin su consentimiento."
+  },
+  "faq": {
+    "meta": {
+      "title": "Preguntas frecuentes",
+      "description": "Todas las respuestas sobre la contratación, los precios, la cobertura, los documentos y la cancelación de su seguro temporal TempAssur."
+    },
+    "eyebrow": "FAQ",
+    "heading": "Preguntas frecuentes",
+    "categories": [
+      {
+        "id": "souscription",
+        "title": "La contratación",
+        "items": [
+          {
+            "id": "souscription-1",
+            "question": "¿En cuánto tiempo estoy asegurado?",
+            "answer": "En pocos minutos: cálculo de la tarifa, contratación en línea, pago con tarjeta, firma electrónica — y luego su certificado llega por correo electrónico o WhatsApp."
+          },
+          {
+            "id": "souscription-2",
+            "question": "¿Quién puede contratar?",
+            "answer": "Cualquier conductor de al menos 21 años, con el permiso de conducción desde hace al menos 2 años, que cumpla las declaraciones presentadas antes del pago (siniestros, resolución de contrato, condenas, malus)."
+          },
+          {
+            "id": "souscription-3",
+            "question": "¿Puedo contratar para otra persona?",
+            "answer": "Sí, pero el conductor debe estar declarado y cumplir todas las condiciones de elegibilidad."
+          },
+          {
+            "id": "souscription-4",
+            "question": "¿Puedo elegir la hora de efecto?",
+            "answer": "Sí, en el momento de la contratación — la garantía comienza después de la firma de los documentos."
+          }
+        ]
+      },
+      {
+        "id": "prix",
+        "title": "Los precios",
+        "items": [
+          {
+            "id": "prix-1",
+            "question": "¿Cómo se calcula el precio?",
+            "answer": "Según la categoría de vehículo, la duración, la zona (Francia metropolitana o DOM-TOM) y las opciones. El precio de las opciones depende de la duración. Todo se muestra en el calculador de tarifas, sin dejar su correo electrónico."
+          },
+          {
+            "id": "prix-2",
+            "question": "¿Las tarifas DOM-TOM son las mismas?",
+            "answer": "No, difieren de las de Francia metropolitana; se muestran automáticamente en cuanto indica su país de residencia o de matriculación. Las opciones no están disponibles allí."
+          }
+        ]
+      },
+      {
+        "id": "couverture",
+        "title": "La cobertura",
+        "items": [
+          {
+            "id": "couverture-1",
+            "question": "¿En qué países estoy cubierto?",
+            "answer": "En Francia y en 35 países — la misma lista para el seguro temporal y el seguro de frontera."
+          },
+          {
+            "id": "couverture-2",
+            "question": "¿Puedo ir a Marruecos, Túnez o Turquía?",
+            "answer": "Sí, con la opción de extensión de circulación (solo automóviles)."
+          },
+          {
+            "id": "couverture-3",
+            "question": "¿Qué garantías están incluidas?",
+            "answer": "La responsabilidad civil obligatoria y la defensa penal y reclamación. Para el automóvil existen opciones: garantía del conductor, extensión de países, asistencia."
+          }
+        ]
+      },
+      {
+        "id": "documents",
+        "title": "Los documentos",
+        "items": [
+          {
+            "id": "documents-1",
+            "question": "¿Qué documentos voy a recibir?",
+            "answer": "Su contrato, su certificado de seguro y su tarjeta internacional de seguro — por correo electrónico o WhatsApp, a su elección."
+          },
+          {
+            "id": "documents-2",
+            "question": "No he recibido mi certificado.",
+            "answer": "Revise su carpeta de spam. Si la hora de efecto se acerca, contáctenos de inmediato: WhatsApp / tel. +33 6 05 93 84 79 — aceleramos el proceso."
+          }
+        ]
+      },
+      {
+        "id": "annulation",
+        "title": "La cancelación",
+        "items": [
+          {
+            "id": "annulation-1",
+            "question": "¿Puedo cancelar o que me reembolsen?",
+            "answer": "Los contratos temporales tienen una duración fija, sin renovación tácita; una vez que la garantía está en vigor, no pueden cancelarse ni reembolsarse (véanse las condiciones generales de venta)."
+          }
+        ]
+      }
+    ],
+    "otherQuestion": "¿Otra pregunta? <phone>{phoneValue}</phone> (los 7 días de la semana) o <email>{emailValue}</email>."
+  },
+  "legal": {
+    "eyebrow": "Información legal",
+    "cgv": {
+      "meta": {
+        "title": "Condiciones generales de venta",
+        "description": "Condiciones generales de venta (CGV) aplicables a los contratos de seguro temporal contratados en {siteName}."
+      },
+      "pageTitle": "Condiciones generales de venta",
+      "sections": [
+        {
+          "title": "1. Presentación del sitio web",
+          "body": "La sociedad WN Conseil, EURL con un capital de 1000,00 €, inscrita en el Registro Mercantil (RCS) de Nanterre con el número 929 812 642. Domicilio social: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, Francia · Correo electrónico: contact@tempassur.com · Número ORIAS: 24004933 (www.orias.fr). WN Conseil actúa en calidad de corredor de seguros (ORIAS n.º 24004933). Los contratos de seguro suscritos a través del sitio TempAssur se celebran entre el cliente y la compañía de seguros que asume el riesgo (su nombre figura en los documentos contractuales), actuando WN Conseil en calidad de intermediario y sin ser parte del contrato de seguro. Las presentes condiciones generales de venta (CGV) rigen las ventas realizadas en el sitio TempAssur."
+        },
+        {
+          "title": "2. Objeto",
+          "body": "Las presentes CGV tienen por objeto definir los derechos y obligaciones de las partes en el marco de la venta en línea de productos de seguro temporal ofrecidos en el sitio TempAssur."
+        },
+        {
+          "title": "3. Aceptación de las CGV",
+          "body": "Todo pedido realizado en el sitio TempAssur implica la aceptación plena e incondicional de las presentes CGV. El cliente declara haber tomado conocimiento de ellas antes de realizar el pedido."
+        },
+        {
+          "title": "4. Productos y servicios",
+          "body": "TempAssur ofrece productos de seguro temporal adaptados a distintos tipos de vehículos. Las características esenciales de los productos se describen en el sitio. Es responsabilidad del cliente asegurarse de que el producto elegido corresponde a sus necesidades. Antes de cualquier contratación, el cliente recibe el documento de información sobre el producto de seguro (IPID), así como las condiciones generales del contrato. Las condiciones de elegibilidad (edad mínima de 21 años, permiso de conducción desde hace al menos 2 años, declaraciones relativas a antecedentes) se verifican en el momento de la contratación; toda declaración falsa expone al asegurado a las sanciones previstas en los artículos L.113-8 y L.113-9 del Código de Seguros."
+        },
+        {
+          "title": "5. Pedido",
+          "body": "El pedido se realiza en línea, a través del sitio TempAssur. El cliente debe seleccionar el producto de seguro deseado, completar la información requerida y validar su pedido. La validación del pedido implica la aceptación de los precios y descripciones de los productos, así como de las presentes CGV, e incluye la aceptación expresa de las declaraciones del conductor presentadas antes del pago. A continuación, el cliente recibe un correo electrónico de confirmación de su pedido."
+        },
+        {
+          "title": "6. Precio",
+          "body": "Los precios mostrados en el sitio TempAssur se indican en euros e incluyen el IVA aplicable en la fecha del pedido. WN Conseil se reserva el derecho de modificar sus precios en cualquier momento, pero los productos se facturarán según las tarifas vigentes en el momento de la validación del pedido."
+        },
+        {
+          "title": "7. Pago",
+          "body": "El pago se efectúa con tarjeta bancaria o cualquier otro medio indicado en el sitio. El cliente garantiza que está plenamente autorizado para utilizar el medio de pago elegido. El importe del pedido se cargará en el momento de su validación."
+        },
+        {
+          "title": "8. Derecho de desistimiento",
+          "body": "Debido a la naturaleza temporal de los contratos de seguro ofrecidos en el sitio TempAssur, el cliente renuncia expresamente a su derecho de desistimiento. Una vez contratado el contrato y en vigor la garantía, no será posible ninguna cancelación ni reembolso. El cliente reconoce que el contrato tiene una duración fija y sin renovación tácita, por lo que no puede resolverse."
+        },
+        {
+          "title": "9. Responsabilidad",
+          "body": "WN Conseil se compromete a proporcionar productos conformes con las disposiciones legales vigentes. No obstante, WN Conseil no podrá ser considerada responsable de los daños indirectos derivados del uso de los productos vendidos en el sitio."
+        },
+        {
+          "title": "10. Datos personales",
+          "body": "La información recopilada por WN Conseil durante el pedido es necesaria para su tramitación. Se trata de conformidad con la legislación sobre protección de datos. El cliente puede ejercer sus derechos de acceso, rectificación y supresión de sus datos poniéndose en contacto con WN Conseil."
+        },
+        {
+          "title": "11. Modificaciones de las CGV",
+          "body": "WN Conseil se reserva el derecho de modificar las presentes CGV en cualquier momento. Las condiciones aplicables son las vigentes en el momento del pedido."
+        },
+        {
+          "title": "12. Ley aplicable y litigios",
+          "body": "Las presentes Condiciones Generales de Venta se rigen por la ley francesa. En caso de litigio relacionado con un pedido o con la aplicación de las presentes CGV, se invita al cliente a ponerse en contacto con el servicio de atención al cliente de WN Conseil para intentar resolver el conflicto de forma amistosa. Para los litigios relativos a un contrato de seguro, el cliente puede acudir gratuitamente a La Médiation de l'Assurance: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Para los demás litigios relativos al sitio, el mediador de consumo designado es el IEAM (Institut d'Expertise, d'Arbitrage et de Médiation): 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu — contact@ieam.eu. En caso de recurrir a la vía judicial, los tribunales competentes serán los del domicilio social de WN Conseil."
+        },
+        {
+          "title": "13. Contacto",
+          "body": "Para cualquier pregunta o reclamación, puede contactar con TempAssur: Por correo electrónico: contact@tempassur.com · Por teléfono o WhatsApp: +33 6 05 93 84 79 · Consulte también nuestra página de Reclamación."
+        }
+      ]
+    },
+    "mentionsLegales": {
+      "meta": {
+        "title": "Aviso legal",
+        "description": "Aviso legal de {siteName}, editado por {legalName}, corredor de seguros inscrito en el ORIAS con el n.º {orias}."
+      },
+      "pageTitle": "Aviso legal",
+      "sections": [
+        {
+          "title": "Editor del sitio",
+          "body": "El sitio www.tempassur.com está editado por WN Conseil, Empresa Unipersonal de Responsabilidad Limitada (EURL) con un capital de 1000,00 €, inscrita en el Registro Mercantil (RCS) de Nanterre con el número 929 812 642. Domicilio social: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, Francia · SIRET: 929 812 642 00015 · IVA intracomunitario: FR14929812642. Director de la publicación: Walid Nefzi, gerente. Teléfono: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41 · Correo electrónico: contact@tempassur.com"
+        },
+        {
+          "title": "Actividad regulada — distribución de seguros",
+          "body": "WN Conseil es corredor de seguros, inscrito en el ORIAS con el n.º 24004933 (categoría corredor de seguros o reaseguros — COA), verificable en www.orias.fr. WN Conseil ejerce su actividad bajo el control de la Autoridad de Control Prudencial y de Resolución (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09 — acpr.banque-france.fr. Los contratos de seguro distribuidos en este sitio están respaldados por compañías de seguros autorizadas, reguladas por el Código de Seguros. La lista de compañías asociadas está disponible previa solicitud; el nombre de la aseguradora de su contrato figura en sus documentos contractuales. WN Conseil no posee ninguna participación directa ni indirecta en ninguna compañía de seguros, y ninguna compañía de seguros posee participación en WN Conseil. WN Conseil trabaja con varias compañías de seguros y no está sujeto a ninguna obligación contractual de trabajar exclusivamente con una de ellas; la lista de compañías asociadas está disponible previa solicitud. WN Conseil recibe una comisión incluida en la prima del seguro."
+        },
+        {
+          "title": "Reclamación y mediación",
+          "body": "Para cualquier reclamación, consulte nuestra página de Reclamación. Una vez agotados los recursos internos, puede acudir gratuitamente al mediador competente (datos de contacto en la página de Reclamación)."
+        },
+        {
+          "title": "Alojamiento",
+          "body": "El sitio está alojado por HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chipre — www.hostinger.fr/contact."
+        },
+        {
+          "title": "Advertencia",
+          "body": "La información proporcionada en el sitio TempAssur tiene carácter meramente informativo y no debe considerarse en ningún caso como asesoramiento. Aunque WN Conseil se esfuerza por mantener la información del sitio actualizada y precisa, pueden producirse inexactitudes u omisiones. Si detecta algún problema, le rogamos que nos lo comunique por correo electrónico detallando el problema. Todo uso del sitio y toda descarga de contenido se realizan bajo la responsabilidad del usuario. WN Conseil declina toda responsabilidad por cualquier daño resultante de estas acciones. Todo contenido descargado se realiza por cuenta y riesgo del usuario y bajo su única responsabilidad. En consecuencia, WN Conseil no podrá ser considerada responsable de ningún daño sufrido por el ordenador del usuario ni de ninguna pérdida de datos derivada de la navegación."
+        },
+        {
+          "title": "Propiedad intelectual",
+          "body": "Todo el contenido del sitio TempAssur (textos, gráficos, imágenes, vídeos, etc.) está protegido por el derecho de propiedad intelectual y es propiedad exclusiva de WN Conseil o de sus socios. Queda estrictamente prohibida toda reproducción, representación o explotación, total o parcial, de estos contenidos, sin autorización expresa y previa de WN Conseil. Las marcas y logotipos presentes en el sitio también están protegidos y su uso está prohibido sin acuerdo previo."
+        },
+        {
+          "title": "Datos personales",
+          "body": "Los datos personales recopilados a través del sitio TempAssur se tratan de conformidad con la ley francesa «Informatique et Libertés» del 6 de enero de 1978, así como con el Reglamento General de Protección de Datos (RGPD). La información recopilada se destina a la gestión de sus solicitudes, a la elaboración de presupuestos y a la gestión de los contratos de seguro. WN Conseil garantiza la confidencialidad de los datos personales y se compromete a no transmitirlos a terceros con fines de prospección comercial. Dispone de un derecho de acceso, rectificación y supresión de sus datos poniéndose en contacto con WN Conseil en la siguiente dirección: contact@tempassur.com. Para más información, consulte nuestra Política de privacidad."
+        },
+        {
+          "title": "Contacto",
+          "body": "Por correo electrónico: contact@tempassur.com · Por teléfono: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41"
+        }
+      ]
+    },
+    "politiqueConfidentialite": {
+      "meta": {
+        "title": "Política de privacidad y cookies",
+        "description": "Cómo {siteName} recopila, utiliza y protege sus datos personales, y qué cookies se utilizan en el sitio."
+      },
+      "pageTitle": "Política de privacidad y cookies",
+      "sections": [
+        {
+          "title": "1. Responsable del tratamiento",
+          "body": "La presente política describe cómo WN Conseil (que opera bajo el nombre TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — recopila, utiliza, almacena y protege sus datos personales a través del sitio www.tempassur.com."
+        },
+        {
+          "title": "2. Datos recopilados",
+          "body": "Presupuesto y contratación: identidad, datos de contacto, fecha de nacimiento, información del permiso de conducción, información del vehículo, antecedentes declarados (siniestros, resolución de contrato, condenas, malus). Pago: los datos bancarios son tratados directamente por nuestro proveedor de pago seguro; TempAssur nunca los almacena. Formularios de contacto: los datos introducidos, su dirección IP y el user-agent de su navegador (prevención del fraude y de los mensajes no deseados). Navegación: cookies y medición de audiencia (véase el §7)."
+        },
+        {
+          "title": "3. Finalidades y bases legales",
+          "body": "Elaboración de presupuestos y ejecución del contrato (ejecución contractual); obligaciones legales del corredor, incluido el deber de asesoramiento y la lucha contra el blanqueo de capitales (obligación legal); gestión de la relación con el cliente, estadísticas y mejora del sitio (interés legítimo); comunicaciones comerciales (consentimiento, revocable en cualquier momento)."
+        },
+        {
+          "title": "4. Destinatarios",
+          "body": "Las compañías de seguros asociadas, para la elaboración y gestión de sus contratos; nuestros proveedores técnicos (alojamiento, pago, firma electrónica, envío de correos electrónicos y mensajes de WhatsApp). WN Conseil nunca vende sus datos personales."
+        },
+        {
+          "title": "5. Plazos de conservación",
+          "body": "Datos contractuales: durante la vigencia del contrato y, posteriormente, de conformidad con los plazos legales (5 años como mínimo, hasta 10 años para los documentos contables). Prospectos: 3 años tras el último contacto."
+        },
+        {
+          "title": "6. Sus derechos",
+          "body": "Dispone de un derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición: escriba a contact@tempassur.com. También puede presentar una reclamación ante la CNIL (www.cnil.fr)."
+        },
+        {
+          "title": "7. Cookies",
+          "id": "cookies",
+          "body": "En su primera visita, un banner le permite aceptar o rechazar las cookies por categoría: cookies necesarias para el funcionamiento del sitio, medición de audiencia, marketing. Duración máxima: 13 meses. Puede modificar sus opciones en cualquier momento a través del enlace «Gestionar mis cookies» al pie de página."
+        },
+        {
+          "title": "8. Seguridad",
+          "body": "Aplicamos medidas de seguridad adecuadas (cifrado TLS, accesos restringidos, proveedores certificados) para proteger sus datos contra cualquier acceso no autorizado, divulgación o destrucción."
+        },
+        {
+          "title": "9. Modificaciones y contacto",
+          "body": "Esta política puede actualizarse en cualquier momento; la versión vigente es la publicada en esta página. Para cualquier pregunta: contact@tempassur.com · +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41."
+        }
+      ]
+    },
+    "reclamation": {
+      "meta": {
+        "title": "Reclamación",
+        "description": "Cómo presentar una reclamación ante TempAssur y las vías de mediación disponibles."
+      },
+      "pageTitle": "¿Una reclamación?",
+      "pageDescription": "Nos esforzamos por responder a toda reclamación en el plazo más breve posible.",
+      "sections": [
+        {
+          "title": "1. Contacte con nuestro servicio de reclamaciones",
+          "body": "Por correo electrónico: contact@tempassur.com (asunto: «Reclamación») · Por correo postal: WN Conseil — Servicio de Reclamaciones, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Por teléfono: +33 6 05 93 84 79. Acusamos recibo de su reclamación en un plazo de 10 días hábiles y respondemos en un máximo de 2 meses."
+        },
+        {
+          "title": "2. La reclamación se refiere a su contrato de seguro",
+          "body": "Si nuestra respuesta no le satisface, puede dirigirse al servicio de reclamaciones de la compañía de seguros que respalda su contrato (nombre y datos de contacto en sus condiciones generales)."
+        },
+        {
+          "title": "3. La mediación",
+          "body": "Una vez agotadas estas vías, puede acudir gratuitamente a La Médiation de l'Assurance: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Para un litigio relativo al sitio (ajeno al contrato de seguro): IEAM, 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu."
+        }
+      ]
+    }
+  }
+}

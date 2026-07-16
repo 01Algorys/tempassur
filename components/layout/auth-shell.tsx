@@ -1,4 +1,5 @@
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 import { ShieldCheck } from "lucide-react"
 
 import { Logo } from "@/components/shared/logo"
@@ -20,6 +21,8 @@ export function AuthShell({
   footerLinkHref,
   children,
 }: AuthShellProps) {
+  const t = useTranslations("authShell")
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-surface pt-28 pb-16">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-[0.04]" />
@@ -36,9 +39,7 @@ export function AuthShell({
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <ShieldCheck className="size-5" />
             </span>
-            <p className="text-sm text-muted-foreground">
-              Your data is encrypted end-to-end and never shared without consent.
-            </p>
+            <p className="text-sm text-muted-foreground">{t("dataPrivacy")}</p>
           </div>
         </div>
 

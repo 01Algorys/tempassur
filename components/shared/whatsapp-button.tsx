@@ -2,6 +2,7 @@
 
 import type { ComponentProps, ReactNode } from "react"
 import { MessageCircle } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { trackEvent } from "@/lib/analytics"
 import { cn } from "@/lib/utils"
@@ -15,10 +16,12 @@ interface WhatsappButtonProps extends Omit<ComponentProps<"a">, "href" | "childr
 export function WhatsappButton({
   message,
   className,
-  children = "Souscrire par WhatsApp",
+  children,
   onClick,
   ...props
 }: WhatsappButtonProps) {
+  const t = useTranslations("common")
+
   return (
     <a
       href={whatsappUrl(message)}
@@ -35,7 +38,7 @@ export function WhatsappButton({
       {...props}
     >
       <MessageCircle className="size-4 shrink-0" strokeWidth={2} />
-      {children}
+      {children ?? t("whatsappDefaultCta")}
     </a>
   )
 }

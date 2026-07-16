@@ -2,10 +2,11 @@
 
 import type { UseFormReturn } from "react-hook-form"
 import { Info } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES } from "@/lib/countries"
+import { COUNTRIES, getCountryLabel } from "@/lib/countries"
 import { FRANCE_TERRITORIES } from "@/lib/pricing-data"
 import { isDomTomTerritory } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
@@ -17,6 +18,11 @@ interface LocalisationStepProps {
 }
 
 export function LocalisationStep({ form }: LocalisationStepProps) {
+  const t = useTranslations("wizard.localisation")
+  const tCommon = useTranslations("common")
+  const tTerritory = useTranslations("pricingLabels.territory")
+  const locale = useLocale()
+
   const paysImmatriculation = form.watch("paysImmatriculation")
   const paysResidence = form.watch("paysResidence")
   const territoireImmatriculation = form.watch("territoireImmatriculation")
@@ -28,7 +34,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
 
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="text-lg font-bold text-navy">Localisation</h3>
+      <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
@@ -36,7 +42,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
           name="paysImmatriculation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Pays d&apos;immatriculation du véhicule *</FormLabel>
+              <FormLabel>{t("registrationCountry")}</FormLabel>
               <Select
                 onValueChange={(value) => {
                   field.onChange(value)
@@ -46,13 +52,13 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
               >
                 <FormControl>
                   <SelectTrigger className={triggerClass}>
-                    <SelectValue placeholder="Sélectionnez un pays" />
+                    <SelectValue placeholder={t("countryPlaceholder")} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
                   {COUNTRIES.map((country) => (
                     <SelectItem key={country.code} value={country.code}>
-                      {country.label}
+                      {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -68,17 +74,17 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
             name="territoireImmatriculation"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Département / territoire d&apos;immatriculation *</FormLabel>
+                <FormLabel>{t("registrationTerritory")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
+                      <SelectValue placeholder={t("territoryPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {FRANCE_TERRITORIES.map((territory) => (
                       <SelectItem key={territory.value} value={territory.value}>
-                        {territory.label}
+                        {tTerritory(territory.value)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -94,7 +100,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
           name="paysResidence"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Pays / territoire de résidence *</FormLabel>
+              <FormLabel>{t("residenceCountry")}</FormLabel>
               <Select
                 onValueChange={(value) => {
                   field.onChange(value)
@@ -104,13 +110,13 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
               >
                 <FormControl>
                   <SelectTrigger className={triggerClass}>
-                    <SelectValue placeholder="Sélectionnez un pays" />
+                    <SelectValue placeholder={t("countryPlaceholder")} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
                   {COUNTRIES.map((country) => (
                     <SelectItem key={country.code} value={country.code}>
-                      {country.label}
+                      {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -126,24 +132,22 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
             name="territoireResidence"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Département / territoire de résidence *</FormLabel>
+                <FormLabel>{t("residenceTerritory")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
+                      <SelectValue placeholder={t("territoryPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {FRANCE_TERRITORIES.map((territory) => (
                       <SelectItem key={territory.value} value={territory.value}>
-                        {territory.label}
+                        {tTerritory(territory.value)}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
-                <FormDescription>
-                  Un tarif spécifique DOM-TOM s&apos;applique aux départements et collectivités d&apos;outre-mer.
-                </FormDescription>
+                <FormDescription>{t("domTomHint")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -154,7 +158,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
       {isDomTom ? (
         <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
           <Info className="mt-0.5 size-4 shrink-0 text-primary" />
-          Les tarifs applicables aux DOM-TOM diffèrent de ceux de la métropole.
+          {t("domTomNotice")}
         </div>
       ) : null}
     </div>

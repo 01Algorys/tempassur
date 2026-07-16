@@ -4,6 +4,7 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ArrowRight, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,6 +19,7 @@ import {
 import { registerSchema, type RegisterSchema } from "@/lib/validations/auth-schema"
 
 export function RegisterForm() {
+  const t = useTranslations("forms.register")
   const [submitted, setSubmitted] = useState(false)
 
   const form = useForm<RegisterSchema>({
@@ -33,7 +35,7 @@ export function RegisterForm() {
   if (submitted) {
     return (
       <div className="rounded-xl border border-primary/15 bg-primary/5 p-5 text-center text-sm text-navy">
-        Account created! Check your inbox to verify your email and get your first quote.
+        {t("successMessage")}
       </div>
     )
   }
@@ -46,9 +48,9 @@ export function RegisterForm() {
           name="fullName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name</FormLabel>
+              <FormLabel>{t("fullNameLabel")}</FormLabel>
               <FormControl>
-                <Input placeholder="Jane Doe" {...field} />
+                <Input placeholder={t("fullNamePlaceholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -59,9 +61,9 @@ export function RegisterForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("emailLabel")}</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="jane@example.com" {...field} />
+                <Input type="email" placeholder={t("emailPlaceholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -73,7 +75,7 @@ export function RegisterForm() {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>{t("passwordLabel")}</FormLabel>
                 <FormControl>
                   <Input type="password" placeholder="••••••••" {...field} />
                 </FormControl>
@@ -86,7 +88,7 @@ export function RegisterForm() {
             name="confirmPassword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel>{t("confirmPasswordLabel")}</FormLabel>
                 <FormControl>
                   <Input type="password" placeholder="••••••••" {...field} />
                 </FormControl>
@@ -100,7 +102,7 @@ export function RegisterForm() {
             <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
           ) : (
             <>
-              Create Account
+              {t("submit")}
               <ArrowRight data-icon="inline-end" className="size-4" />
             </>
           )}

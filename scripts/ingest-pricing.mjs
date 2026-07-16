@@ -169,21 +169,22 @@ export type CvTier = "moins-16cv" | "moins-30cv" | "plus-30cv"
 export type PtacTier = "moins-3500kg" | "plus-3500kg"
 export type QuadSubtype = "voiturette-sans-permis" | "buggy" | "quad-avec-permis"
 
-export const CV_TIER_OPTIONS: { value: CvTier; label: string }[] = [
-  { value: "moins-16cv", label: "Moins de 16 CV" },
-  { value: "moins-30cv", label: "De 16 à 29 CV" },
-  { value: "plus-30cv", label: "30 CV et plus" },
+// Labels are translated — see messages/*.json "pricingLabels.cvTier/ptacTier/quadSubtype".
+export const CV_TIER_OPTIONS: { value: CvTier }[] = [
+  { value: "moins-16cv" },
+  { value: "moins-30cv" },
+  { value: "plus-30cv" },
 ]
 
-export const PTAC_TIER_OPTIONS: { value: PtacTier; label: string }[] = [
-  { value: "moins-3500kg", label: "PTAC ≤ 3,5 tonnes" },
-  { value: "plus-3500kg", label: "PTAC > 3,5 tonnes" },
+export const PTAC_TIER_OPTIONS: { value: PtacTier }[] = [
+  { value: "moins-3500kg" },
+  { value: "plus-3500kg" },
 ]
 
-export const QUAD_SUBTYPE_OPTIONS: { value: QuadSubtype; label: string }[] = [
-  { value: "voiturette-sans-permis", label: "Voiturette sans permis (≤ 8 CV)" },
-  { value: "buggy", label: "Buggy 50 cc (≤ 8 CV)" },
-  { value: "quad-avec-permis", label: "Quad avec permis (≤ 9 CV)" },
+export const QUAD_SUBTYPE_OPTIONS: { value: QuadSubtype }[] = [
+  { value: "voiturette-sans-permis" },
+  { value: "buggy" },
+  { value: "quad-avec-permis" },
 ]
 
 // "Véhicule léger" tables — used by the automobiles category, split by fiscal power (CV) tier.
@@ -257,22 +258,22 @@ ${tariffRows(busAutocars)}
 
 // --- Not derived from Excel; maintained here manually. ---
 
+// Labels are translated — see messages/*.json "pricingLabels.territory".
 export interface Territory {
   value: string
-  label: string
   isDomTom: boolean
 }
 
 export const FRANCE_TERRITORIES: Territory[] = [
-  { value: "metropole", label: "France métropolitaine", isDomTom: false },
-  { value: "guadeloupe", label: "Guadeloupe", isDomTom: true },
-  { value: "martinique", label: "Martinique", isDomTom: true },
-  { value: "guyane", label: "Guyane", isDomTom: true },
-  { value: "reunion", label: "La Réunion", isDomTom: true },
-  { value: "mayotte", label: "Mayotte", isDomTom: true },
-  { value: "saint-martin", label: "Saint-Martin", isDomTom: true },
-  { value: "saint-barthelemy", label: "Saint-Barthélemy", isDomTom: true },
-  { value: "saint-pierre-et-miquelon", label: "Saint-Pierre-et-Miquelon", isDomTom: true },
+  { value: "metropole", isDomTom: false },
+  { value: "guadeloupe", isDomTom: true },
+  { value: "martinique", isDomTom: true },
+  { value: "guyane", isDomTom: true },
+  { value: "reunion", isDomTom: true },
+  { value: "mayotte", isDomTom: true },
+  { value: "saint-martin", isDomTom: true },
+  { value: "saint-barthelemy", isDomTom: true },
+  { value: "saint-pierre-et-miquelon", isDomTom: true },
 ]
 
 // Categories where insuring a rented vehicle is a plausible, common scenario.

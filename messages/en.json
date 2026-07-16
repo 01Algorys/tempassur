@@ -1,0 +1,1123 @@
+{
+  "common": {
+    "whatsappDefaultCta": "Subscribe via WhatsApp",
+    "whatsappFloatingAria": "Subscribe via WhatsApp",
+    "logoAria": "TempAssur, home",
+    "otherCountry": "Other country"
+  },
+  "nav": {
+    "accueil": "Home",
+    "jeMAssure": "Get insured",
+    "quiSommesNous": "About us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "monCompte": "My account",
+    "faq": "FAQ"
+  },
+  "vehicleTypes": {
+    "automobiles": { "label": "Car", "description": "Private and commercial vehicles under 3.5 T." },
+    "poids-lourds": { "label": "Heavy goods vehicle", "description": "Trucks, road tractors and carriers over 3.5 T." },
+    "camping-cars": { "label": "Motorhome", "description": "Motorhomes and converted vans." },
+    "quadricycles": { "label": "Quadricycles", "description": "Approved quads, licence-free microcars, buggies." },
+    "bus-autocars": { "label": "Buses, coaches", "description": "Passenger transport." },
+    "tracteurs-agricoles": { "label": "Agricultural tractor", "description": "Tractors and farm machinery." },
+    "remorques": { "label": "Trailers", "description": "Trailers, semi-trailers and caravans (heavy and light)." },
+    "assurance-frontiere": {
+      "label": "Border insurance",
+      "description": "Vehicles registered outside the European Union and outside the green card system, or vehicles registered abroad that need to travel in France and Europe."
+    }
+  },
+  "header": {
+    "onlineCta": "Subscribe online",
+    "openMenu": "Open menu"
+  },
+  "footer": {
+    "description": "TempAssur — Temporary insurance from 1 to 90 days, for all vehicles. Instant certificate by e-mail or WhatsApp.",
+    "insuranceHeading": "Our insurance products",
+    "coveredCountries": "Countries covered",
+    "informationHeading": "Information",
+    "quiSommesNous": "About us",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "reclamation": "Complaints",
+    "mentionsLegales": "Legal notice",
+    "cgv": "Terms of sale",
+    "politiqueConfidentialite": "Privacy policy",
+    "gererCookies": "Manage my cookies",
+    "contactHeading": "Contact",
+    "phoneSuffix": "(7 days a week)",
+    "googleMapsSuffix": "Find us on Google Maps",
+    "brokerLine": "Insurance broker",
+    "reassuranceStatement": "Approved insurers — your contracts are underwritten by insurance companies governed by the French Insurance Code.",
+    "securePayment": "Secure payment",
+    "copyright": "© {name} {year} — All rights reserved"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Choose language"
+  },
+  "forms": {
+    "contact": {
+      "subjects": { "souscription": "Subscription", "paiement": "Payment", "attestation": "Certificate", "reclamation": "Complaint", "autre": "Other" },
+      "nomRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email address",
+      "messageRequired": "Message is required",
+      "successTitle": "Thank you! Your message has been sent, we'll get back to you shortly.",
+      "successUrgent": "Urgent?",
+      "successWhatsapp": "WhatsApp: {phone}",
+      "nomLabel": "Name *",
+      "nomPlaceholder": "Your name",
+      "emailLabel": "E-mail *",
+      "emailPlaceholder": "you@email.com",
+      "telephoneLabel": "Phone",
+      "telephonePlaceholder": "Your phone number",
+      "sujetLabel": "Subject *",
+      "sujetPlaceholder": "Select a subject",
+      "messageLabel": "Message *",
+      "messagePlaceholder": "Your message",
+      "submit": "Send"
+    },
+    "login": {
+      "successMessage": "You are signed in. Redirecting to your account...",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "jane@example.com",
+      "passwordLabel": "Password",
+      "submit": "Sign in"
+    },
+    "register": {
+      "successMessage": "Account created! Check your inbox to confirm your address and get your first quote.",
+      "fullNameLabel": "Full name",
+      "fullNamePlaceholder": "Jane Doe",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "jane@example.com",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm password",
+      "submit": "Create account"
+    }
+  },
+  "paymentHelp": {
+    "heading": "Need help finalising your payment?",
+    "bodyHome": "We're available 7 days a week: call us or message us on WhatsApp, or by e-mail. We'll guide you step by step and can offer you a tailored solution.",
+    "bodyTunnel": "Having trouble finalising your subscription or your payment? We're here 7 days a week: call us or message us on WhatsApp, or by e-mail. We'll guide you step by step and can offer you a tailored solution."
+  },
+  "home": {
+    "meta": {
+      "title": "Temporary car & all-vehicle insurance from 1 to 90 days | TempAssur",
+      "description": "Instant temporary insurance from 1 to 90 days: cars, HGVs, motorhomes, quads, trailers, border insurance. Certificate by e-mail or WhatsApp within minutes. From {price}/day."
+    },
+    "hero": {
+      "title": "Temporary insurance from 1 to 90 days — instant certificate by e-mail or WhatsApp",
+      "description": "Cars, HGVs, motorhomes, quads, buses, tractors, trailers and border insurance. 100% online subscription, 7 days a week. Approved insurers: your contracts are underwritten by insurance companies governed by the French Insurance Code.",
+      "ctaEstimate": "Get a quote in 30 seconds"
+    },
+    "tarificateur": {
+      "title": "Get a quote in 30 seconds",
+      "categoryLabel": "Vehicle category",
+      "categoryPlaceholder": "Select a category",
+      "durationLabel": "Duration",
+      "durationDays": "{count} d",
+      "durationPlaceholder": "Choose your duration",
+      "mostChosen": "Most popular",
+      "durationOption": "{count, plural, one {# day} other {# days}}",
+      "priceFrom": "From {price}/day",
+      "pricePlaceholder": "—",
+      "priceNote": "Minimum price for this duration. The final rate depends on the vehicle and the options chosen — and the price of options depends on the duration.",
+      "cta": "Go to subscription"
+    },
+    "reassurance": {
+      "items": [
+        "Instant certificate by e-mail or WhatsApp",
+        "100% secure payment (card)",
+        "French broker — ORIAS no. 24004933",
+        "Approved insurers — companies governed by the French Insurance Code",
+        "7 days a week by phone and WhatsApp: +33 6 05 93 84 79"
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use cases",
+      "title": "In which situations?",
+      "items": [
+        "Buying / selling a vehicle",
+        "Temporary WW plate",
+        "Import / export",
+        "Vehicle impound release",
+        "Cancellation by your insurer",
+        "Inherited vehicle",
+        "Roadworthiness test (MOT)",
+        "Lending or borrowing a vehicle",
+        "Vehicle registered abroad (border insurance)",
+        "Occasional driving of a second vehicle"
+      ]
+    },
+    "howItWorks": {
+      "eyebrow": "Simple and fast",
+      "title": "How it works",
+      "steps": [
+        { "title": "Get a quote", "description": "Get your quote in 30 seconds, without sharing your details." },
+        { "title": "Subscribe", "description": "Subscribe online in 5 minutes, pay by card." },
+        { "title": "Receive your certificate", "description": "Receive your certificate by e-mail or WhatsApp, sign electronically — you're covered." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Frequently asked questions",
+      "seeAll": "See all questions",
+      "items": [
+        {
+          "id": "home-faq-1",
+          "question": "How quickly am I insured?",
+          "answer": "Within minutes: online subscription, card payment, electronic signature, certificate sent by e-mail or WhatsApp."
+        },
+        {
+          "id": "home-faq-2",
+          "question": "Who can subscribe?",
+          "answer": "Any driver aged 21 or over, holding a licence for at least 2 years, who meets the conditions declared at subscription."
+        },
+        {
+          "id": "home-faq-3",
+          "question": "Which countries am I covered in?",
+          "answer": "France and 35 countries (same list for temporary and border insurance). An extension to 7 additional countries is possible for cars."
+        },
+        {
+          "id": "home-faq-4",
+          "question": "Can I cancel my contract?",
+          "answer": "Temporary contracts run for a fixed term, with no automatic renewal (see Terms of Sale)."
+        },
+        {
+          "id": "home-faq-5",
+          "question": "Who is border insurance for?",
+          "answer": "For vehicles registered outside the EU and outside the green card system that need to travel in France and Europe."
+        }
+      ]
+    },
+    "reviews": {
+      "eyebrow": "Customer reviews",
+      "title": "What our customers say",
+      "address": "WN Conseil / TempAssur — {address}",
+      "cta": "See all our Google reviews →"
+    },
+    "coveredCountries": {
+      "description": "Your temporary insurance covers you in France and in 35 countries across Europe and the Mediterranean rim — the same list for temporary insurance and border insurance. Need Morocco, Tunisia or Turkey? An extension is available for cars.",
+      "cta": "See the full list of countries covered"
+    },
+    "vehicleVignettes": {
+      "eyebrow": "Our vehicles",
+      "title": "Our insurance products",
+      "priceFrom": "from {price}/day",
+      "cta": "Learn more"
+    }
+  },
+  "pricingLabels": {
+    "civilite": { "monsieur": "Mr", "madame": "Mrs" },
+    "cvTier": {
+      "moins-16cv": "Under 16 hp",
+      "moins-30cv": "16 to 29 hp",
+      "plus-30cv": "30 hp and over"
+    },
+    "ptacTier": {
+      "moins-3500kg": "GVW ≤ 3.5 tonnes",
+      "plus-3500kg": "GVW > 3.5 tonnes"
+    },
+    "quadSubtype": {
+      "voiturette-sans-permis": "Licence-free microcar (≤ 8 hp)",
+      "buggy": "50cc buggy (≤ 8 hp)",
+      "quad-avec-permis": "Quad requiring a licence (≤ 9 hp)"
+    },
+    "territory": {
+      "metropole": "Metropolitan France",
+      "guadeloupe": "Guadeloupe",
+      "martinique": "Martinique",
+      "guyane": "French Guiana",
+      "reunion": "Réunion",
+      "mayotte": "Mayotte",
+      "saint-martin": "Saint Martin",
+      "saint-barthelemy": "Saint Barthélemy",
+      "saint-pierre-et-miquelon": "Saint Pierre and Miquelon"
+    }
+  },
+  "validation": {
+    "paysImmatriculationRequired": "Country of registration is required",
+    "paysResidenceRequired": "Country of residence is required",
+    "dureeRequired": "Select a duration",
+    "immatriculationRequired": "Registration number is required",
+    "marqueRequired": "Make is required",
+    "modeleRequired": "Model is required",
+    "dateMiseEnCirculationRequired": "First registration date is required",
+    "dateEffetRequired": "Effective date is required",
+    "heureEffetRequired": "Effective time is required",
+    "civiliteRequired": "Select a title",
+    "nomRequired": "Last name is required",
+    "prenomRequired": "First name is required",
+    "dateNaissanceRequired": "Date of birth is required",
+    "paysNaissanceRequired": "Country of birth is required",
+    "telephoneInvalid": "Enter a valid number",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "adresseRequired": "Address is required",
+    "codePostalRequired": "Postal code is required",
+    "villeRequired": "City is required",
+    "numeroPermisRequired": "Licence number is required",
+    "dateObtentionPermisRequired": "Licence issue date is required",
+    "paysObtentionPermisRequired": "Country of issue is required",
+    "consentCgvRequired": "You must accept the Terms of Sale",
+    "consentIpidRequired": "You must accept the IPID information document",
+    "consentContratRequired": "You must accept the general contract terms",
+    "consentDeclarationsRequired": "You must certify the driver declarations",
+    "territoireImmatriculationRequired": "Specify the department or territory of registration",
+    "territoireResidenceRequired": "Specify the department or territory of residence",
+    "minAge": "Our contracts are reserved for drivers aged 21 or over.",
+    "minLicenseAge": "Our contracts require at least 2 years' driving licence.",
+    "effectDateInPast": "The effective date and time cannot be earlier than now.",
+    "nomAgenceRequired": "Enter the name of the rental agency"
+  },
+  "wizard": {
+    "steps": {
+      "duration": "Duration & location",
+      "details": "Your details",
+      "payment": "Payment"
+    },
+    "buttons": {
+      "previous": "Previous",
+      "continueLabel": "Continue",
+      "sending": "Sending...",
+      "payLabel": "Pay {amount} € securely"
+    },
+    "paymentError": "The payment could not be completed. No amount has been charged. Please try again or contact us: WhatsApp +33 6 05 93 84 79 — we'll find a solution right away.",
+    "duration": {
+      "heading": "Duration and effective date",
+      "contractDuration": "Contract duration *",
+      "mostChosen": "Most popular",
+      "durationUnit": "{count} d",
+      "durationPlaceholder": "Choose your duration",
+      "durationOption": "{count, plural, one {# day} other {# days}}",
+      "effectDate": "Effective date *",
+      "effectTime": "Effective time *",
+      "effectTimeHint": "The effective date and time cannot be earlier than now."
+    },
+    "vehicleTier": {
+      "heading": "Fiscal power",
+      "cvLabel": "Fiscal power *",
+      "ptacLabel": "Gross vehicle weight *",
+      "quadLabel": "Vehicle type *",
+      "selectPlaceholder": "Select"
+    },
+    "localisation": {
+      "heading": "Location",
+      "registrationCountry": "Vehicle's country of registration *",
+      "countryPlaceholder": "Select a country",
+      "registrationTerritory": "Department / territory of registration *",
+      "territoryPlaceholder": "Select",
+      "residenceCountry": "Country / territory of residence *",
+      "residenceTerritory": "Department / territory of residence *",
+      "domTomHint": "A specific overseas-territory rate applies to overseas departments and communities.",
+      "domTomNotice": "Rates applicable to overseas territories differ from those in metropolitan France."
+    },
+    "driver": {
+      "heading": "Driver information",
+      "identity": "Identity",
+      "civilite": "Title *",
+      "civilitePlaceholder": "Select",
+      "nom": "Last name *",
+      "nomPlaceholder": "Your last name",
+      "prenom": "First name *",
+      "prenomPlaceholder": "Your first name",
+      "dateNaissance": "Date of birth *",
+      "dateNaissanceHint": "Our contracts are reserved for drivers aged 21 or over.",
+      "paysNaissance": "Country of birth *",
+      "paysNaissancePlaceholder": "Select a country",
+      "coordonnees": "Contact details",
+      "mobile": "Mobile *",
+      "mobilePlaceholder": "Mobile phone number",
+      "fixe": "Phone (landline)",
+      "fixePlaceholder": "Landline phone number",
+      "email": "E-mail *",
+      "emailPlaceholder": "Your email",
+      "adresseHeading": "Address",
+      "adresse": "Address *",
+      "adressePlaceholder": "Your address",
+      "codePostal": "Postal code *",
+      "codePostalPlaceholder": "Your postal code",
+      "ville": "City *",
+      "villePlaceholder": "Your city",
+      "permisHeading": "Driving licence",
+      "numeroPermis": "Licence number *",
+      "numeroPermisPlaceholder": "Licence number",
+      "dateObtention": "Issue date *",
+      "dateObtentionHint": "The licence must be at least 2 years old to insure your vehicle.",
+      "paysObtention": "Country of issue *"
+    },
+    "vehicle": {
+      "heading": "Vehicle",
+      "categorie": "Category *",
+      "categoriePlaceholder": "Select a category",
+      "immatriculation": "Registration number *",
+      "marque": "Make *",
+      "modele": "Model *",
+      "dateMiseEnCirculation": "First registration date *",
+      "location": "Rental vehicle",
+      "locationOui": "Yes",
+      "locationNon": "No",
+      "locationExclusion": "Please note that we do not insure vehicles rented outside an agency in France, vehicles rented abroad, or vehicles rented from the following agencies: {agencies}.",
+      "nomAgence": "Rental agency name",
+      "nomAgencePlaceholder": "Agency name"
+    },
+    "options": {
+      "heading": "Options",
+      "notAvailable": "No options are available for this vehicle category.",
+      "priceHint": "The price of options depends on the duration.",
+      "notEligible": "Not eligible for this country",
+      "notAvailableForDuration": "Not available for this duration",
+      "garantieConducteur": "Driver coverage",
+      "assistance": "Roadside assistance",
+      "extensionPays": "Country extension ({countries})",
+      "extensionPaysShort": "Country extension"
+    },
+    "documents": {
+      "heading": "Documents",
+      "optional": "Documents (optional at this stage)",
+      "permisRecto": "Driving licence (front)",
+      "permisVerso": "Driving licence (back)",
+      "carteGrise": "Vehicle registration document",
+      "chooseFile": "Choose a file",
+      "noFile": "No file selected",
+      "removeFile": "Remove the {label} file",
+      "consentsHeading": "Acceptance of terms",
+      "acceptCgv": "I accept the <link>Terms of Sale</link>",
+      "acceptIpid": "I have read the insurance product information document (IPID)",
+      "acceptContrat": "I have read the general contract terms"
+    },
+    "payment": {
+      "heading": "Summary and secure payment",
+      "vehicle": "Vehicle",
+      "categorie": "Category",
+      "duree": "Duration",
+      "dateEffet": "Effective date and time",
+      "optionsChoisies": "Options selected",
+      "aucune": "None",
+      "totalTtc": "Total (incl. tax)",
+      "edit": "Edit",
+      "note": "Check your summary above, then confirm your payment securely below. No further information is needed at this stage.",
+      "dateAt": "{date} at {time}",
+      "durationValue": "{count, plural, one {# day} other {# days}}"
+    },
+    "billingSummary": {
+      "subtitle": "Temporary insurance",
+      "duree": "Duration",
+      "formule": "Plan",
+      "zone": "Zone",
+      "zoneDomTom": "Overseas territories",
+      "zoneMetropole": "Metropolitan France",
+      "tarifBase": "Base rate",
+      "zoneDomTomSurcharge": "Overseas territory zone",
+      "selectDuration": "Select a duration to display the rate.",
+      "totalToPay": "Total to pay",
+      "securePayment": "Secure payment, cover starts immediately.",
+      "durationValue": "{count, plural, one {# day} other {# days}}",
+      "noValue": "—"
+    },
+    "declarations": {
+      "title": "Driver declarations",
+      "description": "To validate your subscription, you must be able to answer NO to the following four questions about the driver:",
+      "questions": [
+        "Has he/she declared, over the past 36 months, more than 2 at-fault or partially at-fault material damage claims AND/OR 1 bodily injury claim, whether at fault or not?",
+        "Has he/she been cancelled for a claim by a previous insurer within the last 5 years?",
+        "Has he/she been criminally convicted for a traffic offence, drink-driving or drug use?",
+        "Is he/she a high-risk driver seeking a new insurer, or awaiting a decision from the Central Rating Bureau (BCT)?"
+      ],
+      "certify": "I certify that the answer to all of these questions is NO. I understand that a false declaration may render the contract null and void (art. L.113-8 of the French Insurance Code).",
+      "contactPrompt": "Does one of these situations apply to you?",
+      "contactCta": "Contact us",
+      "contactSuffix": ", a tailored solution may be possible.",
+      "contactMessage": "Hello, I would like to discuss my situation before taking out temporary insurance.",
+      "cancel": "Cancel",
+      "confirm": "I certify and continue",
+      "sending": "Sending..."
+    }
+  },
+  "product": {
+    "sectionHeadings": {
+      "vehiclesHeading": "Which vehicles?",
+      "borderVehiclesHeading": "Who is border insurance for?",
+      "guaranteesHeading": "Your coverage",
+      "whereCoveredHeading": "Where are you covered?",
+      "coveredCountriesCta": "See the full list of countries covered →",
+      "useCasesHeading": "In which situations?",
+      "eligibilityHeading": "Who can subscribe?",
+      "faqHeading": "Frequently asked questions",
+      "ctaEstimate": "Get my quote in 30 seconds",
+      "seeAlso": "See also",
+      "coveredCountriesLink": "Countries covered",
+      "priceFrom": "From {price}/day",
+      "durationsAvailable": "Durations available: {durations} day{plural}"
+    },
+    "automobiles": {
+      "title": "Temporary car insurance 1 to 90 days from [PRIX] €/day | TempAssur",
+      "metaDescription": "Insure a car or a van for 1 to 90 days. Subscribe online in 5 minutes, instant certificate by e-mail or WhatsApp. From [PRIX] €/day.",
+      "h1": "Temporary car insurance from 1 to 90 days",
+      "intro": "Need to insure a car or a van under 3.5 tonnes for a few days? TempAssur's temporary car insurance covers you from 1 to 90 days, with no long-term commitment and no automatic renewal. 100% online subscription in 5 minutes, certificate sent immediately by e-mail or WhatsApp.",
+      "vehiclesParagraph": "All private and commercial vehicles under 3.5 tonnes, regardless of power: city car, saloon, SUV, small van... The rate depends on the fiscal power and the duration chosen.",
+      "guaranteesIncluded": "Included: third-party liability (mandatory — damage caused to others) and legal defence and recourse following an accident.",
+      "options": [
+        { "label": "Driver coverage", "description": "also protects you in the event of an at-fault accident." },
+        { "label": "Country extension", "description": "Albania, Azerbaijan, North Macedonia, Morocco, Moldova, Tunisia, Turkey." },
+        { "label": "Roadside assistance", "description": "" }
+      ],
+      "whereCovered": "In France and in 35 countries across Europe and the Mediterranean rim. With the extension, add Morocco, Tunisia, Turkey and 4 other countries.",
+      "useCases": [
+        "Buying or selling a vehicle",
+        "temporary WW plate",
+        "vehicle loan",
+        "import / export",
+        "vehicle impound release",
+        "cancellation by your insurer",
+        "inherited vehicle",
+        "roadworthiness test (MOT)",
+        "occasional driving"
+      ],
+      "eligibility": "Any driver aged 21 or over, holding a licence for at least 2 years, who meets the declarations presented at subscription.",
+      "faq": [
+        { "question": "How much does temporary car insurance cost?", "answer": "From [PRIX_GRILLE] €/day; the exact rate depends on the duration and the fiscal power, and is displayed immediately in our quote tool." },
+        { "question": "Can I travel to Morocco, Tunisia or Turkey?", "answer": "Yes, with the country extension option (cars only)." },
+        { "question": "Am I covered in the overseas territories?", "answer": "Yes — overseas territory rates differ from metropolitan France and options are not available there." },
+        { "question": "What documents will I receive?", "answer": "Your contract, your insurance certificate and your international insurance card, by e-mail or WhatsApp, after electronic signature." }
+      ]
+    },
+    "poids-lourds": {
+      "title": "Temporary HGV insurance from [PRIX] €/day | TempAssur",
+      "metaDescription": "Truck, carrier, road tractor: temporary HGV insurance online. Instant certificate by e-mail or WhatsApp.",
+      "h1": "Temporary insurance for heavy goods vehicles (over 3.5 T)",
+      "intro": "Carrier truck, road tractor, semi-trailer: insure your HGV for a delivery run, a purchase, an import or a one-off assignment, for the durations set out in our rate table. Instant certificate by e-mail or WhatsApp.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 countries. Overseas territories: yes, with specific rates.",
+      "useCases": ["Delivery after purchase or sale", "WW plate", "import / export", "vehicle impound release", "gap between two annual contracts"],
+      "eligibility": "Driver aged 21 or over, 2 years' licence, licence category matching the vehicle, compliant declarations (see subscription).",
+      "faq": [
+        { "question": "What durations are available?", "answer": "Those in our rate table (shortcuts of 8 and 15 days) — the quote tool shows all available durations with their price." },
+        { "question": "Must the driver be the policyholder?", "answer": "No, but they must be declared and meet the eligibility conditions." },
+        { "question": "Documents received?", "answer": "Contract, certificate and international insurance card, by e-mail or WhatsApp." }
+      ]
+    },
+    "camping-cars": {
+      "title": "Temporary motorhome insurance 1 to 90 days | TempAssur",
+      "metaDescription": "Temporary insurance for motorhomes and converted vans, from 1 to 90 days. Subscribe online, certificate by e-mail or WhatsApp.",
+      "h1": "Temporary insurance for motorhomes and converted vans",
+      "intro": "Travel with peace of mind: temporary motorhome insurance from 1 to 90 days, ideal for a one-off trip, a loan, a purchase or bringing a vehicle back home. The price shown corresponds to models under 3.5 T; it is adjusted for weight during subscription.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 European countries — perfect for a road trip. Overseas territories: yes, specific rates.",
+      "useCases": ["One-off trip", "rental or loan between individuals", "purchase / sale", "bringing a vehicle back home", "coming out of winter storage", "roadworthiness test"],
+      "eligibility": "Driver aged 21 or over with 2 years' licence.",
+      "faq": [
+        { "question": "Is my converted van accepted?", "answer": "Yes, converted vans are insured in the same way as motorhomes." },
+        { "question": "My motorhome is over 3.5 T?", "answer": "It can be insured: the rate is adjusted for weight at subscription." },
+        { "question": "Who can subscribe?", "answer": "Driver aged 21 or over with 2 years' licence." }
+      ]
+    },
+    "quadricycles": {
+      "title": "Temporary insurance for quads, licence-free microcars, buggies | TempAssur",
+      "metaDescription": "Approved quad, licence-free microcar or buggy: temporary insurance online, certificate by e-mail or WhatsApp.",
+      "h1": "Temporary insurance for quadricycles: quads, microcars, buggies",
+      "intro": "Approved quad, licence-free microcar or buggy: insure your quadricycle for exactly the duration you need. The headline price shown corresponds to the cheapest sub-type; the exact rate is adjusted for your vehicle at subscription.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
+      "useCases": ["Purchase / sale", "summer season", "vehicle impound release", "leisure vehicle used a few weeks a year", "roadworthiness test"],
+      "eligibility": "Driver aged 21 or over, 2 years' licence.",
+      "faq": [
+        { "question": "What licence is needed for a licence-free microcar?", "answer": "From age 14, the AM licence (formerly BSR) is enough to drive one — but to subscribe with us, the driver must be 21 with 2 years' licence." },
+        { "question": "My quad isn't road-approved?", "answer": "It cannot be insured for use on public roads." },
+        { "question": "What durations are available?", "answer": "Those in the rate table — shortcuts of 10, 15, 20 and 30 days." }
+      ]
+    },
+    "bus-autocars": {
+      "title": "Temporary insurance for buses and coaches | TempAssur",
+      "metaDescription": "Insure a bus or coach for a delivery run, a purchase or a sale. Subscribe online, instant certificate.",
+      "h1": "Temporary insurance for buses and coaches",
+      "intro": "Insure a bus or coach for a delivery run, a purchase, a sale or a vehicle transfer. 100% online subscription, instant certificate by e-mail or WhatsApp.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
+      "useCases": ["Delivery after purchase or auction sale", "import / export", "fleet repositioning", "vehicle impound release"],
+      "eligibility": "Driver aged 21 or over, 2 years' licence, compliant declarations.",
+      "faq": [
+        { "question": "What durations are available?", "answer": "Those in the rate table (shortcuts of 8 and 15 days)." },
+        { "question": "Is passenger transport covered?", "answer": "The coverage covers the vehicle's third-party liability; for commercial use with passengers, contact us before subscribing: +33 6 05 93 84 79." }
+      ]
+    },
+    "tracteurs-agricoles": {
+      "title": "Temporary agricultural tractor insurance from [PRIX] €/day | TempAssur",
+      "metaDescription": "Harvest, delivery, purchase: temporary agricultural tractor insurance online, certificate by e-mail or WhatsApp.",
+      "h1": "Temporary insurance for agricultural tractors",
+      "intro": "Harvest, delivery, purchase or sale: insure your tractor or farm machinery for a few days, with no annual commitment. Subscribe online, certificate by e-mail or WhatsApp.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
+      "useCases": ["Harvest period", "delivery after purchase / sale", "loan between farmers", "exceptional road trip"],
+      "eligibility": "Driver aged 21 or over, 2 years' licence.",
+      "faq": [
+        { "question": "What durations are available?", "answer": "Those in the rate table (shortcuts of 8 and 15 days)." },
+        { "question": "Is a vintage / collector's tractor accepted?", "answer": "Yes, provided it is registered." }
+      ]
+    },
+    "remorques": {
+      "title": "Temporary insurance for trailers, semi-trailers, caravans | TempAssur",
+      "metaDescription": "Trailer, semi-trailer or caravan: temporary insurance mandatory above 750 kg. Instant online subscription.",
+      "h1": "Temporary insurance for trailers, semi-trailers and caravans",
+      "intro": "Light or heavy trailer, semi-trailer, caravan: above 750 kg gross weight, dedicated third-party liability insurance is mandatory — the towing vehicle's cover is no longer sufficient. Insure yours for a delivery run, a purchase or a one-off trip.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
+      "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
+      "useCases": ["Purchase / sale", "house move", "going on holiday with a caravan", "one-off equipment transport", "import / export"],
+      "eligibility": "Driver aged 21 or over, 2 years' licence.",
+      "faq": [
+        { "question": "My trailer is under 750 kg?", "answer": "It is generally covered by the towing vehicle's insurance — check your policy." },
+        { "question": "What durations are available?", "answer": "Those in the rate table (shortcuts of 8 and 15 days)." }
+      ]
+    },
+    "assurance-frontiere": {
+      "title": "Border insurance: driving in France and Europe with a foreign vehicle | TempAssur",
+      "metaDescription": "Vehicle registered outside the EU or abroad? Border insurance covers you in France and in 35 countries. 30 or 90 days, instant certificate.",
+      "h1": "Border insurance — for driving in France and Europe",
+      "intro": "Is your vehicle registered outside the European Union and outside the green card system — or registered abroad and needs to travel in France? Border insurance is the legal, mandatory solution for taking to the road. And at TempAssur, it doesn't just cover France: you're covered in 35 countries, the same list as our temporary insurance products. Available for 30 or 90 days — certificate by e-mail or WhatsApp.",
+      "vehiclesParagraph": "For travellers coming to Europe with their vehicle (Maghreb, Balkans outside the green card system, Middle East, Americas...), for French nationals returning temporarily from abroad with a vehicle registered outside the EU, and for vehicles in transit or being imported.",
+      "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident. You receive an international insurance card valid in the 35 countries covered.",
+      "whereCovered": "In 35 countries, not just France — one of the major advantages of our border contract.",
+      "useCases": [],
+      "eligibility": "Driver aged 21 or over, 2 years' licence.",
+      "faq": [
+        { "question": "Am I covered only in France?", "answer": "No: your TempAssur border insurance covers you in the 35 countries on the common list (Germany, Spain, Italy, Switzerland...)." },
+        { "question": "What documents do I need to provide?", "answer": "The driver's ID card or passport, their driving licence, and the vehicle's registration certificate." },
+        { "question": "Can I subscribe before arriving in France?", "answer": "Yes, 100% online, with a deferred effective date: your documents will be waiting in your inbox or on WhatsApp." },
+        { "question": "What durations are available?", "answer": "30 or 90 days (30 days is the most popular plan)." }
+      ]
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Blog",
+      "metaDescription": "News and advice on temporary insurance: vehicles, countries covered, eligibility and procedures.",
+      "heading": "Blog",
+      "description": "Our advice and news on temporary insurance."
+    },
+    "articleUi": {
+      "ctaEstimate": "Get your quote in 30 seconds",
+      "seeAlso": "See also",
+      "allArticles": "All articles"
+    },
+    "articles": {
+      "assurance-temporaire-caravane-remorque-semi": {
+        "title": "Temporary insurance for a trailer, semi-trailer or caravan",
+        "metaDescription": "Trailer, semi-trailer or caravan to insure for a few days? TempAssur's temporary solution, with no annual commitment.",
+        "body": [
+          { "type": "p", "text": "Moving house, a loan between individuals, going on holiday with a caravan, or a delivery run before a sale: these one-off uses don't always justify an annual contract. Above 750 kg gross weight, a trailer or caravan must have its own third-party liability cover — the towing vehicle's cover is no longer sufficient." },
+          { "type": "h2", "text": "What the contract covers" },
+          { "type": "p", "text": "The temporary trailer contract includes mandatory third-party liability and legal defence and recourse following an accident. No options are offered for this category." },
+          { "type": "h2", "text": "Which duration to choose?" },
+          { "type": "p", "text": "The rate table offers durations from 1 to 15 days, with two handy shortcuts: 8 and 15 days. The quote tool shows all available durations with their price." },
+          { "type": "p", "text": "Subscription is entirely online, and the certificate is sent by e-mail or WhatsApp as soon as the contract is signed electronically." }
+        ]
+      },
+      "souscrire-assurance-temporaire-plaque-ww": {
+        "title": "Can a vehicle with WW plates be insured temporarily?",
+        "metaDescription": "Temporary registration certificate (WW plate): how to insure it temporarily with TempAssur.",
+        "body": [
+          { "type": "p", "text": "A vehicle that has just been bought or imported often runs, for a few weeks, under a temporary registration certificate (CPI), recognisable by its \"WW\" plate. While waiting for the final registration document, this vehicle must still be insured as soon as it takes to the road." },
+          { "type": "h2", "text": "A WW-plated vehicle is insured like any other" },
+          { "type": "p", "text": "TempAssur insures WW-plated vehicles under the same conditions as a vehicle with a final registration: third-party liability, online subscription, instant certificate. One point to watch: the coverage period cannot exceed the CPI's expiry date. If the certificate expires in 10 days, the maximum insurable duration is 10 days." },
+          { "type": "h2", "text": "How to subscribe" },
+          { "type": "p", "text": "Choose your vehicle's category in the quote tool, enter its first registration date and details, then pay online: the certificate arrives by e-mail or WhatsApp within minutes of the electronic signature." }
+        ]
+      },
+      "suppression-vignette-assurance-temporaire": {
+        "title": "Removal of the green sticker: what changes for temporary insurance",
+        "metaDescription": "Since April 2024, the green sticker has disappeared: how do you prove your temporary insurance during a check?",
+        "body": [
+          { "type": "p", "text": "Since 1 April 2024, displaying the green sticker on the windscreen is no longer mandatory: law enforcement now checks a vehicle's insurance directly via the Insured Vehicles File (FVA)." },
+          { "type": "h2", "text": "What replaces the green card" },
+          { "type": "p", "text": "For a temporary contract, the digital certificate sent by e-mail or WhatsApp after subscription plays this role: it shows the period of validity, the insured vehicle and the insurer, and can be shown printed or on a smartphone during a check." },
+          { "type": "h2", "text": "What doesn't change" },
+          { "type": "p", "text": "Temporary cover still runs from 1 to 90 days, and third-party liability remains mandatory from the very first kilometre. Keep an ID document, the registration certificate and your insurance certificate on board." }
+        ]
+      },
+      "garanties-assurance-auto-provisoire": {
+        "title": "What coverage does temporary car insurance include?",
+        "metaDescription": "Third-party liability, legal defence and recourse, car options: the details of TempAssur's coverage.",
+        "body": [
+          { "type": "p", "text": "Temporary insurance is not a stripped-down version of a standard contract: it must cover the same legal obligations, for a chosen duration of 1 to 90 days." },
+          { "type": "h2", "text": "Third-party liability, mandatory coverage" },
+          { "type": "p", "text": "It covers material and bodily damage caused to a third party in the event of an at-fault accident. Driving without this cover exposes you to a fine of up to €3,750, a licence suspension and vehicle impoundment." },
+          { "type": "h2", "text": "Legal defence and recourse" },
+          { "type": "p", "text": "Included in all our contracts, it covers your defence in the event of legal proceedings related to an accident, and allows you to bring a claim against the at-fault third party." },
+          { "type": "h2", "text": "Options, for cars only" },
+          { "type": "p", "text": "For the car category only, three options are available, priced according to the chosen duration: driver coverage, roadside assistance, and the country extension to 7 additional countries (Albania, Azerbaijan, North Macedonia, Morocco, Moldova, Tunisia, Turkey). They are not available in the overseas territories. Other vehicle categories (HGV, motorhome, quadricycle, bus, agricultural tractor, trailer, border insurance) do not include options: only third-party liability and legal defence and recourse are offered, in line with the rate table." }
+        ]
+      },
+      "assurance-frontiere-temporaire-auto": {
+        "title": "What is border insurance?",
+        "metaDescription": "Vehicle registered outside the EU or without a green card? TempAssur's border insurance covers 35 countries, not just France.",
+        "body": [
+          { "type": "p", "text": "A vehicle registered outside the European Union and outside the green card system cannot legally travel in France without specific cover: that's the role of border insurance." },
+          { "type": "h2", "text": "Coverage that goes beyond France" },
+          { "type": "p", "text": "At TempAssur, border insurance is not limited to French territory: it covers the same 35 countries across Europe and the Mediterranean rim as our standard temporary insurance. It is available for 30 or 90 days, and includes third-party liability as well as legal defence and recourse." },
+          { "type": "h2", "text": "Who is it for?" },
+          { "type": "p", "text": "Travellers coming to Europe with their vehicle, French nationals returning temporarily from abroad with a vehicle registered outside the EU, and vehicles in transit or being imported." },
+          { "type": "p", "text": "Subscription is 100% online, including before you arrive in France, with a deferred effective date if needed." }
+        ]
+      },
+      "assurance-temporaire-auto-maghreb-turquie": {
+        "title": "Driving in Morocco, Tunisia or Turkey with temporary insurance: the country extension option",
+        "metaDescription": "Temporary insurance for Morocco, car insurance for Tunisia, green card for Turkey: how to subscribe to the country extension option with TempAssur.",
+        "body": [
+          { "type": "p", "text": "Heading to the Maghreb or Turkey with your car? From France, your standard temporary insurance covers 35 European countries — but not Morocco, Tunisia or Turkey. The solution: the country extension option, available at TempAssur for cars under 3.5 tonnes." },
+          { "type": "h2", "text": "What the extension covers" },
+          { "type": "p", "text": "In addition to the base 35 countries, the extension opens up travel to 7 countries: Albania, Azerbaijan, North Macedonia, Morocco, Moldova, Tunisia and Turkey. You receive an international insurance card listing these countries — this is the document that counts at the border crossing and during checks." },
+          { "type": "h2", "text": "Note: Algeria is not covered" },
+          { "type": "p", "text": "None of our plans, with or without the extension, cover Algeria. To drive there, local insurance must be taken out at the Algerian border. Likewise, Belarus, Iran, Russia and Ukraine are never covered." },
+          { "type": "h2", "text": "How to subscribe" },
+          { "type": "p", "text": "Choose \"Car\" in our quote tool, your duration (1 to 90 days), then tick the \"Country extension\" option: the price is adjusted according to the chosen duration. You'll receive your certificate and your international card by e-mail or WhatsApp within minutes — handy when preparing to board a ferry in Sète, Marseille or Genoa." },
+          { "type": "h2", "text": "Good to know" },
+          { "type": "p", "text": "The extension applies to cars only: for an HGV or a motorhome, contact us on +33 6 05 93 84 79 (WhatsApp), and we'll look at a tailored solution." }
+        ]
+      },
+      "assurance-temporaire-pour-tracteur-agricole": {
+        "title": "Temporary insurance for agricultural tractors",
+        "metaDescription": "Harvest, delivery, purchase or sale: temporary agricultural tractor insurance online with TempAssur.",
+        "body": [
+          { "type": "p", "text": "A tractor or a piece of farm machinery doesn't always need to be insured all year round: harvest periods, delivery after a purchase or sale, a loan between farmers, or an exceptional road trip are all situations where one-off cover is enough." },
+          { "type": "h2", "text": "Simple cover" },
+          { "type": "p", "text": "The temporary agricultural tractor contract includes mandatory third-party liability and legal defence and recourse following an accident, with no additional options. Available durations go up to 15 days, with two handy shortcuts: 8 and 15 days." },
+          { "type": "p", "text": "Subscription is done online, with no need to travel: enter the vehicle and driver details, pay online, and receive your certificate by e-mail or WhatsApp." }
+        ]
+      },
+      "assurance-provisoire-automobile": {
+        "title": "Temporary car insurance for professionals",
+        "metaDescription": "Hauliers, tradespeople, importers: TempAssur's temporary car insurance for your one-off needs.",
+        "body": [
+          { "type": "p", "text": "A vehicle in transit, an import-export operation, an exceptional assignment or a waiting period before an annual contract: professionals, too, regularly need one-off cover rather than a year-long commitment." },
+          { "type": "h2", "text": "A solution suited to professional activity" },
+          { "type": "p", "text": "Hauliers, tradespeople, retailers, self-employed workers or vehicle importers can subscribe to temporary insurance for a passenger car, a van or an HGV, from 1 to 90 days, with the same coverage as for an individual: third-party liability and legal defence and recourse, plus car options if needed." },
+          { "type": "p", "text": "Subscription remains 100% online, with a certificate received immediately after payment and electronic signature." }
+        ]
+      },
+      "assurance-automobile-temporaire": {
+        "title": "5 situations where temporary car insurance makes all the difference",
+        "metaDescription": "Purchase/sale, one-off use, vehicle in transit: the situations where temporary insurance is the right call.",
+        "body": [
+          { "type": "h2", "text": "Buying or selling a vehicle" },
+          { "type": "p", "text": "Moving a vehicle for a test drive, an administrative formality or a delivery, without a final registration document: temporary insurance lets you drive immediately after the purchase, without taking out an unnecessary annual contract if the vehicle is due to be resold quickly." },
+          { "type": "h2", "text": "Occasional use" },
+          { "type": "p", "text": "A second vehicle used only a few weeks a year — motorhome, trailer or classic car — costs less to insure for its actual period of use than for a full year." },
+          { "type": "h2", "text": "A rental between individuals" },
+          { "type": "p", "text": "When a vehicle is rented outside a major agency, insurance cover isn't always included: temporary insurance fills that gap within minutes." },
+          { "type": "h2", "text": "A vehicle in transit" },
+          { "type": "p", "text": "Import from abroad, registration document being updated: while the administrative situation is being sorted out, the vehicle must remain insured." },
+          { "type": "h2", "text": "A particular situation" },
+          { "type": "p", "text": "A driver looking for a new insurer may need a one-off solution. At TempAssur, eligibility remains subject to the declarations presented at subscription — if in doubt about your situation, contact us before subscribing." }
+        ]
+      },
+      "assurance-temporaire-vs-annuelle": {
+        "title": "Temporary or annual insurance: how to choose?",
+        "metaDescription": "Temporary insurance or annual insurance: what are the differences, and which should you choose based on your use?",
+        "body": [
+          { "type": "p", "text": "The two plans meet different needs: one covers occasional use of a few days, the other regular use throughout the year." },
+          { "type": "h2", "text": "Temporary insurance: pay for actual use" },
+          { "type": "p", "text": "From 1 to 90 days, with no commitment, subscribed online within minutes: it suits a vehicle used occasionally, a temporary need (import/export, holidays) or a wait before an annual contract." },
+          { "type": "h2", "text": "Annual insurance: for daily use" },
+          { "type": "p", "text": "With a 12-month commitment and more coverage options available, it remains better suited to a vehicle used all year round." },
+          { "type": "p", "text": "For occasional use or a temporary situation, temporary car insurance — quick to subscribe and with no commitment — remains the most economical solution." }
+        ]
+      },
+      "voiture-achetee-week-end-assurance-jour-meme": {
+        "title": "Car bought at the weekend: how to drive away insured the same day",
+        "metaDescription": "Instant car insurance, insure a car the same day, insurance for a car purchase: the TempAssur solution.",
+        "body": [
+          { "type": "p", "text": "Just bought a used car on a Saturday evening and the seller lives 300 km away? Without insurance, you can't legally take to the road: third-party liability is mandatory from the very first metre, and driving without insurance can cost up to €3,750 in fines, with possible licence suspension." },
+          { "type": "h2", "text": "Temporary insurance, the instant solution" },
+          { "type": "p", "text": "At TempAssur, subscription is 100% online, 7 days a week: get your quote in 30 seconds, subscribe in 5 minutes, pay by card and receive your certificate by e-mail or WhatsApp — even on a Sunday. You choose the exact duration you need, from 1 to 90 days, giving you time to bring the vehicle home and then take out your annual contract with full knowledge of the facts." },
+          { "type": "h2", "text": "The conditions" },
+          { "type": "p", "text": "Be at least 21 years old, hold a licence for 2 years, and answer the history declarations presented at subscription. The vehicle must be registered (a temporary WW plate is acceptable)." },
+          { "type": "h2", "text": "How much does it cost?" },
+          { "type": "p", "text": "From a few euros a day for a car, depending on the duration and fiscal power; the exact rate is displayed immediately in our quote tool, without needing your e-mail address. A day of temporary insurance costs far less than an annual commitment taken out in a rush." }
+        ]
+      },
+      "assurance-sortie-fourriere": {
+        "title": "Vehicle impound release: which insurance to get your vehicle back?",
+        "metaDescription": "Impound release insurance, impound insurance certificate, getting your car back from the pound with TempAssur.",
+        "body": [
+          { "type": "p", "text": "To retrieve a vehicle from the pound, the law requires you to present a valid insurance certificate (along with your licence and registration document). The problem: if your vehicle was impounded precisely because it was no longer insured — or if your insurer cancelled the contract in the meantime — you're stuck." },
+          { "type": "h2", "text": "Temporary insurance unblocks the situation within minutes" },
+          { "type": "p", "text": "Subscribe online to insurance for 1 to 90 days, receive the certificate by e-mail or WhatsApp, present it at the pound and drive away with your vehicle. Since every day of storage costs money, speed matters: at TempAssur, the certificate is sent immediately after payment and electronic signature." },
+          { "type": "h2", "text": "Which duration to choose?" },
+          { "type": "p", "text": "The time needed to retrieve the vehicle and take out standard insurance: 8 or 15 days is often enough; 30 days if you also need to pass the roadworthiness test or sell the vehicle." },
+          { "type": "h2", "text": "The conditions" },
+          { "type": "p", "text": "Driver aged 21 or over with 2 years' licence, and compliant history declarations (in particular: no cancellation for a claim within the last 5 years). If in doubt about your situation, message us on WhatsApp at +33 6 05 93 84 79: we reply 7 days a week." }
+        ]
+      }
+    }
+  },
+  "pages": {
+    "souscription": {
+      "metaTitle": "Subscription — temporary insurance online",
+      "metaDescription": "Subscribe to your temporary insurance online in a few minutes: location, vehicle, duration, driver, options and secure payment.",
+      "title": "Your subscription request",
+      "description": "The price is recalculated at every step and remains displayed at all times in the panel opposite. The price of options depends on the duration.",
+      "guaranteesHeading": "Coverage and countries covered",
+      "guaranteesParagraph": "All our temporary insurance products include third-party liability (mandatory) and legal defence and recourse following an accident. For cars only, options are available: driver coverage, country extension, roadside assistance (not available in the overseas territories).",
+      "coverageParagraph": "You are covered in France and in {count} countries across Europe and the Mediterranean rim, the same list for all our temporary insurance products and border insurance.",
+      "coverageVariationNotice": "Coverage in certain countries may vary depending on the company, the vehicle, the duration and the options chosen. Planning to drive in a country not listed? Contact us: WhatsApp / phone +33 6 05 93 84 79.",
+      "coveredCountriesCta": "See the full list of countries covered →"
+    },
+    "merci": {
+      "metaTitle": "Thank you for your trust",
+      "title": "Thank you for your trust!",
+      "reference": "Reference",
+      "registered": "Your subscription request has been recorded and is being processed.",
+      "checkEmail": "<b>Check your inbox</b> (including spam) : within the next few minutes you'll receive a secure link to <b>electronically sign your documents</b>.",
+      "nextStep": "<b>Next step: sign the documents received by e-mail</b> for the cover to take effect.",
+      "urgentHeading": "Effective time imminent or already passed?",
+      "urgentBody": "If you haven't received the e-mail, contact us immediately to speed up processing: <b>WhatsApp (recommended)</b> or phone:"
+    },
+    "notFound": {
+      "title": "Oops, this page doesn't exist.",
+      "subtitle": "No need to worry: your insurance is still right where it should be.",
+      "ctaEstimate": "Get my quote in 30 seconds",
+      "ctaHome": "Back to home",
+      "contactPrompt": "Or message us on WhatsApp:"
+    },
+    "paysCouverts": {
+      "metaTitle": "Countries covered by your temporary and border insurance | TempAssur",
+      "metaDescription": "The full list of 35 countries covered by our temporary and border insurance products, and the 7 countries accessible with the extension option.",
+      "heroTitle": "Which countries are you covered in?",
+      "intro": "Good news: our temporary insurance and our border insurance cover the same list of 35 countries. Just one list to remember, whatever your contract.",
+      "coveredHeading": "The 35 countries covered",
+      "assimilatedNote": "Monaco, San Marino and Liechtenstein are treated as equivalent (to France / Italy / Switzerland respectively).",
+      "extensionHeading": "Need to go further? The country extension option",
+      "extensionParagraph": "For cars only (excluding overseas territories), the extension option opens up 7 additional countries: {countries}. Its price depends on the contract duration.",
+      "neverCoveredHeading": "Never covered, whatever the option",
+      "coverageVariationNotice": "Coverage in certain countries may vary depending on the company, the vehicle, the duration and the options chosen. Planning to drive in a country not listed? Contact us: WhatsApp / phone +33 6 05 93 84 79.",
+      "internationalCardNote": "The international insurance card provided with your contract is the reference document.",
+      "ctaEstimate": "Get my quote in 30 seconds"
+    },
+    "quiSommesNous": {
+      "metaTitle": "About us? Temporary insurance broker | TempAssur",
+      "metaDescription": "TempAssur (WN Conseil), French broker ORIAS no. 24004933, specialist in temporary insurance from 1 to 90 days for all vehicles.",
+      "eyebrow": "About",
+      "heroTitle": "About us",
+      "intro": "TempAssur is the brand name of WN Conseil, a French insurance brokerage based in Clichy (Hauts-de-Seine), registered with ORIAS under no. {orias}. Our speciality: temporary insurance, from 1 to 90 days, for all vehicles — cars, HGVs, motorhomes, quadricycles, buses, agricultural tractors, trailers — and border insurance for vehicles registered abroad.",
+      "promisesHeading": "Our promise",
+      "promises": [
+        { "title": "Speed", "description": "100% online subscription in 5 minutes, certificate sent immediately by e-mail or WhatsApp — even on weekends." },
+        { "title": "Availability", "description": "A real team reachable 7 days a week by phone and WhatsApp on +33 6 05 93 84 79. A payment issue, an emergency, a question? We answer." },
+        { "title": "Transparency", "description": "Prices are displayed before you share any personal details, and your contracts are underwritten by approved insurance companies, governed by the French Insurance Code." }
+      ],
+      "whereHeading": "Where to find us",
+      "mapTitle": "TempAssur — WN Conseil on Google Maps",
+      "ctaEstimate": "Get my quote in 30 seconds",
+      "ctaContact": "Contact us"
+    },
+    "contact": {
+      "metaTitle": "Contact TempAssur — 7 days a week by WhatsApp, phone or e-mail",
+      "heroTitle": "Contact us — we reply 7 days a week",
+      "fastest": "The fastest way",
+      "mapTitle": "TempAssur — WN Conseil on Google Maps",
+      "addressLine": "WN Conseil / TempAssur, {address}"
+    },
+    "monCompte": {
+      "metaTitle": "My account",
+      "metaDescription": "Sign in or create an account to manage your contracts.",
+      "heroTitle": "My account",
+      "heroDescription": "Sign in to manage your contracts, or create an account in a few seconds.",
+      "login": "Sign in",
+      "register": "Create an account"
+    },
+    "login": {
+      "metaTitle": "Sign in",
+      "metaDescription": "Sign in to your TempAssur account to manage your contracts and certificates.",
+      "title": "Welcome back",
+      "description": "Sign in to manage your contracts, retrieve your certificates and track your coverage.",
+      "footerText": "Don't have an account?",
+      "footerLinkLabel": "Create an account"
+    },
+    "register": {
+      "metaTitle": "Create an account",
+      "metaDescription": "Create your TempAssur account for free to get an instant quote and manage your contracts online.",
+      "title": "Create your account",
+      "description": "Join the drivers who manage their temporary insurance online with TempAssur.",
+      "footerText": "Already have an account?",
+      "footerLinkLabel": "Sign in"
+    }
+  },
+  "authShell": {
+    "dataPrivacy": "Your data is encrypted end-to-end and is never shared without your consent."
+  },
+  "faq": {
+    "meta": {
+      "title": "Frequently asked questions",
+      "description": "All the answers about subscribing, pricing, coverage, documents and cancelling your TempAssur temporary insurance."
+    },
+    "eyebrow": "FAQ",
+    "heading": "Frequently asked questions",
+    "categories": [
+      {
+        "id": "souscription",
+        "title": "Subscription",
+        "items": [
+          {
+            "id": "souscription-1",
+            "question": "How quickly am I insured?",
+            "answer": "Within minutes: rate estimate, online subscription, card payment, electronic signature — then your certificate arrives by e-mail or WhatsApp."
+          },
+          {
+            "id": "souscription-2",
+            "question": "Who can subscribe?",
+            "answer": "Any driver aged 21 or over, holding a licence for at least 2 years, who meets the declarations presented before payment (claims, cancellation, convictions, no-claims malus)."
+          },
+          {
+            "id": "souscription-3",
+            "question": "Can I subscribe on behalf of someone else?",
+            "answer": "Yes, but the driver must be declared and meet all the eligibility conditions."
+          },
+          {
+            "id": "souscription-4",
+            "question": "Can I choose the effective time?",
+            "answer": "Yes, at subscription — cover starts after the documents are signed."
+          }
+        ]
+      },
+      {
+        "id": "prix",
+        "title": "Pricing",
+        "items": [
+          {
+            "id": "prix-1",
+            "question": "How is the price calculated?",
+            "answer": "Based on the vehicle category, the duration, the zone (metropolitan France or overseas territories) and the options. The price of options depends on the duration. Everything is displayed in the quote tool, without needing your e-mail address."
+          },
+          {
+            "id": "prix-2",
+            "question": "Are overseas territory rates the same?",
+            "answer": "No, they differ from metropolitan France; they are displayed automatically as soon as you enter your country of residence or registration. Options are not available there."
+          }
+        ]
+      },
+      {
+        "id": "couverture",
+        "title": "Coverage",
+        "items": [
+          {
+            "id": "couverture-1",
+            "question": "Which countries am I covered in?",
+            "answer": "France and 35 countries — the same list for temporary insurance and border insurance."
+          },
+          {
+            "id": "couverture-2",
+            "question": "Can I travel to Morocco, Tunisia or Turkey?",
+            "answer": "Yes, with the country extension option (cars only)."
+          },
+          {
+            "id": "couverture-3",
+            "question": "What coverage is included?",
+            "answer": "Mandatory third-party liability and legal defence and recourse. For cars, options are available: driver coverage, country extension, roadside assistance."
+          }
+        ]
+      },
+      {
+        "id": "documents",
+        "title": "Documents",
+        "items": [
+          {
+            "id": "documents-1",
+            "question": "What documents will I receive?",
+            "answer": "Your contract, your insurance certificate and your international insurance card — by e-mail or WhatsApp, your choice."
+          },
+          {
+            "id": "documents-2",
+            "question": "I haven't received my certificate.",
+            "answer": "Check your spam folder. If the effective time is approaching, contact us immediately: WhatsApp / phone +33 6 05 93 84 79 — we'll speed up processing."
+          }
+        ]
+      },
+      {
+        "id": "annulation",
+        "title": "Cancellation",
+        "items": [
+          {
+            "id": "annulation-1",
+            "question": "Can I cancel or get a refund?",
+            "answer": "Temporary contracts run for a fixed term, with no automatic renewal; once cover has taken effect, they cannot be cancelled or refunded (see Terms of Sale)."
+          }
+        ]
+      }
+    ],
+    "otherQuestion": "Another question? <phone>{phoneValue}</phone> (7 days a week) or <email>{emailValue}</email>."
+  },
+  "legal": {
+    "eyebrow": "Legal information",
+    "cgv": {
+      "meta": {
+        "title": "Terms and conditions of sale",
+        "description": "Terms and conditions of sale applicable to temporary insurance contracts taken out on {siteName}."
+      },
+      "pageTitle": "Terms and conditions of sale",
+      "sections": [
+        {
+          "title": "1. About the site",
+          "body": "WN Conseil, a single-member limited liability company (EURL) with capital of €1,000.00, registered with the Nanterre Trade and Companies Register under number 929 812 642. Registered office: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, France · E-mail: contact@tempassur.com · ORIAS number: 24004933 (www.orias.fr). WN Conseil acts as an insurance broker (ORIAS no. 24004933). Insurance contracts taken out via the TempAssur site are concluded between the customer and the insurance company underwriting the risk (its name appears on the contractual documents), with WN Conseil acting as an intermediary and not a party to the insurance contract. These terms and conditions of sale govern sales made on the TempAssur site."
+        },
+        {
+          "title": "2. Purpose",
+          "body": "The purpose of these terms and conditions of sale is to define the rights and obligations of the parties in connection with the online sale of temporary insurance products offered on the TempAssur site."
+        },
+        {
+          "title": "3. Acceptance of the terms and conditions of sale",
+          "body": "Any order placed on the TempAssur site implies full and unreserved acceptance of these terms and conditions of sale. The customer declares having read them before placing an order."
+        },
+        {
+          "title": "4. Products and services",
+          "body": "TempAssur offers temporary insurance products suited to different types of vehicles. The essential features of the products are described on the site. It is the customer's responsibility to ensure that the chosen product meets their needs. Before any subscription, the customer receives the insurance product information document (IPID) as well as the general contract terms. Eligibility conditions (minimum age of 21, driving licence held for at least 2 years, declarations regarding history) are checked at subscription; any false declaration exposes the policyholder to the penalties set out in articles L.113-8 and L.113-9 of the French Insurance Code."
+        },
+        {
+          "title": "5. Order",
+          "body": "Orders are placed online, via the TempAssur site. The customer must select the desired insurance product, fill in the required information, and confirm the order. Confirming the order implies acceptance of the prices and descriptions of the products, as well as of these terms and conditions of sale, and includes express acceptance of the driver declarations presented before payment. The customer then receives a confirmation e-mail for their order."
+        },
+        {
+          "title": "6. Price",
+          "body": "Prices displayed on the TempAssur site are shown in euros and include VAT applicable on the day of the order. WN Conseil reserves the right to change its prices at any time, but products will be invoiced based on the rates in effect at the time the order is confirmed."
+        },
+        {
+          "title": "7. Payment",
+          "body": "Payment is made by bank card or any other means indicated on the site. The customer guarantees that they are fully authorised to use the chosen means of payment. The order amount will be charged when the order is confirmed."
+        },
+        {
+          "title": "8. Right of withdrawal",
+          "body": "Due to the temporary nature of the insurance contracts offered on the TempAssur site, the customer expressly waives their right of withdrawal. Once the contract has been taken out and cover is in effect, no cancellation or refund will be possible. The customer acknowledges that the contract runs for a fixed term with no automatic renewal, and therefore cannot be terminated."
+        },
+        {
+          "title": "9. Liability",
+          "body": "WN Conseil undertakes to provide products that comply with applicable legal provisions. However, WN Conseil cannot be held liable for indirect damages resulting from the use of products sold on the site."
+        },
+        {
+          "title": "10. Personal data",
+          "body": "Information collected by WN Conseil when an order is placed is necessary for processing that order. It is processed in accordance with data protection legislation. The customer may exercise their rights of access, rectification and deletion of their data by contacting WN Conseil."
+        },
+        {
+          "title": "11. Amendments to the terms and conditions of sale",
+          "body": "WN Conseil reserves the right to amend these terms and conditions of sale at any time. The applicable conditions are those in effect at the time of the order."
+        },
+        {
+          "title": "12. Governing law and disputes",
+          "body": "These terms and conditions of sale are governed by French law. In the event of a dispute relating to an order or the application of these terms and conditions of sale, the customer is invited to contact WN Conseil's customer service to attempt to resolve the dispute amicably. For disputes relating to an insurance contract, the customer may refer the matter free of charge to La Médiation de l'Assurance: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. For other disputes relating to the site, the designated consumer mediator is the IEAM (Institut d'Expertise, d'Arbitrage et de Médiation): 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu — contact@ieam.eu. In the event of legal proceedings, the competent courts will be those of the jurisdiction where WN Conseil's registered office is located."
+        },
+        {
+          "title": "13. Contact",
+          "body": "For any question or complaint, you can contact TempAssur: By e-mail: contact@tempassur.com · By phone or WhatsApp: +33 6 05 93 84 79 · See also our Complaints page."
+        }
+      ]
+    },
+    "mentionsLegales": {
+      "meta": {
+        "title": "Legal notice",
+        "description": "Legal notice for {siteName}, published by {legalName}, insurance broker registered with ORIAS under no. {orias}."
+      },
+      "pageTitle": "Legal notice",
+      "sections": [
+        {
+          "title": "Site publisher",
+          "body": "The site www.tempassur.com is published by WN Conseil, a single-member limited liability company (EURL) with capital of €1,000.00, registered with the Nanterre Trade and Companies Register under number 929 812 642. Registered office: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, France · SIRET: 929 812 642 00015 · Intra-Community VAT number: FR14929812642. Publication director: Walid Nefzi, manager. Phone: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41 · E-mail: contact@tempassur.com"
+        },
+        {
+          "title": "Regulated activity — insurance distribution",
+          "body": "WN Conseil is an insurance broker, registered with ORIAS under no. 24004933 (insurance or reinsurance broker category — COA), which can be verified on www.orias.fr. WN Conseil operates under the supervision of the French Prudential Supervision and Resolution Authority (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09 — acpr.banque-france.fr. The insurance contracts distributed on this site are underwritten by approved insurance companies, governed by the French Insurance Code. The list of partner companies is available on request; the name of your contract's insurer appears on your contractual documents. WN Conseil holds no direct or indirect stake in any insurance company, and no insurance company holds a stake in WN Conseil. WN Conseil works with several insurance companies and is under no contractual obligation to work exclusively with any one of them; the list of partner companies is available on request. WN Conseil is remunerated through a commission included in the insurance premium."
+        },
+        {
+          "title": "Complaints and mediation",
+          "body": "For any complaint, please see our Complaints page. After exhausting internal remedies, you may refer the matter free of charge to the competent mediator (contact details on the Complaints page)."
+        },
+        {
+          "title": "Hosting",
+          "body": "The site is hosted by HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Cyprus — www.hostinger.fr/contact."
+        },
+        {
+          "title": "Disclaimer",
+          "body": "The information provided on the TempAssur site is for informational purposes only and should under no circumstances be considered as advice. Although WN Conseil strives to keep the site's information up to date and accurate, inaccuracies or omissions may occur. If you spot an issue, please let us know by e-mail with details of the problem. Any use of the site and any download of content is done at the user's own responsibility. WN Conseil accepts no liability for any damage resulting from such actions. Any content downloaded is done at the user's own risk and sole responsibility. Accordingly, WN Conseil cannot be held liable for any damage suffered by the user's computer or any data loss resulting from browsing the site."
+        },
+        {
+          "title": "Intellectual property",
+          "body": "All content on the TempAssur site (text, graphics, images, videos, etc.) is protected by intellectual property law and is the exclusive property of WN Conseil or its partners. Any reproduction, representation or use, in whole or in part, of this content, without the express prior authorisation of WN Conseil, is strictly prohibited. The trademarks and logos featured on the site are also protected and their use is prohibited without prior agreement."
+        },
+        {
+          "title": "Personal data",
+          "body": "Personal data collected via the TempAssur site is processed in accordance with the French \"Informatique et Libertés\" law of 6 January 1978, as well as the General Data Protection Regulation (GDPR). The information collected is used to manage your requests, prepare quotes and manage insurance contracts. WN Conseil guarantees the confidentiality of personal data and undertakes not to pass it on to third parties for commercial prospecting purposes. You have the right to access, rectify and delete your data by contacting WN Conseil at the following address: contact@tempassur.com. For more information, see our Privacy Policy."
+        },
+        {
+          "title": "Contact",
+          "body": "By e-mail: contact@tempassur.com · By phone: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41"
+        }
+      ]
+    },
+    "politiqueConfidentialite": {
+      "meta": {
+        "title": "Privacy and cookie policy",
+        "description": "How {siteName} collects, uses and protects your personal data, and which cookies are used on the site."
+      },
+      "pageTitle": "Privacy and cookie policy",
+      "sections": [
+        {
+          "title": "1. Data controller",
+          "body": "This policy describes how WN Conseil (operating under the name TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — collects, uses, stores and protects your personal data via the site www.tempassur.com."
+        },
+        {
+          "title": "2. Data collected",
+          "body": "Quotes and subscription: identity, contact details, date of birth, driving licence information, vehicle information, declared history (claims, cancellation, convictions, no-claims malus). Payment: banking data is processed directly by our secure payment provider; TempAssur never stores it. Contact forms: the data entered, your IP address and your browser's user agent (fraud and spam prevention). Browsing: cookies and audience measurement (see §7)."
+        },
+        {
+          "title": "3. Purposes and legal bases",
+          "body": "Preparing quotes and performing the contract (contractual performance); the broker's legal obligations, including the duty of advice and anti-money-laundering measures (legal obligation); customer relationship management, statistics and site improvement (legitimate interest); marketing communications (consent, which can be withdrawn at any time)."
+        },
+        {
+          "title": "4. Recipients",
+          "body": "Partner insurance companies, for the setup and management of your contracts; our technical service providers (hosting, payment, electronic signature, e-mail and WhatsApp messaging). WN Conseil never sells your personal data."
+        },
+        {
+          "title": "5. Retention periods",
+          "body": "Contractual data: for the duration of the contract and then in accordance with legal requirements (5 years minimum, up to 10 years for accounting documents). Prospects: 3 years after the last contact."
+        },
+        {
+          "title": "6. Your rights",
+          "body": "You have the right to access, rectify, erase, restrict processing, port and object to the processing of your data: write to contact@tempassur.com. You may also lodge a complaint with the CNIL (www.cnil.fr)."
+        },
+        {
+          "title": "7. Cookies",
+          "id": "cookies",
+          "body": "On your first visit, a banner lets you accept or refuse cookies by category: cookies necessary for the site to function, audience measurement, marketing. Maximum lifespan: 13 months. You can change your choices at any time via the \"Manage my cookies\" link at the bottom of the page."
+        },
+        {
+          "title": "8. Security",
+          "body": "We implement appropriate security measures (TLS encryption, restricted access, certified providers) to protect your data against any unauthorised access, disclosure or destruction."
+        },
+        {
+          "title": "9. Amendments and contact",
+          "body": "This policy may be updated at any time; the version in effect is the one published on this page. For any questions: contact@tempassur.com · +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41."
+        }
+      ]
+    },
+    "reclamation": {
+      "meta": {
+        "title": "Complaints",
+        "description": "How to file a complaint with TempAssur and the mediation options available."
+      },
+      "pageTitle": "Have a complaint?",
+      "pageDescription": "We strive to respond to any complaint as quickly as possible.",
+      "sections": [
+        {
+          "title": "1. Contact our complaints department",
+          "body": "By e-mail: contact@tempassur.com (subject: \"Complaint\") · By post: WN Conseil — Complaints Department, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · By phone: +33 6 05 93 84 79. We acknowledge receipt of your complaint within 10 business days and respond within 2 months at the latest."
+        },
+        {
+          "title": "2. The complaint concerns your insurance contract",
+          "body": "If our response does not satisfy you, you may refer the matter to the complaints department of the insurance company underwriting your contract (name and contact details in your general contract terms)."
+        },
+        {
+          "title": "3. Mediation",
+          "body": "After exhausting these options, you may refer the matter free of charge to La Médiation de l'Assurance: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. For a dispute relating to the site (outside of the insurance contract): IEAM, 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu."
+        }
+      ]
+    }
+  }
+}

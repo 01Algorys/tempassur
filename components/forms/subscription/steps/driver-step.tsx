@@ -1,11 +1,12 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
+import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES } from "@/lib/countries"
+import { COUNTRIES, getCountryLabel } from "@/lib/countries"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 const fieldClass = "h-11 rounded-lg"
@@ -16,191 +17,212 @@ interface DriverStepProps {
 }
 
 export function DriverStep({ form }: DriverStepProps) {
+  const t = useTranslations("wizard.driver")
+  const tCommon = useTranslations("common")
+  const tCivilite = useTranslations("pricingLabels.civilite")
+  const locale = useLocale()
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-5">
-        <h3 className="text-lg font-bold text-navy">Informations conducteur</h3>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="civilite"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Civilité *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
+        <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
+
+        <div className="flex flex-col gap-4">
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("identity")}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="civilite"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("civilite")}</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger className={triggerClass}>
+                        <SelectValue placeholder={t("civilitePlaceholder")} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {CIVILITE_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {tCivilite(option.translationKey)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="nom"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("nom")}</FormLabel>
                   <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
+                    <Input placeholder={t("nomPlaceholder")} className={fieldClass} {...field} />
                   </FormControl>
-                  <SelectContent>
-                    {CIVILITE_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="nom"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nom *</FormLabel>
-                <FormControl>
-                  <Input placeholder="Votre nom" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="prenom"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Prénom *</FormLabel>
-                <FormControl>
-                  <Input placeholder="Votre prénom" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="dateNaissance"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Date de naissance *</FormLabel>
-                <FormControl>
-                  <Input type="date" className={fieldClass} {...field} />
-                </FormControl>
-                <FormDescription>Nos contrats sont réservés aux conducteurs d&apos;au moins 21 ans.</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="paysNaissance"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Pays de naissance *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="prenom"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("prenom")}</FormLabel>
                   <FormControl>
-                    <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez un pays" />
-                    </SelectTrigger>
+                    <Input placeholder={t("prenomPlaceholder")} className={fieldClass} {...field} />
                   </FormControl>
-                  <SelectContent>
-                    {COUNTRIES.map((country) => (
-                      <SelectItem key={country.code} value={country.code}>
-                        {country.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="telephoneFixe"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Téléphone (fixe)</FormLabel>
-                <FormControl>
-                  <Input type="tel" placeholder="Numéro de téléphone fixe" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="telephoneMobile"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Mobile *</FormLabel>
-                <FormControl>
-                  <Input type="tel" placeholder="Numéro de téléphone mobile" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>E-mail *</FormLabel>
-                <FormControl>
-                  <Input type="email" placeholder="Votre email" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="adresse"
-            render={({ field }) => (
-              <FormItem className="sm:col-span-2">
-                <FormLabel>Adresse *</FormLabel>
-                <FormControl>
-                  <Input placeholder="Votre adresse" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="codePostal"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Code postal *</FormLabel>
-                <FormControl>
-                  <Input placeholder="Votre code postal" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="ville"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Ville *</FormLabel>
-                <FormControl>
-                  <Input placeholder="Votre ville" className={fieldClass} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="dateNaissance"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("dateNaissance")}</FormLabel>
+                  <FormControl>
+                    <Input type="date" className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormDescription>{t("dateNaissanceHint")}</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="paysNaissance"
+              render={({ field }) => (
+                <FormItem className="sm:col-span-2">
+                  <FormLabel>{t("paysNaissance")}</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger className={triggerClass}>
+                        <SelectValue placeholder={t("paysNaissancePlaceholder")} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {COUNTRIES.map((country) => (
+                        <SelectItem key={country.code} value={country.code}>
+                          {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("coordonnees")}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="telephoneMobile"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("mobile")}</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder={t("mobilePlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="telephoneFixe"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("fixe")}</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder={t("fixePlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="sm:col-span-2">
+                  <FormLabel>{t("email")}</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder={t("emailPlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("adresseHeading")}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="adresse"
+              render={({ field }) => (
+                <FormItem className="sm:col-span-2">
+                  <FormLabel>{t("adresse")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("adressePlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="codePostal"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("codePostal")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("codePostalPlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="ville"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("ville")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("villePlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-5">
-        <h3 className="text-lg font-bold text-navy">Permis de conduire</h3>
+        <h3 className="text-lg font-bold text-navy">{t("permisHeading")}</h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="numeroPermis"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Numéro de permis *</FormLabel>
+                <FormLabel>{t("numeroPermis")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Numéro de permis" className={fieldClass} {...field} />
+                  <Input placeholder={t("numeroPermisPlaceholder")} className={fieldClass} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -211,11 +233,11 @@ export function DriverStep({ form }: DriverStepProps) {
             name="dateObtentionPermis"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Date d&apos;obtention *</FormLabel>
+                <FormLabel>{t("dateObtention")}</FormLabel>
                 <FormControl>
                   <Input type="date" className={fieldClass} {...field} />
                 </FormControl>
-                <FormDescription>Le permis doit avoir au moins 2 ans pour assurer votre véhicule.</FormDescription>
+                <FormDescription>{t("dateObtentionHint")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -225,17 +247,17 @@ export function DriverStep({ form }: DriverStepProps) {
             name="paysObtentionPermis"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Pays d&apos;obtention *</FormLabel>
+                <FormLabel>{t("paysObtention")}</FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className={triggerClass}>
-                      <SelectValue placeholder="Sélectionnez un pays" />
+                      <SelectValue placeholder={t("paysNaissancePlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {COUNTRIES.map((country) => (
                       <SelectItem key={country.code} value={country.code}>
-                        {country.label}
+                        {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                       </SelectItem>
                     ))}
                   </SelectContent>

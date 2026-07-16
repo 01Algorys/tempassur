@@ -1,0 +1,1123 @@
+{
+  "common": {
+    "whatsappDefaultCta": "Încheie asigurarea prin WhatsApp",
+    "whatsappFloatingAria": "Încheie asigurarea prin WhatsApp",
+    "logoAria": "TempAssur, pagina principală",
+    "otherCountry": "Altă țară"
+  },
+  "nav": {
+    "accueil": "Acasă",
+    "jeMAssure": "Mă asigur",
+    "quiSommesNous": "Cine suntem?",
+    "blog": "Blog",
+    "contact": "Contact",
+    "monCompte": "Contul meu",
+    "faq": "FAQ"
+  },
+  "vehicleTypes": {
+    "automobiles": { "label": "Automobil", "description": "Vehicule private și utilitare de sub 3,5 tone." },
+    "poids-lourds": { "label": "Vehicul greu", "description": "Camioane, capete tractor și vehicule cu masă peste 3,5 tone." },
+    "camping-cars": { "label": "Autorulotă", "description": "Autorulote și camionete amenajate." },
+    "quadricycles": { "label": "Cvadricicluri", "description": "ATV-uri omologate, microcare fără permis, buggy-uri." },
+    "bus-autocars": { "label": "Autobuze, autocare", "description": "Transport de persoane." },
+    "tracteurs-agricoles": { "label": "Tractor agricol", "description": "Tractoare și utilaje agricole." },
+    "remorques": { "label": "Remorci", "description": "Remorci, semiremorci și rulote (grele și ușoare)." },
+    "assurance-frontiere": {
+      "label": "Asigurare de frontieră",
+      "description": "Vehicule înmatriculate în afara Uniunii Europene și în afara sistemului Cartea Verde, sau vehicule înmatriculate în străinătate care trebuie să circule în Franța și în Europa."
+    }
+  },
+  "header": {
+    "onlineCta": "Încheie asigurarea online",
+    "openMenu": "Deschide meniul"
+  },
+  "footer": {
+    "description": "TempAssur — asigurarea temporară de la 1 la 90 de zile, pentru toate vehiculele. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
+    "insuranceHeading": "Asigurările noastre",
+    "coveredCountries": "Țări acoperite",
+    "informationHeading": "Informații",
+    "quiSommesNous": "Cine suntem",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "reclamation": "Reclamație",
+    "mentionsLegales": "Mențiuni legale",
+    "cgv": "Condiții generale de vânzare",
+    "politiqueConfidentialite": "Politica de confidențialitate",
+    "gererCookies": "Gestionează cookie-urile",
+    "contactHeading": "Contact",
+    "phoneSuffix": "(zilnic)",
+    "googleMapsSuffix": "Găsiți-ne pe Google Maps",
+    "brokerLine": "Broker de asigurări",
+    "reassuranceStatement": "Asigurători autorizați — contractele dvs. sunt emise de societăți de asigurare reglementate de Codul asigurărilor francez.",
+    "securePayment": "Plată securizată",
+    "copyright": "© {name} {year} — Toate drepturile rezervate"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Alegeți limba"
+  },
+  "forms": {
+    "contact": {
+      "subjects": { "souscription": "Subscriere", "paiement": "Plată", "attestation": "Certificat de asigurare", "reclamation": "Reclamație", "autre": "Altele" },
+      "nomRequired": "Numele este obligatoriu",
+      "emailRequired": "E-mailul este obligatoriu",
+      "emailInvalid": "Introduceți o adresă de e-mail validă",
+      "messageRequired": "Mesajul este obligatoriu",
+      "successTitle": "Mulțumim! Mesajul dvs. a fost trimis cu succes, vă vom contacta în curând.",
+      "successUrgent": "Urgent?",
+      "successWhatsapp": "WhatsApp: {phone}",
+      "nomLabel": "Nume *",
+      "nomPlaceholder": "Numele dvs.",
+      "emailLabel": "E-mail *",
+      "emailPlaceholder": "exemplu@email.com",
+      "telephoneLabel": "Telefon",
+      "telephonePlaceholder": "Numărul dvs. de telefon",
+      "sujetLabel": "Subiect *",
+      "sujetPlaceholder": "Selectați un subiect",
+      "messageLabel": "Mesaj *",
+      "messagePlaceholder": "Mesajul dvs.",
+      "submit": "Trimite"
+    },
+    "login": {
+      "successMessage": "Sunteți conectat(ă). Redirecționare către contul dvs...",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ana@exemplu.com",
+      "passwordLabel": "Parolă",
+      "submit": "Conectare"
+    },
+    "register": {
+      "successMessage": "Cont creat! Verificați căsuța de e-mail pentru a confirma adresa și a obține prima dvs. ofertă.",
+      "fullNameLabel": "Nume complet",
+      "fullNamePlaceholder": "Ana Popescu",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ana@exemplu.com",
+      "passwordLabel": "Parolă",
+      "confirmPasswordLabel": "Confirmați parola",
+      "submit": "Creează contul"
+    }
+  },
+  "paymentHelp": {
+    "heading": "Aveți nevoie de ajutor pentru finalizarea plății?",
+    "bodyHome": "Suntem disponibili zilnic: sunați-ne sau scrieți-ne pe WhatsApp ori prin e-mail. Vă însoțim pas cu pas și vă putem propune o soluție personalizată.",
+    "bodyTunnel": "Întâmpinați o dificultate la finalizarea subscrierii sau a plății? Suntem alături de dvs. zilnic: sunați-ne sau scrieți-ne pe WhatsApp ori prin e-mail. Vă însoțim pas cu pas și vă putem propune o soluție personalizată."
+  },
+  "home": {
+    "meta": {
+      "title": "Asigurare auto temporară și pentru toate vehiculele, de la 1 la 90 de zile | TempAssur",
+      "description": "Asigurare temporară imediată, de la 1 la 90 de zile: auto, vehicule grele, autorulote, ATV-uri, remorci, asigurare de frontieră. Certificat de asigurare prin e-mail sau WhatsApp în câteva minute. De la {price} €/zi."
+    },
+    "hero": {
+      "title": "Asigurare temporară de la 1 la 90 de zile — certificat de asigurare imediat prin e-mail sau WhatsApp",
+      "description": "Auto, vehicule grele, autorulote, ATV-uri, autobuze, tractoare, remorci și asigurare de frontieră. Subscriere 100% online, zilnic. Asigurători autorizați: contractele dvs. sunt emise de societăți de asigurare reglementate de Codul asigurărilor francez.",
+      "ctaEstimate": "Estimați-vă asigurarea în 30 de secunde"
+    },
+    "tarificateur": {
+      "title": "Estimați-vă asigurarea în 30 de secunde",
+      "categoryLabel": "Categoria vehiculului",
+      "categoryPlaceholder": "Selectați o categorie",
+      "durationLabel": "Durată",
+      "durationDays": "{count} z",
+      "durationPlaceholder": "Alegeți durata",
+      "mostChosen": "Cea mai aleasă",
+      "durationOption": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+      "priceFrom": "De la {price}/zi",
+      "pricePlaceholder": "—",
+      "priceNote": "Preț minim pentru această durată. Tariful final depinde de vehicul și de opțiunile alese — iar prețul opțiunilor depinde de durată.",
+      "cta": "Continuați către subscriere"
+    },
+    "reassurance": {
+      "items": [
+        "Certificat de asigurare imediat prin e-mail sau WhatsApp",
+        "Plată 100% securizată (card bancar)",
+        "Broker francez de asigurări — ORIAS nr. 24004933",
+        "Asigurători autorizați — societăți reglementate de Codul asigurărilor francez",
+        "Zilnic, prin telefon și WhatsApp: +33 6 05 93 84 79"
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Cazuri de utilizare",
+      "title": "În ce situații?",
+      "items": [
+        "Cumpărare / vânzare a unui vehicul",
+        "Plăcuță de înmatriculare provizorie WW",
+        "Import / export",
+        "Recuperarea vehiculului din depozitul auto",
+        "Rezilierea contractului de către asigurătorul dvs.",
+        "Vehicul aflat în succesiune",
+        "Trecerea inspecției tehnice periodice",
+        "Împrumutul unui vehicul (dat sau primit)",
+        "Vehicul înmatriculat în străinătate (asigurare de frontieră)",
+        "Conducerea ocazională a unui al doilea vehicul"
+      ]
+    },
+    "howItWorks": {
+      "eyebrow": "Simplu și rapid",
+      "title": "Cum funcționează",
+      "steps": [
+        { "title": "Estimați", "description": "Estimați tariful în 30 de secunde, fără să lăsați datele dvs. de contact." },
+        { "title": "Subscrieți", "description": "Încheiați asigurarea online în 5 minute și plătiți cu cardul bancar." },
+        { "title": "Primiți certificatul de asigurare", "description": "Primiți certificatul de asigurare prin e-mail sau WhatsApp, semnați electronic — sunteți asigurat(ă)." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Întrebări frecvente",
+      "seeAll": "Vezi toate întrebările",
+      "items": [
+        {
+          "id": "home-faq-1",
+          "question": "În cât timp sunt asigurat?",
+          "answer": "În câteva minute: subscriere online, plată cu cardul, semnătură electronică, certificat de asigurare trimis prin e-mail sau WhatsApp."
+        },
+        {
+          "id": "home-faq-2",
+          "question": "Cine poate încheia o asigurare?",
+          "answer": "Orice conducător auto de cel puțin 21 de ani, posesor al permisului de conducere de cel puțin 2 ani, care îndeplinește condițiile declarate la subscriere."
+        },
+        {
+          "id": "home-faq-3",
+          "question": "În ce țări sunt acoperit?",
+          "answer": "În Franța și în 35 de țări (aceeași listă pentru asigurarea temporară și pentru cea de frontieră). Extindere posibilă către alte 7 țări pentru automobile."
+        },
+        {
+          "id": "home-faq-4",
+          "question": "Îmi pot anula contractul?",
+          "answer": "Contractele temporare au o durată fermă, fără reînnoire tacită (vezi Condițiile generale de vânzare)."
+        },
+        {
+          "id": "home-faq-5",
+          "question": "Pentru cine este asigurarea de frontieră?",
+          "answer": "Pentru vehiculele înmatriculate în afara UE și în afara sistemului Cartea Verde, care trebuie să circule în Franța și în Europa."
+        }
+      ]
+    },
+    "reviews": {
+      "eyebrow": "Recenzii ale clienților",
+      "title": "Ce spun clienții noștri",
+      "address": "WN Conseil / TempAssur — {address}",
+      "cta": "Vezi toate recenziile noastre Google →"
+    },
+    "coveredCountries": {
+      "description": "Asigurarea dvs. temporară vă acoperă în Franța și în 35 de țări din Europa și din bazinul mediteranean — aceeași listă pentru asigurarea temporară și pentru asigurarea de frontieră. Aveți nevoie de Maroc, Tunisia sau Turcia? O extindere este posibilă pentru automobile.",
+      "cta": "Vezi lista completă a țărilor acoperite"
+    },
+    "vehicleVignettes": {
+      "eyebrow": "Vehiculele noastre",
+      "title": "Asigurările noastre",
+      "priceFrom": "de la {price}/zi",
+      "cta": "Află mai multe"
+    }
+  },
+  "pricingLabels": {
+    "civilite": { "monsieur": "Dl.", "madame": "Dna." },
+    "cvTier": {
+      "moins-16cv": "Sub 16 CP",
+      "moins-30cv": "Între 16 și 29 CP",
+      "plus-30cv": "30 CP și peste"
+    },
+    "ptacTier": {
+      "moins-3500kg": "MTMA ≤ 3,5 tone",
+      "plus-3500kg": "MTMA > 3,5 tone"
+    },
+    "quadSubtype": {
+      "voiturette-sans-permis": "Microcar fără permis (≤ 8 CP)",
+      "buggy": "Buggy 50 cc (≤ 8 CP)",
+      "quad-avec-permis": "ATV cu permis (≤ 9 CP)"
+    },
+    "territory": {
+      "metropole": "Franța metropolitană",
+      "guadeloupe": "Guadelupa",
+      "martinique": "Martinica",
+      "guyane": "Guyana Franceză",
+      "reunion": "Réunion",
+      "mayotte": "Mayotte",
+      "saint-martin": "Saint-Martin",
+      "saint-barthelemy": "Saint-Barthélemy",
+      "saint-pierre-et-miquelon": "Saint-Pierre-et-Miquelon"
+    }
+  },
+  "validation": {
+    "paysImmatriculationRequired": "Țara de înmatriculare este obligatorie",
+    "paysResidenceRequired": "Țara de reședință este obligatorie",
+    "dureeRequired": "Selectați o durată",
+    "immatriculationRequired": "Numărul de înmatriculare este obligatoriu",
+    "marqueRequired": "Marca este obligatorie",
+    "modeleRequired": "Modelul este obligatoriu",
+    "dateMiseEnCirculationRequired": "Data primei înmatriculări este obligatorie",
+    "dateEffetRequired": "Data de intrare în vigoare este obligatorie",
+    "heureEffetRequired": "Ora de intrare în vigoare este obligatorie",
+    "civiliteRequired": "Selectați un titlu (Dl./Dna.)",
+    "nomRequired": "Numele este obligatoriu",
+    "prenomRequired": "Prenumele este obligatoriu",
+    "dateNaissanceRequired": "Data nașterii este obligatorie",
+    "paysNaissanceRequired": "Țara de naștere este obligatorie",
+    "telephoneInvalid": "Introduceți un număr valid",
+    "emailRequired": "E-mailul este obligatoriu",
+    "emailInvalid": "Introduceți o adresă de e-mail validă",
+    "adresseRequired": "Adresa este obligatorie",
+    "codePostalRequired": "Codul poștal este obligatoriu",
+    "villeRequired": "Orașul este obligatoriu",
+    "numeroPermisRequired": "Numărul permisului de conducere este obligatoriu",
+    "dateObtentionPermisRequired": "Data obținerii permisului este obligatorie",
+    "paysObtentionPermisRequired": "Țara de obținere a permisului este obligatorie",
+    "consentCgvRequired": "Condițiile generale de vânzare trebuie acceptate",
+    "consentIpidRequired": "Documentul de informare IPID trebuie acceptat",
+    "consentContratRequired": "Condițiile generale ale contractului trebuie acceptate",
+    "consentDeclarationsRequired": "Trebuie să certificați declarațiile conducătorului auto",
+    "territoireImmatriculationRequired": "Precizați departamentul sau teritoriul de înmatriculare",
+    "territoireResidenceRequired": "Precizați departamentul sau teritoriul de reședință",
+    "minAge": "Contractele noastre sunt rezervate conducătorilor auto de cel puțin 21 de ani.",
+    "minLicenseAge": "Contractele noastre necesită cel puțin 2 ani de la obținerea permisului.",
+    "effectDateInPast": "Data și ora de intrare în vigoare nu pot fi anterioare momentului actual.",
+    "nomAgenceRequired": "Indicați numele agenției de închiriere"
+  },
+  "wizard": {
+    "steps": {
+      "duration": "Durată și localizare",
+      "details": "Informațiile dvs.",
+      "payment": "Plată"
+    },
+    "buttons": {
+      "previous": "Înapoi",
+      "continueLabel": "Continuă",
+      "sending": "Se trimite...",
+      "payLabel": "Plătiți {amount} € în siguranță"
+    },
+    "paymentError": "Plata nu a fost finalizată. Nicio sumă nu a fost debitată. Încercați din nou sau contactați-ne: WhatsApp +33 6 05 93 84 79 — găsim o soluție imediat.",
+    "duration": {
+      "heading": "Durată și dată de intrare în vigoare",
+      "contractDuration": "Durata contractului *",
+      "mostChosen": "Cea mai aleasă",
+      "durationUnit": "{count} z",
+      "durationPlaceholder": "Alegeți durata",
+      "durationOption": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+      "effectDate": "Data de intrare în vigoare *",
+      "effectTime": "Ora de intrare în vigoare *",
+      "effectTimeHint": "Data și ora de intrare în vigoare nu pot fi anterioare momentului actual."
+    },
+    "vehicleTier": {
+      "heading": "Putere fiscală",
+      "cvLabel": "Putere fiscală *",
+      "ptacLabel": "Masa totală maximă autorizată *",
+      "quadLabel": "Tipul vehiculului *",
+      "selectPlaceholder": "Selectați"
+    },
+    "localisation": {
+      "heading": "Localizare",
+      "registrationCountry": "Țara de înmatriculare a vehiculului *",
+      "countryPlaceholder": "Selectați o țară",
+      "registrationTerritory": "Departament / teritoriu de înmatriculare *",
+      "territoryPlaceholder": "Selectați",
+      "residenceCountry": "Țară / teritoriu de reședință *",
+      "residenceTerritory": "Departament / teritoriu de reședință *",
+      "domTomHint": "Un tarif specific DOM-TOM se aplică departamentelor și colectivităților de peste mări.",
+      "domTomNotice": "Tarifele aplicabile teritoriilor DOM-TOM diferă de cele din metropolă."
+    },
+    "driver": {
+      "heading": "Informații conducător auto",
+      "identity": "Identitate",
+      "civilite": "Titlu *",
+      "civilitePlaceholder": "Selectați",
+      "nom": "Nume *",
+      "nomPlaceholder": "Numele dvs.",
+      "prenom": "Prenume *",
+      "prenomPlaceholder": "Prenumele dvs.",
+      "dateNaissance": "Data nașterii *",
+      "dateNaissanceHint": "Contractele noastre sunt rezervate conducătorilor auto de cel puțin 21 de ani.",
+      "paysNaissance": "Țara nașterii *",
+      "paysNaissancePlaceholder": "Selectați o țară",
+      "coordonnees": "Date de contact",
+      "mobile": "Telefon mobil *",
+      "mobilePlaceholder": "Numărul de telefon mobil",
+      "fixe": "Telefon (fix)",
+      "fixePlaceholder": "Numărul de telefon fix",
+      "email": "E-mail *",
+      "emailPlaceholder": "E-mailul dvs.",
+      "adresseHeading": "Adresă",
+      "adresse": "Adresă *",
+      "adressePlaceholder": "Adresa dvs.",
+      "codePostal": "Cod poștal *",
+      "codePostalPlaceholder": "Codul dvs. poștal",
+      "ville": "Oraș *",
+      "villePlaceholder": "Orașul dvs.",
+      "permisHeading": "Permis de conducere",
+      "numeroPermis": "Numărul permisului *",
+      "numeroPermisPlaceholder": "Numărul permisului",
+      "dateObtention": "Data obținerii *",
+      "dateObtentionHint": "Permisul trebuie să aibă o vechime de cel puțin 2 ani pentru a vă asigura vehiculul.",
+      "paysObtention": "Țara de obținere *"
+    },
+    "vehicle": {
+      "heading": "Vehicul",
+      "categorie": "Categorie *",
+      "categoriePlaceholder": "Selectați o categorie",
+      "immatriculation": "Număr de înmatriculare *",
+      "marque": "Marcă *",
+      "modele": "Model *",
+      "dateMiseEnCirculation": "Data primei înmatriculări *",
+      "location": "Vehicul închiriat",
+      "locationOui": "Da",
+      "locationNon": "Nu",
+      "locationExclusion": "Vă informăm că nu asigurăm vehiculele închiriate în afara unei agenții în Franța, nici vehiculele închiriate în străinătate, nici vehiculele închiriate de la următoarele agenții: {agencies}.",
+      "nomAgence": "Numele agenției de închiriere",
+      "nomAgencePlaceholder": "Numele agenției"
+    },
+    "options": {
+      "heading": "Opțiuni",
+      "notAvailable": "Nicio opțiune nu este disponibilă pentru această categorie de vehicul.",
+      "priceHint": "Prețul opțiunilor depinde de durată.",
+      "notEligible": "Neeligibil pentru această țară",
+      "notAvailableForDuration": "Indisponibil pentru această durată",
+      "garantieConducteur": "Garanția conducătorului auto",
+      "assistance": "Asistență",
+      "extensionPays": "Extindere de țară ({countries})",
+      "extensionPaysShort": "Extindere de țară"
+    },
+    "documents": {
+      "heading": "Documente",
+      "optional": "Documente (opțional în această etapă)",
+      "permisRecto": "Permis de conducere (față)",
+      "permisVerso": "Permis de conducere (verso)",
+      "carteGrise": "Certificat de înmatriculare",
+      "chooseFile": "Alegeți un fișier",
+      "noFile": "Niciun fișier selectat",
+      "removeFile": "Elimină fișierul {label}",
+      "consentsHeading": "Acceptarea condițiilor",
+      "acceptCgv": "Accept <link>Condițiile generale de vânzare</link>",
+      "acceptIpid": "Am luat cunoștință de documentul de informare (IPID)",
+      "acceptContrat": "Am luat cunoștință de condițiile generale ale contractului"
+    },
+    "payment": {
+      "heading": "Recapitulare și plată securizată",
+      "vehicle": "Vehicul",
+      "categorie": "Categorie",
+      "duree": "Durată",
+      "dateEffet": "Data și ora de intrare în vigoare",
+      "optionsChoisies": "Opțiuni alese",
+      "aucune": "Niciuna",
+      "totalTtc": "Total TVA inclus",
+      "edit": "Modifică",
+      "note": "Verificați recapitularea de mai sus, apoi confirmați plata în siguranță mai jos. Nicio informație suplimentară nu este necesară în această etapă.",
+      "dateAt": "{date} la {time}",
+      "durationValue": "{count, plural, one {# zi} few {# zile} other {# de zile}}"
+    },
+    "billingSummary": {
+      "subtitle": "Asigurare temporară",
+      "duree": "Durată",
+      "formule": "Formulă",
+      "zone": "Zonă",
+      "zoneDomTom": "DOM-TOM",
+      "zoneMetropole": "Franța metropolitană",
+      "tarifBase": "Tarif de bază",
+      "zoneDomTomSurcharge": "Zonă DOM-TOM",
+      "selectDuration": "Selectați o durată pentru a afișa tariful.",
+      "totalToPay": "Total de plată",
+      "securePayment": "Plată securizată, intrare în vigoare imediată.",
+      "durationValue": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+      "noValue": "—"
+    },
+    "declarations": {
+      "title": "Declarațiile conducătorului auto",
+      "description": "Pentru a valida subscrierea, trebuie să puteți răspunde NU la următoarele patru întrebări privind conducătorul auto:",
+      "questions": [
+        "A declarat, în ultimele 36 de luni, mai mult de 2 daune materiale în care este responsabil sau parțial responsabil ȘI/SAU 1 daună corporală, responsabil sau nu?",
+        "A fost reziliat pentru daună de către un asigurător anterior în ultimii 5 ani?",
+        "A făcut obiectul unei condamnări penale pentru încălcarea codului rutier, conducere sub influența alcoolului sau a stupefiantelor?",
+        "Se numără printre conducătorii cu malus aflați în căutarea unui nou asigurător sau așteaptă o decizie a Biroului Central de Tarifare (BCT)?"
+      ],
+      "certify": "Certific că răspund NU la toate aceste întrebări. Înțeleg că o declarație falsă poate atrage nulitatea contractului (art. L.113-8 din Codul asigurărilor francez).",
+      "contactPrompt": "Vă aflați într-una dintre aceste situații?",
+      "contactCta": "Contactați-ne",
+      "contactSuffix": ", este posibil să existe o soluție personalizată.",
+      "contactMessage": "Bună ziua, aș dori să discut despre situația mea înainte de a încheia o asigurare temporară.",
+      "cancel": "Anulează",
+      "confirm": "Certific și continui",
+      "sending": "Se trimite..."
+    }
+  },
+  "product": {
+    "sectionHeadings": {
+      "vehiclesHeading": "Ce vehicule?",
+      "borderVehiclesHeading": "Cui se adresează asigurarea de frontieră?",
+      "guaranteesHeading": "Garanțiile dvs.",
+      "whereCoveredHeading": "Unde sunteți acoperit?",
+      "coveredCountriesCta": "Vezi lista completă a țărilor acoperite →",
+      "useCasesHeading": "În ce situații?",
+      "eligibilityHeading": "Cine poate încheia o asigurare?",
+      "faqHeading": "Întrebări frecvente",
+      "ctaEstimate": "Estimează-mi tariful în 30 de secunde",
+      "seeAlso": "Vezi și",
+      "coveredCountriesLink": "Țări acoperite",
+      "priceFrom": "De la {price}/zi",
+      "durationsAvailable": "Durate disponibile: {durations} zi{plural}"
+    },
+    "automobiles": {
+      "title": "Asigurare auto temporară de la 1 la 90 de zile, de la [PRIX] €/zi | TempAssur",
+      "metaDescription": "Asigurați o mașină sau un utilitar de la 1 la 90 de zile. Subscriere online în 5 minute, certificat de asigurare imediat prin e-mail sau WhatsApp. De la [PRIX] €/zi.",
+      "h1": "Asigurare auto temporară de la 1 la 90 de zile",
+      "intro": "Aveți nevoie să asigurați o mașină sau un utilitar de sub 3,5 tone pentru câteva zile? Asigurarea auto temporară TempAssur vă acoperă de la 1 la 90 de zile, fără angajament și fără reînnoire tacită. Subscriere 100% online în 5 minute, certificat de asigurare trimis imediat prin e-mail sau WhatsApp.",
+      "vehiclesParagraph": "Toate vehiculele particulare și utilitare de sub 3,5 tone, indiferent de putere: mașină de oraș, berlină, SUV, autoutilitară… Tariful depinde de puterea fiscală și de durata aleasă.",
+      "guaranteesIncluded": "Incluse: răspundere civilă (obligatorie — daune cauzate terților) și apărare penală și recurs în urma unui accident.",
+      "options": [
+        { "label": "Garanția conducătorului auto", "description": "vă protejează și în caz de accident din vina dvs." },
+        { "label": "Extindere de circulație", "description": "Albania, Azerbaidjan, Macedonia de Nord, Maroc, Moldova, Tunisia, Turcia." },
+        { "label": "Asistență", "description": "" }
+      ],
+      "whereCovered": "În Franța și în 35 de țări din Europa și din bazinul mediteranean. Cu extinderea, adăugați Marocul, Tunisia, Turcia și alte 4 țări.",
+      "useCases": [
+        "Cumpărarea sau vânzarea unui vehicul",
+        "plăcuță provizorie WW",
+        "împrumutul unui vehicul",
+        "import / export",
+        "recuperarea vehiculului din depozitul auto",
+        "rezilierea de către asigurătorul dvs.",
+        "vehicul aflat în succesiune",
+        "trecerea inspecției tehnice periodice",
+        "conducere ocazională"
+      ],
+      "eligibility": "Orice conducător auto de cel puțin 21 de ani, posesor al permisului de cel puțin 2 ani, care îndeplinește declarațiile prezentate la subscriere.",
+      "faq": [
+        { "question": "Care este prețul unei asigurări auto temporare?", "answer": "De la [PRIX_GRILLE] €/zi; tariful exact depinde de durată și de puterea fiscală și se afișează imediat în calculatorul nostru de tarife." },
+        { "question": "Pot merge în Maroc, Tunisia sau Turcia?", "answer": "Da, cu opțiunea de extindere a circulației (doar pentru automobile)." },
+        { "question": "Sunt acoperit în teritoriile DOM-TOM?", "answer": "Da — tarifele DOM-TOM diferă de cele din metropolă, iar opțiunile nu sunt disponibile acolo." },
+        { "question": "Ce documente voi primi?", "answer": "Contractul dvs., certificatul de asigurare și cardul internațional de asigurare, prin e-mail sau WhatsApp, după semnătura electronică." }
+      ]
+    },
+    "poids-lourds": {
+      "title": "Asigurare temporară pentru vehicule grele, de la [PRIX] €/zi | TempAssur",
+      "metaDescription": "Camion, autocamion, cap tractor: asigurare temporară online pentru vehicule grele. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
+      "h1": "Asigurare temporară pentru vehicule grele (peste 3,5 tone)",
+      "intro": "Autocamion, cap tractor, semiremorcă: asigurați-vă vehiculul greu pentru un convoi, o achiziție, un import sau o misiune punctuală, pentru duratele prevăzute în grila noastră de tarife. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, cu tarife specifice.",
+      "useCases": ["Convoi după achiziție sau vânzare", "plăcuță WW", "import / export", "recuperarea vehiculului din depozitul auto", "perioadă de așteptare între două contracte anuale"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis, permis adecvat vehiculului, declarații conforme (vezi subscrierea).",
+      "faq": [
+        { "question": "Ce durate?", "answer": "Cele din grila noastră de tarife (comenzi rapide de 8 și 15 zile) — calculatorul de tarife afișează toate duratele disponibile împreună cu prețul lor." },
+        { "question": "Conducătorul trebuie să fie și subscriitorul?", "answer": "Nu, dar trebuie să fie declarat și să îndeplinească condițiile de eligibilitate." },
+        { "question": "Ce documente primesc?", "answer": "Contract, certificat de asigurare și card internațional de asigurare, prin e-mail sau WhatsApp." }
+      ]
+    },
+    "camping-cars": {
+      "title": "Asigurare temporară pentru autorulote, de la 1 la 90 de zile | TempAssur",
+      "metaDescription": "Asigurare temporară pentru autorulote și camionete amenajate, de la 1 la 90 de zile. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
+      "h1": "Asigurare temporară pentru autorulote și camionete amenajate",
+      "intro": "Plecați liniștiți: asigurare temporară pentru autorulote, de la 1 la 90 de zile, ideală pentru o călătorie punctuală, un împrumut, o achiziție sau o repatriere. Prețul afișat corespunde modelelor de sub 3,5 tone; el este ajustat în funcție de greutate la subscriere.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări din Europa — perfect pentru un road-trip. DOM-TOM: da, tarife specifice.",
+      "useCases": ["Călătorie punctuală", "închiriere sau împrumut între particulari", "achiziție / vânzare", "repatriere", "scoaterea din iernare", "inspecție tehnică"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, cu 2 ani de permis.",
+      "faq": [
+        { "question": "Camioneta mea amenajată este acceptată?", "answer": "Da, camionetele amenajate sunt asigurate la fel ca autorulotele." },
+        { "question": "Autorulota mea depășește 3,5 tone?", "answer": "Poate fi asigurată: tariful este ajustat în funcție de greutate la subscriere." },
+        { "question": "Cine poate încheia o asigurare?", "answer": "Conducător auto de cel puțin 21 de ani, cu 2 ani de permis." }
+      ]
+    },
+    "quadricycles": {
+      "title": "Asigurare temporară pentru ATV, microcar fără permis, buggy | TempAssur",
+      "metaDescription": "ATV omologat, microcar fără permis sau buggy: asigurare temporară online, certificat de asigurare prin e-mail sau WhatsApp.",
+      "h1": "Asigurare temporară pentru cvadricicluri: ATV, microcar, buggy",
+      "intro": "ATV omologat, microcar fără permis sau buggy: asigurați-vă cvadriciclul pentru durata de care aveți cu adevărat nevoie. Prețul de pornire afișat corespunde subtipului cel mai ieftin; tariful exact se ajustează în funcție de vehiculul dvs. la subscriere.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
+      "useCases": ["Achiziție / vânzare", "sezon estival", "recuperarea vehiculului din depozitul auto", "vehicul de agrement folosit câteva săptămâni pe an", "inspecție tehnică"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis.",
+      "faq": [
+        { "question": "Ce permis este necesar pentru un microcar fără permis?", "answer": "De la 14 ani, permisul AM (fostul BSR) este suficient pentru a conduce — dar pentru a încheia o asigurare la noi, conducătorul trebuie să aibă 21 de ani și 2 ani de permis." },
+        { "question": "ATV-ul meu nu este omologat pentru drum?", "answer": "Nu poate fi asigurat pentru circulația pe drumurile publice." },
+        { "question": "Ce durate?", "answer": "Cele din grila de tarife — comenzi rapide de 10, 15, 20 și 30 de zile." }
+      ]
+    },
+    "bus-autocars": {
+      "title": "Asigurare temporară pentru autobuze și autocare | TempAssur",
+      "metaDescription": "Asigurați un autobuz sau un autocar pentru un convoi, o achiziție sau o vânzare. Subscriere online, certificat de asigurare imediat.",
+      "h1": "Asigurare temporară pentru autobuze și autocare",
+      "intro": "Asigurați un autobuz sau un autocar pentru un convoi, o achiziție, o vânzare sau un transfer de vehicul. Subscriere 100% online, certificat de asigurare imediat prin e-mail sau WhatsApp.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
+      "useCases": ["Convoi după achiziție sau vânzare la licitație", "import / export", "repoziționarea flotei", "recuperarea vehiculului din depozitul auto"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis, declarații conforme.",
+      "faq": [
+        { "question": "Ce durate?", "answer": "Cele din grila de tarife (comenzi rapide de 8 și 15 zile)." },
+        { "question": "Transportul de pasageri este acoperit?", "answer": "Garanția acoperă răspunderea civilă a vehiculului; pentru o utilizare comercială cu pasageri, contactați-ne înainte de a încheia asigurarea: +33 6 05 93 84 79." }
+      ]
+    },
+    "tracteurs-agricoles": {
+      "title": "Asigurare temporară pentru tractor agricol, de la [PRIX] €/zi | TempAssur",
+      "metaDescription": "Recoltare, convoi, achiziție: asigurare temporară online pentru tractor agricol, certificat de asigurare prin e-mail sau WhatsApp.",
+      "h1": "Asigurare temporară pentru tractor agricol",
+      "intro": "Recoltare, convoi, achiziție sau vânzare: asigurați-vă tractorul sau utilajul agricol pentru câteva zile, fără angajament anual. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
+      "useCases": ["Perioada de recoltare", "convoi după achiziție / vânzare", "împrumut între fermieri", "deplasare excepțională pe drumurile publice"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis.",
+      "faq": [
+        { "question": "Ce durate?", "answer": "Cele din grila de tarife (comenzi rapide de 8 și 15 zile)." },
+        { "question": "Un tractor vechi / de colecție este acceptat?", "answer": "Da, dacă este înmatriculat." }
+      ]
+    },
+    "remorques": {
+      "title": "Asigurare temporară pentru remorcă, semiremorcă, rulotă | TempAssur",
+      "metaDescription": "Remorcă, semiremorcă sau rulotă: asigurare temporară obligatorie peste 750 kg. Subscriere online imediată.",
+      "h1": "Asigurare temporară pentru remorci, semiremorci și rulote",
+      "intro": "Remorcă ușoară sau grea, semiremorcă, rulotă: peste 750 kg MTMA, o asigurare de răspundere civilă dedicată este obligatorie — cea a vehiculului tractor nu mai este suficientă. Asigurați-o pentru un convoi, o achiziție sau o deplasare punctuală.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
+      "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
+      "useCases": ["Achiziție / vânzare", "mutare", "plecare în vacanță cu o rulotă", "transport punctual de echipamente", "import / export"],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis.",
+      "faq": [
+        { "question": "Remorca mea are sub 750 kg?", "answer": "În principiu, este acoperită de asigurarea vehiculului tractor — verificați-vă contractul." },
+        { "question": "Ce durate?", "answer": "Cele din grila de tarife (comenzi rapide de 8 și 15 zile)." }
+      ]
+    },
+    "assurance-frontiere": {
+      "title": "Asigurare de frontieră: circulați în Franța și în Europa cu un vehicul înmatriculat în străinătate | TempAssur",
+      "metaDescription": "Vehicul înmatriculat în afara UE sau în străinătate? Asigurarea de frontieră vă acoperă în Franța și în 35 de țări. 30 sau 90 de zile, certificat de asigurare imediat.",
+      "h1": "Asigurare de frontieră — pentru a circula în Franța și în Europa",
+      "intro": "Vehiculul dvs. este înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde — sau este înmatriculat în străinătate și trebuie să circule în Franța? Asigurarea de frontieră este soluția legală și obligatorie pentru a porni la drum. Iar la TempAssur, ea nu acoperă doar Franța: sunteți acoperit în 35 de țări, aceeași listă ca pentru asigurările noastre temporare. Disponibilă pentru 30 sau 90 de zile — certificat de asigurare prin e-mail sau WhatsApp.",
+      "vehiclesParagraph": "Călătorilor care vin în Europa cu vehiculul propriu (Maghreb, Balcani în afara sistemului Cartea Verde, Orientul Mijlociu, America…), francezilor din străinătate aflați temporar în țară cu un vehicul înmatriculat în afara UE, precum și vehiculelor aflate în tranzit sau în curs de import.",
+      "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident. Primiți un card internațional de asigurare valabil în cele 35 de țări acoperite.",
+      "whereCovered": "În 35 de țări, nu doar în Franța — acesta este unul dintre marile avantaje ale contractului nostru de frontieră.",
+      "useCases": [],
+      "eligibility": "Conducător auto de cel puțin 21 de ani, 2 ani de permis.",
+      "faq": [
+        { "question": "Sunt acoperit doar în Franța?", "answer": "Nu: asigurarea dvs. de frontieră TempAssur vă acoperă în cele 35 de țări din lista comună (Germania, Spania, Italia, Elveția…)." },
+        { "question": "Ce documente trebuie furnizate?", "answer": "Actul de identitate sau pașaportul conducătorului, permisul acestuia și certificatul de înmatriculare al vehiculului." },
+        { "question": "Pot încheia asigurarea înainte de a ajunge în Franța?", "answer": "Da, 100% online, cu o dată de intrare în vigoare amânată: documentele dvs. vă așteaptă în căsuța de e-mail sau pe WhatsApp." },
+        { "question": "Ce durate?", "answer": "30 sau 90 de zile (30 de zile este formula cea mai aleasă)." }
+      ]
+    }
+  },
+  "blog": {
+    "index": {
+      "title": "Blog",
+      "metaDescription": "Noutăți și sfaturi despre asigurarea temporară: vehicule, țări acoperite, eligibilitate și demersuri.",
+      "heading": "Blog",
+      "description": "Sfaturile și noutățile noastre despre asigurarea temporară."
+    },
+    "articleUi": {
+      "ctaEstimate": "Estimați-vă tariful în 30 de secunde",
+      "seeAlso": "Vezi și",
+      "allArticles": "Toate articolele"
+    },
+    "articles": {
+      "assurance-temporaire-caravane-remorque-semi": {
+        "title": "Asigurare temporară pentru remorcă, semiremorcă sau rulotă",
+        "metaDescription": "Remorcă, semiremorcă sau rulotă de asigurat pentru câteva zile? Soluția temporară TempAssur, fără angajament anual.",
+        "body": [
+          { "type": "p", "text": "Mutare, împrumut între particulari, plecare în vacanță cu o rulotă sau convoi înainte de o vânzare: aceste utilizări punctuale nu justifică întotdeauna un contract anual. Peste 750 kg MTMA, o remorcă sau o rulotă trebuie să dispună de propria asigurare de răspundere civilă — cea a vehiculului tractor nu mai este suficientă." },
+          { "type": "h2", "text": "Ce acoperă contractul" },
+          { "type": "p", "text": "Contractul temporar pentru remorcă include răspunderea civilă obligatorie și apărarea penală și recursul în urma unui accident. Nicio opțiune nu este disponibilă pentru această categorie." },
+          { "type": "h2", "text": "Ce durată să alegeți?" },
+          { "type": "p", "text": "Grila de tarife propune durate de la 1 la 15 zile, cu două comenzi rapide practice: 8 și 15 zile. Calculatorul de tarife afișează toate duratele disponibile împreună cu prețul lor." },
+          { "type": "p", "text": "Subscrierea se face în întregime online, iar certificatul de asigurare este trimis prin e-mail sau WhatsApp imediat după semnătura electronică a contractului." }
+        ]
+      },
+      "souscrire-assurance-temporaire-plaque-ww": {
+        "title": "Se poate asigura temporar un vehicul cu plăcuțe WW?",
+        "metaDescription": "Certificat provizoriu de înmatriculare (plăcuță WW): cum îl asigurați temporar cu TempAssur.",
+        "body": [
+          { "type": "p", "text": "Un vehicul abia cumpărat sau importat circulă adesea, timp de câteva săptămâni, cu un certificat provizoriu de înmatriculare (CPI), recunoscut după plăcuța sa „WW”. Până la eliberarea certificatului de înmatriculare definitiv, acest vehicul trebuie totuși asigurat din momentul în care intră pe drumurile publice." },
+          { "type": "h2", "text": "Un vehicul cu plăcuță WW se asigură ca oricare altul" },
+          { "type": "p", "text": "TempAssur asigură vehiculele cu plăcuță WW în aceleași condiții ca un vehicul cu înmatriculare definitivă: răspundere civilă, subscriere online, certificat de asigurare imediat. Un singur punct de atenție: durata garanției nu poate depăși data de expirare a CPI-ului. Dacă certificatul expiră în 10 zile, durata maximă asigurabilă este de 10 zile." },
+          { "type": "h2", "text": "Cum se încheie asigurarea" },
+          { "type": "p", "text": "Alegeți categoria vehiculului dvs. în calculatorul de tarife, indicați data primei înmatriculări și informațiile sale, apoi plătiți online: certificatul de asigurare ajunge prin e-mail sau WhatsApp, la câteva minute după semnătura electronică." }
+        ]
+      },
+      "suppression-vignette-assurance-temporaire": {
+        "title": "Eliminarea vinietei verzi: ce se schimbă pentru asigurarea temporară",
+        "metaDescription": "Din aprilie 2024, vinieta verde a dispărut: cum dovediți asigurarea temporară în timpul unui control?",
+        "body": [
+          { "type": "p", "text": "Din 1 aprilie 2024, aplicarea vinietei verzi pe parbriz nu mai este obligatorie: forțele de ordine verifică acum asigurarea unui vehicul direct prin Fișierul Vehiculelor Asigurate (FVA)." },
+          { "type": "h2", "text": "Ce înlocuiește cartea verde" },
+          { "type": "p", "text": "Pentru un contract temporar, certificatul digital trimis prin e-mail sau WhatsApp după subscriere joacă acest rol: indică perioada de valabilitate, vehiculul asigurat și asigurătorul, și poate fi prezentat tipărit sau pe smartphone în caz de control." },
+          { "type": "h2", "text": "Ce nu se schimbă" },
+          { "type": "p", "text": "Durata garanției temporare rămâne de la 1 la 90 de zile, iar răspunderea civilă rămâne obligatorie din primul kilometru. Păstrați la bord un act de identitate, certificatul de înmatriculare și certificatul dvs. de asigurare." }
+        ]
+      },
+      "garanties-assurance-auto-provisoire": {
+        "title": "Ce garanții include o asigurare auto temporară?",
+        "metaDescription": "Răspundere civilă, apărare penală și recurs, opțiuni pentru automobile: detaliul garanțiilor TempAssur.",
+        "body": [
+          { "type": "p", "text": "O asigurare temporară nu este o versiune simplificată a unui contract clasic: ea trebuie să acopere aceleași obligații legale, pentru o durată aleasă de la 1 la 90 de zile." },
+          { "type": "h2", "text": "Răspunderea civilă, garanție obligatorie" },
+          { "type": "p", "text": "Ea acoperă daunele materiale și corporale cauzate unui terț în caz de accident din vina asiguratului. Circulația fără această garanție expune la o amendă de până la 3.750 €, la suspendarea permisului și la imobilizarea vehiculului." },
+          { "type": "h2", "text": "Apărarea penală și recursul" },
+          { "type": "p", "text": "Inclusă în toate contractele noastre, aceasta acoperă apărarea dvs. în cazul unei acțiuni în justiție legate de un accident și permite inițierea unui recurs împotriva terțului responsabil." },
+          { "type": "h2", "text": "Opțiunile, rezervate automobilelor" },
+          { "type": "p", "text": "Doar pentru categoria automobile există trei opțiuni, al căror preț depinde de durata aleasă: garanția conducătorului auto, asistența și extinderea de circulație către alte 7 țări (Albania, Azerbaidjan, Macedonia de Nord, Maroc, Moldova, Tunisia, Turcia). Acestea nu sunt disponibile în teritoriile DOM-TOM. Celelalte categorii de vehicule (vehicule grele, autorulote, cvadricicluri, autobuze, tractoare agricole, remorci, asigurare de frontieră) nu includ opțiuni: sunt disponibile doar răspunderea civilă și apărarea penală și recursul, conform grilei tarifare." }
+        ]
+      },
+      "assurance-frontiere-temporaire-auto": {
+        "title": "Ce este asigurarea de frontieră?",
+        "metaDescription": "Vehicul înmatriculat în afara UE sau fără Cartea Verde? Asigurarea de frontieră TempAssur acoperă 35 de țări, nu doar Franța.",
+        "body": [
+          { "type": "p", "text": "Un vehicul înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde nu poate circula legal în Franța fără o acoperire specifică: acesta este rolul asigurării de frontieră." },
+          { "type": "h2", "text": "O acoperire care depășește Franța" },
+          { "type": "p", "text": "La TempAssur, asigurarea de frontieră nu se limitează la teritoriul francez: ea acoperă aceleași 35 de țări din Europa și din bazinul mediteranean ca și asigurările noastre temporare clasice. Este disponibilă pentru 30 sau 90 de zile și include răspunderea civilă, precum și apărarea penală și recursul." },
+          { "type": "h2", "text": "Cine este vizat?" },
+          { "type": "p", "text": "Călătorii care vin în Europa cu vehiculul propriu, francezii din străinătate aflați temporar în țară cu un vehicul înmatriculat în afara UE și vehiculele aflate în tranzit sau în curs de import." },
+          { "type": "p", "text": "Subscrierea se face 100% online, inclusiv înainte de sosirea dvs. în Franța, cu o dată de intrare în vigoare amânată dacă este necesar." }
+        ]
+      },
+      "assurance-temporaire-auto-maghreb-turquie": {
+        "title": "Să circulați în Maroc, Tunisia sau Turcia cu o asigurare temporară: opțiunea de extindere de țară",
+        "metaDescription": "Asigurare temporară Maroc, asigurare auto Tunisia, Cartea Verde Turcia: cum se încheie opțiunea de extindere a circulației cu TempAssur.",
+        "body": [
+          { "type": "p", "text": "Plecați în Maghreb sau în Turcia cu mașina dvs.? Din Franța, asigurarea dvs. temporară standard acoperă 35 de țări europene — dar nu și Marocul, Tunisia sau Turcia. Soluția: opțiunea de extindere a circulației, disponibilă la TempAssur pentru automobilele de sub 3,5 tone." },
+          { "type": "h2", "text": "Ce acoperă extinderea" },
+          { "type": "p", "text": "Pe lângă cele 35 de țări de bază, extinderea deschide circulația în 7 țări: Albania, Azerbaidjan, Macedonia de Nord, Maroc, Moldova, Tunisia și Turcia. Primiți un card internațional de asigurare care menționează aceste țări — acesta este documentul care face dovada la trecerea frontierei și în timpul controalelor." },
+          { "type": "h2", "text": "Atenție: Algeria nu este acoperită" },
+          { "type": "p", "text": "Niciuna dintre formulele noastre, cu sau fără extindere, nu acoperă Algeria. Pentru a circula acolo, trebuie încheiată o asigurare locală la frontiera algeriană. De asemenea, Belarus, Iran, Rusia și Ucraina nu sunt niciodată acoperite." },
+          { "type": "h2", "text": "Cum se încheie asigurarea" },
+          { "type": "p", "text": "Alegeți „Automobil” în calculatorul nostru de tarife, durata dvs. (1 până la 90 de zile), apoi bifați opțiunea „Extindere de țară”: prețul se ajustează în funcție de durata aleasă. Primiți certificatul de asigurare și cardul internațional prin e-mail sau WhatsApp în câteva minute — practic atunci când pregătiți o îmbarcare la Sète, Marsilia sau Genova." },
+          { "type": "h2", "text": "Bine de știut" },
+          { "type": "p", "text": "Extinderea privește doar automobilele: pentru un vehicul greu sau o autorulotă, contactați-ne la +33 6 05 93 84 79 (WhatsApp), vom analiza o soluție personalizată." }
+        ]
+      },
+      "assurance-temporaire-pour-tracteur-agricole": {
+        "title": "Asigurare temporară pentru tractor agricol",
+        "metaDescription": "Recoltare, convoi, achiziție sau vânzare: asigurare temporară online pentru tractor agricol cu TempAssur.",
+        "body": [
+          { "type": "p", "text": "Un tractor sau un utilaj agricol nu are întotdeauna nevoie de o asigurare anuală: perioada de recoltare, convoiul după achiziție sau vânzare, împrumutul între fermieri sau o deplasare excepțională pe drumurile publice sunt tot atâtea situații în care o acoperire punctuală este suficientă." },
+          { "type": "h2", "text": "O acoperire simplă" },
+          { "type": "p", "text": "Contractul temporar pentru tractor agricol include răspunderea civilă obligatorie și apărarea penală și recursul în urma unui accident, fără opțiuni suplimentare. Duratele disponibile merg până la 15 zile, cu două comenzi rapide practice: 8 și 15 zile." },
+          { "type": "p", "text": "Subscrierea se face online, fără deplasare: completați informațiile despre vehicul și conducător, plătiți online și primiți certificatul de asigurare prin e-mail sau WhatsApp." }
+        ]
+      },
+      "assurance-provisoire-automobile": {
+        "title": "Asigurare auto temporară pentru profesioniști",
+        "metaDescription": "Transportatori, meșteșugari, importatori: asigurarea auto temporară TempAssur pentru nevoile dvs. punctuale.",
+        "body": [
+          { "type": "p", "text": "Un vehicul aflat în tranzit, o operațiune de import-export, o misiune excepțională sau o perioadă de așteptare înainte de un contract anual: profesioniștii au, de asemenea, în mod regulat nevoie de o acoperire punctuală mai degrabă decât de un angajament anual." },
+          { "type": "h2", "text": "O soluție adaptată activității profesionale" },
+          { "type": "p", "text": "Transportatorii, meșteșugarii, comercianții, liber-profesioniștii sau importatorii de vehicule pot încheia o asigurare temporară pentru un autoturism, un utilitar sau un vehicul greu, de la 1 la 90 de zile, cu aceleași garanții ca pentru un particular: răspundere civilă și apărare penală și recurs, plus opțiunile pentru automobile, dacă este necesar." },
+          { "type": "p", "text": "Subscrierea rămâne 100% online, cu un certificat de asigurare primit imediat după plată și semnătura electronică." }
+        ]
+      },
+      "assurance-automobile-temporaire": {
+        "title": "5 situații în care asigurarea auto temporară face diferența",
+        "metaDescription": "Achiziție/vânzare, utilizare punctuală, vehicul în tranzit: situațiile în care asigurarea temporară se impune.",
+        "body": [
+          { "type": "h2", "text": "O achiziție sau o vânzare de vehicul" },
+          { "type": "p", "text": "Deplasarea unui vehicul pentru un test, o formalitate administrativă sau o livrare, fără certificat de înmatriculare definitiv: asigurarea temporară permite circulația imediat după achiziție, fără a încheia un contract anual inutil dacă vehiculul urmează să fie revândut rapid." },
+          { "type": "h2", "text": "O utilizare ocazională" },
+          { "type": "p", "text": "Un vehicul secundar utilizat doar câteva săptămâni pe an — autorulotă, remorcă sau mașină de colecție — costă mai puțin de asigurat pentru durata reală de utilizare decât pentru un an întreg." },
+          { "type": "h2", "text": "O închiriere între particulari" },
+          { "type": "p", "text": "Când un vehicul este închiriat în afara unei mari agenții, acoperirea de asigurare nu este întotdeauna inclusă: o asigurare temporară acoperă acest gol în câteva minute." },
+          { "type": "h2", "text": "Un vehicul în tranzit" },
+          { "type": "p", "text": "Import din străinătate, schimbare a certificatului de înmatriculare în curs: pe durata regularizării situației administrative, vehiculul trebuie să rămână asigurat." },
+          { "type": "h2", "text": "O situație particulară" },
+          { "type": "p", "text": "Un conducător aflat în căutarea unui nou asigurător poate avea nevoie de o soluție punctuală. La TempAssur, eligibilitatea rămâne condiționată de declarațiile prezentate la subscriere — în caz de îndoială privind situația dvs., contactați-ne înainte de a încheia asigurarea." }
+        ]
+      },
+      "assurance-temporaire-vs-annuelle": {
+        "title": "Asigurare temporară sau anuală: cum alegeți?",
+        "metaDescription": "Asigurare temporară sau asigurare anuală: ce diferențe există și pe care să o alegeți în funcție de utilizarea dvs.?",
+        "body": [
+          { "type": "p", "text": "Cele două formule răspund unor nevoi diferite: una acoperă o utilizare punctuală de câteva zile, cealaltă o utilizare regulată pe tot parcursul anului." },
+          { "type": "h2", "text": "Asigurarea temporară: să plătești pentru utilizarea reală" },
+          { "type": "p", "text": "De la 1 la 90 de zile, fără angajament, încheiată online în câteva minute: este potrivită pentru un vehicul utilizat ocazional, pentru o nevoie tranzitorie (import/export, vacanță) sau pentru o perioadă de așteptare înainte de un contract anual." },
+          { "type": "h2", "text": "Asigurarea anuală: pentru o utilizare zilnică" },
+          { "type": "p", "text": "Cu un angajament de 12 luni și mai multe garanții disponibile, aceasta rămâne mai potrivită pentru un vehicul utilizat pe tot parcursul anului." },
+          { "type": "p", "text": "Pentru o utilizare ocazională sau o situație temporară, asigurarea auto temporară — rapidă de încheiat și fără angajament — rămâne soluția cea mai economică." }
+        ]
+      },
+      "voiture-achetee-week-end-assurance-jour-meme": {
+        "title": "Mașină cumpărată în weekend: cum plecați asigurat chiar în aceeași zi",
+        "metaDescription": "Asigurare auto imediată, asigurare mașină în aceeași zi, asigurare la achiziția unei mașini: soluția TempAssur.",
+        "body": [
+          { "type": "p", "text": "Tocmai ați cumpărat o mașină second-hand sâmbătă seara, iar vânzătorul locuiește la 300 km distanță? Fără asigurare, este imposibil să vă continuați drumul legal: răspunderea civilă este obligatorie din primul metru, iar circulația fără asigurare costă până la 3.750 € amendă, cu posibilă suspendare a permisului." },
+          { "type": "h2", "text": "Asigurarea temporară, soluția imediată" },
+          { "type": "p", "text": "La TempAssur, subscrierea este 100% online, zilnic: estimați tariful în 30 de secunde, încheiați asigurarea în 5 minute, plătiți cu cardul și primiți certificatul de asigurare prin e-mail sau WhatsApp — chiar și duminica. Alegeți durata exactă de care aveți nevoie, de la 1 la 90 de zile, timpul necesar pentru a repatria vehiculul și apoi a încheia contractul anual în cunoștință de cauză." },
+          { "type": "h2", "text": "Condițiile" },
+          { "type": "p", "text": "Să aveți cel puțin 21 de ani, 2 ani de permis și să corespundeți declarațiilor privind antecedentele prezentate la subscriere. Vehiculul trebuie să fie înmatriculat (o plăcuță provizorie WW este acceptată)." },
+          { "type": "h2", "text": "Cât costă?" },
+          { "type": "p", "text": "De la câțiva euro pe zi pentru un automobil, în funcție de durată și de putere; tariful exact se afișează imediat în calculatorul nostru de tarife, fără să lăsați adresa de e-mail. O zi de asigurare temporară costă mult mai puțin decât un angajament anual încheiat în grabă." }
+        ]
+      },
+      "assurance-sortie-fourriere": {
+        "title": "Recuperarea vehiculului din depozitul auto: ce asigurare pentru a vă recupera vehiculul?",
+        "metaDescription": "Asigurare pentru recuperarea din depozitul auto, certificat de asigurare pentru depozitul auto, recuperarea mașinii din depozit cu TempAssur.",
+        "body": [
+          { "type": "p", "text": "Pentru a recupera un vehicul din depozitul auto, legea impune prezentarea unui certificat de asigurare valabil (împreună cu permisul și certificatul de înmatriculare). Problema: dacă vehiculul dvs. a fost dus la depozit tocmai pentru că nu mai era asigurat — sau dacă asigurătorul dvs. a reziliat contractul între timp — sunteți blocat." },
+          { "type": "h2", "text": "Asigurarea temporară deblochează situația în câteva minute" },
+          { "type": "p", "text": "Încheiați online o asigurare de la 1 la 90 de zile, primiți certificatul de asigurare prin e-mail sau WhatsApp, prezentați-l la depozitul auto și plecați cu vehiculul dvs. Deoarece fiecare zi de depozitare costă bani, rapiditatea contează: la TempAssur, certificatul de asigurare este trimis imediat după plată și semnătura electronică." },
+          { "type": "h2", "text": "Ce durată să alegeți?" },
+          { "type": "p", "text": "Timpul necesar pentru a recupera vehiculul și a încheia o asigurare clasică: 8 sau 15 zile sunt adesea suficiente; 30 de zile dacă trebuie și să treceți inspecția tehnică sau să vindeți vehiculul." },
+          { "type": "h2", "text": "Condițiile" },
+          { "type": "p", "text": "Conducător auto de cel puțin 21 de ani, cu 2 ani de permis, și declarații privind antecedentele conforme (în special: nicio reziliere pentru daună în ultimii 5 ani). În caz de îndoială privind situația dvs., scrieți-ne pe WhatsApp la +33 6 05 93 84 79: vă răspundem zilnic." }
+        ]
+      }
+    }
+  },
+  "pages": {
+    "souscription": {
+      "metaTitle": "Subscriere — asigurare temporară online",
+      "metaDescription": "Încheiați-vă asigurarea temporară online în câteva minute: localizare, vehicul, durată, conducător, opțiuni și plată securizată.",
+      "title": "Cererea dvs. de subscriere",
+      "description": "Prețul se recalculează la fiecare etapă și rămâne afișat permanent în caseta alăturată. Prețul opțiunilor depinde de durată.",
+      "guaranteesHeading": "Garanții și țări acoperite",
+      "guaranteesParagraph": "Toate asigurările noastre temporare includ răspunderea civilă (obligatorie) și apărarea penală și recursul în urma unui accident. Doar pentru automobile există opțiuni: garanția conducătorului auto, extinderea de țară, asistența (indisponibile în teritoriile DOM-TOM).",
+      "coverageParagraph": "Sunteți acoperit în Franța și în {count} țări din Europa și din bazinul mediteranean, aceeași listă pentru toate asigurările noastre temporare și pentru asigurarea de frontieră.",
+      "coverageVariationNotice": "Acoperirea unor țări poate varia în funcție de companie, vehicul, durată și opțiunile alese. Intenționați să circulați într-o țară care nu este pe listă? Contactați-ne: WhatsApp / tel. +33 6 05 93 84 79.",
+      "coveredCountriesCta": "Vezi lista completă a țărilor acoperite →"
+    },
+    "merci": {
+      "metaTitle": "Vă mulțumim pentru încredere",
+      "title": "Vă mulțumim pentru încredere!",
+      "reference": "Referință",
+      "registered": "Cererea dvs. de subscriere a fost înregistrată și este în curs de procesare.",
+      "checkEmail": "<b>Verificați-vă căsuța de e-mail</b> (inclusiv folderul de spam): veți primi în următoarele minute un link securizat pentru a <b>semna electronic documentele</b>.",
+      "nextStep": "<b>Următorul pas: semnați documentele primite prin e-mail</b> pentru ca garanția să intre în vigoare.",
+      "urgentHeading": "Ora de intrare în vigoare este iminentă sau deja trecută?",
+      "urgentBody": "Dacă nu ați primit e-mailul, contactați-ne imediat pentru a accelera procesarea: <b>WhatsApp (recomandat)</b> sau telefon:"
+    },
+    "notFound": {
+      "title": "Ups, această pagină nu există.",
+      "subtitle": "Fără panică: asigurarea dvs. este exact acolo unde trebuie.",
+      "ctaEstimate": "Estimează-mi tariful în 30 de secunde",
+      "ctaHome": "Înapoi la pagina principală",
+      "contactPrompt": "Sau scrieți-ne pe WhatsApp:"
+    },
+    "paysCouverts": {
+      "metaTitle": "Țări acoperite de asigurarea dvs. temporară și de frontieră | TempAssur",
+      "metaDescription": "Lista completă a celor 35 de țări acoperite de asigurările noastre temporare și de frontieră, precum și cele 7 țări accesibile cu opțiunea de extindere.",
+      "heroTitle": "În ce țări sunteți acoperit?",
+      "intro": "Vești bune: asigurările noastre temporare și asigurarea noastră de frontieră acoperă aceeași listă de 35 de țări. O singură listă de reținut, indiferent de contractul dvs.",
+      "coveredHeading": "Cele 35 de țări acoperite",
+      "assimilatedNote": "Monaco, San Marino și Liechtenstein sunt asimilate (Franța / Italia / Elveția).",
+      "extensionHeading": "Aveți nevoie să mergeți mai departe? Opțiunea de extindere a circulației",
+      "extensionParagraph": "Doar pentru automobile (cu excepția teritoriilor DOM-TOM), opțiunea de extindere deschide alte 7 țări: {countries}. Prețul său depinde de durata contractului.",
+      "neverCoveredHeading": "Niciodată acoperite, indiferent de opțiune",
+      "coverageVariationNotice": "Acoperirea unor țări poate varia în funcție de companie, vehicul, durată și opțiunile alese. Intenționați să circulați într-o țară care nu este pe listă? Contactați-ne: WhatsApp / tel. +33 6 05 93 84 79.",
+      "internationalCardNote": "Cardul internațional de asigurare emis împreună cu contractul dvs. face dovada.",
+      "ctaEstimate": "Estimează-mi tariful în 30 de secunde"
+    },
+    "quiSommesNous": {
+      "metaTitle": "Cine suntem? Broker de asigurare temporară | TempAssur",
+      "metaDescription": "TempAssur (WN Conseil), broker francez de asigurări ORIAS nr. 24004933, specialist în asigurarea temporară de la 1 la 90 de zile pentru toate vehiculele.",
+      "eyebrow": "Despre noi",
+      "heroTitle": "Cine suntem?",
+      "intro": "TempAssur este marca WN Conseil, cabinet francez de brokeraj de asigurări cu sediul în Clichy (Hauts-de-Seine), înregistrat la ORIAS sub nr. {orias}. Specialitatea noastră: asigurarea temporară, de la 1 la 90 de zile, pentru toate vehiculele — automobile, vehicule grele, autorulote, cvadricicluri, autobuze, tractoare agricole, remorci — și asigurarea de frontieră pentru vehiculele înmatriculate în străinătate.",
+      "promisesHeading": "Promisiunea noastră",
+      "promises": [
+        { "title": "Rapiditatea", "description": "Subscriere 100% online în 5 minute, certificat de asigurare trimis imediat prin e-mail sau WhatsApp — chiar și în weekend." },
+        { "title": "Disponibilitatea", "description": "O echipă reală, disponibilă zilnic prin telefon și WhatsApp la +33 6 05 93 84 79. O blocare la plată, o urgență, o întrebare? Vă răspundem." },
+        { "title": "Transparența", "description": "Prețurile se afișează înainte să lăsați vreo dată de contact, iar contractele dvs. sunt emise de societăți de asigurare autorizate, reglementate de Codul asigurărilor francez." }
+      ],
+      "whereHeading": "Unde ne găsiți",
+      "mapTitle": "TempAssur — WN Conseil pe Google Maps",
+      "ctaEstimate": "Estimează-mi tariful în 30 de secunde",
+      "ctaContact": "Contactați-ne"
+    },
+    "contact": {
+      "metaTitle": "Contactați TempAssur — zilnic prin WhatsApp, telefon sau e-mail",
+      "heroTitle": "Contactați-ne — vă răspundem zilnic",
+      "fastest": "Cel mai rapid",
+      "mapTitle": "TempAssur — WN Conseil pe Google Maps",
+      "addressLine": "WN Conseil / TempAssur, {address}"
+    },
+    "monCompte": {
+      "metaTitle": "Contul meu",
+      "metaDescription": "Conectați-vă sau creați un cont pentru a vă gestiona contractele.",
+      "heroTitle": "Contul meu",
+      "heroDescription": "Conectați-vă pentru a vă gestiona contractele sau creați un cont în câteva secunde.",
+      "login": "Conectare",
+      "register": "Creează un cont"
+    },
+    "login": {
+      "metaTitle": "Conectare",
+      "metaDescription": "Conectați-vă la contul dvs. TempAssur pentru a vă gestiona contractele și certificatele de asigurare.",
+      "title": "Bine ați revenit",
+      "description": "Conectați-vă pentru a vă gestiona contractele, a regăsi certificatele de asigurare și a urmări garanțiile.",
+      "footerText": "Nu aveți un cont?",
+      "footerLinkLabel": "Creează un cont"
+    },
+    "register": {
+      "metaTitle": "Creează un cont",
+      "metaDescription": "Creați-vă gratuit contul TempAssur pentru a obține o ofertă instantanee și a vă gestiona contractele online.",
+      "title": "Creați-vă contul",
+      "description": "Alăturați-vă conducătorilor auto care își gestionează asigurarea temporară online cu TempAssur.",
+      "footerText": "Aveți deja un cont?",
+      "footerLinkLabel": "Conectare"
+    }
+  },
+  "authShell": {
+    "dataPrivacy": "Datele dvs. sunt criptate integral și nu sunt niciodată partajate fără consimțământul dvs."
+  },
+  "faq": {
+    "meta": {
+      "title": "Întrebări frecvente",
+      "description": "Toate răspunsurile despre subscriere, prețuri, acoperire, documente și anularea asigurării dvs. temporare TempAssur."
+    },
+    "eyebrow": "FAQ",
+    "heading": "Întrebări frecvente",
+    "categories": [
+      {
+        "id": "souscription",
+        "title": "Subscrierea",
+        "items": [
+          {
+            "id": "souscription-1",
+            "question": "În cât timp sunt asigurat?",
+            "answer": "În câteva minute: estimarea tarifului, subscriere online, plată cu cardul, semnătură electronică — apoi certificatul dvs. de asigurare ajunge prin e-mail sau WhatsApp."
+          },
+          {
+            "id": "souscription-2",
+            "question": "Cine poate încheia o asigurare?",
+            "answer": "Orice conducător auto de cel puțin 21 de ani, posesor al permisului de cel puțin 2 ani, care corespunde declarațiilor prezentate înainte de plată (daune, reziliere, condamnări, malus)."
+          },
+          {
+            "id": "souscription-3",
+            "question": "Pot încheia o asigurare pentru altcineva?",
+            "answer": "Da, dar conducătorul trebuie să fie declarat și să îndeplinească toate condițiile de eligibilitate."
+          },
+          {
+            "id": "souscription-4",
+            "question": "Pot alege ora de intrare în vigoare?",
+            "answer": "Da, la subscriere — garanția începe după semnarea documentelor."
+          }
+        ]
+      },
+      {
+        "id": "prix",
+        "title": "Prețurile",
+        "items": [
+          {
+            "id": "prix-1",
+            "question": "Cum este calculat prețul?",
+            "answer": "În funcție de categoria vehiculului, durată, zonă (metropolă sau DOM-TOM) și opțiuni. Prețul opțiunilor depinde de durată. Totul se afișează în calculatorul de tarife, fără să lăsați adresa de e-mail."
+          },
+          {
+            "id": "prix-2",
+            "question": "Tarifele DOM-TOM sunt aceleași?",
+            "answer": "Nu, ele diferă de cele din metropolă; se afișează automat de îndată ce indicați țara de reședință sau de înmatriculare. Opțiunile nu sunt disponibile acolo."
+          }
+        ]
+      },
+      {
+        "id": "couverture",
+        "title": "Acoperirea",
+        "items": [
+          {
+            "id": "couverture-1",
+            "question": "În ce țări sunt acoperit?",
+            "answer": "În Franța și în 35 de țări — aceeași listă pentru asigurarea temporară și asigurarea de frontieră."
+          },
+          {
+            "id": "couverture-2",
+            "question": "Pot merge în Maroc, Tunisia sau Turcia?",
+            "answer": "Da, cu opțiunea de extindere a circulației (doar pentru automobile)."
+          },
+          {
+            "id": "couverture-3",
+            "question": "Ce garanții sunt incluse?",
+            "answer": "Răspunderea civilă obligatorie și apărarea penală și recursul. Pentru automobile, există opțiuni: garanția conducătorului auto, extinderea de țară, asistența."
+          }
+        ]
+      },
+      {
+        "id": "documents",
+        "title": "Documentele",
+        "items": [
+          {
+            "id": "documents-1",
+            "question": "Ce documente voi primi?",
+            "answer": "Contractul dvs., certificatul de asigurare și cardul internațional de asigurare — prin e-mail sau WhatsApp, la alegere."
+          },
+          {
+            "id": "documents-2",
+            "question": "Nu am primit certificatul de asigurare.",
+            "answer": "Verificați folderul de spam. Dacă ora de intrare în vigoare se apropie, contactați-ne imediat: WhatsApp / tel. +33 6 05 93 84 79 — accelerăm procesarea."
+          }
+        ]
+      },
+      {
+        "id": "annulation",
+        "title": "Anularea",
+        "items": [
+          {
+            "id": "annulation-1",
+            "question": "Pot anula sau pot fi rambursat?",
+            "answer": "Contractele temporare au o durată fermă, fără reînnoire tacită; odată ce garanția intră în vigoare, ele nu pot fi nici anulate, nici rambursate (vezi Condițiile generale de vânzare)."
+          }
+        ]
+      }
+    ],
+    "otherQuestion": "O altă întrebare? <phone>{phoneValue}</phone> (zilnic) sau <email>{emailValue}</email>."
+  },
+  "legal": {
+    "eyebrow": "Informații legale",
+    "cgv": {
+      "meta": {
+        "title": "Condiții generale de vânzare",
+        "description": "Condițiile generale de vânzare (CGV) aplicabile contractelor de asigurare temporară încheiate pe {siteName}."
+      },
+      "pageTitle": "Condiții generale de vânzare",
+      "sections": [
+        {
+          "title": "1. Prezentarea site-ului",
+          "body": "Societatea WN Conseil, EURL (societate cu răspundere limitată cu asociat unic) cu un capital de 1.000,00 €, înregistrată la Registrul Comerțului din Nanterre (RCS) sub numărul 929 812 642. Sediul social: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, Franța · E-mail: contact@tempassur.com · Număr ORIAS: 24004933 (www.orias.fr). WN Conseil acționează în calitate de broker de asigurări (ORIAS nr. 24004933). Contractele de asigurare încheiate prin intermediul site-ului TempAssur sunt încheiate între client și societatea de asigurare care preia riscul (al cărei nume figurează pe documentele contractuale), WN Conseil acționând în calitate de intermediar și nefiind parte la contractul de asigurare. Prezentele condiții generale de vânzare (CGV) reglementează vânzările efectuate pe site-ul TempAssur."
+        },
+        {
+          "title": "2. Obiect",
+          "body": "Prezentele CGV au ca obiect definirea drepturilor și obligațiilor părților în cadrul vânzării online a produselor de asigurare temporară propuse pe site-ul TempAssur."
+        },
+        {
+          "title": "3. Acceptarea CGV",
+          "body": "Orice comandă efectuată pe site-ul TempAssur implică acceptarea deplină și integrală a prezentelor CGV. Clientul declară că a luat cunoștință de acestea înainte de a plasa comanda."
+        },
+        {
+          "title": "4. Produse și servicii",
+          "body": "TempAssur propune produse de asigurare temporară adaptate diferitelor tipuri de vehicule. Caracteristicile esențiale ale produselor sunt descrise pe site. Este responsabilitatea clientului să se asigure că produsul ales corespunde nevoilor sale. Înainte de orice subscriere, clientul primește documentul de informare privind produsul de asigurare (IPID), precum și condițiile generale ale contractului. Condițiile de eligibilitate (vârsta minimă de 21 de ani, permis de conducere de cel puțin 2 ani, declarații privind antecedentele) sunt verificate la subscriere; orice declarație falsă expune asiguratul sancțiunilor prevăzute la articolele L.113-8 și L.113-9 din Codul asigurărilor francez."
+        },
+        {
+          "title": "5. Comanda",
+          "body": "Comanda se face online, prin intermediul site-ului TempAssur. Clientul trebuie să selecteze produsul de asigurare dorit, să completeze informațiile necesare și să valideze comanda. Validarea comenzii atrage acceptarea prețurilor și descrierilor produselor, precum și a prezentelor CGV, și include acceptarea expresă a declarațiilor conducătorului auto prezentate înainte de plată. Clientul primește apoi un e-mail de confirmare a comenzii."
+        },
+        {
+          "title": "6. Prețul",
+          "body": "Prețurile afișate pe site-ul TempAssur sunt indicate în euro și includ TVA aplicabil la data comenzii. WN Conseil își rezervă dreptul de a-și modifica prețurile în orice moment, dar produsele vor fi facturate pe baza tarifelor în vigoare la momentul validării comenzii."
+        },
+        {
+          "title": "7. Plata",
+          "body": "Plata se efectuează prin card bancar sau prin orice alt mijloc indicat pe site. Clientul garantează că este pe deplin autorizat să utilizeze mijlocul de plată ales. Suma comenzii va fi debitată în momentul validării acesteia."
+        },
+        {
+          "title": "8. Dreptul de retragere",
+          "body": "Din cauza naturii temporare a contractelor de asigurare propuse pe site-ul TempAssur, clientul renunță expres la dreptul său de retragere. Odată ce contractul este încheiat și garanția este în vigoare, nicio anulare sau rambursare nu va fi posibilă. Clientul recunoaște că respectivul contract are o durată fermă și fără reînnoire tacită și că, prin urmare, nu poate fi reziliat."
+        },
+        {
+          "title": "9. Responsabilitate",
+          "body": "WN Conseil se angajează să furnizeze produse conforme cu dispozițiile legale în vigoare. Cu toate acestea, WN Conseil nu poate fi trasă la răspundere pentru daunele indirecte rezultate din utilizarea produselor vândute pe site."
+        },
+        {
+          "title": "10. Date cu caracter personal",
+          "body": "Informațiile colectate de WN Conseil în cursul comenzii sunt necesare pentru procesarea acesteia. Ele sunt prelucrate în conformitate cu legislația privind protecția datelor. Clientul își poate exercita drepturile de acces, de rectificare și de ștergere a datelor sale contactând WN Conseil."
+        },
+        {
+          "title": "11. Modificări ale CGV",
+          "body": "WN Conseil își rezervă dreptul de a modifica prezentele CGV în orice moment. Condițiile aplicabile sunt cele în vigoare la momentul comenzii."
+        },
+        {
+          "title": "12. Legea aplicabilă și litigiile",
+          "body": "Prezentele Condiții Generale de Vânzare sunt guvernate de legea franceză. În caz de litigiu legat de o comandă sau de aplicarea prezentelor CGV, clientul este invitat să contacteze serviciul clienți al WN Conseil pentru a încerca soluționarea amiabilă a diferendului. Pentru litigiile referitoare la un contract de asigurare, clientul poate sesiza gratuit La Médiation de l'Assurance (Medierea Asigurărilor): www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pentru celelalte litigii referitoare la site, mediatorul de consum desemnat este IEAM (Institutul de Expertiză, Arbitraj și Mediere): 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu — contact@ieam.eu. În cazul unei acțiuni în justiție, instanțele competente vor fi cele de la sediul social al WN Conseil."
+        },
+        {
+          "title": "13. Contact",
+          "body": "Pentru orice întrebare sau reclamație, puteți contacta TempAssur: Prin e-mail: contact@tempassur.com · Prin telefon sau WhatsApp: +33 6 05 93 84 79 · Consultați și pagina noastră Reclamații."
+        }
+      ]
+    },
+    "mentionsLegales": {
+      "meta": {
+        "title": "Mențiuni legale",
+        "description": "Mențiuni legale ale {siteName}, editat de {legalName}, broker de asigurări înregistrat ORIAS nr.{orias}."
+      },
+      "pageTitle": "Mențiuni legale",
+      "sections": [
+        {
+          "title": "Editorul site-ului",
+          "body": "Site-ul www.tempassur.com este editat de WN Conseil, Societate cu Răspundere Limitată cu Asociat Unic (EURL) cu un capital de 1.000,00 €, înregistrată la Registrul Comerțului din Nanterre (RCS) sub numărul 929 812 642. Sediul social: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, Franța · SIRET: 929 812 642 00015 · Cod de TVA intracomunitar: FR14929812642. Director de publicare: Walid Nefzi, administrator. Telefon: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41 · E-mail: contact@tempassur.com"
+        },
+        {
+          "title": "Activitate reglementată — distribuția de asigurări",
+          "body": "WN Conseil este broker de asigurări, înregistrat la ORIAS sub nr. 24004933 (categoria broker de asigurare sau reasigurare — COA), verificabil pe www.orias.fr. WN Conseil își desfășoară activitatea sub controlul Autorității de Control Prudențial și de Rezoluție (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09 — acpr.banque-france.fr. Contractele de asigurare distribuite pe acest site sunt emise de societăți de asigurare autorizate, reglementate de Codul asigurărilor francez. Lista companiilor partenere este disponibilă la cerere; numele asigurătorului contractului dvs. figurează pe documentele contractuale. WN Conseil nu deține nicio participație directă sau indirectă într-o societate de asigurare, iar nicio societate de asigurare nu deține o participație în WN Conseil. WN Conseil colaborează cu mai multe societăți de asigurare și nu are nicio obligație contractuală de a lucra exclusiv cu una dintre ele; lista companiilor partenere este disponibilă la cerere. WN Conseil este remunerat printr-un comision inclus în prima de asigurare."
+        },
+        {
+          "title": "Reclamații și mediere",
+          "body": "Pentru orice reclamație, consultați pagina noastră Reclamații. După epuizarea căilor interne de contestare, puteți sesiza gratuit mediatorul competent (datele de contact sunt pe pagina Reclamații)."
+        },
+        {
+          "title": "Găzduire",
+          "body": "Site-ul este găzduit de HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Cipru — www.hostinger.fr/contact."
+        },
+        {
+          "title": "Avertisment",
+          "body": "Informațiile furnizate pe site-ul TempAssur au un caracter informativ și nu pot fi în niciun caz considerate drept consultanță. Deși WN Conseil depune eforturi pentru a menține informațiile de pe site actualizate și exacte, pot surveni inexactități sau omisiuni. Dacă identificați o problemă, vă rugăm să ne informați prin e-mail, detaliind problema respectivă. Orice utilizare a site-ului și orice descărcare de conținut se fac pe răspunderea utilizatorului. WN Conseil își declină orice răspundere în cazul unui prejudiciu rezultat din aceste acțiuni. Orice conținut descărcat se face pe riscul și răspunderea exclusivă a utilizatorului. În consecință, WN Conseil nu poate fi trasă la răspundere pentru niciun prejudiciu suferit de calculatorul utilizatorului sau pentru o pierdere de date rezultată din navigare."
+        },
+        {
+          "title": "Proprietate intelectuală",
+          "body": "Întregul conținut al site-ului TempAssur (texte, grafice, imagini, videoclipuri etc.) este protejat de dreptul proprietății intelectuale și este proprietatea exclusivă a WN Conseil sau a partenerilor săi. Orice reproducere, reprezentare sau exploatare, totală sau parțială, a acestor conținuturi, fără autorizarea expresă și prealabilă a WN Conseil, este strict interzisă. Mărcile și siglele prezente pe site sunt de asemenea protejate, iar utilizarea lor este interzisă fără acord prealabil."
+        },
+        {
+          "title": "Date cu caracter personal",
+          "body": "Datele cu caracter personal colectate prin intermediul site-ului TempAssur sunt prelucrate în conformitate cu legea franceză „Informatique et Libertés” din 6 ianuarie 1978, precum și cu Regulamentul General privind Protecția Datelor (RGPD). Informațiile colectate sunt destinate gestionării solicitărilor dvs., întocmirii ofertelor și gestionării contractelor de asigurare. WN Conseil garantează confidențialitatea datelor cu caracter personal și se angajează să nu le transmită terților în scopuri de prospectare comercială. Aveți un drept de acces, de rectificare și de ștergere a datelor dvs. contactând WN Conseil la adresa: contact@tempassur.com. Pentru mai multe informații, consultați Politica noastră de confidențialitate."
+        },
+        {
+          "title": "Contact",
+          "body": "Prin e-mail: contact@tempassur.com · Prin telefon: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41"
+        }
+      ]
+    },
+    "politiqueConfidentialite": {
+      "meta": {
+        "title": "Politica de confidențialitate și de cookie-uri",
+        "description": "Cum colectează, utilizează și protejează {siteName} datele dvs. cu caracter personal și ce cookie-uri sunt utilizate pe site."
+      },
+      "pageTitle": "Politica de confidențialitate și de cookie-uri",
+      "sections": [
+        {
+          "title": "1. Operatorul de date",
+          "body": "Prezenta politică descrie modul în care WN Conseil (care operează sub numele TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — colectează, utilizează, stochează și protejează datele dvs. cu caracter personal prin intermediul site-ului www.tempassur.com."
+        },
+        {
+          "title": "2. Date colectate",
+          "body": "Ofertă și subscriere: identitate, date de contact, data nașterii, informații privind permisul de conducere, informații despre vehicul, antecedente declarate (daune, reziliere, condamnări, malus). Plată: datele bancare sunt prelucrate direct de furnizorul nostru de plăți securizate; TempAssur nu le stochează niciodată. Formulare de contact: datele introduse, adresa dvs. IP și agentul utilizator al browserului dvs. (prevenirea fraudei și a mesajelor nedorite). Navigare: cookie-uri și măsurarea audienței (vezi §7)."
+        },
+        {
+          "title": "3. Scopuri și temeiuri juridice",
+          "body": "Întocmirea ofertelor și executarea contractului (executarea contractuală); obligațiile legale ale brokerului, inclusiv obligația de consiliere și lupta împotriva spălării banilor (obligație legală); gestionarea relației cu clientul, statistici și îmbunătățirea site-ului (interes legitim); comunicări comerciale (consimțământ, care poate fi retras în orice moment)."
+        },
+        {
+          "title": "4. Destinatari",
+          "body": "Societățile de asigurare partenere, pentru întocmirea și gestionarea contractelor dvs.; furnizorii noștri tehnici (găzduire, plată, semnătură electronică, trimitere de e-mailuri și mesaje WhatsApp). WN Conseil nu vinde niciodată datele dvs. cu caracter personal."
+        },
+        {
+          "title": "5. Durata de păstrare",
+          "body": "Date contractuale: pe durata contractului, apoi în conformitate cu prevederile legale (minimum 5 ani, până la 10 ani pentru documentele contabile). Prospecți: 3 ani de la ultimul contact."
+        },
+        {
+          "title": "6. Drepturile dvs.",
+          "body": "Aveți un drept de acces, de rectificare, de ștergere, de limitare, de portabilitate și de opoziție: scrieți la contact@tempassur.com. De asemenea, puteți depune o plângere la CNIL (www.cnil.fr)."
+        },
+        {
+          "title": "7. Cookie-uri",
+          "id": "cookies",
+          "body": "La prima dvs. vizită, un banner vă permite să acceptați sau să refuzați cookie-urile pe categorii: cookie-uri necesare funcționării site-ului, măsurarea audienței, marketing. Durata de viață maximă: 13 luni. Vă puteți modifica alegerile în orice moment prin linkul „Gestionează cookie-urile” din josul paginii."
+        },
+        {
+          "title": "8. Securitate",
+          "body": "Punem în aplicare măsuri de securitate adecvate (criptare TLS, acces restricționat, furnizori certificați) pentru a vă proteja datele împotriva oricărui acces neautorizat, divulgări sau distrugeri."
+        },
+        {
+          "title": "9. Modificări și contact",
+          "body": "Această politică poate fi actualizată în orice moment; versiunea în vigoare este cea publicată pe această pagină. Pentru orice întrebare: contact@tempassur.com · +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41."
+        }
+      ]
+    },
+    "reclamation": {
+      "meta": {
+        "title": "Reclamație",
+        "description": "Cum se depune o reclamație la TempAssur și care sunt căile de mediere disponibile."
+      },
+      "pageTitle": "O reclamație?",
+      "pageDescription": "Ne străduim să răspundem la orice reclamație în cel mai scurt timp posibil.",
+      "sections": [
+        {
+          "title": "1. Contactați serviciul nostru de reclamații",
+          "body": "Prin e-mail: contact@tempassur.com (subiect: „Reclamație”) · Prin poștă: WN Conseil — Serviciul Reclamații, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Prin telefon: +33 6 05 93 84 79. Confirmăm primirea reclamației dvs. în termen de 10 zile lucrătoare și răspundem în cel mult 2 luni."
+        },
+        {
+          "title": "2. Reclamația privește contractul dvs. de asigurare",
+          "body": "Dacă răspunsul nostru nu vă mulțumește, puteți sesiza serviciul de reclamații al societății de asigurare care poartă riscul contractului dvs. (nume și date de contact în condițiile generale ale contractului dvs.)."
+        },
+        {
+          "title": "3. Medierea",
+          "body": "După epuizarea acestor căi de contestare, puteți sesiza gratuit La Médiation de l'Assurance (Medierea Asigurărilor): www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pentru un litigiu referitor la site (în afara contractului de asigurare): IEAM, 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu."
+        }
+      ]
+    }
+  }
+}

@@ -3,6 +3,12 @@ import type { MetadataRoute } from "next"
 import { PRODUCT_ROUTES } from "@/lib/constants"
 import { BLOG_ARTICLES } from "@/lib/blog-content"
 import { siteConfig } from "@/lib/site"
+import { routing } from "@/i18n/routing"
+
+function localizedUrl(locale: string, path: string): string {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`
+  return `${siteConfig.url}${prefix}${path}`
+}
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "", priority: 1, changeFrequency: "weekly" },
@@ -30,10 +36,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }))
 
-  return [...STATIC_ROUTES, ...productRoutes, ...blogRoutes].map(({ path, priority, changeFrequency }) => ({
-    url: `${siteConfig.url}${path}`,
-    lastModified: new Date(),
-    changeFrequency,
-    priority,
-  }))
+  const allRoutes = [...STATIC_ROUTES, ...productRoutes, ...blogRoutes]
+
+  return allRoutes.flatMap(({ path, priority, changeFrequency }) =>
+    routing.locales.map((locale) => ({
+      url: localizedUrl(locale, path),
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      alternates: {
+        languages: Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(l, path)])),
+      },
+    }))
+  )
 }

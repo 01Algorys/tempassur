@@ -1,7 +1,8 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import type { UseFormReturn } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -14,18 +15,20 @@ interface DocumentsConsentsStepProps {
 }
 
 export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
+  const t = useTranslations("wizard.documents")
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
-        <h3 className="text-lg font-bold text-navy">Documents</h3>
-        <p className="text-xs text-muted-foreground">Documents (optionnel à ce stade)</p>
+        <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
+        <p className="text-xs text-muted-foreground">{t("optional")}</p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="permisRecto"
             render={({ field }) => (
               <FormItem>
-                <FileUploadField id="permisRecto" label="Permis de conduire (recto)" value={field.value} onChange={field.onChange} />
+                <FileUploadField id="permisRecto" label={t("permisRecto")} value={field.value} onChange={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -35,7 +38,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
             name="permisVerso"
             render={({ field }) => (
               <FormItem>
-                <FileUploadField id="permisVerso" label="Permis de conduire (verso)" value={field.value} onChange={field.onChange} />
+                <FileUploadField id="permisVerso" label={t("permisVerso")} value={field.value} onChange={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -45,7 +48,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
             name="carteGrise"
             render={({ field }) => (
               <FormItem>
-                <FileUploadField id="carteGrise" label="Carte grise" value={field.value} onChange={field.onChange} />
+                <FileUploadField id="carteGrise" label={t("carteGrise")} value={field.value} onChange={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -54,7 +57,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
       </div>
 
       <div className="flex flex-col gap-3">
-        <h3 className="text-lg font-bold text-navy">Acceptation des conditions</h3>
+        <h3 className="text-lg font-bold text-navy">{t("consentsHeading")}</h3>
         <FormField
           control={form.control}
           name="consentCgv"
@@ -65,10 +68,13 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
               </FormControl>
               <div className="flex flex-col gap-1">
                 <FormLabel className="text-sm font-normal text-foreground">
-                  J&apos;accepte les{" "}
-                  <Link href="/cgv" target="_blank" className="font-medium text-primary underline underline-offset-2">
-                    Conditions générales de vente
-                  </Link>
+                  {t.rich("acceptCgv", {
+                    link: (chunks) => (
+                      <Link href="/cgv" target="_blank" className="font-medium text-primary underline underline-offset-2">
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
                 </FormLabel>
                 <FormMessage />
               </div>
@@ -84,9 +90,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-0.5" />
               </FormControl>
               <div className="flex flex-col gap-1">
-                <FormLabel className="text-sm font-normal text-foreground">
-                  J&apos;ai pris connaissance du document d&apos;information (IPID)
-                </FormLabel>
+                <FormLabel className="text-sm font-normal text-foreground">{t("acceptIpid")}</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>
@@ -101,9 +105,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-0.5" />
               </FormControl>
               <div className="flex flex-col gap-1">
-                <FormLabel className="text-sm font-normal text-foreground">
-                  J&apos;ai pris connaissance des conditions générales du contrat
-                </FormLabel>
+                <FormLabel className="text-sm font-normal text-foreground">{t("acceptContrat")}</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>

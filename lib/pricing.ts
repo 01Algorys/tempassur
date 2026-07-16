@@ -34,9 +34,18 @@ export interface FormulaSelection {
   isDomTom: boolean
 }
 
+export type PriceLineKey = "optionAssistance" | "optionGarantieConducteur" | "optionExtensionTn"
+
 export interface PriceLine {
-  label: string
+  key: PriceLineKey
   amount: number
+}
+
+// Maps each PriceLine key to its translation key under messages/*.json "wizard.options".
+export const PRICE_LINE_TRANSLATION_KEYS: Record<PriceLineKey, string> = {
+  optionAssistance: "assistance",
+  optionGarantieConducteur: "garantieConducteur",
+  optionExtensionTn: "extensionPaysShort",
 }
 
 export interface PriceBreakdown {
@@ -109,13 +118,13 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
     const optionsEligible = areOptionsEligible(slug, selection.isDomTom)
 
     if (optionsEligible && selection.optionAssistance && row.optionAssistance) {
-      lines.push({ label: "Assistance", amount: row.optionAssistance })
+      lines.push({ key: "optionAssistance", amount: row.optionAssistance })
     }
     if (optionsEligible && selection.optionGarantieConducteur && row.optionGarantieConducteur) {
-      lines.push({ label: "Garantie du conducteur", amount: row.optionGarantieConducteur })
+      lines.push({ key: "optionGarantieConducteur", amount: row.optionGarantieConducteur })
     }
     if (optionsEligible && selection.optionExtensionTn && row.optionExtensionTn) {
-      lines.push({ label: "Extension TN", amount: row.optionExtensionTn })
+      lines.push({ key: "optionExtensionTn", amount: row.optionExtensionTn })
     }
 
     return {

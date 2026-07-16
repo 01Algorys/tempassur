@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 // Redirections 301 (dossier §8) : anciennes URLs WordPress + ancien schéma de routing
 // dynamique /assurance/[slug] de cette même refonte, vers les nouvelles pages produit.
@@ -38,4 +41,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

@@ -1,5 +1,6 @@
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { ArrowRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import {
   Accordion,
@@ -9,28 +10,36 @@ import {
 } from "@/components/ui/accordion"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Reveal } from "@/components/shared/reveal"
-import { HOME_FAQ } from "@/lib/constants"
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: HOME_FAQ.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
+interface HomeFaqItem {
+  id: string
+  question: string
+  answer: string
 }
 
 export function Faq() {
+  const t = useTranslations("home.faq")
+  const items = t.raw("items") as HomeFaqItem[]
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
+
   return (
     <section id="faq" className="section-y bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mx-auto max-w-3xl container-px">
-        <SectionHeading eyebrow="FAQ" title="Questions fréquentes" />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
 
         <Reveal delay={0.1} className="mt-12">
           <Accordion type="single" collapsible defaultValue="home-faq-1" className="flex flex-col gap-3">
-            {HOME_FAQ.map((faq) => (
+            {items.map((faq) => (
               <AccordionItem
                 key={faq.id}
                 value={faq.id}
@@ -52,7 +61,7 @@ export function Faq() {
             href="/faq"
             className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
-            Voir toutes les questions
+            {t("seeAll")}
             <ArrowRight className="size-3.5" />
           </Link>
         </Reveal>

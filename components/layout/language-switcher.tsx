@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useTransition } from "react"
+import { useSearchParams } from "next/navigation"
+import { useLocale, useTranslations } from "next-intl"
 import { Globe } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -10,15 +12,28 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
-const LANGUAGES = [
-  { code: "EN", label: "English" },
-  { code: "FR", label: "Français" },
-  { code: "ES", label: "Español" },
-]
+import { usePathname, useRouter } from "@/i18n/navigation"
+import { LOCALES, LOCALE_LABELS, LOCALE_SHORT_LABELS, type Locale } from "@/i18n/routing"
+import { cn } from "@/lib/utils"
 
 export function LanguageSwitcher({ light = false }: { light?: boolean }) {
-  const [active, setActive] = useState(LANGUAGES[0])
+  const t = useTranslations("languageSwitcher")
+  const locale = useLocale() as Locale
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const [isPending, startTransition] = useTransition()
+
+  function handleSelect(nextLocale: Locale) {
+    if (nextLocale === locale) return
+    const query = searchParams.toString()
+    startTransition(() => {
+      router.replace(
+        { pathname, query: query ? Object.fromEntries(searchParams.entries()) : undefined },
+        { locale: nextLocale }
+      )
+    })
+  }
 
   return (
     <DropdownMenu>
@@ -26,17 +41,17 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
         <Button
           variant="ghost"
           size="sm"
-          className={light ? "text-white hover:bg-white/10 hover:text-white" : ""}
-          aria-label="Select language"
+          className={cn(light ? "text-white hover:bg-white/10 hover:text-white" : "", isPending && "opacity-60")}
+          aria-label={t("selectLanguage")}
         >
           <Globe data-icon="inline-start" />
-          {active.code}
+          {LOCALE_SHORT_LABELS[locale]}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {LANGUAGES.map((lang) => (
-          <DropdownMenuItem key={lang.code} onSelect={() => setActive(lang)}>
-            {lang.label}
+        {LOCALES.map((code) => (
+          <DropdownMenuItem key={code} onSelect={() => handleSelect(code)}>
+            {LOCALE_LABELS[code]}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
