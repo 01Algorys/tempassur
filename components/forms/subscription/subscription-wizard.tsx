@@ -13,7 +13,13 @@ import { Button } from "@/components/ui/button"
 import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { submitSubscription } from "@/lib/subscription"
-import { calculatePrice, getPricingConfig, isDomTomTerritory, type FormulaSelection } from "@/lib/pricing"
+import {
+  calculatePrice,
+  getAvailableDurations,
+  getPricingConfig,
+  isDomTomTerritory,
+  type FormulaSelection,
+} from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
 import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
@@ -26,6 +32,7 @@ import { VehicleStep } from "./steps/vehicle-step"
 import { VehicleTierStep } from "./steps/vehicle-tier-step"
 import { DurationStep } from "./steps/duration-step"
 import { DriverStep } from "./steps/driver-step"
+import { EffectDateStep } from "./steps/effect-date-step"
 import { OptionsStep } from "./steps/options-step"
 import { DocumentsConsentsStep } from "./steps/documents-consents-step"
 import { PaymentStep } from "./steps/payment-step"
@@ -40,8 +47,6 @@ type StepId = "duration" | "details" | "payment"
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
     "duree",
-    "dateEffet",
-    "heureEffet",
     "cvTier",
     "ptacTier",
     "quadSubtype",
@@ -51,6 +56,8 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "territoireResidence",
   ],
   details: [
+    "dateEffet",
+    "heureEffet",
     "civilite",
     "nom",
     "prenom",
@@ -111,7 +118,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       paysResidence: "",
       territoireResidence: "",
       categorie: initialCategory,
-      duree: initialDuree ?? 0,
+      duree: initialDuree ?? getAvailableDurations(initialCategory, { duree: null, isDomTom: false })[0] ?? 0,
       cvTier: getPricingConfig(initialCategory).needsCvTier ? "moins-16cv" : undefined,
       ptacTier: getPricingConfig(initialCategory).needsPtacTier ? "moins-3500kg" : undefined,
       quadSubtype: getPricingConfig(initialCategory).needsQuadSubtype ? "voiturette-sans-permis" : undefined,
@@ -258,6 +265,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
               <div className="flex flex-col gap-8">
                 <DriverStep form={form} />
                 <VehicleStep form={form} />
+                <EffectDateStep form={form} />
                 <OptionsStep form={form} />
                 <DocumentsConsentsStep form={form} />
               </div>

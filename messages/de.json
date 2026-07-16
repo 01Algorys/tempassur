@@ -15,13 +15,34 @@
     "faq": "FAQ"
   },
   "vehicleTypes": {
-    "automobiles": { "label": "Auto", "description": "Privat- und Nutzfahrzeuge unter 3,5 t." },
-    "poids-lourds": { "label": "Lkw", "description": "Lastkraftwagen, Sattelzugmaschinen und Fahrzeuge über 3,5 t." },
-    "camping-cars": { "label": "Wohnmobil", "description": "Wohnmobile und ausgebaute Kastenwagen." },
-    "quadricycles": { "label": "Quadricycles", "description": "Zugelassene Quads, führerscheinfreie Kleinwagen, Buggys." },
-    "bus-autocars": { "label": "Bus, Reisebus", "description": "Personenbeförderung." },
-    "tracteurs-agricoles": { "label": "Landwirtschaftlicher Traktor", "description": "Traktoren und landwirtschaftliche Maschinen." },
-    "remorques": { "label": "Anhänger", "description": "Anhänger, Sattelanhänger und Wohnwagen (schwer und leicht)." },
+    "automobiles": {
+      "label": "Auto",
+      "description": "Privat- und Nutzfahrzeuge unter 3,5 t."
+    },
+    "poids-lourds": {
+      "label": "Lkw",
+      "description": "Lastkraftwagen, Sattelzugmaschinen und Fahrzeuge über 3,5 t."
+    },
+    "camping-cars": {
+      "label": "Wohnmobil",
+      "description": "Wohnmobile und ausgebaute Kastenwagen."
+    },
+    "quadricycles": {
+      "label": "Quadricycles",
+      "description": "Zugelassene Quads, führerscheinfreie Kleinwagen, Buggys."
+    },
+    "bus-autocars": {
+      "label": "Bus, Reisebus",
+      "description": "Personenbeförderung."
+    },
+    "tracteurs-agricoles": {
+      "label": "Landwirtschaftlicher Traktor",
+      "description": "Traktoren und landwirtschaftliche Maschinen."
+    },
+    "remorques": {
+      "label": "Anhänger",
+      "description": "Anhänger, Sattelanhänger und Wohnwagen (schwer und leicht)."
+    },
     "assurance-frontiere": {
       "label": "Grenzversicherung",
       "description": "Fahrzeuge, die außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen sind, oder im Ausland zugelassene Fahrzeuge, die in Frankreich und Europa fahren müssen."
@@ -32,7 +53,7 @@
     "openMenu": "Menü öffnen"
   },
   "footer": {
-    "description": "TempAssur — Die Kurzzeitversicherung von 1 bis 90 Tagen, für alle Fahrzeuge. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
+    "description": "TempAssur  Die Kurzzeitversicherung von 1 bis 90 Tagen, für alle Fahrzeuge. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
     "insuranceHeading": "Unsere Versicherungen",
     "coveredCountries": "Versicherte Länder",
     "informationHeading": "Informationen",
@@ -49,16 +70,22 @@
     "phoneSuffix": "(7 Tage die Woche)",
     "googleMapsSuffix": "Finden Sie uns auf Google Maps",
     "brokerLine": "Versicherungsmakler",
-    "reassuranceStatement": "Zugelassene Versicherer — Ihre Verträge werden von Versicherungsunternehmen getragen, die dem französischen Versicherungsgesetzbuch (Code des assurances) unterliegen.",
+    "reassuranceStatement": "Zugelassene Versicherer  Ihre Verträge werden von Versicherungsunternehmen getragen, die dem französischen Versicherungsgesetzbuch (Code des assurances) unterliegen.",
     "securePayment": "Sichere Zahlung",
-    "copyright": "© {name} {year} — Alle Rechte vorbehalten"
+    "copyright": "© {name} {year}  Alle Rechte vorbehalten"
   },
   "languageSwitcher": {
     "selectLanguage": "Sprache wählen"
   },
   "forms": {
     "contact": {
-      "subjects": { "souscription": "Abschluss", "paiement": "Zahlung", "attestation": "Versicherungsbescheinigung", "reclamation": "Beschwerde", "autre": "Sonstiges" },
+      "subjects": {
+        "souscription": "Abschluss",
+        "paiement": "Zahlung",
+        "attestation": "Versicherungsbescheinigung",
+        "reclamation": "Beschwerde",
+        "autre": "Sonstiges"
+      },
       "nomRequired": "Der Name ist erforderlich",
       "emailRequired": "Die E-Mail-Adresse ist erforderlich",
       "emailInvalid": "Geben Sie eine gültige E-Mail-Adresse ein",
@@ -107,7 +134,7 @@
       "description": "Sofortige Kurzzeitversicherung von 1 bis 90 Tagen: Auto, Lkw, Wohnmobil, Quad, Anhänger, Grenzversicherung. Bescheinigung per E-Mail oder WhatsApp in wenigen Minuten. Ab {price} €/Tag."
     },
     "hero": {
-      "title": "Kurzzeitversicherung von 1 bis 90 Tagen — sofortige Bescheinigung per E-Mail oder WhatsApp",
+      "title": "Kurzzeitversicherung von 1 bis 90 Tagen  sofortige Bescheinigung per E-Mail oder WhatsApp",
       "description": "Auto, Lkw, Wohnmobil, Quad, Bus, Traktor, Anhänger und Grenzversicherung. Abschluss zu 100 % online, 7 Tage die Woche. Zugelassene Versicherer: Ihre Verträge werden von Versicherungsunternehmen getragen, die dem Code des assurances unterliegen.",
       "ctaEstimate": "Schätzen Sie Ihre Versicherung in 30 Sekunden"
     },
@@ -121,16 +148,16 @@
       "mostChosen": "Am häufigsten gewählt",
       "durationOption": "{count, plural, one {# Tag} other {# Tage}}",
       "priceFrom": "Ab {price}/Tag",
-      "pricePlaceholder": "—",
-      "priceNote": "Mindestpreis für diese Dauer. Der endgültige Tarif hängt vom Fahrzeug und den gewählten Optionen ab — und der Preis der Optionen hängt von der Dauer ab.",
+      "pricePlaceholder": "",
+      "priceNote": "Mindestpreis für diese Dauer. Der endgültige Tarif hängt vom Fahrzeug und den gewählten Optionen ab  und der Preis der Optionen hängt von der Dauer ab.",
       "cta": "Zum Abschluss gehen"
     },
     "reassurance": {
       "items": [
         "Sofortige Bescheinigung per E-Mail oder WhatsApp",
         "100 % sichere Zahlung (Kreditkarte)",
-        "Französischer Makler — ORIAS-Nr. 24004933",
-        "Zugelassene Versicherer — Unternehmen, die dem Code des assurances unterliegen",
+        "Französischer Makler  ORIAS-Nr. 24004933",
+        "Zugelassene Versicherer  Unternehmen, die dem Code des assurances unterliegen",
         "7 Tage die Woche per Telefon und WhatsApp: +33 6 05 93 84 79"
       ]
     },
@@ -154,9 +181,18 @@
       "eyebrow": "Einfach und schnell",
       "title": "So funktioniert es",
       "steps": [
-        { "title": "Schätzen", "description": "Schätzen Sie Ihren Tarif in 30 Sekunden, ohne Ihre Kontaktdaten anzugeben." },
-        { "title": "Abschließen", "description": "Schließen Sie in 5 Minuten online ab und zahlen Sie per Kreditkarte." },
-        { "title": "Erhalten Sie Ihre Bescheinigung", "description": "Erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp, unterschreiben Sie elektronisch — Sie sind versichert." }
+        {
+          "title": "Schätzen",
+          "description": "Schätzen Sie Ihren Tarif in 30 Sekunden, ohne Ihre Kontaktdaten anzugeben."
+        },
+        {
+          "title": "Abschließen",
+          "description": "Schließen Sie in 5 Minuten online ab und zahlen Sie per Kreditkarte."
+        },
+        {
+          "title": "Erhalten Sie Ihre Bescheinigung",
+          "description": "Erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp, unterschreiben Sie elektronisch  Sie sind versichert."
+        }
       ]
     },
     "faq": {
@@ -194,11 +230,11 @@
     "reviews": {
       "eyebrow": "Kundenbewertungen",
       "title": "Was unsere Kunden sagen",
-      "address": "WN Conseil / TempAssur — {address}",
+      "address": "WN Conseil / TempAssur  {address}",
       "cta": "Alle unsere Google-Bewertungen ansehen →"
     },
     "coveredCountries": {
-      "description": "Ihre Kurzzeitversicherung deckt Sie in Frankreich und in 35 Ländern Europas und des Mittelmeerraums ab — die gleiche Liste für die Kurzzeit- und die Grenzversicherung. Sie benötigen Marokko, Tunesien oder die Türkei? Eine Erweiterung ist für Autos möglich.",
+      "description": "Ihre Kurzzeitversicherung deckt Sie in Frankreich und in 35 Ländern Europas und des Mittelmeerraums ab  die gleiche Liste für die Kurzzeit- und die Grenzversicherung. Sie benötigen Marokko, Tunesien oder die Türkei? Eine Erweiterung ist für Autos möglich.",
       "cta": "Die vollständige Liste der versicherten Länder ansehen"
     },
     "vehicleVignettes": {
@@ -209,7 +245,10 @@
     }
   },
   "pricingLabels": {
-    "civilite": { "monsieur": "Herr", "madame": "Frau" },
+    "civilite": {
+      "monsieur": "Herr",
+      "madame": "Frau"
+    },
     "cvTier": {
       "moins-16cv": "Weniger als 16 PS",
       "moins-30cv": "16 bis 29 PS",
@@ -283,9 +322,9 @@
       "sending": "Wird gesendet...",
       "payLabel": "{amount} € sicher bezahlen"
     },
-    "paymentError": "Die Zahlung ist fehlgeschlagen. Es wurde kein Betrag abgebucht. Versuchen Sie es erneut oder kontaktieren Sie uns: WhatsApp +33 6 05 93 84 79 — wir finden sofort eine Lösung.",
+    "paymentError": "Die Zahlung ist fehlgeschlagen. Es wurde kein Betrag abgebucht. Versuchen Sie es erneut oder kontaktieren Sie uns: WhatsApp +33 6 05 93 84 79  wir finden sofort eine Lösung.",
     "duration": {
-      "heading": "Dauer und Datum des Versicherungsbeginns",
+      "heading": "Dauer",
       "contractDuration": "Vertragsdauer *",
       "mostChosen": "Am häufigsten gewählt",
       "durationUnit": "{count} T.",
@@ -293,7 +332,8 @@
       "durationOption": "{count, plural, one {# Tag} other {# Tage}}",
       "effectDate": "Datum des Versicherungsbeginns *",
       "effectTime": "Uhrzeit des Versicherungsbeginns *",
-      "effectTimeHint": "Das Datum und die Uhrzeit des Versicherungsbeginns dürfen nicht vor dem aktuellen Zeitpunkt liegen."
+      "effectTimeHint": "Das Datum und die Uhrzeit des Versicherungsbeginns dürfen nicht vor dem aktuellen Zeitpunkt liegen.",
+      "effectDateHeading": "Datum des Versicherungsbeginns"
     },
     "vehicleTier": {
       "heading": "Steuerliche Leistung",
@@ -385,7 +425,8 @@
       "consentsHeading": "Zustimmung zu den Bedingungen",
       "acceptCgv": "Ich akzeptiere die <link>Allgemeinen Geschäftsbedingungen</link>",
       "acceptIpid": "Ich habe das Informationsdokument (IPID) zur Kenntnis genommen",
-      "acceptContrat": "Ich habe die Allgemeinen Vertragsbedingungen zur Kenntnis genommen"
+      "acceptContrat": "Ich habe die Allgemeinen Vertragsbedingungen zur Kenntnis genommen",
+      "autresDocuments": "Weiteres Dokument (optional)"
     },
     "payment": {
       "heading": "Zusammenfassung und sichere Zahlung",
@@ -414,7 +455,7 @@
       "totalToPay": "Zu zahlender Gesamtbetrag",
       "securePayment": "Sichere Zahlung, sofortiger Versicherungsbeginn.",
       "durationValue": "{count, plural, one {# Tag} other {# Tage}}",
-      "noValue": "—"
+      "noValue": ""
     },
     "declarations": {
       "title": "Erklärungen des Fahrers",
@@ -457,11 +498,20 @@
       "h1": "Kurzzeit-Autoversicherung von 1 bis 90 Tagen",
       "intro": "Müssen Sie ein Auto oder Nutzfahrzeug unter 3,5 Tonnen für ein paar Tage versichern? Die Kurzzeit-Autoversicherung von TempAssur deckt Sie von 1 bis 90 Tagen ab, ohne Verpflichtung und ohne stillschweigende Verlängerung. Abschluss zu 100 % online in 5 Minuten, Bescheinigung sofort per E-Mail oder WhatsApp zugesandt.",
       "vehiclesParagraph": "Alle Privat- und Nutzfahrzeuge unter 3,5 Tonnen, unabhängig von der Motorleistung: Kleinwagen, Limousine, SUV, Kastenwagen... Der Tarif hängt von der steuerlichen Leistung und der gewählten Dauer ab.",
-      "guaranteesIncluded": "Enthalten: Haftpflichtversicherung (obligatorisch — Schäden gegenüber Dritten) sowie strafrechtlicher Beistand und Regress nach einem Unfall.",
+      "guaranteesIncluded": "Enthalten: Haftpflichtversicherung (obligatorisch  Schäden gegenüber Dritten) sowie strafrechtlicher Beistand und Regress nach einem Unfall.",
       "options": [
-        { "label": "Fahrerschutz", "description": "schützt Sie auch bei einem selbstverschuldeten Unfall." },
-        { "label": "Fahrerweiterung", "description": "Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien, Türkei." },
-        { "label": "Assistance-Leistung", "description": "" }
+        {
+          "label": "Fahrerschutz",
+          "description": "schützt Sie auch bei einem selbstverschuldeten Unfall."
+        },
+        {
+          "label": "Fahrerweiterung",
+          "description": "Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien, Türkei."
+        },
+        {
+          "label": "Assistance-Leistung",
+          "description": ""
+        }
       ],
       "whereCovered": "In Frankreich und in 35 Ländern Europas und des Mittelmeerraums. Mit der Erweiterung kommen Marokko, Tunesien, die Türkei und 4 weitere Länder hinzu.",
       "useCases": [
@@ -477,10 +527,22 @@
       ],
       "eligibility": "Jeder Fahrer ab 21 Jahren mit mindestens 2 Jahren Führerscheinbesitz, der die beim Abschluss vorgelegten Erklärungen erfüllt.",
       "faq": [
-        { "question": "Was kostet eine Kurzzeit-Autoversicherung?", "answer": "Ab [PRIX_GRILLE] €/Tag; der genaue Tarif hängt von der Dauer und der steuerlichen Leistung ab und wird sofort in unserem Tarifrechner angezeigt." },
-        { "question": "Kann ich nach Marokko, Tunesien oder in die Türkei fahren?", "answer": "Ja, mit der Option Fahrerweiterung (nur für Autos)." },
-        { "question": "Bin ich in den Überseegebieten (DOM-TOM) versichert?", "answer": "Ja — die Tarife für die Überseegebiete unterscheiden sich vom Mutterland, und die Optionen sind dort nicht verfügbar." },
-        { "question": "Welche Dokumente erhalte ich?", "answer": "Ihren Vertrag, Ihre Versicherungsbescheinigung und Ihre internationale Versicherungskarte, per E-Mail oder WhatsApp, nach der elektronischen Unterschrift." }
+        {
+          "question": "Was kostet eine Kurzzeit-Autoversicherung?",
+          "answer": "Ab [PRIX_GRILLE] €/Tag; der genaue Tarif hängt von der Dauer und der steuerlichen Leistung ab und wird sofort in unserem Tarifrechner angezeigt."
+        },
+        {
+          "question": "Kann ich nach Marokko, Tunesien oder in die Türkei fahren?",
+          "answer": "Ja, mit der Option Fahrerweiterung (nur für Autos)."
+        },
+        {
+          "question": "Bin ich in den Überseegebieten (DOM-TOM) versichert?",
+          "answer": "Ja  die Tarife für die Überseegebiete unterscheiden sich vom Mutterland, und die Optionen sind dort nicht verfügbar."
+        },
+        {
+          "question": "Welche Dokumente erhalte ich?",
+          "answer": "Ihren Vertrag, Ihre Versicherungsbescheinigung und Ihre internationale Versicherungskarte, per E-Mail oder WhatsApp, nach der elektronischen Unterschrift."
+        }
       ]
     },
     "poids-lourds": {
@@ -490,12 +552,27 @@
       "intro": "Lkw mit Aufbau, Sattelzugmaschine, Sattelanhänger: Versichern Sie Ihren Lkw für eine Überführungsfahrt, einen Kauf, einen Import oder einen einmaligen Einsatz, für die in unserer Tarifliste vorgesehenen Dauern. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, mit spezifischen Tarifen.",
-      "useCases": ["Überführung nach Kauf oder Verkauf", "WW-Kennzeichen", "Import / Export", "Abholung aus dem Abschleppdienst", "Übergangszeit zwischen zwei Jahresverträgen"],
+      "useCases": [
+        "Überführung nach Kauf oder Verkauf",
+        "WW-Kennzeichen",
+        "Import / Export",
+        "Abholung aus dem Abschleppdienst",
+        "Übergangszeit zwischen zwei Jahresverträgen"
+      ],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz, für das Fahrzeug geeigneter Führerschein, konforme Erklärungen (siehe Abschluss).",
       "faq": [
-        { "question": "Welche Dauern?", "answer": "Die unserer Tarifliste (Kurzformen 8 und 15 Tage) — der Tarifrechner zeigt alle verfügbaren Dauern mit ihrem Preis an." },
-        { "question": "Muss der Fahrer der Versicherungsnehmer sein?", "answer": "Nein, aber er muss angegeben werden und die Zulassungsbedingungen erfüllen." },
-        { "question": "Erhaltene Dokumente?", "answer": "Vertrag, Bescheinigung und internationale Versicherungskarte, per E-Mail oder WhatsApp." }
+        {
+          "question": "Welche Dauern?",
+          "answer": "Die unserer Tarifliste (Kurzformen 8 und 15 Tage)  der Tarifrechner zeigt alle verfügbaren Dauern mit ihrem Preis an."
+        },
+        {
+          "question": "Muss der Fahrer der Versicherungsnehmer sein?",
+          "answer": "Nein, aber er muss angegeben werden und die Zulassungsbedingungen erfüllen."
+        },
+        {
+          "question": "Erhaltene Dokumente?",
+          "answer": "Vertrag, Bescheinigung und internationale Versicherungskarte, per E-Mail oder WhatsApp."
+        }
       ]
     },
     "camping-cars": {
@@ -504,13 +581,29 @@
       "h1": "Kurzzeitversicherung für Wohnmobile und ausgebaute Kastenwagen",
       "intro": "Reisen Sie unbesorgt: Kurzzeit-Wohnmobilversicherung von 1 bis 90 Tagen, ideal für eine einmalige Reise, ein Ausleihen, einen Kauf oder eine Rücküberführung. Der angezeigte Preis entspricht Modellen unter 3,5 t; er wird beim Abschluss je nach Gewicht angepasst.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
-      "whereCovered": "In Frankreich und in 35 Ländern Europas — perfekt für einen Road-Trip. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
-      "useCases": ["Einmalige Reise", "Vermietung oder Ausleihen unter Privatpersonen", "Kauf / Verkauf", "Rücküberführung", "Ende der Winterpause", "Technische Überprüfung"],
+      "whereCovered": "In Frankreich und in 35 Ländern Europas  perfekt für einen Road-Trip. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
+      "useCases": [
+        "Einmalige Reise",
+        "Vermietung oder Ausleihen unter Privatpersonen",
+        "Kauf / Verkauf",
+        "Rücküberführung",
+        "Ende der Winterpause",
+        "Technische Überprüfung"
+      ],
       "eligibility": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz.",
       "faq": [
-        { "question": "Wird mein ausgebauter Kastenwagen akzeptiert?", "answer": "Ja, ausgebaute Kastenwagen werden wie Wohnmobile versichert." },
-        { "question": "Mein Wohnmobil wiegt mehr als 3,5 t?", "answer": "Es ist versicherbar: Der Tarif wird beim Abschluss je nach Gewicht angepasst." },
-        { "question": "Wer kann abschließen?", "answer": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz." }
+        {
+          "question": "Wird mein ausgebauter Kastenwagen akzeptiert?",
+          "answer": "Ja, ausgebaute Kastenwagen werden wie Wohnmobile versichert."
+        },
+        {
+          "question": "Mein Wohnmobil wiegt mehr als 3,5 t?",
+          "answer": "Es ist versicherbar: Der Tarif wird beim Abschluss je nach Gewicht angepasst."
+        },
+        {
+          "question": "Wer kann abschließen?",
+          "answer": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz."
+        }
       ]
     },
     "quadricycles": {
@@ -520,12 +613,27 @@
       "intro": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Versichern Sie Ihr Quadricycle für genau die Dauer, die Sie benötigen. Der angezeigte Einstiegspreis entspricht dem günstigsten Untertyp; der genaue Tarif wird beim Abschluss an Ihr Fahrzeug angepasst.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
-      "useCases": ["Kauf / Verkauf", "Sommersaison", "Abholung aus dem Abschleppdienst", "Freizeitfahrzeug, das einige Wochen im Jahr genutzt wird", "Technische Überprüfung"],
+      "useCases": [
+        "Kauf / Verkauf",
+        "Sommersaison",
+        "Abholung aus dem Abschleppdienst",
+        "Freizeitfahrzeug, das einige Wochen im Jahr genutzt wird",
+        "Technische Überprüfung"
+      ],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz.",
       "faq": [
-        { "question": "Welcher Führerschein für ein führerscheinfreies Kleinfahrzeug?", "answer": "Ab 14 Jahren genügt der Führerschein AM (ehemals BSR) zum Fahren — aber um bei uns abzuschließen, muss der Fahrer 21 Jahre alt sein und 2 Jahre Führerscheinbesitz haben." },
-        { "question": "Mein Quad ist nicht straßenzugelassen?", "answer": "Es ist für den Straßenverkehr nicht versicherbar." },
-        { "question": "Welche Dauern?", "answer": "Die der Tarifliste — Kurzformen 10, 15, 20 und 30 Tage." }
+        {
+          "question": "Welcher Führerschein für ein führerscheinfreies Kleinfahrzeug?",
+          "answer": "Ab 14 Jahren genügt der Führerschein AM (ehemals BSR) zum Fahren  aber um bei uns abzuschließen, muss der Fahrer 21 Jahre alt sein und 2 Jahre Führerscheinbesitz haben."
+        },
+        {
+          "question": "Mein Quad ist nicht straßenzugelassen?",
+          "answer": "Es ist für den Straßenverkehr nicht versicherbar."
+        },
+        {
+          "question": "Welche Dauern?",
+          "answer": "Die der Tarifliste  Kurzformen 10, 15, 20 und 30 Tage."
+        }
       ]
     },
     "bus-autocars": {
@@ -535,11 +643,22 @@
       "intro": "Versichern Sie einen Bus oder Reisebus für eine Überführungsfahrt, einen Kauf, einen Verkauf oder eine Fahrzeugüberstellung. Abschluss zu 100 % online, sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
-      "useCases": ["Überführung nach Kauf oder Versteigerung", "Import / Export", "Flottenumverteilung", "Abholung aus dem Abschleppdienst"],
+      "useCases": [
+        "Überführung nach Kauf oder Versteigerung",
+        "Import / Export",
+        "Flottenumverteilung",
+        "Abholung aus dem Abschleppdienst"
+      ],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz, konforme Erklärungen.",
       "faq": [
-        { "question": "Welche Dauern?", "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)." },
-        { "question": "Ist die Personenbeförderung mitversichert?", "answer": "Die Deckung umfasst die Haftpflicht des Fahrzeugs; für eine gewerbliche Nutzung mit Fahrgästen kontaktieren Sie uns vor dem Abschluss: +33 6 05 93 84 79." }
+        {
+          "question": "Welche Dauern?",
+          "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)."
+        },
+        {
+          "question": "Ist die Personenbeförderung mitversichert?",
+          "answer": "Die Deckung umfasst die Haftpflicht des Fahrzeugs; für eine gewerbliche Nutzung mit Fahrgästen kontaktieren Sie uns vor dem Abschluss: +33 6 05 93 84 79."
+        }
       ]
     },
     "tracteurs-agricoles": {
@@ -549,42 +668,77 @@
       "intro": "Ernte, Überführung, Kauf oder Verkauf: Versichern Sie Ihren Traktor oder Ihre landwirtschaftliche Maschine für einige Tage, ohne Jahresverpflichtung. Online-Abschluss, Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
-      "useCases": ["Ernte- oder Erntezeit", "Überführung nach Kauf / Verkauf", "Ausleihen zwischen Landwirten", "Außergewöhnliche Fahrt auf der Straße"],
+      "useCases": [
+        "Ernte- oder Erntezeit",
+        "Überführung nach Kauf / Verkauf",
+        "Ausleihen zwischen Landwirten",
+        "Außergewöhnliche Fahrt auf der Straße"
+      ],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz.",
       "faq": [
-        { "question": "Welche Dauern?", "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)." },
-        { "question": "Wird ein alter Traktor / Oldtimer akzeptiert?", "answer": "Ja, sofern er zugelassen ist." }
+        {
+          "question": "Welche Dauern?",
+          "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)."
+        },
+        {
+          "question": "Wird ein alter Traktor / Oldtimer akzeptiert?",
+          "answer": "Ja, sofern er zugelassen ist."
+        }
       ]
     },
     "remorques": {
       "title": "Kurzzeitversicherung für Anhänger, Sattelanhänger, Wohnwagen | TempAssur",
       "metaDescription": "Anhänger, Sattelanhänger oder Wohnwagen: Kurzzeitversicherung ab 750 kg gesetzlich vorgeschrieben. Sofortiger Online-Abschluss.",
       "h1": "Kurzzeitversicherung für Anhänger, Sattelanhänger und Wohnwagen",
-      "intro": "Leichter oder schwerer Anhänger, Sattelanhänger, Wohnwagen: Ab einem zulässigen Gesamtgewicht von 750 kg ist eine eigene Haftpflichtversicherung obligatorisch — die des Zugfahrzeugs reicht nicht mehr aus. Versichern Sie Ihren Anhänger für eine Überführungsfahrt, einen Kauf oder eine einmalige Fahrt.",
+      "intro": "Leichter oder schwerer Anhänger, Sattelanhänger, Wohnwagen: Ab einem zulässigen Gesamtgewicht von 750 kg ist eine eigene Haftpflichtversicherung obligatorisch  die des Zugfahrzeugs reicht nicht mehr aus. Versichern Sie Ihren Anhänger für eine Überführungsfahrt, einen Kauf oder eine einmalige Fahrt.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
-      "useCases": ["Kauf / Verkauf", "Umzug", "Urlaubsantritt mit einem Wohnwagen", "Einmaliger Materialtransport", "Import / Export"],
+      "useCases": [
+        "Kauf / Verkauf",
+        "Umzug",
+        "Urlaubsantritt mit einem Wohnwagen",
+        "Einmaliger Materialtransport",
+        "Import / Export"
+      ],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz.",
       "faq": [
-        { "question": "Mein Anhänger wiegt weniger als 750 kg?", "answer": "Er ist grundsätzlich durch die Versicherung des Zugfahrzeugs gedeckt — prüfen Sie Ihren Vertrag." },
-        { "question": "Welche Dauern?", "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)." }
+        {
+          "question": "Mein Anhänger wiegt weniger als 750 kg?",
+          "answer": "Er ist grundsätzlich durch die Versicherung des Zugfahrzeugs gedeckt  prüfen Sie Ihren Vertrag."
+        },
+        {
+          "question": "Welche Dauern?",
+          "answer": "Die der Tarifliste (Kurzformen 8 und 15 Tage)."
+        }
       ]
     },
     "assurance-frontiere": {
       "title": "Grenzversicherung: mit einem ausländischen Fahrzeug in Frankreich und Europa fahren | TempAssur",
       "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und in 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
-      "h1": "Grenzversicherung — um in Frankreich und Europa zu fahren",
-      "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen — oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage — Bescheinigung per E-Mail oder WhatsApp.",
+      "h1": "Grenzversicherung  um in Frankreich und Europa zu fahren",
+      "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen  oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage  Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "An Reisende, die mit ihrem Fahrzeug nach Europa kommen (Maghreb, Balkanländer außerhalb der Grünen Karte, Naher Osten, Amerika...), an im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie an Fahrzeuge im Transit oder in der Einfuhr.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall. Sie erhalten eine internationale Versicherungskarte, die in den 35 versicherten Ländern gültig ist.",
-      "whereCovered": "In 35 Ländern, nicht nur in Frankreich — das ist einer der großen Vorteile unseres Grenzversicherungsvertrags.",
+      "whereCovered": "In 35 Ländern, nicht nur in Frankreich  das ist einer der großen Vorteile unseres Grenzversicherungsvertrags.",
       "useCases": [],
       "eligibility": "Fahrer ab 21 Jahren, 2 Jahre Führerscheinbesitz.",
       "faq": [
-        { "question": "Bin ich nur in Frankreich versichert?", "answer": "Nein: Ihre TempAssur-Grenzversicherung deckt Sie in den 35 Ländern der gemeinsamen Liste ab (Deutschland, Spanien, Italien, Schweiz...)." },
-        { "question": "Welche Dokumente muss ich vorlegen?", "answer": "Den Personalausweis oder Reisepass des Fahrers, seinen Führerschein und den Zulassungsschein des Fahrzeugs." },
-        { "question": "Kann ich abschließen, bevor ich in Frankreich ankomme?", "answer": "Ja, zu 100 % online, mit einem verzögerten Versicherungsbeginn: Ihre Dokumente erwarten Sie in Ihrem E-Mail-Postfach oder auf WhatsApp." },
-        { "question": "Welche Dauern?", "answer": "30 oder 90 Tage (30 Tage ist die am häufigsten gewählte Option)." }
+        {
+          "question": "Bin ich nur in Frankreich versichert?",
+          "answer": "Nein: Ihre TempAssur-Grenzversicherung deckt Sie in den 35 Ländern der gemeinsamen Liste ab (Deutschland, Spanien, Italien, Schweiz...)."
+        },
+        {
+          "question": "Welche Dokumente muss ich vorlegen?",
+          "answer": "Den Personalausweis oder Reisepass des Fahrers, seinen Führerschein und den Zulassungsschein des Fahrzeugs."
+        },
+        {
+          "question": "Kann ich abschließen, bevor ich in Frankreich ankomme?",
+          "answer": "Ja, zu 100 % online, mit einem verzögerten Versicherungsbeginn: Ihre Dokumente erwarten Sie in Ihrem E-Mail-Postfach oder auf WhatsApp."
+        },
+        {
+          "question": "Welche Dauern?",
+          "answer": "30 oder 90 Tage (30 Tage ist die am häufigsten gewählte Option)."
+        }
       ]
     }
   },
@@ -605,155 +759,383 @@
         "title": "Kurzzeitversicherung für Anhänger, Sattelanhänger oder Wohnwagen",
         "metaDescription": "Anhänger, Sattelanhänger oder Wohnwagen für einige Tage zu versichern? Die Kurzzeitlösung von TempAssur, ohne Jahresverpflichtung.",
         "body": [
-          { "type": "p", "text": "Umzug, Ausleihen unter Privatpersonen, Urlaubsantritt mit einem Wohnwagen oder Überführung vor einem Verkauf: Diese einmaligen Nutzungen rechtfertigen nicht immer einen Jahresvertrag. Ab einem zulässigen Gesamtgewicht von 750 kg müssen Anhänger oder Wohnwagen über eine eigene Haftpflichtversicherung verfügen — die des Zugfahrzeugs reicht nicht mehr aus." },
-          { "type": "h2", "text": "Was der Vertrag abdeckt" },
-          { "type": "p", "text": "Der Kurzzeitvertrag für Anhänger umfasst die obligatorische Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress nach einem Unfall. Für diese Kategorie wird keine Option angeboten." },
-          { "type": "h2", "text": "Welche Dauer wählen?" },
-          { "type": "p", "text": "Die Tarifliste bietet Dauern von 1 bis 15 Tagen mit zwei praktischen Kurzformen: 8 und 15 Tage. Der Tarifrechner zeigt alle verfügbaren Dauern mit ihrem Preis an." },
-          { "type": "p", "text": "Der Abschluss erfolgt vollständig online, und die Bescheinigung wird nach der elektronischen Unterschrift des Vertrags sofort per E-Mail oder WhatsApp versandt." }
+          {
+            "type": "p",
+            "text": "Umzug, Ausleihen unter Privatpersonen, Urlaubsantritt mit einem Wohnwagen oder Überführung vor einem Verkauf: Diese einmaligen Nutzungen rechtfertigen nicht immer einen Jahresvertrag. Ab einem zulässigen Gesamtgewicht von 750 kg müssen Anhänger oder Wohnwagen über eine eigene Haftpflichtversicherung verfügen  die des Zugfahrzeugs reicht nicht mehr aus."
+          },
+          {
+            "type": "h2",
+            "text": "Was der Vertrag abdeckt"
+          },
+          {
+            "type": "p",
+            "text": "Der Kurzzeitvertrag für Anhänger umfasst die obligatorische Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress nach einem Unfall. Für diese Kategorie wird keine Option angeboten."
+          },
+          {
+            "type": "h2",
+            "text": "Welche Dauer wählen?"
+          },
+          {
+            "type": "p",
+            "text": "Die Tarifliste bietet Dauern von 1 bis 15 Tagen mit zwei praktischen Kurzformen: 8 und 15 Tage. Der Tarifrechner zeigt alle verfügbaren Dauern mit ihrem Preis an."
+          },
+          {
+            "type": "p",
+            "text": "Der Abschluss erfolgt vollständig online, und die Bescheinigung wird nach der elektronischen Unterschrift des Vertrags sofort per E-Mail oder WhatsApp versandt."
+          }
         ]
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "Kann man ein Fahrzeug mit WW-Kennzeichen kurzzeitig versichern?",
         "metaDescription": "Vorläufiger Zulassungsschein (WW-Kennzeichen): So versichern Sie ihn kurzzeitig mit TempAssur.",
         "body": [
-          { "type": "p", "text": "Ein gerade gekauftes oder importiertes Fahrzeug fährt oft für einige Wochen mit einem vorläufigen Zulassungsschein (CPI), erkennbar an seinem „WW“-Kennzeichen. Bis zum endgültigen Fahrzeugschein muss dieses Fahrzeug dennoch versichert sein, sobald es auf die Straße geht." },
-          { "type": "h2", "text": "Ein Fahrzeug mit WW-Kennzeichen wird wie jedes andere versichert" },
-          { "type": "p", "text": "TempAssur versichert Fahrzeuge mit WW-Kennzeichen zu denselben Bedingungen wie ein Fahrzeug mit endgültiger Zulassung: Haftpflichtversicherung, Online-Abschluss, sofortige Bescheinigung. Ein einziger Punkt ist zu beachten: Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten. Läuft der Schein in 10 Tagen ab, beträgt die maximal versicherbare Dauer 10 Tage." },
-          { "type": "h2", "text": "Wie man abschließt" },
-          { "type": "p", "text": "Wählen Sie die Kategorie Ihres Fahrzeugs im Tarifrechner, geben Sie das Datum der Erstzulassung und die weiteren Informationen an und zahlen Sie anschließend online: Die Bescheinigung kommt per E-Mail oder WhatsApp, wenige Minuten nach der elektronischen Unterschrift." }
+          {
+            "type": "p",
+            "text": "Ein gerade gekauftes oder importiertes Fahrzeug fährt oft für einige Wochen mit einem vorläufigen Zulassungsschein (CPI), erkennbar an seinem „WW“-Kennzeichen. Bis zum endgültigen Fahrzeugschein muss dieses Fahrzeug dennoch versichert sein, sobald es auf die Straße geht."
+          },
+          {
+            "type": "h2",
+            "text": "Ein Fahrzeug mit WW-Kennzeichen wird wie jedes andere versichert"
+          },
+          {
+            "type": "p",
+            "text": "TempAssur versichert Fahrzeuge mit WW-Kennzeichen zu denselben Bedingungen wie ein Fahrzeug mit endgültiger Zulassung: Haftpflichtversicherung, Online-Abschluss, sofortige Bescheinigung. Ein einziger Punkt ist zu beachten: Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten. Läuft der Schein in 10 Tagen ab, beträgt die maximal versicherbare Dauer 10 Tage."
+          },
+          {
+            "type": "h2",
+            "text": "Wie man abschließt"
+          },
+          {
+            "type": "p",
+            "text": "Wählen Sie die Kategorie Ihres Fahrzeugs im Tarifrechner, geben Sie das Datum der Erstzulassung und die weiteren Informationen an und zahlen Sie anschließend online: Die Bescheinigung kommt per E-Mail oder WhatsApp, wenige Minuten nach der elektronischen Unterschrift."
+          }
         ]
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Wegfall der grünen Versicherungsplakette: Was sich für die Kurzzeitversicherung ändert",
         "metaDescription": "Seit April 2024 ist die grüne Versicherungsplakette abgeschafft: Wie weisen Sie Ihre Kurzzeitversicherung bei einer Kontrolle nach?",
         "body": [
-          { "type": "p", "text": "Seit dem 1. April 2024 ist das Anbringen der grünen Versicherungsplakette auf der Windschutzscheibe nicht mehr vorgeschrieben: Die Ordnungskräfte prüfen die Versicherung eines Fahrzeugs nun direkt über das Fichier des Véhicules Assurés (FVA)." },
-          { "type": "h2", "text": "Was die grüne Karte ersetzt" },
-          { "type": "p", "text": "Bei einem Kurzzeitvertrag übernimmt die nach dem Abschluss per E-Mail oder WhatsApp versandte digitale Bescheinigung diese Funktion: Sie gibt den Gültigkeitszeitraum, das versicherte Fahrzeug und den Versicherer an und kann bei einer Kontrolle ausgedruckt oder auf dem Smartphone vorgezeigt werden." },
-          { "type": "h2", "text": "Was sich nicht ändert" },
-          { "type": "p", "text": "Die Kurzzeitversicherung bleibt weiterhin für 1 bis 90 Tage möglich, und die Haftpflichtversicherung bleibt ab dem ersten Kilometer obligatorisch. Führen Sie einen Personalausweis, den Zulassungsschein und Ihre Versicherungsbescheinigung mit." }
+          {
+            "type": "p",
+            "text": "Seit dem 1. April 2024 ist das Anbringen der grünen Versicherungsplakette auf der Windschutzscheibe nicht mehr vorgeschrieben: Die Ordnungskräfte prüfen die Versicherung eines Fahrzeugs nun direkt über das Fichier des Véhicules Assurés (FVA)."
+          },
+          {
+            "type": "h2",
+            "text": "Was die grüne Karte ersetzt"
+          },
+          {
+            "type": "p",
+            "text": "Bei einem Kurzzeitvertrag übernimmt die nach dem Abschluss per E-Mail oder WhatsApp versandte digitale Bescheinigung diese Funktion: Sie gibt den Gültigkeitszeitraum, das versicherte Fahrzeug und den Versicherer an und kann bei einer Kontrolle ausgedruckt oder auf dem Smartphone vorgezeigt werden."
+          },
+          {
+            "type": "h2",
+            "text": "Was sich nicht ändert"
+          },
+          {
+            "type": "p",
+            "text": "Die Kurzzeitversicherung bleibt weiterhin für 1 bis 90 Tage möglich, und die Haftpflichtversicherung bleibt ab dem ersten Kilometer obligatorisch. Führen Sie einen Personalausweis, den Zulassungsschein und Ihre Versicherungsbescheinigung mit."
+          }
         ]
       },
       "garanties-assurance-auto-provisoire": {
         "title": "Welche Leistungen umfasst eine Kurzzeit-Autoversicherung?",
         "metaDescription": "Haftpflichtversicherung, strafrechtlicher Beistand und Regress, Auto-Optionen: die Leistungen von TempAssur im Detail.",
         "body": [
-          { "type": "p", "text": "Eine Kurzzeitversicherung ist keine abgespeckte Version eines klassischen Vertrags: Sie muss die gleichen gesetzlichen Pflichten abdecken, für eine gewählte Dauer von 1 bis 90 Tagen." },
-          { "type": "h2", "text": "Die Haftpflichtversicherung, obligatorische Leistung" },
-          { "type": "p", "text": "Sie deckt Sach- und Personenschäden, die einem Dritten bei einem selbstverschuldeten Unfall zugefügt werden. Ohne diese Deckung zu fahren, setzt Sie einer Geldstrafe von bis zu 3.750 €, einem Führerscheinentzug und der Stilllegung des Fahrzeugs aus." },
-          { "type": "h2", "text": "Der strafrechtliche Beistand und Regress" },
-          { "type": "p", "text": "In allen unseren Verträgen enthalten, übernimmt sie Ihre Verteidigung bei einer Strafverfolgung im Zusammenhang mit einem Unfall und ermöglicht es, gegen den verantwortlichen Dritten Regress zu nehmen." },
-          { "type": "h2", "text": "Die Optionen, nur für Autos" },
-          { "type": "p", "text": "Nur für die Kategorie Auto gibt es drei Optionen, deren Preis von der gewählten Dauer abhängt: der Fahrerschutz, die Assistance-Leistung und die Fahrerweiterung auf 7 zusätzliche Länder (Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien, Türkei). Sie sind in den Überseegebieten (DOM-TOM) nicht verfügbar. Die anderen Fahrzeugkategorien (Lkw, Wohnmobil, Quadricycle, Bus, landwirtschaftlicher Traktor, Anhänger, Grenzversicherung) enthalten keine Optionen: Es werden gemäß der Tarifliste ausschließlich die Haftpflichtversicherung sowie der strafrechtliche Beistand und Regress angeboten." }
+          {
+            "type": "p",
+            "text": "Eine Kurzzeitversicherung ist keine abgespeckte Version eines klassischen Vertrags: Sie muss die gleichen gesetzlichen Pflichten abdecken, für eine gewählte Dauer von 1 bis 90 Tagen."
+          },
+          {
+            "type": "h2",
+            "text": "Die Haftpflichtversicherung, obligatorische Leistung"
+          },
+          {
+            "type": "p",
+            "text": "Sie deckt Sach- und Personenschäden, die einem Dritten bei einem selbstverschuldeten Unfall zugefügt werden. Ohne diese Deckung zu fahren, setzt Sie einer Geldstrafe von bis zu 3.750 €, einem Führerscheinentzug und der Stilllegung des Fahrzeugs aus."
+          },
+          {
+            "type": "h2",
+            "text": "Der strafrechtliche Beistand und Regress"
+          },
+          {
+            "type": "p",
+            "text": "In allen unseren Verträgen enthalten, übernimmt sie Ihre Verteidigung bei einer Strafverfolgung im Zusammenhang mit einem Unfall und ermöglicht es, gegen den verantwortlichen Dritten Regress zu nehmen."
+          },
+          {
+            "type": "h2",
+            "text": "Die Optionen, nur für Autos"
+          },
+          {
+            "type": "p",
+            "text": "Nur für die Kategorie Auto gibt es drei Optionen, deren Preis von der gewählten Dauer abhängt: der Fahrerschutz, die Assistance-Leistung und die Fahrerweiterung auf 7 zusätzliche Länder (Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien, Türkei). Sie sind in den Überseegebieten (DOM-TOM) nicht verfügbar. Die anderen Fahrzeugkategorien (Lkw, Wohnmobil, Quadricycle, Bus, landwirtschaftlicher Traktor, Anhänger, Grenzversicherung) enthalten keine Optionen: Es werden gemäß der Tarifliste ausschließlich die Haftpflichtversicherung sowie der strafrechtliche Beistand und Regress angeboten."
+          }
         ]
       },
       "assurance-frontiere-temporaire-auto": {
         "title": "Was ist die Grenzversicherung?",
         "metaDescription": "Fahrzeug außerhalb der EU zugelassen oder ohne grüne Karte? Die Grenzversicherung von TempAssur deckt 35 Länder ab, nicht nur Frankreich.",
         "body": [
-          { "type": "p", "text": "Ein Fahrzeug, das außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen ist, darf ohne eine spezifische Deckung nicht legal in Frankreich fahren: Das ist die Aufgabe der Grenzversicherung." },
-          { "type": "h2", "text": "Eine Deckung, die über Frankreich hinausgeht" },
-          { "type": "p", "text": "Bei TempAssur beschränkt sich die Grenzversicherung nicht auf das französische Staatsgebiet: Sie deckt die gleichen 35 Länder Europas und des Mittelmeerraums ab wie unsere klassischen Kurzzeitversicherungen. Sie ist für 30 oder 90 Tage verfügbar und umfasst die Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress." },
-          { "type": "h2", "text": "Wer ist betroffen?" },
-          { "type": "p", "text": "Reisende, die mit ihrem Fahrzeug nach Europa kommen, im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie Fahrzeuge im Transit oder in der Einfuhr." },
-          { "type": "p", "text": "Der Abschluss erfolgt zu 100 % online, auch vor Ihrer Ankunft in Frankreich, mit einem verzögerten Versicherungsbeginn bei Bedarf." }
+          {
+            "type": "p",
+            "text": "Ein Fahrzeug, das außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen ist, darf ohne eine spezifische Deckung nicht legal in Frankreich fahren: Das ist die Aufgabe der Grenzversicherung."
+          },
+          {
+            "type": "h2",
+            "text": "Eine Deckung, die über Frankreich hinausgeht"
+          },
+          {
+            "type": "p",
+            "text": "Bei TempAssur beschränkt sich die Grenzversicherung nicht auf das französische Staatsgebiet: Sie deckt die gleichen 35 Länder Europas und des Mittelmeerraums ab wie unsere klassischen Kurzzeitversicherungen. Sie ist für 30 oder 90 Tage verfügbar und umfasst die Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress."
+          },
+          {
+            "type": "h2",
+            "text": "Wer ist betroffen?"
+          },
+          {
+            "type": "p",
+            "text": "Reisende, die mit ihrem Fahrzeug nach Europa kommen, im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie Fahrzeuge im Transit oder in der Einfuhr."
+          },
+          {
+            "type": "p",
+            "text": "Der Abschluss erfolgt zu 100 % online, auch vor Ihrer Ankunft in Frankreich, mit einem verzögerten Versicherungsbeginn bei Bedarf."
+          }
         ]
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Mit einer Kurzzeitversicherung nach Marokko, Tunesien oder in die Türkei fahren: die Option Länder-Erweiterung",
         "metaDescription": "Kurzzeitversicherung Marokko, Autoversicherung Tunesien, grüne Karte Türkei: So schließen Sie die Option Fahrerweiterung mit TempAssur ab.",
         "body": [
-          { "type": "p", "text": "Sie fahren mit Ihrem Auto in den Maghreb oder in die Türkei? Von Frankreich aus deckt Ihre Standard-Kurzzeitversicherung 35 europäische Länder ab — aber nicht Marokko, Tunesien oder die Türkei. Die Lösung: die Option Fahrerweiterung, bei TempAssur für Autos unter 3,5 Tonnen verfügbar." },
-          { "type": "h2", "text": "Was die Erweiterung abdeckt" },
-          { "type": "p", "text": "Zusätzlich zu den 35 Basisländern eröffnet die Erweiterung das Fahren in 7 Ländern: Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien und Türkei. Sie erhalten eine internationale Versicherungskarte, die diese Länder aufführt — sie ist maßgeblich beim Grenzübertritt und bei Kontrollen." },
-          { "type": "h2", "text": "Achtung: Algerien ist nicht versichert" },
-          { "type": "p", "text": "Keiner unserer Tarife, mit oder ohne Erweiterung, deckt Algerien ab. Um dort zu fahren, muss an der algerischen Grenze eine örtliche Versicherung abgeschlossen werden. Ebenso sind Weißrussland, der Iran, Russland und die Ukraine niemals versichert." },
-          { "type": "h2", "text": "Wie man abschließt" },
-          { "type": "p", "text": "Wählen Sie „Auto“ in unserem Tarifrechner, Ihre Dauer (1 bis 90 Tage) und kreuzen Sie dann die Option „Länder-Erweiterung“ an: Der Preis passt sich der gewählten Dauer an. Sie erhalten Ihre Bescheinigung und Ihre internationale Karte per E-Mail oder WhatsApp in wenigen Minuten — praktisch, wenn Sie eine Einschiffung in Sète, Marseille oder Genua vorbereiten." },
-          { "type": "h2", "text": "Gut zu wissen" },
-          { "type": "p", "text": "Die Erweiterung betrifft nur Autos: Für einen Lkw oder ein Wohnmobil kontaktieren Sie uns unter +33 6 05 93 84 79 (WhatsApp), wir prüfen eine individuelle Lösung." }
+          {
+            "type": "p",
+            "text": "Sie fahren mit Ihrem Auto in den Maghreb oder in die Türkei? Von Frankreich aus deckt Ihre Standard-Kurzzeitversicherung 35 europäische Länder ab  aber nicht Marokko, Tunesien oder die Türkei. Die Lösung: die Option Fahrerweiterung, bei TempAssur für Autos unter 3,5 Tonnen verfügbar."
+          },
+          {
+            "type": "h2",
+            "text": "Was die Erweiterung abdeckt"
+          },
+          {
+            "type": "p",
+            "text": "Zusätzlich zu den 35 Basisländern eröffnet die Erweiterung das Fahren in 7 Ländern: Albanien, Aserbaidschan, Nordmazedonien, Marokko, Moldawien, Tunesien und Türkei. Sie erhalten eine internationale Versicherungskarte, die diese Länder aufführt  sie ist maßgeblich beim Grenzübertritt und bei Kontrollen."
+          },
+          {
+            "type": "h2",
+            "text": "Achtung: Algerien ist nicht versichert"
+          },
+          {
+            "type": "p",
+            "text": "Keiner unserer Tarife, mit oder ohne Erweiterung, deckt Algerien ab. Um dort zu fahren, muss an der algerischen Grenze eine örtliche Versicherung abgeschlossen werden. Ebenso sind Weißrussland, der Iran, Russland und die Ukraine niemals versichert."
+          },
+          {
+            "type": "h2",
+            "text": "Wie man abschließt"
+          },
+          {
+            "type": "p",
+            "text": "Wählen Sie „Auto“ in unserem Tarifrechner, Ihre Dauer (1 bis 90 Tage) und kreuzen Sie dann die Option „Länder-Erweiterung“ an: Der Preis passt sich der gewählten Dauer an. Sie erhalten Ihre Bescheinigung und Ihre internationale Karte per E-Mail oder WhatsApp in wenigen Minuten  praktisch, wenn Sie eine Einschiffung in Sète, Marseille oder Genua vorbereiten."
+          },
+          {
+            "type": "h2",
+            "text": "Gut zu wissen"
+          },
+          {
+            "type": "p",
+            "text": "Die Erweiterung betrifft nur Autos: Für einen Lkw oder ein Wohnmobil kontaktieren Sie uns unter +33 6 05 93 84 79 (WhatsApp), wir prüfen eine individuelle Lösung."
+          }
         ]
       },
       "assurance-temporaire-pour-tracteur-agricole": {
         "title": "Kurzzeitversicherung für landwirtschaftliche Traktoren",
         "metaDescription": "Ernte, Überführung, Kauf oder Verkauf: Kurzzeitversicherung für landwirtschaftliche Traktoren online mit TempAssur.",
         "body": [
-          { "type": "p", "text": "Ein Traktor oder eine landwirtschaftliche Maschine muss nicht immer das ganze Jahr über versichert sein: Erntezeit, Überführung nach Kauf oder Verkauf, Ausleihen zwischen Landwirten oder eine außergewöhnliche Fahrt auf der Straße sind ebenso viele Situationen, in denen eine punktuelle Deckung ausreicht." },
-          { "type": "h2", "text": "Eine einfache Deckung" },
-          { "type": "p", "text": "Der Kurzzeitvertrag für landwirtschaftliche Traktoren umfasst die obligatorische Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress nach einem Unfall, ohne zusätzliche Option. Die verfügbaren Dauern gehen bis zu 15 Tagen, mit zwei praktischen Kurzformen: 8 und 15 Tage." },
-          { "type": "p", "text": "Der Abschluss erfolgt online, ohne Anfahrt: Geben Sie das Fahrzeug und den Fahrer an, zahlen Sie online und erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp." }
+          {
+            "type": "p",
+            "text": "Ein Traktor oder eine landwirtschaftliche Maschine muss nicht immer das ganze Jahr über versichert sein: Erntezeit, Überführung nach Kauf oder Verkauf, Ausleihen zwischen Landwirten oder eine außergewöhnliche Fahrt auf der Straße sind ebenso viele Situationen, in denen eine punktuelle Deckung ausreicht."
+          },
+          {
+            "type": "h2",
+            "text": "Eine einfache Deckung"
+          },
+          {
+            "type": "p",
+            "text": "Der Kurzzeitvertrag für landwirtschaftliche Traktoren umfasst die obligatorische Haftpflichtversicherung sowie den strafrechtlichen Beistand und Regress nach einem Unfall, ohne zusätzliche Option. Die verfügbaren Dauern gehen bis zu 15 Tagen, mit zwei praktischen Kurzformen: 8 und 15 Tage."
+          },
+          {
+            "type": "p",
+            "text": "Der Abschluss erfolgt online, ohne Anfahrt: Geben Sie das Fahrzeug und den Fahrer an, zahlen Sie online und erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp."
+          }
         ]
       },
       "assurance-provisoire-automobile": {
         "title": "Kurzzeit-Autoversicherung für Berufstätige",
         "metaDescription": "Transportunternehmen, Handwerker, Importeure: die Kurzzeit-Autoversicherung von TempAssur für Ihre punktuellen Bedürfnisse.",
         "body": [
-          { "type": "p", "text": "Ein Fahrzeug im Transit, ein Import-Export-Vorgang, ein außergewöhnlicher Einsatz oder eine Übergangszeit vor einem Jahresvertrag: Auch Berufstätige benötigen regelmäßig eher eine punktuelle Deckung als eine Jahresverpflichtung." },
-          { "type": "h2", "text": "Eine an die berufliche Tätigkeit angepasste Lösung" },
-          { "type": "p", "text": "Transportunternehmen, Handwerker, Händler, Selbstständige oder Fahrzeugimporteure können eine Kurzzeitversicherung für ein Personenfahrzeug, ein Nutzfahrzeug oder einen Lkw abschließen, von 1 bis 90 Tagen, mit den gleichen Leistungen wie für Privatpersonen: Haftpflichtversicherung sowie strafrechtlicher Beistand und Regress, zuzüglich der Auto-Optionen bei Bedarf." },
-          { "type": "p", "text": "Der Abschluss bleibt zu 100 % online, mit einer Bescheinigung, die sofort nach Zahlung und elektronischer Unterschrift eintrifft." }
+          {
+            "type": "p",
+            "text": "Ein Fahrzeug im Transit, ein Import-Export-Vorgang, ein außergewöhnlicher Einsatz oder eine Übergangszeit vor einem Jahresvertrag: Auch Berufstätige benötigen regelmäßig eher eine punktuelle Deckung als eine Jahresverpflichtung."
+          },
+          {
+            "type": "h2",
+            "text": "Eine an die berufliche Tätigkeit angepasste Lösung"
+          },
+          {
+            "type": "p",
+            "text": "Transportunternehmen, Handwerker, Händler, Selbstständige oder Fahrzeugimporteure können eine Kurzzeitversicherung für ein Personenfahrzeug, ein Nutzfahrzeug oder einen Lkw abschließen, von 1 bis 90 Tagen, mit den gleichen Leistungen wie für Privatpersonen: Haftpflichtversicherung sowie strafrechtlicher Beistand und Regress, zuzüglich der Auto-Optionen bei Bedarf."
+          },
+          {
+            "type": "p",
+            "text": "Der Abschluss bleibt zu 100 % online, mit einer Bescheinigung, die sofort nach Zahlung und elektronischer Unterschrift eintrifft."
+          }
         ]
       },
       "assurance-automobile-temporaire": {
         "title": "5 Situationen, in denen die Kurzzeit-Autoversicherung den Unterschied macht",
         "metaDescription": "Kauf/Verkauf, punktuelle Nutzung, Fahrzeug im Transit: die Situationen, in denen die Kurzzeitversicherung sich durchsetzt.",
         "body": [
-          { "type": "h2", "text": "Ein Kauf oder Verkauf eines Fahrzeugs" },
-          { "type": "p", "text": "Ein Fahrzeug für eine Probefahrt, eine Verwaltungsformalität oder eine Lieferung ohne endgültigen Fahrzeugschein bewegen: Die Kurzzeitversicherung ermöglicht es, sofort nach dem Kauf zu fahren, ohne einen unnötigen Jahresvertrag abzuschließen, wenn das Fahrzeug schnell weiterverkauft werden soll." },
-          { "type": "h2", "text": "Eine gelegentliche Nutzung" },
-          { "type": "p", "text": "Ein Zweitfahrzeug, das nur einige Wochen im Jahr genutzt wird — Wohnmobil, Anhänger oder Oldtimer — kostet weniger, wenn es für die tatsächliche Nutzungsdauer statt für ein ganzes Jahr versichert wird." },
-          { "type": "h2", "text": "Eine Vermietung unter Privatpersonen" },
-          { "type": "p", "text": "Wird ein Fahrzeug außerhalb einer großen Agentur vermietet, ist der Versicherungsschutz nicht immer inbegriffen: Eine Kurzzeitversicherung schließt diese Lücke in wenigen Minuten." },
-          { "type": "h2", "text": "Ein Fahrzeug im Transit" },
-          { "type": "p", "text": "Import aus dem Ausland, laufender Wechsel des Fahrzeugscheins: Solange die administrative Situation geregelt wird, muss das Fahrzeug versichert bleiben." },
-          { "type": "h2", "text": "Eine besondere Situation" },
-          { "type": "p", "text": "Ein Fahrer auf der Suche nach einem neuen Versicherer kann eine punktuelle Lösung benötigen. Bei TempAssur bleibt die Zulassung an die beim Abschluss vorgelegten Erklärungen gebunden — kontaktieren Sie uns bei Zweifeln an Ihrer Situation vor dem Abschluss." }
+          {
+            "type": "h2",
+            "text": "Ein Kauf oder Verkauf eines Fahrzeugs"
+          },
+          {
+            "type": "p",
+            "text": "Ein Fahrzeug für eine Probefahrt, eine Verwaltungsformalität oder eine Lieferung ohne endgültigen Fahrzeugschein bewegen: Die Kurzzeitversicherung ermöglicht es, sofort nach dem Kauf zu fahren, ohne einen unnötigen Jahresvertrag abzuschließen, wenn das Fahrzeug schnell weiterverkauft werden soll."
+          },
+          {
+            "type": "h2",
+            "text": "Eine gelegentliche Nutzung"
+          },
+          {
+            "type": "p",
+            "text": "Ein Zweitfahrzeug, das nur einige Wochen im Jahr genutzt wird  Wohnmobil, Anhänger oder Oldtimer  kostet weniger, wenn es für die tatsächliche Nutzungsdauer statt für ein ganzes Jahr versichert wird."
+          },
+          {
+            "type": "h2",
+            "text": "Eine Vermietung unter Privatpersonen"
+          },
+          {
+            "type": "p",
+            "text": "Wird ein Fahrzeug außerhalb einer großen Agentur vermietet, ist der Versicherungsschutz nicht immer inbegriffen: Eine Kurzzeitversicherung schließt diese Lücke in wenigen Minuten."
+          },
+          {
+            "type": "h2",
+            "text": "Ein Fahrzeug im Transit"
+          },
+          {
+            "type": "p",
+            "text": "Import aus dem Ausland, laufender Wechsel des Fahrzeugscheins: Solange die administrative Situation geregelt wird, muss das Fahrzeug versichert bleiben."
+          },
+          {
+            "type": "h2",
+            "text": "Eine besondere Situation"
+          },
+          {
+            "type": "p",
+            "text": "Ein Fahrer auf der Suche nach einem neuen Versicherer kann eine punktuelle Lösung benötigen. Bei TempAssur bleibt die Zulassung an die beim Abschluss vorgelegten Erklärungen gebunden  kontaktieren Sie uns bei Zweifeln an Ihrer Situation vor dem Abschluss."
+          }
         ]
       },
       "assurance-temporaire-vs-annuelle": {
         "title": "Kurzzeit- oder Jahresversicherung: Wie wählt man?",
         "metaDescription": "Kurzzeitversicherung oder Jahresversicherung: welche Unterschiede, und welche sollten Sie je nach Nutzung wählen?",
         "body": [
-          { "type": "p", "text": "Die beiden Tarife erfüllen unterschiedliche Bedürfnisse: Der eine deckt eine punktuelle Nutzung von wenigen Tagen ab, der andere eine regelmäßige Nutzung das ganze Jahr über." },
-          { "type": "h2", "text": "Die Kurzzeitversicherung: für die tatsächliche Nutzung bezahlen" },
-          { "type": "p", "text": "Von 1 bis 90 Tagen, ohne Verpflichtung, in wenigen Minuten online abgeschlossen: Sie eignet sich für ein gelegentlich genutztes Fahrzeug, einen vorübergehenden Bedarf (Import/Export, Urlaub) oder eine Übergangszeit vor einem Jahresvertrag." },
-          { "type": "h2", "text": "Die Jahresversicherung: für den täglichen Gebrauch" },
-          { "type": "p", "text": "Mit einer Laufzeit von 12 Monaten und mehr verfügbaren Leistungen bleibt sie besser geeignet für ein das ganze Jahr über genutztes Fahrzeug." },
-          { "type": "p", "text": "Für eine gelegentliche Nutzung oder eine vorübergehende Situation bleibt die Kurzzeit-Autoversicherung — schnell abzuschließen und ohne Verpflichtung — die wirtschaftlichste Lösung." }
+          {
+            "type": "p",
+            "text": "Die beiden Tarife erfüllen unterschiedliche Bedürfnisse: Der eine deckt eine punktuelle Nutzung von wenigen Tagen ab, der andere eine regelmäßige Nutzung das ganze Jahr über."
+          },
+          {
+            "type": "h2",
+            "text": "Die Kurzzeitversicherung: für die tatsächliche Nutzung bezahlen"
+          },
+          {
+            "type": "p",
+            "text": "Von 1 bis 90 Tagen, ohne Verpflichtung, in wenigen Minuten online abgeschlossen: Sie eignet sich für ein gelegentlich genutztes Fahrzeug, einen vorübergehenden Bedarf (Import/Export, Urlaub) oder eine Übergangszeit vor einem Jahresvertrag."
+          },
+          {
+            "type": "h2",
+            "text": "Die Jahresversicherung: für den täglichen Gebrauch"
+          },
+          {
+            "type": "p",
+            "text": "Mit einer Laufzeit von 12 Monaten und mehr verfügbaren Leistungen bleibt sie besser geeignet für ein das ganze Jahr über genutztes Fahrzeug."
+          },
+          {
+            "type": "p",
+            "text": "Für eine gelegentliche Nutzung oder eine vorübergehende Situation bleibt die Kurzzeit-Autoversicherung  schnell abzuschließen und ohne Verpflichtung  die wirtschaftlichste Lösung."
+          }
         ]
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Am Wochenende gekauftes Auto: Wie Sie noch am selben Tag versichert losfahren",
         "metaDescription": "Sofortige Autoversicherung, Auto noch am selben Tag versichern, Autokaufversicherung: die Lösung von TempAssur.",
         "body": [
-          { "type": "p", "text": "Sie haben gerade an einem Samstagabend einen Gebrauchtwagen gekauft, und der Verkäufer wohnt 300 km entfernt? Ohne Versicherung ist es unmöglich, legal loszufahren: Die Haftpflichtversicherung ist ab dem ersten Meter obligatorisch, und ohne Versicherung zu fahren kostet bis zu 3.750 € Bußgeld, mit möglichem Führerscheinentzug." },
-          { "type": "h2", "text": "Die Kurzzeitversicherung, die sofortige Lösung" },
-          { "type": "p", "text": "Bei TempAssur erfolgt der Abschluss zu 100 % online, an 7 Tagen die Woche: Schätzen Sie Ihren Tarif in 30 Sekunden, schließen Sie in 5 Minuten ab, zahlen Sie per Karte und erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp — sogar an einem Sonntag. Sie wählen genau die Dauer, die Sie benötigen, von 1 bis 90 Tagen, um Zeit zu haben, das Fahrzeug zu überführen und dann Ihren Jahresvertrag in voller Kenntnis der Sachlage abzuschließen." },
-          { "type": "h2", "text": "Die Bedingungen" },
-          { "type": "p", "text": "Mindestens 21 Jahre alt sein, 2 Jahre Führerscheinbesitz, und die beim Abschluss vorgelegten Vorgeschichtserklärungen erfüllen. Das Fahrzeug muss zugelassen sein (ein vorläufiges WW-Kennzeichen genügt)." },
-          { "type": "h2", "text": "Was kostet das?" },
-          { "type": "p", "text": "Ab wenigen Euro pro Tag für ein Auto, je nach Dauer und Leistung; der genaue Tarif wird sofort in unserem Tarifrechner angezeigt, ohne Ihre E-Mail-Adresse anzugeben. Ein Tag Kurzzeitversicherung kostet deutlich weniger als ein überstürzt abgeschlossener Jahresvertrag." }
+          {
+            "type": "p",
+            "text": "Sie haben gerade an einem Samstagabend einen Gebrauchtwagen gekauft, und der Verkäufer wohnt 300 km entfernt? Ohne Versicherung ist es unmöglich, legal loszufahren: Die Haftpflichtversicherung ist ab dem ersten Meter obligatorisch, und ohne Versicherung zu fahren kostet bis zu 3.750 € Bußgeld, mit möglichem Führerscheinentzug."
+          },
+          {
+            "type": "h2",
+            "text": "Die Kurzzeitversicherung, die sofortige Lösung"
+          },
+          {
+            "type": "p",
+            "text": "Bei TempAssur erfolgt der Abschluss zu 100 % online, an 7 Tagen die Woche: Schätzen Sie Ihren Tarif in 30 Sekunden, schließen Sie in 5 Minuten ab, zahlen Sie per Karte und erhalten Sie Ihre Bescheinigung per E-Mail oder WhatsApp  sogar an einem Sonntag. Sie wählen genau die Dauer, die Sie benötigen, von 1 bis 90 Tagen, um Zeit zu haben, das Fahrzeug zu überführen und dann Ihren Jahresvertrag in voller Kenntnis der Sachlage abzuschließen."
+          },
+          {
+            "type": "h2",
+            "text": "Die Bedingungen"
+          },
+          {
+            "type": "p",
+            "text": "Mindestens 21 Jahre alt sein, 2 Jahre Führerscheinbesitz, und die beim Abschluss vorgelegten Vorgeschichtserklärungen erfüllen. Das Fahrzeug muss zugelassen sein (ein vorläufiges WW-Kennzeichen genügt)."
+          },
+          {
+            "type": "h2",
+            "text": "Was kostet das?"
+          },
+          {
+            "type": "p",
+            "text": "Ab wenigen Euro pro Tag für ein Auto, je nach Dauer und Leistung; der genaue Tarif wird sofort in unserem Tarifrechner angezeigt, ohne Ihre E-Mail-Adresse anzugeben. Ein Tag Kurzzeitversicherung kostet deutlich weniger als ein überstürzt abgeschlossener Jahresvertrag."
+          }
         ]
       },
       "assurance-sortie-fourriere": {
         "title": "Abholung aus dem Abschleppdienst: Welche Versicherung für die Rückgabe Ihres Fahrzeugs?",
         "metaDescription": "Versicherung für die Abholung aus dem Abschleppdienst, Versicherungsbescheinigung Abschleppdienst, Auto aus dem Abschleppdienst holen mit TempAssur.",
         "body": [
-          { "type": "p", "text": "Um ein Fahrzeug aus dem Abschleppdienst abzuholen, schreibt das Gesetz vor, eine gültige Versicherungsbescheinigung (zusammen mit Führerschein und Fahrzeugschein) vorzulegen. Das Problem: Wenn Ihr Fahrzeug gerade deshalb abgeschleppt wurde, weil es nicht mehr versichert war — oder wenn Ihr Versicherer den Vertrag zwischenzeitlich gekündigt hat — sitzen Sie fest." },
-          { "type": "h2", "text": "Die Kurzzeitversicherung löst die Situation in wenigen Minuten" },
-          { "type": "p", "text": "Schließen Sie online eine Versicherung für 1 bis 90 Tage ab, erhalten Sie die Bescheinigung per E-Mail oder WhatsApp, legen Sie sie beim Abschleppdienst vor und holen Sie Ihr Fahrzeug ab. Da jeder Tag der Verwahrung Geld kostet, zählt die Schnelligkeit: Bei TempAssur wird die Bescheinigung sofort nach Zahlung und elektronischer Unterschrift versandt." },
-          { "type": "h2", "text": "Welche Dauer wählen?" },
-          { "type": "p", "text": "Die Zeit, um das Fahrzeug abzuholen und eine klassische Versicherung abzuschließen: 8 oder 15 Tage genügen oft; 30 Tage, wenn Sie auch die technische Überprüfung durchführen oder das Fahrzeug verkaufen müssen." },
-          { "type": "h2", "text": "Die Bedingungen" },
-          { "type": "p", "text": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz und konforme Vorgeschichtserklärungen (insbesondere: keine Kündigung wegen eines Schadensfalls in den letzten 5 Jahren). Schreiben Sie uns bei Zweifeln an Ihrer Situation per WhatsApp an +33 6 05 93 84 79: Wir antworten Ihnen an 7 Tagen die Woche." }
+          {
+            "type": "p",
+            "text": "Um ein Fahrzeug aus dem Abschleppdienst abzuholen, schreibt das Gesetz vor, eine gültige Versicherungsbescheinigung (zusammen mit Führerschein und Fahrzeugschein) vorzulegen. Das Problem: Wenn Ihr Fahrzeug gerade deshalb abgeschleppt wurde, weil es nicht mehr versichert war  oder wenn Ihr Versicherer den Vertrag zwischenzeitlich gekündigt hat  sitzen Sie fest."
+          },
+          {
+            "type": "h2",
+            "text": "Die Kurzzeitversicherung löst die Situation in wenigen Minuten"
+          },
+          {
+            "type": "p",
+            "text": "Schließen Sie online eine Versicherung für 1 bis 90 Tage ab, erhalten Sie die Bescheinigung per E-Mail oder WhatsApp, legen Sie sie beim Abschleppdienst vor und holen Sie Ihr Fahrzeug ab. Da jeder Tag der Verwahrung Geld kostet, zählt die Schnelligkeit: Bei TempAssur wird die Bescheinigung sofort nach Zahlung und elektronischer Unterschrift versandt."
+          },
+          {
+            "type": "h2",
+            "text": "Welche Dauer wählen?"
+          },
+          {
+            "type": "p",
+            "text": "Die Zeit, um das Fahrzeug abzuholen und eine klassische Versicherung abzuschließen: 8 oder 15 Tage genügen oft; 30 Tage, wenn Sie auch die technische Überprüfung durchführen oder das Fahrzeug verkaufen müssen."
+          },
+          {
+            "type": "h2",
+            "text": "Die Bedingungen"
+          },
+          {
+            "type": "p",
+            "text": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz und konforme Vorgeschichtserklärungen (insbesondere: keine Kündigung wegen eines Schadensfalls in den letzten 5 Jahren). Schreiben Sie uns bei Zweifeln an Ihrer Situation per WhatsApp an +33 6 05 93 84 79: Wir antworten Ihnen an 7 Tagen die Woche."
+          }
         ]
       }
     }
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Abschluss — Kurzzeitversicherung online",
+      "metaTitle": "Abschluss  Kurzzeitversicherung online",
       "metaDescription": "Schließen Sie Ihre Kurzzeitversicherung in wenigen Minuten online ab: Standort, Fahrzeug, Dauer, Fahrer, Optionen und sichere Zahlung.",
       "title": "Ihr Antrag auf Vertragsabschluss",
       "description": "Der Preis wird bei jedem Schritt neu berechnet und bleibt dauerhaft im nebenstehenden Kasten angezeigt. Der Preis der Optionen hängt von der Dauer ab.",
@@ -795,27 +1177,36 @@
       "ctaEstimate": "Meinen Tarif in 30 Sekunden schätzen"
     },
     "quiSommesNous": {
-      "metaTitle": "Über uns — Makler für Kurzzeitversicherungen | TempAssur",
+      "metaTitle": "Über uns  Makler für Kurzzeitversicherungen | TempAssur",
       "metaDescription": "TempAssur (WN Conseil), französischer Makler ORIAS-Nr. 24004933, spezialisiert auf Kurzzeitversicherungen von 1 bis 90 Tagen für alle Fahrzeuge.",
       "eyebrow": "Über uns",
       "heroTitle": "Über uns",
-      "intro": "TempAssur ist die Marke von WN Conseil, einem französischen Versicherungsmaklerunternehmen mit Sitz in Clichy (Hauts-de-Seine), eingetragen bei ORIAS unter der Nr. {orias}. Unsere Spezialität: die Kurzzeitversicherung, von 1 bis 90 Tagen, für alle Fahrzeuge — Auto, Lkw, Wohnmobil, Quadricycle, Bus, landwirtschaftlicher Traktor, Anhänger — sowie die Grenzversicherung für im Ausland zugelassene Fahrzeuge.",
+      "intro": "TempAssur ist die Marke von WN Conseil, einem französischen Versicherungsmaklerunternehmen mit Sitz in Clichy (Hauts-de-Seine), eingetragen bei ORIAS unter der Nr. {orias}. Unsere Spezialität: die Kurzzeitversicherung, von 1 bis 90 Tagen, für alle Fahrzeuge  Auto, Lkw, Wohnmobil, Quadricycle, Bus, landwirtschaftlicher Traktor, Anhänger  sowie die Grenzversicherung für im Ausland zugelassene Fahrzeuge.",
       "promisesHeading": "Unser Versprechen",
       "promises": [
-        { "title": "Die Schnelligkeit", "description": "Abschluss zu 100 % online in 5 Minuten, Bescheinigung sofort per E-Mail oder WhatsApp zugesandt — sogar am Wochenende." },
-        { "title": "Die Verfügbarkeit", "description": "Ein echtes Team, erreichbar an 7 Tagen die Woche per Telefon und WhatsApp unter +33 6 05 93 84 79. Ein Problem bei der Zahlung, ein Notfall, eine Frage? Wir antworten." },
-        { "title": "Die Transparenz", "description": "Die Preise werden angezeigt, bevor Sie auch nur die geringste Kontaktangabe hinterlassen, und Ihre Verträge werden von zugelassenen Versicherungsunternehmen getragen, die dem Code des assurances unterliegen." }
+        {
+          "title": "Die Schnelligkeit",
+          "description": "Abschluss zu 100 % online in 5 Minuten, Bescheinigung sofort per E-Mail oder WhatsApp zugesandt  sogar am Wochenende."
+        },
+        {
+          "title": "Die Verfügbarkeit",
+          "description": "Ein echtes Team, erreichbar an 7 Tagen die Woche per Telefon und WhatsApp unter +33 6 05 93 84 79. Ein Problem bei der Zahlung, ein Notfall, eine Frage? Wir antworten."
+        },
+        {
+          "title": "Die Transparenz",
+          "description": "Die Preise werden angezeigt, bevor Sie auch nur die geringste Kontaktangabe hinterlassen, und Ihre Verträge werden von zugelassenen Versicherungsunternehmen getragen, die dem Code des assurances unterliegen."
+        }
       ],
       "whereHeading": "Wo Sie uns finden",
-      "mapTitle": "TempAssur — WN Conseil auf Google Maps",
+      "mapTitle": "TempAssur  WN Conseil auf Google Maps",
       "ctaEstimate": "Meinen Tarif in 30 Sekunden schätzen",
       "ctaContact": "Kontaktieren Sie uns"
     },
     "contact": {
-      "metaTitle": "Kontaktieren Sie TempAssur — 7 Tage die Woche per WhatsApp, Telefon oder E-Mail",
-      "heroTitle": "Kontaktieren Sie uns — wir antworten an 7 Tagen die Woche",
+      "metaTitle": "Kontaktieren Sie TempAssur  7 Tage die Woche per WhatsApp, Telefon oder E-Mail",
+      "heroTitle": "Kontaktieren Sie uns  wir antworten an 7 Tagen die Woche",
       "fastest": "Am schnellsten",
-      "mapTitle": "TempAssur — WN Conseil auf Google Maps",
+      "mapTitle": "TempAssur  WN Conseil auf Google Maps",
       "addressLine": "WN Conseil / TempAssur, {address}"
     },
     "monCompte": {
@@ -861,7 +1252,7 @@
           {
             "id": "souscription-1",
             "question": "Wie schnell bin ich versichert?",
-            "answer": "In wenigen Minuten: Tarifschätzung, Online-Abschluss, Zahlung per Karte, elektronische Unterschrift — dann kommt Ihre Bescheinigung per E-Mail oder WhatsApp."
+            "answer": "In wenigen Minuten: Tarifschätzung, Online-Abschluss, Zahlung per Karte, elektronische Unterschrift  dann kommt Ihre Bescheinigung per E-Mail oder WhatsApp."
           },
           {
             "id": "souscription-2",
@@ -876,7 +1267,7 @@
           {
             "id": "souscription-4",
             "question": "Kann ich die Uhrzeit des Versicherungsbeginns wählen?",
-            "answer": "Ja, beim Abschluss — die Deckung beginnt nach der Unterschrift der Dokumente."
+            "answer": "Ja, beim Abschluss  die Deckung beginnt nach der Unterschrift der Dokumente."
           }
         ]
       },
@@ -903,7 +1294,7 @@
           {
             "id": "couverture-1",
             "question": "In welchen Ländern bin ich versichert?",
-            "answer": "In Frankreich und in 35 Ländern — die gleiche Liste für die Kurzzeit- und die Grenzversicherung."
+            "answer": "In Frankreich und in 35 Ländern  die gleiche Liste für die Kurzzeit- und die Grenzversicherung."
           },
           {
             "id": "couverture-2",
@@ -924,12 +1315,12 @@
           {
             "id": "documents-1",
             "question": "Welche Dokumente erhalte ich?",
-            "answer": "Ihren Vertrag, Ihre Versicherungsbescheinigung und Ihre internationale Versicherungskarte — per E-Mail oder WhatsApp, nach Wahl."
+            "answer": "Ihren Vertrag, Ihre Versicherungsbescheinigung und Ihre internationale Versicherungskarte  per E-Mail oder WhatsApp, nach Wahl."
           },
           {
             "id": "documents-2",
             "question": "Ich habe meine Bescheinigung nicht erhalten.",
-            "answer": "Prüfen Sie Ihren Spam-Ordner. Wenn der Versicherungsbeginn kurz bevorsteht, kontaktieren Sie uns sofort: WhatsApp / Tel. +33 6 05 93 84 79 — wir beschleunigen die Bearbeitung."
+            "answer": "Prüfen Sie Ihren Spam-Ordner. Wenn der Versicherungsbeginn kurz bevorsteht, kontaktieren Sie uns sofort: WhatsApp / Tel. +33 6 05 93 84 79  wir beschleunigen die Bearbeitung."
           }
         ]
       },
@@ -1002,7 +1393,7 @@
         },
         {
           "title": "12. Anwendbares Recht und Streitigkeiten",
-          "body": "Die vorliegenden Allgemeinen Geschäftsbedingungen unterliegen französischem Recht. Bei einer Streitigkeit im Zusammenhang mit einer Bestellung oder der Anwendung dieser AGB wird der Kunde gebeten, den Kundendienst von WN Conseil zu kontaktieren, um eine gütliche Beilegung der Streitigkeit zu versuchen. Für Streitigkeiten im Zusammenhang mit einem Versicherungsvertrag kann der Kunde kostenlos die Médiation de l'Assurance anrufen: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Für sonstige Streitigkeiten im Zusammenhang mit der Website ist der benannte Verbraucherschlichter das IEAM (Institut d'Expertise, d'Arbitrage et de Médiation): 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu — contact@ieam.eu. Im Falle eines Rechtsstreits sind die Gerichte am Sitz von WN Conseil zuständig."
+          "body": "Die vorliegenden Allgemeinen Geschäftsbedingungen unterliegen französischem Recht. Bei einer Streitigkeit im Zusammenhang mit einer Bestellung oder der Anwendung dieser AGB wird der Kunde gebeten, den Kundendienst von WN Conseil zu kontaktieren, um eine gütliche Beilegung der Streitigkeit zu versuchen. Für Streitigkeiten im Zusammenhang mit einem Versicherungsvertrag kann der Kunde kostenlos die Médiation de l'Assurance anrufen: www.mediation-assurance.org  Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Für sonstige Streitigkeiten im Zusammenhang mit der Website ist der benannte Verbraucherschlichter das IEAM (Institut d'Expertise, d'Arbitrage et de Médiation): 31 bis – 33 rue Daru, 75008 Paris  www.ieam.eu  contact@ieam.eu. Im Falle eines Rechtsstreits sind die Gerichte am Sitz von WN Conseil zuständig."
         },
         {
           "title": "13. Kontakt",
@@ -1022,8 +1413,8 @@
           "body": "Die Website www.tempassur.com wird herausgegeben von WN Conseil, Entreprise Unipersonnelle à Responsabilité Limitée (EURL) mit einem Kapital von 1.000,00 €, eingetragen im Handelsregister (RCS) von Nanterre unter der Nummer 929 812 642. Sitz: Bureau 3, 6 Rue des Bateliers, 92110 Clichy, Frankreich · SIRET: 929 812 642 00015 · Innergemeinschaftliche USt-IdNr.: FR14929812642. Herausgeber der Veröffentlichung: Walid Nefzi, Geschäftsführer. Telefon: +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41 · E-Mail: contact@tempassur.com"
         },
         {
-          "title": "Regulierte Tätigkeit — Versicherungsvertrieb",
-          "body": "WN Conseil ist Versicherungsmakler, eingetragen bei ORIAS unter der Nr. 24004933 (Kategorie Versicherungs- oder Rückversicherungsmakler — COA), überprüfbar auf www.orias.fr. WN Conseil übt seine Tätigkeit unter der Aufsicht der Autorité de Contrôle Prudentiel et de Résolution (ACPR) aus — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09 — acpr.banque-france.fr. Die auf dieser Website vertriebenen Versicherungsverträge werden von zugelassenen Versicherungsunternehmen getragen, die dem Code des assurances unterliegen. Die Liste der Partnergesellschaften ist auf Anfrage erhältlich; der Name des Versicherers Ihres Vertrags erscheint auf Ihren Vertragsdokumenten. WN Conseil hält keine direkte oder indirekte Beteiligung an einem Versicherungsunternehmen, und kein Versicherungsunternehmen hält eine Beteiligung an WN Conseil. WN Conseil arbeitet mit mehreren Versicherungsunternehmen zusammen und unterliegt keiner vertraglichen Verpflichtung, ausschließlich mit einem von ihnen zusammenzuarbeiten; die Liste der Partnergesellschaften ist auf Anfrage erhältlich. WN Conseil wird durch eine in der Versicherungsprämie enthaltene Provision vergütet."
+          "title": "Regulierte Tätigkeit  Versicherungsvertrieb",
+          "body": "WN Conseil ist Versicherungsmakler, eingetragen bei ORIAS unter der Nr. 24004933 (Kategorie Versicherungs- oder Rückversicherungsmakler  COA), überprüfbar auf www.orias.fr. WN Conseil übt seine Tätigkeit unter der Aufsicht der Autorité de Contrôle Prudentiel et de Résolution (ACPR) aus  4 place de Budapest, CS 92459, 75436 Paris Cedex 09  acpr.banque-france.fr. Die auf dieser Website vertriebenen Versicherungsverträge werden von zugelassenen Versicherungsunternehmen getragen, die dem Code des assurances unterliegen. Die Liste der Partnergesellschaften ist auf Anfrage erhältlich; der Name des Versicherers Ihres Vertrags erscheint auf Ihren Vertragsdokumenten. WN Conseil hält keine direkte oder indirekte Beteiligung an einem Versicherungsunternehmen, und kein Versicherungsunternehmen hält eine Beteiligung an WN Conseil. WN Conseil arbeitet mit mehreren Versicherungsunternehmen zusammen und unterliegt keiner vertraglichen Verpflichtung, ausschließlich mit einem von ihnen zusammenzuarbeiten; die Liste der Partnergesellschaften ist auf Anfrage erhältlich. WN Conseil wird durch eine in der Versicherungsprämie enthaltene Provision vergütet."
         },
         {
           "title": "Beschwerde und Schlichtung",
@@ -1031,7 +1422,7 @@
         },
         {
           "title": "Hosting",
-          "body": "Die Website wird von HOSTINGER INTERNATIONAL LTD gehostet, 61 Lordou Vironos Street, 6023 Larnaca, Zypern — www.hostinger.fr/contact."
+          "body": "Die Website wird von HOSTINGER INTERNATIONAL LTD gehostet, 61 Lordou Vironos Street, 6023 Larnaca, Zypern  www.hostinger.fr/contact."
         },
         {
           "title": "Warnhinweis",
@@ -1060,7 +1451,7 @@
       "sections": [
         {
           "title": "1. Verantwortlicher für die Verarbeitung",
-          "body": "Die vorliegende Erklärung beschreibt, wie WN Conseil (unter dem Namen TempAssur tätig), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — Ihre personenbezogenen Daten über die Website www.tempassur.com erhebt, nutzt, speichert und schützt."
+          "body": "Die vorliegende Erklärung beschreibt, wie WN Conseil (unter dem Namen TempAssur tätig), Bureau 3, 6 Rue des Bateliers, 92110 Clichy  contact@tempassur.com  Ihre personenbezogenen Daten über die Website www.tempassur.com erhebt, nutzt, speichert und schützt."
         },
         {
           "title": "2. Erhobene Daten",
@@ -1107,7 +1498,7 @@
       "sections": [
         {
           "title": "1. Kontaktieren Sie unseren Beschwerdedienst",
-          "body": "Per E-Mail: contact@tempassur.com (Betreff: „Beschwerde“) · Per Post: WN Conseil — Service Réclamations, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Per Telefon: +33 6 05 93 84 79. Wir bestätigen den Eingang Ihrer Beschwerde innerhalb von 10 Werktagen und beantworten sie innerhalb von maximal 2 Monaten."
+          "body": "Per E-Mail: contact@tempassur.com (Betreff: „Beschwerde“) · Per Post: WN Conseil  Service Réclamations, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Per Telefon: +33 6 05 93 84 79. Wir bestätigen den Eingang Ihrer Beschwerde innerhalb von 10 Werktagen und beantworten sie innerhalb von maximal 2 Monaten."
         },
         {
           "title": "2. Die Beschwerde betrifft Ihren Versicherungsvertrag",
@@ -1115,7 +1506,7 @@
         },
         {
           "title": "3. Die Schlichtung",
-          "body": "Nach Ausschöpfung dieser Rechtsbehelfe können Sie kostenlos die Médiation de l'Assurance anrufen: www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Für eine Streitigkeit im Zusammenhang mit der Website (außerhalb des Versicherungsvertrags): IEAM, 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu."
+          "body": "Nach Ausschöpfung dieser Rechtsbehelfe können Sie kostenlos die Médiation de l'Assurance anrufen: www.mediation-assurance.org  Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Für eine Streitigkeit im Zusammenhang mit der Website (außerhalb des Versicherungsvertrags): IEAM, 31 bis – 33 rue Daru, 75008 Paris  www.ieam.eu."
         }
       ]
     }

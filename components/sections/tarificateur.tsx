@@ -45,10 +45,10 @@ export function Tarificateur() {
   }
 
   return (
-    <div id="tarificateur" className="scroll-mt-28 rounded-3xl border border-border bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
-      <h2 className="text-lg font-bold text-navy">{t("title")}</h2>
+    <div id="tarificateur" className="scroll-mt-28 rounded-3xl border border-border bg-white p-5 shadow-xl shadow-slate-900/10 sm:p-6">
+      <h2 className="text-base font-bold text-navy">{t("title")}</h2>
 
-      <div className="mt-6 flex flex-col gap-5">
+      <div className="mt-5 flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="tarificateur-category" className="text-sm font-medium text-foreground">
             {t("categoryLabel")}
@@ -105,14 +105,14 @@ export function Tarificateur() {
           </Select>
         </div>
 
-        <div className="rounded-2xl bg-surface p-4">
-          <p className="text-2xl font-extrabold tracking-tight text-navy">
+        <div className="rounded-2xl bg-surface p-3.5">
+          <p className="text-xl font-extrabold tracking-tight text-navy">
             {price != null ? t("priceFrom", { price: currency.format(price / duree) }) : t("pricePlaceholder")}
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("priceNote")}</p>
         </div>
 
-        <Button type="button" size="xl" variant="cta" className="w-full rounded-full" onClick={handleSouscription}>
+        <Button type="button" size="lg" variant="cta" className="w-full rounded-full" onClick={handleSouscription}>
           {t("cta")}
           <ArrowRight data-icon="inline-end" />
         </Button>

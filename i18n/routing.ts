@@ -1,6 +1,6 @@
 import { defineRouting } from "next-intl/routing"
 
-export const LOCALES = ["fr", "en", "ar", "de", "it", "pl", "ro", "es"] as const
+export const LOCALES = ["fr", "en", "ar", "de", "it", "ro", "es"] as const
 
 export type Locale = (typeof LOCALES)[number]
 
@@ -10,7 +10,6 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   ar: "العربية",
   de: "Deutsch",
   it: "Italiano",
-  pl: "Polski",
   ro: "Română",
   es: "Español",
 }
@@ -22,7 +21,6 @@ export const LOCALE_SHORT_LABELS: Record<Locale, string> = {
   ar: "AR",
   de: "DE",
   it: "IT",
-  pl: "PL",
   ro: "RO",
   es: "ES",
 }

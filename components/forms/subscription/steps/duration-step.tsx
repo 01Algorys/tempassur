@@ -1,16 +1,15 @@
 "use client"
 
+import { useMemo } from "react"
 import type { UseFormReturn } from "react-hook-form"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { getAvailableDurations, getDurationShortcuts, getPreselectedDuration } from "@/lib/pricing"
+import { getAvailableDurations, getDurationShortcuts, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { cn } from "@/lib/utils"
 
-const fieldClass = "h-11 rounded-lg"
 const triggerClass = "h-11 w-full rounded-lg"
 
 interface DurationStepProps {
@@ -19,6 +18,11 @@ interface DurationStepProps {
 
 export function DurationStep({ form }: DurationStepProps) {
   const t = useTranslations("wizard.duration")
+  const locale = useLocale()
+  const currency = useMemo(
+    () => new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 }),
+    [locale]
+  )
   const categorie = form.watch("categorie")
   const cvTier = form.watch("cvTier")
   const ptacTier = form.watch("ptacTier")
@@ -73,47 +77,21 @@ export function DurationStep({ form }: DurationStepProps) {
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {durations.map((d) => (
-                  <SelectItem key={d} value={String(d)}>
-                    {t("durationOption", { count: d })}
-                  </SelectItem>
-                ))}
+                {durations.map((d) => {
+                  const price = getMinPriceForDuration(categorie, d, false)
+                  return (
+                    <SelectItem key={d} value={String(d)}>
+                      {t("durationOption", { count: d })}
+                      {price != null ? ` — ${currency.format(price)}` : ""}
+                    </SelectItem>
+                  )
+                })}
               </SelectContent>
             </Select>
             <FormMessage />
           </FormItem>
         )}
       />
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <FormField
-          control={form.control}
-          name="dateEffet"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("effectDate")}</FormLabel>
-              <FormControl>
-                <Input type="date" className={fieldClass} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="heureEffet"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("effectTime")}</FormLabel>
-              <FormControl>
-                <Input type="time" className={fieldClass} {...field} />
-              </FormControl>
-              <FormDescription>{t("effectTimeHint")}</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      </div>
     </div>
   )
 }

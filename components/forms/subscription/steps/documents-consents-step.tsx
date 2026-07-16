@@ -53,6 +53,21 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="autresDocuments"
+            render={({ field }) => (
+              <FormItem>
+                <FileUploadField
+                  id="autresDocuments"
+                  label={t("autresDocuments")}
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
       </div>
 

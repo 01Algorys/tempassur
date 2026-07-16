@@ -9,7 +9,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Stagger, StaggerItem } from "@/components/shared/reveal"
 import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
-import { getMinPrice } from "@/lib/pricing"
+import { getMinPricePerDay } from "@/lib/pricing"
 
 export function VehicleVignettes() {
   const t = useTranslations("home.vehicleVignettes")
@@ -28,7 +28,7 @@ export function VehicleVignettes() {
         <Stagger className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {VEHICLE_TYPES.map((vehicle) => {
             const Icon = vehicle.icon
-            const price = getMinPrice(vehicle.slug)
+            const price = getMinPricePerDay(vehicle.slug)
             return (
               <StaggerItem key={vehicle.slug} className="h-full">
                 <motion.div

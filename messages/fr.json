@@ -15,13 +15,34 @@
     "faq": "FAQ"
   },
   "vehicleTypes": {
-    "automobiles": { "label": "Automobile", "description": "Véhicules privés et utilitaires de moins de 3,5 T." },
-    "poids-lourds": { "label": "Poids lourd", "description": "Camions, tracteurs routiers et porteurs de plus de 3,5 T." },
-    "camping-cars": { "label": "Camping-car", "description": "Camping-cars et fourgons aménagés." },
-    "quadricycles": { "label": "Quadricycles", "description": "Quads homologués, voiturettes sans permis, buggys." },
-    "bus-autocars": { "label": "Bus, autocars", "description": "Transport de personnes." },
-    "tracteurs-agricoles": { "label": "Tracteur agricole", "description": "Tracteurs et engins agricoles." },
-    "remorques": { "label": "Remorques", "description": "Remorques, semi-remorques et caravanes (poids lourd et léger)." },
+    "automobiles": {
+      "label": "Automobile",
+      "description": "Véhicules privés et utilitaires de moins de 3,5 T."
+    },
+    "poids-lourds": {
+      "label": "Poids lourd",
+      "description": "Camions, tracteurs routiers et porteurs de plus de 3,5 T."
+    },
+    "camping-cars": {
+      "label": "Camping-car",
+      "description": "Camping-cars et fourgons aménagés."
+    },
+    "quadricycles": {
+      "label": "Quadricycles",
+      "description": "Quads homologués, voiturettes sans permis, buggys."
+    },
+    "bus-autocars": {
+      "label": "Bus, autocars",
+      "description": "Transport de personnes."
+    },
+    "tracteurs-agricoles": {
+      "label": "Tracteur agricole",
+      "description": "Tracteurs et engins agricoles."
+    },
+    "remorques": {
+      "label": "Remorques",
+      "description": "Remorques, semi-remorques et caravanes (poids lourd et léger)."
+    },
     "assurance-frontiere": {
       "label": "Assurance frontière",
       "description": "Véhicules immatriculés hors Union européenne et hors système carte verte, ou véhicules immatriculés à l'étranger devant circuler en France et en Europe."
@@ -32,7 +53,7 @@
     "openMenu": "Ouvrir le menu"
   },
   "footer": {
-    "description": "TempAssur — L'assurance temporaire de 1 à 90 jours, pour tous les véhicules. Attestation immédiate par e-mail ou WhatsApp.",
+    "description": "TempAssur  L'assurance temporaire de 1 à 90 jours, pour tous les véhicules. Attestation immédiate par e-mail ou WhatsApp.",
     "insuranceHeading": "Nos assurances",
     "coveredCountries": "Pays couverts",
     "informationHeading": "Informations",
@@ -49,16 +70,22 @@
     "phoneSuffix": "(7j/7)",
     "googleMapsSuffix": "Retrouvez-nous sur Google Maps",
     "brokerLine": "Courtier en assurances",
-    "reassuranceStatement": "Assureurs agréés — vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
+    "reassuranceStatement": "Assureurs agréés  vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
     "securePayment": "Paiement sécurisé",
-    "copyright": "© {name} {year} — Tous droits réservés"
+    "copyright": "© {name} {year}  Tous droits réservés"
   },
   "languageSwitcher": {
     "selectLanguage": "Choisir la langue"
   },
   "forms": {
     "contact": {
-      "subjects": { "souscription": "Souscription", "paiement": "Paiement", "attestation": "Attestation", "reclamation": "Réclamation", "autre": "Autre" },
+      "subjects": {
+        "souscription": "Souscription",
+        "paiement": "Paiement",
+        "attestation": "Attestation",
+        "reclamation": "Réclamation",
+        "autre": "Autre"
+      },
       "nomRequired": "Le nom est requis",
       "emailRequired": "L'email est requis",
       "emailInvalid": "Entrez une adresse email valide",
@@ -107,7 +134,7 @@
       "description": "Assurance temporaire immédiate de 1 à 90 jours : auto, poids lourd, camping-car, quad, remorque, assurance frontière. Attestation par e-mail ou WhatsApp en quelques minutes. Dès {price} €/jour."
     },
     "hero": {
-      "title": "Assurance temporaire de 1 à 90 jours — attestation immédiate par e-mail ou WhatsApp",
+      "title": "Assurance temporaire de 1 à 90 jours  attestation immédiate par e-mail ou WhatsApp",
       "description": "Auto, poids lourd, camping-car, quad, bus, tracteur, remorque et assurance frontière. Souscription 100 % en ligne, 7j/7. Assureurs agréés : vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
       "ctaEstimate": "Estimer votre assurance en 30 secondes"
     },
@@ -121,16 +148,16 @@
       "mostChosen": "La plus choisie",
       "durationOption": "{count, plural, one {# jour} other {# jours}}",
       "priceFrom": "À partir de {price}/jour",
-      "pricePlaceholder": "—",
-      "priceNote": "Prix minimum pour cette durée. Le tarif définitif dépend du véhicule, des options choisies — et le prix des options dépend de la durée.",
+      "pricePlaceholder": "",
+      "priceNote": "Prix minimum pour cette durée. Le tarif définitif dépend du véhicule, des options choisies  et le prix des options dépend de la durée.",
       "cta": "Aller vers la souscription"
     },
     "reassurance": {
       "items": [
         "Attestation immédiate par e-mail ou WhatsApp",
         "Paiement 100 % sécurisé (CB)",
-        "Courtier français — ORIAS n° 24004933",
-        "Assureurs agréés — entreprises régies par le Code des assurances",
+        "Courtier français  ORIAS n° 24004933",
+        "Assureurs agréés  entreprises régies par le Code des assurances",
         "7j/7 par téléphone et WhatsApp : +33 6 05 93 84 79"
       ]
     },
@@ -154,9 +181,18 @@
       "eyebrow": "Simple et rapide",
       "title": "Comment ça marche",
       "steps": [
-        { "title": "Estimez", "description": "Estimez votre tarif en 30 secondes, sans laisser vos coordonnées." },
-        { "title": "Souscrivez", "description": "Souscrivez en ligne en 5 minutes, payez par carte bancaire." },
-        { "title": "Recevez votre attestation", "description": "Recevez votre attestation par e-mail ou WhatsApp, signez électroniquement — vous êtes couvert." }
+        {
+          "title": "Estimez",
+          "description": "Estimez votre tarif en 30 secondes, sans laisser vos coordonnées."
+        },
+        {
+          "title": "Souscrivez",
+          "description": "Souscrivez en ligne en 5 minutes, payez par carte bancaire."
+        },
+        {
+          "title": "Recevez votre attestation",
+          "description": "Recevez votre attestation par e-mail ou WhatsApp, signez électroniquement  vous êtes couvert."
+        }
       ]
     },
     "faq": {
@@ -194,11 +230,11 @@
     "reviews": {
       "eyebrow": "Avis clients",
       "title": "Ce que disent nos clients",
-      "address": "WN Conseil / TempAssur — {address}",
+      "address": "WN Conseil / TempAssur  {address}",
       "cta": "Voir tous nos avis Google →"
     },
     "coveredCountries": {
-      "description": "Votre assurance temporaire vous couvre en France et dans 35 pays d'Europe et du pourtour méditerranéen — la même liste pour l'assurance temporaire et l'assurance frontière. Besoin du Maroc, de la Tunisie ou de la Turquie ? Une extension est possible pour les automobiles.",
+      "description": "Votre assurance temporaire vous couvre en France et dans 35 pays d'Europe et du pourtour méditerranéen  la même liste pour l'assurance temporaire et l'assurance frontière. Besoin du Maroc, de la Tunisie ou de la Turquie ? Une extension est possible pour les automobiles.",
       "cta": "Voir la liste complète des pays couverts"
     },
     "vehicleVignettes": {
@@ -209,7 +245,10 @@
     }
   },
   "pricingLabels": {
-    "civilite": { "monsieur": "M.", "madame": "Mme" },
+    "civilite": {
+      "monsieur": "M.",
+      "madame": "Mme"
+    },
     "cvTier": {
       "moins-16cv": "Moins de 16 CV",
       "moins-30cv": "De 16 à 29 CV",
@@ -283,9 +322,9 @@
       "sending": "Envoi...",
       "payLabel": "Payer {amount} € en toute sécurité"
     },
-    "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79 — nous trouvons une solution immédiatement.",
+    "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79  nous trouvons une solution immédiatement.",
     "duration": {
-      "heading": "Durée et date d'effet",
+      "heading": "Durée",
       "contractDuration": "Durée du contrat *",
       "mostChosen": "La plus choisie",
       "durationUnit": "{count} j",
@@ -293,7 +332,8 @@
       "durationOption": "{count, plural, one {# jour} other {# jours}}",
       "effectDate": "Date d'effet *",
       "effectTime": "Heure d'effet *",
-      "effectTimeHint": "La date et l'heure d'effet ne peuvent pas être antérieures à maintenant."
+      "effectTimeHint": "La date et l'heure d'effet ne peuvent pas être antérieures à maintenant.",
+      "effectDateHeading": "Date d'effet"
     },
     "vehicleTier": {
       "heading": "Puissance fiscale",
@@ -385,7 +425,8 @@
       "consentsHeading": "Acceptation des conditions",
       "acceptCgv": "J'accepte les <link>Conditions générales de vente</link>",
       "acceptIpid": "J'ai pris connaissance du document d'information (IPID)",
-      "acceptContrat": "J'ai pris connaissance des conditions générales du contrat"
+      "acceptContrat": "J'ai pris connaissance des conditions générales du contrat",
+      "autresDocuments": "Autre document (optionnel)"
     },
     "payment": {
       "heading": "Récapitulatif et paiement sécurisé",
@@ -414,7 +455,7 @@
       "totalToPay": "Total à payer",
       "securePayment": "Paiement sécurisé, prise d'effet immédiate.",
       "durationValue": "{count, plural, one {# jour} other {# jours}}",
-      "noValue": "—"
+      "noValue": ""
     },
     "declarations": {
       "title": "Déclarations du conducteur",
@@ -457,11 +498,20 @@
       "h1": "Assurance auto temporaire de 1 à 90 jours",
       "intro": "Besoin d'assurer une voiture ou un utilitaire de moins de 3,5 tonnes pour quelques jours ? L'assurance auto temporaire TempAssur vous couvre de 1 à 90 jours, sans engagement et sans tacite reconduction. Souscription 100 % en ligne en 5 minutes, attestation envoyée immédiatement par e-mail ou WhatsApp.",
       "vehiclesParagraph": "Tous les véhicules particuliers et utilitaires de moins de 3,5 tonnes, quelle que soit la puissance : citadine, berline, SUV, fourgonnette… Le tarif dépend de la puissance fiscale et de la durée choisie.",
-      "guaranteesIncluded": "Incluses : responsabilité civile (obligatoire — dommages causés aux tiers) et défense pénale et recours suite à accident.",
+      "guaranteesIncluded": "Incluses : responsabilité civile (obligatoire  dommages causés aux tiers) et défense pénale et recours suite à accident.",
       "options": [
-        { "label": "Garantie du conducteur", "description": "vous protège aussi en cas d'accident responsable." },
-        { "label": "Extension de circulation", "description": "Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie, Turquie." },
-        { "label": "Assistance", "description": "" }
+        {
+          "label": "Garantie du conducteur",
+          "description": "vous protège aussi en cas d'accident responsable."
+        },
+        {
+          "label": "Extension de circulation",
+          "description": "Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie, Turquie."
+        },
+        {
+          "label": "Assistance",
+          "description": ""
+        }
       ],
       "whereCovered": "En France et dans 35 pays d'Europe et du pourtour méditerranéen. Avec l'extension, ajoutez le Maroc, la Tunisie, la Turquie et 4 autres pays.",
       "useCases": [
@@ -477,10 +527,22 @@
       ],
       "eligibility": "Tout conducteur d'au moins 21 ans, titulaire du permis depuis au moins 2 ans, répondant aux déclarations présentées lors de la souscription.",
       "faq": [
-        { "question": "Quel est le prix d'une assurance auto temporaire ?", "answer": "À partir de [PRIX_GRILLE] €/jour ; le tarif exact dépend de la durée et de la puissance fiscale, il s'affiche immédiatement dans notre tarificateur." },
-        { "question": "Puis-je aller au Maroc, en Tunisie ou en Turquie ?", "answer": "Oui, avec l'option extension de circulation (automobiles uniquement)." },
-        { "question": "Suis-je couvert dans les DOM-TOM ?", "answer": "Oui — les tarifs DOM-TOM diffèrent de la métropole et les options n'y sont pas disponibles." },
-        { "question": "Quels documents vais-je recevoir ?", "answer": "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance, par e-mail ou WhatsApp, après signature électronique." }
+        {
+          "question": "Quel est le prix d'une assurance auto temporaire ?",
+          "answer": "À partir de [PRIX_GRILLE] €/jour ; le tarif exact dépend de la durée et de la puissance fiscale, il s'affiche immédiatement dans notre tarificateur."
+        },
+        {
+          "question": "Puis-je aller au Maroc, en Tunisie ou en Turquie ?",
+          "answer": "Oui, avec l'option extension de circulation (automobiles uniquement)."
+        },
+        {
+          "question": "Suis-je couvert dans les DOM-TOM ?",
+          "answer": "Oui  les tarifs DOM-TOM diffèrent de la métropole et les options n'y sont pas disponibles."
+        },
+        {
+          "question": "Quels documents vais-je recevoir ?",
+          "answer": "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance, par e-mail ou WhatsApp, après signature électronique."
+        }
       ]
     },
     "poids-lourds": {
@@ -490,12 +552,27 @@
       "intro": "Camion porteur, tracteur routier, semi : assurez votre poids lourd pour un convoyage, un achat, un import ou une mission ponctuelle, aux durées prévues par notre grille. Attestation immédiate par e-mail ou WhatsApp.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
       "whereCovered": "En France et dans 35 pays. DOM-TOM : oui, avec des tarifs spécifiques.",
-      "useCases": ["Convoyage après achat ou vente", "plaque WW", "import / export", "sortie de fourrière", "attente entre deux contrats annuels"],
+      "useCases": [
+        "Convoyage après achat ou vente",
+        "plaque WW",
+        "import / export",
+        "sortie de fourrière",
+        "attente entre deux contrats annuels"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis, permis adapté au véhicule, déclarations conformes (voir souscription).",
       "faq": [
-        { "question": "Quelles durées ?", "answer": "Celles de notre grille (raccourcis 8 et 15 jours) — le tarificateur affiche toutes les durées disponibles avec leur prix." },
-        { "question": "Le conducteur doit-il être le souscripteur ?", "answer": "Non, mais il doit être déclaré et remplir les conditions d'éligibilité." },
-        { "question": "Documents reçus ?", "answer": "Contrat, attestation et carte internationale d'assurance, par e-mail ou WhatsApp." }
+        {
+          "question": "Quelles durées ?",
+          "answer": "Celles de notre grille (raccourcis 8 et 15 jours)  le tarificateur affiche toutes les durées disponibles avec leur prix."
+        },
+        {
+          "question": "Le conducteur doit-il être le souscripteur ?",
+          "answer": "Non, mais il doit être déclaré et remplir les conditions d'éligibilité."
+        },
+        {
+          "question": "Documents reçus ?",
+          "answer": "Contrat, attestation et carte internationale d'assurance, par e-mail ou WhatsApp."
+        }
       ]
     },
     "camping-cars": {
@@ -504,13 +581,29 @@
       "h1": "Assurance temporaire camping-car et fourgon aménagé",
       "intro": "Partez l'esprit tranquille : assurance temporaire camping-car de 1 à 90 jours, idéale pour un voyage ponctuel, un prêt, un achat ou un rapatriement. Le prix affiché correspond aux modèles de moins de 3,5 T ; il est ajusté selon le poids lors de la souscription.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
-      "whereCovered": "En France et dans 35 pays d'Europe — parfait pour un road-trip. DOM-TOM : oui, tarifs spécifiques.",
-      "useCases": ["Voyage ponctuel", "location ou prêt entre particuliers", "achat / vente", "rapatriement", "sortie d'hivernage", "contrôle technique"],
+      "whereCovered": "En France et dans 35 pays d'Europe  parfait pour un road-trip. DOM-TOM : oui, tarifs spécifiques.",
+      "useCases": [
+        "Voyage ponctuel",
+        "location ou prêt entre particuliers",
+        "achat / vente",
+        "rapatriement",
+        "sortie d'hivernage",
+        "contrôle technique"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans avec 2 ans de permis.",
       "faq": [
-        { "question": "Mon fourgon aménagé est-il accepté ?", "answer": "Oui, les fourgons aménagés sont assurés comme les camping-cars." },
-        { "question": "Mon camping-car dépasse 3,5 T ?", "answer": "Il est assurable : le tarif est ajusté selon le poids à la souscription." },
-        { "question": "Qui peut souscrire ?", "answer": "Conducteur d'au moins 21 ans avec 2 ans de permis." }
+        {
+          "question": "Mon fourgon aménagé est-il accepté ?",
+          "answer": "Oui, les fourgons aménagés sont assurés comme les camping-cars."
+        },
+        {
+          "question": "Mon camping-car dépasse 3,5 T ?",
+          "answer": "Il est assurable : le tarif est ajusté selon le poids à la souscription."
+        },
+        {
+          "question": "Qui peut souscrire ?",
+          "answer": "Conducteur d'au moins 21 ans avec 2 ans de permis."
+        }
       ]
     },
     "quadricycles": {
@@ -520,12 +613,27 @@
       "intro": "Quad homologué, voiturette sans permis ou buggy : assurez votre quadricycle pour la durée dont vous avez vraiment besoin. Le prix d'appel affiché correspond au sous-type le moins cher ; le tarif exact s'ajuste selon votre véhicule à la souscription.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
       "whereCovered": "En France et dans 35 pays. DOM-TOM : oui, tarifs spécifiques.",
-      "useCases": ["Achat / vente", "saison estivale", "sortie de fourrière", "véhicule de loisir utilisé quelques semaines par an", "contrôle technique"],
+      "useCases": [
+        "Achat / vente",
+        "saison estivale",
+        "sortie de fourrière",
+        "véhicule de loisir utilisé quelques semaines par an",
+        "contrôle technique"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis.",
       "faq": [
-        { "question": "Quel permis pour une voiturette sans permis ?", "answer": "Dès 14 ans le permis AM (ex-BSR) suffit pour conduire — mais pour souscrire chez nous, le conducteur doit avoir 21 ans et 2 ans de permis." },
-        { "question": "Mon quad n'est pas homologué route ?", "answer": "Il n'est pas assurable pour circuler sur la voie publique." },
-        { "question": "Quelles durées ?", "answer": "Celles de la grille — raccourcis 10, 15, 20 et 30 jours." }
+        {
+          "question": "Quel permis pour une voiturette sans permis ?",
+          "answer": "Dès 14 ans le permis AM (ex-BSR) suffit pour conduire  mais pour souscrire chez nous, le conducteur doit avoir 21 ans et 2 ans de permis."
+        },
+        {
+          "question": "Mon quad n'est pas homologué route ?",
+          "answer": "Il n'est pas assurable pour circuler sur la voie publique."
+        },
+        {
+          "question": "Quelles durées ?",
+          "answer": "Celles de la grille  raccourcis 10, 15, 20 et 30 jours."
+        }
       ]
     },
     "bus-autocars": {
@@ -535,11 +643,22 @@
       "intro": "Assurez un bus ou un autocar pour un convoyage, un achat, une vente ou un transfert de véhicule. Souscription 100 % en ligne, attestation immédiate par e-mail ou WhatsApp.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
       "whereCovered": "En France et dans 35 pays. DOM-TOM : oui, tarifs spécifiques.",
-      "useCases": ["Convoyage après achat ou vente aux enchères", "import / export", "repositionnement de flotte", "sortie de fourrière"],
+      "useCases": [
+        "Convoyage après achat ou vente aux enchères",
+        "import / export",
+        "repositionnement de flotte",
+        "sortie de fourrière"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis, déclarations conformes.",
       "faq": [
-        { "question": "Quelles durées ?", "answer": "Celles de la grille (raccourcis 8 et 15 jours)." },
-        { "question": "Le transport de passagers est-il couvert ?", "answer": "La garantie couvre la responsabilité civile du véhicule ; pour un usage commercial avec passagers, contactez-nous avant de souscrire : +33 6 05 93 84 79." }
+        {
+          "question": "Quelles durées ?",
+          "answer": "Celles de la grille (raccourcis 8 et 15 jours)."
+        },
+        {
+          "question": "Le transport de passagers est-il couvert ?",
+          "answer": "La garantie couvre la responsabilité civile du véhicule ; pour un usage commercial avec passagers, contactez-nous avant de souscrire : +33 6 05 93 84 79."
+        }
       ]
     },
     "tracteurs-agricoles": {
@@ -549,42 +668,77 @@
       "intro": "Moissons, convoyage, achat ou vente : assurez votre tracteur ou engin agricole pour quelques jours, sans engagement annuel. Souscription en ligne, attestation par e-mail ou WhatsApp.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
       "whereCovered": "En France et dans 35 pays. DOM-TOM : oui, tarifs spécifiques.",
-      "useCases": ["Période de moissons ou de récolte", "convoyage après achat / vente", "prêt entre exploitants", "déplacement exceptionnel sur route"],
+      "useCases": [
+        "Période de moissons ou de récolte",
+        "convoyage après achat / vente",
+        "prêt entre exploitants",
+        "déplacement exceptionnel sur route"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis.",
       "faq": [
-        { "question": "Quelles durées ?", "answer": "Celles de la grille (raccourcis 8 et 15 jours)." },
-        { "question": "Un tracteur ancien / de collection est-il accepté ?", "answer": "Oui s'il est immatriculé." }
+        {
+          "question": "Quelles durées ?",
+          "answer": "Celles de la grille (raccourcis 8 et 15 jours)."
+        },
+        {
+          "question": "Un tracteur ancien / de collection est-il accepté ?",
+          "answer": "Oui s'il est immatriculé."
+        }
       ]
     },
     "remorques": {
       "title": "Assurance temporaire remorque, semi-remorque, caravane | TempAssur",
       "metaDescription": "Remorque, semi-remorque ou caravane : assurance temporaire obligatoire au-delà de 750 kg. Souscription en ligne immédiate.",
       "h1": "Assurance temporaire remorques, semi-remorques et caravanes",
-      "intro": "Remorque légère ou lourde, semi-remorque, caravane : au-delà de 750 kg de PTAC, une assurance responsabilité civile dédiée est obligatoire — celle du véhicule tracteur ne suffit plus. Assurez la vôtre pour un convoyage, un achat ou un déplacement ponctuel.",
+      "intro": "Remorque légère ou lourde, semi-remorque, caravane : au-delà de 750 kg de PTAC, une assurance responsabilité civile dédiée est obligatoire  celle du véhicule tracteur ne suffit plus. Assurez la vôtre pour un convoyage, un achat ou un déplacement ponctuel.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident.",
       "whereCovered": "En France et dans 35 pays. DOM-TOM : oui, tarifs spécifiques.",
-      "useCases": ["Achat / vente", "déménagement", "départ en vacances avec une caravane", "transport ponctuel de matériel", "import / export"],
+      "useCases": [
+        "Achat / vente",
+        "déménagement",
+        "départ en vacances avec une caravane",
+        "transport ponctuel de matériel",
+        "import / export"
+      ],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis.",
       "faq": [
-        { "question": "Ma remorque fait moins de 750 kg ?", "answer": "Elle est en principe couverte par l'assurance du véhicule tracteur — vérifiez votre contrat." },
-        { "question": "Quelles durées ?", "answer": "Celles de la grille (raccourcis 8 et 15 jours)." }
+        {
+          "question": "Ma remorque fait moins de 750 kg ?",
+          "answer": "Elle est en principe couverte par l'assurance du véhicule tracteur  vérifiez votre contrat."
+        },
+        {
+          "question": "Quelles durées ?",
+          "answer": "Celles de la grille (raccourcis 8 et 15 jours)."
+        }
       ]
     },
     "assurance-frontiere": {
       "title": "Assurance frontière : circuler en France et en Europe avec un véhicule étranger | TempAssur",
       "metaDescription": "Véhicule immatriculé hors UE ou à l'étranger ? L'assurance frontière vous couvre en France et dans 35 pays. 30 ou 90 jours, attestation immédiate.",
-      "h1": "Assurance frontière — pour circuler en France et en Europe",
-      "intro": "Votre véhicule est immatriculé hors Union européenne et hors système carte verte — ou immatriculé à l'étranger et doit circuler en France ? L'assurance frontière est la solution légale et obligatoire pour prendre la route. Et chez TempAssur, elle ne couvre pas que la France : vous êtes couvert dans 35 pays, la même liste que nos assurances temporaires. Disponible en 30 ou 90 jours — attestation par e-mail ou WhatsApp.",
+      "h1": "Assurance frontière  pour circuler en France et en Europe",
+      "intro": "Votre véhicule est immatriculé hors Union européenne et hors système carte verte  ou immatriculé à l'étranger et doit circuler en France ? L'assurance frontière est la solution légale et obligatoire pour prendre la route. Et chez TempAssur, elle ne couvre pas que la France : vous êtes couvert dans 35 pays, la même liste que nos assurances temporaires. Disponible en 30 ou 90 jours  attestation par e-mail ou WhatsApp.",
       "vehiclesParagraph": "Aux voyageurs qui viennent en Europe avec leur véhicule (Maghreb, Balkans hors carte verte, Moyen-Orient, Amériques…), aux Français de l'étranger de retour temporaire avec un véhicule immatriculé hors UE, et aux véhicules en transit ou en cours d'importation.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident. Vous recevez une carte internationale d'assurance valable dans les 35 pays couverts.",
-      "whereCovered": "Dans 35 pays, pas seulement en France — c'est l'un des grands avantages de notre contrat frontière.",
+      "whereCovered": "Dans 35 pays, pas seulement en France  c'est l'un des grands avantages de notre contrat frontière.",
       "useCases": [],
       "eligibility": "Conducteur d'au moins 21 ans, 2 ans de permis.",
       "faq": [
-        { "question": "Suis-je couvert seulement en France ?", "answer": "Non : votre assurance frontière TempAssur vous couvre dans les 35 pays de la liste commune (Allemagne, Espagne, Italie, Suisse…)." },
-        { "question": "Quels documents fournir ?", "answer": "La pièce d'identité ou le passeport du conducteur, son permis, et le certificat d'immatriculation du véhicule." },
-        { "question": "Puis-je souscrire avant d'arriver en France ?", "answer": "Oui, 100 % en ligne, avec une date d'effet différée : vos documents vous attendent dans votre boîte mail ou sur WhatsApp." },
-        { "question": "Quelles durées ?", "answer": "30 ou 90 jours (30 jours est la formule la plus choisie)." }
+        {
+          "question": "Suis-je couvert seulement en France ?",
+          "answer": "Non : votre assurance frontière TempAssur vous couvre dans les 35 pays de la liste commune (Allemagne, Espagne, Italie, Suisse…)."
+        },
+        {
+          "question": "Quels documents fournir ?",
+          "answer": "La pièce d'identité ou le passeport du conducteur, son permis, et le certificat d'immatriculation du véhicule."
+        },
+        {
+          "question": "Puis-je souscrire avant d'arriver en France ?",
+          "answer": "Oui, 100 % en ligne, avec une date d'effet différée : vos documents vous attendent dans votre boîte mail ou sur WhatsApp."
+        },
+        {
+          "question": "Quelles durées ?",
+          "answer": "30 ou 90 jours (30 jours est la formule la plus choisie)."
+        }
       ]
     }
   },
@@ -605,155 +759,383 @@
         "title": "Assurance temporaire pour remorque, semi-remorque ou caravane",
         "metaDescription": "Remorque, semi-remorque ou caravane à assurer pour quelques jours ? La solution temporaire TempAssur, sans engagement annuel.",
         "body": [
-          { "type": "p", "text": "Déménagement, prêt entre particuliers, départ en vacances avec une caravane ou convoyage avant une vente : ces usages ponctuels ne justifient pas toujours un contrat annuel. Au-delà de 750 kg de PTAC, une remorque ou une caravane doit disposer de sa propre responsabilité civile — celle du véhicule tracteur ne suffit plus." },
-          { "type": "h2", "text": "Ce que couvre le contrat" },
-          { "type": "p", "text": "Le contrat temporaire remorque comprend la responsabilité civile obligatoire et la défense pénale et recours suite à accident. Aucune option n'est proposée pour cette catégorie." },
-          { "type": "h2", "text": "Quelle durée choisir ?" },
-          { "type": "p", "text": "La grille propose des durées de 1 à 15 jours, avec deux raccourcis pratiques : 8 et 15 jours. Le tarificateur affiche toutes les durées disponibles avec leur prix." },
-          { "type": "p", "text": "La souscription se fait entièrement en ligne, et l'attestation part par e-mail ou WhatsApp dès la signature électronique du contrat." }
+          {
+            "type": "p",
+            "text": "Déménagement, prêt entre particuliers, départ en vacances avec une caravane ou convoyage avant une vente : ces usages ponctuels ne justifient pas toujours un contrat annuel. Au-delà de 750 kg de PTAC, une remorque ou une caravane doit disposer de sa propre responsabilité civile  celle du véhicule tracteur ne suffit plus."
+          },
+          {
+            "type": "h2",
+            "text": "Ce que couvre le contrat"
+          },
+          {
+            "type": "p",
+            "text": "Le contrat temporaire remorque comprend la responsabilité civile obligatoire et la défense pénale et recours suite à accident. Aucune option n'est proposée pour cette catégorie."
+          },
+          {
+            "type": "h2",
+            "text": "Quelle durée choisir ?"
+          },
+          {
+            "type": "p",
+            "text": "La grille propose des durées de 1 à 15 jours, avec deux raccourcis pratiques : 8 et 15 jours. Le tarificateur affiche toutes les durées disponibles avec leur prix."
+          },
+          {
+            "type": "p",
+            "text": "La souscription se fait entièrement en ligne, et l'attestation part par e-mail ou WhatsApp dès la signature électronique du contrat."
+          }
         ]
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "Peut-on assurer temporairement un véhicule avec des plaques WW ?",
         "metaDescription": "Certificat provisoire d'immatriculation (plaque WW) : comment l'assurer temporairement avec TempAssur.",
         "body": [
-          { "type": "p", "text": "Un véhicule tout juste acheté ou importé circule souvent, pendant quelques semaines, sous un certificat provisoire d'immatriculation (CPI), reconnaissable à sa plaque « WW ». En attendant la carte grise définitive, ce véhicule doit malgré tout être assuré dès qu'il prend la route." },
-          { "type": "h2", "text": "Un véhicule en WW s'assure comme les autres" },
-          { "type": "p", "text": "TempAssur assure les véhicules en plaque WW aux mêmes conditions qu'un véhicule avec une immatriculation définitive : responsabilité civile, souscription en ligne, attestation immédiate. Un seul point de vigilance : la durée de la garantie ne peut pas dépasser la date de fin de validité du CPI. Si le certificat expire dans 10 jours, la durée maximale assurable est de 10 jours." },
-          { "type": "h2", "text": "Comment souscrire" },
-          { "type": "p", "text": "Choisissez la catégorie de votre véhicule dans le tarificateur, indiquez sa date de mise en circulation et ses informations, puis réglez en ligne : l'attestation arrive par e-mail ou WhatsApp, quelques minutes après signature électronique." }
+          {
+            "type": "p",
+            "text": "Un véhicule tout juste acheté ou importé circule souvent, pendant quelques semaines, sous un certificat provisoire d'immatriculation (CPI), reconnaissable à sa plaque « WW ». En attendant la carte grise définitive, ce véhicule doit malgré tout être assuré dès qu'il prend la route."
+          },
+          {
+            "type": "h2",
+            "text": "Un véhicule en WW s'assure comme les autres"
+          },
+          {
+            "type": "p",
+            "text": "TempAssur assure les véhicules en plaque WW aux mêmes conditions qu'un véhicule avec une immatriculation définitive : responsabilité civile, souscription en ligne, attestation immédiate. Un seul point de vigilance : la durée de la garantie ne peut pas dépasser la date de fin de validité du CPI. Si le certificat expire dans 10 jours, la durée maximale assurable est de 10 jours."
+          },
+          {
+            "type": "h2",
+            "text": "Comment souscrire"
+          },
+          {
+            "type": "p",
+            "text": "Choisissez la catégorie de votre véhicule dans le tarificateur, indiquez sa date de mise en circulation et ses informations, puis réglez en ligne : l'attestation arrive par e-mail ou WhatsApp, quelques minutes après signature électronique."
+          }
         ]
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Suppression de la vignette verte : ce qui change pour l'assurance temporaire",
         "metaDescription": "Depuis avril 2024, la vignette verte a disparu : comment prouver votre assurance temporaire lors d'un contrôle ?",
         "body": [
-          { "type": "p", "text": "Depuis le 1er avril 2024, l'apposition de la vignette verte sur le pare-brise n'est plus obligatoire : les forces de l'ordre vérifient désormais l'assurance d'un véhicule directement via le Fichier des Véhicules Assurés (FVA)." },
-          { "type": "h2", "text": "Ce qui remplace la carte verte" },
-          { "type": "p", "text": "Pour un contrat temporaire, l'attestation numérique envoyée par e-mail ou WhatsApp après la souscription joue ce rôle : elle indique la période de validité, le véhicule assuré et l'assureur, et peut être présentée imprimée ou sur smartphone en cas de contrôle." },
-          { "type": "h2", "text": "Ce qui ne change pas" },
-          { "type": "p", "text": "La durée de la garantie temporaire reste de 1 à 90 jours, et la responsabilité civile demeure obligatoire dès le premier kilomètre. Gardez à bord une pièce d'identité, le certificat d'immatriculation et votre attestation d'assurance." }
+          {
+            "type": "p",
+            "text": "Depuis le 1er avril 2024, l'apposition de la vignette verte sur le pare-brise n'est plus obligatoire : les forces de l'ordre vérifient désormais l'assurance d'un véhicule directement via le Fichier des Véhicules Assurés (FVA)."
+          },
+          {
+            "type": "h2",
+            "text": "Ce qui remplace la carte verte"
+          },
+          {
+            "type": "p",
+            "text": "Pour un contrat temporaire, l'attestation numérique envoyée par e-mail ou WhatsApp après la souscription joue ce rôle : elle indique la période de validité, le véhicule assuré et l'assureur, et peut être présentée imprimée ou sur smartphone en cas de contrôle."
+          },
+          {
+            "type": "h2",
+            "text": "Ce qui ne change pas"
+          },
+          {
+            "type": "p",
+            "text": "La durée de la garantie temporaire reste de 1 à 90 jours, et la responsabilité civile demeure obligatoire dès le premier kilomètre. Gardez à bord une pièce d'identité, le certificat d'immatriculation et votre attestation d'assurance."
+          }
         ]
       },
       "garanties-assurance-auto-provisoire": {
         "title": "Quelles garanties inclut une assurance auto temporaire ?",
         "metaDescription": "Responsabilité civile, défense pénale et recours, options automobile : le détail des garanties TempAssur.",
         "body": [
-          { "type": "p", "text": "Une assurance temporaire n'est pas une version allégée d'un contrat classique : elle doit couvrir les mêmes obligations légales, pour une durée choisie de 1 à 90 jours." },
-          { "type": "h2", "text": "La responsabilité civile, garantie obligatoire" },
-          { "type": "p", "text": "Elle couvre les dommages matériels et corporels causés à un tiers en cas d'accident responsable. Rouler sans cette garantie expose à une amende pouvant atteindre 3 750 €, à une suspension de permis et à l'immobilisation du véhicule." },
-          { "type": "h2", "text": "La défense pénale et recours" },
-          { "type": "p", "text": "Incluse dans tous nos contrats, elle prend en charge votre défense en cas de poursuite liée à un accident, et permet d'engager un recours contre le tiers responsable." },
-          { "type": "h2", "text": "Les options, réservées à l'automobile" },
-          { "type": "p", "text": "Pour la catégorie automobile uniquement, trois options existent, dont le prix dépend de la durée choisie : la garantie du conducteur, l'assistance, et l'extension de circulation vers 7 pays supplémentaires (Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie, Turquie). Elles ne sont pas disponibles dans les DOM-TOM. Les autres catégories de véhicules (poids lourd, camping-car, quadricycle, bus, tracteur agricole, remorque, assurance frontière) ne comportent pas d'options : seules la responsabilité civile et la défense pénale et recours sont proposées, conformément à la grille tarifaire." }
+          {
+            "type": "p",
+            "text": "Une assurance temporaire n'est pas une version allégée d'un contrat classique : elle doit couvrir les mêmes obligations légales, pour une durée choisie de 1 à 90 jours."
+          },
+          {
+            "type": "h2",
+            "text": "La responsabilité civile, garantie obligatoire"
+          },
+          {
+            "type": "p",
+            "text": "Elle couvre les dommages matériels et corporels causés à un tiers en cas d'accident responsable. Rouler sans cette garantie expose à une amende pouvant atteindre 3 750 €, à une suspension de permis et à l'immobilisation du véhicule."
+          },
+          {
+            "type": "h2",
+            "text": "La défense pénale et recours"
+          },
+          {
+            "type": "p",
+            "text": "Incluse dans tous nos contrats, elle prend en charge votre défense en cas de poursuite liée à un accident, et permet d'engager un recours contre le tiers responsable."
+          },
+          {
+            "type": "h2",
+            "text": "Les options, réservées à l'automobile"
+          },
+          {
+            "type": "p",
+            "text": "Pour la catégorie automobile uniquement, trois options existent, dont le prix dépend de la durée choisie : la garantie du conducteur, l'assistance, et l'extension de circulation vers 7 pays supplémentaires (Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie, Turquie). Elles ne sont pas disponibles dans les DOM-TOM. Les autres catégories de véhicules (poids lourd, camping-car, quadricycle, bus, tracteur agricole, remorque, assurance frontière) ne comportent pas d'options : seules la responsabilité civile et la défense pénale et recours sont proposées, conformément à la grille tarifaire."
+          }
         ]
       },
       "assurance-frontiere-temporaire-auto": {
         "title": "Qu'est-ce que l'assurance frontière ?",
         "metaDescription": "Véhicule immatriculé hors UE ou carte verte absente ? L'assurance frontière TempAssur couvre 35 pays, pas seulement la France.",
         "body": [
-          { "type": "p", "text": "Un véhicule immatriculé hors Union européenne et hors système carte verte ne peut pas circuler légalement en France sans une couverture spécifique : c'est le rôle de l'assurance frontière." },
-          { "type": "h2", "text": "Une couverture qui dépasse la France" },
-          { "type": "p", "text": "Chez TempAssur, l'assurance frontière ne se limite pas au territoire français : elle couvre les mêmes 35 pays d'Europe et du pourtour méditerranéen que nos assurances temporaires classiques. Elle est disponible en 30 ou 90 jours, et inclut la responsabilité civile ainsi que la défense pénale et recours." },
-          { "type": "h2", "text": "Qui est concerné ?" },
-          { "type": "p", "text": "Les voyageurs venant en Europe avec leur véhicule, les Français de l'étranger de retour temporaire avec un véhicule immatriculé hors UE, et les véhicules en transit ou en cours d'importation." },
-          { "type": "p", "text": "La souscription se fait 100 % en ligne, y compris avant votre arrivée en France, avec une date d'effet différée si besoin." }
+          {
+            "type": "p",
+            "text": "Un véhicule immatriculé hors Union européenne et hors système carte verte ne peut pas circuler légalement en France sans une couverture spécifique : c'est le rôle de l'assurance frontière."
+          },
+          {
+            "type": "h2",
+            "text": "Une couverture qui dépasse la France"
+          },
+          {
+            "type": "p",
+            "text": "Chez TempAssur, l'assurance frontière ne se limite pas au territoire français : elle couvre les mêmes 35 pays d'Europe et du pourtour méditerranéen que nos assurances temporaires classiques. Elle est disponible en 30 ou 90 jours, et inclut la responsabilité civile ainsi que la défense pénale et recours."
+          },
+          {
+            "type": "h2",
+            "text": "Qui est concerné ?"
+          },
+          {
+            "type": "p",
+            "text": "Les voyageurs venant en Europe avec leur véhicule, les Français de l'étranger de retour temporaire avec un véhicule immatriculé hors UE, et les véhicules en transit ou en cours d'importation."
+          },
+          {
+            "type": "p",
+            "text": "La souscription se fait 100 % en ligne, y compris avant votre arrivée en France, avec une date d'effet différée si besoin."
+          }
         ]
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Rouler au Maroc, en Tunisie ou en Turquie avec une assurance temporaire : l'option extension de pays",
         "metaDescription": "Assurance temporaire maroc, assurance auto tunisie, carte verte turquie : comment souscrire l'option extension de circulation avec TempAssur.",
         "body": [
-          { "type": "p", "text": "Vous partez au Maghreb ou en Turquie avec votre voiture ? Depuis la France, votre assurance temporaire standard couvre 35 pays européens — mais pas le Maroc, la Tunisie ni la Turquie. La solution : l'option extension de circulation, disponible chez TempAssur pour les automobiles de moins de 3,5 tonnes." },
-          { "type": "h2", "text": "Ce que couvre l'extension" },
-          { "type": "p", "text": "En plus des 35 pays de base, l'extension ouvre la circulation dans 7 pays : Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie et Turquie. Vous recevez une carte internationale d'assurance mentionnant ces pays — c'est elle qui fait foi au passage de la frontière et lors des contrôles." },
-          { "type": "h2", "text": "Attention : l'Algérie n'est pas couverte" },
-          { "type": "p", "text": "Aucune de nos formules, avec ou sans extension, ne couvre l'Algérie. Pour y circuler, une assurance locale doit être souscrite à la frontière algérienne. De même, la Biélorussie, l'Iran, la Russie et l'Ukraine ne sont jamais couverts." },
-          { "type": "h2", "text": "Comment souscrire" },
-          { "type": "p", "text": "Choisissez « Automobile » dans notre tarificateur, votre durée (1 à 90 jours), puis cochez l'option « Extension de pays » : le prix s'ajuste selon la durée choisie. Vous recevez votre attestation et votre carte internationale par e-mail ou WhatsApp en quelques minutes — pratique quand on prépare un embarquement à Sète, Marseille ou Gênes." },
-          { "type": "h2", "text": "Bon à savoir" },
-          { "type": "p", "text": "L'extension concerne uniquement les automobiles : pour un poids lourd ou un camping-car, contactez-nous au +33 6 05 93 84 79 (WhatsApp), nous étudierons une solution personnalisée." }
+          {
+            "type": "p",
+            "text": "Vous partez au Maghreb ou en Turquie avec votre voiture ? Depuis la France, votre assurance temporaire standard couvre 35 pays européens  mais pas le Maroc, la Tunisie ni la Turquie. La solution : l'option extension de circulation, disponible chez TempAssur pour les automobiles de moins de 3,5 tonnes."
+          },
+          {
+            "type": "h2",
+            "text": "Ce que couvre l'extension"
+          },
+          {
+            "type": "p",
+            "text": "En plus des 35 pays de base, l'extension ouvre la circulation dans 7 pays : Albanie, Azerbaïdjan, Macédoine du Nord, Maroc, Moldavie, Tunisie et Turquie. Vous recevez une carte internationale d'assurance mentionnant ces pays  c'est elle qui fait foi au passage de la frontière et lors des contrôles."
+          },
+          {
+            "type": "h2",
+            "text": "Attention : l'Algérie n'est pas couverte"
+          },
+          {
+            "type": "p",
+            "text": "Aucune de nos formules, avec ou sans extension, ne couvre l'Algérie. Pour y circuler, une assurance locale doit être souscrite à la frontière algérienne. De même, la Biélorussie, l'Iran, la Russie et l'Ukraine ne sont jamais couverts."
+          },
+          {
+            "type": "h2",
+            "text": "Comment souscrire"
+          },
+          {
+            "type": "p",
+            "text": "Choisissez « Automobile » dans notre tarificateur, votre durée (1 à 90 jours), puis cochez l'option « Extension de pays » : le prix s'ajuste selon la durée choisie. Vous recevez votre attestation et votre carte internationale par e-mail ou WhatsApp en quelques minutes  pratique quand on prépare un embarquement à Sète, Marseille ou Gênes."
+          },
+          {
+            "type": "h2",
+            "text": "Bon à savoir"
+          },
+          {
+            "type": "p",
+            "text": "L'extension concerne uniquement les automobiles : pour un poids lourd ou un camping-car, contactez-nous au +33 6 05 93 84 79 (WhatsApp), nous étudierons une solution personnalisée."
+          }
         ]
       },
       "assurance-temporaire-pour-tracteur-agricole": {
         "title": "Assurance temporaire pour tracteur agricole",
         "metaDescription": "Moissons, convoyage, achat ou vente : assurance temporaire tracteur agricole en ligne avec TempAssur.",
         "body": [
-          { "type": "p", "text": "Un tracteur ou un engin agricole n'a pas toujours besoin d'être assuré à l'année : période de moissons, convoyage après achat ou vente, prêt entre exploitants, ou déplacement exceptionnel sur route sont autant de situations où une couverture ponctuelle suffit." },
-          { "type": "h2", "text": "Une couverture simple" },
-          { "type": "p", "text": "Le contrat temporaire tracteur agricole comprend la responsabilité civile obligatoire et la défense pénale et recours suite à accident, sans option supplémentaire. Les durées disponibles vont jusqu'à 15 jours, avec deux raccourcis pratiques : 8 et 15 jours." },
-          { "type": "p", "text": "La souscription se fait en ligne, sans déplacement : renseignez le véhicule et le conducteur, réglez en ligne, et recevez votre attestation par e-mail ou WhatsApp." }
+          {
+            "type": "p",
+            "text": "Un tracteur ou un engin agricole n'a pas toujours besoin d'être assuré à l'année : période de moissons, convoyage après achat ou vente, prêt entre exploitants, ou déplacement exceptionnel sur route sont autant de situations où une couverture ponctuelle suffit."
+          },
+          {
+            "type": "h2",
+            "text": "Une couverture simple"
+          },
+          {
+            "type": "p",
+            "text": "Le contrat temporaire tracteur agricole comprend la responsabilité civile obligatoire et la défense pénale et recours suite à accident, sans option supplémentaire. Les durées disponibles vont jusqu'à 15 jours, avec deux raccourcis pratiques : 8 et 15 jours."
+          },
+          {
+            "type": "p",
+            "text": "La souscription se fait en ligne, sans déplacement : renseignez le véhicule et le conducteur, réglez en ligne, et recevez votre attestation par e-mail ou WhatsApp."
+          }
         ]
       },
       "assurance-provisoire-automobile": {
         "title": "Assurance temporaire automobile pour les professionnels",
         "metaDescription": "Transporteurs, artisans, importateurs : l'assurance temporaire automobile TempAssur pour vos besoins ponctuels.",
         "body": [
-          { "type": "p", "text": "Un véhicule en transit, une opération d'import-export, une mission exceptionnelle ou une période d'attente avant un contrat annuel : les professionnels ont, eux aussi, régulièrement besoin d'une couverture ponctuelle plutôt que d'un engagement à l'année." },
-          { "type": "h2", "text": "Une solution adaptée à l'activité pro" },
-          { "type": "p", "text": "Transporteurs, artisans, commerçants, indépendants ou importateurs de véhicules peuvent souscrire une assurance temporaire pour un véhicule de tourisme, un utilitaire ou un poids lourd, de 1 à 90 jours, avec les mêmes garanties que pour un particulier : responsabilité civile et défense pénale et recours, plus les options automobile si besoin." },
-          { "type": "p", "text": "La souscription reste 100 % en ligne, avec une attestation reçue immédiatement après paiement et signature électronique." }
+          {
+            "type": "p",
+            "text": "Un véhicule en transit, une opération d'import-export, une mission exceptionnelle ou une période d'attente avant un contrat annuel : les professionnels ont, eux aussi, régulièrement besoin d'une couverture ponctuelle plutôt que d'un engagement à l'année."
+          },
+          {
+            "type": "h2",
+            "text": "Une solution adaptée à l'activité pro"
+          },
+          {
+            "type": "p",
+            "text": "Transporteurs, artisans, commerçants, indépendants ou importateurs de véhicules peuvent souscrire une assurance temporaire pour un véhicule de tourisme, un utilitaire ou un poids lourd, de 1 à 90 jours, avec les mêmes garanties que pour un particulier : responsabilité civile et défense pénale et recours, plus les options automobile si besoin."
+          },
+          {
+            "type": "p",
+            "text": "La souscription reste 100 % en ligne, avec une attestation reçue immédiatement après paiement et signature électronique."
+          }
         ]
       },
       "assurance-automobile-temporaire": {
         "title": "5 situations où l'assurance auto temporaire fait la différence",
         "metaDescription": "Achat/vente, usage ponctuel, véhicule en transit : les situations où l'assurance temporaire s'impose.",
         "body": [
-          { "type": "h2", "text": "Un achat ou une vente de véhicule" },
-          { "type": "p", "text": "Déplacer un véhicule pour un essai, une formalité administrative ou une livraison, sans carte grise définitive : l'assurance temporaire permet de circuler immédiatement après l'achat, sans souscrire un contrat annuel inutile si le véhicule doit être revendu rapidement." },
-          { "type": "h2", "text": "Un usage occasionnel" },
-          { "type": "p", "text": "Un véhicule secondaire utilisé seulement quelques semaines par an — camping-car, remorque ou voiture de collection — coûte moins cher à assurer à la durée réelle d'utilisation qu'à l'année." },
-          { "type": "h2", "text": "Une location entre particuliers" },
-          { "type": "p", "text": "Quand un véhicule est loué en dehors d'une grande agence, la couverture d'assurance n'est pas toujours incluse : une assurance temporaire comble ce vide en quelques minutes." },
-          { "type": "h2", "text": "Un véhicule en transit" },
-          { "type": "p", "text": "Importation depuis l'étranger, changement de carte grise en cours : le temps de régulariser la situation administrative, le véhicule doit rester assuré." },
-          { "type": "h2", "text": "Une situation particulière" },
-          { "type": "p", "text": "Un conducteur en recherche d'un nouvel assureur peut avoir besoin d'une solution ponctuelle. Chez TempAssur, l'éligibilité reste conditionnée aux déclarations présentées lors de la souscription — en cas de doute sur votre situation, contactez-nous avant de souscrire." }
+          {
+            "type": "h2",
+            "text": "Un achat ou une vente de véhicule"
+          },
+          {
+            "type": "p",
+            "text": "Déplacer un véhicule pour un essai, une formalité administrative ou une livraison, sans carte grise définitive : l'assurance temporaire permet de circuler immédiatement après l'achat, sans souscrire un contrat annuel inutile si le véhicule doit être revendu rapidement."
+          },
+          {
+            "type": "h2",
+            "text": "Un usage occasionnel"
+          },
+          {
+            "type": "p",
+            "text": "Un véhicule secondaire utilisé seulement quelques semaines par an  camping-car, remorque ou voiture de collection  coûte moins cher à assurer à la durée réelle d'utilisation qu'à l'année."
+          },
+          {
+            "type": "h2",
+            "text": "Une location entre particuliers"
+          },
+          {
+            "type": "p",
+            "text": "Quand un véhicule est loué en dehors d'une grande agence, la couverture d'assurance n'est pas toujours incluse : une assurance temporaire comble ce vide en quelques minutes."
+          },
+          {
+            "type": "h2",
+            "text": "Un véhicule en transit"
+          },
+          {
+            "type": "p",
+            "text": "Importation depuis l'étranger, changement de carte grise en cours : le temps de régulariser la situation administrative, le véhicule doit rester assuré."
+          },
+          {
+            "type": "h2",
+            "text": "Une situation particulière"
+          },
+          {
+            "type": "p",
+            "text": "Un conducteur en recherche d'un nouvel assureur peut avoir besoin d'une solution ponctuelle. Chez TempAssur, l'éligibilité reste conditionnée aux déclarations présentées lors de la souscription  en cas de doute sur votre situation, contactez-nous avant de souscrire."
+          }
         ]
       },
       "assurance-temporaire-vs-annuelle": {
         "title": "Assurance temporaire ou annuelle : comment choisir ?",
         "metaDescription": "Assurance temporaire ou assurance annuelle : quelles différences, et laquelle choisir selon votre usage ?",
         "body": [
-          { "type": "p", "text": "Les deux formules répondent à des besoins différents : l'une couvre un usage ponctuel de quelques jours, l'autre un usage régulier tout au long de l'année." },
-          { "type": "h2", "text": "L'assurance temporaire : payer pour l'usage réel" },
-          { "type": "p", "text": "De 1 à 90 jours, sans engagement, souscrite en ligne en quelques minutes : elle convient à un véhicule utilisé occasionnellement, à un besoin transitoire (import/export, vacances) ou à une attente avant un contrat annuel." },
-          { "type": "h2", "text": "L'assurance annuelle : pour un usage quotidien" },
-          { "type": "p", "text": "Avec un engagement de 12 mois et davantage de garanties disponibles, elle reste plus adaptée à un véhicule utilisé toute l'année." },
-          { "type": "p", "text": "Pour un usage occasionnel ou une situation temporaire, l'assurance auto temporaire — rapide à souscrire et sans engagement — reste la solution la plus économique." }
+          {
+            "type": "p",
+            "text": "Les deux formules répondent à des besoins différents : l'une couvre un usage ponctuel de quelques jours, l'autre un usage régulier tout au long de l'année."
+          },
+          {
+            "type": "h2",
+            "text": "L'assurance temporaire : payer pour l'usage réel"
+          },
+          {
+            "type": "p",
+            "text": "De 1 à 90 jours, sans engagement, souscrite en ligne en quelques minutes : elle convient à un véhicule utilisé occasionnellement, à un besoin transitoire (import/export, vacances) ou à une attente avant un contrat annuel."
+          },
+          {
+            "type": "h2",
+            "text": "L'assurance annuelle : pour un usage quotidien"
+          },
+          {
+            "type": "p",
+            "text": "Avec un engagement de 12 mois et davantage de garanties disponibles, elle reste plus adaptée à un véhicule utilisé toute l'année."
+          },
+          {
+            "type": "p",
+            "text": "Pour un usage occasionnel ou une situation temporaire, l'assurance auto temporaire  rapide à souscrire et sans engagement  reste la solution la plus économique."
+          }
         ]
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Voiture achetée le week-end : comment repartir assuré le jour même",
         "metaDescription": "Assurance auto immédiate, assurer voiture jour même, assurance achat voiture : la solution TempAssur.",
         "body": [
-          { "type": "p", "text": "Vous venez d'acheter une voiture d'occasion un samedi soir et le vendeur habite à 300 km ? Sans assurance, impossible de reprendre la route légalement : la responsabilité civile est obligatoire dès le premier mètre, et rouler sans assurance coûte jusqu'à 3 750 € d'amende, avec suspension de permis possible." },
-          { "type": "h2", "text": "L'assurance temporaire, la solution immédiate" },
-          { "type": "p", "text": "Chez TempAssur, la souscription est 100 % en ligne, 7j/7 : estimez votre tarif en 30 secondes, souscrivez en 5 minutes, payez par carte et recevez votre attestation par e-mail ou WhatsApp — même un dimanche. Vous choisissez la durée exacte dont vous avez besoin, de 1 à 90 jours, le temps de rapatrier le véhicule puis de souscrire votre contrat annuel en connaissance de cause." },
-          { "type": "h2", "text": "Les conditions" },
-          { "type": "p", "text": "Avoir au moins 21 ans, 2 ans de permis, et répondre aux déclarations d'antécédents présentées lors de la souscription. Le véhicule doit être immatriculé (une plaque provisoire WW convient)." },
-          { "type": "h2", "text": "Combien ça coûte ?" },
-          { "type": "p", "text": "À partir de quelques euros par jour pour une automobile, selon la durée et la puissance ; le tarif exact s'affiche immédiatement dans notre tarificateur, sans laisser votre e-mail. Une journée d'assurance temporaire coûte bien moins cher qu'un engagement annuel pris dans la précipitation." }
+          {
+            "type": "p",
+            "text": "Vous venez d'acheter une voiture d'occasion un samedi soir et le vendeur habite à 300 km ? Sans assurance, impossible de reprendre la route légalement : la responsabilité civile est obligatoire dès le premier mètre, et rouler sans assurance coûte jusqu'à 3 750 € d'amende, avec suspension de permis possible."
+          },
+          {
+            "type": "h2",
+            "text": "L'assurance temporaire, la solution immédiate"
+          },
+          {
+            "type": "p",
+            "text": "Chez TempAssur, la souscription est 100 % en ligne, 7j/7 : estimez votre tarif en 30 secondes, souscrivez en 5 minutes, payez par carte et recevez votre attestation par e-mail ou WhatsApp  même un dimanche. Vous choisissez la durée exacte dont vous avez besoin, de 1 à 90 jours, le temps de rapatrier le véhicule puis de souscrire votre contrat annuel en connaissance de cause."
+          },
+          {
+            "type": "h2",
+            "text": "Les conditions"
+          },
+          {
+            "type": "p",
+            "text": "Avoir au moins 21 ans, 2 ans de permis, et répondre aux déclarations d'antécédents présentées lors de la souscription. Le véhicule doit être immatriculé (une plaque provisoire WW convient)."
+          },
+          {
+            "type": "h2",
+            "text": "Combien ça coûte ?"
+          },
+          {
+            "type": "p",
+            "text": "À partir de quelques euros par jour pour une automobile, selon la durée et la puissance ; le tarif exact s'affiche immédiatement dans notre tarificateur, sans laisser votre e-mail. Une journée d'assurance temporaire coûte bien moins cher qu'un engagement annuel pris dans la précipitation."
+          }
         ]
       },
       "assurance-sortie-fourriere": {
         "title": "Sortie de fourrière : quelle assurance pour récupérer votre véhicule ?",
         "metaDescription": "Assurance sortie de fourrière, attestation assurance fourrière, récupérer voiture fourrière avec TempAssur.",
         "body": [
-          { "type": "p", "text": "Pour récupérer un véhicule en fourrière, la loi impose de présenter une attestation d'assurance en cours de validité (avec le permis et la carte grise). Problème : si votre véhicule a été mis en fourrière précisément parce qu'il n'était plus assuré — ou si votre assureur a résilié le contrat entre-temps — vous êtes bloqué." },
-          { "type": "h2", "text": "L'assurance temporaire débloque la situation en quelques minutes" },
-          { "type": "p", "text": "Souscrivez en ligne une assurance de 1 à 90 jours, recevez l'attestation par e-mail ou WhatsApp, présentez-la à la fourrière et repartez avec votre véhicule. Chaque jour de garde coûtant de l'argent, la rapidité compte : chez TempAssur, l'attestation part immédiatement après le paiement et la signature électronique." },
-          { "type": "h2", "text": "Quelle durée choisir ?" },
-          { "type": "p", "text": "Le temps de récupérer le véhicule et de souscrire une assurance classique : 8 ou 15 jours suffisent souvent ; 30 jours si vous devez aussi passer le contrôle technique ou vendre le véhicule." },
-          { "type": "h2", "text": "Les conditions" },
-          { "type": "p", "text": "Conducteur d'au moins 21 ans avec 2 ans de permis, et déclarations d'antécédents conformes (notamment : pas de résiliation pour sinistre au cours des 5 dernières années). En cas de doute sur votre situation, écrivez-nous sur WhatsApp au +33 6 05 93 84 79 : nous vous répondons 7j/7." }
+          {
+            "type": "p",
+            "text": "Pour récupérer un véhicule en fourrière, la loi impose de présenter une attestation d'assurance en cours de validité (avec le permis et la carte grise). Problème : si votre véhicule a été mis en fourrière précisément parce qu'il n'était plus assuré  ou si votre assureur a résilié le contrat entre-temps  vous êtes bloqué."
+          },
+          {
+            "type": "h2",
+            "text": "L'assurance temporaire débloque la situation en quelques minutes"
+          },
+          {
+            "type": "p",
+            "text": "Souscrivez en ligne une assurance de 1 à 90 jours, recevez l'attestation par e-mail ou WhatsApp, présentez-la à la fourrière et repartez avec votre véhicule. Chaque jour de garde coûtant de l'argent, la rapidité compte : chez TempAssur, l'attestation part immédiatement après le paiement et la signature électronique."
+          },
+          {
+            "type": "h2",
+            "text": "Quelle durée choisir ?"
+          },
+          {
+            "type": "p",
+            "text": "Le temps de récupérer le véhicule et de souscrire une assurance classique : 8 ou 15 jours suffisent souvent ; 30 jours si vous devez aussi passer le contrôle technique ou vendre le véhicule."
+          },
+          {
+            "type": "h2",
+            "text": "Les conditions"
+          },
+          {
+            "type": "p",
+            "text": "Conducteur d'au moins 21 ans avec 2 ans de permis, et déclarations d'antécédents conformes (notamment : pas de résiliation pour sinistre au cours des 5 dernières années). En cas de doute sur votre situation, écrivez-nous sur WhatsApp au +33 6 05 93 84 79 : nous vous répondons 7j/7."
+          }
         ]
       }
     }
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Souscription — assurance temporaire en ligne",
+      "metaTitle": "Souscription  assurance temporaire en ligne",
       "metaDescription": "Souscrivez votre assurance temporaire en ligne en quelques minutes : localisation, véhicule, durée, conducteur, options et paiement sécurisé.",
       "title": "Votre demande de souscription",
       "description": "Le prix se recalcule à chaque étape et reste affiché en permanence dans l'encart ci-contre. Le prix des options dépend de la durée.",
@@ -799,23 +1181,32 @@
       "metaDescription": "TempAssur (WN Conseil), courtier français ORIAS n° 24004933, spécialiste de l'assurance temporaire de 1 à 90 jours pour tous les véhicules.",
       "eyebrow": "À propos",
       "heroTitle": "Qui sommes-nous ?",
-      "intro": "TempAssur est la marque de WN Conseil, cabinet de courtage en assurances français basé à Clichy (Hauts-de-Seine), immatriculé à l'ORIAS sous le n° {orias}. Notre spécialité : l'assurance temporaire, de 1 à 90 jours, pour tous les véhicules — automobile, poids lourd, camping-car, quadricycle, bus, tracteur agricole, remorque — et l'assurance frontière pour les véhicules immatriculés à l'étranger.",
+      "intro": "TempAssur est la marque de WN Conseil, cabinet de courtage en assurances français basé à Clichy (Hauts-de-Seine), immatriculé à l'ORIAS sous le n° {orias}. Notre spécialité : l'assurance temporaire, de 1 à 90 jours, pour tous les véhicules  automobile, poids lourd, camping-car, quadricycle, bus, tracteur agricole, remorque  et l'assurance frontière pour les véhicules immatriculés à l'étranger.",
       "promisesHeading": "Notre promesse",
       "promises": [
-        { "title": "La rapidité", "description": "Souscription 100 % en ligne en 5 minutes, attestation envoyée immédiatement par e-mail ou WhatsApp — même le week-end." },
-        { "title": "La disponibilité", "description": "Une vraie équipe joignable 7j/7 par téléphone et WhatsApp au +33 6 05 93 84 79. Un blocage au paiement, une urgence, une question ? Nous répondons." },
-        { "title": "La transparence", "description": "Les prix s'affichent avant que vous ne laissiez la moindre coordonnée, et vos contrats sont portés par des entreprises d'assurance agréées, régies par le Code des assurances." }
+        {
+          "title": "La rapidité",
+          "description": "Souscription 100 % en ligne en 5 minutes, attestation envoyée immédiatement par e-mail ou WhatsApp  même le week-end."
+        },
+        {
+          "title": "La disponibilité",
+          "description": "Une vraie équipe joignable 7j/7 par téléphone et WhatsApp au +33 6 05 93 84 79. Un blocage au paiement, une urgence, une question ? Nous répondons."
+        },
+        {
+          "title": "La transparence",
+          "description": "Les prix s'affichent avant que vous ne laissiez la moindre coordonnée, et vos contrats sont portés par des entreprises d'assurance agréées, régies par le Code des assurances."
+        }
       ],
       "whereHeading": "Où nous trouver",
-      "mapTitle": "TempAssur — WN Conseil sur Google Maps",
+      "mapTitle": "TempAssur  WN Conseil sur Google Maps",
       "ctaEstimate": "Estimer mon tarif en 30 secondes",
       "ctaContact": "Nous contacter"
     },
     "contact": {
-      "metaTitle": "Contactez TempAssur — 7j/7 par WhatsApp, téléphone ou e-mail",
-      "heroTitle": "Contactez-nous — nous répondons 7j/7",
+      "metaTitle": "Contactez TempAssur  7j/7 par WhatsApp, téléphone ou e-mail",
+      "heroTitle": "Contactez-nous  nous répondons 7j/7",
       "fastest": "Le plus rapide",
-      "mapTitle": "TempAssur — WN Conseil sur Google Maps",
+      "mapTitle": "TempAssur  WN Conseil sur Google Maps",
       "addressLine": "WN Conseil / TempAssur, {address}"
     },
     "monCompte": {
@@ -861,7 +1252,7 @@
           {
             "id": "souscription-1",
             "question": "En combien de temps suis-je assuré ?",
-            "answer": "En quelques minutes : estimation du tarif, souscription en ligne, paiement par carte, signature électronique — puis votre attestation arrive par e-mail ou WhatsApp."
+            "answer": "En quelques minutes : estimation du tarif, souscription en ligne, paiement par carte, signature électronique  puis votre attestation arrive par e-mail ou WhatsApp."
           },
           {
             "id": "souscription-2",
@@ -876,7 +1267,7 @@
           {
             "id": "souscription-4",
             "question": "Puis-je choisir l'heure d'effet ?",
-            "answer": "Oui, à la souscription — la garantie démarre après signature des documents."
+            "answer": "Oui, à la souscription  la garantie démarre après signature des documents."
           }
         ]
       },
@@ -903,7 +1294,7 @@
           {
             "id": "couverture-1",
             "question": "Dans quels pays suis-je couvert ?",
-            "answer": "En France et dans 35 pays — la même liste pour l'assurance temporaire et l'assurance frontière."
+            "answer": "En France et dans 35 pays  la même liste pour l'assurance temporaire et l'assurance frontière."
           },
           {
             "id": "couverture-2",
@@ -924,12 +1315,12 @@
           {
             "id": "documents-1",
             "question": "Quels documents vais-je recevoir ?",
-            "answer": "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance — par e-mail ou WhatsApp, au choix."
+            "answer": "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance  par e-mail ou WhatsApp, au choix."
           },
           {
             "id": "documents-2",
             "question": "Je n'ai pas reçu mon attestation.",
-            "answer": "Vérifiez vos spams. Si l'heure d'effet approche, contactez-nous immédiatement : WhatsApp / tél. +33 6 05 93 84 79 — nous accélérons le traitement."
+            "answer": "Vérifiez vos spams. Si l'heure d'effet approche, contactez-nous immédiatement : WhatsApp / tél. +33 6 05 93 84 79  nous accélérons le traitement."
           }
         ]
       },
@@ -1002,7 +1393,7 @@
         },
         {
           "title": "12. Loi applicable et litiges",
-          "body": "Les présentes Conditions Générales de Vente sont régies par la loi française. En cas de litige lié à une commande ou à l'application des présentes CGV, le client est invité à contacter le service client de WN Conseil afin de tenter de résoudre le différend à l'amiable. Pour les litiges relatifs à un contrat d'assurance, le client peut saisir gratuitement La Médiation de l'Assurance : www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pour les autres litiges relatifs au site, le médiateur de la consommation désigné est l'IEAM (Institut d'Expertise, d'Arbitrage et de Médiation) : 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu — contact@ieam.eu. En cas de recours à la justice, les tribunaux compétents seront ceux du ressort du siège social de WN Conseil."
+          "body": "Les présentes Conditions Générales de Vente sont régies par la loi française. En cas de litige lié à une commande ou à l'application des présentes CGV, le client est invité à contacter le service client de WN Conseil afin de tenter de résoudre le différend à l'amiable. Pour les litiges relatifs à un contrat d'assurance, le client peut saisir gratuitement La Médiation de l'Assurance : www.mediation-assurance.org  Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pour les autres litiges relatifs au site, le médiateur de la consommation désigné est l'IEAM (Institut d'Expertise, d'Arbitrage et de Médiation) : 31 bis – 33 rue Daru, 75008 Paris  www.ieam.eu  contact@ieam.eu. En cas de recours à la justice, les tribunaux compétents seront ceux du ressort du siège social de WN Conseil."
         },
         {
           "title": "13. Contact",
@@ -1022,8 +1413,8 @@
           "body": "Le site www.tempassur.com est édité par WN Conseil, Entreprise Unipersonnelle à Responsabilité Limitée (EURL) au capital de 1 000,00 €, immatriculée au RCS de Nanterre sous le numéro 929 812 642. Siège social : Bureau 3, 6 Rue des Bateliers, 92110 Clichy, France · SIRET : 929 812 642 00015 · TVA intracommunautaire : FR14929812642. Directeur de la publication : Walid Nefzi, gérant. Téléphone : +33 6 05 93 84 79 (WhatsApp) · +33 9 70 70 53 41 · E-mail : contact@tempassur.com"
         },
         {
-          "title": "Activité réglementée — distribution d'assurances",
-          "body": "WN Conseil est courtier en assurances, immatriculé à l'ORIAS sous le n° 24004933 (catégorie courtier d'assurance ou de réassurance — COA), vérifiable sur www.orias.fr. WN Conseil exerce son activité sous le contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09 — acpr.banque-france.fr. Les contrats d'assurance distribués sur ce site sont portés par des entreprises d'assurance agréées, régies par le Code des assurances. La liste des compagnies partenaires est disponible sur demande ; le nom de l'assureur de votre contrat figure sur vos documents contractuels. WN Conseil ne détient aucune participation directe ou indirecte dans une entreprise d'assurance, et aucune entreprise d'assurance ne détient de participation dans WN Conseil. WN Conseil travaille avec plusieurs entreprises d'assurance et n'est pas soumis à une obligation contractuelle de travailler exclusivement avec l'une d'elles ; la liste des compagnies partenaires est disponible sur demande. WN Conseil est rémunéré par une commission incluse dans la prime d'assurance."
+          "title": "Activité réglementée  distribution d'assurances",
+          "body": "WN Conseil est courtier en assurances, immatriculé à l'ORIAS sous le n° 24004933 (catégorie courtier d'assurance ou de réassurance  COA), vérifiable sur www.orias.fr. WN Conseil exerce son activité sous le contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR)  4 place de Budapest, CS 92459, 75436 Paris Cedex 09  acpr.banque-france.fr. Les contrats d'assurance distribués sur ce site sont portés par des entreprises d'assurance agréées, régies par le Code des assurances. La liste des compagnies partenaires est disponible sur demande ; le nom de l'assureur de votre contrat figure sur vos documents contractuels. WN Conseil ne détient aucune participation directe ou indirecte dans une entreprise d'assurance, et aucune entreprise d'assurance ne détient de participation dans WN Conseil. WN Conseil travaille avec plusieurs entreprises d'assurance et n'est pas soumis à une obligation contractuelle de travailler exclusivement avec l'une d'elles ; la liste des compagnies partenaires est disponible sur demande. WN Conseil est rémunéré par une commission incluse dans la prime d'assurance."
         },
         {
           "title": "Réclamation et médiation",
@@ -1031,7 +1422,7 @@
         },
         {
           "title": "Hébergement",
-          "body": "Le site est hébergé par HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre — www.hostinger.fr/contact."
+          "body": "Le site est hébergé par HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre  www.hostinger.fr/contact."
         },
         {
           "title": "Mise en garde",
@@ -1060,7 +1451,7 @@
       "sections": [
         {
           "title": "1. Responsable de traitement",
-          "body": "La présente politique décrit comment WN Conseil (opérant sous le nom TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy — contact@tempassur.com — collecte, utilise, stocke et protège vos données personnelles via le site www.tempassur.com."
+          "body": "La présente politique décrit comment WN Conseil (opérant sous le nom TempAssur), Bureau 3, 6 Rue des Bateliers, 92110 Clichy  contact@tempassur.com  collecte, utilise, stocke et protège vos données personnelles via le site www.tempassur.com."
         },
         {
           "title": "2. Données collectées",
@@ -1107,7 +1498,7 @@
       "sections": [
         {
           "title": "1. Contactez notre service réclamation",
-          "body": "Par e-mail : contact@tempassur.com (objet : « Réclamation ») · Par courrier : WN Conseil — Service Réclamations, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Par téléphone : +33 6 05 93 84 79. Nous accusons réception de votre réclamation sous 10 jours ouvrables et y répondons sous 2 mois maximum."
+          "body": "Par e-mail : contact@tempassur.com (objet : « Réclamation ») · Par courrier : WN Conseil  Service Réclamations, Bureau 3, 6 Rue des Bateliers, 92110 Clichy · Par téléphone : +33 6 05 93 84 79. Nous accusons réception de votre réclamation sous 10 jours ouvrables et y répondons sous 2 mois maximum."
         },
         {
           "title": "2. La réclamation concerne votre contrat d'assurance",
@@ -1115,7 +1506,7 @@
         },
         {
           "title": "3. La médiation",
-          "body": "Après épuisement de ces recours, vous pouvez saisir gratuitement La Médiation de l'Assurance : www.mediation-assurance.org — Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pour un litige relatif au site (hors contrat d'assurance) : IEAM, 31 bis – 33 rue Daru, 75008 Paris — www.ieam.eu."
+          "body": "Après épuisement de ces recours, vous pouvez saisir gratuitement La Médiation de l'Assurance : www.mediation-assurance.org  Pôle CSCA, TSA 50110, 75441 Paris Cedex 09. Pour un litige relatif au site (hors contrat d'assurance) : IEAM, 31 bis – 33 rue Daru, 75008 Paris  www.ieam.eu."
         }
       ]
     }

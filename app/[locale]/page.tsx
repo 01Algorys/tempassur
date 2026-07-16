@@ -9,7 +9,6 @@ import { HowItWorks } from "@/components/sections/how-it-works"
 import { CoveredCountriesSummary } from "@/components/sections/covered-countries-summary"
 import { Reviews } from "@/components/sections/reviews"
 import { Faq } from "@/components/sections/faq"
-import { PaymentHelpSection } from "@/components/sections/payment-help-section"
 import { siteConfig } from "@/lib/site"
 import { getMinPrice } from "@/lib/pricing"
 
@@ -33,7 +32,6 @@ export default function Home() {
       <CoveredCountriesSummary />
       <Reviews />
       <Faq />
-      <PaymentHelpSection />
     </>
   )
 }

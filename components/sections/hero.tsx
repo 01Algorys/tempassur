@@ -14,21 +14,21 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden bg-gradient-to-b from-[#fdf3ea] via-white to-white pt-32 pb-16 sm:pt-40">
-      <div className="relative mx-auto grid max-w-[120rem] grid-cols-1 items-center gap-14 container-px lg:grid-cols-2 lg:gap-16">
+      <div className="relative mx-auto grid max-w-[145rem] grid-cols-1 items-center gap-10 container-px lg:grid-cols-[1.3fr_1fr] lg:gap-12">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer(0.12, 0.1)}
-          className="flex flex-col items-start gap-6"
+          className="flex flex-col items-start gap-14"
         >
           <motion.h1
             variants={fadeUp}
-            className="text-balance text-4xl leading-[1.1] font-extrabold tracking-tight text-navy sm:text-5xl lg:text-[3.4rem]"
+            className="text-balance text-3xl leading-[1.1] font-bold tracking-tight text-navy sm:text-5xl lg:text-[2.8rem]"
           >
             {t("title")}
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">
+          <motion.p variants={fadeUp} className="w[100%] text-balance text-lg leading-relaxed text-muted-foreground">
             {t("description")}
           </motion.p>
 

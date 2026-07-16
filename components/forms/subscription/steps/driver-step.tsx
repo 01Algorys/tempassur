@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { COUNTRIES, getCountryLabel } from "@/lib/countries"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
+import { EuDateInput } from "../eu-date-input"
+
 const fieldClass = "h-11 rounded-lg"
 const triggerClass = "h-11 w-full rounded-lg"
 
@@ -34,7 +36,7 @@ export function DriverStep({ form }: DriverStepProps) {
               control={form.control}
               name="civilite"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="sm:col-span-2">
                   <FormLabel>{t("civilite")}</FormLabel>
                   <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
@@ -56,19 +58,6 @@ export function DriverStep({ form }: DriverStepProps) {
             />
             <FormField
               control={form.control}
-              name="nom"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("nom")}</FormLabel>
-                  <FormControl>
-                    <Input placeholder={t("nomPlaceholder")} className={fieldClass} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="prenom"
               render={({ field }) => (
                 <FormItem>
@@ -82,12 +71,25 @@ export function DriverStep({ form }: DriverStepProps) {
             />
             <FormField
               control={form.control}
+              name="nom"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("nom")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("nomPlaceholder")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="dateNaissance"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>{t("dateNaissance")}</FormLabel>
                   <FormControl>
-                    <Input type="date" className={fieldClass} {...field} />
+                    <EuDateInput className={fieldClass} {...field} />
                   </FormControl>
                   <FormDescription>{t("dateNaissanceHint")}</FormDescription>
                   <FormMessage />
@@ -98,7 +100,7 @@ export function DriverStep({ form }: DriverStepProps) {
               control={form.control}
               name="paysNaissance"
               render={({ field }) => (
-                <FormItem className="sm:col-span-2">
+                <FormItem>
                   <FormLabel>{t("paysNaissance")}</FormLabel>
                   <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>

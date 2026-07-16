@@ -207,6 +207,20 @@ export function getMinPrice(slug: VehicleSlug, isDomTom = false): number {
   return best
 }
 
+// Cheapest actual per-day rate (basePrice / duree) across every duration and
+// sub-tier/subtype — the daily rate is lowest at the longest duration, unlike
+// getMinPrice (which returns the lowest total price, at the shortest duration).
+export function getMinPricePerDay(slug: VehicleSlug, isDomTom = false): number {
+  let best = Infinity
+  for (const sub of subSelections(slug)) {
+    for (const duree of getAvailableDurations(slug, { duree: null, isDomTom, ...sub })) {
+      const price = calculatePrice(slug, { ...sub, duree, isDomTom })?.basePrice
+      if (price != null) best = Math.min(best, price / duree)
+    }
+  }
+  return best
+}
+
 export interface DurationShortcuts {
   candidates: number[]
   preselect: number

@@ -43,7 +43,6 @@ const OPENGRAPH_LOCALES: Record<Locale, string> = {
   ar: "ar",
   de: "de_DE",
   it: "it_IT",
-  pl: "pl_PL",
   ro: "ro_RO",
   es: "es_ES",
 }

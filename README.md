@@ -111,32 +111,11 @@ orange-for-action / blue-for-structure rule requested in the brief (≈70% white
 
 
 UPDATES !!!!!!!!!!!
-X - tarificateur -> par jour 
-api pays du monde
-user should not change category when pre selected before 
-nos assurance != je m'assure
-tarificateur direct
+if the user enter to the form steps we show him by default the least duration to show him the tarif 
+in the duration liste deroulante we show him how much will cost when he select the days as a description
 
-
-tarfication ->  3-> 1
-tarif de base est le base
-
-we should show anything added  ( + + +)
-vehicule de location radio button
-
-option 9bal conducteur
-
-european format date range
-
-
-divide the informations
-email last field
-
-documents in the form
-accept the condition and check boxes in the form 
-
-
-payment alone page nothing in it
-after payment only the thank you page appears no other page
-
-souscrire whatsapp in thank you page remove it
+now i want vos informations step fields to be sorted like this:
+civilite alone on top.
+prenom and next to it nom
+date de naissance format eu dd//mm/yyyy next to it pays de naissance
+keep the rest as it is and move the date et heure d'effet into vos informations step 
