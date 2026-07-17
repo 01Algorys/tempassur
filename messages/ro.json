@@ -323,6 +323,11 @@
       "payLabel": "Plătiți {amount} € în siguranță"
     },
     "paymentError": "Plata nu a fost finalizată. Nicio sumă nu a fost debitată. Încercați din nou sau contactați-ne: WhatsApp +33 6 05 93 84 79  găsim o soluție imediat.",
+    "paymentCancelled": "Plata a fost anulată. Nicio sumă nu a fost debitată. Puteți încerca din nou mai jos.",
+    "finalizing": {
+      "heading": "Se finalizează abonamentul dumneavoastră...",
+      "body": "Plata dumneavoastră a fost acceptată. Vă salvăm contractul, un moment..."
+    },
     "duration": {
       "heading": "Durată",
       "contractDuration": "Durata contractului *",
@@ -438,7 +443,13 @@
       "aucune": "Niciuna",
       "totalTtc": "Total TVA inclus",
       "edit": "Modifică",
-      "note": "Verificați recapitularea de mai sus, apoi confirmați plata în siguranță mai jos. Nicio informație suplimentară nu este necesară în această etapă.",
+      "note": "Verificați recapitularea de mai sus, apoi introduceți datele de plată mai jos pentru a finaliza abonamentul în siguranță.",
+      "secureHeading": "Plată securizată",
+      "secureBody": "Introduceți datele cardului mai jos. Datele dumneavoastră sunt criptate și transmise direct către Stripe — nu trec niciodată prin serverele noastre.",
+      "securePoweredBy": "Securizat de Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Se încarcă formularul de plată...",
+      "loadError": "Formularul de plată nu a putut fi încărcat. Încercați din nou sau contactați-ne.",
       "dateAt": "{date} la {time}",
       "durationValue": "{count, plural, one {# zi} few {# zile} other {# de zile}}"
     },

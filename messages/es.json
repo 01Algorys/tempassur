@@ -323,6 +323,11 @@
       "payLabel": "Pagar {amount} € de forma segura"
     },
     "paymentError": "El pago no se ha completado. No se ha cargado ningún importe. Inténtelo de nuevo o contáctenos: WhatsApp +33 6 05 93 84 79  encontramos una solución de inmediato.",
+    "paymentCancelled": "El pago ha sido cancelado. No se ha cargado ningún importe. Puede volver a intentarlo a continuación.",
+    "finalizing": {
+      "heading": "Finalizando su suscripción...",
+      "body": "Su pago ha sido aceptado. Estamos guardando su contrato, un momento..."
+    },
     "duration": {
       "heading": "Duración",
       "contractDuration": "Duración del contrato *",
@@ -438,7 +443,13 @@
       "aucune": "Ninguna",
       "totalTtc": "Total (impuestos incluidos)",
       "edit": "Modificar",
-      "note": "Verifique el resumen anterior y, a continuación, valide el pago de forma segura a continuación. No se necesita ninguna información adicional en esta etapa.",
+      "note": "Verifique el resumen anterior y, a continuación, introduzca sus datos de pago para finalizar su suscripción de forma segura.",
+      "secureHeading": "Pago seguro",
+      "secureBody": "Introduzca los datos de su tarjeta a continuación. Sus datos se cifran y se envían directamente a Stripe: nunca pasan por nuestros servidores.",
+      "securePoweredBy": "Protegido por Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Cargando el formulario de pago...",
+      "loadError": "No se ha podido cargar el formulario de pago. Inténtelo de nuevo o contáctenos.",
       "dateAt": "{date} a las {time}",
       "durationValue": "{count, plural, one {# día} other {# días}}"
     },

@@ -323,6 +323,11 @@
       "payLabel": "{amount} € sicher bezahlen"
     },
     "paymentError": "Die Zahlung ist fehlgeschlagen. Es wurde kein Betrag abgebucht. Versuchen Sie es erneut oder kontaktieren Sie uns: WhatsApp +33 6 05 93 84 79  wir finden sofort eine Lösung.",
+    "paymentCancelled": "Die Zahlung wurde abgebrochen. Es wurde kein Betrag abgebucht. Sie können es unten erneut versuchen.",
+    "finalizing": {
+      "heading": "Ihr Vertrag wird abgeschlossen...",
+      "body": "Ihre Zahlung wurde akzeptiert. Wir speichern Ihren Vertrag, einen Moment bitte..."
+    },
     "duration": {
       "heading": "Dauer",
       "contractDuration": "Vertragsdauer *",
@@ -438,7 +443,13 @@
       "aucune": "Keine",
       "totalTtc": "Gesamtbetrag inkl. MwSt.",
       "edit": "Ändern",
-      "note": "Überprüfen Sie oben Ihre Zusammenfassung und bestätigen Sie anschließend unten die sichere Zahlung. In diesem Schritt sind keine weiteren Angaben erforderlich.",
+      "note": "Überprüfen Sie oben Ihre Zusammenfassung und geben Sie unten Ihre Zahlungsdaten ein, um Ihren Vertrag sicher abzuschließen.",
+      "secureHeading": "Sichere Zahlung",
+      "secureBody": "Geben Sie unten Ihre Kartendaten ein. Ihre Daten werden verschlüsselt und direkt an Stripe übermittelt — sie laufen nie über unsere Server.",
+      "securePoweredBy": "Gesichert durch Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Zahlungsformular wird geladen...",
+      "loadError": "Das Zahlungsformular konnte nicht geladen werden. Versuchen Sie es erneut oder kontaktieren Sie uns.",
       "dateAt": "{date} um {time}",
       "durationValue": "{count, plural, one {# Tag} other {# Tage}}"
     },

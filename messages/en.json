@@ -323,6 +323,11 @@
       "payLabel": "Pay {amount} € securely"
     },
     "paymentError": "The payment could not be completed. No amount has been charged. Please try again or contact us: WhatsApp +33 6 05 93 84 79  we'll find a solution right away.",
+    "paymentCancelled": "Payment was cancelled. No amount was charged. You can try again below.",
+    "finalizing": {
+      "heading": "Finalising your subscription...",
+      "body": "Your payment has been accepted. We're saving your contract, just a moment..."
+    },
     "duration": {
       "heading": "Duration",
       "contractDuration": "Contract duration *",
@@ -438,7 +443,13 @@
       "aucune": "None",
       "totalTtc": "Total (incl. tax)",
       "edit": "Edit",
-      "note": "Check your summary above, then confirm your payment securely below. No further information is needed at this stage.",
+      "note": "Check your summary above, then enter your payment details below to securely finalise your subscription.",
+      "secureHeading": "Secure payment",
+      "secureBody": "Enter your card details below. Your data is encrypted and sent directly to Stripe — it never passes through our servers.",
+      "securePoweredBy": "Secured by Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Loading payment form...",
+      "loadError": "The payment form could not be loaded. Please try again or contact us.",
       "dateAt": "{date} at {time}",
       "durationValue": "{count, plural, one {# day} other {# days}}"
     },

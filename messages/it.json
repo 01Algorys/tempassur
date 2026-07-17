@@ -323,6 +323,11 @@
       "payLabel": "Paga {amount} € in totale sicurezza"
     },
     "paymentError": "Il pagamento non è andato a buon fine. Nessun importo è stato addebitato. Riprova o contattaci: WhatsApp +33 6 05 93 84 79  troviamo subito una soluzione.",
+    "paymentCancelled": "Il pagamento è stato annullato. Nessun importo è stato addebitato. Puoi riprovare qui sotto.",
+    "finalizing": {
+      "heading": "Finalizzazione della tua sottoscrizione...",
+      "body": "Il tuo pagamento è stato accettato. Stiamo salvando il tuo contratto, un momento..."
+    },
     "duration": {
       "heading": "Durata",
       "contractDuration": "Durata del contratto *",
@@ -438,7 +443,13 @@
       "aucune": "Nessuna",
       "totalTtc": "Totale IVA inclusa",
       "edit": "Modifica",
-      "note": "Verifica il riepilogo qui sopra, poi convalida il pagamento in totale sicurezza qui sotto. Nessuna informazione aggiuntiva è necessaria in questa fase.",
+      "note": "Verifica il riepilogo qui sopra, poi inserisci i tuoi dati di pagamento qui sotto per finalizzare la tua sottoscrizione in totale sicurezza.",
+      "secureHeading": "Pagamento sicuro",
+      "secureBody": "Inserisci i dati della tua carta qui sotto. I tuoi dati sono crittografati e inviati direttamente a Stripe: non passano mai dai nostri server.",
+      "securePoweredBy": "Protetto da Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Caricamento del modulo di pagamento...",
+      "loadError": "Impossibile caricare il modulo di pagamento. Riprova o contattaci.",
       "dateAt": "{date} alle {time}",
       "durationValue": "{count, plural, one {# giorno} other {# giorni}}"
     },

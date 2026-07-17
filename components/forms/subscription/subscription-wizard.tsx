@@ -1,18 +1,20 @@
 "use client"
 
-import { useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { useSearchParams } from "next/navigation"
 import { useRouter } from "@/i18n/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AnimatePresence, motion } from "framer-motion"
 import { AlertCircle, ArrowLeft, ArrowRight, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { Form } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
 import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
-import { submitSubscription } from "@/lib/subscription"
+import { createContract } from "@/lib/contract"
+import { routing } from "@/i18n/routing"
 import {
   calculatePrice,
   getAvailableDurations,
@@ -35,7 +37,7 @@ import { DriverStep } from "./steps/driver-step"
 import { EffectDateStep } from "./steps/effect-date-step"
 import { OptionsStep } from "./steps/options-step"
 import { DocumentsConsentsStep } from "./steps/documents-consents-step"
-import { PaymentStep } from "./steps/payment-step"
+import { PaymentStep, type PaymentStepHandle } from "./steps/payment-step"
 
 interface SubscriptionWizardProps {
   initialCategory?: VehicleSlug
@@ -90,6 +92,8 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
 
 export function SubscriptionWizard({ initialCategory = "automobiles", initialDuree }: SubscriptionWizardProps) {
   const router = useRouter()
+  const locale = useLocale()
+  const searchParams = useSearchParams()
   const t = useTranslations("wizard")
   const tVehicles = useTranslations("vehicleTypes")
   const tCvTier = useTranslations("pricingLabels.cvTier")
@@ -97,15 +101,31 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   const tQuadSubtype = useTranslations("pricingLabels.quadSubtype")
   const tValidation = useTranslations("validation")
   const [stepIndex, setStepIndex] = useState(0)
-  const [status, setStatus] = useState<"idle" | "error">("idle")
+  const [status, setStatus] = useState<"idle" | "error" | "cancelled">("idle")
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined)
   const [declarationsOpen, setDeclarationsOpen] = useState(false)
+  const [isPaying, setIsPaying] = useState(false)
+  const [isCreatingContract, setIsCreatingContract] = useState(false)
+  const [paymentReady, setPaymentReady] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const paymentStepRef = useRef<PaymentStepHandle>(null)
+
+  const merciPath = locale === routing.defaultLocale ? "/merci" : `/${locale}/merci`
+  const returnUrl = typeof window !== "undefined" ? `${window.location.origin}${merciPath}` : ""
 
   const STEPS: { id: StepId; title: string }[] = [
     { id: "duration", title: t("steps.duration") },
     { id: "details", title: t("steps.details") },
     { id: "payment", title: t("steps.payment") },
   ]
+
+  useEffect(() => {
+    if (searchParams.get("paiement")) {
+      setStatus("cancelled")
+      setStepIndex(STEPS.length - 1)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams])
 
   const subscriptionSchema = useMemo(() => createSubscriptionSchema(tValidation), [tValidation])
 
@@ -219,26 +239,48 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     setDeclarationsOpen(true)
   }
 
-  async function onSubmit(data: SubscriptionFormValues) {
+  async function onSubmit() {
     setStatus("idle")
+    setErrorMessage(undefined)
+    setIsPaying(true)
     try {
-      const { referenceId } = await submitSubscription(data)
-      router.push(`/merci?ref=${encodeURIComponent(referenceId)}`)
-    } catch {
-      setStatus("error")
-      setDeclarationsOpen(false)
+      const result = await paymentStepRef.current?.confirmPayment()
+      if (!result?.success || !result.paymentIntentId) {
+        setErrorMessage(result?.errorMessage)
+        setStatus("error")
+        setDeclarationsOpen(false)
+        return
+      }
+
+      setIsPaying(false)
+      setIsCreatingContract(true)
+      const { numero } = await createContract({ paymentIntentId: result.paymentIntentId, values: form.getValues() })
+
+      const query = new URLSearchParams({ payment_intent: result.paymentIntentId })
+      if (numero) query.set("numero", numero)
+      router.push(`/merci?${query.toString()}`)
+    } finally {
+      setIsPaying(false)
     }
   }
 
   function handleDeclarationsConfirm() {
     form.setValue("consentDeclarations", true)
     form.setValue("declarationsAcceptedAt", new Date().toISOString())
-    void form.handleSubmit(onSubmit)()
+    void onSubmit()
   }
 
   return (
     <div ref={containerRef} className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
       <div className="rounded-3xl border border-border bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
+        {isCreatingContract ? (
+          <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
+            <Loader2 className="size-10 animate-spin text-primary" />
+            <p className="text-lg font-bold text-navy">{t("finalizing.heading")}</p>
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">{t("finalizing.body")}</p>
+          </div>
+        ) : (
+          <>
         <StepIndicator steps={STEPS} currentStep={stepIndex} />
 
         <Form {...form}>
@@ -271,11 +313,19 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
               </div>
             ) : null}
             {currentStep.id === "payment" ? (
-              <PaymentStep form={form} vehicleLabel={vehicleLabel} breakdown={breakdown} onEdit={goToStep} />
+              <PaymentStep
+                ref={paymentStepRef}
+                form={form}
+                vehicleLabel={vehicleLabel}
+                breakdown={breakdown}
+                onEdit={goToStep}
+                onReadyChange={setPaymentReady}
+                returnUrl={returnUrl}
+              />
             ) : null}
 
             <AnimatePresence>
-              {status === "error" ? (
+              {status === "error" || status === "cancelled" ? (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
@@ -283,7 +333,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
                 >
                   <AlertCircle className="size-4 shrink-0" />
-                  {t("paymentError")}
+                  {status === "cancelled" ? t("paymentCancelled") : errorMessage || t("paymentError")}
                 </motion.div>
               ) : null}
             </AnimatePresence>
@@ -299,8 +349,13 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                 <ArrowLeft data-icon="inline-start" />
                 {t("buttons.previous")}
               </Button>
-              <Button type="submit" variant="cta" className="rounded-full" disabled={form.formState.isSubmitting}>
-                {form.formState.isSubmitting ? (
+              <Button
+                type="submit"
+                variant="cta"
+                className="rounded-full"
+                disabled={isPaying || (isLastStep && !paymentReady)}
+              >
+                {isPaying ? (
                   <>
                     <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
                     {t("buttons.sending")}
@@ -319,6 +374,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
             {isLastStep ? <PaymentHelp variant="tunnel" className="border-t border-border pt-4" /> : null}
           </form>
         </Form>
+          </>
+        )}
       </div>
 
       <BillingSummary
@@ -334,7 +391,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
         open={declarationsOpen}
         onOpenChange={setDeclarationsOpen}
         onConfirm={handleDeclarationsConfirm}
-        isSubmitting={form.formState.isSubmitting}
+        isSubmitting={isPaying}
       />
     </div>
   )

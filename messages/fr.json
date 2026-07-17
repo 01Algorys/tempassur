@@ -323,6 +323,11 @@
       "payLabel": "Payer {amount} € en toute sécurité"
     },
     "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79  nous trouvons une solution immédiatement.",
+    "paymentCancelled": "Le paiement a été annulé. Aucune somme n'a été débitée. Vous pouvez réessayer ci-dessous.",
+    "finalizing": {
+      "heading": "Finalisation de votre souscription...",
+      "body": "Votre paiement a été accepté. Nous enregistrons votre contrat, un instant..."
+    },
     "duration": {
       "heading": "Durée",
       "contractDuration": "Durée du contrat *",
@@ -438,9 +443,15 @@
       "aucune": "Aucune",
       "totalTtc": "Total TTC",
       "edit": "Modifier",
-      "note": "Vérifiez votre récapitulatif ci-dessus, puis validez le paiement en toute sécurité ci-dessous. Aucune information supplémentaire n'est nécessaire à cette étape.",
+      "note": "Vérifiez votre récapitulatif ci-dessus, puis saisissez vos informations de paiement ci-dessous pour finaliser votre souscription en toute sécurité.",
       "dateAt": "{date} à {time}",
-      "durationValue": "{count, plural, one {# jour} other {# jours}}"
+      "durationValue": "{count, plural, one {# jour} other {# jours}}",
+      "secureHeading": "Paiement sécurisé",
+      "secureBody": "Saisissez vos informations bancaires ci-dessous. Vos données sont chiffrées et transmises directement à Stripe : elles ne transitent jamais par nos serveurs.",
+      "securePoweredBy": "Sécurisé par Stripe",
+      "secureCards": "Visa, Mastercard, American Express",
+      "loading": "Chargement du formulaire de paiement...",
+      "loadError": "Impossible de charger le formulaire de paiement. Réessayez ou contactez-nous."
     },
     "billingSummary": {
       "subtitle": "Assurance temporaire",

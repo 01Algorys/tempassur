@@ -5,7 +5,10 @@ import { getTranslations } from "next-intl/server"
 import { Container } from "@/components/shared/container"
 import { TelLink } from "@/components/shared/tel-link"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
+import { redirect } from "@/i18n/navigation"
+import { getStripe } from "@/lib/stripe"
 import { siteConfig } from "@/lib/site"
+import type { Locale } from "@/i18n/routing"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.merci")
@@ -22,12 +25,31 @@ export async function generateMetadata(): Promise<Metadata> {
 const GA4_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID
 
 interface MerciPageProps {
-  searchParams: Promise<{ ref?: string }>
+  params: Promise<{ locale: string }>
+  searchParams: Promise<{ payment_intent?: string; numero?: string }>
 }
 
-export default async function MerciPage({ searchParams }: MerciPageProps) {
-  const { ref } = await searchParams
+async function resolveReference(paymentIntentId: string | undefined): Promise<string | null> {
+  if (!paymentIntentId) return null
+  try {
+    const paymentIntent = await getStripe().paymentIntents.retrieve(paymentIntentId)
+    if (paymentIntent.status !== "succeeded") return null
+    return paymentIntent.id
+  } catch {
+    return null
+  }
+}
+
+export default async function MerciPage({ params, searchParams }: MerciPageProps) {
+  const { locale } = await params
+  const { payment_intent: paymentIntentId, numero } = await searchParams
   const t = await getTranslations("pages.merci")
+
+  const paymentRef = paymentIntentId ? await resolveReference(paymentIntentId) : undefined
+  if (paymentIntentId && !paymentRef) {
+    redirect({ href: { pathname: "/souscription", query: { paiement: "echec" } }, locale: locale as Locale })
+  }
+  const ref = numero || paymentRef
 
   return (
     <section className="section-y">

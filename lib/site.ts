@@ -18,6 +18,7 @@ export const siteConfig = {
   googleMapsUrl: "https://maps.app.goo.gl/7fc1hB29zkNHGjbZ8",
   keywords: [
     "assurance temporaire",
+    "assurance temporaire tracteur",
     "assurance auto temporaire",
     "assurance provisoire",
     "assurance frontière",
