@@ -17,18 +17,26 @@ interface CrmClient {
   id: string
 }
 
-interface CrmContratPayload {
+interface CrmDevisPayload {
   clientId: string
+  distributeurId?: string
+  produitId?: string
+  montantEstime?: number
+  besoinsExprimes?: string
+}
+
+interface CrmDevis {
+  id: string
+}
+
+interface CrmTransformPayload {
   numero: string
+  prime: number
+  dateEffet?: string
+  dureeJours?: number
   marque?: string
   modele?: string
   immatriculation?: string
-  dateEffet?: string
-  dureeJours?: number
-  prime: number
-  distributeurId?: string
-  produitId?: string
-  statutRefId?: string
 }
 
 interface CrmContrat {
@@ -71,8 +79,17 @@ export async function createCrmClient(payload: CrmClientPayload): Promise<CrmCli
   })
 }
 
-export async function createCrmContrat(payload: CrmContratPayload): Promise<CrmContrat> {
-  return crmFetch<CrmContrat>("/api/contrats", {
+export async function createCrmDevis(payload: CrmDevisPayload): Promise<CrmDevis> {
+  return crmFetch<CrmDevis>("/api/devis", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  })
+}
+
+// Transforms a devis into a contrat CRM-side (keeps the devis→contrat link for
+// traceability instead of creating a disconnected contrat).
+export async function transformCrmDevis(devisId: string, payload: CrmTransformPayload): Promise<CrmContrat> {
+  return crmFetch<CrmContrat>(`/api/devis/${devisId}/transform`, {
     method: "POST",
     body: JSON.stringify(payload),
   })

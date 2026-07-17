@@ -10,10 +10,10 @@ export function ReassuranceBanner() {
   const items = t.raw("items") as string[]
 
   return (
-    <section className="border-b border-border bg-white py-8">
+    <section className="border-b border-border bg-white py-5">
       <div className="mx-auto max-w-7xl container-px">
         <Reveal>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
             {items.map((item, index) => {
               const Icon = ICONS[index]
               return (

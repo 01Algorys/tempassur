@@ -95,7 +95,6 @@ export default async function MerciPage({ params, searchParams }: MerciPageProps
             </a>
           </p>
         </div>
-        <WhatsappButton className="mx-auto" />
       </Container>
     </section>
   )

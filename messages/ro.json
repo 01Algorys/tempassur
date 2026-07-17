@@ -308,6 +308,7 @@
     "minAge": "Contractele noastre sunt rezervate conducătorilor auto de cel puțin 21 de ani.",
     "minLicenseAge": "Contractele noastre necesită cel puțin 2 ani de la obținerea permisului.",
     "effectDateInPast": "Data și ora de intrare în vigoare nu pot fi anterioare momentului actual.",
+    "dateEffetInvalid": "Această dată nu există. Verificați ziua și luna introduse.",
     "nomAgenceRequired": "Indicați numele agenției de închiriere"
   },
   "wizard": {
@@ -323,6 +324,7 @@
       "payLabel": "Plătiți {amount} € în siguranță"
     },
     "paymentError": "Plata nu a fost finalizată. Nicio sumă nu a fost debitată. Încercați din nou sau contactați-ne: WhatsApp +33 6 05 93 84 79  găsim o soluție imediat.",
+    "devisSaveError": "Cererea dvs. nu a putut fi salvată. Verificați conexiunea și încercați din nou sau contactați-ne dacă problema persistă.",
     "paymentCancelled": "Plata a fost anulată. Nicio sumă nu a fost debitată. Puteți încerca din nou mai jos.",
     "finalizing": {
       "heading": "Se finalizează abonamentul dumneavoastră...",

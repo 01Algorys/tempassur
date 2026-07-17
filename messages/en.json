@@ -308,6 +308,7 @@
     "minAge": "Our contracts are reserved for drivers aged 21 or over.",
     "minLicenseAge": "Our contracts require at least 2 years' driving licence.",
     "effectDateInPast": "The effective date and time cannot be earlier than now.",
+    "dateEffetInvalid": "This date does not exist. Check the day and month entered.",
     "nomAgenceRequired": "Enter the name of the rental agency"
   },
   "wizard": {
@@ -323,6 +324,7 @@
       "payLabel": "Pay {amount} € securely"
     },
     "paymentError": "The payment could not be completed. No amount has been charged. Please try again or contact us: WhatsApp +33 6 05 93 84 79  we'll find a solution right away.",
+    "devisSaveError": "We couldn't save your request. Check your connection and try again, or contact us if the problem persists.",
     "paymentCancelled": "Payment was cancelled. No amount was charged. You can try again below.",
     "finalizing": {
       "heading": "Finalising your subscription...",

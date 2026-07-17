@@ -158,7 +158,7 @@
         "Paiement 100 % sécurisé (CB)",
         "Courtier français  ORIAS n° 24004933",
         "Assureurs agréés  entreprises régies par le Code des assurances",
-        "7j/7 par téléphone et WhatsApp : +33 6 05 93 84 79"
+        "7j/7 par téléphone et WhatsApp: +33 6 05 93 84 79"
       ]
     },
     "useCases": {
@@ -308,6 +308,7 @@
     "minAge": "Nos contrats sont réservés aux conducteurs d'au moins 21 ans.",
     "minLicenseAge": "Nos contrats exigent au moins 2 ans de permis.",
     "effectDateInPast": "La date et l'heure d'effet ne peuvent pas être antérieures à maintenant.",
+    "dateEffetInvalid": "Cette date n'existe pas. Vérifiez le jour et le mois saisis.",
     "nomAgenceRequired": "Indiquez le nom de l'agence de location"
   },
   "wizard": {
@@ -323,6 +324,7 @@
       "payLabel": "Payer {amount} € en toute sécurité"
     },
     "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79  nous trouvons une solution immédiatement.",
+    "devisSaveError": "L'enregistrement de votre demande a échoué. Vérifiez votre connexion et réessayez, ou contactez-nous si le problème persiste.",
     "paymentCancelled": "Le paiement a été annulé. Aucune somme n'a été débitée. Vous pouvez réessayer ci-dessous.",
     "finalizing": {
       "heading": "Finalisation de votre souscription...",

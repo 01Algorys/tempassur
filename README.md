@@ -110,12 +110,10 @@ orange-for-action / blue-for-structure rule requested in the brief (≈70% white
   primitives as the product grows.
 
 
-UPDATES !!!!!!!!!!!
-if the user enter to the form steps we show him by default the least duration to show him the tarif 
-in the duration liste deroulante we show him how much will cost when he select the days as a description
+HIGH - date format eu rest of the dates in the form
+HIGH - date in the language of the selected language e.g dd -> jj 
+HIGH - options should be in the first step
+definition of the category onlyuu the last one the first sentence only
+number break line home page
+fields that have descriptino under it it should be in  the same line as its next field
 
-now i want vos informations step fields to be sorted like this:
-civilite alone on top.
-prenom and next to it nom
-date de naissance format eu dd//mm/yyyy next to it pays de naissance
-keep the rest as it is and move the date et heure d'effet into vos informations step 

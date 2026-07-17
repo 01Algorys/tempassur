@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { AlertCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import {
@@ -20,9 +21,10 @@ interface DeclarationsDialogProps {
   onOpenChange: (open: boolean) => void
   onConfirm: () => void
   isSubmitting?: boolean
+  errorMessage?: string
 }
 
-export function DeclarationsDialog({ open, onOpenChange, onConfirm, isSubmitting }: DeclarationsDialogProps) {
+export function DeclarationsDialog({ open, onOpenChange, onConfirm, isSubmitting, errorMessage }: DeclarationsDialogProps) {
   const t = useTranslations("wizard.declarations")
   const [checked, setChecked] = useState(false)
   const questions = t.raw("questions") as string[]
@@ -65,6 +67,13 @@ export function DeclarationsDialog({ open, onOpenChange, onConfirm, isSubmitting
           </WhatsappButton>
           {t("contactSuffix")}
         </p>
+
+        {errorMessage ? (
+          <p className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2.5 text-sm text-destructive">
+            <AlertCircle className="size-4 shrink-0" />
+            {errorMessage}
+          </p>
+        ) : null}
 
         <DialogFooter>
           <Button type="button" variant="outline" className="rounded-full" onClick={() => onOpenChange(false)}>

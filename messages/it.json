@@ -308,6 +308,7 @@
     "minAge": "I nostri contratti sono riservati ai conducenti di almeno 21 anni.",
     "minLicenseAge": "I nostri contratti richiedono almeno 2 anni di patente.",
     "effectDateInPast": "La data e l'ora di decorrenza non possono essere antecedenti al momento attuale.",
+    "dateEffetInvalid": "Questa data non esiste. Controlla il giorno e il mese inseriti.",
     "nomAgenceRequired": "Indica il nome dell'agenzia di noleggio"
   },
   "wizard": {
@@ -323,6 +324,7 @@
       "payLabel": "Paga {amount} € in totale sicurezza"
     },
     "paymentError": "Il pagamento non è andato a buon fine. Nessun importo è stato addebitato. Riprova o contattaci: WhatsApp +33 6 05 93 84 79  troviamo subito una soluzione.",
+    "devisSaveError": "Non è stato possibile salvare la tua richiesta. Controlla la connessione e riprova, oppure contattaci se il problema persiste.",
     "paymentCancelled": "Il pagamento è stato annullato. Nessun importo è stato addebitato. Puoi riprovare qui sotto.",
     "finalizing": {
       "heading": "Finalizzazione della tua sottoscrizione...",

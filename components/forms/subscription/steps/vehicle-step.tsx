@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
+import { EuDateInput } from "../eu-date-input"
 
 const fieldClass = "h-11 rounded-lg"
 const triggerClass = "h-11 w-full rounded-lg"
@@ -71,7 +72,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
             <FormItem>
               <FormLabel>{t("immatriculation")}</FormLabel>
               <FormControl>
-                <Input placeholder="AA-123-AA" className={fieldClass} {...field} />
+                <Input placeholder="Immatriculation" className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -110,7 +111,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
             <FormItem>
               <FormLabel>{t("dateMiseEnCirculation")}</FormLabel>
               <FormControl>
-                <Input type="date" className={fieldClass} {...field} />
+                <EuDateInput className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

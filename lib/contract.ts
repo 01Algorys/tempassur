@@ -2,6 +2,7 @@ import type { SubscriptionFormValues } from "@/lib/validations/subscription-sche
 
 interface CreateContractParams {
   paymentIntentId: string
+  devisId: string
   values: SubscriptionFormValues
 }
 
@@ -9,6 +10,7 @@ interface CreateContractParams {
 // failure must not block the customer — the caller proceeds to the confirmation page either way.
 export async function createContract({
   paymentIntentId,
+  devisId,
   values,
 }: CreateContractParams): Promise<{ success: boolean; numero?: string }> {
   try {
@@ -17,14 +19,7 @@ export async function createContract({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         paymentIntentId,
-        nom: values.nom,
-        prenom: values.prenom,
-        civilite: values.civilite,
-        email: values.email,
-        telephoneMobile: values.telephoneMobile,
-        adresse: values.adresse,
-        codePostal: values.codePostal,
-        ville: values.ville,
+        devisId,
         marque: values.marque,
         modele: values.modele,
         immatriculation: values.immatriculation,

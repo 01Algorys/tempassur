@@ -135,8 +135,13 @@ export function createSubscriptionSchema(t: (key: string) => string) {
 
       if (data.dateEffet && data.heureEffet) {
         const effectDate = new Date(`${data.dateEffet}T${data.heureEffet}`)
-        const minEffectDate = new Date()
-        if (!Number.isNaN(effectDate.getTime()) && effectDate < minEffectDate) {
+        if (Number.isNaN(effectDate.getTime())) {
+          ctx.addIssue({
+            code: "custom",
+            message: t("dateEffetInvalid"),
+            path: ["dateEffet"],
+          })
+        } else if (effectDate < new Date()) {
           ctx.addIssue({
             code: "custom",
             message: t("effectDateInPast"),

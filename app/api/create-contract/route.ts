@@ -1,24 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import {
-  CRM_DEFAULT_DISTRIBUTEUR_ID,
-  CRM_DEFAULT_PRODUIT_ID,
-  CRM_DEFAULT_STATUT_CONTRAT_ID,
-  createCrmClient,
-  createCrmContrat,
-} from "@/lib/crm"
+import { transformCrmDevis } from "@/lib/crm"
 import { getStripe } from "@/lib/stripe"
 
 interface CreateContractBody {
   paymentIntentId: string
-  nom: string
-  prenom: string
-  civilite?: string
-  email: string
-  telephoneMobile?: string
-  adresse?: string
-  codePostal?: string
-  ville?: string
+  devisId: string
   marque?: string
   modele?: string
   immatriculation?: string
@@ -35,8 +22,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: "invalid_json" }, { status: 400 })
   }
 
-  const { paymentIntentId, nom, prenom, email } = body
-  if (!paymentIntentId || !nom || !prenom || !email) {
+  const { paymentIntentId, devisId } = body
+  if (!paymentIntentId || !devisId) {
     return NextResponse.json({ success: false, error: "missing_fields" }, { status: 400 })
   }
 
@@ -53,37 +40,30 @@ export async function POST(req: NextRequest) {
   // The amount actually charged in Stripe is the only trustworthy source for the premium.
   const prime = paymentIntent.amount / 100
 
+  let dateEffet: string | undefined
+  if (body.dateEffet && body.heureEffet) {
+    const parsed = new Date(`${body.dateEffet}T${body.heureEffet}`)
+    if (Number.isNaN(parsed.getTime())) {
+      return NextResponse.json({ success: false, error: "invalid_date_effet" }, { status: 400 })
+    }
+    dateEffet = parsed.toISOString()
+  }
+
+  // Contrat.numero has no server-side auto-numbering; the Stripe payment intent id is
+  // already globally unique, so deriving from it avoids a collision-prone counter.
+  const numero = `WN-${new Date().getFullYear()}-${paymentIntentId.slice(-8).toUpperCase()}`
+
   try {
-    const client = await createCrmClient({
-      nom,
-      prenom,
-      civilite: body.civilite,
-      telephone: body.telephoneMobile,
-      email,
-      adresse: body.adresse,
-      codePostal: body.codePostal,
-      ville: body.ville,
-    })
-
-    const dateEffet =
-      body.dateEffet && body.heureEffet ? new Date(`${body.dateEffet}T${body.heureEffet}`).toISOString() : undefined
-
-    // Contrat.numero has no server-side auto-numbering; the Stripe payment intent id is
-    // already globally unique, so deriving from it avoids a collision-prone counter.
-    const numero = `WN-${new Date().getFullYear()}-${paymentIntentId.slice(-8).toUpperCase()}`
-
-    const contrat = await createCrmContrat({
-      clientId: client.id,
+    // Transforms the devis saved at the "details" step into a contrat, keeping the
+    // client/devis/contrat link intact instead of creating a disconnected record.
+    const contrat = await transformCrmDevis(devisId, {
       numero,
+      prime,
+      dateEffet,
+      dureeJours: body.duree,
       marque: body.marque,
       modele: body.modele,
       immatriculation: body.immatriculation,
-      dateEffet,
-      dureeJours: body.duree,
-      prime,
-      distributeurId: CRM_DEFAULT_DISTRIBUTEUR_ID,
-      produitId: CRM_DEFAULT_PRODUIT_ID,
-      statutRefId: CRM_DEFAULT_STATUT_CONTRAT_ID,
     })
 
     return NextResponse.json({ success: true, numero: contrat.numero, contratId: contrat.id })

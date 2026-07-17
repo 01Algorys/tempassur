@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { createContract } from "@/lib/contract"
+import { createDevis } from "@/lib/devis"
 import { routing } from "@/i18n/routing"
 import {
   calculatePrice,
@@ -105,6 +106,9 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined)
   const [declarationsOpen, setDeclarationsOpen] = useState(false)
   const [isPaying, setIsPaying] = useState(false)
+  const [isSavingDevis, setIsSavingDevis] = useState(false)
+  const [devisError, setDevisError] = useState<string | undefined>(undefined)
+  const [devisId, setDevisId] = useState<string | null>(null)
   const [isCreatingContract, setIsCreatingContract] = useState(false)
   const [paymentReady, setPaymentReady] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -219,6 +223,11 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   async function goNext() {
     const isValid = await form.trigger(STEP_FIELDS[currentStep.id])
     if (!isValid) return
+    if (currentStep.id === "details") {
+      setDevisError(undefined)
+      setDeclarationsOpen(true)
+      return
+    }
     setStepIndex((i) => Math.min(i + 1, STEPS.length - 1))
     scrollToTop()
   }
@@ -233,17 +242,19 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     scrollToTop()
   }
 
-  async function handlePayerClick() {
-    const isValid = await form.trigger(STEP_FIELDS.payment)
-    if (!isValid) return
-    setDeclarationsOpen(true)
-  }
-
   async function onSubmit() {
     setStatus("idle")
     setErrorMessage(undefined)
     setIsPaying(true)
     try {
+      if (!devisId) {
+        // Shouldn't happen: the payment step is only reachable after handleDeclarationsConfirm
+        // has saved a devis. Defensive guard rather than a silent fallback.
+        setErrorMessage(t("devisSaveError"))
+        setStatus("error")
+        return
+      }
+
       const result = await paymentStepRef.current?.confirmPayment()
       if (!result?.success || !result.paymentIntentId) {
         setErrorMessage(result?.errorMessage)
@@ -254,7 +265,11 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
 
       setIsPaying(false)
       setIsCreatingContract(true)
-      const { numero } = await createContract({ paymentIntentId: result.paymentIntentId, values: form.getValues() })
+      const { numero } = await createContract({
+        paymentIntentId: result.paymentIntentId,
+        devisId,
+        values: form.getValues(),
+      })
 
       const query = new URLSearchParams({ payment_intent: result.paymentIntentId })
       if (numero) query.set("numero", numero)
@@ -264,10 +279,29 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     }
   }
 
-  function handleDeclarationsConfirm() {
-    form.setValue("consentDeclarations", true)
-    form.setValue("declarationsAcceptedAt", new Date().toISOString())
-    void onSubmit()
+  async function handleDeclarationsConfirm() {
+    setIsSavingDevis(true)
+    setDevisError(undefined)
+    try {
+      const result = await createDevis({
+        values: form.getValues(),
+        vehicleLabel,
+        montantEstime: breakdown ? breakdown.total : null,
+      })
+      if (!result.success || !result.devisId) {
+        setDevisError(t("devisSaveError"))
+        return
+      }
+
+      setDevisId(result.devisId)
+      form.setValue("consentDeclarations", true)
+      form.setValue("declarationsAcceptedAt", new Date().toISOString())
+      setDeclarationsOpen(false)
+      setStepIndex((i) => Math.min(i + 1, STEPS.length - 1))
+      scrollToTop()
+    } finally {
+      setIsSavingDevis(false)
+    }
   }
 
   return (
@@ -281,99 +315,99 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
           </div>
         ) : (
           <>
-        <StepIndicator steps={STEPS} currentStep={stepIndex} />
+            <StepIndicator steps={STEPS} currentStep={stepIndex} />
 
-        <Form {...form}>
-          <form
-            className="mt-8 flex flex-col gap-6"
-            noValidate
-            onSubmit={(event) => {
-              event.preventDefault()
-              if (isLastStep) {
-                void handlePayerClick()
-              } else {
-                void goNext()
-              }
-            }}
-          >
-            {currentStep.id === "duration" ? (
-              <div className="flex flex-col gap-8">
-                <DurationStep form={form} />
-                <VehicleTierStep form={form} />
-                <LocalisationStep form={form} />
-              </div>
-            ) : null}
-            {currentStep.id === "details" ? (
-              <div className="flex flex-col gap-8">
-                <DriverStep form={form} />
-                <VehicleStep form={form} />
-                <EffectDateStep form={form} />
-                <OptionsStep form={form} />
-                <DocumentsConsentsStep form={form} />
-              </div>
-            ) : null}
-            {currentStep.id === "payment" ? (
-              <PaymentStep
-                ref={paymentStepRef}
-                form={form}
-                vehicleLabel={vehicleLabel}
-                breakdown={breakdown}
-                onEdit={goToStep}
-                onReadyChange={setPaymentReady}
-                returnUrl={returnUrl}
-              />
-            ) : null}
-
-            <AnimatePresence>
-              {status === "error" || status === "cancelled" ? (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
-                >
-                  <AlertCircle className="size-4 shrink-0" />
-                  {status === "cancelled" ? t("paymentCancelled") : errorMessage || t("paymentError")}
-                </motion.div>
-              ) : null}
-            </AnimatePresence>
-
-            <div className="flex items-center justify-between gap-3 pt-2">
-              <Button
-                type="button"
-                variant="outline"
-                className="rounded-full"
-                onClick={goBack}
-                disabled={stepIndex === 0}
+            <Form {...form}>
+              <form
+                className="mt-8 flex flex-col gap-6"
+                noValidate
+                onSubmit={(event) => {
+                  event.preventDefault()
+                  if (isLastStep) {
+                    void onSubmit()
+                  } else {
+                    void goNext()
+                  }
+                }}
               >
-                <ArrowLeft data-icon="inline-start" />
-                {t("buttons.previous")}
-              </Button>
-              <Button
-                type="submit"
-                variant="cta"
-                className="rounded-full"
-                disabled={isPaying || (isLastStep && !paymentReady)}
-              >
-                {isPaying ? (
-                  <>
-                    <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
-                    {t("buttons.sending")}
-                  </>
-                ) : isLastStep ? (
-                  t("buttons.payLabel", { amount: breakdown ? breakdown.total.toFixed(2) : "—" })
-                ) : (
-                  <>
-                    {t("buttons.continueLabel")}
-                    <ArrowRight data-icon="inline-end" />
-                  </>
-                )}
-              </Button>
-            </div>
+                {currentStep.id === "duration" ? (
+                  <div className="flex flex-col gap-8">
+                    <DurationStep form={form} />
+                    <VehicleTierStep form={form} />
+                    <LocalisationStep form={form} />
+                    <OptionsStep form={form} />
+                  </div>
+                ) : null}
+                {currentStep.id === "details" ? (
+                  <div className="flex flex-col gap-8">
+                    <DriverStep form={form} />
+                    <VehicleStep form={form} />
+                    <EffectDateStep form={form} />
+                    <DocumentsConsentsStep form={form} />
+                  </div>
+                ) : null}
+                {currentStep.id === "payment" ? (
+                  <PaymentStep
+                    ref={paymentStepRef}
+                    form={form}
+                    vehicleLabel={vehicleLabel}
+                    breakdown={breakdown}
+                    onEdit={goToStep}
+                    onReadyChange={setPaymentReady}
+                    returnUrl={returnUrl}
+                  />
+                ) : null}
 
-            {isLastStep ? <PaymentHelp variant="tunnel" className="border-t border-border pt-4" /> : null}
-          </form>
-        </Form>
+                <AnimatePresence>
+                  {status === "error" || status === "cancelled" ? (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+                    >
+                      <AlertCircle className="size-4 shrink-0" />
+                      {status === "cancelled" ? t("paymentCancelled") : errorMessage || t("paymentError")}
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+
+                <div className="flex items-center justify-between gap-3 pt-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="rounded-full"
+                    onClick={goBack}
+                    disabled={stepIndex === 0}
+                  >
+                    <ArrowLeft data-icon="inline-start" />
+                    {t("buttons.previous")}
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="cta"
+                    className="rounded-full"
+                    disabled={isPaying || (isLastStep && !paymentReady)}
+                  >
+                    {isPaying ? (
+                      <>
+                        <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
+                        {t("buttons.sending")}
+                      </>
+                    ) : isLastStep ? (
+                      t("buttons.payLabel", { amount: breakdown ? breakdown.total.toFixed(2) : "—" })
+                    ) : (
+                      <>
+                        {t("buttons.continueLabel")}
+                        <ArrowRight data-icon="inline-end" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {isLastStep ? <PaymentHelp variant="tunnel" className="border-t border-border pt-4" /> : null}
+              </form>
+            </Form>
           </>
         )}
       </div>
@@ -391,7 +425,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
         open={declarationsOpen}
         onOpenChange={setDeclarationsOpen}
         onConfirm={handleDeclarationsConfirm}
-        isSubmitting={isPaying}
+        isSubmitting={isSavingDevis}
+        errorMessage={devisError}
       />
     </div>
   )

@@ -308,6 +308,7 @@
     "minAge": "Nuestros contratos están reservados a conductores de al menos 21 años.",
     "minLicenseAge": "Nuestros contratos exigen al menos 2 años de permiso de conducción.",
     "effectDateInPast": "La fecha y la hora de efecto no pueden ser anteriores al momento actual.",
+    "dateEffetInvalid": "Esta fecha no existe. Compruebe el día y el mes introducidos.",
     "nomAgenceRequired": "Indique el nombre de la agencia de alquiler"
   },
   "wizard": {
@@ -323,6 +324,7 @@
       "payLabel": "Pagar {amount} € de forma segura"
     },
     "paymentError": "El pago no se ha completado. No se ha cargado ningún importe. Inténtelo de nuevo o contáctenos: WhatsApp +33 6 05 93 84 79  encontramos una solución de inmediato.",
+    "devisSaveError": "No hemos podido guardar su solicitud. Compruebe su conexión e inténtelo de nuevo, o contáctenos si el problema persiste.",
     "paymentCancelled": "El pago ha sido cancelado. No se ha cargado ningún importe. Puede volver a intentarlo a continuación.",
     "finalizing": {
       "heading": "Finalizando su suscripción...",

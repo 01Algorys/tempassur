@@ -82,20 +82,21 @@ export function DriverStep({ form }: DriverStepProps) {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="dateNaissance"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("dateNaissance")}</FormLabel>
-                  <FormControl>
-                    <EuDateInput className={fieldClass} {...field} />
-                  </FormControl>
-                  <FormDescription>{t("dateNaissanceHint")}</FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div>
+              <FormField
+                control={form.control}
+                name="dateNaissance"
+                render={({ field }) => (
+                  <FormItem >
+                    <FormLabel>{t("dateNaissance")}</FormLabel>
+                    <FormControl>
+                      <EuDateInput className={fieldClass} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="paysNaissance"
@@ -237,9 +238,8 @@ export function DriverStep({ form }: DriverStepProps) {
               <FormItem>
                 <FormLabel>{t("dateObtention")}</FormLabel>
                 <FormControl>
-                  <Input type="date" className={fieldClass} {...field} />
+                  <EuDateInput className={fieldClass} {...field} />
                 </FormControl>
-                <FormDescription>{t("dateObtentionHint")}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
