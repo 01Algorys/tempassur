@@ -15,6 +15,7 @@ import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { createContract } from "@/lib/contract"
 import { createDevis } from "@/lib/devis"
+import { uploadSubscriptionDocuments } from "@/lib/documents"
 import { routing } from "@/i18n/routing"
 import {
   calculatePrice,
@@ -294,6 +295,12 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       }
 
       setDevisId(result.devisId)
+
+      if (result.clientId) {
+        const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
+        void uploadSubscriptionDocuments({ clientId: result.clientId, permisRecto, permisVerso, carteGrise, autresDocuments })
+      }
+
       form.setValue("consentDeclarations", true)
       form.setValue("declarationsAcceptedAt", new Date().toISOString())
       setDeclarationsOpen(false)

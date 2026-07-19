@@ -94,3 +94,38 @@ export async function transformCrmDevis(devisId: string, payload: CrmTransformPa
     body: JSON.stringify(payload),
   })
 }
+
+interface CrmDocument {
+  id: string
+}
+
+// Not JSON, so this bypasses crmFetch (which always forces a JSON content-type)
+// and posts multipart/form-data directly instead.
+export async function uploadCrmDocument(params: {
+  clientId: string
+  file: File
+  typeDocumentLabel: string
+  libelleAutre?: string
+}): Promise<CrmDocument> {
+  const { baseUrl, apiKey } = crmConfig()
+
+  const formData = new FormData()
+  formData.set("clientId", params.clientId)
+  formData.set("typeDocumentLabel", params.typeDocumentLabel)
+  if (params.libelleAutre) formData.set("libelleAutre", params.libelleAutre)
+  formData.append("file", params.file)
+
+  const response = await fetch(`${baseUrl}/api/documents`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}` },
+    body: formData,
+  })
+
+  const data = await response.json().catch(() => null)
+  if (!response.ok) {
+    const message = data && typeof data === "object" && "message" in data ? String(data.message) : response.statusText
+    throw new Error(`CRM /api/documents failed (${response.status}): ${message}`)
+  }
+  // POST /api/documents returns an array (multi-file upload) — this call only ever sends one.
+  return Array.isArray(data) ? data[0] : data
+}

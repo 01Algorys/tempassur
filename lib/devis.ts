@@ -13,7 +13,7 @@ export async function createDevis({
   values,
   vehicleLabel,
   montantEstime,
-}: CreateDevisParams): Promise<{ success: boolean; devisId?: string }> {
+}: CreateDevisParams): Promise<{ success: boolean; devisId?: string; clientId?: string }> {
   try {
     const response = await fetch("/api/create-devis", {
       method: "POST",
@@ -49,8 +49,8 @@ export async function createDevis({
     })
 
     if (!response.ok) return { success: false }
-    const data = (await response.json()) as { success?: boolean; devisId?: string }
-    return { success: !!data.success, devisId: data.devisId }
+    const data = (await response.json()) as { success?: boolean; devisId?: string; clientId?: string }
+    return { success: !!data.success, devisId: data.devisId, clientId: data.clientId }
   } catch {
     return { success: false }
   }

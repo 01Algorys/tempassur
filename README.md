@@ -117,3 +117,9 @@ definition of the category onlyuu the last one the first sentence only
 number break line home page
 fields that have descriptino under it it should be in  the same line as its next field
 
+
+
+
+prompt for migration:
+i did the backup to restore everything from 0 (restored before we do anything in the files or any change give me now step by step how to move to the subdomain old and put the new website online
+
