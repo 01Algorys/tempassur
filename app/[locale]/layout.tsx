@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
-import Script from "next/script"
 import { NextIntlClientProvider, hasLocale } from "next-intl"
 import { notFound } from "next/navigation"
 
@@ -130,6 +129,16 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={locale} dir={dir} className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}>
+      {GTM_CONTAINER_ID ? (
+        <head>
+          <script
+            id="gtm"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`,
+            }}
+          />
+        </head>
+      ) : null}
       <body className="flex min-h-full flex-col">
         {GTM_CONTAINER_ID ? (
           <noscript>
@@ -145,11 +154,6 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...jsonLd, inLanguage: OPENGRAPH_LOCALES[locale as Locale] }) }}
         />
-        {GTM_CONTAINER_ID ? (
-          <Script id="gtm" strategy="beforeInteractive">
-            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`}
-          </Script>
-        ) : null}
         <NextIntlClientProvider>
           <Header />
           <main className="flex-1">{children}</main>
