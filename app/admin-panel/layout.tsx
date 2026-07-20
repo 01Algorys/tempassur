@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 
 import { AdminThemeProvider } from "@/components/admin/theme-provider"
+import { siteConfig } from "@/lib/site"
 
 import "../globals.css"
 
@@ -17,6 +18,7 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Admin — TempAssur",
     template: "%s — Admin TempAssur",
