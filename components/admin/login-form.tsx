@@ -69,7 +69,7 @@ export function AdminLoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="pl-8"
-                placeholder="admin@tempassur.com"
+                placeholder="example@example.com"
               />
             </div>
           </div>
