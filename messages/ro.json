@@ -309,7 +309,10 @@
     "minLicenseAge": "Contractele noastre necesită cel puțin 2 ani de la obținerea permisului.",
     "effectDateInPast": "Data și ora de intrare în vigoare nu pot fi anterioare momentului actual.",
     "dateEffetInvalid": "Această dată nu există. Verificați ziua și luna introduse.",
-    "nomAgenceRequired": "Indicați numele agenției de închiriere"
+    "nomAgenceRequired": "Indicați numele agenției de închiriere",
+    "permisRectoRequired": "Permisul de conducere (față) este obligatoriu",
+    "permisVersoRequired": "Permisul de conducere (verso) este obligatoriu",
+    "carteGriseRequired": "Certificatul de înmatriculare este obligatoriu"
   },
   "wizard": {
     "steps": {
@@ -325,6 +328,7 @@
     },
     "paymentError": "Plata nu a fost finalizată. Nicio sumă nu a fost debitată. Încercați din nou sau contactați-ne: WhatsApp +33 6 05 93 84 79  găsim o soluție imediat.",
     "devisSaveError": "Cererea dvs. nu a putut fi salvată. Verificați conexiunea și încercați din nou sau contactați-ne dacă problema persistă.",
+    "documentsUploadError": "Documentele dvs. nu au putut fi trimise. Verificați conexiunea și încercați din nou sau contactați-ne dacă problema persistă.",
     "paymentCancelled": "Plata a fost anulată. Nicio sumă nu a fost debitată. Puteți încerca din nou mai jos.",
     "finalizing": {
       "heading": "Se finalizează abonamentul dumneavoastră...",
@@ -422,10 +426,10 @@
     },
     "documents": {
       "heading": "Documente",
-      "optional": "Documente (opțional în această etapă)",
-      "permisRecto": "Permis de conducere (față)",
-      "permisVerso": "Permis de conducere (verso)",
-      "carteGrise": "Certificat de înmatriculare",
+      "optional": "Documente necesare pentru finalizarea abonamentului",
+      "permisRecto": "Permis de conducere (față) *",
+      "permisVerso": "Permis de conducere (verso) *",
+      "carteGrise": "Certificat de înmatriculare *",
       "chooseFile": "Alegeți un fișier",
       "noFile": "Niciun fișier selectat",
       "removeFile": "Elimină fișierul {label}",

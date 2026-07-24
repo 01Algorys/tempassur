@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server"
 
 import { uploadCrmDocument } from "@/lib/crm"
 
-// Optional, best-effort: a failed document upload must never block the
-// subscription wizard (payment already happened or is about to) — each file
-// is attempted independently and failures are reported back, not thrown.
+// Each file is attempted independently so one bad file doesn't take down the
+// others, but the top-level `success` reflects whether every attempted file
+// actually made it to the CRM — callers must not treat this as always-true.
 const FIELD_MAP: Record<string, { typeDocumentLabel: string; libelleAutre?: string }> = {
   permisRecto: { typeDocumentLabel: "Permis de conduire", libelleAutre: "Recto" },
   permisVerso: { typeDocumentLabel: "Permis de conduire", libelleAutre: "Verso" },
@@ -40,5 +40,6 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ success: true, results })
+  const success = results.every((r) => r.success)
+  return NextResponse.json({ success, results })
 }

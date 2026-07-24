@@ -85,6 +85,9 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "optionAssistance",
     "optionGarantieConducteur",
     "optionExtensionTn",
+    "permisRecto",
+    "permisVerso",
+    "carteGrise",
     "consentCgv",
     "consentIpid",
     "consentContrat",
@@ -298,7 +301,17 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
 
       if (result.clientId) {
         const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
-        void uploadSubscriptionDocuments({ clientId: result.clientId, permisRecto, permisVerso, carteGrise, autresDocuments })
+        const uploadResult = await uploadSubscriptionDocuments({
+          clientId: result.clientId,
+          permisRecto,
+          permisVerso,
+          carteGrise,
+          autresDocuments,
+        })
+        if (!uploadResult.success) {
+          setDevisError(t("documentsUploadError"))
+          return
+        }
       }
 
       form.setValue("consentDeclarations", true)

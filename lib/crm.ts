@@ -11,6 +11,7 @@ interface CrmClientPayload {
   ville?: string
   codePostal?: string
   adresse?: string
+  notes?: string
 }
 
 interface CrmClient {

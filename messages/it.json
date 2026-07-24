@@ -309,7 +309,10 @@
     "minLicenseAge": "I nostri contratti richiedono almeno 2 anni di patente.",
     "effectDateInPast": "La data e l'ora di decorrenza non possono essere antecedenti al momento attuale.",
     "dateEffetInvalid": "Questa data non esiste. Controlla il giorno e il mese inseriti.",
-    "nomAgenceRequired": "Indica il nome dell'agenzia di noleggio"
+    "nomAgenceRequired": "Indica il nome dell'agenzia di noleggio",
+    "permisRectoRequired": "La patente di guida (fronte) è obbligatoria",
+    "permisVersoRequired": "La patente di guida (retro) è obbligatoria",
+    "carteGriseRequired": "Il libretto di circolazione è obbligatorio"
   },
   "wizard": {
     "steps": {
@@ -325,6 +328,7 @@
     },
     "paymentError": "Il pagamento non è andato a buon fine. Nessun importo è stato addebitato. Riprova o contattaci: WhatsApp +33 6 05 93 84 79  troviamo subito una soluzione.",
     "devisSaveError": "Non è stato possibile salvare la tua richiesta. Controlla la connessione e riprova, oppure contattaci se il problema persiste.",
+    "documentsUploadError": "Non è stato possibile caricare i tuoi documenti. Controlla la connessione e riprova, oppure contattaci se il problema persiste.",
     "paymentCancelled": "Il pagamento è stato annullato. Nessun importo è stato addebitato. Puoi riprovare qui sotto.",
     "finalizing": {
       "heading": "Finalizzazione della tua sottoscrizione...",
@@ -422,10 +426,10 @@
     },
     "documents": {
       "heading": "Documenti",
-      "optional": "Documenti (facoltativo in questa fase)",
-      "permisRecto": "Patente di guida (fronte)",
-      "permisVerso": "Patente di guida (retro)",
-      "carteGrise": "Libretto di circolazione",
+      "optional": "Documenti necessari per completare la sottoscrizione",
+      "permisRecto": "Patente di guida (fronte) *",
+      "permisVerso": "Patente di guida (retro) *",
+      "carteGrise": "Libretto di circolazione *",
       "chooseFile": "Scegli un file",
       "noFile": "Nessun file selezionato",
       "removeFile": "Rimuovi il file {label}",

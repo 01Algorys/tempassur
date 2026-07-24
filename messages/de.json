@@ -309,7 +309,10 @@
     "minLicenseAge": "Unsere Verträge erfordern mindestens 2 Jahre Führerscheinbesitz.",
     "effectDateInPast": "Das Datum und die Uhrzeit des Versicherungsbeginns dürfen nicht vor dem aktuellen Zeitpunkt liegen.",
     "dateEffetInvalid": "Dieses Datum existiert nicht. Überprüfen Sie den eingegebenen Tag und Monat.",
-    "nomAgenceRequired": "Geben Sie den Namen der Mietwagenagentur an"
+    "nomAgenceRequired": "Geben Sie den Namen der Mietwagenagentur an",
+    "permisRectoRequired": "Der Führerschein (Vorderseite) ist erforderlich",
+    "permisVersoRequired": "Der Führerschein (Rückseite) ist erforderlich",
+    "carteGriseRequired": "Der Fahrzeugschein ist erforderlich"
   },
   "wizard": {
     "steps": {
@@ -325,6 +328,7 @@
     },
     "paymentError": "Die Zahlung ist fehlgeschlagen. Es wurde kein Betrag abgebucht. Versuchen Sie es erneut oder kontaktieren Sie uns: WhatsApp +33 6 05 93 84 79  wir finden sofort eine Lösung.",
     "devisSaveError": "Ihre Anfrage konnte nicht gespeichert werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder kontaktieren Sie uns, falls das Problem weiterhin besteht.",
+    "documentsUploadError": "Ihre Dokumente konnten nicht hochgeladen werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder kontaktieren Sie uns, falls das Problem weiterhin besteht.",
     "paymentCancelled": "Die Zahlung wurde abgebrochen. Es wurde kein Betrag abgebucht. Sie können es unten erneut versuchen.",
     "finalizing": {
       "heading": "Ihr Vertrag wird abgeschlossen...",
@@ -422,10 +426,10 @@
     },
     "documents": {
       "heading": "Dokumente",
-      "optional": "Dokumente (in diesem Schritt optional)",
-      "permisRecto": "Führerschein (Vorderseite)",
-      "permisVerso": "Führerschein (Rückseite)",
-      "carteGrise": "Fahrzeugschein",
+      "optional": "Dokumente, die zum Abschluss Ihrer Versicherung erforderlich sind",
+      "permisRecto": "Führerschein (Vorderseite) *",
+      "permisVerso": "Führerschein (Rückseite) *",
+      "carteGrise": "Fahrzeugschein *",
       "chooseFile": "Datei auswählen",
       "noFile": "Keine Datei ausgewählt",
       "removeFile": "Datei {label} entfernen",

@@ -309,7 +309,10 @@
     "minLicenseAge": "Nos contrats exigent au moins 2 ans de permis.",
     "effectDateInPast": "La date et l'heure d'effet ne peuvent pas être antérieures à maintenant.",
     "dateEffetInvalid": "Cette date n'existe pas. Vérifiez le jour et le mois saisis.",
-    "nomAgenceRequired": "Indiquez le nom de l'agence de location"
+    "nomAgenceRequired": "Indiquez le nom de l'agence de location",
+    "permisRectoRequired": "Le permis de conduire (recto) est requis",
+    "permisVersoRequired": "Le permis de conduire (verso) est requis",
+    "carteGriseRequired": "La carte grise est requise"
   },
   "wizard": {
     "steps": {
@@ -325,6 +328,7 @@
     },
     "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79  nous trouvons une solution immédiatement.",
     "devisSaveError": "L'enregistrement de votre demande a échoué. Vérifiez votre connexion et réessayez, ou contactez-nous si le problème persiste.",
+    "documentsUploadError": "L'envoi de vos documents a échoué. Vérifiez votre connexion et réessayez, ou contactez-nous si le problème persiste.",
     "paymentCancelled": "Le paiement a été annulé. Aucune somme n'a été débitée. Vous pouvez réessayer ci-dessous.",
     "finalizing": {
       "heading": "Finalisation de votre souscription...",
@@ -422,10 +426,10 @@
     },
     "documents": {
       "heading": "Documents",
-      "optional": "Documents (optionnel à ce stade)",
-      "permisRecto": "Permis de conduire (recto)",
-      "permisVerso": "Permis de conduire (verso)",
-      "carteGrise": "Carte grise",
+      "optional": "Documents requis pour finaliser votre souscription",
+      "permisRecto": "Permis de conduire (recto) *",
+      "permisVerso": "Permis de conduire (verso) *",
+      "carteGrise": "Carte grise *",
       "chooseFile": "Choisir un fichier",
       "noFile": "Aucun fichier sélectionné",
       "removeFile": "Retirer le fichier {label}",

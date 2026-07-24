@@ -77,10 +77,10 @@ export function createSubscriptionSchema(t: (key: string) => string) {
       dateObtentionPermis: z.string().min(1, t("dateObtentionPermisRequired")),
       paysObtentionPermis: z.string().min(1, t("paysObtentionPermisRequired")),
 
-      // Documents (optional at submission time)
-      permisRecto: optionalFile,
-      permisVerso: optionalFile,
-      carteGrise: optionalFile,
+      // Documents — required except autresDocuments
+      permisRecto: z.instanceof(File, { message: t("permisRectoRequired") }),
+      permisVerso: z.instanceof(File, { message: t("permisVersoRequired") }),
+      carteGrise: z.instanceof(File, { message: t("carteGriseRequired") }),
       autresDocuments: optionalFile,
 
       // Consents (dossier §4.6/§4.7)

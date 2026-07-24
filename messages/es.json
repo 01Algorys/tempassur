@@ -309,7 +309,10 @@
     "minLicenseAge": "Nuestros contratos exigen al menos 2 años de permiso de conducción.",
     "effectDateInPast": "La fecha y la hora de efecto no pueden ser anteriores al momento actual.",
     "dateEffetInvalid": "Esta fecha no existe. Compruebe el día y el mes introducidos.",
-    "nomAgenceRequired": "Indique el nombre de la agencia de alquiler"
+    "nomAgenceRequired": "Indique el nombre de la agencia de alquiler",
+    "permisRectoRequired": "El permiso de conducción (anverso) es obligatorio",
+    "permisVersoRequired": "El permiso de conducción (reverso) es obligatorio",
+    "carteGriseRequired": "El permiso de circulación es obligatorio"
   },
   "wizard": {
     "steps": {
@@ -325,6 +328,7 @@
     },
     "paymentError": "El pago no se ha completado. No se ha cargado ningún importe. Inténtelo de nuevo o contáctenos: WhatsApp +33 6 05 93 84 79  encontramos una solución de inmediato.",
     "devisSaveError": "No hemos podido guardar su solicitud. Compruebe su conexión e inténtelo de nuevo, o contáctenos si el problema persiste.",
+    "documentsUploadError": "No hemos podido enviar sus documentos. Compruebe su conexión e inténtelo de nuevo, o contáctenos si el problema persiste.",
     "paymentCancelled": "El pago ha sido cancelado. No se ha cargado ningún importe. Puede volver a intentarlo a continuación.",
     "finalizing": {
       "heading": "Finalizando su suscripción...",
@@ -422,10 +426,10 @@
     },
     "documents": {
       "heading": "Documentos",
-      "optional": "Documentos (opcional en esta etapa)",
-      "permisRecto": "Permiso de conducción (anverso)",
-      "permisVerso": "Permiso de conducción (reverso)",
-      "carteGrise": "Permiso de circulación",
+      "optional": "Documentos necesarios para completar su suscripción",
+      "permisRecto": "Permiso de conducción (anverso) *",
+      "permisVerso": "Permiso de conducción (reverso) *",
+      "carteGrise": "Permiso de circulación *",
       "chooseFile": "Elegir un archivo",
       "noFile": "Ningún archivo seleccionado",
       "removeFile": "Eliminar el archivo {label}",
