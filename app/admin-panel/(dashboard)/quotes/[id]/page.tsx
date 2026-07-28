@@ -1,12 +1,15 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, StickyNote } from "lucide-react"
 
 import { getAdminToken } from "@/lib/admin/server-session"
 import { crmAdminJson } from "@/lib/admin/crm-client"
 import { DEVIS_PIPELINE_LABELS, DEVIS_PIPELINE_BADGE, currencyFmt, dateTimeFmt } from "@/lib/admin/labels"
+import { splitNotesLines } from "@/lib/admin/besoins-exprimes"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { DocumentsCard, type AdminDocument } from "@/components/admin/documents-card"
+import { VehicleDetailsCard } from "@/components/admin/vehicle-details-card"
+import { DetailField } from "@/components/admin/detail-field"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const dynamic = "force-dynamic"
@@ -66,14 +69,12 @@ export default async function QuoteDetailPage({ params }: { params: Promise<{ id
         <Card className="lg:col-span-2">
           <CardHeader><CardTitle>Détails du devis</CardTitle></CardHeader>
           <CardContent className="grid grid-cols-2 gap-4 text-sm">
-            <Field label="Montant estimé" value={devis.montantEstime ? currencyFmt(devis.montantEstime) : "—"} />
-            <Field label="Produit" value={devis.produit?.nom ?? "—"} />
-            <Field label="Distributeur" value={devis.distributeur?.nom ?? "—"} />
-            <Field label="Probabilité" value={devis.probabilite ? `${devis.probabilite}%` : "—"} />
-            <Field label="Créé le" value={dateTimeFmt(devis.dateCreation)} />
-            <Field label="Relance prévue" value={dateTimeFmt(devis.dateRelance)} />
-            {devis.besoinsExprimes ? <Field label="Besoins exprimés" value={devis.besoinsExprimes} full /> : null}
-            {devis.notes ? <Field label="Notes" value={devis.notes} full /> : null}
+            <DetailField label="Montant estimé" value={devis.montantEstime ? currencyFmt(devis.montantEstime) : "—"} />
+            <DetailField label="Produit" value={devis.produit?.nom ?? "—"} />
+            <DetailField label="Distributeur" value={devis.distributeur?.nom ?? "—"} />
+            <DetailField label="Probabilité" value={devis.probabilite ? `${devis.probabilite}%` : "—"} />
+            <DetailField label="Créé le" value={dateTimeFmt(devis.dateCreation)} />
+            <DetailField label="Relance prévue" value={dateTimeFmt(devis.dateRelance)} />
             {devis.contratId ? (
               <div className="col-span-2 rounded-lg bg-emerald-500/10 px-3 py-2 text-sm text-emerald-700 dark:text-emerald-400">
                 Transformé en contrat —{" "}
@@ -88,14 +89,36 @@ export default async function QuoteDetailPage({ params }: { params: Promise<{ id
         <Card>
           <CardHeader><CardTitle>Client</CardTitle></CardHeader>
           <CardContent className="space-y-3 text-sm">
-            <Field label="Email" value={devis.client?.email ?? "—"} />
-            <Field label="Téléphone" value={devis.client?.telephone ?? "—"} />
-            <Field
+            <DetailField label="Email" value={devis.client?.email ?? "—"} />
+            <DetailField label="Téléphone" value={devis.client?.telephone ?? "—"} />
+            <DetailField
               label="Adresse"
               value={[devis.client?.adresse, devis.client?.codePostal, devis.client?.ville].filter(Boolean).join(", ") || "—"}
             />
           </CardContent>
         </Card>
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        <VehicleDetailsCard besoinsExprimes={devis.besoinsExprimes} />
+
+        {devis.notes ? (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <StickyNote className="size-4.5 text-muted-foreground" />
+                Notes client
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-inside list-disc space-y-1 text-sm text-foreground">
+                {splitNotesLines(devis.notes).map((line, i) => (
+                  <li key={i}>{line}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        ) : null}
       </div>
 
       <DocumentsCard documents={documents} />
@@ -124,15 +147,6 @@ export default async function QuoteDetailPage({ params }: { params: Promise<{ id
           )}
         </CardContent>
       </Card>
-    </div>
-  )
-}
-
-function Field({ label, value, full }: { label: string; value: string; full?: boolean }) {
-  return (
-    <div className={full ? "col-span-2" : undefined}>
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p className="mt-0.5 text-foreground">{value}</p>
     </div>
   )
 }

@@ -1,12 +1,14 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, StickyNote, MessageSquareWarning } from "lucide-react"
 
 import { getAdminToken } from "@/lib/admin/server-session"
 import { crmAdminJson } from "@/lib/admin/crm-client"
 import { currencyFmt, dateFmt, dateTimeFmt } from "@/lib/admin/labels"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { DocumentsCard, type AdminDocument } from "@/components/admin/documents-card"
+import { VehicleDetailsCard } from "@/components/admin/vehicle-details-card"
+import { DetailField } from "@/components/admin/detail-field"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const dynamic = "force-dynamic"
@@ -78,31 +80,75 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
         <Card className="lg:col-span-2">
           <CardHeader><CardTitle>Détails du contrat</CardTitle></CardHeader>
           <CardContent className="grid grid-cols-2 gap-4 text-sm">
-            <Field label="Prime" value={currencyFmt(contrat.prime)} />
-            <Field label="Honoraires" value={currencyFmt(contrat.honoraires)} />
-            <Field label="Produit" value={contrat.produitRef?.nom ?? "—"} />
-            <Field label="Distributeur" value={contrat.distributeur?.nom ?? "—"} />
-            <Field label="Date début" value={dateFmt(contrat.dateDebut)} />
-            <Field label="Date fin" value={dateFmt(contrat.dateFin)} />
-            <Field label="Souscrit le" value={dateFmt(contrat.dateSouscription)} />
-            {contrat.dateResiliation ? <Field label="Résilié le" value={dateFmt(contrat.dateResiliation)} /> : null}
-            {contrat.marque ? <Field label="Véhicule" value={`${contrat.marque} ${contrat.modele ?? ""}`.trim()} /> : null}
-            {contrat.immatriculation ? <Field label="Immatriculation" value={contrat.immatriculation} /> : null}
+            {contrat.numeroDemande ? <DetailField label="N° de demande" value={contrat.numeroDemande} /> : null}
+            <DetailField label="Prime" value={currencyFmt(contrat.prime)} />
+            <DetailField label="Honoraires" value={currencyFmt(contrat.honoraires)} />
+            <DetailField label="Produit" value={contrat.produitRef?.nom ?? "—"} />
+            <DetailField label="Distributeur" value={contrat.distributeur?.nom ?? "—"} />
+            <DetailField label="Date début" value={dateFmt(contrat.dateDebut)} />
+            <DetailField label="Date fin" value={dateFmt(contrat.dateFin)} />
+            <DetailField label="Souscrit le" value={dateFmt(contrat.dateSouscription)} />
+            {contrat.dateResiliation ? <DetailField label="Résilié le" value={dateFmt(contrat.dateResiliation)} /> : null}
+            {contrat.marque ? <DetailField label="Véhicule" value={`${contrat.marque} ${contrat.modele ?? ""}`.trim()} /> : null}
+            {contrat.immatriculation ? <DetailField label="Immatriculation" value={contrat.immatriculation} /> : null}
+            {contrat.motifResiliation ? (
+              <DetailField label="Motif de résiliation" value={contrat.motifResiliation} full />
+            ) : null}
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader><CardTitle>Client</CardTitle></CardHeader>
           <CardContent className="space-y-3 text-sm">
-            <Field label="Email" value={contrat.client?.email ?? "—"} />
-            <Field label="Téléphone" value={contrat.client?.telephone ?? "—"} />
-            <Field
+            <DetailField label="Email" value={contrat.client?.email ?? "—"} />
+            <DetailField label="Téléphone" value={contrat.client?.telephone ?? "—"} />
+            <DetailField
               label="Adresse"
               value={[contrat.client?.adresse, contrat.client?.codePostal, contrat.client?.ville].filter(Boolean).join(", ") || "—"}
             />
           </CardContent>
         </Card>
       </div>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        <VehicleDetailsCard besoinsExprimes={contrat.besoinsExprimes} />
+
+        {contrat.notesInternes ? (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <StickyNote className="size-4.5 text-muted-foreground" />
+                Notes internes
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="whitespace-pre-line text-sm text-foreground">{contrat.notesInternes}</p>
+            </CardContent>
+          </Card>
+        ) : null}
+      </div>
+
+      {contrat.reclamations.length > 0 ? (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <MessageSquareWarning className="size-4.5 text-muted-foreground" />
+              Réclamations ({contrat.reclamations.length})
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {contrat.reclamations.map((r) => (
+              <div key={r.id} className="rounded-lg border border-border px-3 py-2 text-sm">
+                <div className="flex items-center justify-between gap-3">
+                  <StatusBadge label={r.statut} />
+                  <span className="text-xs text-muted-foreground">{dateFmt(r.date)}</span>
+                </div>
+                <p className="mt-1 whitespace-pre-line text-foreground">{r.texte}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ) : null}
 
       {contrat.factures.length > 0 ? (
         <Card>
@@ -142,15 +188,6 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
           )}
         </CardContent>
       </Card>
-    </div>
-  )
-}
-
-function Field({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p className="mt-0.5 text-foreground">{value}</p>
     </div>
   )
 }

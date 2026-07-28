@@ -65,6 +65,20 @@ export const DOCUMENT_STATUS_BADGE: Record<string, string> = {
   REFUSE: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
 }
 
+// Raw wizard values (see lib/pricing-data.ts CvTier/PtacTier/QuadSubtype) end up verbatim
+// inside Devis.besoinsExprimes (see app/api/create-devis/route.ts) — the admin panel has
+// no next-intl locale context, so these mirror messages/fr.json "pricingLabels.*" by hand.
+export const TIER_LABELS: Record<string, string> = {
+  "moins-16cv": "Moins de 16 CV",
+  "moins-30cv": "De 16 à 29 CV",
+  "plus-30cv": "30 CV et plus",
+  "moins-3500kg": "PTAC ≤ 3,5 tonnes",
+  "plus-3500kg": "PTAC > 3,5 tonnes",
+  "voiturette-sans-permis": "Voiturette sans permis (≤ 8 CV)",
+  "buggy": "Buggy 50 cc (≤ 8 CV)",
+  "quad-avec-permis": "Quad avec permis (≤ 9 CV)",
+}
+
 export function formatFileSize(bytes: number | null | undefined): string {
   if (!bytes) return "—"
   if (bytes < 1024) return `${bytes} o`
