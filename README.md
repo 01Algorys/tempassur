@@ -110,16 +110,7 @@ orange-for-action / blue-for-structure rule requested in the brief (≈70% white
   primitives as the product grows.
 
 
-HIGH - date format eu rest of the dates in the form
-HIGH - date in the language of the selected language e.g dd -> jj 
-HIGH - options should be in the first step
-definition of the category onlyuu the last one the first sentence only
-number break line home page
-fields that have descriptino under it it should be in  the same line as its next field
 
 
-
-
-prompt for migration:
-i did the backup to restore everything from 0 (restored before we do anything in the files or any change give me now step by step how to move to the subdomain old and put the new website online
+all details from the form in the dashboard 
 

@@ -84,12 +84,13 @@ export const AUTO_TARIFFS: Record<CvTier, AutoTariffRow[]> = {
 }
 
 // camping-car ≤ 3,5T has no dedicated table in the source sheet: it's priced as the
-// "moins-16cv" base tariff + 20€ (FR and DOM-TOM), with no options, restricted to the
-// durations that exist in both the camping-car block's duration list and the base table.
+// matching automobile CV-tier tariff + 20€ (FR and DOM-TOM), with no options, restricted
+// to the durations that exist in both the camping-car block's duration list and the base
+// table. camping-car > 3,5T has its own flat table and does not vary by CV tier.
 export const CAMPING_CAR_LEGER_SURCHARGE = 20
 
-export const CAMPING_CAR_TARIFFS: Record<PtacTier, TariffRow[]> = {
-  "moins-3500kg": [
+export const CAMPING_CAR_LEGER_TARIFFS: Record<CvTier, TariffRow[]> = {
+  "moins-16cv": [
     { duree: 1, prixFr: 74, prixDomTom: 109 },
     { duree: 3, prixFr: 89, prixDomTom: 129 },
     { duree: 5, prixFr: 104, prixDomTom: 139 },
@@ -97,7 +98,25 @@ export const CAMPING_CAR_TARIFFS: Record<PtacTier, TariffRow[]> = {
     { duree: 10, prixFr: 120, prixDomTom: 159 },
     { duree: 15, prixFr: 139, prixDomTom: 178 },
   ],
-  "plus-3500kg": [
+  "moins-30cv": [
+    { duree: 1, prixFr: 89, prixDomTom: 124 },
+    { duree: 3, prixFr: 99, prixDomTom: 144 },
+    { duree: 5, prixFr: 115, prixDomTom: 154 },
+    { duree: 8, prixFr: 125, prixDomTom: 164 },
+    { duree: 10, prixFr: 139, prixDomTom: 174 },
+    { duree: 15, prixFr: 152, prixDomTom: 193 },
+  ],
+  "plus-30cv": [
+    { duree: 1, prixFr: 94, prixDomTom: 139 },
+    { duree: 3, prixFr: 122, prixDomTom: 159 },
+    { duree: 5, prixFr: 129, prixDomTom: 169 },
+    { duree: 8, prixFr: 141, prixDomTom: 179 },
+    { duree: 10, prixFr: 159, prixDomTom: 189 },
+    { duree: 15, prixFr: 169, prixDomTom: 208 },
+  ],
+}
+
+export const CAMPING_CAR_LOURD_TARIFFS: TariffRow[] = [
     { duree: 1, prixFr: 109, prixDomTom: 137 },
     { duree: 2, prixFr: 123, prixDomTom: 149 },
     { duree: 3, prixFr: 131, prixDomTom: 158 },
@@ -109,8 +128,7 @@ export const CAMPING_CAR_TARIFFS: Record<PtacTier, TariffRow[]> = {
     { duree: 9, prixFr: 178, prixDomTom: 225 },
     { duree: 10, prixFr: 182, prixDomTom: 232 },
     { duree: 15, prixFr: 195, prixDomTom: 261 },
-  ],
-}
+]
 
 export const FRONTIERE_TARIFFS: Record<CvTier, TariffRow[]> = {
   "moins-16cv": [

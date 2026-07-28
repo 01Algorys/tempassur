@@ -1,6 +1,7 @@
 import {
   AUTO_TARIFFS,
-  CAMPING_CAR_TARIFFS,
+  CAMPING_CAR_LEGER_TARIFFS,
+  CAMPING_CAR_LOURD_TARIFFS,
   CV_TIER_OPTIONS,
   FRANCE_TERRITORIES,
   FRONTIERE_TARIFFS,
@@ -67,7 +68,7 @@ export interface PricingConfig {
 
 export function getPricingConfig(slug: VehicleSlug): PricingConfig {
   return {
-    needsCvTier: slug === "automobiles" || slug === "assurance-frontiere",
+    needsCvTier: slug === "automobiles" || slug === "assurance-frontiere" || slug === "camping-cars",
     needsPtacTier: slug === "camping-cars",
     needsQuadSubtype: slug === "quadricycles",
     hasOptions: slug === "automobiles",
@@ -95,7 +96,10 @@ export function getAvailableDurations(slug: VehicleSlug, selection: FormulaSelec
     return FRONTIERE_TARIFFS[selection.cvTier ?? "moins-16cv"].map((row) => row.duree)
   }
   if (slug === "camping-cars") {
-    return CAMPING_CAR_TARIFFS[selection.ptacTier ?? "moins-3500kg"].map((row) => row.duree)
+    if ((selection.ptacTier ?? "moins-3500kg") === "plus-3500kg") {
+      return CAMPING_CAR_LOURD_TARIFFS.map((row) => row.duree)
+    }
+    return CAMPING_CAR_LEGER_TARIFFS[selection.cvTier ?? "moins-16cv"].map((row) => row.duree)
   }
   if (slug === "quadricycles") {
     return QUAD_TARIFFS[selection.quadSubtype ?? "voiturette-sans-permis"].map((row) => row.duree)
@@ -143,7 +147,10 @@ export function calculatePrice(slug: VehicleSlug, selection: FormulaSelection): 
   }
 
   if (slug === "camping-cars") {
-    const row = CAMPING_CAR_TARIFFS[selection.ptacTier ?? "moins-3500kg"].find((r) => r.duree === selection.duree)
+    const row =
+      (selection.ptacTier ?? "moins-3500kg") === "plus-3500kg"
+        ? CAMPING_CAR_LOURD_TARIFFS.find((r) => r.duree === selection.duree)
+        : CAMPING_CAR_LEGER_TARIFFS[selection.cvTier ?? "moins-16cv"].find((r) => r.duree === selection.duree)
     if (!row) return null
     return buildSimpleBreakdown(row, selection.isDomTom)
   }
@@ -176,6 +183,16 @@ function buildSimpleBreakdown(row: TariffRow, isDomTom: boolean): PriceBreakdown
 
 /** Every "sub-selection" (CV tier / PTAC tier / quad subtype) applicable to a category, or a single empty one if it needs none. */
 function subSelections(slug: VehicleSlug): Partial<FormulaSelection>[] {
+  // camping-cars need both dimensions: CV tier only matters for the ≤3,5T table, the
+  // >3,5T table is flat, so it's enumerated once with no cvTier.
+  if (slug === "camping-cars") {
+    return PTAC_TIER_OPTIONS.flatMap((ptac): Partial<FormulaSelection>[] =>
+      ptac.value === "plus-3500kg"
+        ? [{ ptacTier: ptac.value }]
+        : CV_TIER_OPTIONS.map((cv) => ({ ptacTier: ptac.value, cvTier: cv.value }))
+    )
+  }
+
   const config = getPricingConfig(slug)
   if (config.needsCvTier) return CV_TIER_OPTIONS.map((o) => ({ cvTier: o.value }))
   if (config.needsPtacTier) return PTAC_TIER_OPTIONS.map((o) => ({ ptacTier: o.value }))

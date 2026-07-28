@@ -21,7 +21,10 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
   const tPtacTier = useTranslations("pricingLabels.ptacTier")
   const tQuadSubtype = useTranslations("pricingLabels.quadSubtype")
   const categorie = form.watch("categorie")
+  const ptacTier = form.watch("ptacTier")
   const pricingConfig = getPricingConfig(categorie)
+  // For camping-cars, CV tier only drives the ≤3,5T tariff — the >3,5T table is flat.
+  const showCvTier = pricingConfig.needsCvTier && ptacTier !== "plus-3500kg"
 
   if (!pricingConfig.needsCvTier && !pricingConfig.needsPtacTier && !pricingConfig.needsQuadSubtype) {
     return null
@@ -32,7 +35,7 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
       <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {pricingConfig.needsCvTier ? (
+        {showCvTier ? (
           <FormField
             control={form.control}
             name="cvTier"

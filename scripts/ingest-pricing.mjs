@@ -96,15 +96,25 @@ const quadAvecPermis = extractSimple("QM-QUAD Ac permis <=9cv", 0)
 // 2, 4, 6, 7, 9). We can only derive a price for the intersection of the two duration
 // sets; durées listed here without a matching base row are not priceable and are
 // dropped rather than guessed.
+//
+// The client asked (2026-07-28) for camping-car <= 3,5T to track the automobile
+// grid across all three CV tiers (not just "< 16cv"), each still +20€ FR/DOM-TOM.
 const CAMPING_CAR_LEGER_SURCHARGE = 20
 const campingCarDurees = new Set(extractSimple("camping-car<=3,5T", 0).map((r) => r.duree))
-const campingCarMoins35 = autoMoins16
-  .filter((r) => campingCarDurees.has(r.duree))
-  .map((r) => ({
-    duree: r.duree,
-    prixFr: r.prixFr + CAMPING_CAR_LEGER_SURCHARGE,
-    prixDomTom: r.prixDomTom + CAMPING_CAR_LEGER_SURCHARGE,
-  }))
+function campingCarLeger(autoTier) {
+  return autoTier
+    .filter((r) => campingCarDurees.has(r.duree))
+    .map((r) => ({
+      duree: r.duree,
+      prixFr: r.prixFr + CAMPING_CAR_LEGER_SURCHARGE,
+      prixDomTom: r.prixDomTom + CAMPING_CAR_LEGER_SURCHARGE,
+    }))
+}
+const campingCarMoins35 = {
+  "moins-16cv": campingCarLeger(autoMoins16),
+  "moins-30cv": campingCarLeger(autoMoins30),
+  "plus-30cv": campingCarLeger(autoPlus30),
+}
 
 function assertNonEmpty(name, arr) {
   if (!arr || arr.length === 0) {
@@ -124,7 +134,9 @@ for (const [name, arr] of [
   ["autoMoins30", autoMoins30],
   ["autoPlus30", autoPlus30],
   ["quadAvecPermis", quadAvecPermis],
-  ["campingCarMoins35", campingCarMoins35],
+  ["campingCarMoins35.moins-16cv", campingCarMoins35["moins-16cv"]],
+  ["campingCarMoins35.moins-30cv", campingCarMoins35["moins-30cv"]],
+  ["campingCarMoins35.plus-30cv", campingCarMoins35["plus-30cv"]],
 ]) {
   assertNonEmpty(name, arr)
 }
@@ -201,18 +213,26 @@ ${tariffRows(autoPlus30, { withOptions: true })}
 }
 
 // camping-car ≤ 3,5T has no dedicated table in the source sheet: it's priced as the
-// "moins-16cv" base tariff + 20€ (FR and DOM-TOM), with no options, restricted to the
-// durations that exist in both the camping-car block's duration list and the base table.
+// matching automobile CV-tier tariff + 20€ (FR and DOM-TOM), with no options, restricted
+// to the durations that exist in both the camping-car block's duration list and the base
+// table. camping-car > 3,5T has its own flat table and does not vary by CV tier.
 export const CAMPING_CAR_LEGER_SURCHARGE = ${CAMPING_CAR_LEGER_SURCHARGE}
 
-export const CAMPING_CAR_TARIFFS: Record<PtacTier, TariffRow[]> = {
-  "moins-3500kg": [
-${tariffRows(campingCarMoins35)}
+export const CAMPING_CAR_LEGER_TARIFFS: Record<CvTier, TariffRow[]> = {
+  "moins-16cv": [
+${tariffRows(campingCarMoins35["moins-16cv"])}
   ],
-  "plus-3500kg": [
-${tariffRows(campingCarPlus35)}
+  "moins-30cv": [
+${tariffRows(campingCarMoins35["moins-30cv"])}
+  ],
+  "plus-30cv": [
+${tariffRows(campingCarMoins35["plus-30cv"])}
   ],
 }
+
+export const CAMPING_CAR_LOURD_TARIFFS: TariffRow[] = [
+${tariffRows(campingCarPlus35)}
+]
 
 export const FRONTIERE_TARIFFS: Record<CvTier, TariffRow[]> = {
   "moins-16cv": [
