@@ -437,7 +437,9 @@
       "acceptCgv": "J'accepte les <link>Conditions générales de vente</link>",
       "acceptIpid": "J'ai pris connaissance du document d'information (IPID)",
       "acceptContrat": "J'ai pris connaissance des conditions générales du contrat",
-      "autresDocuments": "Autre document (optionnel)"
+      "autresDocuments": "Autre document (optionnel)",
+      "maxSize": "Taille maximale du fichier : 40 Mo",
+      "fileTooLarge": "Ce fichier dépasse la limite de 40 Mo. Veuillez choisir un fichier plus petit."
     },
     "payment": {
       "heading": "Récapitulatif et paiement sécurisé",

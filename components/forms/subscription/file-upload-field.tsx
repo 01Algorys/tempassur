@@ -1,11 +1,12 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Paperclip, X } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { MAX_FILE_SIZE_BYTES } from "@/lib/validations/subscription-schema"
 
 interface FileUploadFieldProps {
   id: string
@@ -18,6 +19,7 @@ interface FileUploadFieldProps {
 export function FileUploadField({ id, label, value, onChange, accept = "image/*,.pdf" }: FileUploadFieldProps) {
   const t = useTranslations("wizard.documents")
   const inputRef = useRef<HTMLInputElement>(null)
+  const [tooLarge, setTooLarge] = useState(false)
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -44,6 +46,7 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
             aria-label={t("removeFile", { label })}
             onClick={() => {
               onChange(undefined)
+              setTooLarge(false)
               if (inputRef.current) inputRef.current.value = ""
             }}
           >
@@ -57,8 +60,23 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
         type="file"
         accept={accept}
         className="hidden"
-        onChange={(event) => onChange(event.target.files?.[0])}
+        onChange={(event) => {
+          const file = event.target.files?.[0]
+          if (file && file.size > MAX_FILE_SIZE_BYTES) {
+            setTooLarge(true)
+            onChange(undefined)
+            if (inputRef.current) inputRef.current.value = ""
+            return
+          }
+          setTooLarge(false)
+          onChange(file)
+        }}
       />
+      {tooLarge ? (
+        <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
+      ) : (
+        <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
+      )}
     </div>
   )
 }

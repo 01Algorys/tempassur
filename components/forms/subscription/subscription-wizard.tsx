@@ -113,6 +113,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   const [isSavingDevis, setIsSavingDevis] = useState(false)
   const [devisError, setDevisError] = useState<string | undefined>(undefined)
   const [devisId, setDevisId] = useState<string | null>(null)
+  const [devisClientId, setDevisClientId] = useState<string | null>(null)
   const [isCreatingContract, setIsCreatingContract] = useState(false)
   const [paymentReady, setPaymentReady] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -287,22 +288,31 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     setIsSavingDevis(true)
     setDevisError(undefined)
     try {
-      const result = await createDevis({
-        values: form.getValues(),
-        vehicleLabel,
-        montantEstime: breakdown ? breakdown.total : null,
-      })
-      if (!result.success || !result.devisId) {
-        setDevisError(t("devisSaveError"))
-        return
+      // A prior attempt may have already created the devis+client and only failed
+      // on document upload (e.g. oversized file, network blip) — reuse that
+      // clientId instead of calling createDevis again, which would otherwise
+      // produce a duplicate devis for the same person on every retry.
+      let clientId = devisClientId
+      if (!clientId) {
+        const result = await createDevis({
+          values: form.getValues(),
+          vehicleLabel,
+          montantEstime: breakdown ? breakdown.total : null,
+        })
+        if (!result.success || !result.devisId) {
+          setDevisError(t("devisSaveError"))
+          return
+        }
+
+        setDevisId(result.devisId)
+        clientId = result.clientId ?? null
+        setDevisClientId(clientId)
       }
 
-      setDevisId(result.devisId)
-
-      if (result.clientId) {
+      if (clientId) {
         const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
         const uploadResult = await uploadSubscriptionDocuments({
-          clientId: result.clientId,
+          clientId,
           permisRecto,
           permisVerso,
           carteGrise,

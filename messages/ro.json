@@ -437,7 +437,9 @@
       "acceptCgv": "Accept <link>Condițiile generale de vânzare</link>",
       "acceptIpid": "Am luat cunoștință de documentul de informare (IPID)",
       "acceptContrat": "Am luat cunoștință de condițiile generale ale contractului",
-      "autresDocuments": "Alt document (opțional)"
+      "autresDocuments": "Alt document (opțional)",
+      "maxSize": "Dimensiune maximă a fișierului: 40 MB",
+      "fileTooLarge": "Acest fișier depășește limita de 40 MB. Alegeți un fișier mai mic."
     },
     "payment": {
       "heading": "Recapitulare și plată securizată",

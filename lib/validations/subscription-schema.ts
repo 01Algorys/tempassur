@@ -11,15 +11,26 @@ export const CIVILITE_OPTIONS = [
 
 const phoneRegex = /^[0-9+()\s-]+$/
 
-const optionalFile = z
-  .instanceof(File)
-  .optional()
-  .or(z.literal(undefined))
+export const MAX_FILE_SIZE_BYTES = 40 * 1024 * 1024
+export const MAX_FILE_SIZE_MB = MAX_FILE_SIZE_BYTES / (1024 * 1024)
 
 // The schema needs translated messages, so it's built as a factory from a `t` function
 // (see messages/*.json "validation") — see useSubscriptionSchema below for the hook form
 // actually uses.
 export function createSubscriptionSchema(t: (key: string) => string) {
+  const maxSize = (file: File) => file.size <= MAX_FILE_SIZE_BYTES
+
+  const fileTooLargeMessage = t("fileTooLarge")
+
+  const requiredFile = (message: string) =>
+    z.instanceof(File, { message }).refine(maxSize, { message: fileTooLargeMessage })
+
+  const optionalFile = z
+    .instanceof(File)
+    .refine(maxSize, { message: fileTooLargeMessage })
+    .optional()
+    .or(z.literal(undefined))
+
   return z
     .object({
       // Localisation (dossier §4.1)
@@ -78,9 +89,9 @@ export function createSubscriptionSchema(t: (key: string) => string) {
       paysObtentionPermis: z.string().min(1, t("paysObtentionPermisRequired")),
 
       // Documents — required except autresDocuments
-      permisRecto: z.instanceof(File, { message: t("permisRectoRequired") }),
-      permisVerso: z.instanceof(File, { message: t("permisVersoRequired") }),
-      carteGrise: z.instanceof(File, { message: t("carteGriseRequired") }),
+      permisRecto: requiredFile(t("permisRectoRequired")),
+      permisVerso: requiredFile(t("permisVersoRequired")),
+      carteGrise: requiredFile(t("carteGriseRequired")),
       autresDocuments: optionalFile,
 
       // Consents (dossier §4.6/§4.7)

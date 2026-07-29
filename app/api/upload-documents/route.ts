@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 
 import { uploadCrmDocument } from "@/lib/crm"
+import { MAX_FILE_SIZE_BYTES } from "@/lib/validations/subscription-schema"
 
 // Each file is attempted independently so one bad file doesn't take down the
 // others, but the top-level `success` reflects whether every attempted file
@@ -30,6 +31,13 @@ export async function POST(req: NextRequest) {
   for (const [field, meta] of Object.entries(FIELD_MAP)) {
     const file = formData.get(field)
     if (!(file instanceof File) || file.size === 0) continue
+
+    // Reject oversized files outright instead of forwarding them to the CRM —
+    // the client already blocks these, this is the server-side backstop.
+    if (file.size > MAX_FILE_SIZE_BYTES) {
+      results.push({ field, success: false, error: "file_too_large" })
+      continue
+    }
 
     try {
       await uploadCrmDocument({ clientId, file, ...meta })
