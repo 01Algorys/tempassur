@@ -431,6 +431,8 @@
       "permisVerso": "Permis de conduire (verso) *",
       "carteGrise": "Carte grise *",
       "chooseFile": "Choisir un fichier",
+      "chooseFiles": "Choisir des fichiers",
+      "dragHint": "Glissez-déposez, ou cliquez pour parcourir",
       "noFile": "Aucun fichier sélectionné",
       "removeFile": "Retirer le fichier {label}",
       "consentsHeading": "Acceptation des conditions",

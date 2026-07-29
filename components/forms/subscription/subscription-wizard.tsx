@@ -181,6 +181,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       consentContrat: false,
       consentDeclarations: false,
       declarationsAcceptedAt: "",
+      autresDocuments: [],
     },
   })
 

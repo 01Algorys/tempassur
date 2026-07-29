@@ -431,6 +431,8 @@
       "permisVerso": "Patente di guida (retro) *",
       "carteGrise": "Libretto di circolazione *",
       "chooseFile": "Scegli un file",
+      "chooseFiles": "Scegli i file",
+      "dragHint": "Trascina qui i file oppure clicca per selezionarli",
       "noFile": "Nessun file selezionato",
       "removeFile": "Rimuovi il file {label}",
       "consentsHeading": "Accettazione delle condizioni",

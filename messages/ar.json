@@ -431,6 +431,8 @@
       "permisVerso": "رخصة القيادة (الوجه الخلفي) *",
       "carteGrise": "بطاقة التسجيل الرمادية *",
       "chooseFile": "اختر ملفًا",
+      "chooseFiles": "اختر ملفات",
+      "dragHint": "اسحب وأفلت الملف هنا، أو انقر للتصفح",
       "noFile": "لم يتم اختيار أي ملف",
       "removeFile": "إزالة الملف {label}",
       "consentsHeading": "قبول الشروط",

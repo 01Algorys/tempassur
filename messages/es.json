@@ -431,6 +431,8 @@
       "permisVerso": "Permiso de conducción (reverso) *",
       "carteGrise": "Permiso de circulación *",
       "chooseFile": "Elegir un archivo",
+      "chooseFiles": "Elegir archivos",
+      "dragHint": "Arrastre y suelte, o haga clic para explorar",
       "noFile": "Ningún archivo seleccionado",
       "removeFile": "Eliminar el archivo {label}",
       "consentsHeading": "Aceptación de las condiciones",

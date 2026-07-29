@@ -431,6 +431,8 @@
       "permisVerso": "Führerschein (Rückseite) *",
       "carteGrise": "Fahrzeugschein *",
       "chooseFile": "Datei auswählen",
+      "chooseFiles": "Dateien auswählen",
+      "dragHint": "Ziehen und ablegen, oder klicken zum Durchsuchen",
       "noFile": "Keine Datei ausgewählt",
       "removeFile": "Datei {label} entfernen",
       "consentsHeading": "Zustimmung zu den Bedingungen",

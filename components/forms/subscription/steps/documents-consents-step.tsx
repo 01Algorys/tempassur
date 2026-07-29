@@ -9,6 +9,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 import { FileUploadField } from "../file-upload-field"
+import { MultiFileUploadField } from "../multi-file-upload-field"
 
 interface DocumentsConsentsStepProps {
   form: UseFormReturn<SubscriptionFormValues>
@@ -57,8 +58,8 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
             control={form.control}
             name="autresDocuments"
             render={({ field }) => (
-              <FormItem>
-                <FileUploadField
+              <FormItem className="sm:col-span-2">
+                <MultiFileUploadField
                   id="autresDocuments"
                   label={t("autresDocuments")}
                   value={field.value}

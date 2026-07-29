@@ -431,6 +431,8 @@
       "permisVerso": "Permis de conducere (verso) *",
       "carteGrise": "Certificat de înmatriculare *",
       "chooseFile": "Alegeți un fișier",
+      "chooseFiles": "Alegeți fișiere",
+      "dragHint": "Trageți și plasați, sau apăsați pentru a răsfoi",
       "noFile": "Niciun fișier selectat",
       "removeFile": "Elimină fișierul {label}",
       "consentsHeading": "Acceptarea condițiilor",

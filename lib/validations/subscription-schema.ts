@@ -25,11 +25,7 @@ export function createSubscriptionSchema(t: (key: string) => string) {
   const requiredFile = (message: string) =>
     z.instanceof(File, { message }).refine(maxSize, { message: fileTooLargeMessage })
 
-  const optionalFile = z
-    .instanceof(File)
-    .refine(maxSize, { message: fileTooLargeMessage })
-    .optional()
-    .or(z.literal(undefined))
+  const optionalFileList = z.array(z.instanceof(File).refine(maxSize, { message: fileTooLargeMessage })).optional()
 
   return z
     .object({
@@ -92,7 +88,7 @@ export function createSubscriptionSchema(t: (key: string) => string) {
       permisRecto: requiredFile(t("permisRectoRequired")),
       permisVerso: requiredFile(t("permisVersoRequired")),
       carteGrise: requiredFile(t("carteGriseRequired")),
-      autresDocuments: optionalFile,
+      autresDocuments: optionalFileList,
 
       // Consents (dossier §4.6/§4.7)
       consentCgv: z.boolean().refine((v) => v === true, { message: t("consentCgvRequired") }),

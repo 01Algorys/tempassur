@@ -3,7 +3,7 @@ interface UploadSubscriptionDocumentsParams {
   permisRecto?: File
   permisVerso?: File
   carteGrise?: File
-  autresDocuments?: File
+  autresDocuments?: File[]
 }
 
 // permisRecto/permisVerso/carteGrise are required on the subscription form, so
@@ -11,7 +11,8 @@ interface UploadSubscriptionDocumentsParams {
 // must block progression instead of silently vanishing.
 export async function uploadSubscriptionDocuments(params: UploadSubscriptionDocumentsParams): Promise<{ success: boolean }> {
   const { clientId, permisRecto, permisVerso, carteGrise, autresDocuments } = params
-  if (!permisRecto && !permisVerso && !carteGrise && !autresDocuments) return { success: true }
+  const hasAutresDocuments = !!autresDocuments && autresDocuments.length > 0
+  if (!permisRecto && !permisVerso && !carteGrise && !hasAutresDocuments) return { success: true }
 
   try {
     const formData = new FormData()
@@ -19,7 +20,7 @@ export async function uploadSubscriptionDocuments(params: UploadSubscriptionDocu
     if (permisRecto) formData.set("permisRecto", permisRecto)
     if (permisVerso) formData.set("permisVerso", permisVerso)
     if (carteGrise) formData.set("carteGrise", carteGrise)
-    if (autresDocuments) formData.set("autresDocuments", autresDocuments)
+    autresDocuments?.forEach((file) => formData.append("autresDocuments", file))
 
     const response = await fetch("/api/upload-documents", { method: "POST", body: formData })
     if (!response.ok) return { success: false }

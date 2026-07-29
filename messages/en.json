@@ -431,6 +431,8 @@
       "permisVerso": "Driving licence (back) *",
       "carteGrise": "Vehicle registration document *",
       "chooseFile": "Choose a file",
+      "chooseFiles": "Choose files",
+      "dragHint": "Drag and drop, or click to browse",
       "noFile": "No file selected",
       "removeFile": "Remove the {label} file",
       "consentsHeading": "Acceptance of terms",

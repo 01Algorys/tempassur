@@ -28,23 +28,26 @@ export async function POST(req: NextRequest) {
 
   const results: { field: string; success: boolean; error?: string }[] = []
 
+  // getAll (not get) so fields that allow multiple files — currently only
+  // autresDocuments — get every attached file, not just the first.
   for (const [field, meta] of Object.entries(FIELD_MAP)) {
-    const file = formData.get(field)
-    if (!(file instanceof File) || file.size === 0) continue
+    const files = formData.getAll(field).filter((f): f is File => f instanceof File && f.size > 0)
 
-    // Reject oversized files outright instead of forwarding them to the CRM —
-    // the client already blocks these, this is the server-side backstop.
-    if (file.size > MAX_FILE_SIZE_BYTES) {
-      results.push({ field, success: false, error: "file_too_large" })
-      continue
-    }
+    for (const file of files) {
+      // Reject oversized files outright instead of forwarding them to the CRM —
+      // the client already blocks these, this is the server-side backstop.
+      if (file.size > MAX_FILE_SIZE_BYTES) {
+        results.push({ field, success: false, error: "file_too_large" })
+        continue
+      }
 
-    try {
-      await uploadCrmDocument({ clientId, file, ...meta })
-      results.push({ field, success: true })
-    } catch (error) {
-      console.error(`[upload-documents] failed for ${field}`, error)
-      results.push({ field, success: false, error: error instanceof Error ? error.message : "upload_failed" })
+      try {
+        await uploadCrmDocument({ clientId, file, ...meta })
+        results.push({ field, success: true })
+      } catch (error) {
+        console.error(`[upload-documents] failed for ${field}`, error)
+        results.push({ field, success: false, error: error instanceof Error ? error.message : "upload_failed" })
+      }
     }
   }
 
