@@ -4,10 +4,20 @@ interface CreateClientParams {
   values: SubscriptionFormValues
 }
 
+export interface CreateClientResult {
+  success: boolean
+  clientId?: string
+  // Short-lived (15 min), client-scoped credential for uploading documents
+  // directly to the CRM's Railway deployment — see lib/documents.ts.
+  uploadToken?: string
+  uploadUrl?: string
+  uploadTokenExpiresAt?: string
+}
+
 // Split from createDevis so the wizard can create the CRM client, upload and
 // verify the required documents against it, and only then create the devis —
 // a devis must never exist without its documents already confirmed uploaded.
-export async function createClient({ values }: CreateClientParams): Promise<{ success: boolean; clientId?: string }> {
+export async function createClient({ values }: CreateClientParams): Promise<CreateClientResult> {
   try {
     const response = await fetch("/api/create-client", {
       method: "POST",
@@ -32,8 +42,14 @@ export async function createClient({ values }: CreateClientParams): Promise<{ su
     })
 
     if (!response.ok) return { success: false }
-    const data = (await response.json()) as { success?: boolean; clientId?: string }
-    return { success: !!data.success, clientId: data.clientId }
+    const data = (await response.json()) as CreateClientResult
+    return {
+      success: !!data.success,
+      clientId: data.clientId,
+      uploadToken: data.uploadToken,
+      uploadUrl: data.uploadUrl,
+      uploadTokenExpiresAt: data.uploadTokenExpiresAt,
+    }
   } catch {
     return { success: false }
   }
@@ -55,7 +71,7 @@ export async function createDevis({
   values,
   vehicleLabel,
   montantEstime,
-}: CreateDevisParams): Promise<{ success: boolean; devisId?: string }> {
+}: CreateDevisParams): Promise<{ success: boolean; devisId?: string; error?: string; missing?: string[] }> {
   try {
     const response = await fetch("/api/create-devis", {
       method: "POST",
@@ -100,9 +116,11 @@ export async function createDevis({
       }),
     })
 
-    if (!response.ok) return { success: false }
-    const data = (await response.json()) as { success?: boolean; devisId?: string }
-    return { success: !!data.success, devisId: data.devisId }
+    const data = (await response.json().catch(() => null)) as
+      | { success?: boolean; devisId?: string; error?: string; missing?: string[] }
+      | null
+    if (!response.ok) return { success: false, error: data?.error, missing: data?.missing }
+    return { success: !!data?.success, devisId: data?.devisId }
   } catch {
     return { success: false }
   }

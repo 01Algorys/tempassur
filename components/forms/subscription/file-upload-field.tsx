@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState, type DragEvent } from "react"
-import { File as FileIcon, UploadCloud, X } from "lucide-react"
+import { File as FileIcon, Loader2, UploadCloud, X } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 import { MAX_FILE_SIZE_BYTES } from "@/lib/validations/subscription-schema"
 
+import { compressImageFile } from "./compress-image"
 import { formatFileSize } from "./format-file-size"
 
 interface FileUploadFieldProps {
@@ -24,10 +25,20 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
   const inputRef = useRef<HTMLInputElement>(null)
   const [tooLarge, setTooLarge] = useState(false)
   const [empty, setEmpty] = useState(false)
+  const [isCompressing, setIsCompressing] = useState(false)
   const [dragActive, setDragActive] = useState(false)
 
-  function handleFile(file: File | undefined) {
-    if (file && file.size > MAX_FILE_SIZE_BYTES) {
+  async function handleFile(rawFile: File | undefined) {
+    if (!rawFile) return
+
+    // Compress before the size checks: a 10+ MB phone photo routinely shrinks
+    // to a few hundred KB, so this must run first or it'd get rejected (or
+    // sent as-is and risk hitting the upload request's body-size limit).
+    setIsCompressing(true)
+    const file = await compressImageFile(rawFile)
+    setIsCompressing(false)
+
+    if (file.size > MAX_FILE_SIZE_BYTES) {
       setTooLarge(true)
       setEmpty(false)
       onChange(undefined)
@@ -37,7 +48,7 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
     // A 0-byte File can still pass the file picker (e.g. a camera intent or
     // cloud-storage stub that hasn't finished writing bytes yet) — silently
     // accepting it means the CRM ends up with no document at all.
-    if (file && file.size === 0) {
+    if (file.size === 0) {
       setEmpty(true)
       setTooLarge(false)
       onChange(undefined)
@@ -52,14 +63,19 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
   function handleDrop(event: DragEvent<HTMLDivElement>) {
     event.preventDefault()
     setDragActive(false)
-    handleFile(event.dataTransfer.files?.[0])
+    void handleFile(event.dataTransfer.files?.[0])
   }
 
   return (
     <div className="flex flex-col gap-1.5">
       <Label htmlFor={id}>{label}</Label>
 
-      {value ? (
+      {isCompressing ? (
+        <div className="flex items-center gap-2 rounded-xl border-2 border-dashed border-input px-4 py-5 text-center text-sm text-muted-foreground">
+          <Loader2 className="size-4 animate-spin" />
+          {t("compressing")}
+        </div>
+      ) : value ? (
         <div className="flex items-center gap-3 rounded-xl border border-border bg-muted/40 px-3 py-2.5">
           <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <FileIcon className="size-4" />
@@ -113,7 +129,7 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
         type="file"
         accept={accept}
         className="hidden"
-        onChange={(event) => handleFile(event.target.files?.[0])}
+        onChange={(event) => void handleFile(event.target.files?.[0])}
       />
 
       {tooLarge ? (

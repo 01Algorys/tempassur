@@ -443,7 +443,8 @@
       "autresDocuments": "Altro documento (facoltativo)",
       "maxSize": "Dimensione massima del file: 40 MB",
       "fileTooLarge": "Questo file supera il limite di 40 MB. Scegli un file più piccolo.",
-      "fileEmpty": "Questo file sembra vuoto (0 KB). Prova a selezionarlo o fotografarlo di nuovo."
+      "fileEmpty": "Questo file sembra vuoto (0 KB). Prova a selezionarlo o fotografarlo di nuovo.",
+      "compressing": "Compressione del file…"
     },
     "payment": {
       "heading": "Riepilogo e pagamento sicuro",
@@ -496,7 +497,8 @@
       "contactMessage": "Buongiorno, vorrei parlare della mia situazione prima di sottoscrivere un'assicurazione temporanea.",
       "cancel": "Annulla",
       "confirm": "Certifico e continuo",
-      "sending": "Invio in corso..."
+      "sending": "Invio in corso...",
+      "sendingProgress": "Invio in corso… {percent}%"
     }
   },
   "product": {

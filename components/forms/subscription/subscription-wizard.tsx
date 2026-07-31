@@ -114,6 +114,9 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   const [devisError, setDevisError] = useState<string | undefined>(undefined)
   const [devisId, setDevisId] = useState<string | null>(null)
   const [devisClientId, setDevisClientId] = useState<string | null>(null)
+  const [uploadCredentials, setUploadCredentials] = useState<{ token: string; url: string } | null>(null)
+  const [uploadProgress, setUploadProgress] = useState(0)
+  const [uploadedDocumentKeys, setUploadedDocumentKeys] = useState<Set<string>>(new Set())
   const [isCreatingContract, setIsCreatingContract] = useState(false)
   const [paymentReady, setPaymentReady] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -293,14 +296,17 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       // on document upload or devis creation (e.g. oversized file, network blip)
       // — reuse that clientId instead of creating a duplicate client on retry.
       let clientId = devisClientId
+      let credentials = uploadCredentials
       if (!clientId) {
         const clientResult = await createClient({ values: form.getValues() })
-        if (!clientResult.success || !clientResult.clientId) {
+        if (!clientResult.success || !clientResult.clientId || !clientResult.uploadToken || !clientResult.uploadUrl) {
           setDevisError(t("devisSaveError"))
           return
         }
         clientId = clientResult.clientId
+        credentials = { token: clientResult.uploadToken, url: clientResult.uploadUrl }
         setDevisClientId(clientId)
+        setUploadCredentials(credentials)
       }
 
       // Documents must be confirmed uploaded before the devis is created — a
@@ -313,15 +319,28 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
           setDevisError(t("priceUnavailableError"))
           return
         }
+        if (!credentials) {
+          setDevisError(t("documentsUploadError"))
+          return
+        }
 
         const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
+        setUploadProgress(0)
         const uploadResult = await uploadSubscriptionDocuments({
           clientId,
+          uploadToken: credentials.token,
+          uploadUrl: credentials.url,
           permisRecto,
           permisVerso,
           carteGrise,
           autresDocuments,
+          // On a retry after a partial failure, skip whatever already
+          // succeeded — the CRM has no upload idempotency, so re-sending a
+          // field that already landed would create a duplicate document.
+          alreadyUploadedKeys: uploadedDocumentKeys,
+          onProgress: setUploadProgress,
         })
+        setUploadedDocumentKeys(new Set(uploadResult.uploadedKeys))
         if (!uploadResult.success) {
           setDevisError(t("documentsUploadError"))
           return
@@ -334,7 +353,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
           montantEstime: breakdown.total,
         })
         if (!devisResult.success || !devisResult.devisId) {
-          setDevisError(t("devisSaveError"))
+          setDevisError(devisResult.error === "missing_documents" ? t("documentsUploadError") : t("devisSaveError"))
           return
         }
         setDevisId(devisResult.devisId)
@@ -347,6 +366,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       scrollToTop()
     } finally {
       setIsSavingDevis(false)
+      setUploadProgress(0)
     }
   }
 
@@ -472,6 +492,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
         onOpenChange={setDeclarationsOpen}
         onConfirm={handleDeclarationsConfirm}
         isSubmitting={isSavingDevis}
+        uploadProgress={uploadProgress}
         errorMessage={devisError}
       />
     </div>

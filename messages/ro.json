@@ -443,7 +443,8 @@
       "autresDocuments": "Alt document (opțional)",
       "maxSize": "Dimensiune maximă a fișierului: 40 MB",
       "fileTooLarge": "Acest fișier depășește limita de 40 MB. Alegeți un fișier mai mic.",
-      "fileEmpty": "Acest fișier pare gol (0 KB). Încercați să îl selectați sau fotografiați din nou."
+      "fileEmpty": "Acest fișier pare gol (0 KB). Încercați să îl selectați sau fotografiați din nou.",
+      "compressing": "Se comprimă fișierul…"
     },
     "payment": {
       "heading": "Recapitulare și plată securizată",
@@ -496,7 +497,8 @@
       "contactMessage": "Bună ziua, aș dori să discut despre situația mea înainte de a încheia o asigurare temporară.",
       "cancel": "Anulează",
       "confirm": "Certific și continui",
-      "sending": "Se trimite..."
+      "sending": "Se trimite...",
+      "sendingProgress": "Se trimite… {percent}%"
     }
   },
   "product": {

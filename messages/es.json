@@ -443,7 +443,8 @@
       "autresDocuments": "Otro documento (opcional)",
       "maxSize": "Tamaño máximo del archivo: 40 MB",
       "fileTooLarge": "Este archivo supera el límite de 40 MB. Elija un archivo más pequeño.",
-      "fileEmpty": "Este archivo parece estar vacío (0 KB). Vuelva a seleccionarlo o fotografiarlo."
+      "fileEmpty": "Este archivo parece estar vacío (0 KB). Vuelva a seleccionarlo o fotografiarlo.",
+      "compressing": "Comprimiendo archivo…"
     },
     "payment": {
       "heading": "Resumen y pago seguro",
@@ -496,7 +497,8 @@
       "contactMessage": "Hola, me gustaría hablar sobre mi situación antes de contratar un seguro temporal.",
       "cancel": "Cancelar",
       "confirm": "Certifico y continúo",
-      "sending": "Enviando..."
+      "sending": "Enviando...",
+      "sendingProgress": "Enviando… {percent}%"
     }
   },
   "product": {

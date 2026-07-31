@@ -54,6 +54,16 @@ function crmConfig(): { baseUrl: string; apiKey: string } {
   return { baseUrl, apiKey }
 }
 
+// The browser needs a publicly reachable origin to upload directly to — on
+// Railway that's typically the same public domain the server already calls,
+// but CRM_UPLOAD_BASE_URL lets ops point browser uploads at a different public
+// hostname than server-to-server traffic without code changes.
+export function crmUploadBaseUrl(): string {
+  const url = process.env.CRM_UPLOAD_BASE_URL || process.env.CRM_API_URL
+  if (!url) throw new Error("CRM_UPLOAD_BASE_URL or CRM_API_URL is not set")
+  return url
+}
+
 async function crmFetch<T>(path: string, init: RequestInit): Promise<T> {
   const { baseUrl, apiKey } = crmConfig()
   const response = await fetch(`${baseUrl}${path}`, {
@@ -96,37 +106,27 @@ export async function transformCrmDevis(devisId: string, payload: CrmTransformPa
   })
 }
 
-interface CrmDocument {
-  id: string
+// Mints a short-lived, client-scoped token (lib/upload-token.ts on the CRM
+// side) so the browser can upload documents straight to the CRM's Railway
+// deployment — never through a Vercel function, never holding CRM_PARTNER_API_KEY.
+export async function issueUploadToken(clientId: string): Promise<{ token: string; expiresAt: string }> {
+  return crmFetch<{ token: string; expiresAt: string }>("/api/upload-token", {
+    method: "POST",
+    body: JSON.stringify({ clientId }),
+  })
 }
 
-// Not JSON, so this bypasses crmFetch (which always forces a JSON content-type)
-// and posts multipart/form-data directly instead.
-export async function uploadCrmDocument(params: {
-  clientId: string
-  file: File
-  typeDocumentLabel: string
-  libelleAutre?: string
-}): Promise<CrmDocument> {
-  const { baseUrl, apiKey } = crmConfig()
+export interface RequiredDocumentsStatus {
+  permisRecto: boolean
+  permisVerso: boolean
+  carteGrise: boolean
+}
 
-  const formData = new FormData()
-  formData.set("clientId", params.clientId)
-  formData.set("typeDocumentLabel", params.typeDocumentLabel)
-  if (params.libelleAutre) formData.set("libelleAutre", params.libelleAutre)
-  formData.append("file", params.file)
-
-  const response = await fetch(`${baseUrl}/api/documents`, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}` },
-    body: formData,
+// Server-to-server source of truth for "did the required documents actually
+// land," called right before devis creation — the CRM's own records, not the
+// browser's self-reported upload result, gate whether a devis gets created.
+export async function checkRequiredDocuments(clientId: string): Promise<RequiredDocumentsStatus> {
+  return crmFetch<RequiredDocumentsStatus>(`/api/documents/required-check?clientId=${encodeURIComponent(clientId)}`, {
+    method: "GET",
   })
-
-  const data = await response.json().catch(() => null)
-  if (!response.ok) {
-    const message = data && typeof data === "object" && "message" in data ? String(data.message) : response.statusText
-    throw new Error(`CRM /api/documents failed (${response.status}): ${message}`)
-  }
-  // POST /api/documents returns an array (multi-file upload) — this call only ever sends one.
-  return Array.isArray(data) ? data[0] : data
 }

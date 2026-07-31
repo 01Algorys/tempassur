@@ -443,7 +443,8 @@
       "autresDocuments": "Other document (optional)",
       "maxSize": "Maximum file size: 40 MB",
       "fileTooLarge": "This file exceeds the 40 MB size limit. Please choose a smaller file.",
-      "fileEmpty": "This file appears to be empty (0 KB). Please try selecting or capturing it again."
+      "fileEmpty": "This file appears to be empty (0 KB). Please try selecting or capturing it again.",
+      "compressing": "Compressing file…"
     },
     "payment": {
       "heading": "Summary and secure payment",
@@ -496,7 +497,8 @@
       "contactMessage": "Hello, I would like to discuss my situation before taking out temporary insurance.",
       "cancel": "Cancel",
       "confirm": "I certify and continue",
-      "sending": "Sending..."
+      "sending": "Sending...",
+      "sendingProgress": "Sending… {percent}%"
     }
   },
   "product": {

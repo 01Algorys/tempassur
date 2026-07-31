@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState, type DragEvent } from "react"
-import { File as FileIcon, UploadCloud, X } from "lucide-react"
+import { File as FileIcon, Loader2, UploadCloud, X } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 import { MAX_FILE_SIZE_BYTES } from "@/lib/validations/subscription-schema"
 
+import { compressImageFile } from "./compress-image"
 import { formatFileSize } from "./format-file-size"
 
 interface MultiFileUploadFieldProps {
@@ -36,17 +37,26 @@ export function MultiFileUploadField({
   const inputRef = useRef<HTMLInputElement>(null)
   const [tooLarge, setTooLarge] = useState(false)
   const [empty, setEmpty] = useState(false)
+  const [isCompressing, setIsCompressing] = useState(false)
   const [dragActive, setDragActive] = useState(false)
 
-  function addFiles(files: FileList | File[] | null | undefined) {
+  async function addFiles(files: FileList | File[] | null | undefined) {
     if (!files || files.length === 0) return
     const incoming = Array.from(files)
+
+    // Compress before the size checks: a 10+ MB phone photo routinely shrinks
+    // to a few hundred KB, so this must run first or it'd get rejected (or
+    // sent as-is and risk hitting the upload request's body-size limit).
+    setIsCompressing(true)
+    const compressed = await Promise.all(incoming.map((file) => compressImageFile(file)))
+    setIsCompressing(false)
+
     // A 0-byte File can still pass the file picker (e.g. a camera intent or
     // cloud-storage stub that hasn't finished writing bytes yet) — silently
     // accepting it means the CRM ends up with no document at all.
-    const accepted = incoming.filter((file) => file.size > 0 && file.size <= MAX_FILE_SIZE_BYTES)
-    const rejectedForSize = incoming.filter((file) => file.size > MAX_FILE_SIZE_BYTES).length
-    const rejectedForEmpty = incoming.filter((file) => file.size === 0).length
+    const accepted = compressed.filter((file) => file.size > 0 && file.size <= MAX_FILE_SIZE_BYTES)
+    const rejectedForSize = compressed.filter((file) => file.size > MAX_FILE_SIZE_BYTES).length
+    const rejectedForEmpty = compressed.filter((file) => file.size === 0).length
 
     setTooLarge(rejectedForSize > 0)
     setEmpty(rejectedForEmpty > 0)
@@ -61,7 +71,7 @@ export function MultiFileUploadField({
   function handleDrop(event: DragEvent<HTMLDivElement>) {
     event.preventDefault()
     setDragActive(false)
-    addFiles(event.dataTransfer.files)
+    void addFiles(event.dataTransfer.files)
   }
 
   function removeFile(index: number) {
@@ -72,28 +82,35 @@ export function MultiFileUploadField({
     <div className="flex flex-col gap-1.5">
       <Label htmlFor={id}>{label}</Label>
 
-      <div
-        role="button"
-        tabIndex={0}
-        onClick={() => inputRef.current?.click()}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") inputRef.current?.click()
-        }}
-        onDragOver={(event) => {
-          event.preventDefault()
-          setDragActive(true)
-        }}
-        onDragLeave={() => setDragActive(false)}
-        onDrop={handleDrop}
-        className={cn(
-          "flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border-2 border-dashed px-4 py-5 text-center transition-colors",
-          dragActive ? "border-primary bg-primary/5" : "border-input hover:border-primary/50 hover:bg-muted/30",
-        )}
-      >
-        <UploadCloud className="size-5 text-muted-foreground" />
-        <p className="text-sm font-medium text-foreground">{t("chooseFiles")}</p>
-        <p className="text-xs text-muted-foreground">{t("dragHint")}</p>
-      </div>
+      {isCompressing ? (
+        <div className="flex items-center gap-2 rounded-xl border-2 border-dashed border-input px-4 py-5 text-center text-sm text-muted-foreground">
+          <Loader2 className="size-4 animate-spin" />
+          {t("compressing")}
+        </div>
+      ) : (
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => inputRef.current?.click()}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") inputRef.current?.click()
+          }}
+          onDragOver={(event) => {
+            event.preventDefault()
+            setDragActive(true)
+          }}
+          onDragLeave={() => setDragActive(false)}
+          onDrop={handleDrop}
+          className={cn(
+            "flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border-2 border-dashed px-4 py-5 text-center transition-colors",
+            dragActive ? "border-primary bg-primary/5" : "border-input hover:border-primary/50 hover:bg-muted/30",
+          )}
+        >
+          <UploadCloud className="size-5 text-muted-foreground" />
+          <p className="text-sm font-medium text-foreground">{t("chooseFiles")}</p>
+          <p className="text-xs text-muted-foreground">{t("dragHint")}</p>
+        </div>
+      )}
 
       <input
         ref={inputRef}
@@ -103,7 +120,7 @@ export function MultiFileUploadField({
         multiple
         className="hidden"
         onChange={(event) => {
-          addFiles(event.target.files)
+          void addFiles(event.target.files)
           if (inputRef.current) inputRef.current.value = ""
         }}
       />

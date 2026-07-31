@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { createCrmClient } from "@/lib/crm"
+import { createCrmClient, crmUploadBaseUrl, issueUploadToken } from "@/lib/crm"
 
 interface CreateClientBody {
   nom: string
@@ -68,7 +68,18 @@ export async function POST(req: NextRequest) {
       notes: buildClientNotes(body),
     })
 
-    return NextResponse.json({ success: true, clientId: client.id })
+    // Minted here (server-to-server, holding CRM_PARTNER_API_KEY) and handed to
+    // the browser so it can upload documents directly to the CRM's Railway
+    // deployment — this Vercel function never touches the file bytes themselves.
+    const { token: uploadToken, expiresAt: uploadTokenExpiresAt } = await issueUploadToken(client.id)
+
+    return NextResponse.json({
+      success: true,
+      clientId: client.id,
+      uploadToken,
+      uploadTokenExpiresAt,
+      uploadUrl: `${crmUploadBaseUrl()}/api/documents`,
+    })
   } catch (error) {
     console.error("CRM client creation failed", error)
     return NextResponse.json({ success: false, error: "crm_sync_failed" }, { status: 502 })

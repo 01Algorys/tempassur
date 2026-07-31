@@ -443,7 +443,8 @@
       "autresDocuments": "Weiteres Dokument (optional)",
       "maxSize": "Maximale Dateigröße: 40 MB",
       "fileTooLarge": "Diese Datei überschreitet das Limit von 40 MB. Bitte wählen Sie eine kleinere Datei.",
-      "fileEmpty": "Diese Datei scheint leer zu sein (0 KB). Bitte wählen oder fotografieren Sie sie erneut."
+      "fileEmpty": "Diese Datei scheint leer zu sein (0 KB). Bitte wählen oder fotografieren Sie sie erneut.",
+      "compressing": "Datei wird komprimiert…"
     },
     "payment": {
       "heading": "Zusammenfassung und sichere Zahlung",
@@ -496,7 +497,8 @@
       "contactMessage": "Guten Tag, ich möchte mich über meine Situation austauschen, bevor ich eine Kurzzeitversicherung abschließe.",
       "cancel": "Abbrechen",
       "confirm": "Ich bestätige und fahre fort",
-      "sending": "Wird gesendet..."
+      "sending": "Wird gesendet...",
+      "sendingProgress": "Wird gesendet… {percent}%"
     }
   },
   "product": {

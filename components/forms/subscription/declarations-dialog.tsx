@@ -21,10 +21,20 @@ interface DeclarationsDialogProps {
   onOpenChange: (open: boolean) => void
   onConfirm: () => void
   isSubmitting?: boolean
+  // 0-1, only meaningful while isSubmitting — reflects actual bytes uploaded
+  // so far, since document upload is the slowest part of confirming.
+  uploadProgress?: number
   errorMessage?: string
 }
 
-export function DeclarationsDialog({ open, onOpenChange, onConfirm, isSubmitting, errorMessage }: DeclarationsDialogProps) {
+export function DeclarationsDialog({
+  open,
+  onOpenChange,
+  onConfirm,
+  isSubmitting,
+  uploadProgress,
+  errorMessage,
+}: DeclarationsDialogProps) {
   const t = useTranslations("wizard.declarations")
   const [checked, setChecked] = useState(false)
   const questions = t.raw("questions") as string[]
@@ -86,7 +96,11 @@ export function DeclarationsDialog({ open, onOpenChange, onConfirm, isSubmitting
             disabled={!checked || isSubmitting}
             onClick={onConfirm}
           >
-            {isSubmitting ? t("sending") : t("confirm")}
+            {isSubmitting
+              ? uploadProgress && uploadProgress > 0
+                ? t("sendingProgress", { percent: Math.round(uploadProgress * 100) })
+                : t("sending")
+              : t("confirm")}
           </Button>
         </DialogFooter>
       </DialogContent>

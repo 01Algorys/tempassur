@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { CRM_DEFAULT_DISTRIBUTEUR_ID, CRM_DEFAULT_PRODUIT_ID, createCrmDevis } from "@/lib/crm"
+import { CRM_DEFAULT_DISTRIBUTEUR_ID, CRM_DEFAULT_PRODUIT_ID, checkRequiredDocuments, createCrmDevis } from "@/lib/crm"
 
 interface CreateDevisBody {
   clientId: string
@@ -86,6 +86,22 @@ export async function POST(req: NextRequest) {
   const { clientId, nom, prenom, email } = body
   if (!clientId || !nom || !prenom || !email) {
     return NextResponse.json({ success: false, error: "missing_fields" }, { status: 400 })
+  }
+
+  // The browser uploads directly to the CRM now — this server never sees the
+  // file bytes and can't just trust the browser's self-reported "upload
+  // succeeded." The CRM's own document records are the source of truth for
+  // whether a devis is allowed to exist.
+  try {
+    const status = await checkRequiredDocuments(clientId)
+    const missing = (Object.keys(status) as (keyof typeof status)[]).filter((key) => !status[key])
+    if (missing.length > 0) {
+      console.warn("devis creation blocked: missing documents", { clientId, missing })
+      return NextResponse.json({ success: false, error: "missing_documents", missing }, { status: 422 })
+    }
+  } catch (error) {
+    console.error("CRM document status check failed", error)
+    return NextResponse.json({ success: false, error: "crm_sync_failed" }, { status: 502 })
   }
 
   try {
