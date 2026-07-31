@@ -329,6 +329,7 @@
     "paymentError": "Plata nu a fost finalizată. Nicio sumă nu a fost debitată. Încercați din nou sau contactați-ne: WhatsApp +33 6 05 93 84 79  găsim o soluție imediat.",
     "devisSaveError": "Cererea dvs. nu a putut fi salvată. Verificați conexiunea și încercați din nou sau contactați-ne dacă problema persistă.",
     "documentsUploadError": "Documentele dvs. nu au putut fi trimise. Verificați conexiunea și încercați din nou sau contactați-ne dacă problema persistă.",
+    "priceUnavailableError": "Prețul nu a putut fi calculat pentru această durată. Reveniți la pasul anterior și selectați din nou durata contractului.",
     "paymentCancelled": "Plata a fost anulată. Nicio sumă nu a fost debitată. Puteți încerca din nou mai jos.",
     "finalizing": {
       "heading": "Se finalizează abonamentul dumneavoastră...",

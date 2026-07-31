@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import type { UseFormReturn } from "react-hook-form"
 import { useLocale, useTranslations } from "next-intl"
 
@@ -33,6 +33,19 @@ export function DurationStep({ form }: DurationStepProps) {
   const durations = getAvailableDurations(categorie, { duree: null, ...selection })
   const shortcuts = getDurationShortcuts(categorie, selection)
   const preselected = getPreselectedDuration(categorie)
+
+  // Changing the CV/PTAC/quad tier changes which durations have a tariff row.
+  // A previously selected duree can silently become invalid — it would still
+  // pass required-field validation, but calculatePrice would find no matching
+  // row and return a null breakdown, saving the devis with no price at all.
+  // Clearing it here forces the user to re-pick a duration that's valid for
+  // their current tier.
+  useEffect(() => {
+    if (duree && !durations.includes(duree)) {
+      form.setValue("duree", 0)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [categorie, cvTier, ptacTier, quadSubtype])
 
   return (
     <div className="flex flex-col gap-5">

@@ -329,6 +329,7 @@
     "paymentError": "Die Zahlung ist fehlgeschlagen. Es wurde kein Betrag abgebucht. Versuchen Sie es erneut oder kontaktieren Sie uns: WhatsApp +33 6 05 93 84 79  wir finden sofort eine Lösung.",
     "devisSaveError": "Ihre Anfrage konnte nicht gespeichert werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder kontaktieren Sie uns, falls das Problem weiterhin besteht.",
     "documentsUploadError": "Ihre Dokumente konnten nicht hochgeladen werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut, oder kontaktieren Sie uns, falls das Problem weiterhin besteht.",
+    "priceUnavailableError": "Der Preis konnte für diese Laufzeit nicht berechnet werden. Bitte gehen Sie zum vorherigen Schritt zurück und wählen Sie die Vertragsdauer erneut aus.",
     "paymentCancelled": "Die Zahlung wurde abgebrochen. Es wurde kein Betrag abgebucht. Sie können es unten erneut versuchen.",
     "finalizing": {
       "heading": "Ihr Vertrag wird abgeschlossen...",

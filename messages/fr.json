@@ -329,6 +329,7 @@
     "paymentError": "Le paiement n'a pas abouti. Aucune somme n'a été débitée. Réessayez ou contactez-nous : WhatsApp +33 6 05 93 84 79  nous trouvons une solution immédiatement.",
     "devisSaveError": "L'enregistrement de votre demande a échoué. Vérifiez votre connexion et réessayez, ou contactez-nous si le problème persiste.",
     "documentsUploadError": "L'envoi de vos documents a échoué. Vérifiez votre connexion et réessayez, ou contactez-nous si le problème persiste.",
+    "priceUnavailableError": "Le tarif n'a pas pu être calculé pour cette durée. Veuillez retourner à l'étape précédente et resélectionner la durée du contrat.",
     "paymentCancelled": "Le paiement a été annulé. Aucune somme n'a été débitée. Vous pouvez réessayer ci-dessous.",
     "finalizing": {
       "heading": "Finalisation de votre souscription...",

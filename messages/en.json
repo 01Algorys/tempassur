@@ -329,6 +329,7 @@
     "paymentError": "The payment could not be completed. No amount has been charged. Please try again or contact us: WhatsApp +33 6 05 93 84 79  we'll find a solution right away.",
     "devisSaveError": "We couldn't save your request. Check your connection and try again, or contact us if the problem persists.",
     "documentsUploadError": "We couldn't upload your documents. Check your connection and try again, or contact us if the problem persists.",
+    "priceUnavailableError": "We couldn't calculate the price for this duration. Please go back to the previous step and reselect the contract duration.",
     "paymentCancelled": "Payment was cancelled. No amount was charged. You can try again below.",
     "finalizing": {
       "heading": "Finalising your subscription...",

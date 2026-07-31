@@ -306,6 +306,14 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       // Documents must be confirmed uploaded before the devis is created — a
       // devis should never exist without its supporting documents attached.
       if (!devisId) {
+        // A stale duree (still valid per required-field validation but no longer
+        // matching a tariff row for the current tier — DurationStep clears it when
+        // that happens) would otherwise save a devis with montantEstime: null.
+        if (!breakdown) {
+          setDevisError(t("priceUnavailableError"))
+          return
+        }
+
         const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
         const uploadResult = await uploadSubscriptionDocuments({
           clientId,
@@ -323,7 +331,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
           clientId,
           values: form.getValues(),
           vehicleLabel,
-          montantEstime: breakdown ? breakdown.total : null,
+          montantEstime: breakdown.total,
         })
         if (!devisResult.success || !devisResult.devisId) {
           setDevisError(t("devisSaveError"))

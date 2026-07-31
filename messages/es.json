@@ -329,6 +329,7 @@
     "paymentError": "El pago no se ha completado. No se ha cargado ningún importe. Inténtelo de nuevo o contáctenos: WhatsApp +33 6 05 93 84 79  encontramos una solución de inmediato.",
     "devisSaveError": "No hemos podido guardar su solicitud. Compruebe su conexión e inténtelo de nuevo, o contáctenos si el problema persiste.",
     "documentsUploadError": "No hemos podido enviar sus documentos. Compruebe su conexión e inténtelo de nuevo, o contáctenos si el problema persiste.",
+    "priceUnavailableError": "No hemos podido calcular el precio para esta duración. Vuelva al paso anterior y vuelva a seleccionar la duración del contrato.",
     "paymentCancelled": "El pago ha sido cancelado. No se ha cargado ningún importe. Puede volver a intentarlo a continuación.",
     "finalizing": {
       "heading": "Finalizando su suscripción...",
