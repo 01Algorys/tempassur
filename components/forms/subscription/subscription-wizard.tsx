@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 import { PaymentHelp } from "@/components/shared/payment-help"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { createContract } from "@/lib/contract"
-import { createDevis } from "@/lib/devis"
+import { createClient, createDevis } from "@/lib/devis"
 import { uploadSubscriptionDocuments } from "@/lib/documents"
 import { routing } from "@/i18n/routing"
 import {
@@ -289,28 +289,23 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     setIsSavingDevis(true)
     setDevisError(undefined)
     try {
-      // A prior attempt may have already created the devis+client and only failed
-      // on document upload (e.g. oversized file, network blip) — reuse that
-      // clientId instead of calling createDevis again, which would otherwise
-      // produce a duplicate devis for the same person on every retry.
+      // A prior attempt may have already created the CRM client and only failed
+      // on document upload or devis creation (e.g. oversized file, network blip)
+      // — reuse that clientId instead of creating a duplicate client on retry.
       let clientId = devisClientId
       if (!clientId) {
-        const result = await createDevis({
-          values: form.getValues(),
-          vehicleLabel,
-          montantEstime: breakdown ? breakdown.total : null,
-        })
-        if (!result.success || !result.devisId) {
+        const clientResult = await createClient({ values: form.getValues() })
+        if (!clientResult.success || !clientResult.clientId) {
           setDevisError(t("devisSaveError"))
           return
         }
-
-        setDevisId(result.devisId)
-        clientId = result.clientId ?? null
+        clientId = clientResult.clientId
         setDevisClientId(clientId)
       }
 
-      if (clientId) {
+      // Documents must be confirmed uploaded before the devis is created — a
+      // devis should never exist without its supporting documents attached.
+      if (!devisId) {
         const { permisRecto, permisVerso, carteGrise, autresDocuments } = form.getValues()
         const uploadResult = await uploadSubscriptionDocuments({
           clientId,
@@ -323,6 +318,18 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
           setDevisError(t("documentsUploadError"))
           return
         }
+
+        const devisResult = await createDevis({
+          clientId,
+          values: form.getValues(),
+          vehicleLabel,
+          montantEstime: breakdown ? breakdown.total : null,
+        })
+        if (!devisResult.success || !devisResult.devisId) {
+          setDevisError(t("devisSaveError"))
+          return
+        }
+        setDevisId(devisResult.devisId)
       }
 
       form.setValue("consentDeclarations", true)

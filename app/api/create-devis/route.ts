@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { CRM_DEFAULT_DISTRIBUTEUR_ID, CRM_DEFAULT_PRODUIT_ID, createCrmClient, createCrmDevis } from "@/lib/crm"
+import { CRM_DEFAULT_DISTRIBUTEUR_ID, CRM_DEFAULT_PRODUIT_ID, createCrmDevis } from "@/lib/crm"
 
 interface CreateDevisBody {
+  clientId: string
   nom: string
   prenom: string
   civilite?: string
@@ -38,26 +39,6 @@ interface CreateDevisBody {
   dateObtentionPermis?: string
   paysObtentionPermis?: string
   montantEstime?: number
-}
-
-// Client fields with no dedicated column reachable via the partner-writable CRM API
-// (numeroPermis/paysPermis/dateNaissance/pays exist on Client, but only the CRM's own
-// staff-authenticated PATCH can set them — the partner POST /api/clients schema doesn't
-// accept them). `notes` is the only partner-writable free-text field on Client, so this
-// is where that data goes to stay visible on the client record instead of only living
-// inside the devis' besoinsExprimes.
-function buildClientNotes(body: Partial<CreateDevisBody>): string | undefined {
-  const lines = [
-    body.dateNaissance ? `Date de naissance : ${body.dateNaissance}` : null,
-    body.paysNaissance ? `Pays de naissance : ${body.paysNaissance}` : null,
-    body.paysResidence
-      ? `Pays de résidence : ${body.paysResidence}${body.territoireResidence ? ` (${body.territoireResidence})` : ""}`
-      : null,
-    body.numeroPermis ? `Permis n° ${body.numeroPermis}` : null,
-    body.dateObtentionPermis ? `Permis obtenu le ${body.dateObtentionPermis}` : null,
-    body.paysObtentionPermis ? `Pays d'obtention du permis : ${body.paysObtentionPermis}` : null,
-  ].filter(Boolean)
-  return lines.length ? lines.join("\n") : undefined
 }
 
 function buildBesoinsExprimes(body: Partial<CreateDevisBody>): string {
@@ -102,33 +83,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: "invalid_json" }, { status: 400 })
   }
 
-  const { nom, prenom, email } = body
-  if (!nom || !prenom || !email) {
+  const { clientId, nom, prenom, email } = body
+  if (!clientId || !nom || !prenom || !email) {
     return NextResponse.json({ success: false, error: "missing_fields" }, { status: 400 })
   }
 
   try {
-    const client = await createCrmClient({
-      nom,
-      prenom,
-      civilite: body.civilite,
-      telephone: body.telephoneMobile,
-      email,
-      adresse: body.adresse,
-      codePostal: body.codePostal,
-      ville: body.ville,
-      notes: buildClientNotes(body),
-    })
-
     const devis = await createCrmDevis({
-      clientId: client.id,
+      clientId,
       distributeurId: CRM_DEFAULT_DISTRIBUTEUR_ID,
       produitId: CRM_DEFAULT_PRODUIT_ID,
       montantEstime: body.montantEstime,
       besoinsExprimes: buildBesoinsExprimes(body),
     })
 
-    return NextResponse.json({ success: true, devisId: devis.id, clientId: client.id })
+    return NextResponse.json({ success: true, devisId: devis.id, clientId })
   } catch (error) {
     // Unlike create-contract, no payment has happened yet at this point — a CRM
     // sync failure here must block progression so the devis-then-contract

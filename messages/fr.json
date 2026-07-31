@@ -441,7 +441,8 @@
       "acceptContrat": "J'ai pris connaissance des conditions générales du contrat",
       "autresDocuments": "Autre document (optionnel)",
       "maxSize": "Taille maximale du fichier : 40 Mo",
-      "fileTooLarge": "Ce fichier dépasse la limite de 40 Mo. Veuillez choisir un fichier plus petit."
+      "fileTooLarge": "Ce fichier dépasse la limite de 40 Mo. Veuillez choisir un fichier plus petit.",
+      "fileEmpty": "Ce fichier semble vide (0 Ko). Réessayez de le sélectionner ou de le photographier."
     },
     "payment": {
       "heading": "Récapitulatif et paiement sécurisé",

@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { Search, Download, RefreshCw } from "lucide-react"
+import { Search, Download, RefreshCw, Plus, Trash2 } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { PaginationBar } from "@/components/admin/pagination-bar"
+import { ContractFormDialog } from "@/components/admin/contract-form-dialog"
 import { currencyFmt, dateFmt } from "@/lib/admin/labels"
 import { exportToCsv, exportToExcel } from "@/lib/admin/export"
 
@@ -53,6 +55,11 @@ export default function ContractsPage() {
   const [statutId, setStatutId] = useState("all")
   const [produitId, setProduitId] = useState("all")
   const [page, setPage] = useState(1)
+  const [reloadKey, setReloadKey] = useState(0)
+  const [createOpen, setCreateOpen] = useState(false)
+  const [deleting, setDeleting] = useState<ContratRow | null>(null)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+  const [deleteLoading, setDeleteLoading] = useState(false)
 
   useEffect(() => {
     const t = setTimeout(() => setDebouncedSearch(search), 350)
@@ -85,7 +92,26 @@ export default function ContractsPage() {
     return () => {
       cancelled = true
     }
-  }, [page, debouncedSearch, statutId, produitId])
+  }, [page, debouncedSearch, statutId, produitId, reloadKey])
+
+  async function handleDelete() {
+    if (!deleting) return
+    setDeleteLoading(true)
+    setDeleteError(null)
+    try {
+      const res = await fetch(`/api/admin/crm/contrats/${deleting.id}`, { method: "DELETE" })
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.message ?? "Échec de la suppression du contrat.")
+      }
+      setDeleting(null)
+      setReloadKey((k) => k + 1)
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : "Une erreur est survenue.")
+    } finally {
+      setDeleteLoading(false)
+    }
+  }
 
   async function handleExportAll(format: "csv" | "xlsx") {
     const params = new URLSearchParams({ full: "1", page: "1" })
@@ -122,6 +148,9 @@ export default function ContractsPage() {
           </Button>
           <Button variant="outline" size="sm" onClick={() => handleExportAll("xlsx")}>
             <Download /> Excel
+          </Button>
+          <Button size="sm" onClick={() => setCreateOpen(true)}>
+            <Plus /> Nouveau contrat
           </Button>
         </div>
       </div>
@@ -192,6 +221,7 @@ export default function ContractsPage() {
                   <th className="px-3 py-2.5 font-medium">Début</th>
                   <th className="px-3 py-2.5 font-medium">Fin</th>
                   <th className="px-3 py-2.5 font-medium">Statut</th>
+                  <th className="px-3 py-2.5 font-medium"></th>
                 </tr>
               </thead>
               <tbody>
@@ -215,6 +245,19 @@ export default function ContractsPage() {
                         className={c.statutRef?.couleur ? COLOR_CLASS[c.statutRef.couleur] : undefined}
                       />
                     </td>
+                    <td className="px-3 py-2.5 text-right">
+                      <Button
+                        variant="ghost"
+                        size="icon-sm"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setDeleteError(null)
+                          setDeleting(c)
+                        }}
+                      >
+                        <Trash2 className="text-destructive" />
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -223,6 +266,26 @@ export default function ContractsPage() {
           </div>
         )}
       </Card>
+
+      <ContractFormDialog open={createOpen} onOpenChange={setCreateOpen} mode="create" />
+
+      <Dialog open={!!deleting} onOpenChange={(o) => !o && setDeleting(null)}>
+        <DialogContent className="max-w-sm">
+          <DialogHeader>
+            <DialogTitle>Supprimer le contrat</DialogTitle>
+            <DialogDescription>
+              {deleting ? `Supprimer définitivement le contrat ${deleting.numero} ? Cette action est irréversible.` : ""}
+            </DialogDescription>
+          </DialogHeader>
+          {deleteError ? <p className="text-sm text-destructive">{deleteError}</p> : null}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setDeleting(null)}>Annuler</Button>
+            <Button variant="destructive" onClick={handleDelete} disabled={deleteLoading}>
+              {deleteLoading ? "Suppression..." : "Supprimer"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

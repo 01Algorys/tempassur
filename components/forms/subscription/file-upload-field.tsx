@@ -23,16 +23,29 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
   const t = useTranslations("wizard.documents")
   const inputRef = useRef<HTMLInputElement>(null)
   const [tooLarge, setTooLarge] = useState(false)
+  const [empty, setEmpty] = useState(false)
   const [dragActive, setDragActive] = useState(false)
 
   function handleFile(file: File | undefined) {
     if (file && file.size > MAX_FILE_SIZE_BYTES) {
       setTooLarge(true)
+      setEmpty(false)
+      onChange(undefined)
+      if (inputRef.current) inputRef.current.value = ""
+      return
+    }
+    // A 0-byte File can still pass the file picker (e.g. a camera intent or
+    // cloud-storage stub that hasn't finished writing bytes yet) — silently
+    // accepting it means the CRM ends up with no document at all.
+    if (file && file.size === 0) {
+      setEmpty(true)
+      setTooLarge(false)
       onChange(undefined)
       if (inputRef.current) inputRef.current.value = ""
       return
     }
     setTooLarge(false)
+    setEmpty(false)
     onChange(file)
   }
 
@@ -105,6 +118,8 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
 
       {tooLarge ? (
         <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
+      ) : empty ? (
+        <p className="text-xs text-destructive">{t("fileEmpty")}</p>
       ) : (
         <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
       )}

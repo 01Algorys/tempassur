@@ -9,6 +9,8 @@ import { StatusBadge } from "@/components/admin/status-badge"
 import { DocumentsCard, type AdminDocument } from "@/components/admin/documents-card"
 import { VehicleDetailsCard } from "@/components/admin/vehicle-details-card"
 import { DetailField } from "@/components/admin/detail-field"
+import { ContractDetailActions } from "@/components/admin/contract-detail-actions"
+import { FacturesCard } from "@/components/admin/factures-card"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const dynamic = "force-dynamic"
@@ -29,11 +31,16 @@ interface ContratDetail {
   immatriculation: string | null
   notesInternes: string | null
   besoinsExprimes: string | null
+  distributeurId?: string | null
+  produitId?: string | null
+  statutRefId?: string | null
+  dateEffet?: string | null
+  dureeJours?: number | null
   client: { id: string; nom?: string; prenom?: string; email?: string; telephone?: string; adresse?: string; ville?: string; codePostal?: string } | null
   distributeur?: { nom: string } | null
   produitRef?: { nom: string } | null
   statutRef?: { nom: string } | null
-  factures: { id: string; numeroFacture: string; montantTtc: number; statutEnvoi: string; dateGeneration: string }[]
+  factures: { id: string; numeroFacture: string; montantTtc: number; statutEnvoi: string; dateGeneration: string; fichierPdfUrl?: string }[]
   reclamations: { id: string; texte: string; statut: string; date: string }[]
   statutHistorique: { id: string; ancienStatut: string | null; nouveauStatut: string; date: string }[]
 }
@@ -73,7 +80,32 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
             {[contrat.client?.prenom, contrat.client?.nom].filter(Boolean).join(" ") || "Client sans nom"}
           </p>
         </div>
-        <StatusBadge label={contrat.statutRef?.nom ?? "—"} />
+        <div className="flex items-center gap-3">
+          <StatusBadge label={contrat.statutRef?.nom ?? "—"} />
+          <ContractDetailActions
+            contrat={{
+              id: contrat.id,
+              numero: contrat.numero,
+              numeroDemande: contrat.numeroDemande,
+              prime: contrat.prime,
+              honoraires: contrat.honoraires,
+              distributeurId: contrat.distributeurId,
+              produitId: contrat.produitId,
+              statutRefId: contrat.statutRefId,
+              marque: contrat.marque,
+              modele: contrat.modele,
+              immatriculation: contrat.immatriculation,
+              dateEffet: contrat.dateEffet,
+              dateFin: contrat.dateFin,
+              dureeJours: contrat.dureeJours,
+              besoinsExprimes: contrat.besoinsExprimes,
+              notesInternes: contrat.notesInternes,
+              client: contrat.client
+                ? { id: contrat.client.id, nom: contrat.client.nom, prenom: contrat.client.prenom, email: contrat.client.email }
+                : null,
+            }}
+          />
+        </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -150,22 +182,9 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
         </Card>
       ) : null}
 
-      {contrat.factures.length > 0 ? (
-        <Card>
-          <CardHeader><CardTitle>Factures</CardTitle></CardHeader>
-          <CardContent className="space-y-2">
-            {contrat.factures.map((f) => (
-              <div key={f.id} className="flex items-center justify-between rounded-lg border border-border px-3 py-2 text-sm">
-                <span className="font-mono text-xs">{f.numeroFacture}</span>
-                <span>{currencyFmt(f.montantTtc)}</span>
-                <span className="text-xs text-muted-foreground">{dateFmt(f.dateGeneration)}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      ) : null}
+      <FacturesCard contratId={contrat.id} factures={contrat.factures} />
 
-      <DocumentsCard documents={documents} />
+      <DocumentsCard documents={documents} contratId={contrat.id} />
 
       <Card>
         <CardHeader><CardTitle>Historique de statut</CardTitle></CardHeader>

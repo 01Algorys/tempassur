@@ -31,11 +31,18 @@ export async function POST(req: NextRequest) {
   // getAll (not get) so fields that allow multiple files — currently only
   // autresDocuments — get every attached file, not just the first.
   for (const [field, meta] of Object.entries(FIELD_MAP)) {
-    const files = formData.getAll(field).filter((f): f is File => f instanceof File && f.size > 0)
+    const files = formData.getAll(field).filter((f): f is File => f instanceof File)
 
     for (const file of files) {
-      // Reject oversized files outright instead of forwarding them to the CRM —
-      // the client already blocks these, this is the server-side backstop.
+      // Reject oversized/empty files outright instead of forwarding them to the
+      // CRM — the client already blocks these, this is the server-side backstop.
+      // A 0-byte file must count as a failure, not be silently dropped: dropping
+      // it would leave it out of `results` entirely, making the batch's
+      // `every(r => r.success)` vacuously true even though nothing was uploaded.
+      if (file.size === 0) {
+        results.push({ field, success: false, error: "file_empty" })
+        continue
+      }
       if (file.size > MAX_FILE_SIZE_BYTES) {
         results.push({ field, success: false, error: "file_too_large" })
         continue

@@ -441,7 +441,8 @@
       "acceptContrat": "He tomado conocimiento de las condiciones generales del contrato",
       "autresDocuments": "Otro documento (opcional)",
       "maxSize": "Tamaño máximo del archivo: 40 MB",
-      "fileTooLarge": "Este archivo supera el límite de 40 MB. Elija un archivo más pequeño."
+      "fileTooLarge": "Este archivo supera el límite de 40 MB. Elija un archivo más pequeño.",
+      "fileEmpty": "Este archivo parece estar vacío (0 KB). Vuelva a seleccionarlo o fotografiarlo."
     },
     "payment": {
       "heading": "Resumen y pago seguro",

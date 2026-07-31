@@ -35,15 +35,21 @@ export function MultiFileUploadField({
   const t = useTranslations("wizard.documents")
   const inputRef = useRef<HTMLInputElement>(null)
   const [tooLarge, setTooLarge] = useState(false)
+  const [empty, setEmpty] = useState(false)
   const [dragActive, setDragActive] = useState(false)
 
   function addFiles(files: FileList | File[] | null | undefined) {
     if (!files || files.length === 0) return
     const incoming = Array.from(files)
-    const accepted = incoming.filter((file) => file.size <= MAX_FILE_SIZE_BYTES)
-    const rejected = incoming.length - accepted.length
+    // A 0-byte File can still pass the file picker (e.g. a camera intent or
+    // cloud-storage stub that hasn't finished writing bytes yet) — silently
+    // accepting it means the CRM ends up with no document at all.
+    const accepted = incoming.filter((file) => file.size > 0 && file.size <= MAX_FILE_SIZE_BYTES)
+    const rejectedForSize = incoming.filter((file) => file.size > MAX_FILE_SIZE_BYTES).length
+    const rejectedForEmpty = incoming.filter((file) => file.size === 0).length
 
-    setTooLarge(rejected > 0)
+    setTooLarge(rejectedForSize > 0)
+    setEmpty(rejectedForEmpty > 0)
 
     const merged = [...value]
     for (const file of accepted) {
@@ -132,6 +138,8 @@ export function MultiFileUploadField({
 
       {tooLarge ? (
         <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
+      ) : empty ? (
+        <p className="text-xs text-destructive">{t("fileEmpty")}</p>
       ) : (
         <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
       )}

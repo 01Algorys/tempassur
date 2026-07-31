@@ -441,7 +441,8 @@
       "acceptContrat": "Am luat cunoștință de condițiile generale ale contractului",
       "autresDocuments": "Alt document (opțional)",
       "maxSize": "Dimensiune maximă a fișierului: 40 MB",
-      "fileTooLarge": "Acest fișier depășește limita de 40 MB. Alegeți un fișier mai mic."
+      "fileTooLarge": "Acest fișier depășește limita de 40 MB. Alegeți un fișier mai mic.",
+      "fileEmpty": "Acest fișier pare gol (0 KB). Încercați să îl selectați sau fotografiați din nou."
     },
     "payment": {
       "heading": "Recapitulare și plată securizată",
