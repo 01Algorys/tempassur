@@ -11,7 +11,7 @@ export const CIVILITE_OPTIONS = [
 
 const phoneRegex = /^[0-9+()\s-]+$/
 
-export const MAX_FILE_SIZE_BYTES = 40 * 1024 * 1024
+export const MAX_FILE_SIZE_BYTES = 100 * 1024 * 1024
 export const MAX_FILE_SIZE_MB = MAX_FILE_SIZE_BYTES / (1024 * 1024)
 
 // The schema needs translated messages, so it's built as a factory from a `t` function
