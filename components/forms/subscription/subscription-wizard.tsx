@@ -265,6 +265,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       }
 
       const result = await paymentStepRef.current?.confirmPayment()
+      // Payment must be confirmed successful — with a real paymentIntentId — before any
+      // contract creation is attempted. Nothing below this point runs otherwise.
       if (!result?.success || !result.paymentIntentId) {
         setErrorMessage(result?.errorMessage)
         setStatus("error")
@@ -274,14 +276,28 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
 
       setIsPaying(false)
       setIsCreatingContract(true)
-      const { numero } = await createContract({
+      // Retries internally (up to 3 attempts, stopping at the first success) and never
+      // throws — the loading screen stays up for the whole attempt so the customer only
+      // ever sees the thank-you page once contract creation has actually been resolved.
+      const contractResult = await createContract({
         paymentIntentId: result.paymentIntentId,
         devisId,
         values: form.getValues(),
       })
 
+      if (!contractResult.success) {
+        // The payment is already captured, so the customer must still reach the
+        // confirmation page — but this must not vanish silently: log loudly with every
+        // id needed to reconcile manually so it doesn't depend on the customer reporting
+        // a missing contract.
+        console.error("[contract] creation failed after 3 attempts, payment already captured", {
+          paymentIntentId: result.paymentIntentId,
+          devisId,
+        })
+      }
+
       const query = new URLSearchParams({ payment_intent: result.paymentIntentId })
-      if (numero) query.set("numero", numero)
+      if (contractResult.numero) query.set("numero", contractResult.numero)
       router.push(`/merci?${query.toString()}`)
     } finally {
       setIsPaying(false)
