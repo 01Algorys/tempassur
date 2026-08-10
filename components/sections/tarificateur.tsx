@@ -8,13 +8,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { VEHICLE_TYPES } from "@/lib/constants"
-import {
-  getAvailableDurations,
-  getDurationShortcuts,
-  getMinPriceForDuration,
-  getPreselectedDuration,
-} from "@/lib/pricing"
-import { cn } from "@/lib/utils"
+import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
 import type { VehicleSlug } from "@/types"
 
 export function Tarificateur() {
@@ -27,21 +21,20 @@ export function Tarificateur() {
   )
   const router = useRouter()
   const [category, setCategory] = useState<VehicleSlug>("automobiles")
-  const [duree, setDuree] = useState<number>(getPreselectedDuration("automobiles"))
+  const [duree, setDuree] = useState<number>(0)
 
-  const shortcuts = useMemo(() => getDurationShortcuts(category), [category])
   const preselected = useMemo(() => getPreselectedDuration(category), [category])
   const allDurations = useMemo(() => getAvailableDurations(category, { duree: null, isDomTom: false }), [category])
-  const price = useMemo(() => getMinPriceForDuration(category, duree, false), [category, duree])
+  const price = useMemo(() => (duree ? getMinPriceForDuration(category, duree, false) : null), [category, duree])
 
   function handleCategoryChange(value: string) {
     const slug = value as VehicleSlug
     setCategory(slug)
-    setDuree(getPreselectedDuration(slug))
+    setDuree(0)
   }
 
   function handleSouscription() {
-    router.push(`/souscription?categorie=${category}&duree=${duree}`)
+    router.push(`/souscription?categorie=${category}&duree=${duree || preselected}`)
   }
 
   return (
@@ -55,12 +48,15 @@ export function Tarificateur() {
           </label>
           <Select value={category} onValueChange={handleCategoryChange}>
             <SelectTrigger id="tarificateur-category" className="h-11 w-full rounded-lg">
-              <SelectValue placeholder={t("categoryPlaceholder")} />
+              <SelectValue placeholder={t("categoryPlaceholder")}>{tVehicles(`${category}.label`)}</SelectValue>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent position="popper" className="max-h-72 w-(--radix-select-trigger-width)">
               {VEHICLE_TYPES.map((v) => (
                 <SelectItem key={v.slug} value={v.slug}>
-                  {tVehicles(`${v.slug}.label`)}
+                  <span className="flex flex-col gap-0.5 py-0.5">
+                    <span>{tVehicles(`${v.slug}.label`)}</span>
+                    <span className="text-xs text-muted-foreground">{tVehicles(`${v.slug}.description`)}</span>
+                  </span>
                 </SelectItem>
               ))}
             </SelectContent>
@@ -70,37 +66,21 @@ export function Tarificateur() {
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium text-foreground">{t("durationLabel")}</label>
-          <div className="flex flex-wrap gap-2">
-            {shortcuts.map((d) => (
-              <button
-                key={d}
-                type="button"
-                aria-pressed={duree === d}
-                onClick={() => setDuree(d)}
-                className={cn(
-                  "relative rounded-lg border px-3 py-2 text-xs font-semibold transition-colors sm:text-sm",
-                  duree === d ? "border-primary bg-primary text-white" : "border-border text-foreground/70 hover:border-primary/40"
-                )}
-              >
-                {t("durationDays", { count: d })}
-                {d === preselected ? (
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap text-white">
-                    {t("mostChosen")}
-                  </span>
-                ) : null}
-              </button>
-            ))}
-          </div>
-          <Select value={String(duree)} onValueChange={(v) => setDuree(Number(v))}>
+          <Select value={duree ? String(duree) : undefined} onValueChange={(v) => setDuree(Number(v))}>
             <SelectTrigger className="h-11 w-full rounded-lg">
               <SelectValue placeholder={t("durationPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
-              {allDurations.map((d) => (
-                <SelectItem key={d} value={String(d)}>
-                  {t("durationOption", { count: d })}
-                </SelectItem>
-              ))}
+              {allDurations.map((d) => {
+                const optionPrice = getMinPriceForDuration(category, d, false)
+                return (
+                  <SelectItem key={d} value={String(d)}>
+                    {t("durationOption", { count: d })}
+                    {optionPrice != null ? ` — ${currency.format(optionPrice)}` : ""}
+                    {d === preselected ? ` · ${t("mostChosen")}` : ""}
+                  </SelectItem>
+                )
+              })}
             </SelectContent>
           </Select>
         </div>

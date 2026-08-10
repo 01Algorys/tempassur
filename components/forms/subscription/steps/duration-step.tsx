@@ -6,9 +6,8 @@ import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { getAvailableDurations, getDurationShortcuts, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
+import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
-import { cn } from "@/lib/utils"
 
 const triggerClass = "h-11 w-full rounded-lg"
 
@@ -31,7 +30,6 @@ export function DurationStep({ form }: DurationStepProps) {
 
   const selection = { cvTier, ptacTier, quadSubtype, isDomTom: false }
   const durations = getAvailableDurations(categorie, { duree: null, ...selection })
-  const shortcuts = getDurationShortcuts(categorie, selection)
   const preselected = getPreselectedDuration(categorie)
 
   // Changing the CV/PTAC/quad tier changes which durations have a tariff row.
@@ -57,29 +55,6 @@ export function DurationStep({ form }: DurationStepProps) {
         render={({ field }) => (
           <FormItem>
             <FormLabel>{t("contractDuration")}</FormLabel>
-            <div className="flex flex-wrap gap-2">
-              {shortcuts.map((d) => (
-                <button
-                  key={d}
-                  type="button"
-                  aria-pressed={field.value === d}
-                  onClick={() => field.onChange(d)}
-                  className={cn(
-                    "relative rounded-lg border px-3 py-2 text-sm font-semibold transition-colors",
-                    field.value === d
-                      ? "border-primary bg-primary text-white"
-                      : "border-border text-foreground/70 hover:border-primary/40"
-                  )}
-                >
-                  {t("durationUnit", { count: d })}
-                  {d === preselected ? (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap text-white">
-                      {t("mostChosen")}
-                    </span>
-                  ) : null}
-                </button>
-              ))}
-            </div>
             <Select
               onValueChange={(value) => field.onChange(Number(value))}
               value={duree ? String(duree) : undefined}
@@ -96,6 +71,7 @@ export function DurationStep({ form }: DurationStepProps) {
                     <SelectItem key={d} value={String(d)}>
                       {t("durationOption", { count: d })}
                       {price != null ? ` — ${currency.format(price)}` : ""}
+                      {d === preselected ? ` · ${t("mostChosen")}` : ""}
                     </SelectItem>
                   )
                 })}

@@ -1,12 +1,14 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
-import { Info } from "lucide-react"
+import { ArrowRight, Info } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
+import { Link } from "@/i18n/navigation"
+import { Button } from "@/components/ui/button"
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel } from "@/lib/countries"
+import { COUNTRIES, getCountryLabel, getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
 import { FRANCE_TERRITORIES } from "@/lib/pricing-data"
 import { isDomTomTerritory } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
@@ -31,6 +33,10 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
   const isDomTom =
     isDomTomTerritory(paysImmatriculation, territoireImmatriculation) ||
     isDomTomTerritory(paysResidence, territoireResidence)
+
+  const registrationCase = getRegistrationCase(paysImmatriculation)
+  const isFrontierCase = registrationCase === "frontier"
+  const isResidenceViolated = isResidenceRequirementViolated(paysImmatriculation, paysResidence)
 
   return (
     <div className="flex flex-col gap-5">
@@ -95,38 +101,40 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
           />
         ) : null}
 
-        <FormField
-          control={form.control}
-          name="paysResidence"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("residenceCountry")}</FormLabel>
-              <Select
-                onValueChange={(value) => {
-                  field.onChange(value)
-                  if (value !== "FR") form.setValue("territoireResidence", "")
-                }}
-                value={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger className={triggerClass}>
-                    <SelectValue placeholder={t("countryPlaceholder")} />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  {COUNTRIES.map((country) => (
-                    <SelectItem key={country.code} value={country.code}>
-                      {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {!isFrontierCase ? (
+          <FormField
+            control={form.control}
+            name="paysResidence"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t("residenceCountry")}</FormLabel>
+                <Select
+                  onValueChange={(value) => {
+                    field.onChange(value)
+                    if (value !== "FR") form.setValue("territoireResidence", "")
+                  }}
+                  value={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger className={triggerClass}>
+                      <SelectValue placeholder={t("countryPlaceholder")} />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {COUNTRIES.map((country) => (
+                      <SelectItem key={country.code} value={country.code}>
+                        {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ) : null}
 
-        {paysResidence === "FR" ? (
+        {!isFrontierCase && paysResidence === "FR" ? (
           <FormField
             control={form.control}
             name="territoireResidence"
@@ -155,7 +163,30 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
         ) : null}
       </div>
 
-      {isDomTom ? (
+      {isFrontierCase ? (
+        <div className="flex flex-col items-start gap-3 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
+          <div className="flex items-start gap-2">
+            <Info className="mt-0.5 size-4 shrink-0 text-primary" />
+            {t("frontierNotice")}
+          </div>
+          <Button asChild variant="cta" className="rounded-full">
+            <Link href="/assurance-frontiere">
+              {t("frontierCta")}
+              <ArrowRight data-icon="inline-end" />
+            </Link>
+          </Button>
+        </div>
+      ) : isResidenceViolated ? (
+        <div className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+          <Info className="mt-0.5 size-4 shrink-0" />
+          {t("residenceMustBeFrance")}
+        </div>
+      ) : registrationCase === "restricted" ? (
+        <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
+          <Info className="mt-0.5 size-4 shrink-0 text-primary" />
+          {t("residenceShouldBeFrance")}
+        </div>
+      ) : isDomTom ? (
         <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
           <Info className="mt-0.5 size-4 shrink-0 text-primary" />
           {t("domTomNotice")}

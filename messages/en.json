@@ -136,13 +136,14 @@
     "hero": {
       "title": "Temporary insurance from 1 to 90 days  instant certificate by e-mail or WhatsApp",
       "description": "Cars, HGVs, motorhomes, quads, buses, tractors, trailers and border insurance. 100% online subscription, 7 days a week. Approved insurers: your contracts are underwritten by insurance companies governed by the French Insurance Code.",
-      "ctaEstimate": "Get a quote in 30 seconds"
+      "ctaEstimate": "I want to be insured",
+      "categoryDialogTitle": "Which vehicle would you like to insure?"
     },
     "tarificateur": {
       "title": "Get a quote in 30 seconds",
       "categoryLabel": "Vehicle category",
       "categoryPlaceholder": "Select a category",
-      "durationLabel": "Duration",
+      "durationLabel": "Duration (or choose another duration from the list below)",
       "durationDays": "{count} d",
       "durationPlaceholder": "Choose your duration",
       "mostChosen": "Most popular",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Enter the name of the rental agency",
     "permisRectoRequired": "Driving licence (front) is required",
     "permisVersoRequired": "Driving licence (back) is required",
-    "carteGriseRequired": "Vehicle registration document is required"
+    "carteGriseRequired": "Vehicle registration document is required",
+    "paysResidenceMustBeFrance": "For this registration country, residence must be in France",
+    "frontierBlocked": "This registration country requires taking out frontier insurance"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "Country / territory of residence *",
       "residenceTerritory": "Department / territory of residence *",
       "domTomHint": "A specific overseas-territory rate applies to overseas departments and communities.",
-      "domTomNotice": "Rates applicable to overseas territories differ from those in metropolitan France."
+      "domTomNotice": "Rates applicable to overseas territories differ from those in metropolitan France.",
+      "frontierNotice": "For a vehicle registered in this country, you must take out a frontier insurance: the insurance for foreign vehicles circulating in Europe.",
+      "frontierCta": "Subscribe to frontier insurance",
+      "residenceMustBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
+      "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France."
     },
     "driver": {
       "heading": "Driver information",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Licence number",
       "dateObtention": "Issue date *",
       "dateObtentionHint": "The licence must be at least 2 years old to insure your vehicle.",
-      "paysObtention": "Country of issue *"
+      "paysObtention": "Country of issue *",
+      "whoCanSubscribeNotice": "The policyholder is not necessarily the owner of the vehicle. Another person may take out the insurance in their own name.",
+      "proofOfDomicileNotice": "As your driving licence is not French, a proof of address in France less than 3 months old will be required (to be uploaded under \"Other document\")."
     },
     "vehicle": {
       "heading": "Vehicle",

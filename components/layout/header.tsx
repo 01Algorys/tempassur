@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl"
 import { Logo } from "@/components/shared/logo"
 import { TelLink } from "@/components/shared/tel-link"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
+import { CategoryDialog } from "@/components/sections/category-dialog"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
@@ -41,6 +42,7 @@ const navItemClass =
 export function Header() {
   const scrolled = useScrolled(32)
   const [open, setOpen] = useState(false)
+  const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
   const t = useTranslations("nav")
   const tHeader = useTranslations("header")
   const tVehicles = useTranslations("vehicleTypes")
@@ -120,8 +122,13 @@ export function Header() {
             {siteConfig.phone}
           </TelLink>
           <WhatsappButton className="h-9 rounded-full px-4 text-xs" />
-          <Button asChild size="sm" className="h-9 rounded-full px-4 text-xs">
-            <Link href="/souscription">{tHeader("onlineCta")}</Link>
+          <Button
+            type="button"
+            size="sm"
+            className="h-9 rounded-full px-4 text-xs"
+            onClick={() => setCategoryDialogOpen(true)}
+          >
+            {tHeader("onlineCta")}
           </Button>
           <LanguageSwitcher />
         </div>
@@ -185,14 +192,23 @@ export function Header() {
                   {siteConfig.phone}
                 </TelLink>
                 <WhatsappButton className="justify-center py-2.5" />
-                <Button asChild className="rounded-lg">
-                  <Link href="/souscription">{tHeader("onlineCta")}</Link>
+                <Button
+                  type="button"
+                  className="rounded-lg"
+                  onClick={() => {
+                    setOpen(false)
+                    setCategoryDialogOpen(true)
+                  }}
+                >
+                  {tHeader("onlineCta")}
                 </Button>
               </div>
             </SheetContent>
           </Sheet>
         </div>
       </div>
+
+      <CategoryDialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen} />
     </motion.header>
   )
 }

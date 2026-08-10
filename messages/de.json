@@ -136,13 +136,14 @@
     "hero": {
       "title": "Kurzzeitversicherung von 1 bis 90 Tagen  sofortige Bescheinigung per E-Mail oder WhatsApp",
       "description": "Auto, Lkw, Wohnmobil, Quad, Bus, Traktor, Anhänger und Grenzversicherung. Abschluss zu 100 % online, 7 Tage die Woche. Zugelassene Versicherer: Ihre Verträge werden von Versicherungsunternehmen getragen, die dem Code des assurances unterliegen.",
-      "ctaEstimate": "Schätzen Sie Ihre Versicherung in 30 Sekunden"
+      "ctaEstimate": "Ich versichere mich",
+      "categoryDialogTitle": "Welches Fahrzeug möchten Sie versichern?"
     },
     "tarificateur": {
       "title": "Schätzen Sie Ihre Versicherung in 30 Sekunden",
       "categoryLabel": "Fahrzeugkategorie",
       "categoryPlaceholder": "Wählen Sie eine Kategorie",
-      "durationLabel": "Dauer",
+      "durationLabel": "Dauer (oder wählen Sie eine andere Dauer aus der Liste unten)",
       "durationDays": "{count} T.",
       "durationPlaceholder": "Wählen Sie Ihre Dauer",
       "mostChosen": "Am häufigsten gewählt",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Geben Sie den Namen der Mietwagenagentur an",
     "permisRectoRequired": "Der Führerschein (Vorderseite) ist erforderlich",
     "permisVersoRequired": "Der Führerschein (Rückseite) ist erforderlich",
-    "carteGriseRequired": "Der Fahrzeugschein ist erforderlich"
+    "carteGriseRequired": "Der Fahrzeugschein ist erforderlich",
+    "paysResidenceMustBeFrance": "Für dieses Zulassungsland muss der Wohnsitz in Frankreich liegen",
+    "frontierBlocked": "Für dieses Zulassungsland ist eine Grenzversicherung erforderlich"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "Wohnsitzland / -territorium *",
       "residenceTerritory": "Département / Territorium des Wohnsitzes *",
       "domTomHint": "Für die Überseedépartements und -gebiete (DOM-TOM) gilt ein spezifischer Tarif.",
-      "domTomNotice": "Die Tarife für die Überseedépartements und -gebiete (DOM-TOM) unterscheiden sich von denen des französischen Mutterlandes."
+      "domTomNotice": "Die Tarife für die Überseedépartements und -gebiete (DOM-TOM) unterscheiden sich von denen des französischen Mutterlandes.",
+      "frontierNotice": "Für ein in diesem Land zugelassenes Fahrzeug müssen Sie eine Grenzversicherung abschließen: die Versicherung für ausländische Fahrzeuge, die in Europa unterwegs sind.",
+      "frontierCta": "Grenzversicherung abschließen",
+      "residenceMustBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
+      "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
     },
     "driver": {
       "heading": "Angaben zum Fahrer",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Führerscheinnummer",
       "dateObtention": "Ausstellungsdatum *",
       "dateObtentionHint": "Der Führerschein muss mindestens 2 Jahre alt sein, um Ihr Fahrzeug zu versichern.",
-      "paysObtention": "Ausstellungsland *"
+      "paysObtention": "Ausstellungsland *",
+      "whoCanSubscribeNotice": "Der Versicherungsnehmer muss nicht zwingend der Fahrzeughalter sein. Eine andere Person kann die Versicherung auf ihren eigenen Namen abschließen.",
+      "proofOfDomicileNotice": "Da Ihr Führerschein nicht französisch ist, wird ein weniger als 3 Monate alter Wohnsitznachweis in Frankreich benötigt (hochzuladen unter „Sonstiges Dokument“)."
     },
     "vehicle": {
       "heading": "Fahrzeug",

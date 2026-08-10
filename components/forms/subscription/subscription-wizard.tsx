@@ -25,6 +25,7 @@ import {
   type FormulaSelection,
 } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
+import { getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
 import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
@@ -197,6 +198,11 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     isDomTomTerritory(values.paysImmatriculation, values.territoireImmatriculation) ||
     isDomTomTerritory(values.paysResidence, values.territoireResidence)
 
+  const registrationCase = getRegistrationCase(values.paysImmatriculation)
+  const isRegistrationBlocked =
+    registrationCase === "frontier" ||
+    isResidenceRequirementViolated(values.paysImmatriculation, values.paysResidence)
+
   const selection: FormulaSelection = {
     duree: values.duree || null,
     cvTier: values.cvTier,
@@ -232,6 +238,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   async function goNext() {
     const isValid = await form.trigger(STEP_FIELDS[currentStep.id])
     if (!isValid) return
+    if (currentStep.id === "duration" && isRegistrationBlocked) return
     if (currentStep.id === "details") {
       setDevisError(undefined)
       setDeclarationsOpen(true)
@@ -241,13 +248,27 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     scrollToTop()
   }
 
+  // Re-entering the documents step must force the full create+upload flow to
+  // re-run on the next confirm, since a devis/uploaded-keys already set makes
+  // handleDeclarationsConfirm skip document upload entirely (see comment there).
+  function resetDocumentsUploadState() {
+    setDevisId(null)
+    setUploadedDocumentKeys(new Set())
+  }
+
   function goBack() {
-    setStepIndex((i) => Math.max(i - 1, 0))
+    setStepIndex((i) => {
+      const next = Math.max(i - 1, 0)
+      if (STEPS[next].id === "details") resetDocumentsUploadState()
+      return next
+    })
     scrollToTop()
   }
 
   function goToStep(index: number) {
-    setStepIndex(Math.max(0, Math.min(index, STEPS.length - 1)))
+    const next = Math.max(0, Math.min(index, STEPS.length - 1))
+    if (STEPS[next].id === "details") resetDocumentsUploadState()
+    setStepIndex(next)
     scrollToTop()
   }
 
@@ -469,7 +490,11 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                     type="submit"
                     variant="cta"
                     className="rounded-full"
-                    disabled={isPaying || (isLastStep && !paymentReady)}
+                    disabled={
+                      isPaying ||
+                      (isLastStep && !paymentReady) ||
+                      (currentStep.id === "duration" && isRegistrationBlocked)
+                    }
                   >
                     {isPaying ? (
                       <>

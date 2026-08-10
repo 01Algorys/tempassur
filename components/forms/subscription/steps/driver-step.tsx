@@ -1,12 +1,14 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
+import { Info } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { PhoneInput } from "@/components/ui/phone-input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel } from "@/lib/countries"
+import { COUNTRIES, getCountryLabel, getRegistrationCase } from "@/lib/countries"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 import { EuDateInput } from "../eu-date-input"
@@ -24,10 +26,22 @@ export function DriverStep({ form }: DriverStepProps) {
   const tCivilite = useTranslations("pricingLabels.civilite")
   const locale = useLocale()
 
+  const paysImmatriculation = form.watch("paysImmatriculation")
+  const paysObtentionPermis = form.watch("paysObtentionPermis")
+
+  const registrationCase = getRegistrationCase(paysImmatriculation)
+  const showProofOfDomicileNotice =
+    registrationCase === "restricted" && paysObtentionPermis !== "" && paysObtentionPermis !== "FR"
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-5">
         <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
+
+        <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
+          <Info className="mt-0.5 size-4 shrink-0 text-primary" />
+          {t("whoCanSubscribeNotice")}
+        </div>
 
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("identity")}</p>
@@ -134,7 +148,13 @@ export function DriverStep({ form }: DriverStepProps) {
                 <FormItem>
                   <FormLabel>{t("mobile")}</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder={t("mobilePlaceholder")} className={fieldClass} {...field} />
+                    <PhoneInput
+                      placeholder={t("mobilePlaceholder")}
+                      className={fieldClass}
+                      value={field.value}
+                      onChange={(value) => field.onChange(value ?? "")}
+                      onBlur={field.onBlur}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -147,7 +167,13 @@ export function DriverStep({ form }: DriverStepProps) {
                 <FormItem>
                   <FormLabel>{t("fixe")}</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder={t("fixePlaceholder")} className={fieldClass} {...field} />
+                    <PhoneInput
+                      placeholder={t("fixePlaceholder")}
+                      className={fieldClass}
+                      value={field.value}
+                      onChange={(value) => field.onChange(value ?? "")}
+                      onBlur={field.onBlur}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -269,6 +295,13 @@ export function DriverStep({ form }: DriverStepProps) {
             )}
           />
         </div>
+
+        {showProofOfDomicileNotice ? (
+          <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
+            <Info className="mt-0.5 size-4 shrink-0 text-primary" />
+            {t("proofOfDomicileNotice")}
+          </div>
+        ) : null}
       </div>
     </div>
   )

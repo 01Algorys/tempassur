@@ -41,7 +41,7 @@ export function EffectDateStep({ form }: EffectDateStepProps) {
             <FormItem>
               <FormLabel>{t("effectTime")}</FormLabel>
               <FormControl>
-                <Input type="time" className={fieldClass} {...field} />
+                <Input type="time" lang="fr-FR" className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

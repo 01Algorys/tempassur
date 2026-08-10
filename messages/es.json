@@ -136,13 +136,14 @@
     "hero": {
       "title": "Seguro temporal de 1 a 90 días: certificado inmediato por correo electrónico o WhatsApp",
       "description": "Coche, vehículo pesado, autocaravana, quad, autobús, tractor, remolque y seguro de frontera. Contratación 100 % en línea, los 7 días de la semana. Aseguradoras autorizadas: sus contratos están respaldados por compañías de seguros reguladas por el Código de Seguros.",
-      "ctaEstimate": "Calcule su seguro en 30 segundos"
+      "ctaEstimate": "Me aseguro",
+      "categoryDialogTitle": "¿Qué vehículo desea asegurar?"
     },
     "tarificateur": {
       "title": "Calcule su seguro en 30 segundos",
       "categoryLabel": "Categoría de vehículo",
       "categoryPlaceholder": "Seleccione una categoría",
-      "durationLabel": "Duración",
+      "durationLabel": "Duración (o elija otra duración de la lista siguiente)",
       "durationDays": "{count} d",
       "durationPlaceholder": "Elija su duración",
       "mostChosen": "La más elegida",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Indique el nombre de la agencia de alquiler",
     "permisRectoRequired": "El permiso de conducción (anverso) es obligatorio",
     "permisVersoRequired": "El permiso de conducción (reverso) es obligatorio",
-    "carteGriseRequired": "El permiso de circulación es obligatorio"
+    "carteGriseRequired": "El permiso de circulación es obligatorio",
+    "paysResidenceMustBeFrance": "Para este país de matriculación, la residencia debe estar en Francia",
+    "frontierBlocked": "Este país de matriculación requiere contratar un seguro de frontera"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "País / territorio de residencia *",
       "residenceTerritory": "Departamento / territorio de residencia *",
       "domTomHint": "Se aplica una tarifa específica DOM-TOM a los departamentos y colectividades de ultramar.",
-      "domTomNotice": "Las tarifas aplicables a los DOM-TOM difieren de las de Francia metropolitana."
+      "domTomNotice": "Las tarifas aplicables a los DOM-TOM difieren de las de Francia metropolitana.",
+      "frontierNotice": "Para un vehículo matriculado en este país, debe contratar un seguro de frontera: el seguro para vehículos extranjeros que circulan por Europa.",
+      "frontierCta": "Contratar un seguro de frontera",
+      "residenceMustBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia.",
+      "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia."
     },
     "driver": {
       "heading": "Información del conductor",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Número de permiso",
       "dateObtention": "Fecha de obtención *",
       "dateObtentionHint": "El permiso debe tener al menos 2 años de antigüedad para asegurar su vehículo.",
-      "paysObtention": "País de obtención *"
+      "paysObtention": "País de obtención *",
+      "whoCanSubscribeNotice": "El tomador del seguro no es necesariamente el propietario del vehículo. Otra persona puede contratar el seguro a su nombre.",
+      "proofOfDomicileNotice": "Como su permiso de conducir no es francés, se le solicitará un justificante de domicilio en Francia de menos de 3 meses (a subir en «Otro documento»)."
     },
     "vehicle": {
       "heading": "Vehículo",

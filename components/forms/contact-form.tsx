@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { PhoneInput } from "@/components/ui/phone-input"
 import { siteConfig, whatsappUrl } from "@/lib/site"
 
 const SUBJECTS = ["souscription", "paiement", "attestation", "reclamation", "autre"] as const
@@ -94,7 +95,13 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>{t("telephoneLabel")}</FormLabel>
               <FormControl>
-                <Input type="tel" className="h-11 rounded-lg" placeholder={t("telephonePlaceholder")} {...field} />
+                <PhoneInput
+                  className="h-11 rounded-lg"
+                  placeholder={t("telephonePlaceholder")}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value ?? "")}
+                  onBlur={field.onBlur}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -33,7 +33,7 @@
     },
     "bus-autocars": {
       "label": "Bus, autocars",
-      "description": "Transport de personnes."
+      "description": "Bus et autocars"
     },
     "tracteurs-agricoles": {
       "label": "Tracteur agricole",
@@ -136,13 +136,14 @@
     "hero": {
       "title": "Assurance temporaire de 1 à 90 jours  attestation immédiate par e-mail ou WhatsApp",
       "description": "Auto, poids lourd, camping-car, quad, bus, tracteur, remorque et assurance frontière. Souscription 100 % en ligne, 7j/7. Assureurs agréés : vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
-      "ctaEstimate": "Estimer votre assurance en 30 secondes"
+      "ctaEstimate": "Je m'assure",
+      "categoryDialogTitle": "Quel véhicule souhaitez-vous assurer ?"
     },
     "tarificateur": {
       "title": "Estimez votre assurance en 30 secondes",
       "categoryLabel": "Catégorie de véhicule",
       "categoryPlaceholder": "Sélectionnez une catégorie",
-      "durationLabel": "Durée",
+      "durationLabel": "Durée (ou choisissez une autre durée dans la liste ci-dessous)",
       "durationDays": "{count} j",
       "durationPlaceholder": "Choisir votre durée",
       "mostChosen": "La plus choisie",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Indiquez le nom de l'agence de location",
     "permisRectoRequired": "Le permis de conduire (recto) est requis",
     "permisVersoRequired": "Le permis de conduire (verso) est requis",
-    "carteGriseRequired": "La carte grise est requise"
+    "carteGriseRequired": "La carte grise est requise",
+    "paysResidenceMustBeFrance": "Pour ce pays d'immatriculation, la résidence doit être en France",
+    "frontierBlocked": "Ce pays d'immatriculation nécessite de souscrire une assurance frontière"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "Pays / territoire de résidence *",
       "residenceTerritory": "Département / territoire de résidence *",
       "domTomHint": "Un tarif spécifique DOM-TOM s'applique aux départements et collectivités d'outre-mer.",
-      "domTomNotice": "Les tarifs applicables aux DOM-TOM diffèrent de ceux de la métropole."
+      "domTomNotice": "Les tarifs applicables aux DOM-TOM diffèrent de ceux de la métropole.",
+      "frontierNotice": "Pour un véhicule immatriculé dans ce pays, vous devez souscrire une assurance frontière : l'assurance des véhicules étrangers circulant en Europe.",
+      "frontierCta": "Souscrire une assurance frontière",
+      "residenceMustBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
+      "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
     },
     "driver": {
       "heading": "Informations conducteur",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Numéro de permis",
       "dateObtention": "Date d'obtention *",
       "dateObtentionHint": "Le permis doit avoir au moins 2 ans pour assurer votre véhicule.",
-      "paysObtention": "Pays d'obtention *"
+      "paysObtention": "Pays d'obtention *",
+      "whoCanSubscribeNotice": "Le souscripteur du contrat n'est pas obligatoirement le propriétaire du véhicule. Une autre personne peut souscrire l'assurance à son nom.",
+      "proofOfDomicileNotice": "Votre permis n'étant pas français, un justificatif de domicile en France de moins de 3 mois vous sera demandé (à téléverser dans la rubrique « Autre document »)."
     },
     "vehicle": {
       "heading": "Véhicule",

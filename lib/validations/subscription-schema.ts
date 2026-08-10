@@ -1,5 +1,6 @@
 import { z } from "zod"
 
+import { getRegistrationCase } from "@/lib/countries"
 import { VEHICLE_SLUGS } from "@/types"
 
 // Labels translated via messages/*.json "pricingLabels.civilite.<translationKey>" — the
@@ -9,7 +10,8 @@ export const CIVILITE_OPTIONS = [
   { value: "Mme", translationKey: "madame" },
 ] as const
 
-const phoneRegex = /^[0-9+()\s-]+$/
+// react-phone-number-input emits E.164 ("+33612345678") on change.
+const phoneRegex = /^\+[1-9]\d{6,14}$/
 
 export const MAX_FILE_SIZE_BYTES = 100 * 1024 * 1024
 export const MAX_FILE_SIZE_MB = MAX_FILE_SIZE_BYTES / (1024 * 1024)
@@ -111,6 +113,22 @@ export function createSubscriptionSchema(t: (key: string) => string) {
           code: "custom",
           message: t("territoireResidenceRequired"),
           path: ["territoireResidence"],
+        })
+      }
+
+      const registrationCase = getRegistrationCase(data.paysImmatriculation)
+      if (registrationCase === "restricted" && data.paysResidence !== "FR") {
+        ctx.addIssue({
+          code: "custom",
+          message: t("paysResidenceMustBeFrance"),
+          path: ["paysResidence"],
+        })
+      }
+      if (registrationCase === "frontier") {
+        ctx.addIssue({
+          code: "custom",
+          message: t("frontierBlocked"),
+          path: ["paysImmatriculation"],
         })
       }
 

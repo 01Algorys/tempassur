@@ -136,13 +136,14 @@
     "hero": {
       "title": "Assicurazione temporanea da 1 a 90 giorni  attestato immediato via e-mail o WhatsApp",
       "description": "Auto, mezzo pesante, camper, quad, bus, trattore, rimorchio e assicurazione di frontiera. Sottoscrizione 100% online, 7 giorni su 7. Assicuratori autorizzati: i vostri contratti sono garantiti da compagnie assicurative regolate dal Codice delle assicurazioni.",
-      "ctaEstimate": "Stima la tua assicurazione in 30 secondi"
+      "ctaEstimate": "Mi assicuro",
+      "categoryDialogTitle": "Quale veicolo desideri assicurare?"
     },
     "tarificateur": {
       "title": "Stima la tua assicurazione in 30 secondi",
       "categoryLabel": "Categoria di veicolo",
       "categoryPlaceholder": "Seleziona una categoria",
-      "durationLabel": "Durata",
+      "durationLabel": "Durata (o scegli unaltra durata dallelenco sottostante)",
       "durationDays": "{count} g",
       "durationPlaceholder": "Scegli la tua durata",
       "mostChosen": "La più scelta",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Indica il nome dell'agenzia di noleggio",
     "permisRectoRequired": "La patente di guida (fronte) è obbligatoria",
     "permisVersoRequired": "La patente di guida (retro) è obbligatoria",
-    "carteGriseRequired": "Il libretto di circolazione è obbligatorio"
+    "carteGriseRequired": "Il libretto di circolazione è obbligatorio",
+    "paysResidenceMustBeFrance": "Per questo paese di immatricolazione, la residenza deve essere in Francia",
+    "frontierBlocked": "Questo paese di immatricolazione richiede la sottoscrizione di un'assicurazione di frontiera"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "Paese / territorio di residenza *",
       "residenceTerritory": "Dipartimento / territorio di residenza *",
       "domTomHint": "Una tariffa specifica DOM-TOM si applica ai dipartimenti e alle collettività d'oltremare.",
-      "domTomNotice": "Le tariffe applicabili ai DOM-TOM differiscono da quelle della Francia metropolitana."
+      "domTomNotice": "Le tariffe applicabili ai DOM-TOM differiscono da quelle della Francia metropolitana.",
+      "frontierNotice": "Per un veicolo immatricolato in questo paese, è necessario sottoscrivere un'assicurazione di frontiera: l'assicurazione per i veicoli stranieri che circolano in Europa.",
+      "frontierCta": "Sottoscrivere un'assicurazione di frontiera",
+      "residenceMustBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia.",
+      "residenceShouldBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia."
     },
     "driver": {
       "heading": "Informazioni sul conducente",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Numero di patente",
       "dateObtention": "Data di rilascio *",
       "dateObtentionHint": "La patente deve avere almeno 2 anni per assicurare il tuo veicolo.",
-      "paysObtention": "Paese di rilascio *"
+      "paysObtention": "Paese di rilascio *",
+      "whoCanSubscribeNotice": "Il sottoscrittore del contratto non è necessariamente il proprietario del veicolo. Un'altra persona può sottoscrivere l'assicurazione a proprio nome.",
+      "proofOfDomicileNotice": "Poiché la vostra patente non è francese, sarà richiesto un giustificativo di domicilio in Francia di meno di 3 mesi (da caricare in \"Altro documento\")."
     },
     "vehicle": {
       "heading": "Veicolo",

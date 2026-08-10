@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 
@@ -7,19 +8,21 @@ import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { fadeUp, staggerContainer } from "@/lib/motion"
 
+import { CategoryDialog } from "./category-dialog"
 import { Tarificateur } from "./tarificateur"
 
 export function Hero() {
   const t = useTranslations("home.hero")
+  const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
 
   return (
-    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-[#fdf3ea] via-white to-white pt-32 pb-16 sm:pt-40">
-      <div className="relative mx-auto grid max-w-[145rem] grid-cols-1 items-center gap-10 container-px lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+    <section id="top" className="relative overflow-hidden bg-gradient-to-b from-[#fdf3ea] via-white to-white pt-25 pb-8 sm:pt-24 lg:pt-32">
+      <div className="relative mx-auto grid max-w-[145rem] grid-cols-1 items-center gap-6 container-px sm:gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer(0.12, 0.1)}
-          className="flex flex-col items-start gap-14"
+          className="order-1 flex flex-col items-start gap-14"
         >
           <motion.h1
             variants={fadeUp}
@@ -33,8 +36,14 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
-            <Button asChild size="xl" variant="cta" className="rounded-full">
-              <a href="#tarificateur">{t("ctaEstimate")}</a>
+            <Button
+              type="button"
+              size="xl"
+              variant="cta"
+              className="rounded-full"
+              onClick={() => setCategoryDialogOpen(true)}
+            >
+              {t("ctaEstimate")}
             </Button>
             <WhatsappButton className="h-13 rounded-full px-8 text-base" />
           </motion.div>
@@ -44,10 +53,13 @@ export function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="order-2"
         >
           <Tarificateur />
         </motion.div>
       </div>
+
+      <CategoryDialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen} />
     </section>
   )
 }

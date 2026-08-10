@@ -136,13 +136,14 @@
     "hero": {
       "title": "Asigurare temporară de la 1 la 90 de zile  certificat de asigurare imediat prin e-mail sau WhatsApp",
       "description": "Auto, vehicule grele, autorulote, ATV-uri, autobuze, tractoare, remorci și asigurare de frontieră. Subscriere 100% online, zilnic. Asigurători autorizați: contractele dvs. sunt emise de societăți de asigurare reglementate de Codul asigurărilor francez.",
-      "ctaEstimate": "Estimați-vă asigurarea în 30 de secunde"
+      "ctaEstimate": "Mă asigur",
+      "categoryDialogTitle": "Ce vehicul doriți să asigurați?"
     },
     "tarificateur": {
       "title": "Estimați-vă asigurarea în 30 de secunde",
       "categoryLabel": "Categoria vehiculului",
       "categoryPlaceholder": "Selectați o categorie",
-      "durationLabel": "Durată",
+      "durationLabel": "Durată (sau alegeți o altă durată din lista de mai jos)",
       "durationDays": "{count} z",
       "durationPlaceholder": "Alegeți durata",
       "mostChosen": "Cea mai aleasă",
@@ -312,7 +313,9 @@
     "nomAgenceRequired": "Indicați numele agenției de închiriere",
     "permisRectoRequired": "Permisul de conducere (față) este obligatoriu",
     "permisVersoRequired": "Permisul de conducere (verso) este obligatoriu",
-    "carteGriseRequired": "Certificatul de înmatriculare este obligatoriu"
+    "carteGriseRequired": "Certificatul de înmatriculare este obligatoriu",
+    "paysResidenceMustBeFrance": "Pentru această țară de înmatriculare, reședința trebuie să fie în Franța",
+    "frontierBlocked": "Această țară de înmatriculare necesită încheierea unei asigurări de frontieră"
   },
   "wizard": {
     "steps": {
@@ -363,7 +366,11 @@
       "residenceCountry": "Țară / teritoriu de reședință *",
       "residenceTerritory": "Departament / teritoriu de reședință *",
       "domTomHint": "Un tarif specific DOM-TOM se aplică departamentelor și colectivităților de peste mări.",
-      "domTomNotice": "Tarifele aplicabile teritoriilor DOM-TOM diferă de cele din metropolă."
+      "domTomNotice": "Tarifele aplicabile teritoriilor DOM-TOM diferă de cele din metropolă.",
+      "frontierNotice": "Pentru un vehicul înmatriculat în această țară, trebuie să încheiați o asigurare de frontieră: asigurarea pentru vehiculele străine care circulă în Europa.",
+      "frontierCta": "Încheiați o asigurare de frontieră",
+      "residenceMustBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
+      "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța."
     },
     "driver": {
       "heading": "Informații conducător auto",
@@ -397,7 +404,9 @@
       "numeroPermisPlaceholder": "Numărul permisului",
       "dateObtention": "Data obținerii *",
       "dateObtentionHint": "Permisul trebuie să aibă o vechime de cel puțin 2 ani pentru a vă asigura vehiculul.",
-      "paysObtention": "Țara de obținere *"
+      "paysObtention": "Țara de obținere *",
+      "whoCanSubscribeNotice": "Subscriitorul contractului nu este neapărat proprietarul vehiculului. O altă persoană poate încheia asigurarea pe numele său.",
+      "proofOfDomicileNotice": "Deoarece permisul dumneavoastră nu este francez, vi se va solicita o dovadă de domiciliu în Franța de mai puțin de 3 luni (de încărcat la „Alt document”)."
     },
     "vehicle": {
       "heading": "Vehicul",
