@@ -48,6 +48,12 @@
       "description": "Vehicule înmatriculate în afara Uniunii Europene și în afara sistemului Cartea Verde, sau vehicule înmatriculate în străinătate care trebuie să circule în Franța și în Europa."
     }
   },
+  "cookieConsent": {
+    "description": "Folosim cookie-uri pentru a măsura traficul site-ului și a îmbunătăți experiența dumneavoastră. Puteți accepta sau refuza aceste cookie-uri neesențiale.",
+    "learnMore": "Aflați mai multe",
+    "accept": "Acceptați",
+    "reject": "Refuzați"
+  },
   "header": {
     "onlineCta": "Încheie asigurarea online",
     "openMenu": "Deschide meniul"

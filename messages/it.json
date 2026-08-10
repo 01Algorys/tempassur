@@ -48,6 +48,12 @@
       "description": "Veicoli immatricolati fuori dall'Unione Europea e fuori dal sistema carta verde, oppure veicoli immatricolati all'estero che devono circolare in Francia e in Europa."
     }
   },
+  "cookieConsent": {
+    "description": "Utilizziamo i cookie per misurare il traffico del sito e migliorare la tua esperienza. Puoi accettare o rifiutare questi cookie non essenziali.",
+    "learnMore": "Scopri di più",
+    "accept": "Accetta",
+    "reject": "Rifiuta"
+  },
   "header": {
     "onlineCta": "Sottoscrivi online",
     "openMenu": "Apri il menu"

@@ -48,6 +48,12 @@
       "description": "Vehicles registered outside the European Union and outside the green card system, or vehicles registered abroad that need to travel in France and Europe."
     }
   },
+  "cookieConsent": {
+    "description": "We use cookies to measure site traffic and improve your experience. You can accept or reject these non-essential cookies.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
   "header": {
     "onlineCta": "Subscribe online",
     "openMenu": "Open menu"

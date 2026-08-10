@@ -48,6 +48,12 @@
       "description": "Vehículos matriculados fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o vehículos matriculados en el extranjero que deban circular por Francia y Europa."
     }
   },
+  "cookieConsent": {
+    "description": "Utilizamos cookies para medir el tráfico del sitio y mejorar su experiencia. Puede aceptar o rechazar estas cookies no esenciales.",
+    "learnMore": "Saber más",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
+  },
   "header": {
     "onlineCta": "Contratar en línea",
     "openMenu": "Abrir el menú"

@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "@/i18n/navigation"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -6,6 +8,7 @@ import { Logo } from "@/components/shared/logo"
 import { TelLink } from "@/components/shared/tel-link"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
+import { requestReopenCookieBanner } from "@/lib/cookie-consent"
 import { siteConfig } from "@/lib/site"
 
 export function Footer() {
@@ -21,7 +24,6 @@ export function Footer() {
     { label: t("mentionsLegales"), href: "/mentions-legales" },
     { label: t("cgv"), href: "/cgv" },
     { label: t("politiqueConfidentialite"), href: "/politique-de-confidentialite" },
-    { label: t("gererCookies"), href: "/politique-de-confidentialite#cookies" },
   ]
 
   return (
@@ -64,6 +66,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={requestReopenCookieBanner}
+                  className="text-sm text-white/60 transition-colors hover:text-white"
+                >
+                  {t("gererCookies")}
+                </button>
+              </li>
             </ul>
           </div>
 

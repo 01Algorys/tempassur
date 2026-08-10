@@ -52,6 +52,12 @@
     "onlineCta": "Souscrire en ligne",
     "openMenu": "Ouvrir le menu"
   },
+  "cookieConsent": {
+    "description": "Nous utilisons des cookies pour mesurer l'audience du site et améliorer votre expérience. Vous pouvez accepter ou refuser ces cookies non essentiels.",
+    "learnMore": "En savoir plus",
+    "accept": "Accepter",
+    "reject": "Refuser"
+  },
   "footer": {
     "description": "TempAssur  L'assurance temporaire de 1 à 90 jours, pour tous les véhicules. Attestation immédiate par e-mail ou WhatsApp.",
     "insuranceHeading": "Nos assurances",

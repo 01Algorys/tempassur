@@ -48,6 +48,12 @@
       "description": "Fahrzeuge, die außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen sind, oder im Ausland zugelassene Fahrzeuge, die in Frankreich und Europa fahren müssen."
     }
   },
+  "cookieConsent": {
+    "description": "Wir verwenden Cookies, um den Website-Traffic zu messen und Ihr Erlebnis zu verbessern. Sie können diese nicht wesentlichen Cookies akzeptieren oder ablehnen.",
+    "learnMore": "Mehr erfahren",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen"
+  },
   "header": {
     "onlineCta": "Online abschließen",
     "openMenu": "Menü öffnen"

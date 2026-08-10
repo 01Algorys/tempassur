@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { CookieConsentBanner } from "@/components/shared/cookie-consent-banner"
 import { FloatingWhatsappButton } from "@/components/shared/floating-whatsapp-button"
 import { isPreprodEnv, siteConfig } from "@/lib/site"
 import { routing, RTL_LOCALES, type Locale } from "@/i18n/routing"
@@ -134,27 +135,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      {GTM_CONTAINER_ID ? (
-        <head>
-          <script
-            id="gtm"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`,
-            }}
-          />
-        </head>
-      ) : null}
       <body className="flex min-h-full flex-col">
-        {GTM_CONTAINER_ID ? (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...jsonLd, inLanguage: OPENGRAPH_LOCALES[locale as Locale] }) }}
@@ -164,6 +145,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           <main className="flex-1">{children}</main>
           <Footer />
           <FloatingWhatsappButton />
+          <CookieConsentBanner gtmId={GTM_CONTAINER_ID} />
         </NextIntlClientProvider>
       </body>
     </html>
