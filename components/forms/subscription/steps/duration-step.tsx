@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
+import { calculatePrice, getAvailableDurations, getPreselectedDuration } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 const triggerClass = "h-11 w-full rounded-lg"
@@ -66,7 +66,7 @@ export function DurationStep({ form }: DurationStepProps) {
               </FormControl>
               <SelectContent>
                 {durations.map((d) => {
-                  const price = getMinPriceForDuration(categorie, d, false)
+                  const price = calculatePrice(categorie, { ...selection, duree: d })?.basePrice ?? null
                   return (
                     <SelectItem key={d} value={String(d)}>
                       {t("durationOption", { count: d })}
