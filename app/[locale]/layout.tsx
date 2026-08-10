@@ -128,7 +128,12 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   const dir = RTL_LOCALES.includes(locale as Locale) ? "rtl" : "ltr"
 
   return (
-    <html lang={locale} dir={dir} className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      dir={dir}
+      className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       {GTM_CONTAINER_ID ? (
         <head>
           <script

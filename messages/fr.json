@@ -315,7 +315,8 @@
     "permisVersoRequired": "Le permis de conduire (verso) est requis",
     "carteGriseRequired": "La carte grise est requise",
     "paysResidenceMustBeFrance": "Pour ce pays d'immatriculation, la résidence doit être en France",
-    "frontierBlocked": "Ce pays d'immatriculation nécessite de souscrire une assurance frontière"
+    "frontierBlocked": "Ce pays d'immatriculation nécessite de souscrire une assurance frontière",
+    "fileTooLarge": "Le fichier est trop volumineux (max 100 Mo)"
   },
   "wizard": {
     "steps": {

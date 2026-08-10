@@ -315,7 +315,8 @@
     "permisVersoRequired": "Der Führerschein (Rückseite) ist erforderlich",
     "carteGriseRequired": "Der Fahrzeugschein ist erforderlich",
     "paysResidenceMustBeFrance": "Für dieses Zulassungsland muss der Wohnsitz in Frankreich liegen",
-    "frontierBlocked": "Für dieses Zulassungsland ist eine Grenzversicherung erforderlich"
+    "frontierBlocked": "Für dieses Zulassungsland ist eine Grenzversicherung erforderlich",
+    "fileTooLarge": "Die Datei ist zu groß (max. 100 MB)"
   },
   "wizard": {
     "steps": {

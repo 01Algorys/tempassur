@@ -315,7 +315,8 @@
     "permisVersoRequired": "Permisul de conducere (verso) este obligatoriu",
     "carteGriseRequired": "Certificatul de înmatriculare este obligatoriu",
     "paysResidenceMustBeFrance": "Pentru această țară de înmatriculare, reședința trebuie să fie în Franța",
-    "frontierBlocked": "Această țară de înmatriculare necesită încheierea unei asigurări de frontieră"
+    "frontierBlocked": "Această țară de înmatriculare necesită încheierea unei asigurări de frontieră",
+    "fileTooLarge": "Fișierul este prea mare (max 100 MB)"
   },
   "wizard": {
     "steps": {

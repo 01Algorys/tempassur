@@ -315,7 +315,8 @@
     "permisVersoRequired": "El permiso de conducción (reverso) es obligatorio",
     "carteGriseRequired": "El permiso de circulación es obligatorio",
     "paysResidenceMustBeFrance": "Para este país de matriculación, la residencia debe estar en Francia",
-    "frontierBlocked": "Este país de matriculación requiere contratar un seguro de frontera"
+    "frontierBlocked": "Este país de matriculación requiere contratar un seguro de frontera",
+    "fileTooLarge": "El archivo es demasiado grande (máx. 100 MB)"
   },
   "wizard": {
     "steps": {

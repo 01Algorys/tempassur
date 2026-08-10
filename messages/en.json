@@ -315,7 +315,8 @@
     "permisVersoRequired": "Driving licence (back) is required",
     "carteGriseRequired": "Vehicle registration document is required",
     "paysResidenceMustBeFrance": "For this registration country, residence must be in France",
-    "frontierBlocked": "This registration country requires taking out frontier insurance"
+    "frontierBlocked": "This registration country requires taking out frontier insurance",
+    "fileTooLarge": "The file is too large (max 100 MB)"
   },
   "wizard": {
     "steps": {

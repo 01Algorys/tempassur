@@ -315,7 +315,8 @@
     "permisVersoRequired": "La patente di guida (retro) è obbligatoria",
     "carteGriseRequired": "Il libretto di circolazione è obbligatorio",
     "paysResidenceMustBeFrance": "Per questo paese di immatricolazione, la residenza deve essere in Francia",
-    "frontierBlocked": "Questo paese di immatricolazione richiede la sottoscrizione di un'assicurazione di frontiera"
+    "frontierBlocked": "Questo paese di immatricolazione richiede la sottoscrizione di un'assicurazione di frontiera",
+    "fileTooLarge": "Il file è troppo grande (max 100 MB)"
   },
   "wizard": {
     "steps": {
