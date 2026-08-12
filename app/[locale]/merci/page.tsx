@@ -6,6 +6,7 @@ import { Container } from "@/components/shared/container"
 import { TelLink } from "@/components/shared/tel-link"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { redirect } from "@/i18n/navigation"
+import { fulfillContract } from "@/lib/contract-fulfillment"
 import { getStripe } from "@/lib/stripe"
 import { siteConfig } from "@/lib/site"
 import type { Locale } from "@/i18n/routing"
@@ -29,15 +30,42 @@ interface MerciPageProps {
   searchParams: Promise<{ payment_intent?: string; numero?: string }>
 }
 
-async function resolveReference(paymentIntentId: string | undefined): Promise<string | null> {
+// Reconciles the case where the client-side create-contract call never ran — Stripe did
+// a full off-page redirect (3DS, local payment methods) that skips straight to returnUrl,
+// or the tab closed/network dropped between payment success and the client-side retries
+// finishing. Idempotent: transformCrmDevis just returns the existing contrat on retry, so
+// this is safe to call even when the client-side call already succeeded.
+async function resolveReference(
+  paymentIntentId: string | undefined,
+  numero: string | undefined
+): Promise<string | null> {
   if (!paymentIntentId) return null
+  let paymentIntent
   try {
-    const paymentIntent = await getStripe().paymentIntents.retrieve(paymentIntentId)
-    if (paymentIntent.status !== "succeeded") return null
-    return paymentIntent.id
+    paymentIntent = await getStripe().paymentIntents.retrieve(paymentIntentId)
   } catch {
     return null
   }
+  if (paymentIntent.status !== "succeeded") return null
+  if (numero) return paymentIntent.id
+
+  const devisId = paymentIntent.metadata?.devisId
+  if (!devisId) return paymentIntent.id
+
+  const result = await fulfillContract({
+    paymentIntentId: paymentIntent.id,
+    devisId,
+    marque: paymentIntent.metadata.marque || undefined,
+    modele: paymentIntent.metadata.modele || undefined,
+    immatriculation: paymentIntent.metadata.immatriculation || undefined,
+    dateEffet: paymentIntent.metadata.dateEffet || undefined,
+    heureEffet: paymentIntent.metadata.heureEffet || undefined,
+    duree: paymentIntent.metadata.duree ? Number(paymentIntent.metadata.duree) : undefined,
+  })
+  if (result.success) return result.numero
+
+  console.error("[merci] contract reconciliation failed", { paymentIntentId: paymentIntent.id, devisId, error: result.error })
+  return paymentIntent.id
 }
 
 export default async function MerciPage({ params, searchParams }: MerciPageProps) {
@@ -45,7 +73,7 @@ export default async function MerciPage({ params, searchParams }: MerciPageProps
   const { payment_intent: paymentIntentId, numero } = await searchParams
   const t = await getTranslations("pages.merci")
 
-  const paymentRef = paymentIntentId ? await resolveReference(paymentIntentId) : undefined
+  const paymentRef = paymentIntentId ? await resolveReference(paymentIntentId, numero) : undefined
   if (paymentIntentId && !paymentRef) {
     redirect({ href: { pathname: "/souscription", query: { paiement: "echec" } }, locale: locale as Locale })
   }

@@ -5,6 +5,7 @@ import { getStripe } from "@/lib/stripe"
 import { VEHICLE_SLUGS, type VehicleSlug } from "@/types"
 
 interface CreatePaymentIntentBody {
+  devisId: string
   categorie: VehicleSlug
   duree: number
   cvTier?: string
@@ -21,6 +22,8 @@ interface CreatePaymentIntentBody {
   marque: string
   modele: string
   immatriculation: string
+  dateEffet: string
+  heureEffet: string
   nom: string
   prenom: string
   email: string
@@ -35,6 +38,7 @@ export async function POST(req: NextRequest) {
   }
 
   const {
+    devisId,
     categorie,
     duree,
     cvTier,
@@ -51,6 +55,8 @@ export async function POST(req: NextRequest) {
     marque,
     modele,
     immatriculation,
+    dateEffet,
+    heureEffet,
     nom,
     prenom,
     email,
@@ -59,7 +65,7 @@ export async function POST(req: NextRequest) {
   if (!categorie || !(VEHICLE_SLUGS as readonly string[]).includes(categorie)) {
     return NextResponse.json({ error: "invalid_categorie" }, { status: 400 })
   }
-  if (!duree || !paysImmatriculation || !paysResidence || !email || !vehicleLabel) {
+  if (!devisId || !duree || !paysImmatriculation || !paysResidence || !email || !vehicleLabel) {
     return NextResponse.json({ error: "missing_fields" }, { status: 400 })
   }
 
@@ -93,11 +99,17 @@ export async function POST(req: NextRequest) {
       receipt_email: email,
       description: `Assurance temporaire — ${vehicleLabel} — ${duree} jours — ${marque ?? ""} ${modele ?? ""} (${immatriculation ?? ""})`.trim(),
       metadata: {
+        // devisId lets /merci reconcile the case where Stripe does a full off-page
+        // redirect (3DS, local payment methods) and the in-page create-contract call
+        // that would normally run right after confirmPayment() never fires.
+        devisId,
         categorie,
         duree: String(duree),
         marque: marque ?? "",
         modele: modele ?? "",
         immatriculation: immatriculation ?? "",
+        dateEffet: dateEffet ?? "",
+        heureEffet: heureEffet ?? "",
         conducteur: `${prenom ?? ""} ${nom ?? ""}`.trim(),
       },
     })

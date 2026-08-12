@@ -20,6 +20,7 @@ interface PaymentStepProps {
   form: UseFormReturn<SubscriptionFormValues>
   vehicleLabel: string
   breakdown: PriceBreakdown | null
+  devisId: string
   onEdit: (stepIndex: number) => void
   onReadyChange: (ready: boolean) => void
   returnUrl: string
@@ -37,7 +38,7 @@ const STRIPE_APPEARANCE = {
 }
 
 export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(function PaymentStep(
-  { form, vehicleLabel, breakdown, onEdit, onReadyChange, returnUrl },
+  { form, vehicleLabel, breakdown, devisId, onEdit, onReadyChange, returnUrl },
   ref
 ) {
   const t = useTranslations("wizard.payment")
@@ -53,7 +54,7 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
     setLoadError(false)
     onReadyChange(false)
 
-    createPaymentIntent({ values: form.getValues(), categorie: values.categorie, vehicleLabel })
+    createPaymentIntent({ values: form.getValues(), categorie: values.categorie, vehicleLabel, devisId })
       .then(({ clientSecret: secret }) => {
         if (!cancelled) setClientSecret(secret)
       })

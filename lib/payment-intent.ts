@@ -5,17 +5,20 @@ interface CreatePaymentIntentParams {
   values: SubscriptionFormValues
   categorie: VehicleSlug
   vehicleLabel: string
+  devisId: string
 }
 
 export async function createPaymentIntent({
   values,
   categorie,
   vehicleLabel,
+  devisId,
 }: CreatePaymentIntentParams): Promise<{ clientSecret: string; amount: number }> {
   const response = await fetch("/api/create-payment-intent", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
+      devisId,
       categorie,
       duree: values.duree,
       cvTier: values.cvTier,
@@ -32,6 +35,8 @@ export async function createPaymentIntent({
       marque: values.marque,
       modele: values.modele,
       immatriculation: values.immatriculation,
+      dateEffet: values.dateEffet,
+      heureEffet: values.heureEffet,
       nom: values.nom,
       prenom: values.prenom,
       email: values.email,

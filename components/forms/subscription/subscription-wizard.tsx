@@ -455,6 +455,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                     form={form}
                     vehicleLabel={vehicleLabel}
                     breakdown={breakdown}
+                    devisId={devisId ?? ""}
                     onEdit={goToStep}
                     onReadyChange={setPaymentReady}
                     returnUrl={returnUrl}
