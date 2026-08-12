@@ -84,36 +84,22 @@ export const AUTO_TARIFFS: Record<CvTier, AutoTariffRow[]> = {
 }
 
 // camping-car ≤ 3,5T has no dedicated table in the source sheet: it's priced as the
-// matching automobile CV-tier tariff + 20€ (FR and DOM-TOM), with no options, restricted
-// to the durations that exist in both the camping-car block's duration list and the base
-// table. camping-car > 3,5T has its own flat table and does not vary by CV tier.
+// matching automobile CV-tier tariff + 20€ (FR and DOM-TOM), same durations as automobiles,
+// with no options. camping-car > 3,5T has its own flat table and does not vary by CV tier.
 export const CAMPING_CAR_LEGER_SURCHARGE = 20
 
+function withCampingCarSurcharge(rows: AutoTariffRow[]): TariffRow[] {
+  return rows.map((row) => ({
+    duree: row.duree,
+    prixFr: row.prixFr + CAMPING_CAR_LEGER_SURCHARGE,
+    prixDomTom: row.prixDomTom + CAMPING_CAR_LEGER_SURCHARGE,
+  }))
+}
+
 export const CAMPING_CAR_LEGER_TARIFFS: Record<CvTier, TariffRow[]> = {
-  "moins-16cv": [
-    { duree: 1, prixFr: 74, prixDomTom: 109 },
-    { duree: 3, prixFr: 89, prixDomTom: 129 },
-    { duree: 5, prixFr: 104, prixDomTom: 139 },
-    { duree: 8, prixFr: 114, prixDomTom: 149 },
-    { duree: 10, prixFr: 120, prixDomTom: 159 },
-    { duree: 15, prixFr: 139, prixDomTom: 178 },
-  ],
-  "moins-30cv": [
-    { duree: 1, prixFr: 89, prixDomTom: 124 },
-    { duree: 3, prixFr: 99, prixDomTom: 144 },
-    { duree: 5, prixFr: 115, prixDomTom: 154 },
-    { duree: 8, prixFr: 125, prixDomTom: 164 },
-    { duree: 10, prixFr: 139, prixDomTom: 174 },
-    { duree: 15, prixFr: 152, prixDomTom: 193 },
-  ],
-  "plus-30cv": [
-    { duree: 1, prixFr: 94, prixDomTom: 139 },
-    { duree: 3, prixFr: 122, prixDomTom: 159 },
-    { duree: 5, prixFr: 129, prixDomTom: 169 },
-    { duree: 8, prixFr: 141, prixDomTom: 179 },
-    { duree: 10, prixFr: 159, prixDomTom: 189 },
-    { duree: 15, prixFr: 169, prixDomTom: 208 },
-  ],
+  "moins-16cv": withCampingCarSurcharge(AUTO_TARIFFS["moins-16cv"]),
+  "moins-30cv": withCampingCarSurcharge(AUTO_TARIFFS["moins-30cv"]),
+  "plus-30cv": withCampingCarSurcharge(AUTO_TARIFFS["plus-30cv"]),
 }
 
 export const CAMPING_CAR_LOURD_TARIFFS: TariffRow[] = [

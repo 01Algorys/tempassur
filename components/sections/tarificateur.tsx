@@ -21,7 +21,7 @@ export function Tarificateur() {
   )
   const router = useRouter()
   const [category, setCategory] = useState<VehicleSlug>("automobiles")
-  const [duree, setDuree] = useState<number>(0)
+  const [duree, setDuree] = useState<number>(() => getPreselectedDuration("automobiles"))
 
   const preselected = useMemo(() => getPreselectedDuration(category), [category])
   const allDurations = useMemo(() => getAvailableDurations(category, { duree: null, isDomTom: false }), [category])
@@ -30,7 +30,7 @@ export function Tarificateur() {
   function handleCategoryChange(value: string) {
     const slug = value as VehicleSlug
     setCategory(slug)
-    setDuree(0)
+    setDuree(getPreselectedDuration(slug))
   }
 
   function handleSouscription() {
@@ -89,7 +89,6 @@ export function Tarificateur() {
           <p className="text-xl font-extrabold tracking-tight text-navy">
             {price != null ? t("priceFrom", { price: currency.format(price / duree) }) : t("pricePlaceholder")}
           </p>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("priceNote")}</p>
         </div>
 
         <Button type="button" size="lg" variant="cta" className="w-full rounded-full" onClick={handleSouscription}>

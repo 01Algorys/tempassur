@@ -80,7 +80,18 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
           render={({ field }) => (
             <FormItem className="flex flex-row items-start gap-3 rounded-xl border border-border p-3">
               <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-0.5" />
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={(checked) => {
+                    field.onChange(checked)
+                    // consentIpid/consentContrat are kept in the data model for the
+                    // compliance audit trail, but are no longer separate checkboxes —
+                    // accepting the CGV now bundles all three.
+                    form.setValue("consentIpid", checked === true)
+                    form.setValue("consentContrat", checked === true)
+                  }}
+                  className="mt-0.5"
+                />
               </FormControl>
               <div className="flex flex-col gap-1">
                 <FormLabel className="text-sm font-normal text-foreground">
@@ -92,36 +103,6 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
                     ),
                   })}
                 </FormLabel>
-                <FormMessage />
-              </div>
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="consentIpid"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start gap-3 rounded-xl border border-border p-3">
-              <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-0.5" />
-              </FormControl>
-              <div className="flex flex-col gap-1">
-                <FormLabel className="text-sm font-normal text-foreground">{t("acceptIpid")}</FormLabel>
-                <FormMessage />
-              </div>
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="consentContrat"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start gap-3 rounded-xl border border-border p-3">
-              <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} className="mt-0.5" />
-              </FormControl>
-              <div className="flex flex-col gap-1">
-                <FormLabel className="text-sm font-normal text-foreground">{t("acceptContrat")}</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>

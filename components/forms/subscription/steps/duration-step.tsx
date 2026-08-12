@@ -36,11 +36,11 @@ export function DurationStep({ form }: DurationStepProps) {
   // A previously selected duree can silently become invalid — it would still
   // pass required-field validation, but calculatePrice would find no matching
   // row and return a null breakdown, saving the devis with no price at all.
-  // Clearing it here forces the user to re-pick a duration that's valid for
-  // their current tier.
+  // Falling back to the category's most-chosen duration keeps a valid price
+  // selected instead of forcing the user back to an empty placeholder.
   useEffect(() => {
     if (duree && !durations.includes(duree)) {
-      form.setValue("duree", 0)
+      form.setValue("duree", preselected)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categorie, cvTier, ptacTier, quadSubtype])

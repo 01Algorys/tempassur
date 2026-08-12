@@ -19,7 +19,7 @@ import { uploadSubscriptionDocuments } from "@/lib/documents"
 import { routing } from "@/i18n/routing"
 import {
   calculatePrice,
-  getAvailableDurations,
+  getPreselectedDuration,
   getPricingConfig,
   isDomTomTerritory,
   type FormulaSelection,
@@ -151,7 +151,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       paysResidence: "",
       territoireResidence: "",
       categorie: initialCategory,
-      duree: initialDuree ?? getAvailableDurations(initialCategory, { duree: null, isDomTom: false })[0] ?? 0,
+      duree: initialDuree ?? getPreselectedDuration(initialCategory),
       cvTier: getPricingConfig(initialCategory).needsCvTier ? "moins-16cv" : undefined,
       ptacTier: getPricingConfig(initialCategory).needsPtacTier ? "moins-3500kg" : undefined,
       quadSubtype: getPricingConfig(initialCategory).needsQuadSubtype ? "voiturette-sans-permis" : undefined,
@@ -408,7 +408,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
   }
 
   return (
-    <div ref={containerRef} className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
+    <div ref={containerRef} className="grid grid-cols-1 gap-8 pb-32 lg:grid-cols-[1fr_360px] lg:items-start lg:pb-0">
       <div className="rounded-3xl border border-border bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
         {isCreatingContract ? (
           <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
@@ -475,7 +475,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   ) : null}
                 </AnimatePresence>
 
-                <div className="flex items-center justify-between gap-3 pt-2">
+                <div className="hidden items-center justify-between gap-3 pt-2 lg:flex">
                   <Button
                     type="button"
                     variant="outline"
@@ -510,6 +510,57 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                       </>
                     )}
                   </Button>
+                </div>
+
+                {/* Mobile-only: pinned to the bottom of the viewport (like the home
+                    tarificateur's CTA) so navigation stays reachable without scrolling
+                    past long steps (documents, consents). The total price is shown above
+                    the buttons so the user always sees it before continuing or going back. */}
+                <div className="fixed inset-x-0 bottom-0 z-40 flex flex-col gap-2 border-t border-border bg-white p-3 pr-20 shadow-[0_-8px_24px_-6px_rgba(0,0,0,0.15)] lg:hidden">
+                  {!isLastStep ? (
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-semibold text-navy">{t("billingSummary.totalToPay")}</span>
+                      <span className="text-lg font-extrabold tracking-tight text-orange">
+                        {breakdown ? `${breakdown.total.toFixed(2)} €` : "— €"}
+                      </span>
+                    </div>
+                  ) : null}
+                  <div className="flex items-center justify-between gap-3">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="rounded-full"
+                      onClick={goBack}
+                      disabled={stepIndex === 0}
+                    >
+                      <ArrowLeft data-icon="inline-start" />
+                      {t("buttons.previous")}
+                    </Button>
+                    <Button
+                      type="submit"
+                      variant="cta"
+                      className="rounded-full"
+                      disabled={
+                        isPaying ||
+                        (isLastStep && !paymentReady) ||
+                        (currentStep.id === "duration" && isRegistrationBlocked)
+                      }
+                    >
+                      {isPaying ? (
+                        <>
+                          <Loader2 className="size-4 animate-spin" data-icon="inline-start" />
+                          {t("buttons.sending")}
+                        </>
+                      ) : isLastStep ? (
+                        t("buttons.payLabel", { amount: breakdown ? breakdown.total.toFixed(2) : "—" })
+                      ) : (
+                        <>
+                          {t("buttons.continueLabel")}
+                          <ArrowRight data-icon="inline-end" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
 
                 {isLastStep ? <PaymentHelp variant="tunnel" className="border-t border-border pt-4" /> : null}
