@@ -75,6 +75,33 @@ export const CAR_MAKES: string[] = [
   "Volvo",
 ]
 
+// Marques exclues de la garantie du conducteur et de l'extension de pays (véhicules de
+// prestige/exception). Comparaison normalisée (casse, espaces, tirets) côté
+// isDriverGuaranteeExcludedMake ci-dessous — ne pas comparer cette liste directement.
+export const EXCLUDED_DRIVER_GUARANTEE_MAKES: string[] = [
+  "Porsche",
+  "Ferrari",
+  "Maserati",
+  "Rolls-Royce",
+  "Lamborghini",
+  "Jensen",
+  "Cadillac",
+  "Bentley",
+  "Aston Martin",
+  "Alpine",
+]
+
+function normalizeMake(value: string): string {
+  return value.trim().toLowerCase().replace(/[\s-]+/g, "")
+}
+
+const NORMALIZED_EXCLUDED_MAKES = new Set(EXCLUDED_DRIVER_GUARANTEE_MAKES.map(normalizeMake))
+
+export function isDriverGuaranteeExcludedMake(marque: string | undefined): boolean {
+  if (!marque) return false
+  return NORMALIZED_EXCLUDED_MAKES.has(normalizeMake(marque))
+}
+
 const VPIC_ENDPOINT = "https://vpic.nhtsa.dot.gov/api/vehicles/GetAllMakes?format=json"
 const CACHE_KEY = "tempassur-car-makes-cache-v1"
 const CACHE_TTL_MS = 30 * 24 * 60 * 60 * 1000

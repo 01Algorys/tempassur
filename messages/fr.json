@@ -142,7 +142,7 @@
     "hero": {
       "title": "Assurance temporaire de 1 à 90 jours  attestation immédiate par e-mail ou WhatsApp",
       "description": "Auto, poids lourd, camping-car, quad, bus, tracteur, remorque et assurance frontière. Souscription 100 % en ligne, 7j/7. Assureurs agréés : vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
-      "ctaEstimate": "Je m'assure",
+      "ctaEstimate": "Tarifs et souscription",
       "categoryDialogTitle": "Quel véhicule souhaitez-vous assurer ?"
     },
     "tarificateur": {
@@ -154,7 +154,8 @@
       "durationPlaceholder": "Choisir votre durée",
       "mostChosen": "La plus choisie",
       "durationOption": "{count, plural, one {# jour} other {# jours}}",
-      "priceFrom": "À partir de {price}/jour",
+      "priceFromPower": "À partir de {price}/jour, selon la durée et la puissance du véhicule",
+      "priceFromSimple": "À partir de {price}/jour, selon la durée",
       "pricePlaceholder": "",
       "priceNote": "Prix minimum pour cette durée. Le tarif définitif dépend du véhicule, des options choisies  et le prix des options dépend de la durée.",
       "cta": "Aller vers la souscription"
@@ -436,6 +437,7 @@
       "notAvailable": "Aucune option n'est disponible pour cette catégorie de véhicule.",
       "priceHint": "Le prix des options dépend de la durée.",
       "notEligible": "Non éligible pour ce pays",
+      "notEligibleForMake": "Non disponible pour cette marque de véhicule",
       "notAvailableForDuration": "Non disponible pour cette durée",
       "garantieConducteur": "Garantie du conducteur",
       "assistance": "Assistance",

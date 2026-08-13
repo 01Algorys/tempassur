@@ -154,7 +154,8 @@
       "durationPlaceholder": "Choose your duration",
       "mostChosen": "Most popular",
       "durationOption": "{count, plural, one {# day} other {# days}}",
-      "priceFrom": "From {price}/day",
+      "priceFromPower": "From {price}/day, depending on duration and vehicle power",
+      "priceFromSimple": "From {price}/day, depending on duration",
       "pricePlaceholder": "",
       "priceNote": "Minimum price for this duration. The final rate depends on the vehicle and the options chosen  and the price of options depends on the duration.",
       "cta": "Go to subscription"
@@ -436,6 +437,7 @@
       "notAvailable": "No options are available for this vehicle category.",
       "priceHint": "The price of options depends on the duration.",
       "notEligible": "Not eligible for this country",
+      "notEligibleForMake": "Not available for this vehicle make",
       "notAvailableForDuration": "Not available for this duration",
       "garantieConducteur": "Driver coverage",
       "assistance": "Roadside assistance",

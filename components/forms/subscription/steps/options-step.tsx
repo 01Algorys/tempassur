@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl"
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form"
+import { isDriverGuaranteeExcludedMake } from "@/lib/car-makes"
 import { EXTENSION_COUNTRY_CODES } from "@/lib/covered-countries"
 import { getCountryLabel } from "@/lib/countries"
 import { areOptionsEligible, isDomTomTerritory } from "@/lib/pricing"
@@ -24,6 +25,7 @@ export function OptionsStep({ form }: OptionsStepProps) {
   const categorie = form.watch("categorie")
   const cvTier = form.watch("cvTier") ?? "moins-16cv"
   const duree = form.watch("duree")
+  const marque = form.watch("marque")
   const paysImmatriculation = form.watch("paysImmatriculation")
   const territoireImmatriculation = form.watch("territoireImmatriculation")
   const paysResidence = form.watch("paysResidence")
@@ -33,6 +35,9 @@ export function OptionsStep({ form }: OptionsStepProps) {
     isDomTomTerritory(paysImmatriculation, territoireImmatriculation) ||
     isDomTomTerritory(paysResidence, territoireResidence)
   const eligible = areOptionsEligible(categorie, isDomTom)
+  // Garantie du conducteur et extension de pays ne sont pas proposées pour les marques
+  // de prestige/exception — l'assistance reste disponible pour ces marques.
+  const makeExcluded = isDriverGuaranteeExcludedMake(marque)
   const row = AUTO_TARIFFS[cvTier].find((r) => r.duree === duree)
 
   useEffect(() => {
@@ -40,9 +45,12 @@ export function OptionsStep({ form }: OptionsStepProps) {
       form.setValue("optionAssistance", false)
       form.setValue("optionGarantieConducteur", false)
       form.setValue("optionExtensionTn", false)
+    } else if (makeExcluded) {
+      form.setValue("optionGarantieConducteur", false)
+      form.setValue("optionExtensionTn", false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [eligible])
+  }, [eligible, makeExcluded])
 
   if (categorie !== "automobiles") {
     return (
@@ -62,12 +70,14 @@ export function OptionsStep({ form }: OptionsStepProps) {
       name: "optionGarantieConducteur" as const,
       label: t("garantieConducteur"),
       price: row?.optionGarantieConducteur,
+      excludedByMake: makeExcluded,
     },
-    { name: "optionAssistance" as const, label: t("assistance"), price: row?.optionAssistance },
+    { name: "optionAssistance" as const, label: t("assistance"), price: row?.optionAssistance, excludedByMake: false },
     {
       name: "optionExtensionTn" as const,
       label: t("extensionPays", { countries: extensionCountryNames }),
       price: row?.optionExtensionTn,
+      excludedByMake: makeExcluded,
     },
   ]
 
@@ -78,7 +88,7 @@ export function OptionsStep({ form }: OptionsStepProps) {
 
       <div className="flex flex-col gap-3">
         {OPTIONS.map((option) => {
-          const disabled = !eligible || option.price == null
+          const disabled = !eligible || option.excludedByMake || option.price == null
           return (
             <FormField
               key={option.name}
@@ -104,6 +114,8 @@ export function OptionsStep({ form }: OptionsStepProps) {
                       <FormLabel className="font-medium text-foreground">{option.label}</FormLabel>
                       {!eligible ? (
                         <p className="text-xs font-medium text-destructive">{t("notEligible")}</p>
+                      ) : option.excludedByMake ? (
+                        <p className="text-xs font-medium text-destructive">{t("notEligibleForMake")}</p>
                       ) : option.price == null ? (
                         <p className="text-xs text-muted-foreground">{t("notAvailableForDuration")}</p>
                       ) : null}

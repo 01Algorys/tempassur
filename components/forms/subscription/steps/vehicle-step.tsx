@@ -1,15 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
-import { Combobox } from "@/components/ui/combobox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CAR_MAKES, fetchCarMakes } from "@/lib/car-makes"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { getPreselectedDuration } from "@/lib/pricing"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
@@ -29,17 +26,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
   const categorie = form.watch("categorie")
   const estVehiculeLocation = form.watch("estVehiculeLocation")
   const showRentalBlock = RENTAL_ELIGIBLE_SLUGS.includes(categorie)
-  const [carMakes, setCarMakes] = useState<string[]>(CAR_MAKES)
-
-  useEffect(() => {
-    let cancelled = false
-    fetchCarMakes().then((makes) => {
-      if (!cancelled) setCarMakes(makes)
-    })
-    return () => {
-      cancelled = true
-    }
-  }, [])
 
   return (
     <div className="flex flex-col gap-5">
@@ -88,25 +74,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
               <FormLabel>{t("immatriculation")}</FormLabel>
               <FormControl>
                 <Input placeholder="Immatriculation" className={fieldClass} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="marque"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("marque")}</FormLabel>
-              <FormControl>
-                <Combobox
-                  value={field.value ?? ""}
-                  onValueChange={field.onChange}
-                  options={carMakes}
-                  placeholder={t("marque")}
-                  emptyText={t("marqueNoResults")}
-                />
               </FormControl>
               <FormMessage />
             </FormItem>

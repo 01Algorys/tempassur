@@ -154,7 +154,8 @@
       "durationPlaceholder": "Scegli la tua durata",
       "mostChosen": "La più scelta",
       "durationOption": "{count, plural, one {# giorno} other {# giorni}}",
-      "priceFrom": "A partire da {price}/giorno",
+      "priceFromPower": "A partire da {price}/giorno, in base alla durata e alla potenza del veicolo",
+      "priceFromSimple": "A partire da {price}/giorno, in base alla durata",
       "pricePlaceholder": "",
       "priceNote": "Prezzo minimo per questa durata. La tariffa definitiva dipende dal veicolo e dalle opzioni scelte  e il prezzo delle opzioni dipende dalla durata.",
       "cta": "Vai alla sottoscrizione"
@@ -436,6 +437,7 @@
       "notAvailable": "Nessuna opzione è disponibile per questa categoria di veicolo.",
       "priceHint": "Il prezzo delle opzioni dipende dalla durata.",
       "notEligible": "Non disponibile per questo paese",
+      "notEligibleForMake": "Non disponibile per questa marca di veicolo",
       "notAvailableForDuration": "Non disponibile per questa durata",
       "garantieConducteur": "Garanzia del conducente",
       "assistance": "Assistenza",

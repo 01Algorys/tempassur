@@ -8,8 +8,13 @@ import { useLocale, useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { VEHICLE_TYPES } from "@/lib/constants"
-import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration } from "@/lib/pricing"
+import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration, getPricingConfig } from "@/lib/pricing"
 import type { VehicleSlug } from "@/types"
+
+function getMaxDuration(slug: VehicleSlug): number {
+  const durations = getAvailableDurations(slug, { duree: null, isDomTom: false })
+  return durations.length > 0 ? Math.max(...durations) : 0
+}
 
 export function Tarificateur() {
   const t = useTranslations("home.tarificateur")
@@ -21,16 +26,19 @@ export function Tarificateur() {
   )
   const router = useRouter()
   const [category, setCategory] = useState<VehicleSlug>("automobiles")
-  const [duree, setDuree] = useState<number>(() => getPreselectedDuration("automobiles"))
+  // Default to the longest available duration, since the per-day rate is lowest there —
+  // this maximizes the "starting from" price shown to visitors.
+  const [duree, setDuree] = useState<number>(() => getMaxDuration("automobiles"))
 
   const preselected = useMemo(() => getPreselectedDuration(category), [category])
   const allDurations = useMemo(() => getAvailableDurations(category, { duree: null, isDomTom: false }), [category])
   const price = useMemo(() => (duree ? getMinPriceForDuration(category, duree, false) : null), [category, duree])
+  const needsCvTier = useMemo(() => getPricingConfig(category).needsCvTier, [category])
 
   function handleCategoryChange(value: string) {
     const slug = value as VehicleSlug
     setCategory(slug)
-    setDuree(getPreselectedDuration(slug))
+    setDuree(getMaxDuration(slug))
   }
 
   function handleSouscription() {
@@ -87,7 +95,9 @@ export function Tarificateur() {
 
         <div className="rounded-2xl bg-surface p-3.5">
           <p className="text-xl font-extrabold tracking-tight text-navy">
-            {price != null ? t("priceFrom", { price: currency.format(price / duree) }) : t("pricePlaceholder")}
+            {price != null
+              ? t(needsCvTier ? "priceFromPower" : "priceFromSimple", { price: currency.format(price / duree) })
+              : t("pricePlaceholder")}
           </p>
         </div>
 

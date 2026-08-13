@@ -154,7 +154,8 @@
       "durationPlaceholder": "اختر المدة",
       "mostChosen": "الأكثر اختيارًا",
       "durationOption": "{count, plural, zero {# يوم} one {يوم واحد} two {يومان} few {# أيام} many {# يومًا} other {# يوم}}",
-      "priceFrom": "ابتداءً من {price}/يوم",
+      "priceFromPower": "ابتداءً من {price}/يوم، حسب المدة وقوة المركبة",
+      "priceFromSimple": "ابتداءً من {price}/يوم، حسب المدة",
       "pricePlaceholder": "",
       "priceNote": "السعر الأدنى لهذه المدة. يعتمد السعر النهائي على المركبة والخيارات المختارة  وسعر الخيارات يعتمد على المدة.",
       "cta": "الانتقال إلى الاشتراك"
@@ -436,6 +437,7 @@
       "notAvailable": "لا يتوفر أي خيار لهذه الفئة من المركبات.",
       "priceHint": "يعتمد سعر الخيارات على المدة.",
       "notEligible": "غير مؤهَّل لهذا البلد",
+      "notEligibleForMake": "غير متاح لهذه الماركة",
       "notAvailableForDuration": "غير متوفر لهذه المدة",
       "garantieConducteur": "ضمان السائق",
       "assistance": "المساعدة على الطريق",

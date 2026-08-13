@@ -154,7 +154,8 @@
       "durationPlaceholder": "Alegeți durata",
       "mostChosen": "Cea mai aleasă",
       "durationOption": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
-      "priceFrom": "De la {price}/zi",
+      "priceFromPower": "De la {price}/zi, în funcție de durată și puterea vehiculului",
+      "priceFromSimple": "De la {price}/zi, în funcție de durată",
       "pricePlaceholder": "",
       "priceNote": "Preț minim pentru această durată. Tariful final depinde de vehicul și de opțiunile alese  iar prețul opțiunilor depinde de durată.",
       "cta": "Continuați către subscriere"
@@ -436,6 +437,7 @@
       "notAvailable": "Nicio opțiune nu este disponibilă pentru această categorie de vehicul.",
       "priceHint": "Prețul opțiunilor depinde de durată.",
       "notEligible": "Neeligibil pentru această țară",
+      "notEligibleForMake": "Indisponibil pentru această marcă de vehicul",
       "notAvailableForDuration": "Indisponibil pentru această durată",
       "garantieConducteur": "Garanția conducătorului auto",
       "assistance": "Asistență",

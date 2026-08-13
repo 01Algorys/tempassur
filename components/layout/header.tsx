@@ -47,12 +47,20 @@ export function Header() {
   const tHeader = useTranslations("header")
   const tVehicles = useTranslations("vehicleTypes")
 
+  // "Assurance frontière" mise en avant en tête du menu déroulant "Je m'assure" —
+  // ordre spécifique à ce menu, sans modifier VEHICLE_TYPES (utilisé ailleurs pour
+  // l'ordre des vignettes, du tarificateur, etc.).
+  const jeMAssureVehicleTypes = [
+    ...VEHICLE_TYPES.filter((v) => v.slug === "assurance-frontiere"),
+    ...VEHICLE_TYPES.filter((v) => v.slug !== "assurance-frontiere"),
+  ]
+
   const navLinks: NavLink[] = [
     { label: t("accueil"), href: "/" },
     {
       label: t("jeMAssure"),
       href: "/#tarificateur",
-      children: VEHICLE_TYPES.map((vehicle) => ({
+      children: jeMAssureVehicleTypes.map((vehicle) => ({
         label: tVehicles(`${vehicle.slug}.label`),
         href: PRODUCT_ROUTES[vehicle.slug],
       })),

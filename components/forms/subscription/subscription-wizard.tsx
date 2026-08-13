@@ -19,7 +19,6 @@ import { uploadSubscriptionDocuments } from "@/lib/documents"
 import { routing } from "@/i18n/routing"
 import {
   calculatePrice,
-  getPreselectedDuration,
   getPricingConfig,
   isDomTomTerritory,
   type FormulaSelection,
@@ -52,6 +51,7 @@ type StepId = "duration" | "details" | "payment"
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
     "duree",
+    "marque",
     "cvTier",
     "ptacTier",
     "quadSubtype",
@@ -78,7 +78,6 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "paysObtentionPermis",
     "categorie",
     "immatriculation",
-    "marque",
     "modele",
     "dateMiseEnCirculation",
     "estVehiculeLocation",
@@ -151,7 +150,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       paysResidence: "",
       territoireResidence: "",
       categorie: initialCategory,
-      duree: initialDuree ?? getPreselectedDuration(initialCategory),
+      duree: initialDuree ?? 1,
       cvTier: getPricingConfig(initialCategory).needsCvTier ? "moins-16cv" : undefined,
       ptacTier: getPricingConfig(initialCategory).needsPtacTier ? "moins-3500kg" : undefined,
       quadSubtype: getPricingConfig(initialCategory).needsQuadSubtype ? "voiturette-sans-permis" : undefined,

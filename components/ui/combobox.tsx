@@ -14,20 +14,32 @@ interface ComboboxProps {
   emptyText?: string
   className?: string
   id?: string
+  /** Minimum characters typed before suggestions are shown (default 0 = always). */
+  minChars?: number
 }
 
 // Free-text input with a filtered, Select-styled suggestion list — used where
 // native <datalist> looks inconsistent with the rest of the design system but
 // the field must stay free text (e.g. "marque", not limited to a fixed set).
-export function Combobox({ value, onValueChange, options, placeholder, emptyText, className, id }: ComboboxProps) {
+export function Combobox({
+  value,
+  onValueChange,
+  options,
+  placeholder,
+  emptyText,
+  className,
+  id,
+  minChars = 0,
+}: ComboboxProps) {
   const [open, setOpen] = React.useState(false)
 
   const query = value.trim().toLowerCase()
+  const belowThreshold = query.length < minChars
   const filtered = query ? options.filter((o) => o.toLowerCase().includes(query)) : options
-  const visible = filtered.slice(0, 50)
+  const visible = belowThreshold ? [] : filtered.slice(0, 50)
 
   return (
-    <PopoverPrimitive.Root open={open} onOpenChange={setOpen}>
+    <PopoverPrimitive.Root open={open && !belowThreshold} onOpenChange={setOpen}>
       <PopoverPrimitive.Anchor asChild>
         <div className={cn("relative flex items-center", className)}>
           <input

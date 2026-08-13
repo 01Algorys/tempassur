@@ -69,9 +69,17 @@ export function DurationStep({ form }: DurationStepProps) {
                   const price = calculatePrice(categorie, { ...selection, duree: d })?.basePrice ?? null
                   return (
                     <SelectItem key={d} value={String(d)}>
-                      {t("durationOption", { count: d })}
-                      {price != null ? ` — ${currency.format(price)}` : ""}
-                      {d === preselected ? ` · ${t("mostChosen")}` : ""}
+                      <span className="flex w-full items-center justify-between gap-2">
+                        <span>
+                          {t("durationOption", { count: d })}
+                          {price != null ? ` — ${currency.format(price)}` : ""}
+                        </span>
+                        {d === preselected ? (
+                          <span className="inline-flex shrink-0 items-center rounded-full bg-orange px-2 py-0.5 text-[10px] font-bold tracking-wide text-white uppercase">
+                            {t("mostChosen")}
+                          </span>
+                        ) : null}
+                      </span>
                     </SelectItem>
                   )
                 })}
