@@ -1,13 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
 import { Combobox } from "@/components/ui/combobox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CAR_MAKES, fetchCarMakes } from "@/lib/car-makes"
+import { EXCLUDED_DRIVER_GUARANTEE_MAKES } from "@/lib/car-makes"
 import { getPricingConfig } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
@@ -30,17 +29,6 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
   const pricingConfig = getPricingConfig(categorie)
   // For camping-cars, CV tier only drives the ≤3,5T tariff — the >3,5T table is flat.
   const showCvTier = pricingConfig.needsCvTier && ptacTier !== "plus-3500kg"
-  const [carMakes, setCarMakes] = useState<string[]>(CAR_MAKES)
-
-  useEffect(() => {
-    let cancelled = false
-    fetchCarMakes().then((makes) => {
-      if (!cancelled) setCarMakes(makes)
-    })
-    return () => {
-      cancelled = true
-    }
-  }, [])
 
   return (
     <div className="flex flex-col gap-5">
@@ -56,7 +44,7 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
               <Combobox
                 value={field.value ?? ""}
                 onValueChange={field.onChange}
-                options={carMakes}
+                options={EXCLUDED_DRIVER_GUARANTEE_MAKES}
                 placeholder={tVehicle("marque")}
                 emptyText={tVehicle("marqueNoResults")}
                 minChars={MARQUE_MIN_CHARS}

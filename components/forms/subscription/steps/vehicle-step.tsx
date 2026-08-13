@@ -3,10 +3,12 @@
 import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
+import { Combobox } from "@/components/ui/combobox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { EXCLUDED_DRIVER_GUARANTEE_MAKES } from "@/lib/car-makes"
 import { VEHICLE_TYPES } from "@/lib/constants"
 import { getPreselectedDuration } from "@/lib/pricing"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
@@ -15,6 +17,7 @@ import { EuDateInput } from "../eu-date-input"
 
 const fieldClass = "h-11 rounded-lg"
 const triggerClass = "h-11 w-full rounded-lg"
+const MARQUE_MIN_CHARS = 4
 
 interface VehicleStepProps {
   form: UseFormReturn<SubscriptionFormValues>
@@ -74,6 +77,26 @@ export function VehicleStep({ form }: VehicleStepProps) {
               <FormLabel>{t("immatriculation")}</FormLabel>
               <FormControl>
                 <Input placeholder="Immatriculation" className={fieldClass} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="marque"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("marque")}</FormLabel>
+              <FormControl>
+                <Combobox
+                  value={field.value ?? ""}
+                  onValueChange={field.onChange}
+                  options={EXCLUDED_DRIVER_GUARANTEE_MAKES}
+                  placeholder={t("marque")}
+                  emptyText={t("marqueNoResults")}
+                  minChars={MARQUE_MIN_CHARS}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
