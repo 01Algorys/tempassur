@@ -11,7 +11,6 @@ interface ComboboxProps {
   onValueChange: (value: string) => void
   options: string[]
   placeholder?: string
-  emptyText?: string
   className?: string
   id?: string
   /** Minimum characters typed before suggestions are shown (default 0 = always). */
@@ -26,7 +25,6 @@ export function Combobox({
   onValueChange,
   options,
   placeholder,
-  emptyText,
   className,
   id,
   minChars = 0,
@@ -37,9 +35,12 @@ export function Combobox({
   const belowThreshold = query.length < minChars
   const filtered = query ? options.filter((o) => o.toLowerCase().includes(query)) : options
   const visible = belowThreshold ? [] : filtered.slice(0, 50)
+  // No matches (once the threshold is met) means nothing useful to show — close
+  // the popover entirely instead of displaying an empty-results message.
+  const shouldShowPopover = open && !belowThreshold && visible.length > 0
 
   return (
-    <PopoverPrimitive.Root open={open && !belowThreshold} onOpenChange={setOpen}>
+    <PopoverPrimitive.Root open={shouldShowPopover} onOpenChange={setOpen}>
       <PopoverPrimitive.Anchor asChild>
         <div className={cn("relative flex items-center", className)}>
           <input
@@ -64,26 +65,22 @@ export function Combobox({
           onOpenAutoFocus={(e) => e.preventDefault()}
           className="z-50 max-h-64 w-(--radix-popper-anchor-width) overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"
         >
-          {visible.length === 0 ? (
-            <p className="px-2 py-1.5 text-sm text-muted-foreground">{emptyText}</p>
-          ) : (
-            visible.map((option) => (
-              <button
-                key={option}
-                type="button"
-                onClick={() => {
-                  onValueChange(option)
-                  setOpen(false)
-                }}
-                className="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1.5 pr-8 pl-2 text-left text-sm outline-hidden select-none hover:bg-accent hover:text-accent-foreground"
-              >
-                {option}
-                {option === value ? (
-                  <CheckIcon className="pointer-events-none absolute right-2 size-4" />
-                ) : null}
-              </button>
-            ))
-          )}
+          {visible.map((option) => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                onValueChange(option)
+                setOpen(false)
+              }}
+              className="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1.5 pr-8 pl-2 text-left text-sm outline-hidden select-none hover:bg-accent hover:text-accent-foreground"
+            >
+              {option}
+              {option === value ? (
+                <CheckIcon className="pointer-events-none absolute right-2 size-4" />
+              ) : null}
+            </button>
+          ))}
         </PopoverPrimitive.Content>
       </PopoverPrimitive.Portal>
     </PopoverPrimitive.Root>

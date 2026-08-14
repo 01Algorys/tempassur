@@ -46,7 +46,6 @@ export function VehicleTierStep({ form }: VehicleTierStepProps) {
                 onValueChange={field.onChange}
                 options={EXCLUDED_DRIVER_GUARANTEE_MAKES}
                 placeholder={tVehicle("marque")}
-                emptyText={tVehicle("marqueNoResults")}
                 minChars={MARQUE_MIN_CHARS}
               />
             </FormControl>

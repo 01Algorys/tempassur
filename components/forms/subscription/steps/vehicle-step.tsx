@@ -94,7 +94,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
                   onValueChange={field.onChange}
                   options={EXCLUDED_DRIVER_GUARANTEE_MAKES}
                   placeholder={t("marque")}
-                  emptyText={t("marqueNoResults")}
                   minChars={MARQUE_MIN_CHARS}
                 />
               </FormControl>
