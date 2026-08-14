@@ -428,7 +428,7 @@
       "location": "Véhicule de location",
       "locationOui": "Oui",
       "locationNon": "Non",
-      "locationExclusion": "Nous vous informons que nous n'assurons pas les véhicules loués hors agence en France, ni les véhicules loués à l'étranger, ni les véhicules loués dans les agences suivantes : {agencies}.",
+      "locationExclusion": "Nous vous informons que nous n'assurons pas les véhicules loués à l'étranger, ni les véhicules loués dans les agences suivantes : {agencies}.",
       "nomAgence": "Nom de l'agence de location",
       "nomAgencePlaceholder": "Nom de l'agence"
     },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Script from "next/script"
 import { getTranslations } from "next-intl/server"
+import type Stripe from "stripe"
 
 import { Container } from "@/components/shared/container"
 import { TelLink } from "@/components/shared/tel-link"
@@ -9,6 +10,7 @@ import { redirect } from "@/i18n/navigation"
 import { fulfillContract } from "@/lib/contract-fulfillment"
 import { getStripe } from "@/lib/stripe"
 import { siteConfig } from "@/lib/site"
+import { VEHICLE_SLUGS, type VehicleSlug } from "@/types"
 import type { Locale } from "@/i18n/routing"
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,18 +37,7 @@ interface MerciPageProps {
 // or the tab closed/network dropped between payment success and the client-side retries
 // finishing. Idempotent: transformCrmDevis just returns the existing contrat on retry, so
 // this is safe to call even when the client-side call already succeeded.
-async function resolveReference(
-  paymentIntentId: string | undefined,
-  numero: string | undefined
-): Promise<string | null> {
-  if (!paymentIntentId) return null
-  let paymentIntent
-  try {
-    paymentIntent = await getStripe().paymentIntents.retrieve(paymentIntentId)
-  } catch {
-    return null
-  }
-  if (paymentIntent.status !== "succeeded") return null
+async function resolveReference(paymentIntent: Stripe.PaymentIntent, numero: string | undefined): Promise<string> {
   if (numero) return paymentIntent.id
 
   const devisId = paymentIntent.metadata?.devisId
@@ -68,19 +59,75 @@ async function resolveReference(
   return paymentIntent.id
 }
 
+// GA4 ecommerce "purchase" event pushed to dataLayer for GTM to pick up once loaded (GTM
+// itself only loads after cookie consent — see lib/cookie-consent.ts — so this push never
+// triggers a network call on its own; it just seeds the array GTM reads on init).
+// Ref: https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtm&hl=fr#purchase-gtm
+interface PurchaseEcommercePayload {
+  transaction_id: string
+  value: number
+  currency: string
+  items: { item_id: string; item_name: string; price: number; quantity: number }[]
+}
+
+function buildPurchasePayload(
+  paymentIntent: Stripe.PaymentIntent,
+  ref: string,
+  vehicleLabel: string
+): PurchaseEcommercePayload {
+  const categorie = paymentIntent.metadata?.categorie
+  const itemId = categorie && (VEHICLE_SLUGS as readonly string[]).includes(categorie) ? (categorie as VehicleSlug) : "assurance"
+  const value = paymentIntent.amount / 100
+
+  return {
+    transaction_id: ref,
+    value,
+    currency: paymentIntent.currency.toUpperCase(),
+    items: [{ item_id: itemId, item_name: vehicleLabel, price: value, quantity: 1 }],
+  }
+}
+
 export default async function MerciPage({ params, searchParams }: MerciPageProps) {
   const { locale } = await params
   const { payment_intent: paymentIntentId, numero } = await searchParams
   const t = await getTranslations("pages.merci")
+  const tVehicles = await getTranslations("vehicleTypes")
 
-  const paymentRef = paymentIntentId ? await resolveReference(paymentIntentId, numero) : undefined
-  if (paymentIntentId && !paymentRef) {
-    redirect({ href: { pathname: "/souscription", query: { paiement: "echec" } }, locale: locale as Locale })
+  let paymentIntent: Stripe.PaymentIntent | null = null
+  if (paymentIntentId) {
+    try {
+      paymentIntent = await getStripe().paymentIntents.retrieve(paymentIntentId)
+    } catch {
+      paymentIntent = null
+    }
+    if (!paymentIntent || paymentIntent.status !== "succeeded") {
+      redirect({ href: { pathname: "/souscription", query: { paiement: "echec" } }, locale: locale as Locale })
+    }
   }
+
+  const paymentRef = paymentIntent ? await resolveReference(paymentIntent, numero) : undefined
   const ref = numero || paymentRef
+
+  const categorie = paymentIntent?.metadata?.categorie
+  const vehicleLabel =
+    categorie && (VEHICLE_SLUGS as readonly string[]).includes(categorie)
+      ? tVehicles(`${categorie as VehicleSlug}.label`)
+      : ""
+  const purchasePayload = paymentIntent && ref ? buildPurchasePayload(paymentIntent, ref, vehicleLabel) : null
+  // Escape "</" so a user-controlled string (vehicle label) can't prematurely close the
+  // inline <script> tag it's serialized into below.
+  const purchasePayloadJson = purchasePayload ? JSON.stringify(purchasePayload).replace(/</g, "\\u003c") : null
 
   return (
     <section className="section-y">
+      {purchasePayloadJson ? (
+        <Script id="ga4-purchase" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            dataLayer.push({ ecommerce: null });
+            dataLayer.push({ event: 'purchase', ecommerce: ${purchasePayloadJson} });`}
+        </Script>
+      ) : null}
+
       {GA4_MEASUREMENT_ID ? (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} strategy="afterInteractive" />
