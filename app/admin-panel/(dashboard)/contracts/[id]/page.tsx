@@ -1,48 +1,31 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, StickyNote, MessageSquareWarning } from "lucide-react"
+import { ArrowLeft, MessageSquareWarning } from "lucide-react"
 
 import { getAdminToken } from "@/lib/admin/server-session"
 import { crmAdminJson } from "@/lib/admin/crm-client"
-import { currencyFmt, dateFmt, dateTimeFmt } from "@/lib/admin/labels"
+import { dateFmt } from "@/lib/admin/labels"
+import { StatutHistorique } from "@/components/admin/statut-historique"
+import { allEmails, allPhones, clientFullName, type ContratRecord, type DocumentRecord, type Reference, type TacheRecord } from "@/lib/admin/crm-types"
 import { StatusBadge } from "@/components/admin/status-badge"
-import { DocumentsCard, type AdminDocument } from "@/components/admin/documents-card"
-import { VehicleDetailsCard } from "@/components/admin/vehicle-details-card"
+import { DocumentsCard } from "@/components/admin/documents-card"
 import { DetailField } from "@/components/admin/detail-field"
-import { ContractDetailActions } from "@/components/admin/contract-detail-actions"
+import { DossierDetails } from "@/components/admin/dossier-details"
+import { DossierDetailActions } from "@/components/admin/dossier-detail-actions"
+import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
+import { TachesCard } from "@/components/admin/taches-card"
 import { FacturesCard } from "@/components/admin/factures-card"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const dynamic = "force-dynamic"
 
-interface ContratDetail {
-  id: string
-  numero: string
-  numeroDemande: string | null
-  prime: number
-  honoraires: number
-  dateDebut: string
-  dateFin: string
-  dateSouscription: string | null
-  dateResiliation: string | null
-  motifResiliation: string | null
-  marque: string | null
-  modele: string | null
-  immatriculation: string | null
-  notesInternes: string | null
-  besoinsExprimes: string | null
-  distributeurId?: string | null
-  produitId?: string | null
-  statutRefId?: string | null
-  dateEffet?: string | null
-  dureeJours?: number | null
-  client: { id: string; nom?: string; prenom?: string; email?: string; telephone?: string; adresse?: string; ville?: string; codePostal?: string } | null
-  distributeur?: { nom: string } | null
-  produitRef?: { nom: string } | null
-  statutRef?: { nom: string } | null
+interface ContratDetail extends ContratRecord {
+  documents: DocumentRecord[]
+  taches: TacheRecord[]
   factures: { id: string; numeroFacture: string; montantTtc: number; statutEnvoi: string; dateGeneration: string; fichierPdfUrl?: string }[]
   reclamations: { id: string; texte: string; statut: string; date: string }[]
   statutHistorique: { id: string; ancienStatut: string | null; nouveauStatut: string; date: string }[]
+  devis: { id: string; numero: string | null } | null
 }
 
 export default async function ContractDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -57,15 +40,20 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
     notFound()
   }
 
-  // Documents can be linked either directly to the contrat or (as our own upload
-  // flow does, at devis time, before a contrat exists) to the client — merge both.
-  const [byContrat, byClient] = await Promise.all([
-    crmAdminJson<AdminDocument[]>(`/api/documents?contratId=${contrat.id}`, token).catch(() => []),
+  // Documents liés au contrat, plus ceux déposés sur le client avant que le
+  // contrat existe (tunnel TempAssur : upload au stade devis).
+  const [byClient, statuts] = await Promise.all([
     contrat.client?.id
-      ? crmAdminJson<AdminDocument[]>(`/api/documents?clientId=${contrat.client.id}`, token).catch(() => [])
+      ? crmAdminJson<DocumentRecord[]>(`/api/documents?clientId=${contrat.client.id}`, token).catch(() => [])
       : Promise.resolve([]),
+    crmAdminJson<{ statuts: Reference[] }>("/api/contrats?full=1&page=1", token)
+      .then((d) => d.statuts)
+      .catch(() => [] as Reference[]),
   ])
-  const documents = [...byContrat, ...byClient.filter((d) => !byContrat.some((c) => c.id === d.id))]
+  const documents = [
+    ...contrat.documents,
+    ...byClient.filter((d) => !contrat.documents.some((c) => c.id === d.id) && (!d.contratId || d.contratId === contrat.id)),
+  ]
 
   return (
     <div className="space-y-4">
@@ -77,63 +65,40 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
         <div>
           <h1 className="font-heading text-xl font-semibold text-foreground">{contrat.numero}</h1>
           <p className="text-sm text-muted-foreground">
-            {[contrat.client?.prenom, contrat.client?.nom].filter(Boolean).join(" ") || "Client sans nom"}
+            {clientFullName(contrat.client) || "Client sans nom"} · créé le {dateFmt(contrat.createdAt)}
+            {contrat.devis ? (
+              <>
+                {" · issu du devis "}
+                <Link href={`/admin-panel/quotes/${contrat.devis.id}`} className="underline">
+                  {contrat.devis.numero ?? "voir"}
+                </Link>
+              </>
+            ) : null}
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          <StatusBadge label={contrat.statutRef?.nom ?? "—"} />
-          <ContractDetailActions
-            contrat={{
-              id: contrat.id,
-              numero: contrat.numero,
-              numeroDemande: contrat.numeroDemande,
-              prime: contrat.prime,
-              honoraires: contrat.honoraires,
-              distributeurId: contrat.distributeurId,
-              produitId: contrat.produitId,
-              statutRefId: contrat.statutRefId,
-              marque: contrat.marque,
-              modele: contrat.modele,
-              immatriculation: contrat.immatriculation,
-              dateEffet: contrat.dateEffet,
-              dateFin: contrat.dateFin,
-              dureeJours: contrat.dureeJours,
-              besoinsExprimes: contrat.besoinsExprimes,
-              notesInternes: contrat.notesInternes,
-              client: contrat.client
-                ? { id: contrat.client.id, nom: contrat.client.nom, prenom: contrat.client.prenom, email: contrat.client.email }
-                : null,
-            }}
-          />
+        <div className="flex flex-wrap items-center gap-3">
+          <ContratStatutControl contratId={contrat.id} statutRefId={contrat.statutRefId} statuts={statuts} />
+          <DossierDetailActions kind="contrat" record={contrat} />
         </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
-        <Card className="lg:col-span-2">
-          <CardHeader><CardTitle>Détails du contrat</CardTitle></CardHeader>
-          <CardContent className="grid grid-cols-2 gap-4 text-sm">
-            {contrat.numeroDemande ? <DetailField label="N° de demande" value={contrat.numeroDemande} /> : null}
-            <DetailField label="Prime" value={currencyFmt(contrat.prime)} />
-            <DetailField label="Honoraires" value={currencyFmt(contrat.honoraires)} />
-            <DetailField label="Produit" value={contrat.produitRef?.nom ?? "—"} />
-            <DetailField label="Distributeur" value={contrat.distributeur?.nom ?? "—"} />
-            <DetailField label="Date début" value={dateFmt(contrat.dateDebut)} />
-            <DetailField label="Date fin" value={dateFmt(contrat.dateFin)} />
-            <DetailField label="Souscrit le" value={dateFmt(contrat.dateSouscription)} />
-            {contrat.dateResiliation ? <DetailField label="Résilié le" value={dateFmt(contrat.dateResiliation)} /> : null}
-            {contrat.marque ? <DetailField label="Véhicule" value={`${contrat.marque} ${contrat.modele ?? ""}`.trim()} /> : null}
-            {contrat.immatriculation ? <DetailField label="Immatriculation" value={contrat.immatriculation} /> : null}
-            {contrat.motifResiliation ? (
-              <DetailField label="Motif de résiliation" value={contrat.motifResiliation} full />
-            ) : null}
-          </CardContent>
-        </Card>
+        <DossierDetails kind="contrat" record={contrat} />
 
-        <Card>
-          <CardHeader><CardTitle>Client</CardTitle></CardHeader>
+        <Card className="self-start">
+          <CardHeader>
+            <CardTitle>
+              {contrat.client ? (
+                <Link href={`/admin-panel/clients/${contrat.client.id}`} className="hover:underline">Client</Link>
+              ) : (
+                "Client"
+              )}
+            </CardTitle>
+          </CardHeader>
           <CardContent className="space-y-3 text-sm">
-            <DetailField label="Email" value={contrat.client?.email ?? "—"} />
-            <DetailField label="Téléphone" value={contrat.client?.telephone ?? "—"} />
+            <DetailField label="Nom" value={clientFullName(contrat.client) || "—"} />
+            <DetailField label="Emails" value={allEmails(contrat.client).join("\n") || "—"} />
+            <DetailField label="Téléphones" value={allPhones(contrat.client).join("\n") || "—"} />
             <DetailField
               label="Adresse"
               value={[contrat.client?.adresse, contrat.client?.codePostal, contrat.client?.ville].filter(Boolean).join(", ") || "—"}
@@ -142,23 +107,12 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
         </Card>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        <VehicleDetailsCard besoinsExprimes={contrat.besoinsExprimes} />
-
-        {contrat.notesInternes ? (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <StickyNote className="size-4.5 text-muted-foreground" />
-                Notes internes
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="whitespace-pre-line text-sm text-foreground">{contrat.notesInternes}</p>
-            </CardContent>
-          </Card>
-        ) : null}
+      <div className="grid gap-4 lg:grid-cols-2">
+        <DocumentsCard documents={documents} contratId={contrat.id} audio />
+        <TachesCard taches={contrat.taches} link={{ kind: "contrat", id: contrat.id, numero: contrat.numero, client: contrat.client }} />
       </div>
+
+      <DocumentsCard documents={documents} contratId={contrat.id} />
 
       {contrat.reclamations.length > 0 ? (
         <Card>
@@ -184,29 +138,7 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
 
       <FacturesCard contratId={contrat.id} factures={contrat.factures} />
 
-      <DocumentsCard documents={documents} contratId={contrat.id} />
-
-      <Card>
-        <CardHeader><CardTitle>Historique de statut</CardTitle></CardHeader>
-        <CardContent>
-          {contrat.statutHistorique.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Aucun changement de statut enregistré.</p>
-          ) : (
-            <ol className="space-y-3 border-l border-border pl-4">
-              {contrat.statutHistorique.map((h) => (
-                <li key={h.id} className="relative text-sm">
-                  <span className="absolute -left-[19px] top-1 size-2 rounded-full bg-primary" />
-                  <p className="text-foreground">
-                    {h.ancienStatut ? `${h.ancienStatut} → ` : ""}
-                    <span className="font-medium">{h.nouveauStatut}</span>
-                  </p>
-                  <p className="text-xs text-muted-foreground">{dateTimeFmt(h.date)}</p>
-                </li>
-              ))}
-            </ol>
-          )}
-        </CardContent>
-      </Card>
+      <StatutHistorique entries={contrat.statutHistorique} />
     </div>
   )
 }

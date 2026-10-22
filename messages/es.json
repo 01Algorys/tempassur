@@ -323,7 +323,9 @@
     "carteGriseRequired": "El permiso de circulación es obligatorio",
     "paysResidenceMustBeFrance": "Para este país de matriculación, la residencia debe estar en Francia",
     "frontierBlocked": "Este país de matriculación requiere contratar un seguro de frontera",
-    "fileTooLarge": "El archivo es demasiado grande (máx. 100 MB)"
+    "fileTooLarge": "El archivo es demasiado grande (máx. 100 MB)",
+    "motifRequired": "Seleccione un motivo de contratación.",
+    "motifAutreRequired": "Especifique el motivo."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "El permiso debe tener al menos 2 años de antigüedad para asegurar su vehículo.",
       "paysObtention": "País de obtención *",
       "whoCanSubscribeNotice": "El tomador del seguro no es necesariamente el propietario del vehículo. Otra persona puede contratar el seguro a su nombre.",
-      "proofOfDomicileNotice": "Como su permiso de conducir no es francés, se le solicitará un justificante de domicilio en Francia de menos de 3 meses (a subir en «Otro documento»)."
+      "proofOfDomicileNotice": "Como su permiso de conducir no es francés, se le solicitará un justificante de domicilio en Francia de menos de 3 meses (a subir en «Otro documento»).",
+      "addPhone": "Añadir un teléfono",
+      "addEmail": "Añadir un correo",
+      "remove": "Quitar",
+      "extraPhone": "Teléfono adicional",
+      "extraEmail": "Correo adicional"
     },
     "vehicle": {
       "heading": "Vehículo",
@@ -518,6 +525,23 @@
       "confirm": "Certifico y continúo",
       "sending": "Enviando...",
       "sendingProgress": "Enviando… {percent}%"
+    },
+    "motif": {
+      "heading": "Motivo de la contratación",
+      "label": "¿Por qué contrata este seguro? *",
+      "placeholder": "Seleccione un motivo",
+      "options": {
+        "achat-revente": "Compra/reventa",
+        "pret-vehicule": "Préstamo de vehículo",
+        "import-export": "Importación/exportación",
+        "prive-pro-occasionnel": "Uso privado o profesional ocasional",
+        "sortie-fourriere": "Salida del depósito municipal",
+        "resiliation-non-paiement": "Rescisión por impago",
+        "autre": "Otro (especifique)"
+      },
+      "autreLabel": "Especifique el motivo *",
+      "autrePlaceholder": "Su motivo",
+      "resiliationNotice": "No se preocupe, aseguramos este perfil."
     }
   },
   "product": {

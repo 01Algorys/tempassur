@@ -21,6 +21,8 @@ const ALLOWED_PREFIXES = [
   "documents",
   "clients",
   "factures",
+  "taches",
+  "sauvegardes",
 ]
 
 async function proxy(req: NextRequest, path: string[]) {

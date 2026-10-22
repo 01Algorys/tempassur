@@ -6,11 +6,16 @@ import {
   LayoutDashboard,
   FileText,
   FileSignature,
+  Users,
+  UserSearch,
+  ListTodo,
+  FolderOpen,
   Receipt,
   CreditCard,
   Mail,
   BarChart3,
   ScrollText,
+  DatabaseBackup,
   Settings,
   ShieldCheck,
 } from "lucide-react"
@@ -19,13 +24,18 @@ import { cn } from "@/lib/utils"
 
 export const ADMIN_NAV_ITEMS = [
   { href: "/admin-panel", label: "Vue d'ensemble", icon: LayoutDashboard, exact: true },
+  { href: "/admin-panel/clients", label: "Clients", icon: Users },
+  { href: "/admin-panel/prospects", label: "Prospects", icon: UserSearch },
   { href: "/admin-panel/quotes", label: "Devis", icon: FileText },
   { href: "/admin-panel/contracts", label: "Contrats", icon: FileSignature },
+  { href: "/admin-panel/taches", label: "Tâches", icon: ListTodo },
+  { href: "/admin-panel/documents", label: "Documents", icon: FolderOpen },
   { href: "/admin-panel/invoices", label: "Factures", icon: Receipt },
   { href: "/admin-panel/payments", label: "Paiements", icon: CreditCard },
   { href: "/admin-panel/emails", label: "Emails", icon: Mail },
   { href: "/admin-panel/reports", label: "Rapports", icon: BarChart3 },
   { href: "/admin-panel/audit-logs", label: "Journaux d'audit", icon: ScrollText },
+  { href: "/admin-panel/sauvegardes", label: "Sauvegardes", icon: DatabaseBackup },
   { href: "/admin-panel/settings", label: "Paramètres", icon: Settings },
 ]
 

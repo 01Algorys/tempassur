@@ -36,6 +36,7 @@ import { VehicleStep } from "./steps/vehicle-step"
 import { VehicleTierStep } from "./steps/vehicle-tier-step"
 import { DurationStep } from "./steps/duration-step"
 import { DriverStep } from "./steps/driver-step"
+import { MotifStep } from "./steps/motif-step"
 import { EffectDateStep } from "./steps/effect-date-step"
 import { OptionsStep } from "./steps/options-step"
 import { DocumentsConsentsStep } from "./steps/documents-consents-step"
@@ -61,6 +62,10 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "territoireResidence",
   ],
   details: [
+    "motifSouscription",
+    "motifSouscriptionAutre",
+    "telephonesSupplementaires",
+    "emailsSupplementaires",
     "dateEffet",
     "heureEffet",
     "civilite",
@@ -173,6 +178,9 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       telephoneFixe: "",
       telephoneMobile: "",
       email: "",
+      telephonesSupplementaires: [],
+      emailsSupplementaires: [],
+      motifSouscriptionAutre: "",
       adresse: "",
       codePostal: "",
       ville: "",
@@ -442,6 +450,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                 ) : null}
                 {currentStep.id === "details" ? (
                   <div className="flex flex-col gap-8">
+                    <MotifStep form={form} />
                     <DriverStep form={form} />
                     <VehicleStep form={form} />
                     <EffectDateStep form={form} />

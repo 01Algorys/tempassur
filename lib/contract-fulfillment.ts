@@ -35,7 +35,7 @@ export async function fulfillContract(params: FulfillContractParams): Promise<Fu
     return { success: false, error: "payment_not_succeeded" }
   }
 
-  const prime = paymentIntent.amount / 100
+  const encaissement = paymentIntent.amount / 100
 
   let dateEffet: string | undefined
   if (params.dateEffet && params.heureEffet) {
@@ -57,7 +57,7 @@ export async function fulfillContract(params: FulfillContractParams): Promise<Fu
     // success just gets back the same contrat rather than creating a duplicate.
     const contrat = await transformCrmDevis(devisId, {
       numero,
-      prime,
+      encaissement,
       dateEffet,
       dureeJours: params.duree,
       marque: params.marque,

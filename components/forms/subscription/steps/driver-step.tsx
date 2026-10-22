@@ -1,10 +1,11 @@
 "use client"
 
-import type { UseFormReturn } from "react-hook-form"
-import { Info } from "lucide-react"
+import { useFieldArray, type UseFormReturn } from "react-hook-form"
+import { Info, Minus, Plus } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { PhoneInput } from "@/components/ui/phone-input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -20,11 +21,33 @@ interface DriverStepProps {
   form: UseFormReturn<SubscriptionFormValues>
 }
 
+function AddButton({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <div className="sm:col-span-2">
+      <Button type="button" variant="outline" size="sm" className="rounded-full" onClick={onClick}>
+        <Plus data-icon="inline-start" />
+        {label}
+      </Button>
+    </div>
+  )
+}
+
+function RemoveButton({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <Button type="button" variant="outline" size="icon" className="size-11 shrink-0 rounded-lg" onClick={onClick} aria-label={label}>
+      <Minus />
+    </Button>
+  )
+}
+
 export function DriverStep({ form }: DriverStepProps) {
   const t = useTranslations("wizard.driver")
   const tCommon = useTranslations("common")
   const tCivilite = useTranslations("pricingLabels.civilite")
   const locale = useLocale()
+
+  const phones = useFieldArray({ control: form.control, name: "telephonesSupplementaires" })
+  const emails = useFieldArray({ control: form.control, name: "emailsSupplementaires" })
 
   const paysImmatriculation = form.watch("paysImmatriculation")
   const paysObtentionPermis = form.watch("paysObtentionPermis")
@@ -179,6 +202,32 @@ export function DriverStep({ form }: DriverStepProps) {
                 </FormItem>
               )}
             />
+            {phones.fields.map((item, index) => (
+              <FormField
+                key={item.id}
+                control={form.control}
+                name={`telephonesSupplementaires.${index}.value`}
+                render={({ field }) => (
+                  <FormItem className="sm:col-span-2">
+                    <FormLabel>{t("extraPhone")}</FormLabel>
+                    <div className="flex gap-2">
+                      <FormControl>
+                        <PhoneInput
+                          className={`${fieldClass} flex-1`}
+                          value={field.value}
+                          onChange={(value) => field.onChange(value ?? "")}
+                          onBlur={field.onBlur}
+                        />
+                      </FormControl>
+                      <RemoveButton label={t("remove")} onClick={() => phones.remove(index)} />
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            ))}
+            <AddButton label={t("addPhone")} onClick={() => phones.append({ value: "" })} />
+
             <FormField
               control={form.control}
               name="email"
@@ -192,6 +241,26 @@ export function DriverStep({ form }: DriverStepProps) {
                 </FormItem>
               )}
             />
+            {emails.fields.map((item, index) => (
+              <FormField
+                key={item.id}
+                control={form.control}
+                name={`emailsSupplementaires.${index}.value`}
+                render={({ field }) => (
+                  <FormItem className="sm:col-span-2">
+                    <FormLabel>{t("extraEmail")}</FormLabel>
+                    <div className="flex gap-2">
+                      <FormControl>
+                        <Input type="email" placeholder={t("emailPlaceholder")} className={fieldClass} {...field} />
+                      </FormControl>
+                      <RemoveButton label={t("remove")} onClick={() => emails.remove(index)} />
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            ))}
+            <AddButton label={t("addEmail")} onClick={() => emails.append({ value: "" })} />
           </div>
         </div>
 

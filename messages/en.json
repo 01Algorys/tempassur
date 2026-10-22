@@ -323,7 +323,9 @@
     "carteGriseRequired": "Vehicle registration document is required",
     "paysResidenceMustBeFrance": "For this registration country, residence must be in France",
     "frontierBlocked": "This registration country requires taking out frontier insurance",
-    "fileTooLarge": "The file is too large (max 100 MB)"
+    "fileTooLarge": "The file is too large (max 100 MB)",
+    "motifRequired": "Please select a reason for taking out the policy.",
+    "motifAutreRequired": "Please specify the reason."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "The licence must be at least 2 years old to insure your vehicle.",
       "paysObtention": "Country of issue *",
       "whoCanSubscribeNotice": "The policyholder is not necessarily the owner of the vehicle. Another person may take out the insurance in their own name.",
-      "proofOfDomicileNotice": "As your driving licence is not French, a proof of address in France less than 3 months old will be required (to be uploaded under \"Other document\")."
+      "proofOfDomicileNotice": "As your driving licence is not French, a proof of address in France less than 3 months old will be required (to be uploaded under \"Other document\").",
+      "addPhone": "Add a phone number",
+      "addEmail": "Add an email",
+      "remove": "Remove",
+      "extraPhone": "Additional phone",
+      "extraEmail": "Additional email"
     },
     "vehicle": {
       "heading": "Vehicle",
@@ -518,6 +525,23 @@
       "confirm": "I certify and continue",
       "sending": "Sending...",
       "sendingProgress": "Sending… {percent}%"
+    },
+    "motif": {
+      "heading": "Reason for taking out the policy",
+      "label": "Why are you taking out this insurance? *",
+      "placeholder": "Select a reason",
+      "options": {
+        "achat-revente": "Purchase/resale",
+        "pret-vehicule": "Vehicle loan (lending)",
+        "import-export": "Import/export",
+        "prive-pro-occasionnel": "Occasional private or professional use",
+        "sortie-fourriere": "Release from impound",
+        "resiliation-non-paiement": "Cancelled for non-payment",
+        "autre": "Other (please specify)"
+      },
+      "autreLabel": "Please specify the reason *",
+      "autrePlaceholder": "Your reason",
+      "resiliationNotice": "Don't worry, we insure this profile."
     }
   },
   "product": {
