@@ -7,10 +7,19 @@ interface CrmClientPayload {
   prenom: string
   civilite?: string
   telephone?: string
+  telephones?: string[]
   email?: string
+  emails?: string[]
   ville?: string
   codePostal?: string
   adresse?: string
+  dateNaissance?: string
+  paysNaissance?: string
+  paysResidence?: string
+  territoireResidence?: string
+  numeroPermis?: string
+  paysPermis?: string
+  dateObtentionPermis?: string
   notes?: string
 }
 
@@ -24,6 +33,9 @@ interface CrmDevisPayload {
   produitId?: string
   montantEstime?: number
   besoinsExprimes?: string
+  categorie?: "TEMPASSUR"
+  sousCategorie?: string
+  details?: Record<string, unknown>
 }
 
 interface CrmDevis {
@@ -32,7 +44,8 @@ interface CrmDevis {
 
 interface CrmTransformPayload {
   numero: string
-  prime: number
+  // Montant encaissé (paiement Stripe) ; la prime assureur est saisie ensuite dans l'admin.
+  encaissement: number
   dateEffet?: string
   dureeJours?: number
   marque?: string

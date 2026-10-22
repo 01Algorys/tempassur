@@ -323,7 +323,9 @@
     "carteGriseRequired": "Il libretto di circolazione è obbligatorio",
     "paysResidenceMustBeFrance": "Per questo paese di immatricolazione, la residenza deve essere in Francia",
     "frontierBlocked": "Questo paese di immatricolazione richiede la sottoscrizione di un'assicurazione di frontiera",
-    "fileTooLarge": "Il file è troppo grande (max 100 MB)"
+    "fileTooLarge": "Il file è troppo grande (max 100 MB)",
+    "motifRequired": "Selezioni un motivo di sottoscrizione.",
+    "motifAutreRequired": "Specifichi il motivo."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "La patente deve avere almeno 2 anni per assicurare il tuo veicolo.",
       "paysObtention": "Paese di rilascio *",
       "whoCanSubscribeNotice": "Il sottoscrittore del contratto non è necessariamente il proprietario del veicolo. Un'altra persona può sottoscrivere l'assicurazione a proprio nome.",
-      "proofOfDomicileNotice": "Poiché la vostra patente non è francese, sarà richiesto un giustificativo di domicilio in Francia di meno di 3 mesi (da caricare in \"Altro documento\")."
+      "proofOfDomicileNotice": "Poiché la vostra patente non è francese, sarà richiesto un giustificativo di domicilio in Francia di meno di 3 mesi (da caricare in \"Altro documento\").",
+      "addPhone": "Aggiungi un telefono",
+      "addEmail": "Aggiungi un'e-mail",
+      "remove": "Rimuovi",
+      "extraPhone": "Telefono aggiuntivo",
+      "extraEmail": "E-mail aggiuntiva"
     },
     "vehicle": {
       "heading": "Veicolo",
@@ -518,6 +525,23 @@
       "confirm": "Certifico e continuo",
       "sending": "Invio in corso...",
       "sendingProgress": "Invio in corso… {percent}%"
+    },
+    "motif": {
+      "heading": "Motivo della sottoscrizione",
+      "label": "Perché sottoscrive questa assicurazione? *",
+      "placeholder": "Seleziona un motivo",
+      "options": {
+        "achat-revente": "Acquisto/rivendita",
+        "pret-vehicule": "Prestito del veicolo",
+        "import-export": "Import/export",
+        "prive-pro-occasionnel": "Uso privato o professionale occasionale",
+        "sortie-fourriere": "Ritiro dal deposito giudiziario",
+        "resiliation-non-paiement": "Disdetta per mancato pagamento",
+        "autre": "Altro (specificare)"
+      },
+      "autreLabel": "Specifichi il motivo *",
+      "autrePlaceholder": "Il suo motivo",
+      "resiliationNotice": "Non si preoccupi, assicuriamo questo profilo."
     }
   },
   "product": {

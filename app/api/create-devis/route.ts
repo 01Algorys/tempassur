@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 
 import { CRM_DEFAULT_DISTRIBUTEUR_ID, CRM_DEFAULT_PRODUIT_ID, checkRequiredDocuments, createCrmDevis } from "@/lib/crm"
+import { MOTIF_SOUSCRIPTION_LABELS_FR, type MotifSouscription } from "@/lib/motif-souscription"
 
 interface CreateDevisBody {
   clientId: string
@@ -38,7 +39,43 @@ interface CreateDevisBody {
   numeroPermis?: string
   dateObtentionPermis?: string
   paysObtentionPermis?: string
+  motifSouscription?: string
+  motifSouscriptionAutre?: string
   montantEstime?: number
+}
+
+// Champs structurés du devis (Devis.details côté CRM) — mêmes clés que le
+// catalogue de l'admin (lib/admin/categories.ts, catégorie TEMPASSUR).
+function buildDetails(body: Partial<CreateDevisBody>): Record<string, unknown> {
+  const details: Record<string, unknown> = {
+    cvTier: body.cvTier,
+    ptacTier: body.ptacTier,
+    quadSubtype: body.quadSubtype,
+    marque: body.marque,
+    modele: body.modele,
+    immatriculation: body.immatriculation,
+    dateMiseEnCirculation: body.dateMiseEnCirculation,
+    paysImmatriculation: body.paysImmatriculation,
+    territoireImmatriculation: body.territoireImmatriculation,
+    estVehiculeLocation: body.estVehiculeLocation,
+    nomAgenceLocation: body.estVehiculeLocation ? body.nomAgenceLocation : undefined,
+    duree: body.duree,
+    dateEffet: body.dateEffet,
+    heureEffet: body.heureEffet,
+    optionAssistance: body.optionAssistance,
+    optionGarantieConducteur: body.optionGarantieConducteur,
+    optionExtensionTn: body.optionExtensionTn,
+    paysResidence: body.paysResidence,
+    territoireResidence: body.territoireResidence,
+    dateNaissance: body.dateNaissance,
+    paysNaissance: body.paysNaissance,
+    numeroPermis: body.numeroPermis,
+    dateObtentionPermis: body.dateObtentionPermis,
+    paysObtentionPermis: body.paysObtentionPermis,
+    motifSouscription: body.motifSouscription,
+    motifSouscriptionAutre: body.motifSouscription === "autre" ? body.motifSouscriptionAutre : undefined,
+  }
+  return Object.fromEntries(Object.entries(details).filter(([, v]) => v !== undefined && v !== null && v !== ""))
 }
 
 function buildBesoinsExprimes(body: Partial<CreateDevisBody>): string {
@@ -70,6 +107,11 @@ function buildBesoinsExprimes(body: Partial<CreateDevisBody>): string {
       ? `Conducteur né(e) le ${body.dateNaissance}${body.paysNaissance ? ` (${body.paysNaissance})` : ""}`
       : null,
     body.numeroPermis ? `Permis n° ${body.numeroPermis} (obtenu le ${body.dateObtentionPermis || "?"}, ${body.paysObtentionPermis || "?"})` : null,
+    body.motifSouscription
+      ? `Motif de souscription : ${MOTIF_SOUSCRIPTION_LABELS_FR[body.motifSouscription as MotifSouscription] ?? body.motifSouscription}${
+          body.motifSouscription === "autre" && body.motifSouscriptionAutre ? ` (${body.motifSouscriptionAutre})` : ""
+        }`
+      : null,
   ].filter(Boolean)
 
   return lines.join("\n")
@@ -110,7 +152,11 @@ export async function POST(req: NextRequest) {
       distributeurId: CRM_DEFAULT_DISTRIBUTEUR_ID,
       produitId: CRM_DEFAULT_PRODUIT_ID,
       montantEstime: body.montantEstime,
+      // Texte conservé pour wn-conseil-web-app et l'email de notification.
       besoinsExprimes: buildBesoinsExprimes(body),
+      categorie: "TEMPASSUR",
+      sousCategorie: body.categorie,
+      details: buildDetails(body),
     })
 
     return NextResponse.json({ success: true, devisId: devis.id, clientId })

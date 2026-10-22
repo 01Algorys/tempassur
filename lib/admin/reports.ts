@@ -71,7 +71,9 @@ async function quotesReport(dateFrom: string, dateTo: string): Promise<ReportRes
 interface ContratRow {
   id: string
   numero: string
+  encaissement: number | null
   prime: number
+  honoraires: number
   dateDebut: string
   client: { nom?: string; prenom?: string; email?: string } | null
   produitRef?: { nom: string } | null
@@ -91,7 +93,9 @@ async function contractsReport(dateFrom: string, dateTo: string): Promise<Report
     total = data.total ?? all.length
   }
 
+  const totalEncaissement = all.reduce((sum, c) => sum + (c.encaissement ?? 0), 0)
   const totalPrime = all.reduce((sum, c) => sum + c.prime, 0)
+  const totalHonoraires = all.reduce((sum, c) => sum + c.honoraires, 0)
 
   return {
     rows: all.map((c) => ({
@@ -100,12 +104,16 @@ async function contractsReport(dateFrom: string, dateTo: string): Promise<Report
       Email: c.client?.email ?? "",
       Produit: c.produitRef?.nom ?? "",
       Statut: c.statutRef?.nom ?? "",
+      Encaissement: c.encaissement ?? "",
       Prime: c.prime,
+      Honoraires: c.honoraires,
       "Date début": c.dateDebut,
     })),
     summary: [
       { label: "Total contrats", value: String(all.length) },
+      { label: "Encaissement cumulé", value: `${totalEncaissement.toFixed(2)} €` },
       { label: "Prime cumulée", value: `${totalPrime.toFixed(2)} €` },
+      { label: "Honoraires cumulés", value: `${totalHonoraires.toFixed(2)} €` },
     ],
   }
 }

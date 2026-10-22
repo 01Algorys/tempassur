@@ -1,6 +1,7 @@
 import { z } from "zod"
 
 import { getRegistrationCase } from "@/lib/countries"
+import { MOTIF_SOUSCRIPTION_VALUES } from "@/lib/motif-souscription"
 import { VEHICLE_SLUGS } from "@/types"
 
 // Labels translated via messages/*.json "pricingLabels.civilite.<translationKey>" — the
@@ -77,6 +78,16 @@ export function createSubscriptionSchema(t: (key: string) => string) {
         .max(20)
         .regex(phoneRegex, t("telephoneInvalid")),
       email: z.string().min(1, t("emailRequired")).email(t("emailInvalid")),
+      // Coordonnées supplémentaires (boutons +/−). Objets {value} pour useFieldArray ;
+      // une ligne laissée vide est ignorée à l'envoi.
+      telephonesSupplementaires: z.array(
+        z.object({ value: z.string().max(20).regex(phoneRegex, t("telephoneInvalid")).or(z.literal("")) })
+      ),
+      emailsSupplementaires: z.array(z.object({ value: z.string().email(t("emailInvalid")).or(z.literal("")) })),
+
+      // Motif de souscription (requis, avant le paiement)
+      motifSouscription: z.enum(MOTIF_SOUSCRIPTION_VALUES, { message: t("motifRequired") }),
+      motifSouscriptionAutre: z.string().max(200).optional().or(z.literal("")),
       adresse: z.string().min(1, t("adresseRequired")).max(120),
       codePostal: z.string().min(1, t("codePostalRequired")).max(10),
       ville: z.string().min(1, t("villeRequired")).max(60),
@@ -173,6 +184,14 @@ export function createSubscriptionSchema(t: (key: string) => string) {
             path: ["heureEffet"],
           })
         }
+      }
+
+      if (data.motifSouscription === "autre" && !data.motifSouscriptionAutre?.trim()) {
+        ctx.addIssue({
+          code: "custom",
+          message: t("motifAutreRequired"),
+          path: ["motifSouscriptionAutre"],
+        })
       }
 
       if (data.estVehiculeLocation && !data.nomAgenceLocation) {

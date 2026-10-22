@@ -323,7 +323,9 @@
     "carteGriseRequired": "La carte grise est requise",
     "paysResidenceMustBeFrance": "Pour ce pays d'immatriculation, la résidence doit être en France",
     "frontierBlocked": "Ce pays d'immatriculation nécessite de souscrire une assurance frontière",
-    "fileTooLarge": "Le fichier est trop volumineux (max 100 Mo)"
+    "fileTooLarge": "Le fichier est trop volumineux (max 100 Mo)",
+    "motifRequired": "Veuillez sélectionner un motif de souscription.",
+    "motifAutreRequired": "Veuillez préciser le motif."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "Le permis doit avoir au moins 2 ans pour assurer votre véhicule.",
       "paysObtention": "Pays d'obtention *",
       "whoCanSubscribeNotice": "Le souscripteur du contrat n'est pas obligatoirement le propriétaire du véhicule. Une autre personne peut souscrire l'assurance à son nom.",
-      "proofOfDomicileNotice": "Votre permis n'étant pas français, un justificatif de domicile en France de moins de 3 mois vous sera demandé (à téléverser dans la rubrique « Autre document »)."
+      "proofOfDomicileNotice": "Votre permis n'étant pas français, un justificatif de domicile en France de moins de 3 mois vous sera demandé (à téléverser dans la rubrique « Autre document »).",
+      "addPhone": "Ajouter un téléphone",
+      "addEmail": "Ajouter un e-mail",
+      "remove": "Retirer",
+      "extraPhone": "Téléphone supplémentaire",
+      "extraEmail": "E-mail supplémentaire"
     },
     "vehicle": {
       "heading": "Véhicule",
@@ -428,7 +435,7 @@
       "location": "Véhicule de location",
       "locationOui": "Oui",
       "locationNon": "Non",
-      "locationExclusion": "Nous vous informons que nous n'assurons pas les véhicules loués hors agence en France, ni les véhicules loués à l'étranger, ni les véhicules loués dans les agences suivantes : {agencies}.",
+      "locationExclusion": "Nous vous informons que nous n'assurons pas les véhicules loués à l'étranger, ni les véhicules loués dans les agences suivantes : {agencies}.",
       "nomAgence": "Nom de l'agence de location",
       "nomAgencePlaceholder": "Nom de l'agence"
     },
@@ -518,6 +525,23 @@
       "confirm": "Je certifie et je continue",
       "sending": "Envoi...",
       "sendingProgress": "Envoi… {percent}%"
+    },
+    "motif": {
+      "heading": "Motif de souscription",
+      "label": "Pourquoi souscrivez-vous cette assurance ? *",
+      "placeholder": "Sélectionnez un motif",
+      "options": {
+        "achat-revente": "Achat/revente",
+        "pret-vehicule": "Prêt de véhicule",
+        "import-export": "Import/export",
+        "prive-pro-occasionnel": "Privé ou professionnel occasionnel",
+        "sortie-fourriere": "Sortie de la fourrière",
+        "resiliation-non-paiement": "Résiliation pour non-paiement",
+        "autre": "Autre (préciser)"
+      },
+      "autreLabel": "Précisez le motif *",
+      "autrePlaceholder": "Votre motif",
+      "resiliationNotice": "Pas d'inquiétude, ce profil est assuré chez nous."
     }
   },
   "product": {

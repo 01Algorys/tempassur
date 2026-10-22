@@ -4,6 +4,16 @@ interface CreateClientParams {
   values: SubscriptionFormValues
 }
 
+// Téléphones/emails en plus du mobile et de l'email principal (fixe inclus),
+// lignes vides ignorées.
+export function extraContacts(values: SubscriptionFormValues) {
+  const telephones = [values.telephoneFixe, ...values.telephonesSupplementaires.map((t) => t.value)]
+    .map((v) => v?.trim())
+    .filter((v): v is string => !!v)
+  const emails = values.emailsSupplementaires.map((e) => e.value.trim()).filter(Boolean)
+  return { telephones, emails }
+}
+
 export interface CreateClientResult {
   success: boolean
   clientId?: string
@@ -28,6 +38,7 @@ export async function createClient({ values }: CreateClientParams): Promise<Crea
         civilite: values.civilite,
         email: values.email,
         telephoneMobile: values.telephoneMobile,
+        ...extraContacts(values),
         adresse: values.adresse,
         codePostal: values.codePostal,
         ville: values.ville,
@@ -112,6 +123,9 @@ export async function createDevis({
         numeroPermis: values.numeroPermis,
         dateObtentionPermis: values.dateObtentionPermis,
         paysObtentionPermis: values.paysObtentionPermis,
+        motifSouscription: values.motifSouscription,
+        motifSouscriptionAutre: values.motifSouscriptionAutre,
+        ...extraContacts(values),
         montantEstime,
       }),
     })

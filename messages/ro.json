@@ -323,7 +323,9 @@
     "carteGriseRequired": "Certificatul de înmatriculare este obligatoriu",
     "paysResidenceMustBeFrance": "Pentru această țară de înmatriculare, reședința trebuie să fie în Franța",
     "frontierBlocked": "Această țară de înmatriculare necesită încheierea unei asigurări de frontieră",
-    "fileTooLarge": "Fișierul este prea mare (max 100 MB)"
+    "fileTooLarge": "Fișierul este prea mare (max 100 MB)",
+    "motifRequired": "Selectați un motiv al subscrierii.",
+    "motifAutreRequired": "Precizați motivul."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "Permisul trebuie să aibă o vechime de cel puțin 2 ani pentru a vă asigura vehiculul.",
       "paysObtention": "Țara de obținere *",
       "whoCanSubscribeNotice": "Subscriitorul contractului nu este neapărat proprietarul vehiculului. O altă persoană poate încheia asigurarea pe numele său.",
-      "proofOfDomicileNotice": "Deoarece permisul dumneavoastră nu este francez, vi se va solicita o dovadă de domiciliu în Franța de mai puțin de 3 luni (de încărcat la „Alt document”)."
+      "proofOfDomicileNotice": "Deoarece permisul dumneavoastră nu este francez, vi se va solicita o dovadă de domiciliu în Franța de mai puțin de 3 luni (de încărcat la „Alt document”).",
+      "addPhone": "Adăugați un telefon",
+      "addEmail": "Adăugați un e-mail",
+      "remove": "Eliminați",
+      "extraPhone": "Telefon suplimentar",
+      "extraEmail": "E-mail suplimentar"
     },
     "vehicle": {
       "heading": "Vehicul",
@@ -518,6 +525,23 @@
       "confirm": "Certific și continui",
       "sending": "Se trimite...",
       "sendingProgress": "Se trimite… {percent}%"
+    },
+    "motif": {
+      "heading": "Motivul subscrierii",
+      "label": "De ce încheiați această asigurare? *",
+      "placeholder": "Selectați un motiv",
+      "options": {
+        "achat-revente": "Cumpărare/revânzare",
+        "pret-vehicule": "Împrumut de vehicul",
+        "import-export": "Import/export",
+        "prive-pro-occasionnel": "Uz privat sau profesional ocazional",
+        "sortie-fourriere": "Ridicare din parcul auto (depozit)",
+        "resiliation-non-paiement": "Reziliere pentru neplată",
+        "autre": "Altul (precizați)"
+      },
+      "autreLabel": "Precizați motivul *",
+      "autrePlaceholder": "Motivul dumneavoastră",
+      "resiliationNotice": "Nu vă faceți griji, asigurăm acest profil."
     }
   },
   "product": {

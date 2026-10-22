@@ -323,7 +323,9 @@
     "carteGriseRequired": "Der Fahrzeugschein ist erforderlich",
     "paysResidenceMustBeFrance": "Für dieses Zulassungsland muss der Wohnsitz in Frankreich liegen",
     "frontierBlocked": "Für dieses Zulassungsland ist eine Grenzversicherung erforderlich",
-    "fileTooLarge": "Die Datei ist zu groß (max. 100 MB)"
+    "fileTooLarge": "Die Datei ist zu groß (max. 100 MB)",
+    "motifRequired": "Bitte wählen Sie einen Grund für den Abschluss.",
+    "motifAutreRequired": "Bitte geben Sie den Grund an."
   },
   "wizard": {
     "steps": {
@@ -414,7 +416,12 @@
       "dateObtentionHint": "Der Führerschein muss mindestens 2 Jahre alt sein, um Ihr Fahrzeug zu versichern.",
       "paysObtention": "Ausstellungsland *",
       "whoCanSubscribeNotice": "Der Versicherungsnehmer muss nicht zwingend der Fahrzeughalter sein. Eine andere Person kann die Versicherung auf ihren eigenen Namen abschließen.",
-      "proofOfDomicileNotice": "Da Ihr Führerschein nicht französisch ist, wird ein weniger als 3 Monate alter Wohnsitznachweis in Frankreich benötigt (hochzuladen unter „Sonstiges Dokument“)."
+      "proofOfDomicileNotice": "Da Ihr Führerschein nicht französisch ist, wird ein weniger als 3 Monate alter Wohnsitznachweis in Frankreich benötigt (hochzuladen unter „Sonstiges Dokument“).",
+      "addPhone": "Telefonnummer hinzufügen",
+      "addEmail": "E-Mail hinzufügen",
+      "remove": "Entfernen",
+      "extraPhone": "Weitere Telefonnummer",
+      "extraEmail": "Weitere E-Mail"
     },
     "vehicle": {
       "heading": "Fahrzeug",
@@ -518,6 +525,23 @@
       "confirm": "Ich bestätige und fahre fort",
       "sending": "Wird gesendet...",
       "sendingProgress": "Wird gesendet… {percent}%"
+    },
+    "motif": {
+      "heading": "Grund für den Abschluss",
+      "label": "Warum schließen Sie diese Versicherung ab? *",
+      "placeholder": "Grund auswählen",
+      "options": {
+        "achat-revente": "Kauf/Weiterverkauf",
+        "pret-vehicule": "Fahrzeugverleih",
+        "import-export": "Import/Export",
+        "prive-pro-occasionnel": "Gelegentliche private oder berufliche Nutzung",
+        "sortie-fourriere": "Abholung vom Abschlepphof",
+        "resiliation-non-paiement": "Kündigung wegen Nichtzahlung",
+        "autre": "Sonstiges (bitte angeben)"
+      },
+      "autreLabel": "Bitte geben Sie den Grund an *",
+      "autrePlaceholder": "Ihr Grund",
+      "resiliationNotice": "Keine Sorge, wir versichern dieses Profil."
     }
   },
   "product": {

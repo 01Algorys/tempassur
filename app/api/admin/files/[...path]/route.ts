@@ -17,7 +17,8 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ path
   if (!token) return NextResponse.json({ message: "Non autorisé." }, { status: 401 })
 
   const { path } = await params
-  const apiRes = await fetch(`${CRM_API_URL}/api/files/${path.join("/")}`, {
+  // search forwarded for ?download=<nom> (téléchargement sous un nom lisible)
+  const apiRes = await fetch(`${CRM_API_URL}/api/files/${path.join("/")}${req.nextUrl.search}`, {
     headers: { authorization: `Bearer ${token}` },
     cache: "no-store",
   })
