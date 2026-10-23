@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-import { getRegistrationCase } from "@/lib/countries"
+import { getRegistrationCase, isFrontierBlocked } from "@/lib/countries"
 import { MOTIF_SOUSCRIPTION_VALUES } from "@/lib/motif-souscription"
 import { VEHICLE_SLUGS } from "@/types"
 
@@ -135,7 +135,7 @@ export function createSubscriptionSchema(t: (key: string) => string) {
           path: ["paysResidence"],
         })
       }
-      if (registrationCase === "frontier") {
+      if (isFrontierBlocked(data.paysImmatriculation, data.categorie)) {
         ctx.addIssue({
           code: "custom",
           message: t("frontierBlocked"),

@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { PhoneInput } from "@/components/ui/phone-input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel, getRegistrationCase } from "@/lib/countries"
+import { useCountries } from "@/hooks/use-countries"
+import { getCountryLabel, getRegistrationCase } from "@/lib/countries"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
 import { EuDateInput } from "../eu-date-input"
@@ -45,6 +46,7 @@ export function DriverStep({ form }: DriverStepProps) {
   const tCommon = useTranslations("common")
   const tCivilite = useTranslations("pricingLabels.civilite")
   const locale = useLocale()
+  const countries = useCountries()
 
   const phones = useFieldArray({ control: form.control, name: "telephonesSupplementaires" })
   const emails = useFieldArray({ control: form.control, name: "emailsSupplementaires" })
@@ -147,7 +149,7 @@ export function DriverStep({ form }: DriverStepProps) {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {COUNTRIES.map((country) => (
+                      {countries.map((country) => (
                         <SelectItem key={country.code} value={country.code}>
                           {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                         </SelectItem>
@@ -352,7 +354,7 @@ export function DriverStep({ form }: DriverStepProps) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {COUNTRIES.map((country) => (
+                    {countries.map((country) => (
                       <SelectItem key={country.code} value={country.code}>
                         {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                       </SelectItem>

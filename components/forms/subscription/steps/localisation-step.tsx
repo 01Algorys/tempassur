@@ -8,7 +8,14 @@ import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel, getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
+import { useCountries } from "@/hooks/use-countries"
+import {
+  DOM_TOM_COUNTRY_TERRITORIES,
+  getCountryLabel,
+  getRegistrationCase,
+  isFrontierBlocked,
+  isResidenceRequirementViolated,
+} from "@/lib/countries"
 import { FRANCE_TERRITORIES } from "@/lib/pricing-data"
 import { isDomTomTerritory } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
@@ -24,7 +31,9 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
   const tCommon = useTranslations("common")
   const tTerritory = useTranslations("pricingLabels.territory")
   const locale = useLocale()
+  const countries = useCountries()
 
+  const categorie = form.watch("categorie")
   const paysImmatriculation = form.watch("paysImmatriculation")
   const paysResidence = form.watch("paysResidence")
   const territoireImmatriculation = form.watch("territoireImmatriculation")
@@ -35,8 +44,30 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
     isDomTomTerritory(paysResidence, territoireResidence)
 
   const registrationCase = getRegistrationCase(paysImmatriculation)
-  const isFrontierCase = registrationCase === "frontier"
+  const isFrontierCase = isFrontierBlocked(paysImmatriculation, categorie)
   const isResidenceViolated = isResidenceRequirementViolated(paysImmatriculation, paysResidence)
+
+  // A DOM-TOM picked from the full list (e.g. "GP") is stored as France + territory.
+  function handleCountryChange(
+    value: string,
+    onChange: (value: string) => void,
+    territoryField: "territoireImmatriculation" | "territoireResidence"
+  ) {
+    const domTomTerritory = DOM_TOM_COUNTRY_TERRITORIES[value]
+    if (domTomTerritory) {
+      onChange("FR")
+      form.setValue(territoryField, domTomTerritory, { shouldValidate: true })
+      return
+    }
+    onChange(value)
+    if (value !== "FR") form.setValue(territoryField, "")
+  }
+
+  const countryItems = countries.map((country) => (
+    <SelectItem key={country.code} value={country.code}>
+      {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
+    </SelectItem>
+  ))
 
   return (
     <div className="flex flex-col gap-5">
@@ -50,10 +81,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
             <FormItem>
               <FormLabel>{t("registrationCountry")}</FormLabel>
               <Select
-                onValueChange={(value) => {
-                  field.onChange(value)
-                  if (value !== "FR") form.setValue("territoireImmatriculation", "")
-                }}
+                onValueChange={(value) => handleCountryChange(value, field.onChange, "territoireImmatriculation")}
                 value={field.value}
               >
                 <FormControl>
@@ -61,13 +89,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                     <SelectValue placeholder={t("countryPlaceholder")} />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  {COUNTRIES.map((country) => (
-                    <SelectItem key={country.code} value={country.code}>
-                      {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
+                <SelectContent>{countryItems}</SelectContent>
               </Select>
               <FormMessage />
             </FormItem>
@@ -109,10 +131,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
               <FormItem>
                 <FormLabel>{t("residenceCountry")}</FormLabel>
                 <Select
-                  onValueChange={(value) => {
-                    field.onChange(value)
-                    if (value !== "FR") form.setValue("territoireResidence", "")
-                  }}
+                  onValueChange={(value) => handleCountryChange(value, field.onChange, "territoireResidence")}
                   value={field.value}
                 >
                   <FormControl>
@@ -120,13 +139,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                       <SelectValue placeholder={t("countryPlaceholder")} />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    {COUNTRIES.map((country) => (
-                      <SelectItem key={country.code} value={country.code}>
-                        {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
+                  <SelectContent>{countryItems}</SelectContent>
                 </Select>
                 <FormMessage />
               </FormItem>

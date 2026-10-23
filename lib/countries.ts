@@ -1,7 +1,11 @@
+import type { VehicleSlug } from "@/types"
+
 export interface Country {
   code: string
 }
 
+// Curated list used by the admin, and by the subscription form as a fallback while
+// (or if) the full ISO list from /api/countries (see hooks/use-countries.ts) loads.
 // France is handled separately in the driver step so the DOM-TOM territory
 // selector (which drives pricing) can be shown right underneath it.
 // Labels are NOT stored here: they're resolved at render time via `getCountryLabel`
@@ -67,6 +71,32 @@ export function getCountryLabel(code: string, locale: string, otherLabel: string
   return displayNames.of(code) ?? code
 }
 
+// The full ISO list carries the DOM-TOM as their own country codes. Picking one is
+// treated as France + the matching territory (lib/pricing-data.ts FRANCE_TERRITORIES)
+// so DOM-TOM pricing and notices keep working exactly as with France > territoire.
+export const DOM_TOM_COUNTRY_TERRITORIES: Record<string, string> = {
+  GP: "guadeloupe",
+  MQ: "martinique",
+  GF: "guyane",
+  RE: "reunion",
+  YT: "mayotte",
+  MF: "saint-martin",
+  BL: "saint-barthelemy",
+  PM: "saint-pierre-et-miquelon",
+}
+
+// France first, then alphabetical in the current locale.
+export function sortCountries(countries: Country[], locale: string): Country[] {
+  const collator = new Intl.Collator(locale)
+  return [...countries].sort((a, b) => {
+    if (a.code === "FR") return -1
+    if (b.code === "FR") return 1
+    if (a.code === "OTHER") return 1
+    if (b.code === "OTHER") return -1
+    return collator.compare(getCountryLabel(a.code, locale, ""), getCountryLabel(b.code, locale, ""))
+  })
+}
+
 // Countries for which a vehicle registered there requires the subscriber's
 // residence to be in France (carte verte / green card system, minus Russia
 // and Belarus which are suspended from it). See Notes développeur —
@@ -117,6 +147,12 @@ export function getRegistrationCase(paysImmatriculation: string): RegistrationCa
   if (paysImmatriculation === "FR") return "france"
   if ((PAYS_RESIDENCE_FR as readonly string[]).includes(paysImmatriculation)) return "restricted"
   return "frontier"
+}
+
+// The "frontier" block only applies to the standard products: the assurance
+// frontière product is precisely the one meant for those vehicles.
+export function isFrontierBlocked(paysImmatriculation: string, categorie: VehicleSlug): boolean {
+  return categorie !== "assurance-frontiere" && getRegistrationCase(paysImmatriculation) === "frontier"
 }
 
 export function isResidenceRequirementViolated(paysImmatriculation: string, paysResidence: string): boolean {

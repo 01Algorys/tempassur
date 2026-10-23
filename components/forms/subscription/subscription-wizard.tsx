@@ -24,7 +24,7 @@ import {
   type FormulaSelection,
 } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
-import { getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
+import { isFrontierBlocked, isResidenceRequirementViolated } from "@/lib/countries"
 import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
@@ -205,9 +205,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     isDomTomTerritory(values.paysImmatriculation, values.territoireImmatriculation) ||
     isDomTomTerritory(values.paysResidence, values.territoireResidence)
 
-  const registrationCase = getRegistrationCase(values.paysImmatriculation)
   const isRegistrationBlocked =
-    registrationCase === "frontier" ||
+    isFrontierBlocked(values.paysImmatriculation, values.categorie) ||
     isResidenceRequirementViolated(values.paysImmatriculation, values.paysResidence)
 
   const selection: FormulaSelection = {
