@@ -15,7 +15,7 @@ export const MOTIF_SOUSCRIPTION_VALUES = [
 export type MotifSouscription = (typeof MOTIF_SOUSCRIPTION_VALUES)[number]
 
 export const MOTIF_SOUSCRIPTION_LABELS_FR: Record<MotifSouscription, string> = {
-  "achat-revente": "Achat/revente",
+  "achat-revente": "Achat / vente",
   "pret-vehicule": "Prêt de véhicule",
   "import-export": "Import/export",
   "prive-pro-occasionnel": "Privé ou professionnel occasionnel",

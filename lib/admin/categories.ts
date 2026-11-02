@@ -7,7 +7,7 @@ import { VEHICLE_SLUGS, type VehicleSlug } from "@/types"
 const isVehicleSlug = (s: string): s is VehicleSlug => (VEHICLE_SLUGS as readonly string[]).includes(s)
 
 // Catalogue des formulaires devis/contrat par catégorie. Une seule source pour
-// le formulaire (dossier-form-dialog), la fiche détail (dossier-details) et les
+// le formulaire (dossier-form), la fiche détail (dossier-details) et les
 // exports (export-columns) : ajouter un champ ici le fait apparaître partout.
 // Les valeurs saisies sont stockées dans Devis/Contrat.details (JSON) côté CRM.
 
@@ -284,6 +284,21 @@ export const NATURE_REMUNERATION_OPTIONS: Option[] = [
   { value: "COMMISSION_ASSUREUR", label: "Encaissement commission assureur" },
 ]
 
+// Plusieurs natures possibles, saisies par l'admin : stockées dans la même
+// colonne CRM, séparées par des virgules ("FRAIS_COURTIER,COMMISSION_ASSUREUR").
+// Une ancienne valeur unique reste lisible telle quelle.
+export function parseNatureRemuneration(value: string | null | undefined): string[] {
+  return (value ?? "").split(",").map((v) => v.trim()).filter(Boolean)
+}
+
+export function serializeNatureRemuneration(values: string[]): string | null {
+  // Ordre du catalogue, pour un stockage stable quel que soit l'ordre des clics.
+  const ordered = NATURE_REMUNERATION_OPTIONS.map((o) => o.value).filter((v) => values.includes(v))
+  return ordered.length > 0 ? ordered.join(",") : null
+}
+
 export function natureRemunerationLabel(value: string | null | undefined) {
-  return NATURE_REMUNERATION_OPTIONS.find((o) => o.value === value)?.label ?? ""
+  return parseNatureRemuneration(value)
+    .map((v) => NATURE_REMUNERATION_OPTIONS.find((o) => o.value === v)?.label ?? v)
+    .join(", ")
 }

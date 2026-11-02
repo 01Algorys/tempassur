@@ -11,7 +11,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card } from "@/components/ui/card"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { PaginationBar } from "@/components/admin/pagination-bar"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { DateRangeFilter, EMPTY_RANGE, applyRange, type DateRange } from "@/components/admin/date-range-filter"
@@ -38,7 +37,6 @@ export default function QuotesPage() {
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
   const [page, setPage] = useState(1)
   const [reloadKey, setReloadKey] = useState(0)
-  const [createOpen, setCreateOpen] = useState(false)
   const [exportOpen, setExportOpen] = useState(false)
   const [deleting, setDeleting] = useState<DevisRecord | null>(null)
 
@@ -104,8 +102,10 @@ export default function QuotesPage() {
           <Button variant="outline" size="sm" onClick={() => setExportOpen(true)}>
             <Download /> Exporter
           </Button>
-          <Button size="sm" onClick={() => setCreateOpen(true)}>
-            <Plus /> Nouveau devis
+          <Button size="sm" asChild>
+            <Link href="/admin-panel/quotes/new">
+              <Plus /> Nouveau devis
+            </Link>
           </Button>
         </div>
       </div>
@@ -228,13 +228,6 @@ export default function QuotesPage() {
           </div>
         )}
       </Card>
-
-      <DossierFormDialog
-        kind="devis"
-        open={createOpen}
-        onOpenChange={setCreateOpen}
-        onSaved={(saved) => router.push(`/admin-panel/quotes/${saved.id}`)}
-      />
 
       <ExportDialog
         open={exportOpen}

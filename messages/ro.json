@@ -78,7 +78,8 @@
     "brokerLine": "Broker de asigurări",
     "reassuranceStatement": "Asigurători autorizați  contractele dvs. sunt emise de societăți de asigurare reglementate de Codul asigurărilor francez.",
     "securePayment": "Plată securizată",
-    "copyright": "© {name} {year}  Toate drepturile rezervate"
+    "copyright": "© {name} {year}  Toate drepturile rezervate",
+    "cpiWw": "CPI WW și carte grise"
   },
   "languageSwitcher": {
     "selectLanguage": "Alegeți limba"
@@ -380,7 +381,9 @@
       "frontierNotice": "Pentru un vehicul înmatriculat în această țară, trebuie să încheiați o asigurare de frontieră: asigurarea pentru vehiculele străine care circulă în Europa.",
       "frontierCta": "Încheiați o asigurare de frontieră",
       "residenceMustBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
-      "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța."
+      "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
+      "cpiQuestion": "<strong>Ați solicitat un <link>certificat provizoriu de înmatriculare WW (CPI)</link>?</strong> Vă rugăm să selectați <strong>Franța</strong> ca țară de înmatriculare.",
+      "cpiPartner": "Nu aveți încă CPI? <link>Partenerul nostru se ocupă de el pentru dumneavoastră.</link>"
     },
     "driver": {
       "heading": "Informații conducător auto",
@@ -531,17 +534,16 @@
       "label": "De ce încheiați această asigurare? *",
       "placeholder": "Selectați un motiv",
       "options": {
-        "achat-revente": "Cumpărare/revânzare",
+        "achat-revente": "Cumpărare / vânzare",
         "pret-vehicule": "Împrumut de vehicul",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Uz privat sau profesional ocazional",
         "sortie-fourriere": "Ridicare din parcul auto (depozit)",
-        "resiliation-non-paiement": "Reziliere pentru neplată",
+        "resiliation-non-paiement": "Reziliere pentru neplată — Nu vă faceți griji, asigurăm acest profil",
         "autre": "Altul (precizați)"
       },
       "autreLabel": "Precizați motivul *",
-      "autrePlaceholder": "Motivul dumneavoastră",
-      "resiliationNotice": "Nu vă faceți griji, asigurăm acest profil."
+      "autrePlaceholder": "Motivul dumneavoastră"
     }
   },
   "product": {
@@ -1300,6 +1302,62 @@
       "description": "Alăturați-vă conducătorilor auto care își gestionează asigurarea temporară online cu TempAssur.",
       "footerText": "Aveți deja un cont?",
       "footerLinkLabel": "Conectare"
+    },
+    "cpiWw": {
+      "metaTitle": "CPI WW și carte grise: faceți demersurile | Tempassur",
+      "metaDescription": "Aveți nevoie de un certificat provizoriu de înmatriculare WW (CPI WW) sau de o carte grise franceză? Partenerul nostru autorizat se ocupă de demersuri. O întrebare? Vă ajutăm.",
+      "heading": "Certificat provizoriu de înmatriculare WW (CPI) și carte grise: vă însoțim",
+      "intro": "Importați un vehicul sau așteptați carte grise franceză? <strong>Certificatul provizoriu de înmatriculare WW (CPI WW)</strong>, <strong>valabil 4 luni</strong>, vă permite să circulați legal în Franța până la înmatricularea definitivă. Tempassur vă îndrumă către un <strong>partener autorizat</strong> care se ocupă de toate demersurile de înmatriculare.",
+      "whatHeading": "Ce este un CPI WW?",
+      "whatBody": "CPI WW este un <strong>certificat de înmatriculare provizoriu</strong>. Se eliberează unui vehicul care vine din străinătate (din Uniunea Europeană sau din afara UE) și care trebuie înmatriculat în Franța. Vehiculul poartă atunci o <strong>plăcuță WW</strong> până primește carte grise definitivă. CPI WW este <strong>valabil 4 luni</strong>.",
+      "goodToKnow": "<strong>Bine de știut:</strong> un vehicul cu numere WW este considerat <strong>înmatriculat în Franța</strong>. Pentru oferta de asigurare temporară, selectați deci <strong>Franța</strong> ca țară de înmatriculare.",
+      "casesHeading": "În ce cazuri aveți nevoie de el?",
+      "cases": {
+        "abroad": "Ați cumpărat un vehicul din străinătate și îl aduceți în Franța.",
+        "moving": "Vă mutați în Franța cu un vehicul înmatriculat în străinătate.",
+        "waiting": "Așteptați carte grise franceză și trebuie să circulați înainte de a o primi."
+      },
+      "servicesHeading": "Demersurile de care se ocupă partenerul nostru",
+      "services": {
+        "cpi": "Cerere de <strong>CPI WW</strong>",
+        "carteGrise": "<strong>Carte grise</strong> (certificat de înmatriculare) pentru un vehicul importat, nou sau second-hand",
+        "titulaire": "<strong>Schimbarea titularului</strong> după o cumpărare",
+        "adresse": "<strong>Schimbarea adresei</strong> pe carte grise",
+        "duplicata": "<strong>Duplicat</strong> în caz de pierdere sau furt",
+        "import": "Asistență pentru <strong>vehiculele importate</strong> (certificat fiscal, certificat de conformitate…)"
+      },
+      "partnerCta": "Încep demersul cu partenerul nostru",
+      "helpTitle": "Aveți o întrebare sau demersul vi se pare complicat?",
+      "helpBody": "Nu vă faceți griji: echipa noastră vă explică fiecare etapă și vă ajută să vă pregătiți dosarul.",
+      "emailLabel": "E-mail:",
+      "whatsappLabel": "WhatsApp:",
+      "phoneLabel": "Telefon:",
+      "insuranceHeading": "CPI WW și asigurarea temporară",
+      "insuranceBody": "Asigurarea nu este inclusă în demersul de înmatriculare. Totuși, pentru a circula cu numere WW, vehiculul trebuie să fie <strong>asigurat</strong>. După ce obțineți CPI, încheiați <strong>asigurarea temporară</strong> pe Tempassur selectând <strong>Franța</strong> ca țară de înmatriculare.",
+      "quoteCta": "Obțin oferta de asigurare temporară",
+      "faqHeading": "Întrebări frecvente",
+      "faq": [
+        {
+          "question": "Ce țară de înmatriculare aleg dacă vehiculul meu are un CPI WW?",
+          "answer": "Alegeți Franța. Un vehicul cu CPI WW este înmatriculat provizoriu în Franța."
+        },
+        {
+          "question": "Cât timp este valabil CPI WW?",
+          "answer": "CPI WW este valabil 4 luni."
+        },
+        {
+          "question": "Este suficient CPI WW pentru a circula?",
+          "answer": "Nu. CPI WW nu include asigurarea. Trebuie să încheiați o asigurare separată, de exemplu o asigurare temporară."
+        },
+        {
+          "question": "Cine poate solicita CPI WW?",
+          "answer": "Cererea se depune la ANTS, direct sau printr-un profesionist autorizat, precum partenerul nostru."
+        },
+        {
+          "question": "Mă pot asigura înainte de a primi CPI?",
+          "answer": "Pentru o ofertă cu înmatriculare franceză, aveți nevoie de numărul WW. Dacă nu îl aveți încă, contactați-ne și vom găsi soluția potrivită."
+        }
+      ]
     }
   },
   "authShell": {
@@ -1373,6 +1431,13 @@
             "id": "couverture-3",
             "question": "Ce garanții sunt incluse?",
             "answer": "Răspunderea civilă obligatorie și apărarea penală și recursul. Pentru automobile, există opțiuni: garanția conducătorului auto, extinderea de țară, asistența."
+          },
+          {
+            "id": "couverture-cpi-ww",
+            "question": "Vehiculul meu are numere WW (CPI WW): ce țară de înmatriculare aleg?",
+            "answer": "Alegeți Franța: un vehicul cu CPI WW este înmatriculat provizoriu în Franța. Nu aveți încă CPI? Partenerul nostru autorizat se ocupă de demersuri.",
+            "linkLabel": "CPI WW și carte grise: soluțiile noastre",
+            "link": "/cpi-ww-carte-grise"
           }
         ]
       },

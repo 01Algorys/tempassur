@@ -14,7 +14,6 @@ import { StatusBadge } from "@/components/admin/status-badge"
 import { DetailField, DetailSectionLabel } from "@/components/admin/detail-field"
 import { ClientFormDialog } from "@/components/admin/client-form-dialog"
 import { LinkClientDialog } from "@/components/admin/link-client-dialog"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { RELATION_BADGE } from "@/components/admin/clients-list-view"
@@ -92,9 +91,7 @@ export function ClientDetailView({ id }: { id: string }) {
   const [editOpen, setEditOpen] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
   const [linkOpen, setLinkOpen] = useState(false)
-  const [newDossier, setNewDossier] = useState<"devis" | "contrat" | null>(null)
   const [openDossier, setOpenDossier] = useState<DossierRow | null>(null)
-  const [editDossier, setEditDossier] = useState<DossierRow | null>(null)
   const [deleteDossier, setDeleteDossier] = useState<DossierRow | null>(null)
   const [openLinked, setOpenLinked] = useState<ClientDetail["liens"][number] | null>(null)
   const [editLinked, setEditLinked] = useState<ClientRecord | null>(null)
@@ -195,11 +192,15 @@ export function ClientDetailView({ id }: { id: string }) {
           <StatusBadge label={isProspect ? "Prospect" : "Client"} className={RELATION_BADGE[client.statutRelation ?? "PROSPECT"]} />
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={() => setNewDossier("devis")}>
-            <FilePlus2 /> Devis
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`/admin-panel/quotes/new?clientId=${client.id}`}>
+              <FilePlus2 /> Devis
+            </Link>
           </Button>
-          <Button variant="outline" size="sm" onClick={() => setNewDossier("contrat")}>
-            <FilePlus2 /> Contrat
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`/admin-panel/contracts/new?clientId=${client.id}`}>
+              <FilePlus2 /> Contrat
+            </Link>
           </Button>
           <Button variant="outline" size="sm" onClick={() => setLinkOpen(true)}>
             <Link2 /> Lier
@@ -426,14 +427,6 @@ export function ClientDetailView({ id }: { id: string }) {
         }}
       />
 
-      <DossierFormDialog
-        kind={newDossier ?? "devis"}
-        open={!!newDossier}
-        onOpenChange={(o) => !o && setNewDossier(null)}
-        defaultClient={client}
-        onSaved={reload}
-      />
-
       <Dialog open={!!openDossier} onOpenChange={(o) => !o && setOpenDossier(null)}>
         <DialogContent className="max-w-4xl">
           <DialogHeader>
@@ -454,15 +447,15 @@ export function ClientDetailView({ id }: { id: string }) {
                 </Link>
               </Button>
             ) : null}
-            <Button
-              variant="outline"
-              onClick={() => {
-                setEditDossier(openDossier)
-                setOpenDossier(null)
-              }}
-            >
-              <Pencil /> Modifier
-            </Button>
+            {openDossier ? (
+              <Button variant="outline" asChild>
+                <Link
+                  href={`${openDossier.kind === "contrat" ? `/admin-panel/contracts/${openDossier.record.id}` : `/admin-panel/quotes/${openDossier.record.id}`}/edit`}
+                >
+                  <Pencil /> Modifier
+                </Link>
+              </Button>
+            ) : null}
             <Button
               variant="destructive"
               onClick={() => {
@@ -475,14 +468,6 @@ export function ClientDetailView({ id }: { id: string }) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
-      <DossierFormDialog
-        kind={editDossier?.kind ?? "devis"}
-        open={!!editDossier}
-        onOpenChange={(o) => !o && setEditDossier(null)}
-        record={editDossier?.record}
-        onSaved={reload}
-      />
 
       <ConfirmDialog
         open={!!deleteDossier}

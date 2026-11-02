@@ -78,7 +78,8 @@
     "brokerLine": "Insurance broker",
     "reassuranceStatement": "Approved insurers  your contracts are underwritten by insurance companies governed by the French Insurance Code.",
     "securePayment": "Secure payment",
-    "copyright": "© {name} {year}  All rights reserved"
+    "copyright": "© {name} {year}  All rights reserved",
+    "cpiWw": "CPI WW and carte grise"
   },
   "languageSwitcher": {
     "selectLanguage": "Choose language"
@@ -380,7 +381,9 @@
       "frontierNotice": "For a vehicle registered in this country, you must take out a frontier insurance: the insurance for foreign vehicles circulating in Europe.",
       "frontierCta": "Subscribe to frontier insurance",
       "residenceMustBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
-      "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France."
+      "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
+      "cpiQuestion": "<strong>Have you applied for a <link>WW temporary registration certificate (CPI)</link>?</strong> Please select <strong>France</strong> as the country of registration.",
+      "cpiPartner": "No CPI yet? <link>Our partner can take care of it for you.</link>"
     },
     "driver": {
       "heading": "Driver information",
@@ -531,17 +534,16 @@
       "label": "Why are you taking out this insurance? *",
       "placeholder": "Select a reason",
       "options": {
-        "achat-revente": "Purchase/resale",
+        "achat-revente": "Purchase / sale",
         "pret-vehicule": "Vehicle loan (lending)",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Occasional private or professional use",
         "sortie-fourriere": "Release from impound",
-        "resiliation-non-paiement": "Cancelled for non-payment",
+        "resiliation-non-paiement": "Cancelled for non-payment — Don’t worry, we insure this profile",
         "autre": "Other (please specify)"
       },
       "autreLabel": "Please specify the reason *",
-      "autrePlaceholder": "Your reason",
-      "resiliationNotice": "Don't worry, we insure this profile."
+      "autrePlaceholder": "Your reason"
     }
   },
   "product": {
@@ -1300,6 +1302,62 @@
       "description": "Join the drivers who manage their temporary insurance online with TempAssur.",
       "footerText": "Already have an account?",
       "footerLinkLabel": "Sign in"
+    },
+    "cpiWw": {
+      "metaTitle": "CPI WW and carte grise: get your registration done | Tempassur",
+      "metaDescription": "Need a WW temporary registration certificate (CPI WW) or a French carte grise? Our approved partner handles the paperwork. A question? We’ll help.",
+      "heading": "WW temporary registration certificate (CPI) and carte grise: we’re here to help",
+      "intro": "Importing a vehicle or waiting for your French carte grise? The <strong>WW temporary registration certificate (CPI WW)</strong>, <strong>valid for 4 months</strong>, lets you drive legally in France while your permanent registration is completed. Tempassur refers you to an <strong>approved partner</strong> who handles all your registration formalities.",
+      "whatHeading": "What is a CPI WW?",
+      "whatBody": "The CPI WW is a <strong>temporary registration certificate</strong>. It is issued to a vehicle coming from abroad (from inside or outside the European Union) that must be registered in France. The vehicle then carries a <strong>WW plate</strong> until it receives its permanent carte grise. The CPI WW is <strong>valid for 4 months</strong>.",
+      "goodToKnow": "<strong>Good to know:</strong> a vehicle on WW plates is considered <strong>registered in France</strong>. For your temporary insurance quote, select <strong>France</strong> as the country of registration.",
+      "casesHeading": "When do you need one?",
+      "cases": {
+        "abroad": "You bought a vehicle abroad and are bringing it back to France.",
+        "moving": "You are moving to France with a vehicle registered abroad.",
+        "waiting": "You are waiting for your French carte grise and need to drive before it arrives."
+      },
+      "servicesHeading": "Formalities our partner handles",
+      "services": {
+        "cpi": "<strong>CPI WW</strong> application",
+        "carteGrise": "<strong>Carte grise</strong> (registration certificate) for an imported vehicle, new or used",
+        "titulaire": "<strong>Change of owner</strong> after a purchase",
+        "adresse": "<strong>Change of address</strong> on the carte grise",
+        "duplicata": "<strong>Duplicate</strong> in case of loss or theft",
+        "import": "Support for <strong>imported vehicles</strong> (tax clearance, certificate of conformity…)"
+      },
+      "partnerCta": "Start my application with our partner",
+      "helpTitle": "Have a question, or does the process seem complicated?",
+      "helpBody": "Don’t worry: our team explains every step and helps you put your file together.",
+      "emailLabel": "Email:",
+      "whatsappLabel": "WhatsApp:",
+      "phoneLabel": "Phone:",
+      "insuranceHeading": "CPI WW and temporary insurance",
+      "insuranceBody": "Insurance is not included in the registration process. Yet to drive with a WW plate, your vehicle must be <strong>insured</strong>. Once you have your CPI, take out your <strong>temporary insurance</strong> on Tempassur, selecting <strong>France</strong> as the country of registration.",
+      "quoteCta": "Get my temporary insurance quote",
+      "faqHeading": "Frequently asked questions",
+      "faq": [
+        {
+          "question": "Which country of registration should I choose if my vehicle has a CPI WW?",
+          "answer": "Choose France. A vehicle under a CPI WW is temporarily registered in France."
+        },
+        {
+          "question": "How long is the CPI WW valid?",
+          "answer": "The CPI WW is valid for 4 months."
+        },
+        {
+          "question": "Is the CPI WW enough to drive?",
+          "answer": "No. The CPI WW does not include insurance. You must take out separate insurance, for example temporary insurance."
+        },
+        {
+          "question": "Who can apply for a CPI WW?",
+          "answer": "The application is made to the ANTS, either directly or through an approved professional, such as our partner."
+        },
+        {
+          "question": "Can I get insured before receiving my CPI?",
+          "answer": "For a quote with a French registration, you need the WW number. If you don’t have it yet, contact us and we’ll find the right solution."
+        }
+      ]
     }
   },
   "authShell": {
@@ -1373,6 +1431,13 @@
             "id": "couverture-3",
             "question": "What coverage is included?",
             "answer": "Mandatory third-party liability and legal defence and recourse. For cars, options are available: driver coverage, country extension, roadside assistance."
+          },
+          {
+            "id": "couverture-cpi-ww",
+            "question": "My vehicle has a WW plate (CPI WW): which country of registration should I choose?",
+            "answer": "Choose France: a vehicle under a CPI WW is temporarily registered in France. No CPI yet? Our approved partner handles the formalities for you.",
+            "linkLabel": "CPI WW and carte grise: our solutions",
+            "link": "/cpi-ww-carte-grise"
           }
         ]
       },

@@ -53,6 +53,11 @@ export function Footer() {
                   {t("coveredCountries")}
                 </Link>
               </li>
+              <li>
+                <Link href="/cpi-ww-carte-grise" className="text-sm text-white/60 transition-colors hover:text-white">
+                  {t("cpiWw")}
+                </Link>
+              </li>
             </ul>
           </div>
 

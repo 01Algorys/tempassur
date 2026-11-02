@@ -26,6 +26,27 @@ interface LocalisationStepProps {
   form: UseFormReturn<SubscriptionFormValues>
 }
 
+const CPI_PAGE = "/cpi-ww-carte-grise"
+
+// Pays carte verte : beaucoup de clients ont en fait un CPI WW (immatriculation
+// provisoire française) et doivent choisir France — lien vers la page dédiée
+// (cahier des charges CPI WW §2), même onglet.
+function ResidenceFranceNotice({ message }: { message: string }) {
+  const t = useTranslations("wizard.localisation")
+  const link = (chunks: React.ReactNode) => (
+    <Link href={CPI_PAGE} className="font-semibold underline underline-offset-2">
+      {chunks}
+    </Link>
+  )
+  return (
+    <div className="flex flex-col gap-1.5">
+      <p>{message}</p>
+      <p>{t.rich("cpiQuestion", { strong: (chunks) => <strong>{chunks}</strong>, link })}</p>
+      <p>{t.rich("cpiPartner", { link })}</p>
+    </div>
+  )
+}
+
 export function LocalisationStep({ form }: LocalisationStepProps) {
   const t = useTranslations("wizard.localisation")
   const tCommon = useTranslations("common")
@@ -192,12 +213,12 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
       ) : isResidenceViolated ? (
         <div className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
           <Info className="mt-0.5 size-4 shrink-0" />
-          {t("residenceMustBeFrance")}
+          <ResidenceFranceNotice message={t("residenceMustBeFrance")} />
         </div>
       ) : registrationCase === "restricted" ? (
         <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">
           <Info className="mt-0.5 size-4 shrink-0 text-primary" />
-          {t("residenceShouldBeFrance")}
+          <ResidenceFranceNotice message={t("residenceShouldBeFrance")} />
         </div>
       ) : isDomTom ? (
         <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">

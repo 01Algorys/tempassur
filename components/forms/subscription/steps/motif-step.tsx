@@ -1,7 +1,6 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
-import { ShieldCheck } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -64,13 +63,6 @@ export function MotifStep({ form }: MotifStepProps) {
               </FormItem>
             )}
           />
-        ) : null}
-
-        {motif === "resiliation-non-paiement" ? (
-          <div className="flex items-start gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800 sm:col-span-2">
-            <ShieldCheck className="mt-0.5 size-4 shrink-0" />
-            {t("resiliationNotice")}
-          </div>
         ) : null}
       </div>
     </div>

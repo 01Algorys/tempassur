@@ -70,7 +70,7 @@ export function DossierDetails({ kind, record }: { kind: "devis" | "contrat"; re
               <DetailField label="Montant estimé" value={money(devis.montantEstime)} />
               <DetailField label="Probabilité" value={devis.probabilite !== null ? `${devis.probabilite}%` : "—"} />
               <DetailField label="Date de relance" value={dateFmt(devis.dateRelance)} />
-              <DetailField label="Motif de perte" value={dash(devis.motifPerte)} />
+              {devis.statutPipeline === "PERDU" ? <DetailField label="Motif de perte" value={dash(devis.motifPerte)} /> : null}
               <DetailField label="Créé le" value={dateTimeFmt(devis.dateCreation ?? devis.createdAt)} />
             </>
           ) : null}

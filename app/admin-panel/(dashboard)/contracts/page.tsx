@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Search, Download, RefreshCw, Plus, Trash2 } from "lucide-react"
 
@@ -9,7 +10,6 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card } from "@/components/ui/card"
 import { PaginationBar } from "@/components/admin/pagination-bar"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
@@ -38,7 +38,6 @@ export default function ContractsPage() {
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
   const [page, setPage] = useState(1)
   const [reloadKey, setReloadKey] = useState(0)
-  const [createOpen, setCreateOpen] = useState(false)
   const [exportOpen, setExportOpen] = useState(false)
   const [deleting, setDeleting] = useState<ContratRecord | null>(null)
 
@@ -106,8 +105,10 @@ export default function ContractsPage() {
           <Button variant="outline" size="sm" onClick={() => setExportOpen(true)}>
             <Download /> Exporter
           </Button>
-          <Button size="sm" onClick={() => setCreateOpen(true)}>
-            <Plus /> Nouveau contrat
+          <Button size="sm" asChild>
+            <Link href="/admin-panel/contracts/new">
+              <Plus /> Nouveau contrat
+            </Link>
           </Button>
         </div>
       </div>
@@ -225,13 +226,6 @@ export default function ContractsPage() {
           </div>
         )}
       </Card>
-
-      <DossierFormDialog
-        kind="contrat"
-        open={createOpen}
-        onOpenChange={setCreateOpen}
-        onSaved={(saved) => router.push(`/admin-panel/contracts/${saved.id}`)}
-      />
 
       <ExportDialog
         open={exportOpen}

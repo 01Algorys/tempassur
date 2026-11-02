@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 
+import { Link } from "@/i18n/navigation"
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
 import { TelLink } from "@/components/shared/tel-link"
@@ -26,6 +27,9 @@ interface FaqItem {
   id: string
   question: string
   answer: string
+  // Lien interne optionnel affiché sous la réponse (ex. page CPI WW).
+  link?: string
+  linkLabel?: string
 }
 
 interface FaqCategory {
@@ -73,6 +77,11 @@ export default async function FaqPage() {
                     </AccordionTrigger>
                     <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
                       {item.answer}
+                      {item.link && item.linkLabel ? (
+                        <Link href={item.link} className="mt-2 block font-semibold text-primary hover:underline">
+                          {item.linkLabel}
+                        </Link>
+                      ) : null}
                     </AccordionContent>
                   </AccordionItem>
                 ))}

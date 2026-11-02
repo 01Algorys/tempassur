@@ -78,7 +78,8 @@
     "brokerLine": "Versicherungsmakler",
     "reassuranceStatement": "Zugelassene Versicherer  Ihre Verträge werden von Versicherungsunternehmen getragen, die dem französischen Versicherungsgesetzbuch (Code des assurances) unterliegen.",
     "securePayment": "Sichere Zahlung",
-    "copyright": "© {name} {year}  Alle Rechte vorbehalten"
+    "copyright": "© {name} {year}  Alle Rechte vorbehalten",
+    "cpiWw": "CPI WW und Carte grise"
   },
   "languageSwitcher": {
     "selectLanguage": "Sprache wählen"
@@ -380,7 +381,9 @@
       "frontierNotice": "Für ein in diesem Land zugelassenes Fahrzeug müssen Sie eine Grenzversicherung abschließen: die Versicherung für ausländische Fahrzeuge, die in Europa unterwegs sind.",
       "frontierCta": "Grenzversicherung abschließen",
       "residenceMustBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
-      "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
+      "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
+      "cpiQuestion": "<strong>Haben Sie eine <link>vorläufige WW-Zulassungsbescheinigung (CPI)</link> beantragt?</strong> Bitte wählen Sie <strong>Frankreich</strong> als Zulassungsland.",
+      "cpiPartner": "Noch keine CPI? <link>Unser Partner kümmert sich darum.</link>"
     },
     "driver": {
       "heading": "Angaben zum Fahrer",
@@ -531,17 +534,16 @@
       "label": "Warum schließen Sie diese Versicherung ab? *",
       "placeholder": "Grund auswählen",
       "options": {
-        "achat-revente": "Kauf/Weiterverkauf",
+        "achat-revente": "Kauf / Verkauf",
         "pret-vehicule": "Fahrzeugverleih",
         "import-export": "Import/Export",
         "prive-pro-occasionnel": "Gelegentliche private oder berufliche Nutzung",
         "sortie-fourriere": "Abholung vom Abschlepphof",
-        "resiliation-non-paiement": "Kündigung wegen Nichtzahlung",
+        "resiliation-non-paiement": "Kündigung wegen Nichtzahlung — Keine Sorge, wir versichern dieses Profil",
         "autre": "Sonstiges (bitte angeben)"
       },
       "autreLabel": "Bitte geben Sie den Grund an *",
-      "autrePlaceholder": "Ihr Grund",
-      "resiliationNotice": "Keine Sorge, wir versichern dieses Profil."
+      "autrePlaceholder": "Ihr Grund"
     }
   },
   "product": {
@@ -1300,6 +1302,62 @@
       "description": "Schließen Sie sich den Fahrern an, die ihre Kurzzeitversicherung online mit TempAssur verwalten.",
       "footerText": "Sie haben bereits ein Konto?",
       "footerLinkLabel": "Anmelden"
+    },
+    "cpiWw": {
+      "metaTitle": "CPI WW und Carte grise: Erledigen Sie Ihre Formalitäten | Tempassur",
+      "metaDescription": "Sie brauchen eine vorläufige WW-Zulassungsbescheinigung (CPI WW) oder eine französische Carte grise? Unser zugelassener Partner erledigt die Formalitäten. Fragen? Wir helfen Ihnen.",
+      "heading": "Vorläufige WW-Zulassungsbescheinigung (CPI) und Carte grise: Wir begleiten Sie",
+      "intro": "Sie importieren ein Fahrzeug oder warten auf Ihre französische Carte grise? Die <strong>vorläufige WW-Zulassungsbescheinigung (CPI WW)</strong>, <strong>4 Monate gültig</strong>, erlaubt Ihnen, in Frankreich legal zu fahren, bis Ihre endgültige Zulassung erfolgt ist. Tempassur verweist Sie an einen <strong>zugelassenen Partner</strong>, der alle Zulassungsformalitäten für Sie erledigt.",
+      "whatHeading": "Was ist eine CPI WW?",
+      "whatBody": "Die CPI WW ist eine <strong>vorläufige Zulassungsbescheinigung</strong>. Sie wird für ein Fahrzeug ausgestellt, das aus dem Ausland kommt (aus der Europäischen Union oder von außerhalb) und in Frankreich zugelassen werden muss. Das Fahrzeug trägt dann ein <strong>WW-Kennzeichen</strong>, bis es seine endgültige Carte grise erhält. Die CPI WW ist <strong>4 Monate gültig</strong>.",
+      "goodToKnow": "<strong>Gut zu wissen:</strong> Ein Fahrzeug mit WW-Kennzeichen gilt als <strong>in Frankreich zugelassen</strong>. Wählen Sie für Ihr Angebot zur Kurzzeitversicherung daher <strong>Frankreich</strong> als Zulassungsland.",
+      "casesHeading": "Wann brauchen Sie sie?",
+      "cases": {
+        "abroad": "Sie haben ein Fahrzeug im Ausland gekauft und bringen es nach Frankreich.",
+        "moving": "Sie ziehen mit einem im Ausland zugelassenen Fahrzeug nach Frankreich.",
+        "waiting": "Sie warten auf Ihre französische Carte grise und müssen schon vorher fahren."
+      },
+      "servicesHeading": "Formalitäten, die unser Partner übernimmt",
+      "services": {
+        "cpi": "Antrag auf <strong>CPI WW</strong>",
+        "carteGrise": "<strong>Carte grise</strong> (Zulassungsbescheinigung) für ein importiertes Fahrzeug, neu oder gebraucht",
+        "titulaire": "<strong>Halterwechsel</strong> nach einem Kauf",
+        "adresse": "<strong>Adressänderung</strong> auf der Carte grise",
+        "duplicata": "<strong>Duplikat</strong> bei Verlust oder Diebstahl",
+        "import": "Begleitung für <strong>importierte Fahrzeuge</strong> (Steuerunbedenklichkeitsbescheinigung, Konformitätsbescheinigung…)"
+      },
+      "partnerCta": "Formalität mit unserem Partner erledigen",
+      "helpTitle": "Haben Sie eine Frage oder erscheint Ihnen der Ablauf kompliziert?",
+      "helpBody": "Keine Sorge: Unser Team erklärt Ihnen jeden Schritt und hilft Ihnen, Ihre Unterlagen zusammenzustellen.",
+      "emailLabel": "E-Mail:",
+      "whatsappLabel": "WhatsApp:",
+      "phoneLabel": "Telefon:",
+      "insuranceHeading": "CPI WW und Kurzzeitversicherung",
+      "insuranceBody": "Die Versicherung ist im Zulassungsverfahren nicht enthalten. Um mit einem WW-Kennzeichen zu fahren, muss Ihr Fahrzeug jedoch <strong>versichert</strong> sein. Sobald Sie Ihre CPI haben, schließen Sie Ihre <strong>Kurzzeitversicherung</strong> bei Tempassur ab und wählen <strong>Frankreich</strong> als Zulassungsland.",
+      "quoteCta": "Mein Angebot für die Kurzzeitversicherung erhalten",
+      "faqHeading": "Häufige Fragen",
+      "faq": [
+        {
+          "question": "Welches Zulassungsland wähle ich, wenn mein Fahrzeug eine CPI WW hat?",
+          "answer": "Wählen Sie Frankreich. Ein Fahrzeug mit CPI WW ist vorläufig in Frankreich zugelassen."
+        },
+        {
+          "question": "Wie lange ist die CPI WW gültig?",
+          "answer": "Die CPI WW ist 4 Monate gültig."
+        },
+        {
+          "question": "Reicht die CPI WW zum Fahren aus?",
+          "answer": "Nein. Die CPI WW enthält keine Versicherung. Sie müssen eine separate Versicherung abschließen, zum Beispiel eine Kurzzeitversicherung."
+        },
+        {
+          "question": "Wer kann die CPI WW beantragen?",
+          "answer": "Der Antrag wird bei der ANTS gestellt, direkt oder über einen zugelassenen Fachbetrieb wie unseren Partner."
+        },
+        {
+          "question": "Kann ich mich versichern, bevor ich meine CPI erhalten habe?",
+          "answer": "Für ein Angebot mit französischer Zulassung benötigen Sie die WW-Nummer. Wenn Sie sie noch nicht haben, kontaktieren Sie uns und wir finden die passende Lösung."
+        }
+      ]
     }
   },
   "authShell": {
@@ -1373,6 +1431,13 @@
             "id": "couverture-3",
             "question": "Welche Leistungen sind enthalten?",
             "answer": "Die obligatorische Haftpflichtversicherung sowie der strafrechtliche Beistand und Regress. Für Autos gibt es Optionen: Fahrerschutz, Länder-Erweiterung, Assistance-Leistung."
+          },
+          {
+            "id": "couverture-cpi-ww",
+            "question": "Mein Fahrzeug hat ein WW-Kennzeichen (CPI WW): Welches Zulassungsland wähle ich?",
+            "answer": "Wählen Sie Frankreich: Ein Fahrzeug mit CPI WW ist vorläufig in Frankreich zugelassen. Noch keine CPI? Unser zugelassener Partner erledigt die Formalitäten für Sie.",
+            "linkLabel": "CPI WW und Carte grise: unsere Lösungen",
+            "link": "/cpi-ww-carte-grise"
           }
         ]
       },

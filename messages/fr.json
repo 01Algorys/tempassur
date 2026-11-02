@@ -78,7 +78,8 @@
     "brokerLine": "Courtier en assurances",
     "reassuranceStatement": "Assureurs agréés  vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
     "securePayment": "Paiement sécurisé",
-    "copyright": "© {name} {year}  Tous droits réservés"
+    "copyright": "© {name} {year}  Tous droits réservés",
+    "cpiWw": "CPI WW et carte grise"
   },
   "languageSwitcher": {
     "selectLanguage": "Choisir la langue"
@@ -380,7 +381,9 @@
       "frontierNotice": "Pour un véhicule immatriculé dans ce pays, vous devez souscrire une assurance frontière : l'assurance des véhicules étrangers circulant en Europe.",
       "frontierCta": "Souscrire une assurance frontière",
       "residenceMustBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
-      "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
+      "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
+      "cpiQuestion": "<strong>Vous avez demandé un <link>certificat provisoire d’immatriculation WW (CPI)</link> ?</strong> Merci de sélectionner <strong>France</strong> comme pays d’immatriculation.",
+      "cpiPartner": "Pas encore de CPI ? <link>Notre partenaire s’en occupe pour vous.</link>"
     },
     "driver": {
       "heading": "Informations conducteur",
@@ -531,17 +534,16 @@
       "label": "Pourquoi souscrivez-vous cette assurance ? *",
       "placeholder": "Sélectionnez un motif",
       "options": {
-        "achat-revente": "Achat/revente",
+        "achat-revente": "Achat / vente",
         "pret-vehicule": "Prêt de véhicule",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Privé ou professionnel occasionnel",
         "sortie-fourriere": "Sortie de la fourrière",
-        "resiliation-non-paiement": "Résiliation pour non-paiement",
+        "resiliation-non-paiement": "Résiliation pour non-paiement — Pas d’inquiétude, ce profil est assuré chez nous",
         "autre": "Autre (préciser)"
       },
       "autreLabel": "Précisez le motif *",
-      "autrePlaceholder": "Votre motif",
-      "resiliationNotice": "Pas d'inquiétude, ce profil est assuré chez nous."
+      "autrePlaceholder": "Votre motif"
     }
   },
   "product": {
@@ -1300,6 +1302,62 @@
       "description": "Rejoignez les conducteurs qui gèrent leur assurance temporaire en ligne avec TempAssur.",
       "footerText": "Vous avez déjà un compte ?",
       "footerLinkLabel": "Se connecter"
+    },
+    "cpiWw": {
+      "metaTitle": "CPI WW et carte grise : faites vos démarches | Tempassur",
+      "metaDescription": "Besoin d’un certificat provisoire d’immatriculation WW ou d’une carte grise ? Notre partenaire habilité gère vos démarches. Une question ? On vous aide.",
+      "heading": "Certificat provisoire d’immatriculation WW (CPI) et carte grise : nous vous accompagnons",
+      "intro": "Vous importez un véhicule ou vous attendez votre carte grise française ? Le <strong>certificat provisoire d’immatriculation WW (CPI WW)</strong>, <strong>valable 4 mois</strong>, vous permet de circuler légalement en France le temps que votre immatriculation définitive soit faite. Tempassur vous oriente vers un <strong>partenaire habilité</strong> qui réalise toutes vos démarches d’immatriculation.",
+      "whatHeading": "Qu’est-ce qu’un CPI WW ?",
+      "whatBody": "Le CPI WW est un <strong>certificat d’immatriculation provisoire</strong>. Il est délivré à un véhicule qui vient de l’étranger (Union européenne ou hors UE) et qui doit être immatriculé en France. Le véhicule porte alors une <strong>plaque WW</strong> jusqu’à ce qu’il reçoive sa carte grise définitive. Le CPI WW est <strong>valable 4 mois</strong>.",
+      "goodToKnow": "<strong>Bon à savoir :</strong> un véhicule en WW est considéré comme <strong>immatriculé en France</strong>. Pour votre devis d’assurance temporaire, sélectionnez donc <strong>France</strong> comme pays d’immatriculation.",
+      "casesHeading": "Dans quels cas en avez-vous besoin ?",
+      "cases": {
+        "abroad": "Vous avez acheté un véhicule à l’étranger et vous le rapatriez en France.",
+        "moving": "Vous vous installez en France avec un véhicule immatriculé à l’étranger.",
+        "waiting": "Vous attendez votre carte grise française et vous devez circuler avant de la recevoir."
+      },
+      "servicesHeading": "Les démarches que notre partenaire prend en charge",
+      "services": {
+        "cpi": "Demande de <strong>CPI WW</strong>",
+        "carteGrise": "<strong>Carte grise</strong> (certificat d’immatriculation) pour un véhicule importé, neuf ou d’occasion",
+        "titulaire": "<strong>Changement de titulaire</strong> après un achat",
+        "adresse": "<strong>Changement d’adresse</strong> sur la carte grise",
+        "duplicata": "<strong>Duplicata</strong> en cas de perte ou de vol",
+        "import": "Accompagnement pour les <strong>véhicules importés</strong> (quitus fiscal, certificat de conformité…)"
+      },
+      "partnerCta": "Faire ma démarche avec notre partenaire",
+      "helpTitle": "Vous avez une question ou la démarche vous semble compliquée ?",
+      "helpBody": "Pas de panique : notre équipe vous explique chaque étape et vous aide à constituer votre dossier.",
+      "emailLabel": "E-mail :",
+      "whatsappLabel": "WhatsApp :",
+      "phoneLabel": "Téléphone :",
+      "insuranceHeading": "CPI WW et assurance temporaire",
+      "insuranceBody": "L’assurance n’est pas comprise dans la démarche d’immatriculation. Pour circuler avec une plaque WW, votre véhicule doit pourtant être <strong>assuré</strong>. Une fois votre CPI obtenu, souscrivez votre <strong>assurance temporaire</strong> sur Tempassur en sélectionnant <strong>France</strong> comme pays d’immatriculation.",
+      "quoteCta": "Obtenir mon devis d’assurance temporaire",
+      "faqHeading": "Questions fréquentes",
+      "faq": [
+        {
+          "question": "Quel pays d’immatriculation choisir si mon véhicule a un CPI WW ?",
+          "answer": "Choisissez France. Un véhicule sous CPI WW est immatriculé provisoirement en France."
+        },
+        {
+          "question": "Combien de temps le CPI WW est-il valable ?",
+          "answer": "Le CPI WW est valable 4 mois."
+        },
+        {
+          "question": "Le CPI WW suffit-il pour circuler ?",
+          "answer": "Non. Le CPI WW ne comprend pas d’assurance. Vous devez souscrire une assurance à part, par exemple une assurance temporaire."
+        },
+        {
+          "question": "Qui peut faire la demande de CPI WW ?",
+          "answer": "La demande se fait auprès de l’ANTS, directement ou par un professionnel habilité, comme notre partenaire."
+        },
+        {
+          "question": "Puis-je m’assurer avant d’avoir reçu mon CPI ?",
+          "answer": "Pour un devis avec une immatriculation française, il vous faut le numéro WW. Si vous ne l’avez pas encore, contactez-nous et nous trouverons la solution adaptée."
+        }
+      ]
     }
   },
   "authShell": {
@@ -1373,6 +1431,13 @@
             "id": "couverture-3",
             "question": "Quelles garanties sont incluses ?",
             "answer": "La responsabilité civile obligatoire et la défense pénale et recours. Pour l'automobile, des options existent : garantie du conducteur, extension de pays, assistance."
+          },
+          {
+            "id": "couverture-cpi-ww",
+            "question": "Mon véhicule a une plaque WW (CPI WW) : quel pays d’immatriculation choisir ?",
+            "answer": "Choisissez France : un véhicule sous CPI WW est immatriculé provisoirement en France. Pas encore de CPI ? Notre partenaire habilité s’occupe de vos démarches.",
+            "linkLabel": "CPI WW et carte grise : nos solutions",
+            "link": "/cpi-ww-carte-grise"
           }
         ]
       },
