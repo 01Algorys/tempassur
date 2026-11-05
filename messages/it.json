@@ -62,6 +62,7 @@
     "description": "TempAssur  L'assicurazione temporanea da 1 a 90 giorni, per tutti i veicoli. Attestato immediato via e-mail o WhatsApp.",
     "insuranceHeading": "Le nostre assicurazioni",
     "coveredCountries": "Paesi coperti",
+    "coveredCountriesFrontier": "Paesi coperti (frontiera)",
     "informationHeading": "Informazioni",
     "quiSommesNous": "Chi siamo",
     "faq": "FAQ",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Assicurazione temporanea auto e tutti i veicoli da 1 a 90 giorni | TempAssur",
-      "description": "Assicurazione temporanea immediata da 1 a 90 giorni: auto, mezzo pesante, camper, quad, rimorchio, assicurazione di frontiera. Attestato via e-mail o WhatsApp in pochi minuti. A partire da {price} €/giorno."
+      "title": "Assicurazione temporanea online 1-90 giorni | TempAssur",
+      "description": "Assicurazione temporanea immediata da 1 a 90 giorni: auto, mezzi pesanti, camper, quad, rimorchi, frontiera. Attestato via e-mail o WhatsApp. Da {price} €/giorno."
     },
     "hero": {
       "title": "Assicurazione temporanea da 1 a 90 giorni  attestato immediato via e-mail o WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Durata e localizzazione",
+      "duration": "Durata e veicolo",
       "details": "I tuoi dati",
       "payment": "Pagamento"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "Per un veicolo immatricolato in questo paese, è necessario sottoscrivere un'assicurazione di frontiera: l'assicurazione per i veicoli stranieri che circolano in Europa.",
       "frontierCta": "Sottoscrivere un'assicurazione di frontiera",
       "residenceMustBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia.",
+      "residenceCpiNotice": "Avete richiesto un certificato provvisorio di immatricolazione WW (CPI)? Selezionate la Francia come paese di immatricolazione.",
+      "residenceCpiPartner": "Non avete ancora il CPI? Se ne occupa il nostro partner.",
+      "residenceCpiPartnerCta": "Procedi con il nostro partner",
       "residenceShouldBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Veicolo",
-      "categorie": "Categoria *",
-      "categoriePlaceholder": "Seleziona una categoria",
       "immatriculation": "Targa *",
       "marque": "Marca *",
       "marqueNoResults": "Nessuna marca trovata — puoi digitare un nome libero",
@@ -484,6 +486,7 @@
       "edit": "Modifica",
       "note": "Verifica il riepilogo qui sopra, poi inserisci i tuoi dati di pagamento qui sotto per finalizzare la tua sottoscrizione in totale sicurezza.",
       "secureHeading": "Pagamento sicuro",
+      "klarnaNotice": "<strong>Per pagare in 3 rate</strong>, scegli Klarna tra i metodi di pagamento qui sotto.",
       "secureBody": "Inserisci i dati della tua carta qui sotto. I tuoi dati sono crittografati e inviati direttamente a Stripe: non passano mai dai nostri server.",
       "securePoweredBy": "Protetto da Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Zona DOM-TOM",
       "selectDuration": "Seleziona una durata per visualizzare la tariffa.",
       "totalToPay": "Totale da pagare",
+      "installments": "<strong>Paga in 3 rate</strong> con Klarna, previa accettazione.",
       "securePayment": "Pagamento sicuro, decorrenza immediata.",
       "durationValue": "{count, plural, one {# giorno} other {# giorni}}",
       "noValue": ""
@@ -561,8 +565,8 @@
       "durationsAvailable": "Durate disponibili: {durations} giorno{plural}"
     },
     "automobiles": {
-      "title": "Assicurazione auto temporanea 1-90 giorni a partire da [PRIX] €/giorno | TempAssur",
-      "metaDescription": "Assicura un'auto o un veicolo commerciale da 1 a 90 giorni. Sottoscrizione online in 5 minuti, attestato immediato via e-mail o WhatsApp. A partire da [PRIX] €/giorno.",
+      "title": "Assicurazione auto temporanea da [PRIX] €/giorno | TempAssur",
+      "metaDescription": "Assicura un'auto o un veicolo commerciale da 1 a 90 giorni. Sottoscrizione online in 5 minuti, attestato immediato via e-mail o WhatsApp. Da [PRIX] €/giorno.",
       "h1": "Assicurazione auto temporanea da 1 a 90 giorni",
       "intro": "Hai bisogno di assicurare un'auto o un veicolo commerciale di peso inferiore a 3,5 tonnellate per qualche giorno? L'assicurazione auto temporanea TempAssur ti copre da 1 a 90 giorni, senza vincoli e senza rinnovo tacito. Sottoscrizione 100% online in 5 minuti, attestato inviato immediatamente via e-mail o WhatsApp.",
       "vehiclesParagraph": "Tutti i veicoli privati e commerciali di peso inferiore a 3,5 tonnellate, qualunque sia la potenza: city car, berlina, SUV, furgone… La tariffa dipende dalla potenza fiscale e dalla durata scelta.",
@@ -614,7 +618,7 @@
       ]
     },
     "poids-lourds": {
-      "title": "Assicurazione mezzi pesanti temporanea a partire da [PRIX] €/giorno | TempAssur",
+      "title": "Assicurazione temporanea mezzi pesanti | TempAssur",
       "metaDescription": "Camion, autocarro, trattore stradale: assicurazione temporanea per mezzi pesanti online. Attestato immediato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea mezzi pesanti (oltre 3,5 t)",
       "intro": "Autocarro, trattore stradale, semirimorchio: assicura il tuo mezzo pesante per un trasferimento, un acquisto, un'importazione o una missione occasionale, con le durate previste dalla nostra griglia tariffaria. Attestato immediato via e-mail o WhatsApp.",
@@ -675,7 +679,7 @@
       ]
     },
     "quadricycles": {
-      "title": "Assicurazione temporanea quad, microcar senza patente, buggy | TempAssur",
+      "title": "Assicurazione temporanea quad e microcar | TempAssur",
       "metaDescription": "Quad omologato, microcar senza patente o buggy: assicurazione temporanea online, attestato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea quadricicli: quad, microcar, buggy",
       "intro": "Quad omologato, microcar senza patente o buggy: assicura il tuo quadriciclo per la durata di cui hai realmente bisogno. Il prezzo di richiamo indicato corrisponde al sottotipo meno costoso; la tariffa esatta si adegua in base al tuo veicolo al momento della sottoscrizione.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Assicurazione trattore agricolo temporanea a partire da [PRIX] €/giorno | TempAssur",
+      "title": "Assicurazione temporanea trattore agricolo | TempAssur",
       "metaDescription": "Mietitura, trasferimento, acquisto: assicurazione temporanea trattore agricolo online, attestato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea trattore agricolo",
       "intro": "Mietitura, trasferimento, acquisto o vendita: assicura il tuo trattore o mezzo agricolo per qualche giorno, senza vincolo annuale. Sottoscrizione online, attestato via e-mail o WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Assicurazione temporanea rimorchio, semirimorchio, caravan | TempAssur",
+      "title": "Assicurazione temporanea rimorchio e caravan | TempAssur",
       "metaDescription": "Rimorchio, semirimorchio o caravan: assicurazione temporanea obbligatoria oltre i 750 kg. Sottoscrizione online immediata.",
       "h1": "Assicurazione temporanea rimorchi, semirimorchi e caravan",
       "intro": "Rimorchio leggero o pesante, semirimorchio, caravan: oltre i 750 kg di peso totale a pieno carico, è obbligatoria un'assicurazione di responsabilità civile dedicata  quella del veicolo trainante non è più sufficiente. Assicura il tuo per un trasferimento, un acquisto o uno spostamento occasionale.",
@@ -781,7 +785,7 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Assicurazione di frontiera: circolare in Francia e in Europa con un veicolo straniero | TempAssur",
+      "title": "Assicurazione di frontiera veicoli stranieri | TempAssur",
       "metaDescription": "Veicolo immatricolato fuori dall'UE o all'estero? L'assicurazione di frontiera ti copre in Francia e in 35 paesi. 30 o 90 giorni, attestato immediato.",
       "h1": "Assicurazione di frontiera  per circolare in Francia e in Europa",
       "intro": "Il tuo veicolo è immatricolato fuori dall'Unione Europea e fuori dal sistema carta verde  oppure immatricolato all'estero e deve circolare in Francia? L'assicurazione di frontiera è la soluzione legale e obbligatoria per mettersi in viaggio. E con TempAssur, non copre solo la Francia: sei coperto in 35 paesi, la stessa lista delle nostre assicurazioni temporanee. Disponibile per 30 o 90 giorni  attestato via e-mail o WhatsApp.",
@@ -1208,10 +1212,23 @@
       "title": "La tua richiesta di sottoscrizione",
       "description": "Il prezzo viene ricalcolato a ogni fase e resta visualizzato in permanenza nel riquadro a lato. Il prezzo delle opzioni dipende dalla durata.",
       "guaranteesHeading": "Garanzie e paesi coperti",
-      "guaranteesParagraph": "Tutte le nostre assicurazioni temporanee includono la responsabilità civile (obbligatoria) e la tutela legale e ricorso in caso di incidente. Solo per l'automobile esistono delle opzioni: garanzia del conducente, estensione paesi, assistenza (non disponibili nei DOM-TOM).",
-      "coverageParagraph": "Sei coperto in Francia e in {count} paesi d'Europa e del bacino del Mediterraneo, la stessa lista per tutte le nostre assicurazioni temporanee e l'assicurazione di frontiera.",
-      "coverageVariationNotice": "La copertura di alcuni paesi può variare in base alla compagnia, al veicolo, alla durata e alle opzioni scelte. Pensi di guidare in un paese non elencato? Contattaci: WhatsApp / tel. +33 6 05 93 84 79.",
+      "includesIntro": "Tutte le nostre assicurazioni temporanee includono:",
+      "includesLiability": "la responsabilità civile, obbligatoria per circolare legalmente sulla via pubblica;",
+      "includesDefence": "la tutela legale e il ricorso in caso di incidente.",
+      "optionsParagraph": "Solo per l’automobile puoi aggiungere delle opzioni: garanzia del conducente, estensione paesi, assistenza. Queste opzioni sono facoltative, puoi anche non selezionarle.",
+      "coverageParagraph": "Sei coperto in Francia e in altri 34 paesi d’Europa, per un totale di 35 paesi.",
+      "extensionParagraph": "Con l’opzione estensione paesi (solo automobili sotto le 3,5 tonnellate) sei coperto anche in Marocco, Tunisia, Turchia, Albania, Macedonia del Nord, Moldavia e Azerbaigian, per un totale di 42 paesi.",
+      "contact": "Hai una domanda? WhatsApp / tel. <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "Vedi l'elenco completo dei paesi coperti →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Sottoscrizione assicurazione di frontiera online",
+      "metaDescription": "Sottoscrivi online l’assicurazione di frontiera per un veicolo immatricolato fuori dall’Europa: Francia e altri 34 paesi, pagamento sicuro.",
+      "audience": "L’assicurazione di frontiera è rivolta ai veicoli immatricolati fuori dall’Europa, in qualsiasi parte del mondo (Algeria, Marocco, Tunisia, Turchia, Africa, America…).",
+      "includesIntro": "Include:",
+      "coverageParagraph": "Il tuo veicolo è coperto in Francia e in altri 34 paesi d’Europa, per un totale di 35 paesi, dal tuo arrivo sul territorio europeo.",
+      "temporaireNote": "Il tuo veicolo è immatricolato in Francia o in Europa? Scegli invece la nostra assicurazione temporanea.",
+      "coveredCountriesCta": "Vedi i paesi coperti dall’assicurazione di frontiera →"
     },
     "merci": {
       "metaTitle": "Grazie per la tua fiducia",
@@ -1231,18 +1248,70 @@
       "contactPrompt": "Oppure scrivici su WhatsApp:"
     },
     "paysCouverts": {
-      "metaTitle": "Paesi coperti dalla tua assicurazione temporanea e di frontiera | TempAssur",
-      "metaDescription": "L'elenco completo dei 35 paesi coperti dalle nostre assicurazioni temporanee e di frontiera, e dei 7 paesi accessibili con l'opzione estensione.",
-      "heroTitle": "In quali paesi sei coperto?",
-      "intro": "Buona notizia: le nostre assicurazioni temporanee e la nostra assicurazione di frontiera coprono la stessa lista di 35 paesi. Una sola lista da ricordare, qualunque sia il tuo contratto.",
-      "coveredHeading": "I 35 paesi coperti",
-      "assimilatedNote": "Monaco, San Marino e Liechtenstein sono assimilati (Francia / Italia / Svizzera).",
-      "extensionHeading": "Hai bisogno di andare oltre? L'opzione estensione di circolazione",
-      "extensionParagraph": "Solo per le automobili (esclusi i DOM-TOM), l'opzione estensione apre 7 paesi supplementari: {countries}. Il suo prezzo dipende dalla durata del contratto.",
-      "neverCoveredHeading": "Mai coperti, qualunque sia l'opzione",
-      "coverageVariationNotice": "La copertura di alcuni paesi può variare in base alla compagnia, al veicolo, alla durata e alle opzioni scelte. Pensi di guidare in un paese non elencato? Contattaci: WhatsApp / tel. +33 6 05 93 84 79.",
-      "internationalCardNote": "La carta internazionale di assicurazione consegnata con il tuo contratto fa fede.",
+      "metaTitle": "Paesi coperti dall’assicurazione temporanea | TempAssur",
+      "metaDescription": "La tua assicurazione temporanea ti copre in 35 paesi, fino a 42 con l’estensione territoriale. Elenco completo e come leggere la carta verde.",
+      "heroTitle": "Assicurazione temporanea: dove puoi circolare?",
+      "introCard": "Con l’<strong>assicurazione auto temporanea TempAssur</strong> ricevi una <strong>carta internazionale di assicurazione auto</strong>, chiamata anche «<strong>carta verde</strong>». È il documento che prova che il tuo veicolo è assicurato, in Francia e all’estero.",
+      "introCoverage": "Ti copre in <strong>35 paesi</strong> e fino a <strong>42 paesi</strong> con l’estensione territoriale.",
+      "cardHeading": "Come leggere la tua carta verde?",
+      "cardIntro": "In fondo alla carta trovi una tabella con i codici di ogni paese (F per Francia, E per Spagna, I per Italia…).",
+      "cardNotCrossed": "<strong>Casella non barrata</strong>: il paese è coperto.",
+      "cardCrossed": "<strong>Casella barrata con una croce</strong>: il paese non è coperto.",
+      "cardLocalRules": "In ogni paese coperto, la tua assicurazione rispetta le norme sull’assicurazione obbligatoria del paese. In caso di incidente, interviene l’ufficio carta verde locale.",
+      "euHeading": "1. I 27 paesi dell’Unione europea — coperti",
+      "euIntro": "La tua assicurazione temporanea è valida in <strong>tutti i paesi dell’Unione europea</strong>. Puoi attraversare liberamente le frontiere: basta la carta verde.",
+      "nonEuHeading": "2. Gli 8 paesi europei fuori dall’Unione europea — coperti",
+      "nonEuIntro": "La tua copertura si estende anche a <strong>8 paesi europei che non fanno parte dell’Unione europea</strong>, ma che appartengono al sistema carta verde:",
+      "nonEuCustoms": "Alle frontiere di questi paesi è possibile un controllo doganale: tieni la carta verde a portata di mano.",
+      "partialNote": "* Cipro e Serbia: la copertura è limitata alle zone controllate dal governo ufficiale del paese (non si applica a Cipro del Nord né al Kosovo).",
+      "total": "Totale: 27 + 8 = 35 paesi coperti.",
+      "extensionHeading": "3. I 7 paesi dell’estensione territoriale — opzionali",
+      "extensionIntro": "Parti per il <strong>Marocco</strong>, la <strong>Tunisia</strong>, la <strong>Turchia</strong> o i Balcani? Per i <strong>veicoli sotto le 3,5 tonnellate</strong> puoi aggiungere l’<strong>estensione territoriale</strong>, che copre altri 7 paesi:",
+      "extensionWithout": "<strong>Senza l’estensione</strong>: questi 7 paesi sono barrati sulla tua carta verde e lì non sei coperto.",
+      "extensionWith": "<strong>Con l’estensione</strong>: questi 7 paesi non sono barrati sulla tua carta verde. Sei coperto in <strong>42 paesi</strong>.",
+      "azerbaijanNote": "* Azerbaigian: copertura limitata alle zone controllate dal governo della Repubblica dell’Azerbaigian.",
+      "neverHeading": "4. I 4 paesi mai coperti",
+      "neverIntro": "Nessuna assicurazione temporanea può coprirti in questi paesi, nemmeno con l’estensione:",
+      "neverSuspended": "<strong>{countries}</strong>: il sistema carta verde è sospeso. Nessun assicuratore europeo può fornire copertura in questi paesi.",
+      "neverUkraine": "<strong>{country}</strong>: le compagnie la escludono a causa della guerra.",
+      "adviceHeading": "Prima di partire: controlla tutto il tuo percorso",
+      "adviceBody": "Verifica che <strong>tutti i paesi che attraverserai</strong> siano coperti, compresi quelli in cui sei solo di passaggio. Se anche un solo paese del percorso non è coperto, potresti dover pagare un’assicurazione di frontiera sul posto.",
+      "adviceExample": "<strong>Esempio:</strong> per andare da Parigi a Tangeri in auto attraversi la Francia e la Spagna (coperte), poi il Marocco (coperto con l’estensione). Ricordati quindi di aggiungere l’estensione.",
+      "contact": "Hai un dubbio? Contattaci: <email>contact@tempassur.com</email> oppure WhatsApp / telefono al <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "Il tuo veicolo è immatricolato fuori da questi 35 paesi (Algeria, Marocco, Tunisia, Turchia, Africa, America…)? Scegli invece l’<frontiere>assicurazione di frontiera</frontiere>.",
       "ctaEstimate": "Stima la mia tariffa in 30 secondi"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Paesi coperti dall’assicurazione di frontiera | TempAssur",
+      "metaDescription": "Veicolo immatricolato fuori dai 35 paesi coperti? L’assicurazione di frontiera ti copre in Francia e in altri 34 paesi. Vedi l’elenco completo.",
+      "heroTitle": "Assicurazione di frontiera: per i veicoli immatricolati all’estero",
+      "intro": "L’<strong>assicurazione di frontiera TempAssur</strong> permette a un <strong>veicolo immatricolato in qualsiasi parte del mondo</strong> (fuori dai 35 paesi coperti) di circolare legalmente in <strong>Francia e in 35 paesi europei</strong>.",
+      "introCard": "Ricevi una <strong>carta internazionale di assicurazione auto</strong> («<strong>carta verde</strong>») da esibire durante i controlli e al passaggio delle frontiere.",
+      "vehiclesHeading": "1. Per quali veicoli?",
+      "vehiclesIntro": "L’assicurazione di frontiera fa per te se il tuo veicolo è <strong>immatricolato in un paese fuori dai 35 paesi coperti</strong>. Accetta immatricolazioni da tutto il mondo, ad esempio:",
+      "vehiclesMaghreb": "<strong>Maghreb</strong>: Algeria, Marocco, Tunisia",
+      "vehiclesBalkans": "<strong>Turchia</strong> e <strong>Balcani</strong>: Albania, Macedonia del Nord, Kosovo, Moldavia…",
+      "vehiclesAfrica": "<strong>Africa</strong>: Senegal, Costa d’Avorio, Mali, Camerun…",
+      "vehiclesWorld": "<strong>Medio Oriente, Asia, America</strong>: Libano, Stati Uniti, Canada…",
+      "europeHeading": "Il tuo veicolo è immatricolato in Francia o in Europa?",
+      "europeBody": "In questo caso non hai bisogno di un’assicurazione di frontiera. Se il tuo veicolo è immatricolato in uno dei 35 paesi qui sotto, scegli l’<temporaire>assicurazione temporanea</temporaire>.",
+      "euHeading": "2. I 27 paesi dell’Unione europea — coperti",
+      "euIntro": "Con la tua assicurazione di frontiera, il tuo veicolo straniero è coperto in <strong>tutti i paesi dell’Unione europea</strong>:",
+      "nonEuHeading": "3. Gli 8 paesi europei fuori dall’Unione europea — coperti",
+      "nonEuIntro": "La tua copertura si estende anche a questi 8 paesi europei:",
+      "partialNote": "* Cipro e Serbia: la copertura è limitata alle zone controllate dal governo ufficiale del paese (non si applica a Cipro del Nord né al Kosovo).",
+      "total": "Totale: 27 + 8 = 35 paesi coperti.",
+      "cardHeading": "Come leggere la tua carta verde?",
+      "cardNotCrossed": "<strong>Casella non barrata</strong>: il paese è coperto.",
+      "cardCrossed": "<strong>Casella barrata con una croce</strong>: il paese non è coperto.",
+      "notCoveredHeading": "4. I paesi non coperti",
+      "notCoveredIntro": "L’assicurazione di frontiera ti copre <strong>solo nei 35 paesi qui sopra</strong>. Non copre la circolazione nel tuo paese di immatricolazione né negli altri paesi fuori da questo elenco, ad esempio:",
+      "notCoveredLocal": "Per la parte del viaggio fuori dai 35 paesi devi avere un’assicurazione locale, stipulata nel tuo paese di immatricolazione o alla frontiera del paese attraversato.",
+      "whenHeading": "Quando sottoscrivere?",
+      "whenBody": "Sottoscrivi la tua assicurazione di frontiera <strong>prima di entrare nel primo paese coperto</strong> del tuo percorso. Arrivi in nave in Francia, Spagna o Italia? La tua assicurazione deve essere valida dallo sbarco.",
+      "whenExample": "<strong>Esempio:</strong> arrivi da Algeri a Marsiglia con un’auto immatricolata in Algeria. La tua assicurazione di frontiera deve iniziare il giorno del tuo arrivo al porto. Ti copre in Francia e in tutti i paesi europei dell’elenco per tutta la sua durata.",
+      "contact": "Hai un dubbio? Contattaci: <email>contact@tempassur.com</email> oppure WhatsApp / telefono al <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Sottoscrivi la mia assicurazione di frontiera"
     },
     "quiSommesNous": {
       "metaTitle": "Chi siamo? Broker di assicurazione temporanea | TempAssur",
@@ -1271,7 +1340,8 @@
       "ctaContact": "Contattaci"
     },
     "contact": {
-      "metaTitle": "Contatta TempAssur  7 giorni su 7 via WhatsApp, telefono o e-mail",
+      "metaTitle": "Contatta TempAssur: WhatsApp, telefono, e-mail",
+      "metaDescription": "Una domanda sulla tua assicurazione temporanea? Il team TempAssur risponde 7 giorni su 7 via WhatsApp, telefono o e-mail, da Clichy, Francia.",
       "heroTitle": "Contattaci  rispondiamo 7 giorni su 7",
       "fastest": "Il più veloce",
       "mapTitle": "TempAssur  WN Conseil su Google Maps",
@@ -1352,6 +1422,11 @@
             "id": "prix-2",
             "question": "Le tariffe DOM-TOM sono le stesse?",
             "answer": "No, differiscono da quelle della Francia metropolitana; vengono visualizzate automaticamente non appena indichi il tuo paese di residenza o immatricolazione. Le opzioni non sono disponibili."
+          },
+          {
+            "id": "prix-3",
+            "question": "Posso pagare in 3 rate?",
+            "answer": "Sì, puoi pagare la tua assicurazione in 3 rate con Klarna. Nella fase di pagamento, scegli Klarna tra i metodi di pagamento proposti, poi segui le istruzioni. Il pagamento in 3 rate è soggetto all’accettazione di Klarna."
           }
         ]
       },

@@ -1,23 +1,16 @@
-// Single source of truth for the country-coverage lists (dossier §1.2). Both the
-// temporary insurance and the "assurance frontière" products share this exact same
-// list — do not duplicate it elsewhere.
-//
-// NOTE (flagged for the client, not silently "fixed"): the dossier states "35 pays
-// couverts" in several places (§1.2, §3.7, §6.9, FAQ) but the country list it also
-// asks to be copy-pasted verbatim actually contains 36 distinct names. Both the "35"
-// wording and the full list below are reproduced exactly as given; see the final
-// punch-list report for this discrepancy rather than a guess at which name to drop.
+// Single source of truth for the country-coverage lists. Both the temporary insurance
+// and the "assurance frontière" products share this exact same list — do not duplicate
+// it elsewhere.
 //
 // Country names are NOT stored here: they're resolved at render time via
 // `getCountryLabel` (Intl.DisplayNames, see lib/countries.ts) from the ISO code, so
 // every locale gets an accurate name for free.
 
-export const COVERED_COUNTRY_CODES: string[] = [
+// Les 27 pays de l'Union européenne.
+export const EU_COUNTRY_CODES: string[] = [
   "DE", // Allemagne
-  "AD", // Andorre
   "AT", // Autriche
   "BE", // Belgique
-  "BA", // Bosnie-Herzégovine
   "BG", // Bulgarie
   "CY", // Chypre
   "HR", // Croatie
@@ -29,27 +22,39 @@ export const COVERED_COUNTRY_CODES: string[] = [
   "GR", // Grèce
   "HU", // Hongrie
   "IE", // Irlande
-  "IS", // Islande
-  "IL", // Israël
   "IT", // Italie
   "LV", // Lettonie
   "LT", // Lituanie
   "LU", // Luxembourg
   "MT", // Malte
-  "ME", // Monténégro
-  "NO", // Norvège
   "NL", // Pays-Bas
   "PL", // Pologne
   "PT", // Portugal
   "CZ", // République tchèque
   "RO", // Roumanie
-  "GB", // Royaume-Uni
-  "RS", // Serbie
   "SK", // Slovaquie
   "SI", // Slovénie
   "SE", // Suède
+]
+
+// Les 8 pays européens hors Union européenne.
+export const NON_EU_COVERED_COUNTRY_CODES: string[] = [
+  "AD", // Andorre
+  "BA", // Bosnie-Herzégovine
+  "IS", // Islande
+  "ME", // Monténégro
+  "NO", // Norvège
+  "GB", // Royaume-Uni
+  "RS", // Serbie
   "CH", // Suisse
 ]
+
+// 27 + 8 = 35 pays couverts.
+export const COVERED_COUNTRY_CODES: string[] = [...EU_COUNTRY_CODES, ...NON_EU_COVERED_COUNTRY_CODES]
+
+// Pays dont la couverture se limite aux zones contrôlées par le gouvernement officiel
+// (astérisque + note sur les pages pays couverts).
+export const PARTIAL_COVERAGE_COUNTRY_CODES: string[] = ["CY", "RS", "AZ"]
 
 export interface ExcludedCountry {
   code: string
@@ -57,7 +62,7 @@ export interface ExcludedCountry {
   extensionEligible: boolean
 }
 
-// 11 pays exclus de la liste des 35/36 pays couverts.
+// 11 pays exclus de la liste des 35 pays couverts.
 export const EXCLUDED_COUNTRIES: ExcludedCountry[] = [
   { code: "AL", extensionEligible: true }, // Albanie
   { code: "AZ", extensionEligible: true }, // Azerbaïdjan

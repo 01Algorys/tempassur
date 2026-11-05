@@ -7,14 +7,15 @@ import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.quiSommesNous")
-  return {
+  return pageMetadata({
+    path: "/qui-sommes-nous",
     title: { absolute: t("metaTitle") },
     description: t("metaDescription"),
-    alternates: { canonical: `${siteConfig.url}/qui-sommes-nous` },
-  }
+  })
 }
 
 export default function QuiSommesNousPage() {

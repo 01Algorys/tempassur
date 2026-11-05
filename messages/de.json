@@ -62,6 +62,7 @@
     "description": "TempAssur  Die Kurzzeitversicherung von 1 bis 90 Tagen, für alle Fahrzeuge. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
     "insuranceHeading": "Unsere Versicherungen",
     "coveredCountries": "Versicherte Länder",
+    "coveredCountriesFrontier": "Versicherte Länder (Grenzversicherung)",
     "informationHeading": "Informationen",
     "quiSommesNous": "Über uns",
     "faq": "FAQ",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Kurzzeitversicherung Auto & alle Fahrzeuge von 1 bis 90 Tagen | TempAssur",
-      "description": "Sofortige Kurzzeitversicherung von 1 bis 90 Tagen: Auto, Lkw, Wohnmobil, Quad, Anhänger, Grenzversicherung. Bescheinigung per E-Mail oder WhatsApp in wenigen Minuten. Ab {price} €/Tag."
+      "title": "Kurzzeitversicherung online, 1 bis 90 Tage | TempAssur",
+      "description": "Sofortige Kurzzeitversicherung von 1 bis 90 Tagen: Auto, Lkw, Wohnmobil, Quad, Anhänger, Grenze. Bescheinigung per E-Mail oder WhatsApp. Ab {price} €/Tag."
     },
     "hero": {
       "title": "Kurzzeitversicherung von 1 bis 90 Tagen  sofortige Bescheinigung per E-Mail oder WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Dauer & Standort",
+      "duration": "Dauer & Fahrzeug",
       "details": "Ihre Angaben",
       "payment": "Zahlung"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "Für ein in diesem Land zugelassenes Fahrzeug müssen Sie eine Grenzversicherung abschließen: die Versicherung für ausländische Fahrzeuge, die in Europa unterwegs sind.",
       "frontierCta": "Grenzversicherung abschließen",
       "residenceMustBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
+      "residenceCpiNotice": "Haben Sie ein vorläufiges WW-Zulassungszertifikat (CPI) beantragt? Bitte wählen Sie Frankreich als Zulassungsland aus.",
+      "residenceCpiPartner": "Noch kein CPI? Unser Partner kümmert sich für Sie darum.",
+      "residenceCpiPartnerCta": "Antrag über unseren Partner stellen",
       "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Fahrzeug",
-      "categorie": "Kategorie *",
-      "categoriePlaceholder": "Wählen Sie eine Kategorie",
       "immatriculation": "Kennzeichen *",
       "marque": "Marke *",
       "marqueNoResults": "Keine Marke gefunden — Sie können einen eigenen Namen eingeben",
@@ -484,6 +486,7 @@
       "edit": "Ändern",
       "note": "Überprüfen Sie oben Ihre Zusammenfassung und geben Sie unten Ihre Zahlungsdaten ein, um Ihren Vertrag sicher abzuschließen.",
       "secureHeading": "Sichere Zahlung",
+      "klarnaNotice": "<strong>Um in 3 Raten zu zahlen</strong>, wählen Sie unten bei den Zahlungsarten Klarna aus.",
       "secureBody": "Geben Sie unten Ihre Kartendaten ein. Ihre Daten werden verschlüsselt und direkt an Stripe übermittelt — sie laufen nie über unsere Server.",
       "securePoweredBy": "Gesichert durch Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Zone Überseegebiete (DOM-TOM)",
       "selectDuration": "Wählen Sie eine Dauer, um den Tarif anzuzeigen.",
       "totalToPay": "Zu zahlender Gesamtbetrag",
+      "installments": "<strong>Zahlen Sie in 3 Raten</strong> mit Klarna, vorbehaltlich der Annahme.",
       "securePayment": "Sichere Zahlung, sofortiger Versicherungsbeginn.",
       "durationValue": "{count, plural, one {# Tag} other {# Tage}}",
       "noValue": ""
@@ -561,7 +565,7 @@
       "durationsAvailable": "Verfügbare Dauern: {durations} Tag{plural}"
     },
     "automobiles": {
-      "title": "Kurzzeit-Autoversicherung 1 bis 90 Tage ab [PRIX] €/Tag | TempAssur",
+      "title": "Kurzzeit-Autoversicherung ab [PRIX] €/Tag | TempAssur",
       "metaDescription": "Versichern Sie ein Auto oder Nutzfahrzeug für 1 bis 90 Tage. Online-Abschluss in 5 Minuten, sofortige Bescheinigung per E-Mail oder WhatsApp. Ab [PRIX] €/Tag.",
       "h1": "Kurzzeit-Autoversicherung von 1 bis 90 Tagen",
       "intro": "Müssen Sie ein Auto oder Nutzfahrzeug unter 3,5 Tonnen für ein paar Tage versichern? Die Kurzzeit-Autoversicherung von TempAssur deckt Sie von 1 bis 90 Tagen ab, ohne Verpflichtung und ohne stillschweigende Verlängerung. Abschluss zu 100 % online in 5 Minuten, Bescheinigung sofort per E-Mail oder WhatsApp zugesandt.",
@@ -675,7 +679,7 @@
       ]
     },
     "quadricycles": {
-      "title": "Kurzzeitversicherung für Quad, führerscheinfreies Kleinfahrzeug, Buggy | TempAssur",
+      "title": "Kurzzeitversicherung Quad und Buggy | TempAssur",
       "metaDescription": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Kurzzeitversicherung online, Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeitversicherung für Quadricycles: Quad, Kleinfahrzeug, Buggy",
       "intro": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Versichern Sie Ihr Quadricycle für genau die Dauer, die Sie benötigen. Der angezeigte Einstiegspreis entspricht dem günstigsten Untertyp; der genaue Tarif wird beim Abschluss an Ihr Fahrzeug angepasst.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Kurzzeitversicherung für landwirtschaftliche Traktoren ab [PRIX] €/Tag | TempAssur",
+      "title": "Kurzzeitversicherung Traktor ab [PRIX] €/Tag | TempAssur",
       "metaDescription": "Ernte, Überführung, Kauf: Kurzzeitversicherung für landwirtschaftliche Traktoren online, Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeitversicherung für landwirtschaftliche Traktoren",
       "intro": "Ernte, Überführung, Kauf oder Verkauf: Versichern Sie Ihren Traktor oder Ihre landwirtschaftliche Maschine für einige Tage, ohne Jahresverpflichtung. Online-Abschluss, Bescheinigung per E-Mail oder WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Kurzzeitversicherung für Anhänger, Sattelanhänger, Wohnwagen | TempAssur",
+      "title": "Kurzzeitversicherung Anhänger, Wohnwagen | TempAssur",
       "metaDescription": "Anhänger, Sattelanhänger oder Wohnwagen: Kurzzeitversicherung ab 750 kg gesetzlich vorgeschrieben. Sofortiger Online-Abschluss.",
       "h1": "Kurzzeitversicherung für Anhänger, Sattelanhänger und Wohnwagen",
       "intro": "Leichter oder schwerer Anhänger, Sattelanhänger, Wohnwagen: Ab einem zulässigen Gesamtgewicht von 750 kg ist eine eigene Haftpflichtversicherung obligatorisch  die des Zugfahrzeugs reicht nicht mehr aus. Versichern Sie Ihren Anhänger für eine Überführungsfahrt, einen Kauf oder eine einmalige Fahrt.",
@@ -781,8 +785,8 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Grenzversicherung: mit einem ausländischen Fahrzeug in Frankreich und Europa fahren | TempAssur",
-      "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und in 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
+      "title": "Grenzversicherung für ausländische Fahrzeuge | TempAssur",
+      "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
       "h1": "Grenzversicherung  um in Frankreich und Europa zu fahren",
       "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen  oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage  Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "An Reisende, die mit ihrem Fahrzeug nach Europa kommen (Maghreb, Balkanländer außerhalb der Grünen Karte, Naher Osten, Amerika...), an im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie an Fahrzeuge im Transit oder in der Einfuhr.",
@@ -1208,10 +1212,23 @@
       "title": "Ihr Antrag auf Vertragsabschluss",
       "description": "Der Preis wird bei jedem Schritt neu berechnet und bleibt dauerhaft im nebenstehenden Kasten angezeigt. Der Preis der Optionen hängt von der Dauer ab.",
       "guaranteesHeading": "Leistungen und versicherte Länder",
-      "guaranteesParagraph": "Alle unsere Kurzzeitversicherungen umfassen die Haftpflichtversicherung (obligatorisch) sowie den strafrechtlichen Beistand und Regress nach einem Unfall. Nur für Autos gibt es Optionen: Fahrerschutz, Länder-Erweiterung, Assistance-Leistung (in den Überseegebieten DOM-TOM nicht verfügbar).",
-      "coverageParagraph": "Sie sind in Frankreich und in {count} Ländern Europas und des Mittelmeerraums versichert, die gleiche Liste für alle unsere Kurzzeitversicherungen und die Grenzversicherung.",
-      "coverageVariationNotice": "Die Deckung bestimmter Länder kann je nach Gesellschaft, Fahrzeug, Dauer und gewählten Optionen variieren. Möchten Sie in einem nicht aufgeführten Land fahren? Kontaktieren Sie uns: WhatsApp / Tel. +33 6 05 93 84 79.",
+      "includesIntro": "Alle unsere Kurzzeitversicherungen umfassen:",
+      "includesLiability": "die Haftpflichtversicherung, die für das legale Fahren auf öffentlichen Straßen vorgeschrieben ist;",
+      "includesDefence": "strafrechtlichen Beistand und Regress nach einem Unfall.",
+      "optionsParagraph": "Nur für Automobile können Sie Optionen hinzufügen: Fahrerschutz, Länder-Erweiterung, Assistance-Leistung. Diese Optionen sind freiwillig, Sie müssen sie nicht auswählen.",
+      "coverageParagraph": "Sie sind in Frankreich und 34 weiteren Ländern Europas versichert, also in 35 Ländern.",
+      "extensionParagraph": "Mit der Option Länder-Erweiterung (nur Automobile unter 3,5 Tonnen) sind Sie auch in Marokko, Tunesien, der Türkei, Albanien, Nordmazedonien, Moldau und Aserbaidschan versichert, also in insgesamt 42 Ländern.",
+      "contact": "Noch Fragen? WhatsApp / Tel. <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "Die vollständige Liste der versicherten Länder ansehen →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Grenzversicherung online abschließen",
+      "metaDescription": "Schließen Sie online Ihre Grenzversicherung für ein außerhalb Europas zugelassenes Fahrzeug ab: Frankreich und 34 weitere Länder, sichere Zahlung.",
+      "audience": "Die Grenzversicherung richtet sich an Fahrzeuge, die außerhalb Europas zugelassen sind, überall auf der Welt (Algerien, Marokko, Tunesien, Türkei, Afrika, Amerika…).",
+      "includesIntro": "Sie umfasst:",
+      "coverageParagraph": "Ihr Fahrzeug ist ab Ihrer Ankunft in Europa in Frankreich und 34 weiteren Ländern Europas versichert, also in 35 Ländern.",
+      "temporaireNote": "Ist Ihr Fahrzeug in Frankreich oder Europa zugelassen? Wählen Sie stattdessen unsere Kurzzeitversicherung.",
+      "coveredCountriesCta": "Die von der Grenzversicherung abgedeckten Länder ansehen →"
     },
     "merci": {
       "metaTitle": "Vielen Dank für Ihr Vertrauen",
@@ -1231,18 +1248,70 @@
       "contactPrompt": "Oder schreiben Sie uns per WhatsApp:"
     },
     "paysCouverts": {
-      "metaTitle": "Von Ihrer Kurzzeit- und Grenzversicherung versicherte Länder | TempAssur",
-      "metaDescription": "Die vollständige Liste der 35 Länder, die von unseren Kurzzeit- und Grenzversicherungen abgedeckt werden, sowie die 7 mit der Erweiterungsoption zugänglichen Länder.",
-      "heroTitle": "In welchen Ländern sind Sie versichert?",
-      "intro": "Gute Nachricht: Unsere Kurzzeitversicherungen und unsere Grenzversicherung decken die gleiche Liste von 35 Ländern ab. Nur eine Liste zu merken, unabhängig von Ihrem Vertrag.",
-      "coveredHeading": "Die 35 versicherten Länder",
-      "assimilatedNote": "Monaco, San Marino und Liechtenstein sind gleichgestellt (Frankreich / Italien / Schweiz).",
-      "extensionHeading": "Möchten Sie weiter gehen? Die Option Fahrerweiterung",
-      "extensionParagraph": "Nur für Autos (außer Überseegebiete DOM-TOM) eröffnet die Erweiterungsoption 7 zusätzliche Länder: {countries}. Ihr Preis hängt von der Vertragsdauer ab.",
-      "neverCoveredHeading": "Niemals versichert, unabhängig von der Option",
-      "coverageVariationNotice": "Die Deckung bestimmter Länder kann je nach Gesellschaft, Fahrzeug, Dauer und gewählten Optionen variieren. Möchten Sie in einem nicht aufgeführten Land fahren? Kontaktieren Sie uns: WhatsApp / Tel. +33 6 05 93 84 79.",
-      "internationalCardNote": "Die mit Ihrem Vertrag ausgehändigte internationale Versicherungskarte ist maßgeblich.",
+      "metaTitle": "Länder der Kurzzeitversicherung | TempAssur",
+      "metaDescription": "Ihre Kurzzeitversicherung gilt in 35 Ländern, mit der Gebietserweiterung in bis zu 42. Vollständige Liste und so lesen Sie Ihre Grüne Karte.",
+      "heroTitle": "Kurzzeitversicherung: Wo dürfen Sie fahren?",
+      "introCard": "Mit der <strong>Kurzzeit-Kfz-Versicherung von TempAssur</strong> erhalten Sie eine <strong>internationale Kfz-Versicherungskarte</strong>, auch „<strong>Grüne Karte</strong>“ genannt. Dieses Dokument weist nach, dass Ihr Fahrzeug versichert ist, in Frankreich wie im Ausland.",
+      "introCoverage": "Sie gilt in <strong>35 Ländern</strong> und mit der Gebietserweiterung in bis zu <strong>42 Ländern</strong>.",
+      "cardHeading": "Wie lesen Sie Ihre Grüne Karte?",
+      "cardIntro": "Unten auf Ihrer Karte befindet sich eine Tabelle mit den Kennzeichen der einzelnen Länder (F für Frankreich, E für Spanien, I für Italien…).",
+      "cardNotCrossed": "<strong>Feld nicht durchgestrichen</strong>: Das Land ist abgedeckt.",
+      "cardCrossed": "<strong>Feld durchgestrichen</strong>: Das Land ist nicht abgedeckt.",
+      "cardLocalRules": "In jedem abgedeckten Land entspricht Ihre Versicherung den dortigen Vorschriften zur Pflichtversicherung. Bei einem Unfall übernimmt das örtliche Grüne-Karte-Büro.",
+      "euHeading": "1. Die 27 Länder der Europäischen Union — abgedeckt",
+      "euIntro": "Ihre Kurzzeitversicherung gilt in <strong>allen Ländern der Europäischen Union</strong>. Sie können die Grenzen frei überqueren, Ihre Grüne Karte genügt.",
+      "nonEuHeading": "2. Die 8 europäischen Länder außerhalb der EU — abgedeckt",
+      "nonEuIntro": "Ihr Versicherungsschutz erstreckt sich auch auf <strong>8 europäische Länder, die nicht zur Europäischen Union gehören</strong>, aber am Grüne-Karte-System teilnehmen:",
+      "nonEuCustoms": "An den Grenzen dieser Länder sind Zollkontrollen möglich: Halten Sie Ihre Grüne Karte griffbereit.",
+      "partialNote": "* Zypern und Serbien: Der Versicherungsschutz beschränkt sich auf die von der offiziellen Regierung des Landes kontrollierten Gebiete (er gilt nicht für Nordzypern und den Kosovo).",
+      "total": "Insgesamt: 27 + 8 = 35 abgedeckte Länder.",
+      "extensionHeading": "3. Die 7 Länder der Gebietserweiterung — optional",
+      "extensionIntro": "Sie fahren nach <strong>Marokko</strong>, <strong>Tunesien</strong>, in die <strong>Türkei</strong> oder auf den Balkan? Für <strong>Fahrzeuge unter 3,5 Tonnen</strong> können Sie die <strong>Gebietserweiterung</strong> hinzufügen, die 7 weitere Länder abdeckt:",
+      "extensionWithout": "<strong>Ohne die Erweiterung</strong>: Diese 7 Länder sind auf Ihrer Grünen Karte durchgestrichen und Sie sind dort nicht versichert.",
+      "extensionWith": "<strong>Mit der Erweiterung</strong>: Diese 7 Länder sind auf Ihrer Grünen Karte nicht durchgestrichen. Sie sind in <strong>42 Ländern</strong> versichert.",
+      "azerbaijanNote": "* Aserbaidschan: Der Versicherungsschutz beschränkt sich auf die von der Regierung der Republik Aserbaidschan kontrollierten Gebiete.",
+      "neverHeading": "4. Die 4 Länder, die nie abgedeckt sind",
+      "neverIntro": "Keine Kurzzeitversicherung kann Sie in diesen Ländern abdecken, auch nicht mit der Erweiterung:",
+      "neverSuspended": "<strong>{countries}</strong>: Das Grüne-Karte-System ist dort ausgesetzt. Kein europäischer Versicherer kann dort Versicherungsschutz gewähren.",
+      "neverUkraine": "<strong>{country}</strong>: Die Versicherer schließen das Land wegen des Krieges aus.",
+      "adviceHeading": "Vor der Abreise: Prüfen Sie Ihre gesamte Strecke",
+      "adviceBody": "Prüfen Sie, ob <strong>alle Länder, die Sie durchqueren werden</strong>, abgedeckt sind, auch die reinen Transitländer. Ist auch nur ein Land auf Ihrer Strecke nicht abgedeckt, müssen Sie möglicherweise vor Ort eine Grenzversicherung bezahlen.",
+      "adviceExample": "<strong>Beispiel:</strong> Auf der Fahrt von Paris nach Tanger durchqueren Sie Frankreich und Spanien (abgedeckt) und dann Marokko (mit der Erweiterung abgedeckt). Denken Sie also daran, die Erweiterung hinzuzufügen.",
+      "contact": "Noch Fragen? Kontaktieren Sie uns: <email>contact@tempassur.com</email> oder per WhatsApp / Telefon unter <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "Ist Ihr Fahrzeug außerhalb dieser 35 Länder zugelassen (Algerien, Marokko, Tunesien, Türkei, Afrika, Amerika…)? Wählen Sie stattdessen die <frontiere>Grenzversicherung</frontiere>.",
       "ctaEstimate": "Meinen Tarif in 30 Sekunden schätzen"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Länder der Grenzversicherung | TempAssur",
+      "metaDescription": "Fahrzeug außerhalb der 35 abgedeckten Länder zugelassen? Die Grenzversicherung gilt in Frankreich und 34 weiteren Ländern. Zur vollständigen Liste.",
+      "heroTitle": "Grenzversicherung: für im Ausland zugelassene Fahrzeuge",
+      "intro": "Mit der <strong>Grenzversicherung von TempAssur</strong> darf ein <strong>überall auf der Welt zugelassenes Fahrzeug</strong> (außerhalb der 35 abgedeckten Länder) legal in <strong>Frankreich und 35 europäischen Ländern</strong> fahren.",
+      "introCard": "Sie erhalten eine <strong>internationale Kfz-Versicherungskarte</strong> („<strong>Grüne Karte</strong>“), die Sie bei Kontrollen und beim Grenzübertritt vorzeigen.",
+      "vehiclesHeading": "1. Für welche Fahrzeuge?",
+      "vehiclesIntro": "Die Grenzversicherung ist das Richtige für Sie, wenn Ihr Fahrzeug <strong>in einem Land außerhalb der 35 abgedeckten Länder zugelassen ist</strong>. Sie akzeptiert Zulassungen aus der ganzen Welt, zum Beispiel:",
+      "vehiclesMaghreb": "<strong>Maghreb</strong>: Algerien, Marokko, Tunesien",
+      "vehiclesBalkans": "<strong>Türkei</strong> und <strong>Balkan</strong>: Albanien, Nordmazedonien, Kosovo, Moldau…",
+      "vehiclesAfrica": "<strong>Afrika</strong>: Senegal, Elfenbeinküste, Mali, Kamerun…",
+      "vehiclesWorld": "<strong>Naher Osten, Asien, Amerika</strong>: Libanon, Vereinigte Staaten, Kanada…",
+      "europeHeading": "Ist Ihr Fahrzeug in Frankreich oder Europa zugelassen?",
+      "europeBody": "In diesem Fall benötigen Sie keine Grenzversicherung. Ist Ihr Fahrzeug in einem der 35 unten genannten Länder zugelassen, wählen Sie die <temporaire>Kurzzeitversicherung</temporaire>.",
+      "euHeading": "2. Die 27 Länder der Europäischen Union — abgedeckt",
+      "euIntro": "Mit Ihrer Grenzversicherung ist Ihr ausländisches Fahrzeug in <strong>allen Ländern der Europäischen Union</strong> abgedeckt:",
+      "nonEuHeading": "3. Die 8 europäischen Länder außerhalb der EU — abgedeckt",
+      "nonEuIntro": "Ihr Versicherungsschutz erstreckt sich auch auf diese 8 europäischen Länder:",
+      "partialNote": "* Zypern und Serbien: Der Versicherungsschutz beschränkt sich auf die von der offiziellen Regierung des Landes kontrollierten Gebiete (er gilt nicht für Nordzypern und den Kosovo).",
+      "total": "Insgesamt: 27 + 8 = 35 abgedeckte Länder.",
+      "cardHeading": "Wie lesen Sie Ihre Grüne Karte?",
+      "cardNotCrossed": "<strong>Feld nicht durchgestrichen</strong>: Das Land ist abgedeckt.",
+      "cardCrossed": "<strong>Feld durchgestrichen</strong>: Das Land ist nicht abgedeckt.",
+      "notCoveredHeading": "4. Nicht abgedeckte Länder",
+      "notCoveredIntro": "Die Grenzversicherung gilt <strong>nur in den 35 oben genannten Ländern</strong>. Sie gilt nicht in Ihrem Zulassungsland und nicht in anderen Ländern außerhalb dieser Liste, zum Beispiel:",
+      "notCoveredLocal": "Für den Teil Ihrer Strecke außerhalb der 35 Länder benötigen Sie eine lokale Versicherung, die Sie in Ihrem Zulassungsland oder an der Grenze des durchquerten Landes abschließen.",
+      "whenHeading": "Wann abschließen?",
+      "whenBody": "Schließen Sie Ihre Grenzversicherung ab, <strong>bevor Sie in das erste abgedeckte Land</strong> Ihrer Strecke einreisen. Sie kommen per Schiff in Frankreich, Spanien oder Italien an? Ihre Versicherung muss ab der Ausschiffung gültig sein.",
+      "whenExample": "<strong>Beispiel:</strong> Sie reisen mit einem in Algerien zugelassenen Auto von Algier nach Marseille. Ihre Grenzversicherung muss am Tag Ihrer Ankunft im Hafen beginnen. Sie gilt während der gesamten Laufzeit in Frankreich und in allen europäischen Ländern der Liste.",
+      "contact": "Noch Fragen? Kontaktieren Sie uns: <email>contact@tempassur.com</email> oder per WhatsApp / Telefon unter <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Meine Grenzversicherung abschließen"
     },
     "quiSommesNous": {
       "metaTitle": "Über uns  Makler für Kurzzeitversicherungen | TempAssur",
@@ -1271,7 +1340,8 @@
       "ctaContact": "Kontaktieren Sie uns"
     },
     "contact": {
-      "metaTitle": "Kontaktieren Sie TempAssur  7 Tage die Woche per WhatsApp, Telefon oder E-Mail",
+      "metaTitle": "TempAssur kontaktieren: WhatsApp, Telefon, E-Mail",
+      "metaDescription": "Eine Frage zu Ihrer Kurzzeitversicherung? Das TempAssur-Team antwortet 7 Tage die Woche per WhatsApp, Telefon oder E-Mail aus Clichy, Frankreich.",
       "heroTitle": "Kontaktieren Sie uns  wir antworten an 7 Tagen die Woche",
       "fastest": "Am schnellsten",
       "mapTitle": "TempAssur  WN Conseil auf Google Maps",
@@ -1352,6 +1422,11 @@
             "id": "prix-2",
             "question": "Sind die Tarife für die Überseegebiete (DOM-TOM) dieselben?",
             "answer": "Nein, sie unterscheiden sich vom Mutterland; sie werden automatisch angezeigt, sobald Sie Ihr Wohnsitz- oder Zulassungsland angeben. Die Optionen sind dort nicht verfügbar."
+          },
+          {
+            "id": "prix-3",
+            "question": "Kann ich in 3 Raten zahlen?",
+            "answer": "Ja, Sie können Ihre Versicherung mit Klarna in 3 Raten bezahlen. Wählen Sie beim Zahlungsschritt Klarna aus den angebotenen Zahlungsarten aus und folgen Sie den Anweisungen. Die Zahlung in 3 Raten setzt die Annahme durch Klarna voraus."
           }
         ]
       },

@@ -35,8 +35,8 @@ const nextConfig: NextConfig = {
       // Anciennes URLs WordPress (tempassur.com), dossier §8.
       { source: "/souscription/", destination: "/souscription", permanent: true },
       { source: "/qui-sommes-nous/", destination: "/qui-sommes-nous", permanent: true },
-      { source: "/contactez-nous/", destination: "/contact", permanent: true },
-      { source: "/nos-garanties/", destination: "/assurance-temporaire-automobile", permanent: true },
+      { source: "/contactez-nous", destination: "/contact", permanent: true },
+      { source: "/nos-garanties", destination: "/assurance-temporaire-automobile", permanent: true },
     ]
   },
 };

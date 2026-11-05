@@ -9,16 +9,16 @@ import { HowItWorks } from "@/components/sections/how-it-works"
 import { CoveredCountriesSummary } from "@/components/sections/covered-countries-summary"
 import { Reviews } from "@/components/sections/reviews"
 import { Faq } from "@/components/sections/faq"
-import { siteConfig } from "@/lib/site"
 import { getMinPrice } from "@/lib/pricing"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("home.meta")
-  return {
-    title: t("title"),
+  return pageMetadata({
+    path: "",
+    title: { absolute: t("title") },
     description: t("description", { price: getMinPrice("automobiles") }),
-    alternates: { canonical: siteConfig.url },
-  }
+  })
 }
 
 export default function Home() {

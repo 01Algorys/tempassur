@@ -37,16 +37,6 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
-const OPENGRAPH_LOCALES: Record<Locale, string> = {
-  fr: "fr_FR",
-  en: "en_US",
-  ar: "ar",
-  de: "de_DE",
-  it: "it_IT",
-  ro: "ro_RO",
-  es: "es_ES",
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -58,9 +48,6 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   applicationName: siteConfig.name,
-  alternates: {
-    canonical: siteConfig.url,
-  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -95,8 +82,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
   name: siteConfig.name,
+  legalName: siteConfig.legalName,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/opengraph-image`,
+  logo: `${siteConfig.url}/tempassur-logo.png`,
+  image: `${siteConfig.url}/tempassur-logo.png`,
+  identifier: { "@type": "PropertyValue", name: "ORIAS", value: siteConfig.orias },
   description: siteConfig.description,
   email: siteConfig.email,
   telephone: siteConfig.phone,
@@ -138,7 +128,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...jsonLd, inLanguage: OPENGRAPH_LOCALES[locale as Locale] }) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...jsonLd, inLanguage: locale }) }}
         />
         <NextIntlClientProvider>
           <Header />

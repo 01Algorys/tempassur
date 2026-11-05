@@ -55,8 +55,16 @@ export const COUNTRIES: Country[] = [
 
 const displayNamesCache = new Map<string, Intl.DisplayNames>()
 
+// Intl.DisplayNames names that differ from the wording used on the site.
+const LABEL_OVERRIDES: Record<string, Record<string, string>> = {
+  fr: { CZ: "République tchèque" },
+}
+
 export function getCountryLabel(code: string, locale: string, otherLabel: string): string {
   if (code === "OTHER") return otherLabel
+
+  const override = LABEL_OVERRIDES[locale]?.[code]
+  if (override) return override
 
   let displayNames = displayNamesCache.get(locale)
   if (!displayNames) {

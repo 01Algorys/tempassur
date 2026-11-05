@@ -8,6 +8,8 @@ import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { PRODUCT_ROUTES } from "@/lib/constants"
 import { BLOG_ARTICLES, BLOG_ARTICLE_SLUGS, type BlogBlock } from "@/lib/blog-content"
+import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
 
 interface ArticlePageProps {
@@ -25,11 +27,11 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   const t = await getTranslations("blog.articles")
 
-  return {
-    title: t(`${slug}.title`),
+  return pageMetadata({
+    path: `/blog/${article.slug}`,
+    title: t.has(`${slug}.seoTitle`) ? t(`${slug}.seoTitle`) : t(`${slug}.title`),
     description: t(`${slug}.metaDescription`),
-    alternates: { canonical: `${siteConfig.url}/blog/${article.slug}` },
-  }
+  })
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
@@ -40,22 +42,40 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const t = await getTranslations("blog.articles")
   const tUi = await getTranslations("blog.articleUi")
   const tVehicles = await getTranslations("vehicleTypes")
+  const tNav = await getTranslations("nav")
   const locale = await getLocale()
 
   const title = t(`${slug}.title`)
   const body = t.raw(`${slug}.body`) as BlogBlock[]
 
+  const articleUrl = localizedUrl(`/blog/${article.slug}`, locale)
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
+    description: t(`${slug}.metaDescription`),
+    inLanguage: locale,
+    mainEntityOfPage: articleUrl,
     datePublished: article.date,
-    author: { "@type": "Organization", name: "TempAssur" },
+    author: { "@type": "Organization", name: "TempAssur", url: siteConfig.url },
+    publisher: {
+      "@type": "Organization",
+      name: "TempAssur",
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/tempassur-logo.png` },
+    },
   }
+
+  const breadcrumb = breadcrumbJsonLd([
+    { name: tNav("accueil"), url: localizedUrl("", locale) },
+    { name: tNav("blog"), url: localizedUrl("/blog", locale) },
+    { name: title, url: articleUrl },
+  ])
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <section className="section-y">
         <Container className="mx-auto max-w-2xl">
           <p className="text-xs font-semibold text-muted-foreground">

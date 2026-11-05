@@ -14,6 +14,8 @@ import {
 import { SubscriptionWizard } from "@/components/forms/subscription/subscription-wizard"
 import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
 import { PRODUCT_RELATIONS } from "@/lib/product-content"
+import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
+import { siteConfig } from "@/lib/site"
 import { fillPricePlaceholders, getAvailableDurations, getMinPrice } from "@/lib/pricing"
 import { whatsappQuoteMessage } from "@/lib/site"
 import type { VehicleSlug } from "@/types"
@@ -38,6 +40,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
   const t = useTranslations("product")
   const tSection = useTranslations("product.sectionHeadings")
   const tVehicles = useTranslations("vehicleTypes")
+  const tNav = useTranslations("nav")
   const locale = useLocale()
   const currency = new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
 
@@ -59,6 +62,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
     answer: fillPricePlaceholders(item.answer, slug),
   }))
   const relatedProducts = PRODUCT_RELATIONS[slug]
+  const coveredCountriesHref = slug === "assurance-frontiere" ? "/pays-couverts-frontiere" : "/pays-couverts"
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -70,26 +74,38 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
     })),
   }
 
+  const pageUrl = localizedUrl(PRODUCT_ROUTES[slug], locale)
+
+  // `price` is the cheapest contract of the category, not a daily rate: the frontière
+  // product starts at a 30-day contract.
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
+    name: h1,
     serviceType: h1,
-    provider: { "@type": "InsuranceAgency", name: "TempAssur" },
+    url: pageUrl,
+    provider: { "@type": "InsuranceAgency", name: "TempAssur", url: siteConfig.url },
     offers: {
       "@type": "Offer",
+      url: pageUrl,
       priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price,
+        "@type": "PriceSpecification",
+        minPrice: price,
         priceCurrency: "EUR",
-        unitText: "DAY",
       },
     },
   }
+
+  const breadcrumb = breadcrumbJsonLd([
+    { name: tNav("accueil"), url: localizedUrl("", locale) },
+    { name: vehicleLabel, url: pageUrl },
+  ])
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
       <section className="section-y pb-10">
         <Container className="mx-auto max-w-3xl text-center">
@@ -143,7 +159,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
         <Container className="mx-auto max-w-3xl">
           <h2 className="text-xl font-bold text-navy">{tSection("whereCoveredHeading")}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{whereCovered}</p>
-          <Link href="/pays-couverts" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
+          <Link href={coveredCountriesHref} className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
             {tSection("coveredCountriesCta")}
           </Link>
         </Container>
@@ -206,7 +222,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
               </li>
             ))}
             <li>
-              <Link href="/pays-couverts" className="text-sm font-semibold text-primary hover:underline">
+              <Link href={coveredCountriesHref} className="text-sm font-semibold text-primary hover:underline">
                 {tSection("coveredCountriesLink")}
               </Link>
             </li>

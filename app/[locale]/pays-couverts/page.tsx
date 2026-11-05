@@ -1,27 +1,38 @@
 import type { Metadata } from "next"
+import type { ReactNode } from "react"
 import { getTranslations } from "next-intl/server"
 import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 
+import {
+  CountryGrid,
+  CountryInlineList,
+  CoverageCallout,
+  CoverageList,
+  CoverageNote,
+  CoverageSection,
+  CoverageText,
+  coverageRichTags,
+} from "@/components/coverage/coverage-ui"
 import { Container } from "@/components/shared/container"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import {
-  COVERED_COUNTRY_CODES,
+  EU_COUNTRY_CODES,
   EXTENSION_COUNTRY_CODES,
   NEVER_COVERED_COUNTRY_CODES,
-  countryFlag,
+  NON_EU_COVERED_COUNTRY_CODES,
 } from "@/lib/covered-countries"
 import { getCountryLabel } from "@/lib/countries"
-import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.paysCouverts")
-  return {
+  return pageMetadata({
+    path: "/pays-couverts",
     title: { absolute: t("metaTitle") },
     description: t("metaDescription"),
-    alternates: { canonical: `${siteConfig.url}/pays-couverts` },
-  }
+  })
 }
 
 export default function PaysCouvertsPage() {
@@ -30,12 +41,20 @@ export default function PaysCouvertsPage() {
   const locale = useLocale()
   const otherLabel = tCommon("otherCountry")
 
-  const extensionCountries = EXTENSION_COUNTRY_CODES.map((code) => getCountryLabel(code, locale, otherLabel)).join(
-    " · ",
-  )
-  const neverCoveredCountries = NEVER_COVERED_COUNTRY_CODES.map((code) =>
-    getCountryLabel(code, locale, otherLabel),
-  ).join(" · ")
+  const suspendedCountries = NEVER_COVERED_COUNTRY_CODES.filter((code) => code !== "UA")
+    .map((code) => getCountryLabel(code, locale, otherLabel))
+    .sort((a, b) => a.localeCompare(b, locale))
+    .join(", ")
+  const ukraine = getCountryLabel("UA", locale, otherLabel)
+
+  const rich = {
+    ...coverageRichTags,
+    frontiere: (chunks: ReactNode) => (
+      <Link href="/pays-couverts-frontiere" className="font-semibold text-primary hover:underline">
+        {chunks}
+      </Link>
+    ),
+  }
 
   return (
     <section className="section-y">
@@ -43,35 +62,61 @@ export default function PaysCouvertsPage() {
         <h1 className="text-balance text-center text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
           {t("heroTitle")}
         </h1>
-        <p className="mt-4 text-balance text-center leading-relaxed text-muted-foreground">{t("intro")}</p>
+        <p className="mt-4 text-balance text-center leading-relaxed text-muted-foreground">
+          {t.rich("introCard", rich)}
+        </p>
+        <p className="mt-3 text-balance text-center leading-relaxed text-muted-foreground">
+          {t.rich("introCoverage", rich)}
+        </p>
 
-        <div className="mt-10">
-          <h2 className="text-xl font-bold text-navy">{t("coveredHeading")}</h2>
-          <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm text-foreground/80 sm:grid-cols-3">
-            {COVERED_COUNTRY_CODES.map((code) => (
-              <li key={code} className="flex items-center gap-2">
-                <span>{countryFlag(code)}</span>
-                {getCountryLabel(code, locale, otherLabel)}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3 text-xs text-muted-foreground italic">{t("assimilatedNote")}</p>
-        </div>
+        <CoverageCallout heading={t("cardHeading")}>
+          <CoverageText>{t("cardIntro")}</CoverageText>
+          <CoverageList>
+            <li>{t.rich("cardNotCrossed", rich)}</li>
+            <li>{t.rich("cardCrossed", rich)}</li>
+          </CoverageList>
+          <CoverageText>{t("cardLocalRules")}</CoverageText>
+        </CoverageCallout>
 
-        <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
-          <h2 className="text-xl font-bold text-navy">{t("extensionHeading")}</h2>
-          <p className="mt-3 leading-relaxed text-muted-foreground">
-            {t("extensionParagraph", { countries: extensionCountries })}
-          </p>
-        </div>
+        <CoverageSection heading={t("euHeading")}>
+          <CoverageText>{t.rich("euIntro", rich)}</CoverageText>
+          <CountryGrid codes={EU_COUNTRY_CODES} />
+        </CoverageSection>
 
-        <div className="mt-10 rounded-2xl border border-destructive/30 bg-destructive/5 p-6">
-          <h2 className="text-xl font-bold text-navy">{t("neverCoveredHeading")}</h2>
-          <p className="mt-3 leading-relaxed font-semibold text-destructive">{neverCoveredCountries}</p>
-        </div>
+        <CoverageSection heading={t("nonEuHeading")}>
+          <CoverageText>{t.rich("nonEuIntro", rich)}</CoverageText>
+          <CountryGrid codes={NON_EU_COVERED_COUNTRY_CODES} />
+          <CoverageText>{t("nonEuCustoms")}</CoverageText>
+          <CoverageNote>{t("partialNote")}</CoverageNote>
+          <p className="mt-4 font-bold text-navy">{t("total")}</p>
+        </CoverageSection>
 
-        <p className="mt-8 text-sm leading-relaxed text-muted-foreground">{t("coverageVariationNotice")}</p>
-        <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">{t("internationalCardNote")}</p>
+        <CoverageCallout heading={t("extensionHeading")}>
+          <CoverageText>{t.rich("extensionIntro", rich)}</CoverageText>
+          <CountryGrid codes={EXTENSION_COUNTRY_CODES} />
+          <CoverageList>
+            <li>{t.rich("extensionWithout", rich)}</li>
+            <li>{t.rich("extensionWith", rich)}</li>
+          </CoverageList>
+          <CoverageNote>{t("azerbaijanNote")}</CoverageNote>
+        </CoverageCallout>
+
+        <CoverageCallout heading={t("neverHeading")} tone="danger">
+          <CoverageText>{t("neverIntro")}</CoverageText>
+          <CountryInlineList codes={NEVER_COVERED_COUNTRY_CODES} className="text-destructive" />
+          <CoverageList>
+            <li>{t.rich("neverSuspended", { ...rich, countries: suspendedCountries })}</li>
+            <li>{t.rich("neverUkraine", { ...rich, country: ukraine })}</li>
+          </CoverageList>
+        </CoverageCallout>
+
+        <CoverageCallout heading={t("adviceHeading")}>
+          <CoverageText>{t.rich("adviceBody", rich)}</CoverageText>
+          <CoverageText>{t.rich("adviceExample", rich)}</CoverageText>
+          <CoverageText>{t.rich("contact", rich)}</CoverageText>
+        </CoverageCallout>
+
+        <p className="mt-8 text-sm italic leading-relaxed text-muted-foreground">{t.rich("frontierReferral", rich)}</p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Button asChild size="lg" variant="cta" className="rounded-full">

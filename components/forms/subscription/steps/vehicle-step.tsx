@@ -3,21 +3,14 @@
 import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
-import { Combobox } from "@/components/ui/combobox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { EXCLUDED_DRIVER_GUARANTEE_MAKES } from "@/lib/car-makes"
-import { VEHICLE_TYPES } from "@/lib/constants"
-import { getPreselectedDuration } from "@/lib/pricing"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { EuDateInput } from "../eu-date-input"
 
 const fieldClass = "h-11 rounded-lg"
-const triggerClass = "h-11 w-full rounded-lg"
-const MARQUE_MIN_CHARS = 4
 
 interface VehicleStepProps {
   form: UseFormReturn<SubscriptionFormValues>
@@ -25,7 +18,6 @@ interface VehicleStepProps {
 
 export function VehicleStep({ form }: VehicleStepProps) {
   const t = useTranslations("wizard.vehicle")
-  const tVehicles = useTranslations("vehicleTypes")
   const categorie = form.watch("categorie")
   const estVehiculeLocation = form.watch("estVehiculeLocation")
   const showRentalBlock = RENTAL_ELIGIBLE_SLUGS.includes(categorie)
@@ -33,40 +25,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
   return (
     <div className="flex flex-col gap-5">
       <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
-
-      <FormField
-        control={form.control}
-        name="categorie"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{t("categorie")}</FormLabel>
-            <Select
-              onValueChange={(value) => {
-                field.onChange(value)
-                form.setValue("cvTier", undefined)
-                form.setValue("ptacTier", undefined)
-                form.setValue("quadSubtype", undefined)
-                form.setValue("duree", getPreselectedDuration(value as SubscriptionFormValues["categorie"]))
-              }}
-              value={field.value}
-            >
-              <FormControl>
-                <SelectTrigger className={triggerClass}>
-                  <SelectValue placeholder={t("categoriePlaceholder")} />
-                </SelectTrigger>
-              </FormControl>
-              <SelectContent>
-                {VEHICLE_TYPES.map((vehicle) => (
-                  <SelectItem key={vehicle.slug} value={vehicle.slug}>
-                    {tVehicles(`${vehicle.slug}.label`)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormField
@@ -77,25 +35,6 @@ export function VehicleStep({ form }: VehicleStepProps) {
               <FormLabel>{t("immatriculation")}</FormLabel>
               <FormControl>
                 <Input placeholder="Immatriculation" className={fieldClass} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="marque"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("marque")}</FormLabel>
-              <FormControl>
-                <Combobox
-                  value={field.value ?? ""}
-                  onValueChange={field.onChange}
-                  options={EXCLUDED_DRIVER_GUARANTEE_MAKES}
-                  placeholder={t("marque")}
-                  minChars={MARQUE_MIN_CHARS}
-                />
               </FormControl>
               <FormMessage />
             </FormItem>

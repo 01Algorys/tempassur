@@ -12,14 +12,15 @@ import { getStripe } from "@/lib/stripe"
 import { siteConfig } from "@/lib/site"
 import { VEHICLE_SLUGS, type VehicleSlug } from "@/types"
 import type { Locale } from "@/i18n/routing"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.merci")
-  return {
+  return pageMetadata({
+    path: "/merci",
     title: t("metaTitle"),
     robots: { index: false, follow: false },
-    alternates: { canonical: `${siteConfig.url}/merci` },
-  }
+  })
 }
 
 // Suivi de conversion GA4 / Google Ads — dossier §4.8 : uniquement sur cette page.

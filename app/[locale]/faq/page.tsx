@@ -12,14 +12,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("faq.meta")
-  return {
+  return pageMetadata({
+    path: "/faq",
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: `${siteConfig.url}/faq` },
-  }
+  })
 }
 
 interface FaqItem {

@@ -18,7 +18,7 @@ export function CategoryDialog({ open, onOpenChange }: CategoryDialogProps) {
 
   function handleSelect(slug: string) {
     onOpenChange(false)
-    router.push(`/souscription?categorie=${slug}`)
+    router.push(slug === "assurance-frontiere" ? "/souscription-frontiere" : `/souscription?categorie=${slug}`)
   }
 
   return (

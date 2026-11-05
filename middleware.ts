@@ -37,5 +37,5 @@ export default async function middleware(req: NextRequest) {
 
 export const config = {
   // Toutes les routes sauf assets Next.js, fichiers statiques et API.
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|opengraph-image|.*\\..*).*)"],
 }

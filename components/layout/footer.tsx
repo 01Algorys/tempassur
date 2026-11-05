@@ -53,6 +53,14 @@ export function Footer() {
                   {t("coveredCountries")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/pays-couverts-frontiere"
+                  className="text-sm text-white/60 transition-colors hover:text-white"
+                >
+                  {t("coveredCountriesFrontier")}
+                </Link>
+              </li>
             </ul>
           </div>
 

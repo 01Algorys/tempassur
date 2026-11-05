@@ -179,7 +179,20 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
       ) : isResidenceViolated ? (
         <div className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
           <Info className="mt-0.5 size-4 shrink-0" />
-          {t("residenceMustBeFrance")}
+          <div className="flex flex-col gap-2">
+            <p>{t("residenceMustBeFrance")}</p>
+            <p>{t("residenceCpiNotice")}</p>
+            <p>{t("residenceCpiPartner")}</p>
+            {/* Lien partenaire rémunéré : "sponsored" est à conserver. */}
+            <a
+              href="https://certimat.fr/prescripteurs?partner=7308"
+              target="_blank"
+              rel="sponsored noopener"
+              className="font-semibold underline underline-offset-2 hover:no-underline"
+            >
+              {t("residenceCpiPartnerCta")}
+            </a>
+          </div>
         </div>
       ) : registrationCase === "restricted" ? (
         <div className="flex items-start gap-2 rounded-xl bg-secondary px-4 py-3 text-sm text-navy">

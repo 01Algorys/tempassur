@@ -6,15 +6,15 @@ import { getTranslations } from "next-intl/server"
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
 import { BLOG_ARTICLES } from "@/lib/blog-content"
-import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blog.index")
-  return {
-    title: t("title"),
+  return pageMetadata({
+    path: "/blog",
+    title: t.has("seoTitle") ? t("seoTitle") : t("title"),
     description: t("metaDescription"),
-    alternates: { canonical: `${siteConfig.url}/blog` },
-  }
+  })
 }
 
 const sortedArticles = [...BLOG_ARTICLES].sort((a, b) => (a.date < b.date ? 1 : -1))
