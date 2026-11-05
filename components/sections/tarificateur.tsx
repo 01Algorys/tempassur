@@ -42,7 +42,12 @@ export function Tarificateur() {
   }
 
   function handleSouscription() {
-    router.push(`/souscription?categorie=${category}&duree=${duree || preselected}`)
+    const dureeValue = duree || preselected
+    router.push(
+      category === "assurance-frontiere"
+        ? `/souscription-frontiere?duree=${dureeValue}`
+        : `/souscription?categorie=${category}&duree=${dureeValue}`,
+    )
   }
 
   return (

@@ -62,6 +62,7 @@
     "description": "TempAssur  asigurarea temporară de la 1 la 90 de zile, pentru toate vehiculele. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
     "insuranceHeading": "Asigurările noastre",
     "coveredCountries": "Țări acoperite",
+    "coveredCountriesFrontier": "Țări acoperite (frontieră)",
     "informationHeading": "Informații",
     "quiSommesNous": "Cine suntem",
     "faq": "FAQ",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Asigurare auto temporară și pentru toate vehiculele, de la 1 la 90 de zile | TempAssur",
-      "description": "Asigurare temporară imediată, de la 1 la 90 de zile: auto, vehicule grele, autorulote, ATV-uri, remorci, asigurare de frontieră. Certificat de asigurare prin e-mail sau WhatsApp în câteva minute. De la {price} €/zi."
+      "title": "Asigurare temporară online, 1-90 de zile | TempAssur",
+      "description": "Asigurare temporară imediată, 1-90 de zile: auto, vehicule grele, autorulote, ATV-uri, remorci, frontieră. Certificat prin e-mail sau WhatsApp. De la {price} €/zi."
     },
     "hero": {
       "title": "Asigurare temporară de la 1 la 90 de zile  certificat de asigurare imediat prin e-mail sau WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Durată și localizare",
+      "duration": "Durată și vehicul",
       "details": "Informațiile dvs.",
       "payment": "Plată"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "Pentru un vehicul înmatriculat în această țară, trebuie să încheiați o asigurare de frontieră: asigurarea pentru vehiculele străine care circulă în Europa.",
       "frontierCta": "Încheiați o asigurare de frontieră",
       "residenceMustBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
+      "residenceCpiNotice": "Ați solicitat un certificat provizoriu de înmatriculare WW (CPI)? Vă rugăm să selectați Franța ca țară de înmatriculare.",
+      "residenceCpiPartner": "Nu aveți încă un CPI? Partenerul nostru se ocupă de asta pentru dumneavoastră.",
+      "residenceCpiPartnerCta": "Fac demersul cu partenerul nostru",
       "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Vehicul",
-      "categorie": "Categorie *",
-      "categoriePlaceholder": "Selectați o categorie",
       "immatriculation": "Număr de înmatriculare *",
       "marque": "Marcă *",
       "marqueNoResults": "Nicio marcă găsită — puteți introduce un nume liber",
@@ -484,6 +486,7 @@
       "edit": "Modifică",
       "note": "Verificați recapitularea de mai sus, apoi introduceți datele de plată mai jos pentru a finaliza abonamentul în siguranță.",
       "secureHeading": "Plată securizată",
+      "klarnaNotice": "<strong>Pentru a plăti în 3 rate</strong>, alegeți Klarna dintre metodele de plată de mai jos.",
       "secureBody": "Introduceți datele cardului mai jos. Datele dumneavoastră sunt criptate și transmise direct către Stripe — nu trec niciodată prin serverele noastre.",
       "securePoweredBy": "Securizat de Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Zonă DOM-TOM",
       "selectDuration": "Selectați o durată pentru a afișa tariful.",
       "totalToPay": "Total de plată",
+      "installments": "<strong>Plătiți în 3 rate</strong> cu Klarna, sub rezerva aprobării.",
       "securePayment": "Plată securizată, intrare în vigoare imediată.",
       "durationValue": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
       "noValue": ""
@@ -561,8 +565,8 @@
       "durationsAvailable": "Durate disponibile: {durations} zi{plural}"
     },
     "automobiles": {
-      "title": "Asigurare auto temporară de la 1 la 90 de zile, de la [PRIX] €/zi | TempAssur",
-      "metaDescription": "Asigurați o mașină sau un utilitar de la 1 la 90 de zile. Subscriere online în 5 minute, certificat de asigurare imediat prin e-mail sau WhatsApp. De la [PRIX] €/zi.",
+      "title": "Asigurare auto temporară de la [PRIX] €/zi | TempAssur",
+      "metaDescription": "Asigurați o mașină sau un utilitar de la 1 la 90 de zile. Subscriere online în 5 minute, certificat imediat prin e-mail sau WhatsApp. De la [PRIX] €/zi.",
       "h1": "Asigurare auto temporară de la 1 la 90 de zile",
       "intro": "Aveți nevoie să asigurați o mașină sau un utilitar de sub 3,5 tone pentru câteva zile? Asigurarea auto temporară TempAssur vă acoperă de la 1 la 90 de zile, fără angajament și fără reînnoire tacită. Subscriere 100% online în 5 minute, certificat de asigurare trimis imediat prin e-mail sau WhatsApp.",
       "vehiclesParagraph": "Toate vehiculele particulare și utilitare de sub 3,5 tone, indiferent de putere: mașină de oraș, berlină, SUV, autoutilitară… Tariful depinde de puterea fiscală și de durata aleasă.",
@@ -614,7 +618,7 @@
       ]
     },
     "poids-lourds": {
-      "title": "Asigurare temporară pentru vehicule grele, de la [PRIX] €/zi | TempAssur",
+      "title": "Asigurare temporară vehicule grele | TempAssur",
       "metaDescription": "Camion, autocamion, cap tractor: asigurare temporară online pentru vehicule grele. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru vehicule grele (peste 3,5 tone)",
       "intro": "Autocamion, cap tractor, semiremorcă: asigurați-vă vehiculul greu pentru un convoi, o achiziție, un import sau o misiune punctuală, pentru duratele prevăzute în grila noastră de tarife. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
@@ -644,7 +648,7 @@
       ]
     },
     "camping-cars": {
-      "title": "Asigurare temporară pentru autorulote, de la 1 la 90 de zile | TempAssur",
+      "title": "Asigurare temporară autorulote, 1-90 de zile | TempAssur",
       "metaDescription": "Asigurare temporară pentru autorulote și camionete amenajate, de la 1 la 90 de zile. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru autorulote și camionete amenajate",
       "intro": "Plecați liniștiți: asigurare temporară pentru autorulote, de la 1 la 90 de zile, ideală pentru o călătorie punctuală, un împrumut, o achiziție sau o repatriere. Prețul afișat corespunde modelelor de sub 3,5 tone; el este ajustat în funcție de greutate la subscriere.",
@@ -675,7 +679,7 @@
       ]
     },
     "quadricycles": {
-      "title": "Asigurare temporară pentru ATV, microcar fără permis, buggy | TempAssur",
+      "title": "Asigurare temporară ATV, microcar, buggy | TempAssur",
       "metaDescription": "ATV omologat, microcar fără permis sau buggy: asigurare temporară online, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru cvadricicluri: ATV, microcar, buggy",
       "intro": "ATV omologat, microcar fără permis sau buggy: asigurați-vă cvadriciclul pentru durata de care aveți cu adevărat nevoie. Prețul de pornire afișat corespunde subtipului cel mai ieftin; tariful exact se ajustează în funcție de vehiculul dvs. la subscriere.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Asigurare temporară pentru tractor agricol, de la [PRIX] €/zi | TempAssur",
+      "title": "Asigurare temporară tractor agricol | TempAssur",
       "metaDescription": "Recoltare, convoi, achiziție: asigurare temporară online pentru tractor agricol, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru tractor agricol",
       "intro": "Recoltare, convoi, achiziție sau vânzare: asigurați-vă tractorul sau utilajul agricol pentru câteva zile, fără angajament anual. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Asigurare temporară pentru remorcă, semiremorcă, rulotă | TempAssur",
+      "title": "Asigurare temporară remorcă și rulotă | TempAssur",
       "metaDescription": "Remorcă, semiremorcă sau rulotă: asigurare temporară obligatorie peste 750 kg. Subscriere online imediată.",
       "h1": "Asigurare temporară pentru remorci, semiremorci și rulote",
       "intro": "Remorcă ușoară sau grea, semiremorcă, rulotă: peste 750 kg MTMA, o asigurare de răspundere civilă dedicată este obligatorie  cea a vehiculului tractor nu mai este suficientă. Asigurați-o pentru un convoi, o achiziție sau o deplasare punctuală.",
@@ -781,8 +785,8 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Asigurare de frontieră: circulați în Franța și în Europa cu un vehicul înmatriculat în străinătate | TempAssur",
-      "metaDescription": "Vehicul înmatriculat în afara UE sau în străinătate? Asigurarea de frontieră vă acoperă în Franța și în 35 de țări. 30 sau 90 de zile, certificat de asigurare imediat.",
+      "title": "Asigurare de frontieră vehicule străine | TempAssur",
+      "metaDescription": "Vehicul înmatriculat în afara UE sau în străinătate? Asigurarea de frontieră vă acoperă în Franța și în 35 de țări. 30 sau 90 de zile, certificat imediat.",
       "h1": "Asigurare de frontieră  pentru a circula în Franța și în Europa",
       "intro": "Vehiculul dvs. este înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde  sau este înmatriculat în străinătate și trebuie să circule în Franța? Asigurarea de frontieră este soluția legală și obligatorie pentru a porni la drum. Iar la TempAssur, ea nu acoperă doar Franța: sunteți acoperit în 35 de țări, aceeași listă ca pentru asigurările noastre temporare. Disponibilă pentru 30 sau 90 de zile  certificat de asigurare prin e-mail sau WhatsApp.",
       "vehiclesParagraph": "Călătorilor care vin în Europa cu vehiculul propriu (Maghreb, Balcani în afara sistemului Cartea Verde, Orientul Mijlociu, America…), francezilor din străinătate aflați temporar în țară cu un vehicul înmatriculat în afara UE, precum și vehiculelor aflate în tranzit sau în curs de import.",
@@ -1208,10 +1212,23 @@
       "title": "Cererea dvs. de subscriere",
       "description": "Prețul se recalculează la fiecare etapă și rămâne afișat permanent în caseta alăturată. Prețul opțiunilor depinde de durată.",
       "guaranteesHeading": "Garanții și țări acoperite",
-      "guaranteesParagraph": "Toate asigurările noastre temporare includ răspunderea civilă (obligatorie) și apărarea penală și recursul în urma unui accident. Doar pentru automobile există opțiuni: garanția conducătorului auto, extinderea de țară, asistența (indisponibile în teritoriile DOM-TOM).",
-      "coverageParagraph": "Sunteți acoperit în Franța și în {count} țări din Europa și din bazinul mediteranean, aceeași listă pentru toate asigurările noastre temporare și pentru asigurarea de frontieră.",
-      "coverageVariationNotice": "Acoperirea unor țări poate varia în funcție de companie, vehicul, durată și opțiunile alese. Intenționați să circulați într-o țară care nu este pe listă? Contactați-ne: WhatsApp / tel. +33 6 05 93 84 79.",
+      "includesIntro": "Toate asigurările noastre temporare includ:",
+      "includesLiability": "răspunderea civilă, obligatorie pentru a circula legal pe drumurile publice;",
+      "includesDefence": "apărarea penală și recursul în urma unui accident.",
+      "optionsParagraph": "Doar pentru automobile, puteți adăuga opțiuni: garanția conducătorului auto, extindere de țară, asistență. Aceste opțiuni sunt facultative, puteți să nu le selectați.",
+      "coverageParagraph": "Sunteți acoperit în Franța și în alte 34 de țări din Europa, adică 35 de țări.",
+      "extensionParagraph": "Cu opțiunea de extindere de țară (doar automobile sub 3,5 tone), sunteți acoperit și în Maroc, Tunisia, Turcia, Albania, Macedonia de Nord, Moldova și Azerbaidjan, adică 42 de țări în total.",
+      "contact": "Aveți o întrebare? WhatsApp / tel. <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "Vezi lista completă a țărilor acoperite →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Încheiere asigurare de frontieră online",
+      "metaDescription": "Încheiați online asigurarea de frontieră pentru un vehicul înmatriculat în afara Europei: Franța și alte 34 de țări, plată securizată.",
+      "audience": "Asigurarea de frontieră se adresează vehiculelor înmatriculate în afara Europei, oriunde în lume (Algeria, Maroc, Tunisia, Turcia, Africa, America…).",
+      "includesIntro": "Aceasta include:",
+      "coverageParagraph": "Vehiculul dumneavoastră este acoperit în Franța și în alte 34 de țări din Europa, adică 35 de țări, de la sosirea pe teritoriul european.",
+      "temporaireNote": "Vehiculul dumneavoastră este înmatriculat în Franța sau în Europa? Alegeți mai degrabă asigurarea noastră temporară.",
+      "coveredCountriesCta": "Vezi țările acoperite de asigurarea de frontieră →"
     },
     "merci": {
       "metaTitle": "Vă mulțumim pentru încredere",
@@ -1231,18 +1248,70 @@
       "contactPrompt": "Sau scrieți-ne pe WhatsApp:"
     },
     "paysCouverts": {
-      "metaTitle": "Țări acoperite de asigurarea dvs. temporară și de frontieră | TempAssur",
-      "metaDescription": "Lista completă a celor 35 de țări acoperite de asigurările noastre temporare și de frontieră, precum și cele 7 țări accesibile cu opțiunea de extindere.",
-      "heroTitle": "În ce țări sunteți acoperit?",
-      "intro": "Vești bune: asigurările noastre temporare și asigurarea noastră de frontieră acoperă aceeași listă de 35 de țări. O singură listă de reținut, indiferent de contractul dvs.",
-      "coveredHeading": "Cele 35 de țări acoperite",
-      "assimilatedNote": "Monaco, San Marino și Liechtenstein sunt asimilate (Franța / Italia / Elveția).",
-      "extensionHeading": "Aveți nevoie să mergeți mai departe? Opțiunea de extindere a circulației",
-      "extensionParagraph": "Doar pentru automobile (cu excepția teritoriilor DOM-TOM), opțiunea de extindere deschide alte 7 țări: {countries}. Prețul său depinde de durata contractului.",
-      "neverCoveredHeading": "Niciodată acoperite, indiferent de opțiune",
-      "coverageVariationNotice": "Acoperirea unor țări poate varia în funcție de companie, vehicul, durată și opțiunile alese. Intenționați să circulați într-o țară care nu este pe listă? Contactați-ne: WhatsApp / tel. +33 6 05 93 84 79.",
-      "internationalCardNote": "Cardul internațional de asigurare emis împreună cu contractul dvs. face dovada.",
+      "metaTitle": "Țări acoperite de asigurarea temporară | TempAssur",
+      "metaDescription": "Asigurarea temporară vă acoperă în 35 de țări și în până la 42 de țări cu extensia teritorială. Consultați lista completă și aflați cum să citiți Cartea Verde.",
+      "heroTitle": "Asigurare temporară: unde puteți circula?",
+      "introCard": "Cu <strong>asigurarea auto temporară TempAssur</strong> primiți un <strong>card internațional de asigurare auto</strong>, numit și „<strong>Carte Verde</strong>”. Acesta este documentul care dovedește că vehiculul dumneavoastră este asigurat, atât în Franța, cât și în străinătate.",
+      "introCoverage": "Vă acoperă în <strong>35 de țări</strong> și în până la <strong>42 de țări</strong> cu extensia teritorială.",
+      "cardHeading": "Cum citiți Cartea Verde?",
+      "cardIntro": "În partea de jos a cardului există un tabel cu codurile fiecărei țări (F pentru Franța, E pentru Spania, I pentru Italia…).",
+      "cardNotCrossed": "<strong>Căsuță netăiată</strong>: țara este acoperită.",
+      "cardCrossed": "<strong>Căsuță tăiată cu o cruce</strong>: țara nu este acoperită.",
+      "cardLocalRules": "În fiecare țară acoperită, asigurarea dumneavoastră respectă regulile de asigurare obligatorie ale țării. În caz de accident, biroul local Carte Verde preia cazul.",
+      "euHeading": "1. Cele 27 de țări ale Uniunii Europene — acoperite",
+      "euIntro": "Asigurarea temporară este valabilă în <strong>toate țările Uniunii Europene</strong>. Puteți trece liber frontierele, Cartea Verde este suficientă.",
+      "nonEuHeading": "2. Cele 8 țări europene din afara Uniunii Europene — acoperite",
+      "nonEuIntro": "Acoperirea se extinde și la <strong>8 țări europene care nu fac parte din Uniunea Europeană</strong>, dar care aparțin sistemului Carte Verde:",
+      "nonEuCustoms": "La frontierele acestor țări este posibil un control vamal: păstrați Cartea Verde la îndemână.",
+      "partialNote": "* Cipru și Serbia: acoperirea se limitează la zonele controlate de guvernul oficial al țării (nu se aplică în nordul Ciprului și nici în Kosovo).",
+      "total": "Total: 27 + 8 = 35 de țări acoperite.",
+      "extensionHeading": "3. Cele 7 țări ale extensiei teritoriale — opțional",
+      "extensionIntro": "Plecați în <strong>Maroc</strong>, <strong>Tunisia</strong>, <strong>Turcia</strong> sau în Balcani? Pentru <strong>vehiculele sub 3,5 tone</strong>, puteți adăuga <strong>extensia teritorială</strong>, care acoperă încă 7 țări:",
+      "extensionWithout": "<strong>Fără extensie</strong>: aceste 7 țări sunt tăiate pe Cartea Verde și nu sunteți acoperit acolo.",
+      "extensionWith": "<strong>Cu extensie</strong>: aceste 7 țări nu sunt tăiate pe Cartea Verde. Sunteți acoperit în <strong>42 de țări</strong>.",
+      "azerbaijanNote": "* Azerbaidjan: acoperire limitată la zonele controlate de guvernul Republicii Azerbaidjan.",
+      "neverHeading": "4. Cele 4 țări niciodată acoperite",
+      "neverIntro": "Nicio asigurare temporară nu vă poate acoperi în aceste țări, nici măcar cu extensia:",
+      "neverSuspended": "<strong>{countries}</strong>: sistemul Carte Verde este suspendat. Niciun asigurător european nu poate oferi acoperire acolo.",
+      "neverUkraine": "<strong>{country}</strong>: companiile o exclud din cauza războiului.",
+      "adviceHeading": "Înainte de plecare: verificați tot traseul",
+      "adviceBody": "Verificați dacă <strong>toate țările pe care le veți traversa</strong> sunt acoperite, inclusiv cele prin care doar treceți. Dacă o singură țară de pe traseu nu este acoperită, riscați să trebuiască să plătiți o asigurare de frontieră la fața locului.",
+      "adviceExample": "<strong>Exemplu:</strong> pentru a merge cu mașina de la Paris la Tanger, traversați Franța și Spania (acoperite), apoi Marocul (acoperit cu extensia). Așadar, nu uitați să adăugați extensia.",
+      "contact": "Aveți nelămuriri? Contactați-ne: <email>contact@tempassur.com</email> sau WhatsApp / telefon la <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "Vehiculul dumneavoastră este înmatriculat în afara acestor 35 de țări (Algeria, Maroc, Tunisia, Turcia, Africa, America…)? Alegeți mai degrabă <frontiere>asigurarea de frontieră</frontiere>.",
       "ctaEstimate": "Estimează-mi tariful în 30 de secunde"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Țări acoperite de asigurarea de frontieră | TempAssur",
+      "metaDescription": "Vehicul înmatriculat în afara celor 35 de țări acoperite? Asigurarea de frontieră vă acoperă în Franța și în alte 34 de țări. Vedeți lista completă.",
+      "heroTitle": "Asigurare de frontieră: pentru vehiculele înmatriculate în străinătate",
+      "intro": "<strong>Asigurarea de frontieră TempAssur</strong> permite unui <strong>vehicul înmatriculat oriunde în lume</strong> (în afara celor 35 de țări acoperite) să circule legal în <strong>Franța și în 35 de țări europene</strong>.",
+      "introCard": "Primiți un <strong>card internațional de asigurare auto</strong> („<strong>Carte Verde</strong>”), pe care îl prezentați la controale și la trecerea frontierelor.",
+      "vehiclesHeading": "1. Pentru ce vehicule?",
+      "vehiclesIntro": "Asigurarea de frontieră vi se potrivește dacă vehiculul dumneavoastră este <strong>înmatriculat într-o țară din afara celor 35 de țări acoperite</strong>. Acceptă înmatriculări din întreaga lume, de exemplu:",
+      "vehiclesMaghreb": "<strong>Maghreb</strong>: Algeria, Maroc, Tunisia",
+      "vehiclesBalkans": "<strong>Turcia</strong> și <strong>Balcani</strong>: Albania, Macedonia de Nord, Kosovo, Moldova…",
+      "vehiclesAfrica": "<strong>Africa</strong>: Senegal, Coasta de Fildeș, Mali, Camerun…",
+      "vehiclesWorld": "<strong>Orientul Mijlociu, Asia, America</strong>: Liban, Statele Unite, Canada…",
+      "europeHeading": "Vehiculul dumneavoastră este înmatriculat în Franța sau în Europa?",
+      "europeBody": "În acest caz, nu aveți nevoie de o asigurare de frontieră. Dacă vehiculul este înmatriculat într-una dintre cele 35 de țări de mai jos, alegeți <temporaire>asigurarea temporară</temporaire>.",
+      "euHeading": "2. Cele 27 de țări ale Uniunii Europene — acoperite",
+      "euIntro": "Cu asigurarea de frontieră, vehiculul dumneavoastră străin este acoperit în <strong>toate țările Uniunii Europene</strong>:",
+      "nonEuHeading": "3. Cele 8 țări europene din afara Uniunii Europene — acoperite",
+      "nonEuIntro": "Acoperirea se extinde și la aceste 8 țări europene:",
+      "partialNote": "* Cipru și Serbia: acoperirea se limitează la zonele controlate de guvernul oficial al țării (nu se aplică în nordul Ciprului și nici în Kosovo).",
+      "total": "Total: 27 + 8 = 35 de țări acoperite.",
+      "cardHeading": "Cum citiți Cartea Verde?",
+      "cardNotCrossed": "<strong>Căsuță netăiată</strong>: țara este acoperită.",
+      "cardCrossed": "<strong>Căsuță tăiată cu o cruce</strong>: țara nu este acoperită.",
+      "notCoveredHeading": "4. Țările neacoperite",
+      "notCoveredIntro": "Asigurarea de frontieră vă acoperă <strong>doar în cele 35 de țări de mai sus</strong>. Nu acoperă circulația în țara de înmatriculare și nici în alte țări din afara acestei liste, de exemplu:",
+      "notCoveredLocal": "Pentru porțiunea de traseu din afara celor 35 de țări, trebuie să aveți o asigurare locală, încheiată în țara de înmatriculare sau la frontiera țării traversate.",
+      "whenHeading": "Când să o încheiați?",
+      "whenBody": "Încheiați asigurarea de frontieră <strong>înainte de a intra în prima țară acoperită</strong> de pe traseu. Ajungeți cu vaporul în Franța, Spania sau Italia? Asigurarea trebuie să fie valabilă de la debarcare.",
+      "whenExample": "<strong>Exemplu:</strong> călătoriți de la Alger la Marsilia cu o mașină înmatriculată în Algeria. Asigurarea de frontieră trebuie să înceapă în ziua sosirii în port. Vă acoperă în Franța și în toate țările europene de pe listă pe toată durata sa.",
+      "contact": "Aveți nelămuriri? Contactați-ne: <email>contact@tempassur.com</email> sau WhatsApp / telefon la <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Încheie asigurarea de frontieră"
     },
     "quiSommesNous": {
       "metaTitle": "Cine suntem? Broker de asigurare temporară | TempAssur",
@@ -1271,7 +1340,8 @@
       "ctaContact": "Contactați-ne"
     },
     "contact": {
-      "metaTitle": "Contactați TempAssur  zilnic prin WhatsApp, telefon sau e-mail",
+      "metaTitle": "Contactați TempAssur: WhatsApp, telefon, e-mail",
+      "metaDescription": "O întrebare despre asigurarea temporară? Echipa TempAssur răspunde zilnic prin WhatsApp, telefon sau e-mail, din Clichy, Franța.",
       "heroTitle": "Contactați-ne  vă răspundem zilnic",
       "fastest": "Cel mai rapid",
       "mapTitle": "TempAssur  WN Conseil pe Google Maps",
@@ -1352,6 +1422,11 @@
             "id": "prix-2",
             "question": "Tarifele DOM-TOM sunt aceleași?",
             "answer": "Nu, ele diferă de cele din metropolă; se afișează automat de îndată ce indicați țara de reședință sau de înmatriculare. Opțiunile nu sunt disponibile acolo."
+          },
+          {
+            "id": "prix-3",
+            "question": "Pot plăti în 3 rate?",
+            "answer": "Da, puteți plăti asigurarea în 3 rate cu Klarna. La etapa de plată, alegeți Klarna dintre metodele de plată propuse, apoi urmați instrucțiunile. Plata în 3 rate este supusă aprobării Klarna."
           }
         ]
       },

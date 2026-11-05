@@ -2,17 +2,13 @@ import type { MetadataRoute } from "next"
 
 import { PRODUCT_ROUTES } from "@/lib/constants"
 import { BLOG_ARTICLES } from "@/lib/blog-content"
-import { siteConfig } from "@/lib/site"
 import { routing } from "@/i18n/routing"
-
-function localizedUrl(locale: string, path: string): string {
-  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`
-  return `${siteConfig.url}${prefix}${path}`
-}
+import { localizedLanguages, localizedUrl } from "@/lib/seo-urls"
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "", priority: 1, changeFrequency: "weekly" },
   { path: "/pays-couverts", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/pays-couverts-frontiere", priority: 0.8, changeFrequency: "monthly" },
   { path: "/qui-sommes-nous", priority: 0.6, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.5, changeFrequency: "monthly" },
@@ -34,19 +30,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     path: `/blog/${article.slug}`,
     priority: 0.5,
     changeFrequency: "monthly" as const,
+    lastModified: article.date,
   }))
 
-  const allRoutes = [...STATIC_ROUTES, ...productRoutes, ...blogRoutes]
+  const allRoutes: {
+    path: string
+    priority: number
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]
+    lastModified?: string
+  }[] = [...STATIC_ROUTES, ...productRoutes, ...blogRoutes]
 
-  return allRoutes.flatMap(({ path, priority, changeFrequency }) =>
+  return allRoutes.flatMap(({ path, priority, changeFrequency, lastModified }) =>
     routing.locales.map((locale) => ({
-      url: localizedUrl(locale, path),
-      lastModified: new Date(),
+      url: localizedUrl(path, locale),
+      ...(lastModified ? { lastModified } : {}),
       changeFrequency,
       priority,
-      alternates: {
-        languages: Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(l, path)])),
-      },
+      alternates: { languages: localizedLanguages(path) },
     }))
   )
 }

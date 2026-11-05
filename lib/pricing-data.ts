@@ -79,7 +79,7 @@ export const AUTO_TARIFFS: Record<CvTier, AutoTariffRow[]> = {
     { duree: 30, prixFr: 231, prixDomTom: 249, optionAssistance: 45, optionGarantieConducteur: 45, optionExtensionTn: 45 },
     { duree: 45, prixFr: 319, prixDomTom: 339, optionAssistance: 45, optionGarantieConducteur: 45, optionExtensionTn: 55 },
     { duree: 60, prixFr: 416, prixDomTom: 429, optionAssistance: 60, optionGarantieConducteur: 60, optionExtensionTn: 65 },
-    { duree: 90, prixFr: 599, prixDomTom: 589, optionAssistance: 60, optionGarantieConducteur: 60, optionExtensionTn: 70 },
+    { duree: 90, prixFr: 599, prixDomTom: 619, optionAssistance: 60, optionGarantieConducteur: 60, optionExtensionTn: 70 },
   ],
 }
 

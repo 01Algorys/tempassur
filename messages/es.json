@@ -62,6 +62,7 @@
     "description": "TempAssur  El seguro temporal de 1 a 90 días, para todos los vehículos. Certificado inmediato por correo electrónico o WhatsApp.",
     "insuranceHeading": "Nuestros seguros",
     "coveredCountries": "Países cubiertos",
+    "coveredCountriesFrontier": "Países cubiertos (frontera)",
     "informationHeading": "Información",
     "quiSommesNous": "Quiénes somos",
     "faq": "Preguntas frecuentes",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Seguro temporal de coche y todos los vehículos de 1 a 90 días | TempAssur",
-      "description": "Seguro temporal inmediato de 1 a 90 días: coche, vehículo pesado, autocaravana, quad, remolque, seguro de frontera. Certificado por correo electrónico o WhatsApp en pocos minutos. Desde {price} €/día."
+      "title": "Seguro temporal en línea de 1 a 90 días | TempAssur",
+      "description": "Seguro temporal inmediato de 1 a 90 días: coche, vehículo pesado, autocaravana, quad, remolque, frontera. Certificado por e-mail o WhatsApp. Desde {price} €/día."
     },
     "hero": {
       "title": "Seguro temporal de 1 a 90 días: certificado inmediato por correo electrónico o WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Duración y ubicación",
+      "duration": "Duración y vehículo",
       "details": "Sus datos",
       "payment": "Pago"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "Para un vehículo matriculado en este país, debe contratar un seguro de frontera: el seguro para vehículos extranjeros que circulan por Europa.",
       "frontierCta": "Contratar un seguro de frontera",
       "residenceMustBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia.",
+      "residenceCpiNotice": "¿Ha solicitado un certificado provisional de matriculación WW (CPI)? Seleccione Francia como país de matriculación.",
+      "residenceCpiPartner": "¿Aún no tiene CPI? Nuestro socio se encarga por usted.",
+      "residenceCpiPartnerCta": "Hacer el trámite con nuestro socio",
       "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Vehículo",
-      "categorie": "Categoría *",
-      "categoriePlaceholder": "Seleccione una categoría",
       "immatriculation": "Matrícula *",
       "marque": "Marca *",
       "marqueNoResults": "No se encontró ninguna marca — puede escribir un nombre libre",
@@ -484,6 +486,7 @@
       "edit": "Modificar",
       "note": "Verifique el resumen anterior y, a continuación, introduzca sus datos de pago para finalizar su suscripción de forma segura.",
       "secureHeading": "Pago seguro",
+      "klarnaNotice": "<strong>Para pagar en 3 plazos</strong>, elija Klarna entre los métodos de pago indicados a continuación.",
       "secureBody": "Introduzca los datos de su tarjeta a continuación. Sus datos se cifran y se envían directamente a Stripe: nunca pasan por nuestros servidores.",
       "securePoweredBy": "Protegido por Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Zona DOM-TOM",
       "selectDuration": "Seleccione una duración para ver la tarifa.",
       "totalToPay": "Total a pagar",
+      "installments": "<strong>Pague en 3 plazos</strong> con Klarna, sujeto a aprobación.",
       "securePayment": "Pago seguro, efecto inmediato.",
       "durationValue": "{count, plural, one {# día} other {# días}}",
       "noValue": ""
@@ -561,8 +565,8 @@
       "durationsAvailable": "Duraciones disponibles: {durations} día{plural}"
     },
     "automobiles": {
-      "title": "Seguro de coche temporal de 1 a 90 días desde [PRIX] €/día | TempAssur",
-      "metaDescription": "Asegure un coche o un vehículo comercial de 1 a 90 días. Contratación en línea en 5 minutos, certificado inmediato por correo electrónico o WhatsApp. Desde [PRIX] €/día.",
+      "title": "Seguro de coche temporal desde [PRIX] €/día | TempAssur",
+      "metaDescription": "Asegure un coche o un vehículo comercial de 1 a 90 días. Contratación en línea en 5 minutos, certificado inmediato por e-mail o WhatsApp. Desde [PRIX] €/día.",
       "h1": "Seguro de coche temporal de 1 a 90 días",
       "intro": "¿Necesita asegurar un coche o un vehículo comercial de menos de 3,5 toneladas durante unos días? El seguro de coche temporal de TempAssur le cubre de 1 a 90 días, sin permanencia y sin renovación tácita. Contratación 100 % en línea en 5 minutos, certificado enviado de inmediato por correo electrónico o WhatsApp.",
       "vehiclesParagraph": "Todos los vehículos particulares y comerciales de menos de 3,5 toneladas, sea cual sea su potencia: utilitario urbano, berlina, SUV, furgoneta... La tarifa depende de la potencia fiscal y de la duración elegida.",
@@ -614,7 +618,7 @@
       ]
     },
     "poids-lourds": {
-      "title": "Seguro temporal de vehículo pesado desde [PRIX] €/día | TempAssur",
+      "title": "Seguro temporal vehículo pesado | TempAssur",
       "metaDescription": "Camión, vehículo de carga, tractocamión: seguro temporal de vehículo pesado en línea. Certificado inmediato por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de vehículo pesado (+ de 3,5 T)",
       "intro": "Camión de carga, tractocamión, semirremolque: asegure su vehículo pesado para un traslado, una compra, una importación o una misión puntual, con las duraciones previstas en nuestra tabla de tarifas. Certificado inmediato por correo electrónico o WhatsApp.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Seguro temporal de tractor agrícola desde [PRIX] €/día | TempAssur",
+      "title": "Seguro temporal tractor agrícola | TempAssur",
       "metaDescription": "Cosechas, traslado, compra: seguro temporal de tractor agrícola en línea, certificado por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de tractor agrícola",
       "intro": "Cosechas, traslado, compra o venta: asegure su tractor o maquinaria agrícola durante unos días, sin permanencia anual. Contratación en línea, certificado por correo electrónico o WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Seguro temporal de remolque, semirremolque y caravana | TempAssur",
+      "title": "Seguro temporal de remolque y caravana | TempAssur",
       "metaDescription": "Remolque, semirremolque o caravana: seguro temporal obligatorio a partir de 750 kg. Contratación en línea inmediata.",
       "h1": "Seguro temporal de remolques, semirremolques y caravanas",
       "intro": "Remolque ligero o pesado, semirremolque, caravana: a partir de 750 kg de MMA, es obligatorio un seguro de responsabilidad civil específico  el del vehículo tractor ya no es suficiente. Asegure el suyo para un traslado, una compra o un desplazamiento puntual.",
@@ -781,7 +785,7 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Seguro de frontera: circular por Francia y Europa con un vehículo extranjero | TempAssur",
+      "title": "Seguro de frontera para vehículos extranjeros | TempAssur",
       "metaDescription": "¿Vehículo matriculado fuera de la UE o en el extranjero? El seguro de frontera le cubre en Francia y en 35 países. 30 o 90 días, certificado inmediato.",
       "h1": "Seguro de frontera  para circular por Francia y Europa",
       "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria para poder circular. Y en TempAssur no cubre solo Francia: está cubierto en 35 países, la misma lista que nuestros seguros temporales. Disponible en 30 o 90 días  certificado por correo electrónico o WhatsApp.",
@@ -1208,10 +1212,23 @@
       "title": "Su solicitud de contratación",
       "description": "El precio se recalcula en cada etapa y permanece visible de forma permanente en el recuadro adjunto. El precio de las opciones depende de la duración.",
       "guaranteesHeading": "Garantías y países cubiertos",
-      "guaranteesParagraph": "Todos nuestros seguros temporales incluyen la responsabilidad civil (obligatoria) y la defensa penal y reclamación tras accidente. Solo para el automóvil existen opciones: garantía del conductor, extensión de países, asistencia (no disponibles en los DOM-TOM).",
-      "coverageParagraph": "Está cubierto en Francia y en {count} países de Europa y la cuenca mediterránea, la misma lista para todos nuestros seguros temporales y el seguro de frontera.",
-      "coverageVariationNotice": "La cobertura de algunos países puede variar según la compañía, el vehículo, la duración y las opciones elegidas. ¿Piensa circular por un país que no aparece en la lista? Contáctenos: WhatsApp / tel. +33 6 05 93 84 79.",
+      "includesIntro": "Todos nuestros seguros temporales incluyen:",
+      "includesLiability": "la responsabilidad civil, obligatoria para circular legalmente por la vía pública;",
+      "includesDefence": "la defensa penal y reclamación tras accidente.",
+      "optionsParagraph": "Solo para automóviles, puede añadir opciones: garantía del conductor, extensión de países, asistencia. Estas opciones son facultativas, puede no seleccionarlas.",
+      "coverageParagraph": "Está cubierto en Francia y en otros 34 países de Europa, es decir, 35 países.",
+      "extensionParagraph": "Con la opción de extensión de países (solo automóviles de menos de 3,5 toneladas), también está cubierto en Marruecos, Túnez, Turquía, Albania, Macedonia del Norte, Moldavia y Azerbaiyán, es decir, 42 países en total.",
+      "contact": "¿Tiene alguna pregunta? WhatsApp / tel. <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "Ver la lista completa de países cubiertos →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Contratación del seguro de frontera en línea",
+      "metaDescription": "Contrate en línea su seguro de frontera para un vehículo matriculado fuera de Europa: cobertura en Francia y en otros 34 países de Europa, pago seguro.",
+      "audience": "El seguro de frontera está dirigido a vehículos matriculados fuera de Europa, en cualquier lugar del mundo (Argelia, Marruecos, Túnez, Turquía, África, América…).",
+      "includesIntro": "Incluye:",
+      "coverageParagraph": "Su vehículo está cubierto en Francia y en otros 34 países de Europa, es decir, 35 países, desde su llegada al territorio europeo.",
+      "temporaireNote": "¿Su vehículo está matriculado en Francia o en Europa? Elija mejor nuestro seguro temporal.",
+      "coveredCountriesCta": "Ver los países cubiertos por el seguro de frontera →"
     },
     "merci": {
       "metaTitle": "Gracias por su confianza",
@@ -1231,18 +1248,70 @@
       "contactPrompt": "O escríbanos por WhatsApp:"
     },
     "paysCouverts": {
-      "metaTitle": "Países cubiertos por su seguro temporal y de frontera | TempAssur",
-      "metaDescription": "La lista completa de los 35 países cubiertos por nuestros seguros temporales y de frontera, y los 7 países accesibles con la opción de extensión.",
-      "heroTitle": "¿En qué países está cubierto?",
-      "intro": "Buenas noticias: nuestros seguros temporales y nuestro seguro de frontera cubren la misma lista de 35 países. Una sola lista que recordar, sea cual sea su contrato.",
-      "coveredHeading": "Los 35 países cubiertos",
-      "assimilatedNote": "Mónaco, San Marino y Liechtenstein están asimilados (Francia / Italia / Suiza).",
-      "extensionHeading": "¿Necesita ir más lejos? La opción de extensión de circulación",
-      "extensionParagraph": "Solo para automóviles (excepto DOM-TOM), la opción de extensión abre 7 países adicionales: {countries}. Su precio depende de la duración del contrato.",
-      "neverCoveredHeading": "Nunca cubiertos, sea cual sea la opción",
-      "coverageVariationNotice": "La cobertura de algunos países puede variar según la compañía, el vehículo, la duración y las opciones elegidas. ¿Piensa circular por un país que no aparece en la lista? Contáctenos: WhatsApp / tel. +33 6 05 93 84 79.",
-      "internationalCardNote": "La tarjeta internacional de seguro entregada con su contrato es el documento válido.",
+      "metaTitle": "Países cubiertos por el seguro temporal | TempAssur",
+      "metaDescription": "Su seguro temporal le cubre en 35 países, y hasta en 42 países con la extensión territorial. Consulte la lista completa y aprenda a leer su Carta Verde.",
+      "heroTitle": "Seguro temporal: ¿por dónde puede circular?",
+      "introCard": "Con el <strong>seguro de coche temporal TempAssur</strong>, recibe una <strong>tarjeta internacional de seguro de automóvil</strong>, también llamada «<strong>Carta Verde</strong>». Es el documento que demuestra que su vehículo está asegurado, tanto en Francia como en el extranjero.",
+      "introCoverage": "Le cubre en <strong>35 países</strong>, y hasta en <strong>42 países</strong> con la extensión territorial.",
+      "cardHeading": "¿Cómo leer su Carta Verde?",
+      "cardIntro": "En la parte inferior de su tarjeta figura una tabla con los códigos de cada país (F para Francia, E para España, I para Italia…).",
+      "cardNotCrossed": "<strong>Casilla sin tachar</strong>: el país está cubierto.",
+      "cardCrossed": "<strong>Casilla tachada con una cruz</strong>: el país no está cubierto.",
+      "cardLocalRules": "En cada país cubierto, su seguro respeta las normas de seguro obligatorio del país. En caso de accidente, la oficina local de la Carta Verde se hace cargo.",
+      "euHeading": "1. Los 27 países de la Unión Europea — cubiertos",
+      "euIntro": "Su seguro temporal es válido en <strong>todos los países de la Unión Europea</strong>. Puede cruzar las fronteras libremente; basta con su Carta Verde.",
+      "nonEuHeading": "2. Los 8 países europeos fuera de la Unión Europea — cubiertos",
+      "nonEuIntro": "Su cobertura se extiende también a <strong>8 países europeos que no forman parte de la Unión Europea</strong>, pero que pertenecen al sistema de la Carta Verde:",
+      "nonEuCustoms": "En las fronteras de estos países puede haber controles aduaneros: tenga su Carta Verde a mano.",
+      "partialNote": "* Chipre y Serbia: la cobertura se limita a las zonas controladas por el gobierno oficial del país (no se aplica al norte de Chipre ni a Kosovo).",
+      "total": "Total: 27 + 8 = 35 países cubiertos.",
+      "extensionHeading": "3. Los 7 países de la extensión territorial — opcional",
+      "extensionIntro": "¿Viaja a <strong>Marruecos</strong>, <strong>Túnez</strong>, <strong>Turquía</strong> o los Balcanes? Para los <strong>vehículos de menos de 3,5 toneladas</strong>, puede añadir la <strong>extensión territorial</strong>, que cubre 7 países más:",
+      "extensionWithout": "<strong>Sin la extensión</strong>: estos 7 países aparecen tachados en su Carta Verde y no está cubierto en ellos.",
+      "extensionWith": "<strong>Con la extensión</strong>: estos 7 países no aparecen tachados en su Carta Verde. Está cubierto en <strong>42 países</strong>.",
+      "azerbaijanNote": "* Azerbaiyán: cobertura limitada a las zonas controladas por el gobierno de la República de Azerbaiyán.",
+      "neverHeading": "4. Los 4 países nunca cubiertos",
+      "neverIntro": "Ningún seguro temporal puede cubrirle en estos países, ni siquiera con la extensión:",
+      "neverSuspended": "<strong>{countries}</strong>: el sistema de la Carta Verde está suspendido. Ninguna aseguradora europea puede ofrecer cobertura en ellos.",
+      "neverUkraine": "<strong>{country}</strong>: las compañías lo excluyen debido a la guerra.",
+      "adviceHeading": "Antes de salir: compruebe todo su trayecto",
+      "adviceBody": "Compruebe que <strong>todos los países que va a atravesar</strong> están cubiertos, incluidos aquellos por los que solo pasa. Si un solo país de su trayecto no está cubierto, es posible que deba pagar un seguro de frontera allí mismo.",
+      "adviceExample": "<strong>Ejemplo:</strong> para ir de París a Tánger en coche, atraviesa Francia y España (cubiertas) y luego Marruecos (cubierto con la extensión). Por tanto, recuerde añadir la extensión.",
+      "contact": "¿Tiene dudas? Contáctenos: <email>contact@tempassur.com</email> o por WhatsApp / teléfono al <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "¿Su vehículo está matriculado fuera de estos 35 países (Argelia, Marruecos, Túnez, Turquía, África, América…)? Elija mejor el <frontiere>seguro de frontera</frontiere>.",
       "ctaEstimate": "Calcular mi tarifa en 30 segundos"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Países cubiertos por el seguro de frontera | TempAssur",
+      "metaDescription": "¿Vehículo matriculado fuera de los 35 países cubiertos? El seguro de frontera le cubre en Francia y en otros 34 países. Consulte la lista completa.",
+      "heroTitle": "Seguro de frontera: para vehículos matriculados en el extranjero",
+      "intro": "El <strong>seguro de frontera TempAssur</strong> permite que un <strong>vehículo matriculado en cualquier lugar del mundo</strong> (fuera de los 35 países cubiertos) circule legalmente en <strong>Francia y en 35 países europeos</strong>.",
+      "introCard": "Recibe una <strong>tarjeta internacional de seguro de automóvil</strong> («<strong>Carta Verde</strong>») que debe presentar en los controles y al cruzar las fronteras.",
+      "vehiclesHeading": "1. ¿Para qué vehículos?",
+      "vehiclesIntro": "El seguro de frontera es para usted si su vehículo está <strong>matriculado en un país fuera de los 35 países cubiertos</strong>. Acepta matrículas de todo el mundo, por ejemplo:",
+      "vehiclesMaghreb": "<strong>Magreb</strong>: Argelia, Marruecos, Túnez",
+      "vehiclesBalkans": "<strong>Turquía</strong> y <strong>Balcanes</strong>: Albania, Macedonia del Norte, Kosovo, Moldavia…",
+      "vehiclesAfrica": "<strong>África</strong>: Senegal, Costa de Marfil, Malí, Camerún…",
+      "vehiclesWorld": "<strong>Oriente Medio, Asia, América</strong>: Líbano, Estados Unidos, Canadá…",
+      "europeHeading": "¿Su vehículo está matriculado en Francia o en Europa?",
+      "europeBody": "En ese caso, no necesita un seguro de frontera. Si su vehículo está matriculado en uno de los 35 países indicados a continuación, elija el <temporaire>seguro temporal</temporaire>.",
+      "euHeading": "2. Los 27 países de la Unión Europea — cubiertos",
+      "euIntro": "Con su seguro de frontera, su vehículo extranjero está cubierto en <strong>todos los países de la Unión Europea</strong>:",
+      "nonEuHeading": "3. Los 8 países europeos fuera de la Unión Europea — cubiertos",
+      "nonEuIntro": "Su cobertura se extiende también a estos 8 países europeos:",
+      "partialNote": "* Chipre y Serbia: la cobertura se limita a las zonas controladas por el gobierno oficial del país (no se aplica al norte de Chipre ni a Kosovo).",
+      "total": "Total: 27 + 8 = 35 países cubiertos.",
+      "cardHeading": "¿Cómo leer su Carta Verde?",
+      "cardNotCrossed": "<strong>Casilla sin tachar</strong>: el país está cubierto.",
+      "cardCrossed": "<strong>Casilla tachada con una cruz</strong>: el país no está cubierto.",
+      "notCoveredHeading": "4. Los países no cubiertos",
+      "notCoveredIntro": "El seguro de frontera le cubre <strong>únicamente en los 35 países indicados arriba</strong>. No cubre la circulación en su país de matriculación ni en otros países fuera de esta lista, por ejemplo:",
+      "notCoveredLocal": "Para la parte de su trayecto fuera de los 35 países, debe contar con un seguro local, contratado en su país de matriculación o en la frontera del país que atraviesa.",
+      "whenHeading": "¿Cuándo contratarlo?",
+      "whenBody": "Contrate su seguro de frontera <strong>antes de entrar en el primer país cubierto</strong> de su trayecto. ¿Llega en barco a Francia, España o Italia? Su seguro debe ser válido desde el desembarque.",
+      "whenExample": "<strong>Ejemplo:</strong> viaja de Argel a Marsella con un coche matriculado en Argelia. Su seguro de frontera debe comenzar el día de su llegada al puerto. Le cubre en Francia y en todos los países europeos de la lista durante toda su duración.",
+      "contact": "¿Tiene dudas? Contáctenos: <email>contact@tempassur.com</email> o por WhatsApp / teléfono al <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Contratar mi seguro de frontera"
     },
     "quiSommesNous": {
       "metaTitle": "¿Quiénes somos? Corredor de seguros temporales | TempAssur",
@@ -1271,7 +1340,8 @@
       "ctaContact": "Contáctenos"
     },
     "contact": {
-      "metaTitle": "Contacte con TempAssur  los 7 días de la semana por WhatsApp, teléfono o correo electrónico",
+      "metaTitle": "Contacte con TempAssur: WhatsApp, teléfono, e-mail",
+      "metaDescription": "¿Una pregunta sobre su seguro temporal? El equipo de TempAssur responde los 7 días de la semana por WhatsApp, teléfono o e-mail, desde Clichy, Francia.",
       "heroTitle": "Contáctenos  respondemos los 7 días de la semana",
       "fastest": "Lo más rápido",
       "mapTitle": "TempAssur  WN Conseil en Google Maps",
@@ -1352,6 +1422,11 @@
             "id": "prix-2",
             "question": "¿Las tarifas DOM-TOM son las mismas?",
             "answer": "No, difieren de las de Francia metropolitana; se muestran automáticamente en cuanto indica su país de residencia o de matriculación. Las opciones no están disponibles allí."
+          },
+          {
+            "id": "prix-3",
+            "question": "¿Puedo pagar en 3 plazos?",
+            "answer": "Sí, puede pagar su seguro en 3 plazos con Klarna. En el paso de pago, elija Klarna entre los métodos de pago disponibles y siga las instrucciones. El pago en 3 plazos está sujeto a la aprobación de Klarna."
           }
         ]
       },

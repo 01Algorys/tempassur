@@ -3,17 +3,17 @@ import { getTranslations } from "next-intl/server"
 
 import { ProductPageTemplate } from "@/components/product/product-page-template"
 import { fillPricePlaceholders } from "@/lib/pricing"
-import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 const SLUG = "quadricycles" as const
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("product")
-  return {
+  return pageMetadata({
+    path: "/assurance-temporaire-quadricycle",
     title: { absolute: fillPricePlaceholders(t(`${SLUG}.title`), SLUG) },
     description: fillPricePlaceholders(t(`${SLUG}.metaDescription`), SLUG),
-    alternates: { canonical: `${siteConfig.url}/assurance-temporaire-quadricycle` },
-  }
+  })
 }
 
 export default function Page() {

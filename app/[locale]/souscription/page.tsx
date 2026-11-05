@@ -1,25 +1,25 @@
 import type { Metadata } from "next"
-import { getTranslations } from "next-intl/server"
+import { getLocale, getTranslations } from "next-intl/server"
 
-import { Link } from "@/i18n/navigation"
+import { Link, redirect } from "@/i18n/navigation"
+import { coverageRichTags } from "@/components/coverage/coverage-ui"
 import { Container } from "@/components/shared/container"
 import { SubscriptionWizard } from "@/components/forms/subscription/subscription-wizard"
-import { COVERED_COUNTRY_CODES } from "@/lib/covered-countries"
-import { siteConfig } from "@/lib/site"
 import { VEHICLE_SLUGS } from "@/types"
 import type { VehicleSlug } from "@/types"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.souscription")
-  return {
+  return pageMetadata({
+    path: "/souscription",
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: { canonical: `${siteConfig.url}/souscription` },
-  }
+  })
 }
 
 interface SouscriptionPageProps {
-  searchParams: Promise<{ categorie?: string; duree?: string }>
+  searchParams: Promise<{ categorie?: string; duree?: string; paiement?: string }>
 }
 
 function isVehicleSlug(value: string | undefined): value is VehicleSlug {
@@ -27,7 +27,12 @@ function isVehicleSlug(value: string | undefined): value is VehicleSlug {
 }
 
 export default async function SouscriptionPage({ searchParams }: SouscriptionPageProps) {
-  const { categorie, duree } = await searchParams
+  const { categorie, duree, paiement } = await searchParams
+  // The insurance type can't be changed inside the form, so it has to be picked on the
+  // home page first. `paiement` marks the return from a failed payment.
+  if (!isVehicleSlug(categorie) && !paiement) {
+    redirect({ href: "/#tarificateur", locale: await getLocale() })
+  }
   const initialCategory = isVehicleSlug(categorie) ? categorie : "automobiles"
   const initialDuree = duree ? Number(duree) : undefined
   const t = await getTranslations("pages.souscription")
@@ -46,9 +51,15 @@ export default async function SouscriptionPage({ searchParams }: SouscriptionPag
 
         <div className="mx-auto mt-16 max-w-3xl border-t border-border pt-10 text-sm leading-relaxed text-muted-foreground">
           <h2 className="text-lg font-bold text-navy">{t("guaranteesHeading")}</h2>
-          <p className="mt-3">{t("guaranteesParagraph")}</p>
-          <p className="mt-3">{t("coverageParagraph", { count: COVERED_COUNTRY_CODES.length })}</p>
-          <p className="mt-3">{t("coverageVariationNotice")}</p>
+          <p className="mt-3">{t("includesIntro")}</p>
+          <ul className="mt-2 list-disc space-y-1 ps-5">
+            <li>{t("includesLiability")}</li>
+            <li>{t("includesDefence")}</li>
+          </ul>
+          <p className="mt-3">{t("optionsParagraph")}</p>
+          <p className="mt-3">{t("coverageParagraph")}</p>
+          <p className="mt-1">{t("extensionParagraph")}</p>
+          <p className="mt-3">{t.rich("contact", coverageRichTags)}</p>
           <Link href="/pays-couverts" className="mt-2 inline-block font-semibold text-primary hover:underline">
             {t("coveredCountriesCta")}
           </Link>

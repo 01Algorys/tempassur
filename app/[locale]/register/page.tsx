@@ -3,13 +3,16 @@ import { getTranslations } from "next-intl/server"
 
 import { AuthShell } from "@/components/layout/auth-shell"
 import { RegisterForm } from "@/components/forms/register-form"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.register")
-  return {
+  return pageMetadata({
+    path: "/register",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  }
+    robots: { index: false, follow: true },
+  })
 }
 
 export default async function RegisterPage() {

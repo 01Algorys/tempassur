@@ -92,6 +92,12 @@ export function BillingSummary({ vehicleLabel, icon: Icon, duree, tierLabel, isD
           </span>
         </div>
 
+        <p className="-mt-2 text-end text-xs leading-relaxed text-muted-foreground">
+          {t.rich("installments", {
+            strong: (chunks) => <strong className="font-semibold text-navy">{chunks}</strong>,
+          })}
+        </p>
+
         <div className="flex items-center gap-2 rounded-xl bg-secondary px-3 py-2.5 text-xs font-medium text-navy">
           <ShieldCheck className="size-4 shrink-0 text-primary" />
           {t("securePayment")}

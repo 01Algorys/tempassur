@@ -7,13 +7,16 @@ import { UserRound } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.monCompte")
-  return {
+  return pageMetadata({
+    path: "/mon-compte",
     title: t("metaTitle"),
     description: t("metaDescription"),
-  }
+    robots: { index: false, follow: true },
+  })
 }
 
 export default function MonComptePage() {

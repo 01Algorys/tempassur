@@ -9,13 +9,15 @@ import { TelLink } from "@/components/shared/tel-link"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { ContactForm } from "@/components/forms/contact-form"
 import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.contact")
-  return {
+  return pageMetadata({
+    path: "/contact",
     title: { absolute: t("metaTitle") },
-    alternates: { canonical: `${siteConfig.url}/contact` },
-  }
+    description: t("metaDescription"),
+  })
 }
 
 export default function ContactPage() {

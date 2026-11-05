@@ -80,9 +80,9 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
           label={t("vehicle")}
           value={`${values.marque} ${values.modele} (${values.immatriculation})`}
           editLabel={t("edit")}
-          onEdit={() => onEdit(1)}
+          onEdit={() => onEdit(0)}
         />
-        <RecapLine label={t("categorie")} value={vehicleLabel} editLabel={t("edit")} onEdit={() => onEdit(1)} />
+        <RecapLine label={t("categorie")} value={vehicleLabel} />
         <RecapLine
           label={t("duree")}
           value={values.duree ? t("durationValue", { count: values.duree }) : "—"}
@@ -93,7 +93,7 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
           label={t("dateEffet")}
           value={values.dateEffet && values.heureEffet ? t("dateAt", { date: values.dateEffet, time: values.heureEffet }) : "—"}
           editLabel={t("edit")}
-          onEdit={() => onEdit(0)}
+          onEdit={() => onEdit(1)}
         />
         <RecapLine
           label={t("optionsChoisies")}
@@ -103,7 +103,7 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
               : t("aucune")
           }
           editLabel={t("edit")}
-          onEdit={() => onEdit(1)}
+          onEdit={() => onEdit(0)}
         />
         <div className="h-px bg-border" />
         <div className="flex items-center justify-between text-base font-bold text-navy">
@@ -119,6 +119,12 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
           <Lock className="size-4 text-primary" strokeWidth={2} />
           {t("secureHeading")}
         </div>
+
+        <p className="rounded-xl bg-secondary px-3 py-2.5 text-sm leading-relaxed text-navy">
+          {t.rich("klarnaNotice", {
+            strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
+          })}
+        </p>
 
         {clientSecret ? (
           <Elements
@@ -194,8 +200,8 @@ function RecapLine({
 }: {
   label: string
   value: string
-  editLabel: string
-  onEdit: () => void
+  editLabel?: string
+  onEdit?: () => void
 }) {
   return (
     <div className="flex items-center justify-between gap-3">
@@ -203,9 +209,11 @@ function RecapLine({
         <dt className="text-xs text-muted-foreground">{label}</dt>
         <dd className="font-semibold text-navy">{value}</dd>
       </div>
-      <button type="button" onClick={onEdit} className="text-xs font-semibold text-primary hover:underline">
-        {editLabel}
-      </button>
+      {onEdit ? (
+        <button type="button" onClick={onEdit} className="text-xs font-semibold text-primary hover:underline">
+          {editLabel}
+        </button>
+      ) : null}
     </div>
   )
 }

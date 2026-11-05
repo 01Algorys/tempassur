@@ -62,6 +62,7 @@
     "description": "TempAssur  L'assurance temporaire de 1 à 90 jours, pour tous les véhicules. Attestation immédiate par e-mail ou WhatsApp.",
     "insuranceHeading": "Nos assurances",
     "coveredCountries": "Pays couverts",
+    "coveredCountriesFrontier": "Pays couverts (frontière)",
     "informationHeading": "Informations",
     "quiSommesNous": "Qui sommes-nous",
     "faq": "FAQ",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Assurance temporaire auto & tous véhicules de 1 à 90 jours | TempAssur",
-      "description": "Assurance temporaire immédiate de 1 à 90 jours : auto, poids lourd, camping-car, quad, remorque, assurance frontière. Attestation par e-mail ou WhatsApp en quelques minutes. Dès {price} €/jour."
+      "title": "Assurance temporaire en ligne de 1 à 90 jours | TempAssur",
+      "description": "Assurance temporaire immédiate de 1 à 90 jours : auto, poids lourd, camping-car, quad, remorque, frontière. Attestation par e-mail ou WhatsApp. Dès {price} €/jour."
     },
     "hero": {
       "title": "Assurance temporaire de 1 à 90 jours  attestation immédiate par e-mail ou WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Durée & localisation",
+      "duration": "Durée & véhicule",
       "details": "Vos informations",
       "payment": "Paiement"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "Pour un véhicule immatriculé dans ce pays, vous devez souscrire une assurance frontière : l'assurance des véhicules étrangers circulant en Europe.",
       "frontierCta": "Souscrire une assurance frontière",
       "residenceMustBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
+      "residenceCpiNotice": "Vous avez demandé un certificat provisoire d’immatriculation WW (CPI) ? Merci de sélectionner France comme pays d’immatriculation.",
+      "residenceCpiPartner": "Pas encore de CPI ? Notre partenaire s’en occupe pour vous.",
+      "residenceCpiPartnerCta": "Faire ma démarche avec notre partenaire",
       "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Véhicule",
-      "categorie": "Catégorie *",
-      "categoriePlaceholder": "Sélectionnez une catégorie",
       "immatriculation": "Immatriculation *",
       "marque": "Marque *",
       "marqueNoResults": "Aucune marque trouvée — vous pouvez saisir un nom libre",
@@ -486,6 +488,7 @@
       "dateAt": "{date} à {time}",
       "durationValue": "{count, plural, one {# jour} other {# jours}}",
       "secureHeading": "Paiement sécurisé",
+      "klarnaNotice": "<strong>Pour payer en 3 fois</strong>, choisissez Klarna parmi les moyens de paiement ci-dessous.",
       "secureBody": "Saisissez vos informations bancaires ci-dessous. Vos données sont chiffrées et transmises directement à Stripe : elles ne transitent jamais par nos serveurs.",
       "securePoweredBy": "Sécurisé par Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Zone DOM-TOM",
       "selectDuration": "Sélectionnez une durée pour afficher le tarif.",
       "totalToPay": "Total à payer",
+      "installments": "<strong>Payez en 3 fois</strong> avec Klarna, sous réserve d’acceptation.",
       "securePayment": "Paiement sécurisé, prise d'effet immédiate.",
       "durationValue": "{count, plural, one {# jour} other {# jours}}",
       "noValue": ""
@@ -561,7 +565,7 @@
       "durationsAvailable": "Durées disponibles : {durations} jour{plural}"
     },
     "automobiles": {
-      "title": "Assurance auto temporaire 1 à 90 jours dès [PRIX] €/jour | TempAssur",
+      "title": "Assurance auto temporaire dès [PRIX] €/jour | TempAssur",
       "metaDescription": "Assurez une voiture ou un utilitaire de 1 à 90 jours. Souscription en ligne en 5 minutes, attestation immédiate par e-mail ou WhatsApp. Dès [PRIX] €/jour.",
       "h1": "Assurance auto temporaire de 1 à 90 jours",
       "intro": "Besoin d'assurer une voiture ou un utilitaire de moins de 3,5 tonnes pour quelques jours ? L'assurance auto temporaire TempAssur vous couvre de 1 à 90 jours, sans engagement et sans tacite reconduction. Souscription 100 % en ligne en 5 minutes, attestation envoyée immédiatement par e-mail ou WhatsApp.",
@@ -675,7 +679,7 @@
       ]
     },
     "quadricycles": {
-      "title": "Assurance temporaire quad, voiturette sans permis, buggy | TempAssur",
+      "title": "Assurance temporaire quad, voiturette, buggy | TempAssur",
       "metaDescription": "Quad homologué, voiturette sans permis ou buggy : assurance temporaire en ligne, attestation par e-mail ou WhatsApp.",
       "h1": "Assurance temporaire quadricycles : quad, voiturette, buggy",
       "intro": "Quad homologué, voiturette sans permis ou buggy : assurez votre quadricycle pour la durée dont vous avez vraiment besoin. Le prix d'appel affiché correspond au sous-type le moins cher ; le tarif exact s'ajuste selon votre véhicule à la souscription.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Assurance tracteur agricole temporaire dès [PRIX] €/jour | TempAssur",
+      "title": "Assurance temporaire tracteur dès [PRIX] €/jour | TempAssur",
       "metaDescription": "Moissons, convoyage, achat : assurance temporaire tracteur agricole en ligne, attestation par e-mail ou WhatsApp.",
       "h1": "Assurance temporaire tracteur agricole",
       "intro": "Moissons, convoyage, achat ou vente : assurez votre tracteur ou engin agricole pour quelques jours, sans engagement annuel. Souscription en ligne, attestation par e-mail ou WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Assurance temporaire remorque, semi-remorque, caravane | TempAssur",
+      "title": "Assurance temporaire remorque et caravane | TempAssur",
       "metaDescription": "Remorque, semi-remorque ou caravane : assurance temporaire obligatoire au-delà de 750 kg. Souscription en ligne immédiate.",
       "h1": "Assurance temporaire remorques, semi-remorques et caravanes",
       "intro": "Remorque légère ou lourde, semi-remorque, caravane : au-delà de 750 kg de PTAC, une assurance responsabilité civile dédiée est obligatoire  celle du véhicule tracteur ne suffit plus. Assurez la vôtre pour un convoyage, un achat ou un déplacement ponctuel.",
@@ -781,7 +785,7 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Assurance frontière : circuler en France et en Europe avec un véhicule étranger | TempAssur",
+      "title": "Assurance frontière véhicule étranger en France | TempAssur",
       "metaDescription": "Véhicule immatriculé hors UE ou à l'étranger ? L'assurance frontière vous couvre en France et dans 35 pays. 30 ou 90 jours, attestation immédiate.",
       "h1": "Assurance frontière  pour circuler en France et en Europe",
       "intro": "Votre véhicule est immatriculé hors Union européenne et hors système carte verte  ou immatriculé à l'étranger et doit circuler en France ? L'assurance frontière est la solution légale et obligatoire pour prendre la route. Et chez TempAssur, elle ne couvre pas que la France : vous êtes couvert dans 35 pays, la même liste que nos assurances temporaires. Disponible en 30 ou 90 jours  attestation par e-mail ou WhatsApp.",
@@ -815,7 +819,8 @@
       "title": "Blog",
       "metaDescription": "Actualités et conseils sur l'assurance temporaire : véhicules, pays couverts, éligibilité et démarches.",
       "heading": "Blog",
-      "description": "Nos conseils et actualités sur l'assurance temporaire."
+      "description": "Nos conseils et actualités sur l'assurance temporaire.",
+      "seoTitle": "Blog assurance temporaire : conseils et démarches"
     },
     "articleUi": {
       "ctaEstimate": "Estimez votre tarif en 30 secondes",
@@ -825,6 +830,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Assurance temporaire pour remorque, semi-remorque ou caravane",
+        "seoTitle": "Assurance temporaire remorque ou caravane",
         "metaDescription": "Remorque, semi-remorque ou caravane à assurer pour quelques jours ? La solution temporaire TempAssur, sans engagement annuel.",
         "body": [
           {
@@ -855,6 +861,7 @@
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "Peut-on assurer temporairement un véhicule avec des plaques WW ?",
+        "seoTitle": "Assurance temporaire plaque WW : comment faire ?",
         "metaDescription": "Certificat provisoire d'immatriculation (plaque WW) : comment l'assurer temporairement avec TempAssur.",
         "body": [
           {
@@ -881,6 +888,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Suppression de la vignette verte : ce qui change pour l'assurance temporaire",
+        "seoTitle": "Fin de la vignette verte et assurance temporaire",
         "metaDescription": "Depuis avril 2024, la vignette verte a disparu : comment prouver votre assurance temporaire lors d'un contrôle ?",
         "body": [
           {
@@ -907,6 +915,7 @@
       },
       "garanties-assurance-auto-provisoire": {
         "title": "Quelles garanties inclut une assurance auto temporaire ?",
+        "seoTitle": "Garanties de l’assurance auto temporaire",
         "metaDescription": "Responsabilité civile, défense pénale et recours, options automobile : le détail des garanties TempAssur.",
         "body": [
           {
@@ -971,7 +980,8 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Rouler au Maroc, en Tunisie ou en Turquie avec une assurance temporaire : l'option extension de pays",
-        "metaDescription": "Assurance temporaire maroc, assurance auto tunisie, carte verte turquie : comment souscrire l'option extension de circulation avec TempAssur.",
+        "seoTitle": "Assurance temporaire Maroc, Tunisie, Turquie",
+        "metaDescription": "Maroc, Tunisie ou Turquie : comment ajouter l’option extension de pays à votre assurance temporaire et rouler couvert avec TempAssur.",
         "body": [
           {
             "type": "p",
@@ -1035,6 +1045,7 @@
       },
       "assurance-provisoire-automobile": {
         "title": "Assurance temporaire automobile pour les professionnels",
+        "seoTitle": "Assurance auto temporaire pour les professionnels",
         "metaDescription": "Transporteurs, artisans, importateurs : l'assurance temporaire automobile TempAssur pour vos besoins ponctuels.",
         "body": [
           {
@@ -1057,6 +1068,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 situations où l'assurance auto temporaire fait la différence",
+        "seoTitle": "5 cas où l’assurance auto temporaire est utile",
         "metaDescription": "Achat/vente, usage ponctuel, véhicule en transit : les situations où l'assurance temporaire s'impose.",
         "body": [
           {
@@ -1103,6 +1115,7 @@
       },
       "assurance-temporaire-vs-annuelle": {
         "title": "Assurance temporaire ou annuelle : comment choisir ?",
+        "seoTitle": "Assurance temporaire ou annuelle : que choisir ?",
         "metaDescription": "Assurance temporaire ou assurance annuelle : quelles différences, et laquelle choisir selon votre usage ?",
         "body": [
           {
@@ -1133,7 +1146,8 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Voiture achetée le week-end : comment repartir assuré le jour même",
-        "metaDescription": "Assurance auto immédiate, assurer voiture jour même, assurance achat voiture : la solution TempAssur.",
+        "seoTitle": "Voiture achetée le week-end : assurance immédiate",
+        "metaDescription": "Voiture achetée le week-end ? Comment l’assurer le jour même avec une assurance temporaire et repartir couvert, attestation immédiate.",
         "body": [
           {
             "type": "p",
@@ -1167,7 +1181,8 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Sortie de fourrière : quelle assurance pour récupérer votre véhicule ?",
-        "metaDescription": "Assurance sortie de fourrière, attestation assurance fourrière, récupérer voiture fourrière avec TempAssur.",
+        "seoTitle": "Assurance sortie de fourrière : comment faire ?",
+        "metaDescription": "Sortie de fourrière : quelle assurance présenter pour récupérer votre véhicule, et comment l’obtenir rapidement avec TempAssur.",
         "body": [
           {
             "type": "p",
@@ -1203,15 +1218,28 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Souscription  assurance temporaire en ligne",
+      "metaTitle": "Souscription assurance temporaire en ligne",
       "metaDescription": "Souscrivez votre assurance temporaire en ligne en quelques minutes : localisation, véhicule, durée, conducteur, options et paiement sécurisé.",
       "title": "Votre demande de souscription",
       "description": "Le prix se recalcule à chaque étape et reste affiché en permanence dans l'encart ci-contre. Le prix des options dépend de la durée.",
       "guaranteesHeading": "Garanties et pays couverts",
-      "guaranteesParagraph": "Toutes nos assurances temporaires incluent la responsabilité civile (obligatoire) et la défense pénale et recours suite à accident. Pour l'automobile uniquement, des options existent : garantie du conducteur, extension de pays, assistance (non disponibles dans les DOM-TOM).",
-      "coverageParagraph": "Vous êtes couvert en France et dans {count} pays d'Europe et du pourtour méditerranéen, la même liste pour toutes nos assurances temporaires et l'assurance frontière.",
-      "coverageVariationNotice": "La couverture de certains pays peut varier selon la compagnie, le véhicule, la durée et les options choisies. Vous comptez rouler dans un pays non listé ? Contactez-nous : WhatsApp / tél. +33 6 05 93 84 79.",
+      "includesIntro": "Toutes nos assurances temporaires incluent :",
+      "includesLiability": "la responsabilité civile, obligatoire pour circuler légalement sur la voie publique ;",
+      "includesDefence": "la défense pénale et recours suite à accident.",
+      "optionsParagraph": "Pour l’automobile uniquement, vous pouvez ajouter des options : garantie du conducteur, extension de pays, assistance, ces options sont facultatives, vous pouvez ne pas les sélectionner.",
+      "coverageParagraph": "Vous êtes couvert en France et dans 34 autres pays d’Europe, soit 35 pays.",
+      "extensionParagraph": "Avec l’option extension de pays (automobile de moins de 3,5 tonnes uniquement), vous êtes aussi couvert au Maroc, en Tunisie, en Turquie, en Albanie, en Macédoine du Nord, en Moldavie et en Azerbaïdjan, soit 42 pays au total.",
+      "contact": "Une question ? WhatsApp / tél. <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "Voir la liste complète des pays couverts →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Souscription assurance frontière en ligne",
+      "metaDescription": "Souscrivez en ligne votre assurance frontière pour un véhicule immatriculé hors d’Europe : France et 34 autres pays d’Europe, paiement sécurisé.",
+      "audience": "L’assurance frontière s’adresse aux véhicules immatriculés hors d’Europe, partout dans le monde (Algérie, Maroc, Tunisie, Turquie, Afrique, Amérique…).",
+      "includesIntro": "Elle inclut :",
+      "coverageParagraph": "Votre véhicule est couvert en France et dans 34 autres pays d’Europe, soit 35 pays, dès votre arrivée sur le territoire européen.",
+      "temporaireNote": "Votre véhicule est immatriculé en France ou en Europe ? Choisissez plutôt notre assurance temporaire.",
+      "coveredCountriesCta": "Voir les pays couverts par l’assurance frontière →"
     },
     "merci": {
       "metaTitle": "Merci pour votre confiance",
@@ -1231,18 +1259,70 @@
       "contactPrompt": "Ou écrivez-nous sur WhatsApp :"
     },
     "paysCouverts": {
-      "metaTitle": "Pays couverts par votre assurance temporaire et frontière | TempAssur",
-      "metaDescription": "La liste complète des 35 pays couverts par nos assurances temporaires et frontière, et les 7 pays accessibles avec l'option extension.",
-      "heroTitle": "Dans quels pays êtes-vous couvert ?",
-      "intro": "Bonne nouvelle : nos assurances temporaires et notre assurance frontière couvrent la même liste de 35 pays. Une seule liste à retenir, quel que soit votre contrat.",
-      "coveredHeading": "Les 35 pays couverts",
-      "assimilatedNote": "Monaco, Saint-Marin et Liechtenstein sont assimilés (France / Italie / Suisse).",
-      "extensionHeading": "Besoin d'aller plus loin ? L'option extension de circulation",
-      "extensionParagraph": "Pour les automobiles uniquement (hors DOM-TOM), l'option extension ouvre 7 pays supplémentaires : {countries}. Son prix dépend de la durée du contrat.",
-      "neverCoveredHeading": "Jamais couverts, quelle que soit l'option",
-      "coverageVariationNotice": "La couverture de certains pays peut varier selon la compagnie, le véhicule, la durée et les options choisies. Vous comptez rouler dans un pays non listé ? Contactez-nous : WhatsApp / tél. +33 6 05 93 84 79.",
-      "internationalCardNote": "La carte internationale d'assurance remise avec votre contrat fait foi.",
+      "metaTitle": "Pays couverts par l’assurance temporaire | TempAssur",
+      "metaDescription": "Votre assurance temporaire vous couvre dans 35 pays, jusqu’à 42 avec l’extension territoriale. Liste complète et lecture de votre carte verte.",
+      "heroTitle": "Assurance temporaire : où pouvez-vous circuler ?",
+      "introCard": "Avec l’<strong>assurance auto temporaire TempAssur</strong>, vous recevez une <strong>carte internationale d’assurance automobile</strong>, aussi appelée « <strong>carte verte</strong> ». C’est le document qui prouve que votre véhicule est assuré, en France comme à l’étranger.",
+      "introCoverage": "Elle vous couvre dans <strong>35 pays</strong>, et jusqu’à <strong>42 pays</strong> avec l’extension territoriale.",
+      "cardHeading": "Comment lire votre carte verte ?",
+      "cardIntro": "En bas de votre carte figure un tableau avec les codes de chaque pays (F pour France, E pour Espagne, I pour Italie…).",
+      "cardNotCrossed": "<strong>Case non rayée</strong> : le pays est couvert.",
+      "cardCrossed": "<strong>Case rayée d’une croix</strong> : le pays n’est pas couvert.",
+      "cardLocalRules": "Dans chaque pays couvert, votre assurance respecte les règles d’assurance obligatoire du pays. En cas d’accident, le bureau carte verte local prend le relais.",
+      "euHeading": "1. Les 27 pays de l’Union européenne — couverts",
+      "euIntro": "Votre assurance temporaire est valable dans <strong>tous les pays de l’Union européenne</strong>. Vous pouvez traverser les frontières librement, votre carte verte suffit.",
+      "nonEuHeading": "2. Les 8 pays européens hors Union européenne — couverts",
+      "nonEuIntro": "Votre couverture s’étend aussi à <strong>8 pays européens qui ne font pas partie de l’Union européenne</strong>, mais qui appartiennent au système carte verte :",
+      "nonEuCustoms": "Aux frontières de ces pays, un contrôle douanier est possible : gardez votre carte verte à portée de main.",
+      "partialNote": "* Chypre et Serbie : la couverture se limite aux zones contrôlées par le gouvernement officiel du pays (elle ne s’applique pas au nord de Chypre ni au Kosovo).",
+      "total": "Total : 27 + 8 = 35 pays couverts.",
+      "extensionHeading": "3. Les 7 pays de l’extension territoriale — en option",
+      "extensionIntro": "Vous partez vers le <strong>Maroc</strong>, la <strong>Tunisie</strong>, la <strong>Turquie</strong> ou les Balkans ? Pour les <strong>véhicules de moins de 3,5 tonnes</strong>, vous pouvez ajouter l’<strong>extension territoriale</strong>, qui couvre 7 pays de plus :",
+      "extensionWithout": "<strong>Sans l’extension</strong> : ces 7 pays sont rayés sur votre carte verte et vous n’y êtes pas couvert.",
+      "extensionWith": "<strong>Avec l’extension</strong> : ces 7 pays ne sont pas rayés sur votre carte verte. Vous êtes couvert dans <strong>42 pays</strong>.",
+      "azerbaijanNote": "* Azerbaïdjan : couverture limitée aux zones contrôlées par le gouvernement de la République d’Azerbaïdjan.",
+      "neverHeading": "4. Les 4 pays jamais couverts",
+      "neverIntro": "Aucune assurance temporaire ne peut vous couvrir dans ces pays, même avec l’extension :",
+      "neverSuspended": "<strong>{countries}</strong> : le système carte verte y est suspendu. Aucun assureur européen ne peut y délivrer de couverture.",
+      "neverUkraine": "<strong>{country}</strong> : les compagnies l’excluent en raison de la guerre.",
+      "adviceHeading": "Avant de partir : vérifiez tout votre trajet",
+      "adviceBody": "Vérifiez que <strong>tous les pays que vous allez traverser</strong> sont couverts, y compris ceux où vous ne faites que passer. Si un seul pays de votre trajet n’est pas couvert, vous risquez de devoir payer une assurance frontière sur place.",
+      "adviceExample": "<strong>Exemple :</strong> pour aller de Paris à Tanger en voiture, vous traversez la France et l’Espagne (couverts), puis le Maroc (couvert avec l’extension). Pensez donc à ajouter l’extension.",
+      "contact": "Un doute ? Contactez-nous : <email>contact@tempassur.com</email> ou WhatsApp / téléphone au <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "Votre véhicule est immatriculé hors de ces 35 pays (Algérie, Maroc, Tunisie, Turquie, Afrique, Amérique…) ? Choisissez plutôt l’<frontiere>assurance frontière</frontiere>.",
       "ctaEstimate": "Estimer mon tarif en 30 secondes"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Pays couverts par l’assurance frontière | TempAssur",
+      "metaDescription": "Véhicule immatriculé hors des 35 pays couverts ? L’assurance frontière vous couvre en France et dans 34 autres pays d’Europe. Voir la liste complète.",
+      "heroTitle": "Assurance frontière : pour les véhicules immatriculés à l’étranger",
+      "intro": "L’<strong>assurance frontière TempAssur</strong> permet à un <strong>véhicule immatriculé n’importe où dans le monde</strong> (hors des 35 pays couverts) de circuler légalement en <strong>France et dans 35 pays européens</strong>.",
+      "introCard": "Vous recevez une <strong>carte internationale d’assurance automobile</strong> (« <strong>carte verte</strong> ») à présenter lors des contrôles et au passage des frontières.",
+      "vehiclesHeading": "1. Pour quels véhicules ?",
+      "vehiclesIntro": "L’assurance frontière est faite pour vous si votre véhicule est <strong>immatriculé dans un pays situé hors des 35 pays couverts</strong>. Elle accepte les immatriculations du monde entier, par exemple :",
+      "vehiclesMaghreb": "<strong>Maghreb</strong> : Algérie, Maroc, Tunisie",
+      "vehiclesBalkans": "<strong>Turquie</strong> et <strong>Balkans</strong> : Albanie, Macédoine du Nord, Kosovo, Moldavie…",
+      "vehiclesAfrica": "<strong>Afrique</strong> : Sénégal, Côte d’Ivoire, Mali, Cameroun…",
+      "vehiclesWorld": "<strong>Moyen-Orient, Asie, Amérique</strong> : Liban, États-Unis, Canada…",
+      "europeHeading": "Votre véhicule est immatriculé en France ou en Europe ?",
+      "europeBody": "Dans ce cas, vous n’avez pas besoin d’une assurance frontière. Si votre véhicule est immatriculé dans l’un des 35 pays ci-dessous, choisissez l’<temporaire>assurance temporaire</temporaire>.",
+      "euHeading": "2. Les 27 pays de l’Union européenne — couverts",
+      "euIntro": "Avec votre assurance frontière, votre véhicule étranger est couvert dans <strong>tous les pays de l’Union européenne</strong> :",
+      "nonEuHeading": "3. Les 8 pays européens hors Union européenne — couverts",
+      "nonEuIntro": "Votre couverture s’étend aussi à ces 8 pays européens :",
+      "partialNote": "* Chypre et Serbie : la couverture se limite aux zones contrôlées par le gouvernement officiel du pays (elle ne s’applique pas au nord de Chypre ni au Kosovo).",
+      "total": "Total : 27 + 8 = 35 pays couverts.",
+      "cardHeading": "Comment lire votre carte verte ?",
+      "cardNotCrossed": "<strong>Case non rayée</strong> : le pays est couvert.",
+      "cardCrossed": "<strong>Case rayée d’une croix</strong> : le pays n’est pas couvert.",
+      "notCoveredHeading": "4. Les pays non couverts",
+      "notCoveredIntro": "L’assurance frontière vous couvre <strong>uniquement dans les 35 pays ci-dessus</strong>. Elle ne couvre pas la circulation dans votre pays d’immatriculation ni dans les autres pays hors de cette liste, par exemple :",
+      "notCoveredLocal": "Pour la partie de votre trajet en dehors des 35 pays, vous devez être assuré par une assurance locale, souscrite dans votre pays d’immatriculation ou à la frontière du pays traversé.",
+      "whenHeading": "Quand souscrire ?",
+      "whenBody": "Souscrivez votre assurance frontière <strong>avant d’entrer dans le premier pays couvert</strong> de votre trajet. Vous arrivez en bateau en France, en Espagne ou en Italie ? Votre assurance doit être valable dès le débarquement.",
+      "whenExample": "<strong>Exemple :</strong> vous arrivez d’Alger à Marseille avec une voiture immatriculée en Algérie. Votre assurance frontière doit commencer le jour de votre arrivée au port. Elle vous couvre en France et dans tous les pays européens de la liste pendant toute sa durée.",
+      "contact": "Un doute ? Contactez-nous : <email>contact@tempassur.com</email> ou WhatsApp / téléphone au <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Souscrire mon assurance frontière"
     },
     "quiSommesNous": {
       "metaTitle": "Qui sommes-nous ? Courtier en assurance temporaire | TempAssur",
@@ -1271,7 +1351,8 @@
       "ctaContact": "Nous contacter"
     },
     "contact": {
-      "metaTitle": "Contactez TempAssur  7j/7 par WhatsApp, téléphone ou e-mail",
+      "metaTitle": "Contactez TempAssur 7j/7 par WhatsApp, téléphone ou e-mail",
+      "metaDescription": "Une question sur votre assurance temporaire ? L’équipe TempAssur vous répond 7j/7 par WhatsApp, téléphone ou e-mail, depuis Clichy.",
       "heroTitle": "Contactez-nous  nous répondons 7j/7",
       "fastest": "Le plus rapide",
       "mapTitle": "TempAssur  WN Conseil sur Google Maps",
@@ -1307,7 +1388,7 @@
   },
   "faq": {
     "meta": {
-      "title": "Questions fréquentes",
+      "title": "FAQ assurance temporaire : prix, pays, documents",
       "description": "Toutes les réponses sur la souscription, les prix, la couverture, les documents et l'annulation de votre assurance temporaire TempAssur."
     },
     "eyebrow": "FAQ",
@@ -1352,6 +1433,11 @@
             "id": "prix-2",
             "question": "Les tarifs DOM-TOM sont-ils les mêmes ?",
             "answer": "Non, ils diffèrent de la métropole ; ils s'affichent automatiquement dès que vous indiquez votre pays de résidence ou d'immatriculation. Les options n'y sont pas disponibles."
+          },
+          {
+            "id": "prix-3",
+            "question": "Puis-je payer en 3 fois ?",
+            "answer": "Oui, vous pouvez régler votre assurance en 3 fois avec Klarna. À l’étape du paiement, choisissez Klarna parmi les moyens de paiement proposés, puis suivez les instructions. Le paiement en 3 fois est soumis à l’acceptation de Klarna."
           }
         ]
       },

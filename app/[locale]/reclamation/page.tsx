@@ -3,15 +3,15 @@ import { getTranslations } from "next-intl/server"
 
 import { Container } from "@/components/shared/container"
 import { PageHero } from "@/components/layout/page-hero"
-import { siteConfig } from "@/lib/site"
+import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("legal.reclamation.meta")
-  return {
+  return pageMetadata({
+    path: "/reclamation",
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: `${siteConfig.url}/reclamation` },
-  }
+  })
 }
 
 interface LegalSection {

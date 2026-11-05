@@ -52,10 +52,16 @@ type StepId = "duration" | "details" | "payment"
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
     "duree",
+    "categorie",
     "marque",
     "cvTier",
     "ptacTier",
     "quadSubtype",
+    "immatriculation",
+    "modele",
+    "dateMiseEnCirculation",
+    "estVehiculeLocation",
+    "nomAgenceLocation",
     "paysImmatriculation",
     "territoireImmatriculation",
     "paysResidence",
@@ -81,12 +87,6 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "numeroPermis",
     "dateObtentionPermis",
     "paysObtentionPermis",
-    "categorie",
-    "immatriculation",
-    "modele",
-    "dateMiseEnCirculation",
-    "estVehiculeLocation",
-    "nomAgenceLocation",
     "optionAssistance",
     "optionGarantieConducteur",
     "optionExtensionTn",
@@ -242,9 +242,25 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
+  // Centered rather than aligned to the top so the fixed header and the mobile action
+  // bar never cover the field. The short delay lets the error messages render first.
+  function scrollToFirstError() {
+    window.setTimeout(() => {
+      const messages = containerRef.current?.querySelectorAll<HTMLElement>('[data-slot="form-message"]') ?? []
+      const highest = Array.from(messages)
+        .filter((message) => message.offsetParent !== null)
+        .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0]
+      const target = highest?.closest('[data-slot="form-item"]') ?? highest
+      target?.scrollIntoView({ behavior: "smooth", block: "center" })
+    }, 50)
+  }
+
   async function goNext() {
     const isValid = await form.trigger(STEP_FIELDS[currentStep.id])
-    if (!isValid) return
+    if (!isValid) {
+      scrollToFirstError()
+      return
+    }
     if (currentStep.id === "duration" && isRegistrationBlocked) return
     if (currentStep.id === "details") {
       setDevisError(undefined)
@@ -255,9 +271,10 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     scrollToTop()
   }
 
-  // Re-entering the documents step must force the full create+upload flow to
-  // re-run on the next confirm, since a devis/uploaded-keys already set makes
-  // handleDeclarationsConfirm skip document upload entirely (see comment there).
+  // Leaving the payment step to edit anything must force the full create+upload
+  // flow to re-run on the next confirm, since a devis/uploaded-keys already set makes
+  // handleDeclarationsConfirm skip devis creation entirely (see comment there) and the
+  // edited values would never reach the devis.
   function resetDocumentsUploadState() {
     setDevisId(null)
     setUploadedDocumentKeys(new Set())
@@ -274,7 +291,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
 
   function goToStep(index: number) {
     const next = Math.max(0, Math.min(index, STEPS.length - 1))
-    if (STEPS[next].id === "details") resetDocumentsUploadState()
+    if (STEPS[next].id !== "payment") resetDocumentsUploadState()
     setStepIndex(next)
     scrollToTop()
   }
@@ -444,6 +461,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   <div className="flex flex-col gap-8">
                     <DurationStep form={form} />
                     <VehicleTierStep form={form} />
+                    <VehicleStep form={form} />
                     <LocalisationStep form={form} />
                     <OptionsStep form={form} />
                   </div>
@@ -452,7 +470,6 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   <div className="flex flex-col gap-8">
                     <MotifStep form={form} />
                     <DriverStep form={form} />
-                    <VehicleStep form={form} />
                     <EffectDateStep form={form} />
                     <DocumentsConsentsStep form={form} />
                   </div>

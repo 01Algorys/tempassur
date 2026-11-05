@@ -62,6 +62,7 @@
     "description": "TempAssur  Temporary insurance from 1 to 90 days, for all vehicles. Instant certificate by e-mail or WhatsApp.",
     "insuranceHeading": "Our insurance products",
     "coveredCountries": "Countries covered",
+    "coveredCountriesFrontier": "Countries covered (border insurance)",
     "informationHeading": "Information",
     "quiSommesNous": "About us",
     "faq": "FAQ",
@@ -136,8 +137,8 @@
   },
   "home": {
     "meta": {
-      "title": "Temporary car & all-vehicle insurance from 1 to 90 days | TempAssur",
-      "description": "Instant temporary insurance from 1 to 90 days: cars, HGVs, motorhomes, quads, trailers, border insurance. Certificate by e-mail or WhatsApp within minutes. From {price}/day."
+      "title": "Temporary insurance online, 1 to 90 days | TempAssur",
+      "description": "Instant temporary insurance from 1 to 90 days: cars, HGVs, motorhomes, quads, trailers, border insurance. Certificate by e-mail or WhatsApp. From €{price}/day."
     },
     "hero": {
       "title": "Temporary insurance from 1 to 90 days  instant certificate by e-mail or WhatsApp",
@@ -329,7 +330,7 @@
   },
   "wizard": {
     "steps": {
-      "duration": "Duration & location",
+      "duration": "Duration & vehicle",
       "details": "Your details",
       "payment": "Payment"
     },
@@ -380,6 +381,9 @@
       "frontierNotice": "For a vehicle registered in this country, you must take out a frontier insurance: the insurance for foreign vehicles circulating in Europe.",
       "frontierCta": "Subscribe to frontier insurance",
       "residenceMustBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
+      "residenceCpiNotice": "Have you applied for a WW temporary registration certificate (CPI)? Please select France as the country of registration.",
+      "residenceCpiPartner": "No CPI yet? Our partner can take care of it for you.",
+      "residenceCpiPartnerCta": "Apply with our partner",
       "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France."
     },
     "driver": {
@@ -425,8 +429,6 @@
     },
     "vehicle": {
       "heading": "Vehicle",
-      "categorie": "Category *",
-      "categoriePlaceholder": "Select a category",
       "immatriculation": "Registration number *",
       "marque": "Make *",
       "marqueNoResults": "No make found — you can type a custom name",
@@ -484,6 +486,7 @@
       "edit": "Edit",
       "note": "Check your summary above, then enter your payment details below to securely finalise your subscription.",
       "secureHeading": "Secure payment",
+      "klarnaNotice": "<strong>To pay in 3 instalments</strong>, choose Klarna from the payment methods below.",
       "secureBody": "Enter your card details below. Your data is encrypted and sent directly to Stripe — it never passes through our servers.",
       "securePoweredBy": "Secured by Stripe",
       "secureCards": "Visa, Mastercard, American Express",
@@ -503,6 +506,7 @@
       "zoneDomTomSurcharge": "Overseas territory zone",
       "selectDuration": "Select a duration to display the rate.",
       "totalToPay": "Total to pay",
+      "installments": "<strong>Pay in 3 instalments</strong> with Klarna, subject to approval.",
       "securePayment": "Secure payment, cover starts immediately.",
       "durationValue": "{count, plural, one {# day} other {# days}}",
       "noValue": ""
@@ -561,7 +565,7 @@
       "durationsAvailable": "Durations available: {durations} day{plural}"
     },
     "automobiles": {
-      "title": "Temporary car insurance 1 to 90 days from [PRIX] €/day | TempAssur",
+      "title": "Temporary car insurance from [PRIX] €/day | TempAssur",
       "metaDescription": "Insure a car or a van for 1 to 90 days. Subscribe online in 5 minutes, instant certificate by e-mail or WhatsApp. From [PRIX] €/day.",
       "h1": "Temporary car insurance from 1 to 90 days",
       "intro": "Need to insure a car or a van under 3.5 tonnes for a few days? TempAssur's temporary car insurance covers you from 1 to 90 days, with no long-term commitment and no automatic renewal. 100% online subscription in 5 minutes, certificate sent immediately by e-mail or WhatsApp.",
@@ -675,7 +679,7 @@
       ]
     },
     "quadricycles": {
-      "title": "Temporary insurance for quads, licence-free microcars, buggies | TempAssur",
+      "title": "Temporary quad, microcar, buggy insurance | TempAssur",
       "metaDescription": "Approved quad, licence-free microcar or buggy: temporary insurance online, certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for quadricycles: quads, microcars, buggies",
       "intro": "Approved quad, licence-free microcar or buggy: insure your quadricycle for exactly the duration you need. The headline price shown corresponds to the cheapest sub-type; the exact rate is adjusted for your vehicle at subscription.",
@@ -730,7 +734,7 @@
       ]
     },
     "tracteurs-agricoles": {
-      "title": "Temporary agricultural tractor insurance from [PRIX] €/day | TempAssur",
+      "title": "Temporary tractor insurance from [PRIX] €/day | TempAssur",
       "metaDescription": "Harvest, delivery, purchase: temporary agricultural tractor insurance online, certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for agricultural tractors",
       "intro": "Harvest, delivery, purchase or sale: insure your tractor or farm machinery for a few days, with no annual commitment. Subscribe online, certificate by e-mail or WhatsApp.",
@@ -755,7 +759,7 @@
       ]
     },
     "remorques": {
-      "title": "Temporary insurance for trailers, semi-trailers, caravans | TempAssur",
+      "title": "Temporary trailer and caravan insurance | TempAssur",
       "metaDescription": "Trailer, semi-trailer or caravan: temporary insurance mandatory above 750 kg. Instant online subscription.",
       "h1": "Temporary insurance for trailers, semi-trailers and caravans",
       "intro": "Light or heavy trailer, semi-trailer, caravan: above 750 kg gross weight, dedicated third-party liability insurance is mandatory  the towing vehicle's cover is no longer sufficient. Insure yours for a delivery run, a purchase or a one-off trip.",
@@ -781,7 +785,7 @@
       ]
     },
     "assurance-frontiere": {
-      "title": "Border insurance: driving in France and Europe with a foreign vehicle | TempAssur",
+      "title": "Border insurance for foreign vehicles in France | TempAssur",
       "metaDescription": "Vehicle registered outside the EU or abroad? Border insurance covers you in France and in 35 countries. 30 or 90 days, instant certificate.",
       "h1": "Border insurance  for driving in France and Europe",
       "intro": "Is your vehicle registered outside the European Union and outside the green card system  or registered abroad and needs to travel in France? Border insurance is the legal, mandatory solution for taking to the road. And at TempAssur, it doesn't just cover France: you're covered in 35 countries, the same list as our temporary insurance products. Available for 30 or 90 days  certificate by e-mail or WhatsApp.",
@@ -1208,10 +1212,23 @@
       "title": "Your subscription request",
       "description": "The price is recalculated at every step and remains displayed at all times in the panel opposite. The price of options depends on the duration.",
       "guaranteesHeading": "Coverage and countries covered",
-      "guaranteesParagraph": "All our temporary insurance products include third-party liability (mandatory) and legal defence and recourse following an accident. For cars only, options are available: driver coverage, country extension, roadside assistance (not available in the overseas territories).",
-      "coverageParagraph": "You are covered in France and in {count} countries across Europe and the Mediterranean rim, the same list for all our temporary insurance products and border insurance.",
-      "coverageVariationNotice": "Coverage in certain countries may vary depending on the company, the vehicle, the duration and the options chosen. Planning to drive in a country not listed? Contact us: WhatsApp / phone +33 6 05 93 84 79.",
+      "includesIntro": "All our temporary insurance policies include:",
+      "includesLiability": "third-party liability, compulsory to drive legally on public roads;",
+      "includesDefence": "legal defence and recourse following an accident.",
+      "optionsParagraph": "For automobiles only, you can add options: driver coverage, country extension, roadside assistance. These options are not compulsory, so you can choose not to select them.",
+      "coverageParagraph": "You are covered in France and 34 other European countries, making 35 countries.",
+      "extensionParagraph": "With the country extension option (automobiles under 3.5 tonnes only), you are also covered in Morocco, Tunisia, Turkey, Albania, North Macedonia, Moldova and Azerbaijan, making 42 countries in total.",
+      "contact": "Any questions? WhatsApp / phone <phone>+33 6 05 93 84 79</phone>.",
       "coveredCountriesCta": "See the full list of countries covered →"
+    },
+    "souscriptionFrontiere": {
+      "metaTitle": "Take out border insurance online",
+      "metaDescription": "Take out border insurance online for a vehicle registered outside Europe: cover in France and 34 other European countries, with secure payment.",
+      "audience": "Border insurance is for vehicles registered outside Europe, anywhere in the world (Algeria, Morocco, Tunisia, Turkey, Africa, the Americas…).",
+      "includesIntro": "It includes:",
+      "coverageParagraph": "Your vehicle is covered in France and 34 other European countries, making 35 countries, from the moment you arrive in Europe.",
+      "temporaireNote": "Is your vehicle registered in France or Europe? Choose our temporary insurance instead.",
+      "coveredCountriesCta": "See the countries covered by border insurance →"
     },
     "merci": {
       "metaTitle": "Thank you for your trust",
@@ -1231,18 +1248,70 @@
       "contactPrompt": "Or message us on WhatsApp:"
     },
     "paysCouverts": {
-      "metaTitle": "Countries covered by your temporary and border insurance | TempAssur",
-      "metaDescription": "The full list of 35 countries covered by our temporary and border insurance products, and the 7 countries accessible with the extension option.",
-      "heroTitle": "Which countries are you covered in?",
-      "intro": "Good news: our temporary insurance and our border insurance cover the same list of 35 countries. Just one list to remember, whatever your contract.",
-      "coveredHeading": "The 35 countries covered",
-      "assimilatedNote": "Monaco, San Marino and Liechtenstein are treated as equivalent (to France / Italy / Switzerland respectively).",
-      "extensionHeading": "Need to go further? The country extension option",
-      "extensionParagraph": "For cars only (excluding overseas territories), the extension option opens up 7 additional countries: {countries}. Its price depends on the contract duration.",
-      "neverCoveredHeading": "Never covered, whatever the option",
-      "coverageVariationNotice": "Coverage in certain countries may vary depending on the company, the vehicle, the duration and the options chosen. Planning to drive in a country not listed? Contact us: WhatsApp / phone +33 6 05 93 84 79.",
-      "internationalCardNote": "The international insurance card provided with your contract is the reference document.",
+      "metaTitle": "Countries covered by temporary insurance | TempAssur",
+      "metaDescription": "Your temporary insurance covers you in 35 countries, up to 42 with the territorial extension. Full list and how to read your Green Card.",
+      "heroTitle": "Temporary insurance: where can you drive?",
+      "introCard": "With <strong>TempAssur temporary car insurance</strong>, you receive an <strong>international motor insurance card</strong>, also known as a “<strong>Green Card</strong>”. This is the document that proves your vehicle is insured, in France and abroad.",
+      "introCoverage": "It covers you in <strong>35 countries</strong>, and up to <strong>42 countries</strong> with the territorial extension.",
+      "cardHeading": "How to read your Green Card",
+      "cardIntro": "At the bottom of your card there is a table with a code for each country (F for France, E for Spain, I for Italy…).",
+      "cardNotCrossed": "<strong>Box not crossed out</strong>: the country is covered.",
+      "cardCrossed": "<strong>Box crossed out</strong>: the country is not covered.",
+      "cardLocalRules": "In each covered country, your insurance complies with that country’s compulsory insurance rules. In the event of an accident, the local Green Card bureau takes over.",
+      "euHeading": "1. The 27 European Union countries — covered",
+      "euIntro": "Your temporary insurance is valid in <strong>all European Union countries</strong>. You can cross borders freely; your Green Card is all you need.",
+      "nonEuHeading": "2. The 8 European countries outside the EU — covered",
+      "nonEuIntro": "Your cover also extends to <strong>8 European countries that are not part of the European Union</strong> but belong to the Green Card system:",
+      "nonEuCustoms": "Customs checks are possible at the borders of these countries, so keep your Green Card within reach.",
+      "partialNote": "* Cyprus and Serbia: cover is limited to areas controlled by the country’s official government (it does not apply to northern Cyprus or Kosovo).",
+      "total": "Total: 27 + 8 = 35 countries covered.",
+      "extensionHeading": "3. The 7 territorial extension countries — optional",
+      "extensionIntro": "Heading to <strong>Morocco</strong>, <strong>Tunisia</strong>, <strong>Turkey</strong> or the Balkans? For <strong>vehicles under 3.5 tonnes</strong>, you can add the <strong>territorial extension</strong>, which covers 7 more countries:",
+      "extensionWithout": "<strong>Without the extension</strong>: these 7 countries are crossed out on your Green Card and you are not covered there.",
+      "extensionWith": "<strong>With the extension</strong>: these 7 countries are not crossed out on your Green Card. You are covered in <strong>42 countries</strong>.",
+      "azerbaijanNote": "* Azerbaijan: cover is limited to areas controlled by the government of the Republic of Azerbaijan.",
+      "neverHeading": "4. The 4 countries never covered",
+      "neverIntro": "No temporary insurance can cover you in these countries, even with the extension:",
+      "neverSuspended": "<strong>{countries}</strong>: the Green Card system is suspended there. No European insurer can provide cover there.",
+      "neverUkraine": "<strong>{country}</strong>: insurers exclude it because of the war.",
+      "adviceHeading": "Before you leave: check your whole route",
+      "adviceBody": "Check that <strong>every country you will travel through</strong> is covered, including those you are only passing through. If even one country on your route is not covered, you may have to pay for border insurance on the spot.",
+      "adviceExample": "<strong>Example:</strong> to drive from Paris to Tangier, you travel through France and Spain (covered), then Morocco (covered with the extension). So remember to add the extension.",
+      "contact": "Not sure? Contact us: <email>contact@tempassur.com</email> or WhatsApp / phone on <phone>+33 6 05 93 84 79</phone>.",
+      "frontierReferral": "Is your vehicle registered outside these 35 countries (Algeria, Morocco, Tunisia, Turkey, Africa, the Americas…)? Choose <frontiere>border insurance</frontiere> instead.",
       "ctaEstimate": "Get my quote in 30 seconds"
+    },
+    "paysCouvertsFrontiere": {
+      "metaTitle": "Countries covered by border insurance | TempAssur",
+      "metaDescription": "Vehicle registered outside the 35 covered countries? Border insurance lets you drive legally in France and 35 European countries. See the full list.",
+      "heroTitle": "Border insurance: for vehicles registered abroad",
+      "intro": "<strong>TempAssur border insurance</strong> allows a <strong>vehicle registered anywhere in the world</strong> (outside the 35 covered countries) to drive legally in <strong>France and 35 European countries</strong>.",
+      "introCard": "You receive an <strong>international motor insurance card</strong> (“<strong>Green Card</strong>”) to show at checks and when crossing borders.",
+      "vehiclesHeading": "1. Which vehicles is it for?",
+      "vehiclesIntro": "Border insurance is for you if your vehicle is <strong>registered in a country outside the 35 covered countries</strong>. It accepts registrations from all over the world, for example:",
+      "vehiclesMaghreb": "<strong>North Africa</strong>: Algeria, Morocco, Tunisia",
+      "vehiclesBalkans": "<strong>Turkey</strong> and the <strong>Balkans</strong>: Albania, North Macedonia, Kosovo, Moldova…",
+      "vehiclesAfrica": "<strong>Africa</strong>: Senegal, Côte d’Ivoire, Mali, Cameroon…",
+      "vehiclesWorld": "<strong>Middle East, Asia, the Americas</strong>: Lebanon, United States, Canada…",
+      "europeHeading": "Is your vehicle registered in France or Europe?",
+      "europeBody": "In that case, you do not need border insurance. If your vehicle is registered in one of the 35 countries below, choose <temporaire>temporary insurance</temporaire>.",
+      "euHeading": "2. The 27 European Union countries — covered",
+      "euIntro": "With your border insurance, your foreign vehicle is covered in <strong>all European Union countries</strong>:",
+      "nonEuHeading": "3. The 8 European countries outside the EU — covered",
+      "nonEuIntro": "Your cover also extends to these 8 European countries:",
+      "partialNote": "* Cyprus and Serbia: cover is limited to areas controlled by the country’s official government (it does not apply to northern Cyprus or Kosovo).",
+      "total": "Total: 27 + 8 = 35 countries covered.",
+      "cardHeading": "How to read your Green Card",
+      "cardNotCrossed": "<strong>Box not crossed out</strong>: the country is covered.",
+      "cardCrossed": "<strong>Box crossed out</strong>: the country is not covered.",
+      "notCoveredHeading": "4. Countries not covered",
+      "notCoveredIntro": "Border insurance covers you <strong>only in the 35 countries above</strong>. It does not cover driving in your country of registration or in other countries outside this list, for example:",
+      "notCoveredLocal": "For any part of your journey outside the 35 countries, you must be covered by local insurance, taken out in your country of registration or at the border of the country you are crossing.",
+      "whenHeading": "When should you take it out?",
+      "whenBody": "Take out your border insurance <strong>before entering the first covered country</strong> on your route. Arriving by boat in France, Spain or Italy? Your insurance must be valid from the moment you disembark.",
+      "whenExample": "<strong>Example:</strong> you travel from Algiers to Marseille with a car registered in Algeria. Your border insurance must start on the day you arrive at the port. It covers you in France and in all the European countries on the list for its full duration.",
+      "contact": "Not sure? Contact us: <email>contact@tempassur.com</email> or WhatsApp / phone on <phone>+33 6 05 93 84 79</phone>.",
+      "cta": "Get my border insurance"
     },
     "quiSommesNous": {
       "metaTitle": "About us? Temporary insurance broker | TempAssur",
@@ -1271,7 +1340,8 @@
       "ctaContact": "Contact us"
     },
     "contact": {
-      "metaTitle": "Contact TempAssur  7 days a week by WhatsApp, phone or e-mail",
+      "metaTitle": "Contact TempAssur 7 days a week: WhatsApp, phone, e-mail",
+      "metaDescription": "A question about your temporary insurance? The TempAssur team answers 7 days a week by WhatsApp, phone or e-mail, from Clichy, France.",
       "heroTitle": "Contact us  we reply 7 days a week",
       "fastest": "The fastest way",
       "mapTitle": "TempAssur  WN Conseil on Google Maps",
@@ -1352,6 +1422,11 @@
             "id": "prix-2",
             "question": "Are overseas territory rates the same?",
             "answer": "No, they differ from metropolitan France; they are displayed automatically as soon as you enter your country of residence or registration. Options are not available there."
+          },
+          {
+            "id": "prix-3",
+            "question": "Can I pay in 3 instalments?",
+            "answer": "Yes, you can pay for your insurance in 3 instalments with Klarna. At the payment step, choose Klarna from the payment methods offered, then follow the instructions. Paying in 3 instalments is subject to Klarna’s approval."
           }
         ]
       },
