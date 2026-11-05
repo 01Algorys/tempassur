@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/accordion"
 import { SubscriptionWizard } from "@/components/forms/subscription/subscription-wizard"
 import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
+import { BLOG_ARTICLES } from "@/lib/blog-content"
 import { PRODUCT_RELATIONS } from "@/lib/product-content"
 import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
@@ -41,6 +42,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
   const tSection = useTranslations("product.sectionHeadings")
   const tVehicles = useTranslations("vehicleTypes")
   const tNav = useTranslations("nav")
+  const tArticles = useTranslations("blog.articles")
   const locale = useLocale()
   const currency = new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
 
@@ -62,6 +64,9 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
     answer: fillPricePlaceholders(item.answer, slug),
   }))
   const relatedProducts = PRODUCT_RELATIONS[slug]
+  const relatedArticles = BLOG_ARTICLES.filter((article) => article.relatedProducts.includes(slug))
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .slice(0, 3)
   const coveredCountriesHref = slug === "assurance-frontiere" ? "/pays-couverts-frontiere" : "/pays-couverts"
 
   const faqJsonLd = {
@@ -226,6 +231,13 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
                 {tSection("coveredCountriesLink")}
               </Link>
             </li>
+            {relatedArticles.map((article) => (
+              <li key={article.slug}>
+                <Link href={`/blog/${article.slug}`} className="text-sm font-semibold text-primary hover:underline">
+                  {tArticles(`${article.slug}.title`)}
+                </Link>
+              </li>
+            ))}
           </ul>
         </Container>
       </section>

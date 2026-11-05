@@ -164,7 +164,7 @@ export const USE_CASE_PAGES: Record<UseCaseSlug, UseCaseContent> = {
       {
         heading: "Véhicule encore immatriculé à l’étranger",
         paragraphs: [
-          "Tout dépend du pays d’immatriculation. Pour un véhicule immatriculé dans un pays couvert, votre adresse de résidence doit être située en France. Pour un véhicule immatriculé en dehors de ces pays, il faut souscrire une assurance frontière.",
+          "Tout dépend du pays d’immatriculation. Pour un véhicule immatriculé dans la plupart des pays européens, votre adresse de résidence doit être située en France. Pour les autres pays, il faut souscrire une assurance frontière. Le formulaire vous indique la règle dès que vous choisissez le pays.",
         ],
       },
       {
@@ -184,7 +184,7 @@ export const USE_CASE_PAGES: Record<UseCaseSlug, UseCaseContent> = {
       {
         question: "Mon véhicule a encore ses plaques étrangères, que choisir ?",
         answer:
-          "Si le pays d’immatriculation fait partie des pays couverts, votre résidence doit être en France. Sinon, il faut souscrire une assurance frontière.",
+          "Cela dépend du pays d’immatriculation : le formulaire vous indique si votre résidence doit être en France ou s’il faut souscrire une assurance frontière.",
       },
       {
         question: "Suis-je couvert sur tout le trajet d’export ?",

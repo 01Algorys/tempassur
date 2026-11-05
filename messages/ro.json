@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Țări acoperite (frontieră)",
     "informationHeading": "Informații",
     "quiSommesNous": "Cine suntem",
+    "tarifs": "Tarife",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Contact",
@@ -141,7 +142,7 @@
       "description": "Asigurare temporară imediată, 1-90 de zile: auto, vehicule grele, autorulote, ATV-uri, remorci, frontieră. Certificat prin e-mail sau WhatsApp. De la {price} €/zi."
     },
     "hero": {
-      "title": "Asigurare temporară de la 1 la 90 de zile  certificat de asigurare imediat prin e-mail sau WhatsApp",
+      "title": "Asigurare temporară de la 1 la 90 de zile, certificat de asigurare imediat prin e-mail sau WhatsApp",
       "description": "Auto, vehicule grele, autorulote, ATV-uri, autobuze, tractoare, remorci și asigurare de frontieră. Subscriere 100% online, zilnic. Asigurători autorizați: contractele dvs. sunt emise de societăți de asigurare reglementate de Codul asigurărilor francez.",
       "ctaEstimate": "Mă asigur",
       "categoryDialogTitle": "Ce vehicul doriți să asigurați?"
@@ -787,7 +788,7 @@
     "assurance-frontiere": {
       "title": "Asigurare de frontieră vehicule străine | TempAssur",
       "metaDescription": "Vehicul înmatriculat în afara UE sau în străinătate? Asigurarea de frontieră vă acoperă în Franța și în 35 de țări. 30 sau 90 de zile, certificat imediat.",
-      "h1": "Asigurare de frontieră  pentru a circula în Franța și în Europa",
+      "h1": "Asigurare de frontieră pentru a circula în Franța și în Europa",
       "intro": "Vehiculul dvs. este înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde  sau este înmatriculat în străinătate și trebuie să circule în Franța? Asigurarea de frontieră este soluția legală și obligatorie pentru a porni la drum. Iar la TempAssur, ea nu acoperă doar Franța: sunteți acoperit în 35 de țări, aceeași listă ca pentru asigurările noastre temporare. Disponibilă pentru 30 sau 90 de zile  certificat de asigurare prin e-mail sau WhatsApp.",
       "vehiclesParagraph": "Călătorilor care vin în Europa cu vehiculul propriu (Maghreb, Balcani în afara sistemului Cartea Verde, Orientul Mijlociu, America…), francezilor din străinătate aflați temporar în țară cu un vehicul înmatriculat în afara UE, precum și vehiculelor aflate în tranzit sau în curs de import.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident. Primiți un card internațional de asigurare valabil în cele 35 de țări acoperite.",
@@ -1207,7 +1208,7 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Subscriere  asigurare temporară online",
+      "metaTitle": "Subscriere: asigurare temporară online",
       "metaDescription": "Încheiați-vă asigurarea temporară online în câteva minute: localizare, vehicul, durată, conducător, opțiuni și plată securizată.",
       "title": "Cererea dvs. de subscriere",
       "description": "Prețul se recalculează la fiecare etapă și rămâne afișat permanent în caseta alăturată. Prețul opțiunilor depinde de durată.",
@@ -1312,6 +1313,20 @@
       "whenExample": "<strong>Exemplu:</strong> călătoriți de la Alger la Marsilia cu o mașină înmatriculată în Algeria. Asigurarea de frontieră trebuie să înceapă în ziua sosirii în port. Vă acoperă în Franța și în toate țările europene de pe listă pe toată durata sa.",
       "contact": "Aveți nelămuriri? Contactați-ne: <email>contact@tempassur.com</email> sau WhatsApp / telefon la <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Încheie asigurarea de frontieră"
+    },
+    "tarifs": {
+      "metaTitle": "Tarife asigurare temporară, 1-90 de zile | TempAssur",
+      "metaDescription": "Toate tarifele noastre de asigurare temporară: auto după durată și putere, Franța metropolitană și teritoriile de peste mări, frontieră și alte vehicule.",
+      "heroTitle": "Tarifele noastre de asigurare temporară",
+      "intro": "Prețul depinde de vehicul, durată și zonă. Iată tarifele noastre, fără opțiuni.",
+      "durationColumn": "Durată",
+      "autoHeading": "Auto: Franța metropolitană",
+      "autoDomTomHeading": "Auto: teritoriile franceze de peste mări",
+      "frontierHeading": "Asigurare de frontieră: Franța metropolitană",
+      "frontierDomTomHeading": "Asigurare de frontieră: teritoriile franceze de peste mări",
+      "othersHeading": "Alte vehicule",
+      "fromPrice": "De la {price}",
+      "note": "Prețul exact pentru vehiculul și opțiunile dumneavoastră este afișat în calculator."
     },
     "quiSommesNous": {
       "metaTitle": "Cine suntem? Broker de asigurare temporară | TempAssur",

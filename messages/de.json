@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Versicherte Länder (Grenzversicherung)",
     "informationHeading": "Informationen",
     "quiSommesNous": "Über uns",
+    "tarifs": "Preise",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Kontakt",
@@ -141,7 +142,7 @@
       "description": "Sofortige Kurzzeitversicherung von 1 bis 90 Tagen: Auto, Lkw, Wohnmobil, Quad, Anhänger, Grenze. Bescheinigung per E-Mail oder WhatsApp. Ab {price} €/Tag."
     },
     "hero": {
-      "title": "Kurzzeitversicherung von 1 bis 90 Tagen  sofortige Bescheinigung per E-Mail oder WhatsApp",
+      "title": "Kurzzeitversicherung von 1 bis 90 Tagen, sofortige Bescheinigung per E-Mail oder WhatsApp",
       "description": "Auto, Lkw, Wohnmobil, Quad, Bus, Traktor, Anhänger und Grenzversicherung. Abschluss zu 100 % online, 7 Tage die Woche. Zugelassene Versicherer: Ihre Verträge werden von Versicherungsunternehmen getragen, die dem Code des assurances unterliegen.",
       "ctaEstimate": "Ich versichere mich",
       "categoryDialogTitle": "Welches Fahrzeug möchten Sie versichern?"
@@ -787,7 +788,7 @@
     "assurance-frontiere": {
       "title": "Grenzversicherung für ausländische Fahrzeuge | TempAssur",
       "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
-      "h1": "Grenzversicherung  um in Frankreich und Europa zu fahren",
+      "h1": "Grenzversicherung, um in Frankreich und Europa zu fahren",
       "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen  oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage  Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "An Reisende, die mit ihrem Fahrzeug nach Europa kommen (Maghreb, Balkanländer außerhalb der Grünen Karte, Naher Osten, Amerika...), an im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie an Fahrzeuge im Transit oder in der Einfuhr.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall. Sie erhalten eine internationale Versicherungskarte, die in den 35 versicherten Ländern gültig ist.",
@@ -1207,7 +1208,7 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Abschluss  Kurzzeitversicherung online",
+      "metaTitle": "Abschluss: Kurzzeitversicherung online",
       "metaDescription": "Schließen Sie Ihre Kurzzeitversicherung in wenigen Minuten online ab: Standort, Fahrzeug, Dauer, Fahrer, Optionen und sichere Zahlung.",
       "title": "Ihr Antrag auf Vertragsabschluss",
       "description": "Der Preis wird bei jedem Schritt neu berechnet und bleibt dauerhaft im nebenstehenden Kasten angezeigt. Der Preis der Optionen hängt von der Dauer ab.",
@@ -1312,6 +1313,20 @@
       "whenExample": "<strong>Beispiel:</strong> Sie reisen mit einem in Algerien zugelassenen Auto von Algier nach Marseille. Ihre Grenzversicherung muss am Tag Ihrer Ankunft im Hafen beginnen. Sie gilt während der gesamten Laufzeit in Frankreich und in allen europäischen Ländern der Liste.",
       "contact": "Noch Fragen? Kontaktieren Sie uns: <email>contact@tempassur.com</email> oder per WhatsApp / Telefon unter <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Meine Grenzversicherung abschließen"
+    },
+    "tarifs": {
+      "metaTitle": "Preise Kurzzeitversicherung, 1 bis 90 Tage | TempAssur",
+      "metaDescription": "Alle Preise unserer Kurzzeitversicherung: Auto nach Dauer und Leistung, Festland-Frankreich und Überseegebiete, Grenzversicherung und andere Fahrzeuge.",
+      "heroTitle": "Unsere Preise für die Kurzzeitversicherung",
+      "intro": "Der Preis hängt vom Fahrzeug, der Dauer und der Zone ab. Hier sind unsere Preise ohne Optionen.",
+      "durationColumn": "Dauer",
+      "autoHeading": "Auto: Festland-Frankreich",
+      "autoDomTomHeading": "Auto: französische Überseegebiete",
+      "frontierHeading": "Grenzversicherung: Festland-Frankreich",
+      "frontierDomTomHeading": "Grenzversicherung: französische Überseegebiete",
+      "othersHeading": "Andere Fahrzeuge",
+      "fromPrice": "Ab {price}",
+      "note": "Der genaue Preis für Ihr Fahrzeug und Ihre Optionen wird im Preisrechner angezeigt."
     },
     "quiSommesNous": {
       "metaTitle": "Über uns  Makler für Kurzzeitversicherungen | TempAssur",

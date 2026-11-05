@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Paesi coperti (frontiera)",
     "informationHeading": "Informazioni",
     "quiSommesNous": "Chi siamo",
+    "tarifs": "Tariffe",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Contatti",
@@ -141,7 +142,7 @@
       "description": "Assicurazione temporanea immediata da 1 a 90 giorni: auto, mezzi pesanti, camper, quad, rimorchi, frontiera. Attestato via e-mail o WhatsApp. Da {price} €/giorno."
     },
     "hero": {
-      "title": "Assicurazione temporanea da 1 a 90 giorni  attestato immediato via e-mail o WhatsApp",
+      "title": "Assicurazione temporanea da 1 a 90 giorni, attestato immediato via e-mail o WhatsApp",
       "description": "Auto, mezzo pesante, camper, quad, bus, trattore, rimorchio e assicurazione di frontiera. Sottoscrizione 100% online, 7 giorni su 7. Assicuratori autorizzati: i vostri contratti sono garantiti da compagnie assicurative regolate dal Codice delle assicurazioni.",
       "ctaEstimate": "Mi assicuro",
       "categoryDialogTitle": "Quale veicolo desideri assicurare?"
@@ -787,7 +788,7 @@
     "assurance-frontiere": {
       "title": "Assicurazione di frontiera veicoli stranieri | TempAssur",
       "metaDescription": "Veicolo immatricolato fuori dall'UE o all'estero? L'assicurazione di frontiera ti copre in Francia e in 35 paesi. 30 o 90 giorni, attestato immediato.",
-      "h1": "Assicurazione di frontiera  per circolare in Francia e in Europa",
+      "h1": "Assicurazione di frontiera per circolare in Francia e in Europa",
       "intro": "Il tuo veicolo è immatricolato fuori dall'Unione Europea e fuori dal sistema carta verde  oppure immatricolato all'estero e deve circolare in Francia? L'assicurazione di frontiera è la soluzione legale e obbligatoria per mettersi in viaggio. E con TempAssur, non copre solo la Francia: sei coperto in 35 paesi, la stessa lista delle nostre assicurazioni temporanee. Disponibile per 30 o 90 giorni  attestato via e-mail o WhatsApp.",
       "vehiclesParagraph": "Ai viaggiatori che vengono in Europa con il proprio veicolo (Maghreb, Balcani fuori carta verde, Medio Oriente, Americhe…), ai francesi residenti all'estero di rientro temporaneo con un veicolo immatricolato fuori UE, e ai veicoli in transito o in corso di importazione.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente. Riceverai una carta internazionale di assicurazione valida nei 35 paesi coperti.",
@@ -1207,7 +1208,7 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Sottoscrizione  assicurazione temporanea online",
+      "metaTitle": "Sottoscrizione: assicurazione temporanea online",
       "metaDescription": "Sottoscrivi la tua assicurazione temporanea online in pochi minuti: localizzazione, veicolo, durata, conducente, opzioni e pagamento sicuro.",
       "title": "La tua richiesta di sottoscrizione",
       "description": "Il prezzo viene ricalcolato a ogni fase e resta visualizzato in permanenza nel riquadro a lato. Il prezzo delle opzioni dipende dalla durata.",
@@ -1312,6 +1313,20 @@
       "whenExample": "<strong>Esempio:</strong> arrivi da Algeri a Marsiglia con un’auto immatricolata in Algeria. La tua assicurazione di frontiera deve iniziare il giorno del tuo arrivo al porto. Ti copre in Francia e in tutti i paesi europei dell’elenco per tutta la sua durata.",
       "contact": "Hai un dubbio? Contattaci: <email>contact@tempassur.com</email> oppure WhatsApp / telefono al <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Sottoscrivi la mia assicurazione di frontiera"
+    },
+    "tarifs": {
+      "metaTitle": "Tariffe assicurazione temporanea 1-90 giorni | TempAssur",
+      "metaDescription": "Tutte le nostre tariffe di assicurazione temporanea: auto per durata e potenza, Francia metropolitana e d’oltremare, frontiera e altri veicoli.",
+      "heroTitle": "Le nostre tariffe di assicurazione temporanea",
+      "intro": "Il prezzo dipende dal veicolo, dalla durata e dalla zona. Ecco le nostre tariffe, opzioni escluse.",
+      "durationColumn": "Durata",
+      "autoHeading": "Auto: Francia metropolitana",
+      "autoDomTomHeading": "Auto: territori francesi d’oltremare",
+      "frontierHeading": "Assicurazione di frontiera: Francia metropolitana",
+      "frontierDomTomHeading": "Assicurazione di frontiera: territori francesi d’oltremare",
+      "othersHeading": "Altri veicoli",
+      "fromPrice": "Da {price}",
+      "note": "Il prezzo esatto per il tuo veicolo e le tue opzioni è indicato nel calcolatore."
     },
     "quiSommesNous": {
       "metaTitle": "Chi siamo? Broker di assicurazione temporanea | TempAssur",

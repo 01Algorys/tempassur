@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Countries covered (border insurance)",
     "informationHeading": "Information",
     "quiSommesNous": "About us",
+    "tarifs": "Prices",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Contact",
@@ -141,7 +142,7 @@
       "description": "Instant temporary insurance from 1 to 90 days: cars, HGVs, motorhomes, quads, trailers, border insurance. Certificate by e-mail or WhatsApp. From €{price}/day."
     },
     "hero": {
-      "title": "Temporary insurance from 1 to 90 days  instant certificate by e-mail or WhatsApp",
+      "title": "Temporary insurance from 1 to 90 days, instant certificate by e-mail or WhatsApp",
       "description": "Cars, HGVs, motorhomes, quads, buses, tractors, trailers and border insurance. 100% online subscription, 7 days a week. Approved insurers: your contracts are underwritten by insurance companies governed by the French Insurance Code.",
       "ctaEstimate": "I want to be insured",
       "categoryDialogTitle": "Which vehicle would you like to insure?"
@@ -787,7 +788,7 @@
     "assurance-frontiere": {
       "title": "Border insurance for foreign vehicles in France | TempAssur",
       "metaDescription": "Vehicle registered outside the EU or abroad? Border insurance covers you in France and in 35 countries. 30 or 90 days, instant certificate.",
-      "h1": "Border insurance  for driving in France and Europe",
+      "h1": "Border insurance for driving in France and Europe",
       "intro": "Is your vehicle registered outside the European Union and outside the green card system  or registered abroad and needs to travel in France? Border insurance is the legal, mandatory solution for taking to the road. And at TempAssur, it doesn't just cover France: you're covered in 35 countries, the same list as our temporary insurance products. Available for 30 or 90 days  certificate by e-mail or WhatsApp.",
       "vehiclesParagraph": "For travellers coming to Europe with their vehicle (Maghreb, Balkans outside the green card system, Middle East, Americas...), for French nationals returning temporarily from abroad with a vehicle registered outside the EU, and for vehicles in transit or being imported.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident. You receive an international insurance card valid in the 35 countries covered.",
@@ -1207,7 +1208,7 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Subscription  temporary insurance online",
+      "metaTitle": "Subscription: temporary insurance online",
       "metaDescription": "Subscribe to your temporary insurance online in a few minutes: location, vehicle, duration, driver, options and secure payment.",
       "title": "Your subscription request",
       "description": "The price is recalculated at every step and remains displayed at all times in the panel opposite. The price of options depends on the duration.",
@@ -1312,6 +1313,20 @@
       "whenExample": "<strong>Example:</strong> you travel from Algiers to Marseille with a car registered in Algeria. Your border insurance must start on the day you arrive at the port. It covers you in France and in all the European countries on the list for its full duration.",
       "contact": "Not sure? Contact us: <email>contact@tempassur.com</email> or WhatsApp / phone on <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Get my border insurance"
+    },
+    "tarifs": {
+      "metaTitle": "Temporary insurance prices, 1 to 90 days | TempAssur",
+      "metaDescription": "All our temporary insurance prices: cars by duration and power, mainland France and overseas territories, border insurance and other vehicles.",
+      "heroTitle": "Our temporary insurance prices",
+      "intro": "The price depends on the vehicle, the duration and the zone. Here are our prices, excluding options.",
+      "durationColumn": "Duration",
+      "autoHeading": "Car: mainland France",
+      "autoDomTomHeading": "Car: French overseas territories",
+      "frontierHeading": "Border insurance: mainland France",
+      "frontierDomTomHeading": "Border insurance: French overseas territories",
+      "othersHeading": "Other vehicles",
+      "fromPrice": "From {price}",
+      "note": "The exact price for your vehicle and options is shown in the price tool."
     },
     "quiSommesNous": {
       "metaTitle": "About us? Temporary insurance broker | TempAssur",

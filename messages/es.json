@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Países cubiertos (frontera)",
     "informationHeading": "Información",
     "quiSommesNous": "Quiénes somos",
+    "tarifs": "Tarifas",
     "faq": "Preguntas frecuentes",
     "blog": "Blog",
     "contact": "Contacto",
@@ -787,7 +788,7 @@
     "assurance-frontiere": {
       "title": "Seguro de frontera para vehículos extranjeros | TempAssur",
       "metaDescription": "¿Vehículo matriculado fuera de la UE o en el extranjero? El seguro de frontera le cubre en Francia y en 35 países. 30 o 90 días, certificado inmediato.",
-      "h1": "Seguro de frontera  para circular por Francia y Europa",
+      "h1": "Seguro de frontera para circular por Francia y Europa",
       "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria para poder circular. Y en TempAssur no cubre solo Francia: está cubierto en 35 países, la misma lista que nuestros seguros temporales. Disponible en 30 o 90 días  certificado por correo electrónico o WhatsApp.",
       "vehiclesParagraph": "A los viajeros que llegan a Europa con su vehículo (Magreb, Balcanes fuera de la tarjeta verde, Oriente Medio, América...), a los franceses residentes en el extranjero que regresan temporalmente con un vehículo matriculado fuera de la UE, y a los vehículos en tránsito o en proceso de importación.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente. Recibirá una tarjeta internacional de seguro válida en los 35 países cubiertos.",
@@ -1207,7 +1208,7 @@
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Contratación  seguro temporal en línea",
+      "metaTitle": "Contratación: seguro temporal en línea",
       "metaDescription": "Contrate su seguro temporal en línea en pocos minutos: ubicación, vehículo, duración, conductor, opciones y pago seguro.",
       "title": "Su solicitud de contratación",
       "description": "El precio se recalcula en cada etapa y permanece visible de forma permanente en el recuadro adjunto. El precio de las opciones depende de la duración.",
@@ -1312,6 +1313,20 @@
       "whenExample": "<strong>Ejemplo:</strong> viaja de Argel a Marsella con un coche matriculado en Argelia. Su seguro de frontera debe comenzar el día de su llegada al puerto. Le cubre en Francia y en todos los países europeos de la lista durante toda su duración.",
       "contact": "¿Tiene dudas? Contáctenos: <email>contact@tempassur.com</email> o por WhatsApp / teléfono al <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Contratar mi seguro de frontera"
+    },
+    "tarifs": {
+      "metaTitle": "Tarifas del seguro temporal, 1 a 90 días | TempAssur",
+      "metaDescription": "Todas nuestras tarifas de seguro temporal: coche por duración y potencia, Francia metropolitana y ultramar, seguro de frontera y otros vehículos.",
+      "heroTitle": "Nuestras tarifas de seguro temporal",
+      "intro": "El precio depende del vehículo, la duración y la zona. Estas son nuestras tarifas, sin opciones.",
+      "durationColumn": "Duración",
+      "autoHeading": "Coche: Francia metropolitana",
+      "autoDomTomHeading": "Coche: territorios franceses de ultramar",
+      "frontierHeading": "Seguro de frontera: Francia metropolitana",
+      "frontierDomTomHeading": "Seguro de frontera: territorios franceses de ultramar",
+      "othersHeading": "Otros vehículos",
+      "fromPrice": "Desde {price}",
+      "note": "El precio exacto para su vehículo y sus opciones se muestra en el calculador."
     },
     "quiSommesNous": {
       "metaTitle": "¿Quiénes somos? Corredor de seguros temporales | TempAssur",
