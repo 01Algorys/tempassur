@@ -168,7 +168,7 @@
         "100% secure payment (card)",
         "French broker  ORIAS no. 24004933",
         "Approved insurers  companies governed by the French Insurance Code",
-        "7 days a week by phone and WhatsApp: +33 6 05 93 84 79"
+        "7 days a week by phone and WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "Why are you taking out this insurance? *",
       "placeholder": "Select a reason",
       "options": {
-        "achat-revente": "Purchase/resale",
+        "achat-revente": "Purchase/sale",
         "pret-vehicule": "Vehicle loan (lending)",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Occasional private or professional use",

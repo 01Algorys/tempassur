@@ -168,7 +168,7 @@
         "Pago 100 % seguro (tarjeta bancaria)",
         "Corredor francés  ORIAS n.º 24004933",
         "Aseguradoras autorizadas  compañías reguladas por el Código de Seguros",
-        "Los 7 días de la semana por teléfono y WhatsApp: +33 6 05 93 84 79"
+        "Los 7 días de la semana por teléfono y WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "¿Por qué contrata este seguro? *",
       "placeholder": "Seleccione un motivo",
       "options": {
-        "achat-revente": "Compra/reventa",
+        "achat-revente": "Compra/venta",
         "pret-vehicule": "Préstamo de vehículo",
         "import-export": "Importación/exportación",
         "prive-pro-occasionnel": "Uso privado o profesional ocasional",

@@ -168,7 +168,7 @@
         "100 % sichere Zahlung (Kreditkarte)",
         "Französischer Makler  ORIAS-Nr. 24004933",
         "Zugelassene Versicherer  Unternehmen, die dem Code des assurances unterliegen",
-        "7 Tage die Woche per Telefon und WhatsApp: +33 6 05 93 84 79"
+        "7 Tage die Woche per Telefon und WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "Warum schließen Sie diese Versicherung ab? *",
       "placeholder": "Grund auswählen",
       "options": {
-        "achat-revente": "Kauf/Weiterverkauf",
+        "achat-revente": "Kauf/Verkauf",
         "pret-vehicule": "Fahrzeugverleih",
         "import-export": "Import/Export",
         "prive-pro-occasionnel": "Gelegentliche private oder berufliche Nutzung",

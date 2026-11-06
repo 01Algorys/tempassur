@@ -93,7 +93,7 @@ export const PaymentStep = forwardRef<PaymentStepHandle, PaymentStepProps>(funct
           label={t("dateEffet")}
           value={values.dateEffet && values.heureEffet ? t("dateAt", { date: values.dateEffet, time: values.heureEffet }) : "—"}
           editLabel={t("edit")}
-          onEdit={() => onEdit(1)}
+          onEdit={() => onEdit(0)}
         />
         <RecapLine
           label={t("optionsChoisies")}

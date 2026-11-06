@@ -168,7 +168,7 @@
         "Paiement 100 % sécurisé (CB)",
         "Courtier français  ORIAS n° 24004933",
         "Assureurs agréés  entreprises régies par le Code des assurances",
-        "7j/7 par téléphone et WhatsApp: +33 6 05 93 84 79"
+        "7j/7 par téléphone et WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "Pourquoi souscrivez-vous cette assurance ? *",
       "placeholder": "Sélectionnez un motif",
       "options": {
-        "achat-revente": "Achat/revente",
+        "achat-revente": "Achat/vente",
         "pret-vehicule": "Prêt de véhicule",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Privé ou professionnel occasionnel",

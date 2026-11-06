@@ -168,7 +168,7 @@
         "Plată 100% securizată (card bancar)",
         "Broker francez de asigurări  ORIAS nr. 24004933",
         "Asigurători autorizați  societăți reglementate de Codul asigurărilor francez",
-        "Zilnic, prin telefon și WhatsApp: +33 6 05 93 84 79"
+        "Zilnic, prin telefon și WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "De ce încheiați această asigurare? *",
       "placeholder": "Selectați un motiv",
       "options": {
-        "achat-revente": "Cumpărare/revânzare",
+        "achat-revente": "Cumpărare/vânzare",
         "pret-vehicule": "Împrumut de vehicul",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Uz privat sau profesional ocazional",

@@ -51,6 +51,8 @@ type StepId = "duration" | "details" | "payment"
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
     "duree",
+    "dateEffet",
+    "heureEffet",
     "categorie",
     "marque",
     "cvTier",
@@ -71,8 +73,6 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "motifSouscriptionAutre",
     "telephonesSupplementaires",
     "emailsSupplementaires",
-    "dateEffet",
-    "heureEffet",
     "civilite",
     "nom",
     "prenom",
@@ -458,6 +458,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                 {currentStep.id === "duration" ? (
                   <div className="flex flex-col gap-8">
                     <DurationStep form={form} />
+                    <EffectDateStep form={form} />
                     <VehicleStep form={form} />
                     <LocalisationStep form={form} />
                     <OptionsStep form={form} />
@@ -467,7 +468,6 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   <div className="flex flex-col gap-8">
                     <MotifStep form={form} />
                     <DriverStep form={form} />
-                    <EffectDateStep form={form} />
                     <DocumentsConsentsStep form={form} />
                   </div>
                 ) : null}

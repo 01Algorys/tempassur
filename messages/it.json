@@ -168,7 +168,7 @@
         "Pagamento 100% sicuro (carta di credito)",
         "Broker francese  ORIAS n° 24004933",
         "Assicuratori autorizzati  compagnie regolate dal Codice delle assicurazioni",
-        "7 giorni su 7 per telefono e WhatsApp: +33 6 05 93 84 79"
+        "7 giorni su 7 per telefono e WhatsApp"
       ]
     },
     "useCases": {
@@ -535,7 +535,7 @@
       "label": "Perché sottoscrive questa assicurazione? *",
       "placeholder": "Seleziona un motivo",
       "options": {
-        "achat-revente": "Acquisto/rivendita",
+        "achat-revente": "Acquisto/vendita",
         "pret-vehicule": "Prestito del veicolo",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Uso privato o professionale occasionale",
