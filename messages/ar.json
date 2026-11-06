@@ -250,7 +250,7 @@
     "vehicleVignettes": {
       "eyebrow": "مركباتنا",
       "title": "تأميناتنا",
-      "priceFrom": "ابتداءً من {price}/يوم",
+      "priceFrom": "ابتداءً من <strong>{price}/يوم</strong>",
       "cta": "معرفة المزيد"
     }
   },

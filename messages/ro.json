@@ -250,7 +250,7 @@
     "vehicleVignettes": {
       "eyebrow": "Vehiculele noastre",
       "title": "Asigurările noastre",
-      "priceFrom": "de la {price}/zi",
+      "priceFrom": "de la <strong>{price}/zi</strong>",
       "cta": "Află mai multe"
     }
   },

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Link } from "@/i18n/navigation"
 import { motion } from "framer-motion"
-import { Menu, Phone } from "lucide-react"
+import { MapPinned, Menu, Phone } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Logo } from "@/components/shared/logo"
@@ -37,7 +37,7 @@ import type { NavLink } from "@/types"
 import { LanguageSwitcher } from "./language-switcher"
 
 const navItemClass =
-  "rounded-full px-2.5 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy whitespace-nowrap"
+  "rounded-full px-2 py-2 text-xs font-semibold tracking-wide text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy whitespace-nowrap"
 
 export function Header() {
   const scrolled = useScrolled(32)
@@ -45,6 +45,7 @@ export function Header() {
   const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
   const t = useTranslations("nav")
   const tHeader = useTranslations("header")
+  const tFooter = useTranslations("footer")
   const tVehicles = useTranslations("vehicleTypes")
 
   // "Assurance frontière" mise en avant en tête du menu déroulant "Je m'assure" —
@@ -83,9 +84,9 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-18 w-full max-w-[120rem] items-center justify-between container-px py-3">
-        <Logo />
+        <Logo className="shrink-0" />
 
-        <NavigationMenu viewport={false} className="hidden max-w-none flex-1 justify-center xl:flex" aria-label="Primary">
+        <NavigationMenu viewport={false} className="hidden max-w-none flex-1 justify-center min-[1440px]:flex" aria-label="Primary">
           <NavigationMenuList>
             {navLinks.map((link) =>
               link.children ? (
@@ -121,19 +122,22 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden shrink-0 items-center gap-2 xl:flex">
+        <div className="hidden shrink-0 items-center gap-2 min-[1440px]:flex">
           <TelLink
             phone={siteConfig.phone}
-            className="hidden shrink-0 rounded-full px-3 py-2 text-xs font-semibold tracking-wide whitespace-nowrap text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy 2xl:inline-flex"
+            className="hidden shrink-0 rounded-full px-3 py-2 text-xs font-semibold tracking-wide whitespace-nowrap text-foreground/70 uppercase transition-colors hover:bg-secondary hover:text-navy min-[1680px]:inline-flex"
           >
             <Phone className="mr-1.5 inline size-3.5" strokeWidth={2.2} />
             {siteConfig.phone}
           </TelLink>
-          <WhatsappButton className="h-9 rounded-full px-4 text-xs" />
+          <Button asChild variant="outline" size="sm" className="h-9 rounded-full px-3 text-xs">
+            <Link href="/pays-couverts">{tFooter("coveredCountries")}</Link>
+          </Button>
+          <WhatsappButton className="h-9 rounded-full px-3 text-xs" />
           <Button
             type="button"
             size="sm"
-            className="h-9 rounded-full px-4 text-xs"
+            className="h-9 rounded-full px-3 text-xs"
             onClick={() => setCategoryDialogOpen(true)}
           >
             {tHeader("onlineCta")}
@@ -141,7 +145,13 @@ export function Header() {
           <LanguageSwitcher />
         </div>
 
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex items-center gap-2 min-[1440px]:hidden">
+          <Button asChild variant="outline" size="sm" className="h-9 rounded-full px-3 text-xs sm:px-4">
+            <Link href="/pays-couverts" aria-label={tFooter("coveredCountries")}>
+              <MapPinned className="size-4" strokeWidth={2.2} />
+              <span className="hidden sm:inline">{tFooter("coveredCountries")}</span>
+            </Link>
+          </Button>
           <LanguageSwitcher />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
