@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Versicherte Länder (Grenzversicherung)",
     "informationHeading": "Informationen",
     "quiSommesNous": "Über uns",
+    "tarifs": "Preise",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Kontakt",
@@ -141,7 +142,7 @@
       "description": "Sofortige Kurzzeitversicherung von 1 bis 90 Tagen: Auto, Lkw, Wohnmobil, Quad, Anhänger, Grenze. Bescheinigung per E-Mail oder WhatsApp. Ab {price} €/Tag."
     },
     "hero": {
-      "title": "Kurzzeitversicherung von 1 bis 90 Tagen  sofortige Bescheinigung per E-Mail oder WhatsApp",
+      "title": "Kurzzeitversicherung von 1 bis 90 Tagen, sofortige Bescheinigung per E-Mail oder WhatsApp",
       "description": "Auto, Lkw, Wohnmobil, Quad, Bus, Traktor, Anhänger und Grenzversicherung. Abschluss zu 100 % online, 7 Tage die Woche. Zugelassene Versicherer: Ihre Verträge werden von Versicherungsunternehmen getragen, die dem Code des assurances unterliegen.",
       "ctaEstimate": "Ich versichere mich",
       "categoryDialogTitle": "Welches Fahrzeug möchten Sie versichern?"
@@ -167,7 +168,7 @@
         "100 % sichere Zahlung (Kreditkarte)",
         "Französischer Makler  ORIAS-Nr. 24004933",
         "Zugelassene Versicherer  Unternehmen, die dem Code des assurances unterliegen",
-        "7 Tage die Woche per Telefon und WhatsApp: +33 6 05 93 84 79"
+        "7 Tage die Woche per Telefon und WhatsApp"
       ]
     },
     "useCases": {
@@ -362,7 +363,6 @@
       "effectDateHeading": "Datum des Versicherungsbeginns"
     },
     "vehicleTier": {
-      "heading": "Steuerliche Leistung",
       "cvLabel": "Steuerliche Leistung *",
       "ptacLabel": "Zulässiges Gesamtgewicht *",
       "quadLabel": "Fahrzeugtyp *",
@@ -383,7 +383,7 @@
       "residenceMustBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
       "residenceCpiNotice": "Haben Sie ein vorläufiges WW-Zulassungszertifikat (CPI) beantragt? Bitte wählen Sie Frankreich als Zulassungsland aus.",
       "residenceCpiPartner": "Noch kein CPI? Unser Partner kümmert sich für Sie darum.",
-      "residenceCpiPartnerCta": "Antrag über unseren Partner stellen",
+      "residenceCpiPartnerCta": "Mehr erfahren",
       "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
     },
     "driver": {
@@ -535,7 +535,7 @@
       "label": "Warum schließen Sie diese Versicherung ab? *",
       "placeholder": "Grund auswählen",
       "options": {
-        "achat-revente": "Kauf/Weiterverkauf",
+        "achat-revente": "Kauf/Verkauf",
         "pret-vehicule": "Fahrzeugverleih",
         "import-export": "Import/Export",
         "prive-pro-occasionnel": "Gelegentliche private oder berufliche Nutzung",
@@ -787,7 +787,7 @@
     "assurance-frontiere": {
       "title": "Grenzversicherung für ausländische Fahrzeuge | TempAssur",
       "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
-      "h1": "Grenzversicherung  um in Frankreich und Europa zu fahren",
+      "h1": "Grenzversicherung, um in Frankreich und Europa zu fahren",
       "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen  oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage  Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "An Reisende, die mit ihrem Fahrzeug nach Europa kommen (Maghreb, Balkanländer außerhalb der Grünen Karte, Naher Osten, Amerika...), an im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie an Fahrzeuge im Transit oder in der Einfuhr.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall. Sie erhalten eine internationale Versicherungskarte, die in den 35 versicherten Ländern gültig ist.",
@@ -1202,12 +1202,79 @@
             "text": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz und konforme Vorgeschichtserklärungen (insbesondere: keine Kündigung wegen eines Schadensfalls in den letzten 5 Jahren). Schreiben Sie uns bei Zweifeln an Ihrer Situation per WhatsApp an +33 6 05 93 84 79: Wir antworten Ihnen an 7 Tagen die Woche."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Vorläufiges WW-Zulassungszertifikat (CPI): Wozu dient es und wie erhält man es?",
+        "seoTitle": "WW-CPI: vorläufiges Zertifikat, Antrag und Versicherung",
+        "metaDescription": "WW-CPI: Wann es ausgestellt wird, wie Sie es über unseren Partner Certimat beantragen und wie Sie Ihr Fahrzeug bei TempAssur versichern.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Das vorläufige WW-Zulassungszertifikat, kurz WW-CPI, ist ein befristetes Dokument, das von der ANTS, der französischen Behörde für gesicherte Dokumente, ausgestellt wird. Zusammen mit einem WW-Kennzeichen ermöglicht es das Fahren, bis die endgültige Zulassungsbescheinigung vorliegt."
+          },
+          {
+            "type": "h2",
+            "text": "Wann wird es ausgestellt?"
+          },
+          {
+            "type": "p",
+            "text": "Ein WW-CPI kann insbesondere ausgestellt werden für:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "ein im Ausland gekauftes Neu- oder Gebrauchtfahrzeug, dessen Antrag geprüft wird;",
+              "ein für den Export bestimmtes Fahrzeug;",
+              "ein unvollständig verkauftes Neufahrzeug, das noch einen Aufbau erhält."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Sind die ausländischen Kennzeichen eines Fahrzeugs nicht mehr gültig, muss es mit vorläufigen Kennzeichen und einem WW-Zertifikat gefahren werden."
+          },
+          {
+            "type": "h2",
+            "text": "Wo und bis wann darf man fahren?"
+          },
+          {
+            "type": "p",
+            "text": "Das WW-CPI erlaubt das Fahren in Frankreich. Im Ausland hängt seine Gültigkeit von der Zustimmung des jeweiligen Staates ab. Prüfen Sie vor der Fahrt das Ablaufdatum Ihres Zertifikats."
+          },
+          {
+            "type": "p",
+            "text": "Seit dem 1. Januar 2026 haben neue WW-Kennzeichen einen rosa Hintergrund mit schwarzen Zeichen und zeigen rechts Monat und Jahr des Gültigkeitsendes."
+          },
+          {
+            "type": "h2",
+            "text": "Wie stellt man den Antrag?"
+          },
+          {
+            "type": "p",
+            "text": "Unser Partner Certimat kümmert sich online um Ihren Antrag: Er bereitet die Formulare vor, prüft Ihre Unterlagen, übermittelt den Antrag an die zuständige Behörde und begleitet ihn bis zum Erhalt. Welche Unterlagen nötig sind, hängt von Ihrer Situation ab."
+          },
+          {
+            "type": "p",
+            "text": "Certimat ist ein privater Dienst und keine Behörde. Seine Servicegebühren kommen zu den amtlichen Abgaben hinzu und werden vor der Zahlung angezeigt."
+          },
+          {
+            "type": "partner",
+            "text": "Antrag über unseren Partner stellen"
+          },
+          {
+            "type": "h2",
+            "text": "Wie versichert man ein Fahrzeug mit WW-CPI?"
+          },
+          {
+            "type": "p",
+            "text": "Ein Fahrzeug mit WW-CPI muss versichert sein, sobald es am Straßenverkehr teilnimmt. Wählen Sie im TempAssur-Formular Frankreich als Zulassungsland aus. Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten: Läuft Ihr Zertifikat in 10 Tagen ab, beträgt die maximal versicherbare Dauer 10 Tage."
+          }
+        ]
       }
     }
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Abschluss  Kurzzeitversicherung online",
+      "metaTitle": "Abschluss: Kurzzeitversicherung online",
       "metaDescription": "Schließen Sie Ihre Kurzzeitversicherung in wenigen Minuten online ab: Standort, Fahrzeug, Dauer, Fahrer, Optionen und sichere Zahlung.",
       "title": "Ihr Antrag auf Vertragsabschluss",
       "description": "Der Preis wird bei jedem Schritt neu berechnet und bleibt dauerhaft im nebenstehenden Kasten angezeigt. Der Preis der Optionen hängt von der Dauer ab.",
@@ -1312,6 +1379,20 @@
       "whenExample": "<strong>Beispiel:</strong> Sie reisen mit einem in Algerien zugelassenen Auto von Algier nach Marseille. Ihre Grenzversicherung muss am Tag Ihrer Ankunft im Hafen beginnen. Sie gilt während der gesamten Laufzeit in Frankreich und in allen europäischen Ländern der Liste.",
       "contact": "Noch Fragen? Kontaktieren Sie uns: <email>contact@tempassur.com</email> oder per WhatsApp / Telefon unter <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Meine Grenzversicherung abschließen"
+    },
+    "tarifs": {
+      "metaTitle": "Preise Kurzzeitversicherung, 1 bis 90 Tage | TempAssur",
+      "metaDescription": "Alle Preise unserer Kurzzeitversicherung: Auto nach Dauer und Leistung, Festland-Frankreich und Überseegebiete, Grenzversicherung und andere Fahrzeuge.",
+      "heroTitle": "Unsere Preise für die Kurzzeitversicherung",
+      "intro": "Der Preis hängt vom Fahrzeug, der Dauer und der Zone ab. Hier sind unsere Preise ohne Optionen.",
+      "durationColumn": "Dauer",
+      "autoHeading": "Auto: Festland-Frankreich",
+      "autoDomTomHeading": "Auto: französische Überseegebiete",
+      "frontierHeading": "Grenzversicherung: Festland-Frankreich",
+      "frontierDomTomHeading": "Grenzversicherung: französische Überseegebiete",
+      "othersHeading": "Andere Fahrzeuge",
+      "fromPrice": "Ab {price}",
+      "note": "Der genaue Preis für Ihr Fahrzeug und Ihre Optionen wird im Preisrechner angezeigt."
     },
     "quiSommesNous": {
       "metaTitle": "Über uns  Makler für Kurzzeitversicherungen | TempAssur",
@@ -1464,6 +1545,33 @@
             "id": "documents-2",
             "question": "Ich habe meine Bescheinigung nicht erhalten.",
             "answer": "Prüfen Sie Ihren Spam-Ordner. Wenn der Versicherungsbeginn kurz bevorsteht, kontaktieren Sie uns sofort: WhatsApp / Tel. +33 6 05 93 84 79  wir beschleunigen die Bearbeitung."
+          },
+          {
+            "id": "documents-3",
+            "question": "Was ist ein WW-CPI?",
+            "answer": "Es ist ein vorläufiges Zulassungszertifikat, das von der ANTS, der französischen Behörde für gesicherte Dokumente, ausgestellt wird. Zusammen mit einem WW-Kennzeichen ermöglicht es das Fahren, bis die endgültige Zulassungsbescheinigung vorliegt, zum Beispiel bei einem im Ausland gekauften Fahrzeug, dessen Antrag geprüft wird.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Wie erhalte ich ein WW-CPI?",
+            "answer": "Unser Partner Certimat kann sich online um Ihren Antrag kümmern: Er bereitet die Formulare vor, prüft Ihre Unterlagen und übermittelt den Antrag an die zuständige Behörde.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Wie versichere ich ein Fahrzeug mit WW-CPI?",
+            "answer": "Wählen Sie im Formular Frankreich als Zulassungsland aus. Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

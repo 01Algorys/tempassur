@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Pays couverts (frontière)",
     "informationHeading": "Informations",
     "quiSommesNous": "Qui sommes-nous",
+    "tarifs": "Tarifs",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Contact",
@@ -141,7 +142,7 @@
       "description": "Assurance temporaire immédiate de 1 à 90 jours : auto, poids lourd, camping-car, quad, remorque, frontière. Attestation par e-mail ou WhatsApp. Dès {price} €/jour."
     },
     "hero": {
-      "title": "Assurance temporaire de 1 à 90 jours  attestation immédiate par e-mail ou WhatsApp",
+      "title": "Assurance temporaire de 1 à 90 jours, attestation immédiate par e-mail ou WhatsApp",
       "description": "Auto, poids lourd, camping-car, quad, bus, tracteur, remorque et assurance frontière. Souscription 100 % en ligne, 7j/7. Assureurs agréés : vos contrats sont portés par des entreprises d'assurance régies par le Code des assurances.",
       "ctaEstimate": "Tarifs et souscription",
       "categoryDialogTitle": "Quel véhicule souhaitez-vous assurer ?"
@@ -167,7 +168,7 @@
         "Paiement 100 % sécurisé (CB)",
         "Courtier français  ORIAS n° 24004933",
         "Assureurs agréés  entreprises régies par le Code des assurances",
-        "7j/7 par téléphone et WhatsApp: +33 6 05 93 84 79"
+        "7j/7 par téléphone et WhatsApp"
       ]
     },
     "useCases": {
@@ -362,7 +363,6 @@
       "effectDateHeading": "Date d'effet"
     },
     "vehicleTier": {
-      "heading": "Puissance fiscale",
       "cvLabel": "Puissance fiscale *",
       "ptacLabel": "Poids total autorisé en charge *",
       "quadLabel": "Type de véhicule *",
@@ -383,7 +383,7 @@
       "residenceMustBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
       "residenceCpiNotice": "Vous avez demandé un certificat provisoire d’immatriculation WW (CPI) ? Merci de sélectionner France comme pays d’immatriculation.",
       "residenceCpiPartner": "Pas encore de CPI ? Notre partenaire s’en occupe pour vous.",
-      "residenceCpiPartnerCta": "Faire ma démarche avec notre partenaire",
+      "residenceCpiPartnerCta": "En savoir plus",
       "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
     },
     "driver": {
@@ -535,7 +535,7 @@
       "label": "Pourquoi souscrivez-vous cette assurance ? *",
       "placeholder": "Sélectionnez un motif",
       "options": {
-        "achat-revente": "Achat/revente",
+        "achat-revente": "Achat/vente",
         "pret-vehicule": "Prêt de véhicule",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Privé ou professionnel occasionnel",
@@ -787,7 +787,7 @@
     "assurance-frontiere": {
       "title": "Assurance frontière véhicule étranger en France | TempAssur",
       "metaDescription": "Véhicule immatriculé hors UE ou à l'étranger ? L'assurance frontière vous couvre en France et dans 35 pays. 30 ou 90 jours, attestation immédiate.",
-      "h1": "Assurance frontière  pour circuler en France et en Europe",
+      "h1": "Assurance frontière pour circuler en France et en Europe",
       "intro": "Votre véhicule est immatriculé hors Union européenne et hors système carte verte  ou immatriculé à l'étranger et doit circuler en France ? L'assurance frontière est la solution légale et obligatoire pour prendre la route. Et chez TempAssur, elle ne couvre pas que la France : vous êtes couvert dans 35 pays, la même liste que nos assurances temporaires. Disponible en 30 ou 90 jours  attestation par e-mail ou WhatsApp.",
       "vehiclesParagraph": "Aux voyageurs qui viennent en Europe avec leur véhicule (Maghreb, Balkans hors carte verte, Moyen-Orient, Amériques…), aux Français de l'étranger de retour temporaire avec un véhicule immatriculé hors UE, et aux véhicules en transit ou en cours d'importation.",
       "guaranteesIncluded": "Responsabilité civile (obligatoire) + défense pénale et recours suite à accident. Vous recevez une carte internationale d'assurance valable dans les 35 pays couverts.",
@@ -1213,6 +1213,73 @@
             "text": "Conducteur d'au moins 21 ans avec 2 ans de permis, et déclarations d'antécédents conformes (notamment : pas de résiliation pour sinistre au cours des 5 dernières années). En cas de doute sur votre situation, écrivez-nous sur WhatsApp au +33 6 05 93 84 79 : nous vous répondons 7j/7."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificat provisoire d'immatriculation WW (CPI) : à quoi sert-il et comment l'obtenir ?",
+        "seoTitle": "CPI WW : certificat provisoire, démarche et assurance",
+        "metaDescription": "CPI WW : dans quels cas il est délivré, comment faire la démarche avec notre partenaire Certimat et comment assurer votre véhicule avec TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Le certificat provisoire d'immatriculation WW, ou CPI WW, est un document temporaire délivré par l'ANTS. Accompagné d'une plaque WW, il permet de circuler en attendant le certificat d'immatriculation définitif."
+          },
+          {
+            "type": "h2",
+            "text": "Dans quels cas est-il délivré ?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW peut notamment être délivré pour :"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un véhicule neuf ou d'occasion acheté à l'étranger, dont le dossier est en cours d'examen ;",
+              "un véhicule destiné à l'exportation ;",
+              "un véhicule neuf vendu incomplet aux fins de carrossage."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Si les plaques étrangères d'un véhicule ont perdu leur validité, il faut circuler avec des plaques provisoires et un certificat WW."
+          },
+          {
+            "type": "h2",
+            "text": "Où circuler et jusqu'à quand ?"
+          },
+          {
+            "type": "p",
+            "text": "Le CPI WW permet de circuler en France. À l'étranger, sa validité dépend de l'accord de l'État dans lequel vous circulez. Vérifiez la date de fin de validité de votre certificat avant de prendre la route."
+          },
+          {
+            "type": "p",
+            "text": "Depuis le 1er janvier 2026, les nouvelles plaques WW ont un fond rose avec des caractères noirs et indiquent à droite le mois et l'année de fin de validité."
+          },
+          {
+            "type": "h2",
+            "text": "Comment faire la démarche ?"
+          },
+          {
+            "type": "p",
+            "text": "Notre partenaire Certimat s'occupe de votre démarche en ligne : il prépare les formulaires, vérifie vos documents, transmet le dossier à l'autorité compétente et le suit jusqu'à réception. Les pièces à fournir dépendent de votre situation."
+          },
+          {
+            "type": "p",
+            "text": "Certimat est un service privé : ce n'est pas l'administration. Ses frais de service s'ajoutent aux taxes officielles et sont indiqués avant le paiement."
+          },
+          {
+            "type": "partner",
+            "text": "Faire ma démarche avec notre partenaire"
+          },
+          {
+            "type": "h2",
+            "text": "Comment assurer un véhicule sous CPI WW ?"
+          },
+          {
+            "type": "p",
+            "text": "Un véhicule sous CPI WW doit être assuré dès qu'il prend la route. Dans le formulaire TempAssur, sélectionnez France comme pays d'immatriculation. La durée de la garantie ne peut pas dépasser la date de fin de validité du CPI : si votre certificat expire dans 10 jours, la durée maximale assurable est de 10 jours."
+          }
+        ]
       }
     }
   },
@@ -1323,6 +1390,20 @@
       "whenExample": "<strong>Exemple :</strong> vous arrivez d’Alger à Marseille avec une voiture immatriculée en Algérie. Votre assurance frontière doit commencer le jour de votre arrivée au port. Elle vous couvre en France et dans tous les pays européens de la liste pendant toute sa durée.",
       "contact": "Un doute ? Contactez-nous : <email>contact@tempassur.com</email> ou WhatsApp / téléphone au <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Souscrire mon assurance frontière"
+    },
+    "tarifs": {
+      "metaTitle": "Tarifs assurance temporaire : prix de 1 à 90 jours | TempAssur",
+      "metaDescription": "Tous nos tarifs d’assurance temporaire : automobile par durée et puissance, métropole et DOM-TOM, assurance frontière et autres véhicules.",
+      "heroTitle": "Nos tarifs d’assurance temporaire",
+      "intro": "Le prix dépend du véhicule, de la durée et de la zone. Voici nos tarifs, hors options.",
+      "durationColumn": "Durée",
+      "autoHeading": "Automobile : France métropolitaine",
+      "autoDomTomHeading": "Automobile : DOM-TOM",
+      "frontierHeading": "Assurance frontière : France métropolitaine",
+      "frontierDomTomHeading": "Assurance frontière : DOM-TOM",
+      "othersHeading": "Autres véhicules",
+      "fromPrice": "À partir de {price}",
+      "note": "Le tarif exact, selon votre véhicule et vos options, s’affiche dans le tarificateur."
     },
     "quiSommesNous": {
       "metaTitle": "Qui sommes-nous ? Courtier en assurance temporaire | TempAssur",
@@ -1475,6 +1556,33 @@
             "id": "documents-2",
             "question": "Je n'ai pas reçu mon attestation.",
             "answer": "Vérifiez vos spams. Si l'heure d'effet approche, contactez-nous immédiatement : WhatsApp / tél. +33 6 05 93 84 79  nous accélérons le traitement."
+          },
+          {
+            "id": "documents-3",
+            "question": "Qu'est-ce qu'un CPI WW ?",
+            "answer": "C'est un certificat provisoire d'immatriculation délivré par l'ANTS. Accompagné d'une plaque WW, il permet de circuler en attendant le certificat d'immatriculation définitif, par exemple pour un véhicule acheté à l'étranger dont le dossier est en cours d'examen.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Comment obtenir un CPI WW ?",
+            "answer": "Notre partenaire Certimat peut s'occuper de votre démarche en ligne : il prépare les formulaires, vérifie vos documents et transmet le dossier à l'autorité compétente.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Comment assurer un véhicule avec un CPI WW ?",
+            "answer": "Sélectionnez France comme pays d'immatriculation dans le formulaire. La durée de la garantie ne peut pas dépasser la date de fin de validité du CPI.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

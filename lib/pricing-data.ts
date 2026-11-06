@@ -43,8 +43,8 @@ export const QUAD_SUBTYPE_OPTIONS: { value: QuadSubtype }[] = [
 // "Véhicule léger" tables — used by the automobiles category, split by fiscal power (CV) tier.
 export const AUTO_TARIFFS: Record<CvTier, AutoTariffRow[]> = {
   "moins-16cv": [
-    { duree: 1, prixFr: 54, prixDomTom: 89, optionAssistance: 15, optionGarantieConducteur: 15 },
-    { duree: 3, prixFr: 69, prixDomTom: 109, optionAssistance: 15, optionGarantieConducteur: 15, optionExtensionTn: 15 },
+    { duree: 1, prixFr: 59, prixDomTom: 89, optionAssistance: 15, optionGarantieConducteur: 15 },
+    { duree: 3, prixFr: 74, prixDomTom: 109, optionAssistance: 15, optionGarantieConducteur: 15, optionExtensionTn: 15 },
     { duree: 5, prixFr: 84, prixDomTom: 119, optionAssistance: 15, optionGarantieConducteur: 15, optionExtensionTn: 15 },
     { duree: 8, prixFr: 94, prixDomTom: 129, optionAssistance: 15, optionGarantieConducteur: 15, optionExtensionTn: 15 },
     { duree: 10, prixFr: 100, prixDomTom: 139, optionAssistance: 15, optionGarantieConducteur: 15, optionExtensionTn: 15 },

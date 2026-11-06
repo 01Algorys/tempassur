@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Países cubiertos (frontera)",
     "informationHeading": "Información",
     "quiSommesNous": "Quiénes somos",
+    "tarifs": "Tarifas",
     "faq": "Preguntas frecuentes",
     "blog": "Blog",
     "contact": "Contacto",
@@ -167,7 +168,7 @@
         "Pago 100 % seguro (tarjeta bancaria)",
         "Corredor francés  ORIAS n.º 24004933",
         "Aseguradoras autorizadas  compañías reguladas por el Código de Seguros",
-        "Los 7 días de la semana por teléfono y WhatsApp: +33 6 05 93 84 79"
+        "Los 7 días de la semana por teléfono y WhatsApp"
       ]
     },
     "useCases": {
@@ -362,7 +363,6 @@
       "effectDateHeading": "Fecha de efecto"
     },
     "vehicleTier": {
-      "heading": "Potencia fiscal",
       "cvLabel": "Potencia fiscal *",
       "ptacLabel": "Peso total autorizado en carga *",
       "quadLabel": "Tipo de vehículo *",
@@ -383,7 +383,7 @@
       "residenceMustBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia.",
       "residenceCpiNotice": "¿Ha solicitado un certificado provisional de matriculación WW (CPI)? Seleccione Francia como país de matriculación.",
       "residenceCpiPartner": "¿Aún no tiene CPI? Nuestro socio se encarga por usted.",
-      "residenceCpiPartnerCta": "Hacer el trámite con nuestro socio",
+      "residenceCpiPartnerCta": "Más información",
       "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia."
     },
     "driver": {
@@ -535,7 +535,7 @@
       "label": "¿Por qué contrata este seguro? *",
       "placeholder": "Seleccione un motivo",
       "options": {
-        "achat-revente": "Compra/reventa",
+        "achat-revente": "Compra/venta",
         "pret-vehicule": "Préstamo de vehículo",
         "import-export": "Importación/exportación",
         "prive-pro-occasionnel": "Uso privado o profesional ocasional",
@@ -787,7 +787,7 @@
     "assurance-frontiere": {
       "title": "Seguro de frontera para vehículos extranjeros | TempAssur",
       "metaDescription": "¿Vehículo matriculado fuera de la UE o en el extranjero? El seguro de frontera le cubre en Francia y en 35 países. 30 o 90 días, certificado inmediato.",
-      "h1": "Seguro de frontera  para circular por Francia y Europa",
+      "h1": "Seguro de frontera para circular por Francia y Europa",
       "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria para poder circular. Y en TempAssur no cubre solo Francia: está cubierto en 35 países, la misma lista que nuestros seguros temporales. Disponible en 30 o 90 días  certificado por correo electrónico o WhatsApp.",
       "vehiclesParagraph": "A los viajeros que llegan a Europa con su vehículo (Magreb, Balcanes fuera de la tarjeta verde, Oriente Medio, América...), a los franceses residentes en el extranjero que regresan temporalmente con un vehículo matriculado fuera de la UE, y a los vehículos en tránsito o en proceso de importación.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente. Recibirá una tarjeta internacional de seguro válida en los 35 países cubiertos.",
@@ -1202,12 +1202,79 @@
             "text": "Conductor de al menos 21 años con 2 años de permiso de conducción, y declaraciones de antecedentes conformes (en particular: sin resolución de contrato por siniestralidad en los últimos 5 años). Si tiene dudas sobre su situación, escríbanos por WhatsApp al +33 6 05 93 84 79: le respondemos los 7 días de la semana."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificado provisional de matriculación WW (CPI): para qué sirve y cómo obtenerlo",
+        "seoTitle": "CPI WW: certificado provisional, trámite y seguro",
+        "metaDescription": "CPI WW: en qué casos se expide, cómo hacer el trámite con nuestro socio Certimat y cómo asegurar su vehículo con TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "El certificado provisional de matriculación WW, o CPI WW, es un documento temporal expedido por la ANTS, la agencia francesa de documentos seguros. Junto con una matrícula WW, permite circular a la espera del certificado de matriculación definitivo."
+          },
+          {
+            "type": "h2",
+            "text": "¿En qué casos se expide?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW puede expedirse en particular para:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un vehículo nuevo o de ocasión comprado en el extranjero, cuyo expediente está en examen;",
+              "un vehículo destinado a la exportación;",
+              "un vehículo nuevo vendido incompleto para su carrozado."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Si las matrículas extranjeras de un vehículo han perdido su validez, hay que circular con matrículas provisionales y un certificado WW."
+          },
+          {
+            "type": "h2",
+            "text": "¿Dónde se puede circular y hasta cuándo?"
+          },
+          {
+            "type": "p",
+            "text": "El CPI WW permite circular en Francia. En el extranjero, su validez depende del acuerdo del Estado en el que circule. Compruebe la fecha de fin de validez de su certificado antes de ponerse en camino."
+          },
+          {
+            "type": "p",
+            "text": "Desde el 1 de enero de 2026, las nuevas matrículas WW tienen fondo rosa con caracteres negros e indican a la derecha el mes y el año de fin de validez."
+          },
+          {
+            "type": "h2",
+            "text": "¿Cómo se hace el trámite?"
+          },
+          {
+            "type": "p",
+            "text": "Nuestro socio Certimat se encarga de su trámite en línea: prepara los formularios, comprueba sus documentos, transmite el expediente a la autoridad competente y lo sigue hasta su recepción. Los documentos necesarios dependen de su situación."
+          },
+          {
+            "type": "p",
+            "text": "Certimat es un servicio privado, no la administración. Sus gastos de servicio se suman a las tasas oficiales y se indican antes del pago."
+          },
+          {
+            "type": "partner",
+            "text": "Hacer el trámite con nuestro socio"
+          },
+          {
+            "type": "h2",
+            "text": "¿Cómo asegurar un vehículo con CPI WW?"
+          },
+          {
+            "type": "p",
+            "text": "Un vehículo con CPI WW debe estar asegurado en cuanto circula. En el formulario de TempAssur, seleccione Francia como país de matriculación. La duración de la garantía no puede superar la fecha de fin de validez del CPI: si su certificado caduca en 10 días, la duración máxima asegurable es de 10 días."
+          }
+        ]
       }
     }
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Contratación  seguro temporal en línea",
+      "metaTitle": "Contratación: seguro temporal en línea",
       "metaDescription": "Contrate su seguro temporal en línea en pocos minutos: ubicación, vehículo, duración, conductor, opciones y pago seguro.",
       "title": "Su solicitud de contratación",
       "description": "El precio se recalcula en cada etapa y permanece visible de forma permanente en el recuadro adjunto. El precio de las opciones depende de la duración.",
@@ -1312,6 +1379,20 @@
       "whenExample": "<strong>Ejemplo:</strong> viaja de Argel a Marsella con un coche matriculado en Argelia. Su seguro de frontera debe comenzar el día de su llegada al puerto. Le cubre en Francia y en todos los países europeos de la lista durante toda su duración.",
       "contact": "¿Tiene dudas? Contáctenos: <email>contact@tempassur.com</email> o por WhatsApp / teléfono al <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Contratar mi seguro de frontera"
+    },
+    "tarifs": {
+      "metaTitle": "Tarifas del seguro temporal, 1 a 90 días | TempAssur",
+      "metaDescription": "Todas nuestras tarifas de seguro temporal: coche por duración y potencia, Francia metropolitana y ultramar, seguro de frontera y otros vehículos.",
+      "heroTitle": "Nuestras tarifas de seguro temporal",
+      "intro": "El precio depende del vehículo, la duración y la zona. Estas son nuestras tarifas, sin opciones.",
+      "durationColumn": "Duración",
+      "autoHeading": "Coche: Francia metropolitana",
+      "autoDomTomHeading": "Coche: territorios franceses de ultramar",
+      "frontierHeading": "Seguro de frontera: Francia metropolitana",
+      "frontierDomTomHeading": "Seguro de frontera: territorios franceses de ultramar",
+      "othersHeading": "Otros vehículos",
+      "fromPrice": "Desde {price}",
+      "note": "El precio exacto para su vehículo y sus opciones se muestra en el calculador."
     },
     "quiSommesNous": {
       "metaTitle": "¿Quiénes somos? Corredor de seguros temporales | TempAssur",
@@ -1464,6 +1545,33 @@
             "id": "documents-2",
             "question": "No he recibido mi certificado.",
             "answer": "Revise su carpeta de spam. Si la hora de efecto se acerca, contáctenos de inmediato: WhatsApp / tel. +33 6 05 93 84 79  aceleramos el proceso."
+          },
+          {
+            "id": "documents-3",
+            "question": "¿Qué es un CPI WW?",
+            "answer": "Es un certificado provisional de matriculación expedido por la ANTS, la agencia francesa de documentos seguros. Junto con una matrícula WW, permite circular a la espera del certificado de matriculación definitivo, por ejemplo con un vehículo comprado en el extranjero cuyo expediente está en examen.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "¿Cómo obtener un CPI WW?",
+            "answer": "Nuestro socio Certimat puede encargarse de su trámite en línea: prepara los formularios, comprueba sus documentos y transmite el expediente a la autoridad competente.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "¿Cómo asegurar un vehículo con un CPI WW?",
+            "answer": "Seleccione Francia como país de matriculación en el formulario. La duración de la garantía no puede superar la fecha de fin de validez del CPI.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

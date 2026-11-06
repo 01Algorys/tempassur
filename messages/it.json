@@ -65,6 +65,7 @@
     "coveredCountriesFrontier": "Paesi coperti (frontiera)",
     "informationHeading": "Informazioni",
     "quiSommesNous": "Chi siamo",
+    "tarifs": "Tariffe",
     "faq": "FAQ",
     "blog": "Blog",
     "contact": "Contatti",
@@ -141,7 +142,7 @@
       "description": "Assicurazione temporanea immediata da 1 a 90 giorni: auto, mezzi pesanti, camper, quad, rimorchi, frontiera. Attestato via e-mail o WhatsApp. Da {price} €/giorno."
     },
     "hero": {
-      "title": "Assicurazione temporanea da 1 a 90 giorni  attestato immediato via e-mail o WhatsApp",
+      "title": "Assicurazione temporanea da 1 a 90 giorni, attestato immediato via e-mail o WhatsApp",
       "description": "Auto, mezzo pesante, camper, quad, bus, trattore, rimorchio e assicurazione di frontiera. Sottoscrizione 100% online, 7 giorni su 7. Assicuratori autorizzati: i vostri contratti sono garantiti da compagnie assicurative regolate dal Codice delle assicurazioni.",
       "ctaEstimate": "Mi assicuro",
       "categoryDialogTitle": "Quale veicolo desideri assicurare?"
@@ -167,7 +168,7 @@
         "Pagamento 100% sicuro (carta di credito)",
         "Broker francese  ORIAS n° 24004933",
         "Assicuratori autorizzati  compagnie regolate dal Codice delle assicurazioni",
-        "7 giorni su 7 per telefono e WhatsApp: +33 6 05 93 84 79"
+        "7 giorni su 7 per telefono e WhatsApp"
       ]
     },
     "useCases": {
@@ -362,7 +363,6 @@
       "effectDateHeading": "Data di decorrenza"
     },
     "vehicleTier": {
-      "heading": "Potenza fiscale",
       "cvLabel": "Potenza fiscale *",
       "ptacLabel": "Peso totale a pieno carico *",
       "quadLabel": "Tipo di veicolo *",
@@ -383,7 +383,7 @@
       "residenceMustBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia.",
       "residenceCpiNotice": "Avete richiesto un certificato provvisorio di immatricolazione WW (CPI)? Selezionate la Francia come paese di immatricolazione.",
       "residenceCpiPartner": "Non avete ancora il CPI? Se ne occupa il nostro partner.",
-      "residenceCpiPartnerCta": "Procedi con il nostro partner",
+      "residenceCpiPartnerCta": "Scopri di più",
       "residenceShouldBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia."
     },
     "driver": {
@@ -535,7 +535,7 @@
       "label": "Perché sottoscrive questa assicurazione? *",
       "placeholder": "Seleziona un motivo",
       "options": {
-        "achat-revente": "Acquisto/rivendita",
+        "achat-revente": "Acquisto/vendita",
         "pret-vehicule": "Prestito del veicolo",
         "import-export": "Import/export",
         "prive-pro-occasionnel": "Uso privato o professionale occasionale",
@@ -787,7 +787,7 @@
     "assurance-frontiere": {
       "title": "Assicurazione di frontiera veicoli stranieri | TempAssur",
       "metaDescription": "Veicolo immatricolato fuori dall'UE o all'estero? L'assicurazione di frontiera ti copre in Francia e in 35 paesi. 30 o 90 giorni, attestato immediato.",
-      "h1": "Assicurazione di frontiera  per circolare in Francia e in Europa",
+      "h1": "Assicurazione di frontiera per circolare in Francia e in Europa",
       "intro": "Il tuo veicolo è immatricolato fuori dall'Unione Europea e fuori dal sistema carta verde  oppure immatricolato all'estero e deve circolare in Francia? L'assicurazione di frontiera è la soluzione legale e obbligatoria per mettersi in viaggio. E con TempAssur, non copre solo la Francia: sei coperto in 35 paesi, la stessa lista delle nostre assicurazioni temporanee. Disponibile per 30 o 90 giorni  attestato via e-mail o WhatsApp.",
       "vehiclesParagraph": "Ai viaggiatori che vengono in Europa con il proprio veicolo (Maghreb, Balcani fuori carta verde, Medio Oriente, Americhe…), ai francesi residenti all'estero di rientro temporaneo con un veicolo immatricolato fuori UE, e ai veicoli in transito o in corso di importazione.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente. Riceverai una carta internazionale di assicurazione valida nei 35 paesi coperti.",
@@ -1202,12 +1202,79 @@
             "text": "Conducente di almeno 21 anni con 2 anni di patente, e dichiarazioni sui precedenti conformi (in particolare: nessuna disdetta per sinistro negli ultimi 5 anni). In caso di dubbio sulla tua situazione, scrivici su WhatsApp al +33 6 05 93 84 79: ti rispondiamo 7 giorni su 7."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificato provvisorio di immatricolazione WW (CPI): a cosa serve e come ottenerlo",
+        "seoTitle": "CPI WW: certificato provvisorio, pratica e assicurazione",
+        "metaDescription": "CPI WW: in quali casi viene rilasciato, come fare la pratica con il nostro partner Certimat e come assicurare il veicolo con TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Il certificato provvisorio di immatricolazione WW, o CPI WW, è un documento temporaneo rilasciato dall'ANTS, l'agenzia francese per i documenti sicuri. Insieme a una targa WW, permette di circolare in attesa del certificato di immatricolazione definitivo."
+          },
+          {
+            "type": "h2",
+            "text": "In quali casi viene rilasciato?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW può essere rilasciato in particolare per:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un veicolo nuovo o usato acquistato all'estero, la cui pratica è in corso di esame;",
+              "un veicolo destinato all'esportazione;",
+              "un veicolo nuovo venduto incompleto per l'allestimento della carrozzeria."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Se le targhe estere di un veicolo non sono più valide, occorre circolare con targhe provvisorie e un certificato WW."
+          },
+          {
+            "type": "h2",
+            "text": "Dove si può circolare e fino a quando?"
+          },
+          {
+            "type": "p",
+            "text": "Il CPI WW permette di circolare in Francia. All'estero, la sua validità dipende dall'accordo dello Stato in cui si circola. Verificate la data di fine validità del certificato prima di mettervi in viaggio."
+          },
+          {
+            "type": "p",
+            "text": "Dal 1° gennaio 2026 le nuove targhe WW hanno lo sfondo rosa con caratteri neri e indicano a destra il mese e l'anno di fine validità."
+          },
+          {
+            "type": "h2",
+            "text": "Come fare la pratica?"
+          },
+          {
+            "type": "p",
+            "text": "Il nostro partner Certimat si occupa online della vostra pratica: prepara i moduli, verifica i documenti, trasmette la pratica all'autorità competente e la segue fino al ricevimento. I documenti da fornire dipendono dalla vostra situazione."
+          },
+          {
+            "type": "p",
+            "text": "Certimat è un servizio privato, non l'amministrazione. I suoi costi di servizio si aggiungono alle tasse ufficiali e sono indicati prima del pagamento."
+          },
+          {
+            "type": "partner",
+            "text": "Procedi con il nostro partner"
+          },
+          {
+            "type": "h2",
+            "text": "Come assicurare un veicolo con CPI WW?"
+          },
+          {
+            "type": "p",
+            "text": "Un veicolo con CPI WW deve essere assicurato non appena circola su strada. Nel modulo TempAssur, selezionate la Francia come paese di immatricolazione. La durata della garanzia non può superare la data di fine validità del CPI: se il certificato scade tra 10 giorni, la durata massima assicurabile è di 10 giorni."
+          }
+        ]
       }
     }
   },
   "pages": {
     "souscription": {
-      "metaTitle": "Sottoscrizione  assicurazione temporanea online",
+      "metaTitle": "Sottoscrizione: assicurazione temporanea online",
       "metaDescription": "Sottoscrivi la tua assicurazione temporanea online in pochi minuti: localizzazione, veicolo, durata, conducente, opzioni e pagamento sicuro.",
       "title": "La tua richiesta di sottoscrizione",
       "description": "Il prezzo viene ricalcolato a ogni fase e resta visualizzato in permanenza nel riquadro a lato. Il prezzo delle opzioni dipende dalla durata.",
@@ -1312,6 +1379,20 @@
       "whenExample": "<strong>Esempio:</strong> arrivi da Algeri a Marsiglia con un’auto immatricolata in Algeria. La tua assicurazione di frontiera deve iniziare il giorno del tuo arrivo al porto. Ti copre in Francia e in tutti i paesi europei dell’elenco per tutta la sua durata.",
       "contact": "Hai un dubbio? Contattaci: <email>contact@tempassur.com</email> oppure WhatsApp / telefono al <phone>+33 6 05 93 84 79</phone>.",
       "cta": "Sottoscrivi la mia assicurazione di frontiera"
+    },
+    "tarifs": {
+      "metaTitle": "Tariffe assicurazione temporanea 1-90 giorni | TempAssur",
+      "metaDescription": "Tutte le nostre tariffe di assicurazione temporanea: auto per durata e potenza, Francia metropolitana e d’oltremare, frontiera e altri veicoli.",
+      "heroTitle": "Le nostre tariffe di assicurazione temporanea",
+      "intro": "Il prezzo dipende dal veicolo, dalla durata e dalla zona. Ecco le nostre tariffe, opzioni escluse.",
+      "durationColumn": "Durata",
+      "autoHeading": "Auto: Francia metropolitana",
+      "autoDomTomHeading": "Auto: territori francesi d’oltremare",
+      "frontierHeading": "Assicurazione di frontiera: Francia metropolitana",
+      "frontierDomTomHeading": "Assicurazione di frontiera: territori francesi d’oltremare",
+      "othersHeading": "Altri veicoli",
+      "fromPrice": "Da {price}",
+      "note": "Il prezzo esatto per il tuo veicolo e le tue opzioni è indicato nel calcolatore."
     },
     "quiSommesNous": {
       "metaTitle": "Chi siamo? Broker di assicurazione temporanea | TempAssur",
@@ -1464,6 +1545,33 @@
             "id": "documents-2",
             "question": "Non ho ricevuto il mio attestato.",
             "answer": "Controlla gli spam. Se l'ora di decorrenza si avvicina, contattaci immediatamente: WhatsApp / tel. +33 6 05 93 84 79  accelereremo l'elaborazione."
+          },
+          {
+            "id": "documents-3",
+            "question": "Che cos'è un CPI WW?",
+            "answer": "È un certificato provvisorio di immatricolazione rilasciato dall'ANTS, l'agenzia francese per i documenti sicuri. Insieme a una targa WW, permette di circolare in attesa del certificato di immatricolazione definitivo, ad esempio per un veicolo acquistato all'estero la cui pratica è in corso di esame.",
+            "link": {
+              "label": "Scopri di più",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Come ottenere un CPI WW?",
+            "answer": "Il nostro partner Certimat può occuparsi online della vostra pratica: prepara i moduli, verifica i documenti e trasmette la pratica all'autorità competente.",
+            "link": {
+              "label": "Scopri di più",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Come assicurare un veicolo con un CPI WW?",
+            "answer": "Selezionate la Francia come paese di immatricolazione nel modulo. La durata della garanzia non può superare la data di fine validità del CPI.",
+            "link": {
+              "label": "Scopri di più",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

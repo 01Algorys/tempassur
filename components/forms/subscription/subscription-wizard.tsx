@@ -24,7 +24,7 @@ import {
   type FormulaSelection,
 } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
-import { getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
+import { isFrontierRedirectRequired, isResidenceRequirementViolated } from "@/lib/countries"
 import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
@@ -33,7 +33,6 @@ import { BillingSummary } from "./billing-summary"
 import { DeclarationsDialog } from "./declarations-dialog"
 import { LocalisationStep } from "./steps/localisation-step"
 import { VehicleStep } from "./steps/vehicle-step"
-import { VehicleTierStep } from "./steps/vehicle-tier-step"
 import { DurationStep } from "./steps/duration-step"
 import { DriverStep } from "./steps/driver-step"
 import { MotifStep } from "./steps/motif-step"
@@ -52,6 +51,8 @@ type StepId = "duration" | "details" | "payment"
 const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   duration: [
     "duree",
+    "dateEffet",
+    "heureEffet",
     "categorie",
     "marque",
     "cvTier",
@@ -72,8 +73,6 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "motifSouscriptionAutre",
     "telephonesSupplementaires",
     "emailsSupplementaires",
-    "dateEffet",
-    "heureEffet",
     "civilite",
     "nom",
     "prenom",
@@ -205,9 +204,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
     isDomTomTerritory(values.paysImmatriculation, values.territoireImmatriculation) ||
     isDomTomTerritory(values.paysResidence, values.territoireResidence)
 
-  const registrationCase = getRegistrationCase(values.paysImmatriculation)
   const isRegistrationBlocked =
-    registrationCase === "frontier" ||
+    isFrontierRedirectRequired(values.paysImmatriculation, values.categorie) ||
     isResidenceRequirementViolated(values.paysImmatriculation, values.paysResidence)
 
   const selection: FormulaSelection = {
@@ -460,7 +458,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                 {currentStep.id === "duration" ? (
                   <div className="flex flex-col gap-8">
                     <DurationStep form={form} />
-                    <VehicleTierStep form={form} />
+                    <EffectDateStep form={form} />
                     <VehicleStep form={form} />
                     <LocalisationStep form={form} />
                     <OptionsStep form={form} />
@@ -470,7 +468,6 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
                   <div className="flex flex-col gap-8">
                     <MotifStep form={form} />
                     <DriverStep form={form} />
-                    <EffectDateStep form={form} />
                     <DocumentsConsentsStep form={form} />
                   </div>
                 ) : null}
