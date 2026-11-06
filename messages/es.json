@@ -250,7 +250,7 @@
     "vehicleVignettes": {
       "eyebrow": "Nuestros vehículos",
       "title": "Nuestros seguros",
-      "priceFrom": "desde {price}/día",
+      "priceFrom": "desde <strong>{price}/día</strong>",
       "cta": "Saber más"
     }
   },
