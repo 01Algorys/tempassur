@@ -7,7 +7,7 @@ import { Container } from "@/components/shared/container"
 import { WhatsappButton } from "@/components/shared/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { PRODUCT_ROUTES } from "@/lib/constants"
-import { BLOG_ARTICLES, BLOG_ARTICLE_SLUGS, type BlogBlock } from "@/lib/blog-content"
+import { BLOG_ARTICLES, BLOG_ARTICLE_SLUGS, CPI_PARTNER_URL, type BlogBlock } from "@/lib/blog-content"
 import { pageMetadata } from "@/lib/seo"
 import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
@@ -101,6 +101,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
+                )
+              }
+              if (block.type === "partner") {
+                return (
+                  <div key={index}>
+                    <Button asChild size="lg" variant="cta" className="rounded-full">
+                      {/* Lien partenaire rémunéré : "sponsored" est à conserver. */}
+                      <a href={CPI_PARTNER_URL} target="_blank" rel="sponsored noopener">
+                        {block.text}
+                      </a>
+                    </Button>
+                  </div>
                 )
               }
               return (

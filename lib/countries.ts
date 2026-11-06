@@ -127,6 +127,12 @@ export function getRegistrationCase(paysImmatriculation: string): RegistrationCa
   return "frontier"
 }
 
+// Le renvoi vers l'assurance frontière n'a de sens que hors de ce produit :
+// dans le parcours frontière, ces pays sont justement ceux que l'on assure.
+export function isFrontierRedirectRequired(paysImmatriculation: string, categorie: string): boolean {
+  return getRegistrationCase(paysImmatriculation) === "frontier" && categorie !== "assurance-frontiere"
+}
+
 export function isResidenceRequirementViolated(paysImmatriculation: string, paysResidence: string): boolean {
   return getRegistrationCase(paysImmatriculation) === "restricted" && paysResidence !== "" && paysResidence !== "FR"
 }

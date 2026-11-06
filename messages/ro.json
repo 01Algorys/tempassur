@@ -363,7 +363,6 @@
       "effectDateHeading": "Data de intrare în vigoare"
     },
     "vehicleTier": {
-      "heading": "Putere fiscală",
       "cvLabel": "Putere fiscală *",
       "ptacLabel": "Masa totală maximă autorizată *",
       "quadLabel": "Tipul vehiculului *",
@@ -384,7 +383,7 @@
       "residenceMustBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
       "residenceCpiNotice": "Ați solicitat un certificat provizoriu de înmatriculare WW (CPI)? Vă rugăm să selectați Franța ca țară de înmatriculare.",
       "residenceCpiPartner": "Nu aveți încă un CPI? Partenerul nostru se ocupă de asta pentru dumneavoastră.",
-      "residenceCpiPartnerCta": "Fac demersul cu partenerul nostru",
+      "residenceCpiPartnerCta": "Aflați mai multe",
       "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța."
     },
     "driver": {
@@ -1203,6 +1202,73 @@
             "text": "Conducător auto de cel puțin 21 de ani, cu 2 ani de permis, și declarații privind antecedentele conforme (în special: nicio reziliere pentru daună în ultimii 5 ani). În caz de îndoială privind situația dvs., scrieți-ne pe WhatsApp la +33 6 05 93 84 79: vă răspundem zilnic."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificatul provizoriu de înmatriculare WW (CPI): la ce folosește și cum îl obțineți",
+        "seoTitle": "CPI WW: certificat provizoriu, demersuri și asigurare",
+        "metaDescription": "CPI WW: în ce cazuri se eliberează, cum faceți demersul cu partenerul nostru Certimat și cum vă asigurați vehiculul cu TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Certificatul provizoriu de înmatriculare WW, sau CPI WW, este un document temporar eliberat de ANTS, agenția franceză pentru documente securizate. Împreună cu o plăcuță WW, vă permite să circulați până primiți certificatul de înmatriculare definitiv."
+          },
+          {
+            "type": "h2",
+            "text": "În ce cazuri se eliberează?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW poate fi eliberat în special pentru:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un vehicul nou sau second-hand cumpărat din străinătate, al cărui dosar este în curs de examinare;",
+              "un vehicul destinat exportului;",
+              "un vehicul nou vândut incomplet în vederea caroseriei."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Dacă plăcuțele străine ale unui vehicul nu mai sunt valabile, trebuie să circulați cu plăcuțe provizorii și un certificat WW."
+          },
+          {
+            "type": "h2",
+            "text": "Unde puteți circula și până când?"
+          },
+          {
+            "type": "p",
+            "text": "CPI WW vă permite să circulați în Franța. În străinătate, valabilitatea sa depinde de acordul statului în care circulați. Verificați data de sfârșit a valabilității certificatului înainte de a porni la drum."
+          },
+          {
+            "type": "p",
+            "text": "Din 1 ianuarie 2026, noile plăcuțe WW au fond roz cu caractere negre și indică în dreapta luna și anul în care expiră."
+          },
+          {
+            "type": "h2",
+            "text": "Cum faceți demersul?"
+          },
+          {
+            "type": "p",
+            "text": "Partenerul nostru Certimat se ocupă online de demersul dumneavoastră: pregătește formularele, vă verifică documentele, transmite dosarul autorității competente și îl urmărește până la primire. Documentele necesare depind de situația dumneavoastră."
+          },
+          {
+            "type": "p",
+            "text": "Certimat este un serviciu privat, nu administrația. Taxele sale de serviciu se adaugă taxelor oficiale și sunt afișate înainte de plată."
+          },
+          {
+            "type": "partner",
+            "text": "Fac demersul cu partenerul nostru"
+          },
+          {
+            "type": "h2",
+            "text": "Cum asigurați un vehicul cu CPI WW?"
+          },
+          {
+            "type": "p",
+            "text": "Un vehicul cu CPI WW trebuie să fie asigurat din momentul în care circulă pe drum. În formularul TempAssur, selectați Franța ca țară de înmatriculare. Durata garanției nu poate depăși data de sfârșit a valabilității CPI: dacă certificatul expiră în 10 zile, durata maximă asigurabilă este de 10 zile."
+          }
+        ]
       }
     }
   },
@@ -1479,6 +1545,33 @@
             "id": "documents-2",
             "question": "Nu am primit certificatul de asigurare.",
             "answer": "Verificați folderul de spam. Dacă ora de intrare în vigoare se apropie, contactați-ne imediat: WhatsApp / tel. +33 6 05 93 84 79  accelerăm procesarea."
+          },
+          {
+            "id": "documents-3",
+            "question": "Ce este un CPI WW?",
+            "answer": "Este un certificat provizoriu de înmatriculare eliberat de ANTS, agenția franceză pentru documente securizate. Împreună cu o plăcuță WW, vă permite să circulați până primiți certificatul de înmatriculare definitiv, de exemplu pentru un vehicul cumpărat din străinătate al cărui dosar este în curs de examinare.",
+            "link": {
+              "label": "Aflați mai multe",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Cum obțin un CPI WW?",
+            "answer": "Partenerul nostru Certimat se poate ocupa online de demersul dumneavoastră: pregătește formularele, vă verifică documentele și transmite dosarul autorității competente.",
+            "link": {
+              "label": "Aflați mai multe",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Cum asigur un vehicul cu un CPI WW?",
+            "answer": "Selectați Franța ca țară de înmatriculare în formular. Durata garanției nu poate depăși data de sfârșit a valabilității CPI.",
+            "link": {
+              "label": "Aflați mai multe",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

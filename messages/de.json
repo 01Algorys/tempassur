@@ -363,7 +363,6 @@
       "effectDateHeading": "Datum des Versicherungsbeginns"
     },
     "vehicleTier": {
-      "heading": "Steuerliche Leistung",
       "cvLabel": "Steuerliche Leistung *",
       "ptacLabel": "Zulässiges Gesamtgewicht *",
       "quadLabel": "Fahrzeugtyp *",
@@ -384,7 +383,7 @@
       "residenceMustBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
       "residenceCpiNotice": "Haben Sie ein vorläufiges WW-Zulassungszertifikat (CPI) beantragt? Bitte wählen Sie Frankreich als Zulassungsland aus.",
       "residenceCpiPartner": "Noch kein CPI? Unser Partner kümmert sich für Sie darum.",
-      "residenceCpiPartnerCta": "Antrag über unseren Partner stellen",
+      "residenceCpiPartnerCta": "Mehr erfahren",
       "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
     },
     "driver": {
@@ -1203,6 +1202,73 @@
             "text": "Fahrer ab 21 Jahren mit 2 Jahren Führerscheinbesitz und konforme Vorgeschichtserklärungen (insbesondere: keine Kündigung wegen eines Schadensfalls in den letzten 5 Jahren). Schreiben Sie uns bei Zweifeln an Ihrer Situation per WhatsApp an +33 6 05 93 84 79: Wir antworten Ihnen an 7 Tagen die Woche."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Vorläufiges WW-Zulassungszertifikat (CPI): Wozu dient es und wie erhält man es?",
+        "seoTitle": "WW-CPI: vorläufiges Zertifikat, Antrag und Versicherung",
+        "metaDescription": "WW-CPI: Wann es ausgestellt wird, wie Sie es über unseren Partner Certimat beantragen und wie Sie Ihr Fahrzeug bei TempAssur versichern.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Das vorläufige WW-Zulassungszertifikat, kurz WW-CPI, ist ein befristetes Dokument, das von der ANTS, der französischen Behörde für gesicherte Dokumente, ausgestellt wird. Zusammen mit einem WW-Kennzeichen ermöglicht es das Fahren, bis die endgültige Zulassungsbescheinigung vorliegt."
+          },
+          {
+            "type": "h2",
+            "text": "Wann wird es ausgestellt?"
+          },
+          {
+            "type": "p",
+            "text": "Ein WW-CPI kann insbesondere ausgestellt werden für:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "ein im Ausland gekauftes Neu- oder Gebrauchtfahrzeug, dessen Antrag geprüft wird;",
+              "ein für den Export bestimmtes Fahrzeug;",
+              "ein unvollständig verkauftes Neufahrzeug, das noch einen Aufbau erhält."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Sind die ausländischen Kennzeichen eines Fahrzeugs nicht mehr gültig, muss es mit vorläufigen Kennzeichen und einem WW-Zertifikat gefahren werden."
+          },
+          {
+            "type": "h2",
+            "text": "Wo und bis wann darf man fahren?"
+          },
+          {
+            "type": "p",
+            "text": "Das WW-CPI erlaubt das Fahren in Frankreich. Im Ausland hängt seine Gültigkeit von der Zustimmung des jeweiligen Staates ab. Prüfen Sie vor der Fahrt das Ablaufdatum Ihres Zertifikats."
+          },
+          {
+            "type": "p",
+            "text": "Seit dem 1. Januar 2026 haben neue WW-Kennzeichen einen rosa Hintergrund mit schwarzen Zeichen und zeigen rechts Monat und Jahr des Gültigkeitsendes."
+          },
+          {
+            "type": "h2",
+            "text": "Wie stellt man den Antrag?"
+          },
+          {
+            "type": "p",
+            "text": "Unser Partner Certimat kümmert sich online um Ihren Antrag: Er bereitet die Formulare vor, prüft Ihre Unterlagen, übermittelt den Antrag an die zuständige Behörde und begleitet ihn bis zum Erhalt. Welche Unterlagen nötig sind, hängt von Ihrer Situation ab."
+          },
+          {
+            "type": "p",
+            "text": "Certimat ist ein privater Dienst und keine Behörde. Seine Servicegebühren kommen zu den amtlichen Abgaben hinzu und werden vor der Zahlung angezeigt."
+          },
+          {
+            "type": "partner",
+            "text": "Antrag über unseren Partner stellen"
+          },
+          {
+            "type": "h2",
+            "text": "Wie versichert man ein Fahrzeug mit WW-CPI?"
+          },
+          {
+            "type": "p",
+            "text": "Ein Fahrzeug mit WW-CPI muss versichert sein, sobald es am Straßenverkehr teilnimmt. Wählen Sie im TempAssur-Formular Frankreich als Zulassungsland aus. Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten: Läuft Ihr Zertifikat in 10 Tagen ab, beträgt die maximal versicherbare Dauer 10 Tage."
+          }
+        ]
       }
     }
   },
@@ -1479,6 +1545,33 @@
             "id": "documents-2",
             "question": "Ich habe meine Bescheinigung nicht erhalten.",
             "answer": "Prüfen Sie Ihren Spam-Ordner. Wenn der Versicherungsbeginn kurz bevorsteht, kontaktieren Sie uns sofort: WhatsApp / Tel. +33 6 05 93 84 79  wir beschleunigen die Bearbeitung."
+          },
+          {
+            "id": "documents-3",
+            "question": "Was ist ein WW-CPI?",
+            "answer": "Es ist ein vorläufiges Zulassungszertifikat, das von der ANTS, der französischen Behörde für gesicherte Dokumente, ausgestellt wird. Zusammen mit einem WW-Kennzeichen ermöglicht es das Fahren, bis die endgültige Zulassungsbescheinigung vorliegt, zum Beispiel bei einem im Ausland gekauften Fahrzeug, dessen Antrag geprüft wird.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Wie erhalte ich ein WW-CPI?",
+            "answer": "Unser Partner Certimat kann sich online um Ihren Antrag kümmern: Er bereitet die Formulare vor, prüft Ihre Unterlagen und übermittelt den Antrag an die zuständige Behörde.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Wie versichere ich ein Fahrzeug mit WW-CPI?",
+            "answer": "Wählen Sie im Formular Frankreich als Zulassungsland aus. Die Versicherungsdauer darf das Ablaufdatum des CPI nicht überschreiten.",
+            "link": {
+              "label": "Mehr erfahren",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { EuDateInput } from "../eu-date-input"
+import { VehicleTierFields } from "./vehicle-tier-fields"
 
 const fieldClass = "h-11 rounded-lg"
 
@@ -27,6 +28,7 @@ export function VehicleStep({ form }: VehicleStepProps) {
       <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <VehicleTierFields form={form} />
         <FormField
           control={form.control}
           name="immatriculation"

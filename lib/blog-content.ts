@@ -4,6 +4,7 @@ export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] }
+  | { type: "partner"; text: string }
 
 export interface BlogArticleMeta {
   slug: string
@@ -23,7 +24,15 @@ export interface BlogBrief {
 // ("relatedProducts", des identifiants structurels utilisés pour PRODUCT_ROUTES et
 // vehicleTypes.<slug>.label — pas du texte traduisible). Mêmes slugs conservés depuis
 // www.tempassur.com (dossier §9.1) pour préserver le référencement.
+export const CPI_ARTICLE_SLUG = "certificat-provisoire-immatriculation-ww"
+export const CPI_PARTNER_URL = "https://certimat.fr/prescripteurs?partner=7308"
+
 export const BLOG_ARTICLES: BlogArticleMeta[] = [
+  {
+    slug: CPI_ARTICLE_SLUG,
+    date: "2026-11-06",
+    relatedProducts: ["automobiles", "poids-lourds"],
+  },
   {
     slug: "assurance-temporaire-caravane-remorque-semi",
     date: "2025-09-27",

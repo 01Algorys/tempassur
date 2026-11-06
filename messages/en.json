@@ -363,7 +363,6 @@
       "effectDateHeading": "Effective date"
     },
     "vehicleTier": {
-      "heading": "Fiscal power",
       "cvLabel": "Fiscal power *",
       "ptacLabel": "Gross vehicle weight *",
       "quadLabel": "Vehicle type *",
@@ -384,7 +383,7 @@
       "residenceMustBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
       "residenceCpiNotice": "Have you applied for a WW temporary registration certificate (CPI)? Please select France as the country of registration.",
       "residenceCpiPartner": "No CPI yet? Our partner can take care of it for you.",
-      "residenceCpiPartnerCta": "Apply with our partner",
+      "residenceCpiPartnerCta": "Learn more",
       "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France."
     },
     "driver": {
@@ -1203,6 +1202,73 @@
             "text": "Driver aged 21 or over with 2 years' licence, and compliant history declarations (in particular: no cancellation for a claim within the last 5 years). If in doubt about your situation, message us on WhatsApp at +33 6 05 93 84 79: we reply 7 days a week."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "WW temporary registration certificate (CPI): what it is for and how to get one",
+        "seoTitle": "WW CPI: temporary certificate, application and insurance",
+        "metaDescription": "WW CPI: when it is issued, how to apply with our partner Certimat and how to insure your vehicle with TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "The WW temporary registration certificate, or WW CPI, is a temporary document issued by the ANTS, the French agency for secure documents. Together with a WW plate, it lets you drive while you wait for the final registration certificate."
+          },
+          {
+            "type": "h2",
+            "text": "When is it issued?"
+          },
+          {
+            "type": "p",
+            "text": "A WW CPI can be issued in particular for:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "a new or used vehicle bought abroad, while its file is being examined;",
+              "a vehicle intended for export;",
+              "a new vehicle sold incomplete for bodywork."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "If a vehicle's foreign plates are no longer valid, it must be driven with temporary plates and a WW certificate."
+          },
+          {
+            "type": "h2",
+            "text": "Where can you drive, and until when?"
+          },
+          {
+            "type": "p",
+            "text": "The WW CPI lets you drive in France. Abroad, its validity depends on the agreement of the country you are driving in. Check your certificate's end date before you set off."
+          },
+          {
+            "type": "p",
+            "text": "Since 1 January 2026, new WW plates have a pink background with black characters and show the month and year of expiry on the right."
+          },
+          {
+            "type": "h2",
+            "text": "How do you apply?"
+          },
+          {
+            "type": "p",
+            "text": "Our partner Certimat handles your application online: it prepares the forms, checks your documents, sends the file to the competent authority and follows it until you receive your document. The documents required depend on your situation."
+          },
+          {
+            "type": "p",
+            "text": "Certimat is a private service, not the French administration. Its service fee is added to the official taxes and is shown before payment."
+          },
+          {
+            "type": "partner",
+            "text": "Apply with our partner"
+          },
+          {
+            "type": "h2",
+            "text": "How do you insure a vehicle with a WW CPI?"
+          },
+          {
+            "type": "p",
+            "text": "A vehicle with a WW CPI must be insured as soon as it goes on the road. In the TempAssur form, select France as the country of registration. The coverage period cannot exceed the CPI's end date: if your certificate expires in 10 days, the maximum insurable period is 10 days."
+          }
+        ]
       }
     }
   },
@@ -1479,6 +1545,33 @@
             "id": "documents-2",
             "question": "I haven't received my certificate.",
             "answer": "Check your spam folder. If the effective time is approaching, contact us immediately: WhatsApp / phone +33 6 05 93 84 79  we'll speed up processing."
+          },
+          {
+            "id": "documents-3",
+            "question": "What is a WW CPI?",
+            "answer": "It is a temporary registration certificate issued by the ANTS, the French agency for secure documents. Together with a WW plate, it lets you drive while you wait for the final registration certificate, for example with a vehicle bought abroad whose file is being examined.",
+            "link": {
+              "label": "Learn more",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "How do I get a WW CPI?",
+            "answer": "Our partner Certimat can handle your application online: it prepares the forms, checks your documents and sends the file to the competent authority.",
+            "link": {
+              "label": "Learn more",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "How do I insure a vehicle with a WW CPI?",
+            "answer": "Select France as the country of registration in the form. The coverage period cannot exceed the CPI's end date.",
+            "link": {
+              "label": "Learn more",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

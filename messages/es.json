@@ -363,7 +363,6 @@
       "effectDateHeading": "Fecha de efecto"
     },
     "vehicleTier": {
-      "heading": "Potencia fiscal",
       "cvLabel": "Potencia fiscal *",
       "ptacLabel": "Peso total autorizado en carga *",
       "quadLabel": "Tipo de vehículo *",
@@ -384,7 +383,7 @@
       "residenceMustBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia.",
       "residenceCpiNotice": "¿Ha solicitado un certificado provisional de matriculación WW (CPI)? Seleccione Francia como país de matriculación.",
       "residenceCpiPartner": "¿Aún no tiene CPI? Nuestro socio se encarga por usted.",
-      "residenceCpiPartnerCta": "Hacer el trámite con nuestro socio",
+      "residenceCpiPartnerCta": "Más información",
       "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia."
     },
     "driver": {
@@ -1203,6 +1202,73 @@
             "text": "Conductor de al menos 21 años con 2 años de permiso de conducción, y declaraciones de antecedentes conformes (en particular: sin resolución de contrato por siniestralidad en los últimos 5 años). Si tiene dudas sobre su situación, escríbanos por WhatsApp al +33 6 05 93 84 79: le respondemos los 7 días de la semana."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificado provisional de matriculación WW (CPI): para qué sirve y cómo obtenerlo",
+        "seoTitle": "CPI WW: certificado provisional, trámite y seguro",
+        "metaDescription": "CPI WW: en qué casos se expide, cómo hacer el trámite con nuestro socio Certimat y cómo asegurar su vehículo con TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "El certificado provisional de matriculación WW, o CPI WW, es un documento temporal expedido por la ANTS, la agencia francesa de documentos seguros. Junto con una matrícula WW, permite circular a la espera del certificado de matriculación definitivo."
+          },
+          {
+            "type": "h2",
+            "text": "¿En qué casos se expide?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW puede expedirse en particular para:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un vehículo nuevo o de ocasión comprado en el extranjero, cuyo expediente está en examen;",
+              "un vehículo destinado a la exportación;",
+              "un vehículo nuevo vendido incompleto para su carrozado."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Si las matrículas extranjeras de un vehículo han perdido su validez, hay que circular con matrículas provisionales y un certificado WW."
+          },
+          {
+            "type": "h2",
+            "text": "¿Dónde se puede circular y hasta cuándo?"
+          },
+          {
+            "type": "p",
+            "text": "El CPI WW permite circular en Francia. En el extranjero, su validez depende del acuerdo del Estado en el que circule. Compruebe la fecha de fin de validez de su certificado antes de ponerse en camino."
+          },
+          {
+            "type": "p",
+            "text": "Desde el 1 de enero de 2026, las nuevas matrículas WW tienen fondo rosa con caracteres negros e indican a la derecha el mes y el año de fin de validez."
+          },
+          {
+            "type": "h2",
+            "text": "¿Cómo se hace el trámite?"
+          },
+          {
+            "type": "p",
+            "text": "Nuestro socio Certimat se encarga de su trámite en línea: prepara los formularios, comprueba sus documentos, transmite el expediente a la autoridad competente y lo sigue hasta su recepción. Los documentos necesarios dependen de su situación."
+          },
+          {
+            "type": "p",
+            "text": "Certimat es un servicio privado, no la administración. Sus gastos de servicio se suman a las tasas oficiales y se indican antes del pago."
+          },
+          {
+            "type": "partner",
+            "text": "Hacer el trámite con nuestro socio"
+          },
+          {
+            "type": "h2",
+            "text": "¿Cómo asegurar un vehículo con CPI WW?"
+          },
+          {
+            "type": "p",
+            "text": "Un vehículo con CPI WW debe estar asegurado en cuanto circula. En el formulario de TempAssur, seleccione Francia como país de matriculación. La duración de la garantía no puede superar la fecha de fin de validez del CPI: si su certificado caduca en 10 días, la duración máxima asegurable es de 10 días."
+          }
+        ]
       }
     }
   },
@@ -1479,6 +1545,33 @@
             "id": "documents-2",
             "question": "No he recibido mi certificado.",
             "answer": "Revise su carpeta de spam. Si la hora de efecto se acerca, contáctenos de inmediato: WhatsApp / tel. +33 6 05 93 84 79  aceleramos el proceso."
+          },
+          {
+            "id": "documents-3",
+            "question": "¿Qué es un CPI WW?",
+            "answer": "Es un certificado provisional de matriculación expedido por la ANTS, la agencia francesa de documentos seguros. Junto con una matrícula WW, permite circular a la espera del certificado de matriculación definitivo, por ejemplo con un vehículo comprado en el extranjero cuyo expediente está en examen.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "¿Cómo obtener un CPI WW?",
+            "answer": "Nuestro socio Certimat puede encargarse de su trámite en línea: prepara los formularios, comprueba sus documentos y transmite el expediente a la autoridad competente.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "¿Cómo asegurar un vehículo con un CPI WW?",
+            "answer": "Seleccione Francia como país de matriculación en el formulario. La duración de la garantía no puede superar la fecha de fin de validez del CPI.",
+            "link": {
+              "label": "Más información",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

@@ -363,7 +363,6 @@
       "effectDateHeading": "Date d'effet"
     },
     "vehicleTier": {
-      "heading": "Puissance fiscale",
       "cvLabel": "Puissance fiscale *",
       "ptacLabel": "Poids total autorisé en charge *",
       "quadLabel": "Type de véhicule *",
@@ -384,7 +383,7 @@
       "residenceMustBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
       "residenceCpiNotice": "Vous avez demandé un certificat provisoire d’immatriculation WW (CPI) ? Merci de sélectionner France comme pays d’immatriculation.",
       "residenceCpiPartner": "Pas encore de CPI ? Notre partenaire s’en occupe pour vous.",
-      "residenceCpiPartnerCta": "Faire ma démarche avec notre partenaire",
+      "residenceCpiPartnerCta": "En savoir plus",
       "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
     },
     "driver": {
@@ -1214,6 +1213,73 @@
             "text": "Conducteur d'au moins 21 ans avec 2 ans de permis, et déclarations d'antécédents conformes (notamment : pas de résiliation pour sinistre au cours des 5 dernières années). En cas de doute sur votre situation, écrivez-nous sur WhatsApp au +33 6 05 93 84 79 : nous vous répondons 7j/7."
           }
         ]
+      },
+      "certificat-provisoire-immatriculation-ww": {
+        "title": "Certificat provisoire d'immatriculation WW (CPI) : à quoi sert-il et comment l'obtenir ?",
+        "seoTitle": "CPI WW : certificat provisoire, démarche et assurance",
+        "metaDescription": "CPI WW : dans quels cas il est délivré, comment faire la démarche avec notre partenaire Certimat et comment assurer votre véhicule avec TempAssur.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Le certificat provisoire d'immatriculation WW, ou CPI WW, est un document temporaire délivré par l'ANTS. Accompagné d'une plaque WW, il permet de circuler en attendant le certificat d'immatriculation définitif."
+          },
+          {
+            "type": "h2",
+            "text": "Dans quels cas est-il délivré ?"
+          },
+          {
+            "type": "p",
+            "text": "Un CPI WW peut notamment être délivré pour :"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "un véhicule neuf ou d'occasion acheté à l'étranger, dont le dossier est en cours d'examen ;",
+              "un véhicule destiné à l'exportation ;",
+              "un véhicule neuf vendu incomplet aux fins de carrossage."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Si les plaques étrangères d'un véhicule ont perdu leur validité, il faut circuler avec des plaques provisoires et un certificat WW."
+          },
+          {
+            "type": "h2",
+            "text": "Où circuler et jusqu'à quand ?"
+          },
+          {
+            "type": "p",
+            "text": "Le CPI WW permet de circuler en France. À l'étranger, sa validité dépend de l'accord de l'État dans lequel vous circulez. Vérifiez la date de fin de validité de votre certificat avant de prendre la route."
+          },
+          {
+            "type": "p",
+            "text": "Depuis le 1er janvier 2026, les nouvelles plaques WW ont un fond rose avec des caractères noirs et indiquent à droite le mois et l'année de fin de validité."
+          },
+          {
+            "type": "h2",
+            "text": "Comment faire la démarche ?"
+          },
+          {
+            "type": "p",
+            "text": "Notre partenaire Certimat s'occupe de votre démarche en ligne : il prépare les formulaires, vérifie vos documents, transmet le dossier à l'autorité compétente et le suit jusqu'à réception. Les pièces à fournir dépendent de votre situation."
+          },
+          {
+            "type": "p",
+            "text": "Certimat est un service privé : ce n'est pas l'administration. Ses frais de service s'ajoutent aux taxes officielles et sont indiqués avant le paiement."
+          },
+          {
+            "type": "partner",
+            "text": "Faire ma démarche avec notre partenaire"
+          },
+          {
+            "type": "h2",
+            "text": "Comment assurer un véhicule sous CPI WW ?"
+          },
+          {
+            "type": "p",
+            "text": "Un véhicule sous CPI WW doit être assuré dès qu'il prend la route. Dans le formulaire TempAssur, sélectionnez France comme pays d'immatriculation. La durée de la garantie ne peut pas dépasser la date de fin de validité du CPI : si votre certificat expire dans 10 jours, la durée maximale assurable est de 10 jours."
+          }
+        ]
       }
     }
   },
@@ -1490,6 +1556,33 @@
             "id": "documents-2",
             "question": "Je n'ai pas reçu mon attestation.",
             "answer": "Vérifiez vos spams. Si l'heure d'effet approche, contactez-nous immédiatement : WhatsApp / tél. +33 6 05 93 84 79  nous accélérons le traitement."
+          },
+          {
+            "id": "documents-3",
+            "question": "Qu'est-ce qu'un CPI WW ?",
+            "answer": "C'est un certificat provisoire d'immatriculation délivré par l'ANTS. Accompagné d'une plaque WW, il permet de circuler en attendant le certificat d'immatriculation définitif, par exemple pour un véhicule acheté à l'étranger dont le dossier est en cours d'examen.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-4",
+            "question": "Comment obtenir un CPI WW ?",
+            "answer": "Notre partenaire Certimat peut s'occuper de votre démarche en ligne : il prépare les formulaires, vérifie vos documents et transmet le dossier à l'autorité compétente.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
+          },
+          {
+            "id": "documents-5",
+            "question": "Comment assurer un véhicule avec un CPI WW ?",
+            "answer": "Sélectionnez France comme pays d'immatriculation dans le formulaire. La durée de la garantie ne peut pas dépasser la date de fin de validité du CPI.",
+            "link": {
+              "label": "En savoir plus",
+              "href": "/blog/certificat-provisoire-immatriculation-ww"
+            }
           }
         ]
       },

@@ -8,7 +8,14 @@ import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel, getRegistrationCase, isResidenceRequirementViolated } from "@/lib/countries"
+import {
+  COUNTRIES,
+  getCountryLabel,
+  getRegistrationCase,
+  isFrontierRedirectRequired,
+  isResidenceRequirementViolated,
+} from "@/lib/countries"
+import { CPI_ARTICLE_SLUG } from "@/lib/blog-content"
 import { FRANCE_TERRITORIES } from "@/lib/pricing-data"
 import { isDomTomTerritory } from "@/lib/pricing"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
@@ -25,6 +32,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
   const tTerritory = useTranslations("pricingLabels.territory")
   const locale = useLocale()
 
+  const categorie = form.watch("categorie")
   const paysImmatriculation = form.watch("paysImmatriculation")
   const paysResidence = form.watch("paysResidence")
   const territoireImmatriculation = form.watch("territoireImmatriculation")
@@ -35,7 +43,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
     isDomTomTerritory(paysResidence, territoireResidence)
 
   const registrationCase = getRegistrationCase(paysImmatriculation)
-  const isFrontierCase = registrationCase === "frontier"
+  const isFrontierCase = isFrontierRedirectRequired(paysImmatriculation, categorie)
   const isResidenceViolated = isResidenceRequirementViolated(paysImmatriculation, paysResidence)
 
   return (
@@ -183,15 +191,14 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
             <p>{t("residenceMustBeFrance")}</p>
             <p>{t("residenceCpiNotice")}</p>
             <p>{t("residenceCpiPartner")}</p>
-            {/* Lien partenaire rémunéré : "sponsored" est à conserver. */}
-            <a
-              href="https://certimat.fr/prescripteurs?partner=7308"
+            {/* Nouvel onglet : le formulaire en cours n'est pas perdu. */}
+            <Link
+              href={`/blog/${CPI_ARTICLE_SLUG}`}
               target="_blank"
-              rel="sponsored noopener"
               className="font-semibold underline underline-offset-2 hover:no-underline"
             >
               {t("residenceCpiPartnerCta")}
-            </a>
+            </Link>
           </div>
         </div>
       ) : registrationCase === "restricted" ? (
