@@ -9,7 +9,7 @@ import { HowItWorks } from "@/components/sections/how-it-works"
 import { CoveredCountriesSummary } from "@/components/sections/covered-countries-summary"
 import { Reviews } from "@/components/sections/reviews"
 import { Faq } from "@/components/sections/faq"
-import { getMinPrice } from "@/lib/pricing"
+import { getMinPricePerDay } from "@/lib/pricing"
 import { pageMetadata } from "@/lib/seo"
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return pageMetadata({
     path: "",
     title: { absolute: t("title") },
-    description: t("description", { price: getMinPrice("automobiles") }),
+    description: t("description", { price: Math.round(getMinPricePerDay("automobiles")) }),
   })
 }
 

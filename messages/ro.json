@@ -562,13 +562,13 @@
       "seeAlso": "Vezi și",
       "coveredCountriesLink": "Țări acoperite",
       "priceFrom": "De la {price}/zi",
-      "durationsAvailable": "Durate disponibile: {durations} zi{plural}"
+      "durationsAvailable": "Durate disponibile: {durations} {count, plural, one {zi} other {zile}}"
     },
     "automobiles": {
       "title": "Asigurare auto temporară de la [PRIX] €/zi | TempAssur",
       "metaDescription": "Asigurați o mașină sau un utilitar de la 1 la 90 de zile. Subscriere online în 5 minute, certificat imediat prin e-mail sau WhatsApp. De la [PRIX] €/zi.",
       "h1": "Asigurare auto temporară de la 1 la 90 de zile",
-      "intro": "Aveți nevoie să asigurați o mașină sau un utilitar de sub 3,5 tone pentru câteva zile? Asigurarea auto temporară TempAssur vă acoperă de la 1 la 90 de zile, fără angajament și fără reînnoire tacită. Subscriere 100% online în 5 minute, certificat de asigurare trimis imediat prin e-mail sau WhatsApp.",
+      "intro": "Asigurați o mașină sau un utilitar de sub 3,5 tone de la 1 la 90 de zile, fără angajament și fără reînnoire tacită. Subscriere online în 5 minute, certificat de asigurare imediat prin e-mail sau WhatsApp.",
       "vehiclesParagraph": "Toate vehiculele particulare și utilitare de sub 3,5 tone, indiferent de putere: mașină de oraș, berlină, SUV, autoutilitară… Tariful depinde de puterea fiscală și de durata aleasă.",
       "guaranteesIncluded": "Incluse: răspundere civilă (obligatorie  daune cauzate terților) și apărare penală și recurs în urma unui accident.",
       "options": [
@@ -621,7 +621,7 @@
       "title": "Asigurare temporară vehicule grele | TempAssur",
       "metaDescription": "Camion, autocamion, cap tractor: asigurare temporară online pentru vehicule grele. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru vehicule grele (peste 3,5 tone)",
-      "intro": "Autocamion, cap tractor, semiremorcă: asigurați-vă vehiculul greu pentru un convoi, o achiziție, un import sau o misiune punctuală, pentru duratele prevăzute în grila noastră de tarife. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
+      "intro": "Autocamion, cap tractor, semiremorcă: asigurați-vă vehiculul greu pentru un convoi, o achiziție, un import sau o misiune punctuală. Certificat de asigurare imediat prin e-mail sau WhatsApp.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, cu tarife specifice.",
       "useCases": [
@@ -651,7 +651,7 @@
       "title": "Asigurare temporară autorulote, 1-90 de zile | TempAssur",
       "metaDescription": "Asigurare temporară pentru autorulote și camionete amenajate, de la 1 la 90 de zile. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru autorulote și camionete amenajate",
-      "intro": "Plecați liniștiți: asigurare temporară pentru autorulote, de la 1 la 90 de zile, ideală pentru o călătorie punctuală, un împrumut, o achiziție sau o repatriere. Prețul afișat corespunde modelelor de sub 3,5 tone; el este ajustat în funcție de greutate la subscriere.",
+      "intro": "Asigurare temporară pentru autorulote, de la 1 la 90 de zile, pentru o călătorie, un împrumut, o achiziție sau o repatriere. Preț afișat pentru modelele de sub 3,5 tone, ajustat în funcție de greutate la subscriere.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări din Europa  perfect pentru un road-trip. DOM-TOM: da, tarife specifice.",
       "useCases": [
@@ -682,7 +682,7 @@
       "title": "Asigurare temporară ATV, microcar, buggy | TempAssur",
       "metaDescription": "ATV omologat, microcar fără permis sau buggy: asigurare temporară online, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru cvadricicluri: ATV, microcar, buggy",
-      "intro": "ATV omologat, microcar fără permis sau buggy: asigurați-vă cvadriciclul pentru durata de care aveți cu adevărat nevoie. Prețul de pornire afișat corespunde subtipului cel mai ieftin; tariful exact se ajustează în funcție de vehiculul dvs. la subscriere.",
+      "intro": "ATV omologat, microcar fără permis sau buggy: asigurați-vă cvadriciclul pentru durata de care aveți nevoie. Preț afișat pentru subtipul cel mai ieftin, ajustat în funcție de vehiculul dvs. la subscriere.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
       "useCases": [
@@ -712,7 +712,7 @@
       "title": "Asigurare temporară pentru autobuze și autocare | TempAssur",
       "metaDescription": "Asigurați un autobuz sau un autocar pentru un convoi, o achiziție sau o vânzare. Subscriere online, certificat de asigurare imediat.",
       "h1": "Asigurare temporară pentru autobuze și autocare",
-      "intro": "Asigurați un autobuz sau un autocar pentru un convoi, o achiziție, o vânzare sau un transfer de vehicul. Subscriere 100% online, certificat de asigurare imediat prin e-mail sau WhatsApp.",
+      "intro": "Asigurați un autobuz sau un autocar pentru un convoi, o achiziție, o vânzare sau un transfer. Subscriere online, certificat de asigurare imediat prin e-mail sau WhatsApp.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
       "useCases": [
@@ -737,7 +737,7 @@
       "title": "Asigurare temporară tractor agricol | TempAssur",
       "metaDescription": "Recoltare, convoi, achiziție: asigurare temporară online pentru tractor agricol, certificat de asigurare prin e-mail sau WhatsApp.",
       "h1": "Asigurare temporară pentru tractor agricol",
-      "intro": "Recoltare, convoi, achiziție sau vânzare: asigurați-vă tractorul sau utilajul agricol pentru câteva zile, fără angajament anual. Subscriere online, certificat de asigurare prin e-mail sau WhatsApp.",
+      "intro": "Recoltare, convoi, achiziție sau vânzare: asigurați-vă tractorul sau utilajul agricol pentru câteva zile, fără angajament anual. Certificat de asigurare prin e-mail sau WhatsApp.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
       "useCases": [
@@ -762,7 +762,7 @@
       "title": "Asigurare temporară remorcă și rulotă | TempAssur",
       "metaDescription": "Remorcă, semiremorcă sau rulotă: asigurare temporară obligatorie peste 750 kg. Subscriere online imediată.",
       "h1": "Asigurare temporară pentru remorci, semiremorci și rulote",
-      "intro": "Remorcă ușoară sau grea, semiremorcă, rulotă: peste 750 kg MTMA, o asigurare de răspundere civilă dedicată este obligatorie  cea a vehiculului tractor nu mai este suficientă. Asigurați-o pentru un convoi, o achiziție sau o deplasare punctuală.",
+      "intro": "Peste 750 kg MTMA, remorca, semiremorca sau rulota dvs. trebuie să aibă propria asigurare de răspundere civilă. Asigurați-o pentru un convoi, o achiziție sau o deplasare punctuală.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident.",
       "whereCovered": "În Franța și în 35 de țări. DOM-TOM: da, tarife specifice.",
       "useCases": [
@@ -788,7 +788,7 @@
       "title": "Asigurare de frontieră vehicule străine | TempAssur",
       "metaDescription": "Vehicul înmatriculat în afara UE sau în străinătate? Asigurarea de frontieră vă acoperă în Franța și în 35 de țări. 30 sau 90 de zile, certificat imediat.",
       "h1": "Asigurare de frontieră pentru a circula în Franța și în Europa",
-      "intro": "Vehiculul dvs. este înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde  sau este înmatriculat în străinătate și trebuie să circule în Franța? Asigurarea de frontieră este soluția legală și obligatorie pentru a porni la drum. Iar la TempAssur, ea nu acoperă doar Franța: sunteți acoperit în 35 de țări, aceeași listă ca pentru asigurările noastre temporare. Disponibilă pentru 30 sau 90 de zile  certificat de asigurare prin e-mail sau WhatsApp.",
+      "intro": "Vehiculul dvs. este înmatriculat în afara Uniunii Europene și în afara sistemului Cartea Verde, sau este înmatriculat în străinătate și trebuie să circule în Franța? Asigurarea de frontieră este soluția legală și obligatorie și vă acoperă în 35 de țări. Disponibilă pentru 30 sau 90 de zile, certificat de asigurare prin e-mail sau WhatsApp.",
       "vehiclesParagraph": "Călătorilor care vin în Europa cu vehiculul propriu (Maghreb, Balcani în afara sistemului Cartea Verde, Orientul Mijlociu, America…), francezilor din străinătate aflați temporar în țară cu un vehicul înmatriculat în afara UE, precum și vehiculelor aflate în tranzit sau în curs de import.",
       "guaranteesIncluded": "Răspundere civilă (obligatorie) + apărare penală și recurs în urma unui accident. Primiți un card internațional de asigurare valabil în cele 35 de țări acoperite.",
       "whereCovered": "În 35 de țări, nu doar în Franța  acesta este unul dintre marile avantaje ale contractului nostru de frontieră.",

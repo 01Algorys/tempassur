@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl"
 
 import { useRouter } from "@/i18n/navigation"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { VEHICLE_TYPES } from "@/lib/constants"
+import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
+import type { VehicleSlug } from "@/types"
 
 interface CategoryDialogProps {
   open: boolean
@@ -16,9 +17,9 @@ export function CategoryDialog({ open, onOpenChange }: CategoryDialogProps) {
   const tVehicles = useTranslations("vehicleTypes")
   const router = useRouter()
 
-  function handleSelect(slug: string) {
+  function handleSelect(slug: VehicleSlug) {
     onOpenChange(false)
-    router.push(slug === "assurance-frontiere" ? "/souscription-frontiere" : `/souscription?categorie=${slug}`)
+    router.push(PRODUCT_ROUTES[slug])
   }
 
   return (

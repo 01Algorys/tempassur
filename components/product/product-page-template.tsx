@@ -17,11 +17,12 @@ import { BLOG_ARTICLES } from "@/lib/blog-content"
 import { PRODUCT_RELATIONS } from "@/lib/product-content"
 import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
-import { fillPricePlaceholders, getAvailableDurations, getMinPrice } from "@/lib/pricing"
+import { fillPricePlaceholders, getAvailableDurations, getMinPrice, getMinPricePerDay } from "@/lib/pricing"
 import { whatsappQuoteMessage } from "@/lib/site"
 import type { VehicleSlug } from "@/types"
 
 const SOUSCRIPTION_ANCHOR = "souscrire"
+const GUARANTEES_ANCHOR = "garanties"
 
 interface ProductFaqItem {
   question: string
@@ -49,6 +50,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
   const vehicle = VEHICLE_TYPES.find((v) => v.slug === slug)!
   const vehicleLabel = tVehicles(`${vehicle.slug}.label`)
   const price = getMinPrice(slug)
+  const pricePerDay = getMinPricePerDay(slug)
   const durations = getAvailableDurations(slug, { duree: null, isDomTom: false })
 
   const h1 = t(`${slug}.h1`)
@@ -117,9 +119,17 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
           <h1 className="text-balance text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">{h1}</h1>
           <p className="mt-4 text-balance leading-relaxed text-muted-foreground">{intro}</p>
           <p className="mt-3 text-xs text-muted-foreground">
-            {tSection("priceFrom", { price: currency.format(price) })} ·{" "}
-            {tSection("durationsAvailable", { durations: durations.join(", "), plural: durations.length > 1 ? "s" : "" })}
+            {tSection("priceFrom", { price: currency.format(pricePerDay) })} ·{" "}
+            {tSection("durationsAvailable", { durations: durations.join(", "), count: durations.length })}
           </p>
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm font-semibold text-primary">
+            <Link href={`#${GUARANTEES_ANCHOR}`} className="hover:underline">
+              {tSection("guaranteesHeading")}
+            </Link>
+            <Link href={coveredCountriesHref} className="hover:underline">
+              {tSection("coveredCountriesLink")}
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -140,7 +150,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
         </section>
       ) : null}
 
-      <section className="pb-10">
+      <section id={GUARANTEES_ANCHOR} className="scroll-mt-24 pb-10">
         <Container className="mx-auto max-w-3xl">
           <h2 className="text-xl font-bold text-navy">{tSection("guaranteesHeading")}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{guaranteesIncluded}</p>

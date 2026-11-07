@@ -267,9 +267,9 @@ export function getPreselectedDuration(slug: VehicleSlug): number {
   return DURATION_SHORTCUT_CANDIDATES[slug].preselect
 }
 
-// Substitue les placeholders [PRIX] / [PRIX_GRILLE] du dossier par le MIN(prix) réel de
-// la catégorie — jamais de prix codé en dur dans les textes des pages produit.
+// Substitue les placeholders [PRIX] / [PRIX_GRILLE] du dossier par le tarif journalier
+// minimal réel de la catégorie — ils sont tous suivis de « €/jour » dans les textes.
 export function fillPricePlaceholders(text: string, slug: VehicleSlug): string {
-  const price = getMinPrice(slug)
+  const price = Math.round(getMinPricePerDay(slug))
   return text.replace(/\[PRIX_GRILLE\]|\[PRIX\]/g, String(price))
 }

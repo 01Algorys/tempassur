@@ -562,13 +562,13 @@
       "seeAlso": "Siehe auch",
       "coveredCountriesLink": "Versicherte Länder",
       "priceFrom": "Ab {price}/Tag",
-      "durationsAvailable": "Verfügbare Dauern: {durations} Tag{plural}"
+      "durationsAvailable": "Verfügbare Dauern: {durations} {count, plural, one {Tag} other {Tage}}"
     },
     "automobiles": {
       "title": "Kurzzeit-Autoversicherung ab [PRIX] €/Tag | TempAssur",
       "metaDescription": "Versichern Sie ein Auto oder Nutzfahrzeug für 1 bis 90 Tage. Online-Abschluss in 5 Minuten, sofortige Bescheinigung per E-Mail oder WhatsApp. Ab [PRIX] €/Tag.",
       "h1": "Kurzzeit-Autoversicherung von 1 bis 90 Tagen",
-      "intro": "Müssen Sie ein Auto oder Nutzfahrzeug unter 3,5 Tonnen für ein paar Tage versichern? Die Kurzzeit-Autoversicherung von TempAssur deckt Sie von 1 bis 90 Tagen ab, ohne Verpflichtung und ohne stillschweigende Verlängerung. Abschluss zu 100 % online in 5 Minuten, Bescheinigung sofort per E-Mail oder WhatsApp zugesandt.",
+      "intro": "Versichern Sie ein Auto oder Nutzfahrzeug unter 3,5 Tonnen für 1 bis 90 Tage, ohne Verpflichtung und ohne stillschweigende Verlängerung. Online-Abschluss in 5 Minuten, sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "Alle Privat- und Nutzfahrzeuge unter 3,5 Tonnen, unabhängig von der Motorleistung: Kleinwagen, Limousine, SUV, Kastenwagen... Der Tarif hängt von der steuerlichen Leistung und der gewählten Dauer ab.",
       "guaranteesIncluded": "Enthalten: Haftpflichtversicherung (obligatorisch  Schäden gegenüber Dritten) sowie strafrechtlicher Beistand und Regress nach einem Unfall.",
       "options": [
@@ -621,7 +621,7 @@
       "title": "Kurzzeit-Lkw-Versicherung ab [PRIX] €/Tag | TempAssur",
       "metaDescription": "Lkw, Fahrzeug mit Aufbau, Sattelzugmaschine: Kurzzeit-Lkw-Versicherung online. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeit-Lkw-Versicherung (über 3,5 t)",
-      "intro": "Lkw mit Aufbau, Sattelzugmaschine, Sattelanhänger: Versichern Sie Ihren Lkw für eine Überführungsfahrt, einen Kauf, einen Import oder einen einmaligen Einsatz, für die in unserer Tarifliste vorgesehenen Dauern. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
+      "intro": "Lkw mit Aufbau, Sattelzugmaschine, Sattelanhänger: Versichern Sie Ihren Lkw für eine Überführungsfahrt, einen Kauf, einen Import oder einen einmaligen Einsatz. Sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, mit spezifischen Tarifen.",
       "useCases": [
@@ -651,7 +651,7 @@
       "title": "Kurzzeit-Wohnmobilversicherung 1 bis 90 Tage | TempAssur",
       "metaDescription": "Kurzzeitversicherung für Wohnmobile und ausgebaute Kastenwagen, von 1 bis 90 Tagen. Online-Abschluss, Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeitversicherung für Wohnmobile und ausgebaute Kastenwagen",
-      "intro": "Reisen Sie unbesorgt: Kurzzeit-Wohnmobilversicherung von 1 bis 90 Tagen, ideal für eine einmalige Reise, ein Ausleihen, einen Kauf oder eine Rücküberführung. Der angezeigte Preis entspricht Modellen unter 3,5 t; er wird beim Abschluss je nach Gewicht angepasst.",
+      "intro": "Kurzzeit-Wohnmobilversicherung von 1 bis 90 Tagen für eine Reise, ein Ausleihen, einen Kauf oder eine Rücküberführung. Angezeigter Preis für Modelle unter 3,5 t, beim Abschluss je nach Gewicht angepasst.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern Europas  perfekt für einen Road-Trip. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
       "useCases": [
@@ -682,7 +682,7 @@
       "title": "Kurzzeitversicherung Quad und Buggy | TempAssur",
       "metaDescription": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Kurzzeitversicherung online, Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeitversicherung für Quadricycles: Quad, Kleinfahrzeug, Buggy",
-      "intro": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Versichern Sie Ihr Quadricycle für genau die Dauer, die Sie benötigen. Der angezeigte Einstiegspreis entspricht dem günstigsten Untertyp; der genaue Tarif wird beim Abschluss an Ihr Fahrzeug angepasst.",
+      "intro": "Zugelassenes Quad, führerscheinfreies Kleinfahrzeug oder Buggy: Versichern Sie Ihr Quadricycle für die Dauer, die Sie benötigen. Angezeigter Preis für den günstigsten Untertyp, beim Abschluss an Ihr Fahrzeug angepasst.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
       "useCases": [
@@ -712,7 +712,7 @@
       "title": "Kurzzeitversicherung für Bus und Reisebus | TempAssur",
       "metaDescription": "Versichern Sie einen Bus oder Reisebus für eine Überführungsfahrt, einen Kauf oder Verkauf. Online-Abschluss, sofortige Bescheinigung.",
       "h1": "Kurzzeitversicherung für Busse und Reisebusse",
-      "intro": "Versichern Sie einen Bus oder Reisebus für eine Überführungsfahrt, einen Kauf, einen Verkauf oder eine Fahrzeugüberstellung. Abschluss zu 100 % online, sofortige Bescheinigung per E-Mail oder WhatsApp.",
+      "intro": "Versichern Sie einen Bus oder Reisebus für eine Überführungsfahrt, einen Kauf, einen Verkauf oder eine Überstellung. Online-Abschluss, sofortige Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
       "useCases": [
@@ -737,7 +737,7 @@
       "title": "Kurzzeitversicherung Traktor ab [PRIX] €/Tag | TempAssur",
       "metaDescription": "Ernte, Überführung, Kauf: Kurzzeitversicherung für landwirtschaftliche Traktoren online, Bescheinigung per E-Mail oder WhatsApp.",
       "h1": "Kurzzeitversicherung für landwirtschaftliche Traktoren",
-      "intro": "Ernte, Überführung, Kauf oder Verkauf: Versichern Sie Ihren Traktor oder Ihre landwirtschaftliche Maschine für einige Tage, ohne Jahresverpflichtung. Online-Abschluss, Bescheinigung per E-Mail oder WhatsApp.",
+      "intro": "Ernte, Überführung, Kauf oder Verkauf: Versichern Sie Ihren Traktor oder Ihre landwirtschaftliche Maschine für einige Tage, ohne Jahresverpflichtung. Bescheinigung per E-Mail oder WhatsApp.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
       "useCases": [
@@ -762,7 +762,7 @@
       "title": "Kurzzeitversicherung Anhänger, Wohnwagen | TempAssur",
       "metaDescription": "Anhänger, Sattelanhänger oder Wohnwagen: Kurzzeitversicherung ab 750 kg gesetzlich vorgeschrieben. Sofortiger Online-Abschluss.",
       "h1": "Kurzzeitversicherung für Anhänger, Sattelanhänger und Wohnwagen",
-      "intro": "Leichter oder schwerer Anhänger, Sattelanhänger, Wohnwagen: Ab einem zulässigen Gesamtgewicht von 750 kg ist eine eigene Haftpflichtversicherung obligatorisch  die des Zugfahrzeugs reicht nicht mehr aus. Versichern Sie Ihren Anhänger für eine Überführungsfahrt, einen Kauf oder eine einmalige Fahrt.",
+      "intro": "Ab einem zulässigen Gesamtgewicht von 750 kg braucht Ihr Anhänger, Sattelanhänger oder Wohnwagen eine eigene Haftpflichtversicherung. Versichern Sie ihn für eine Überführungsfahrt, einen Kauf oder eine einmalige Fahrt.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall.",
       "whereCovered": "In Frankreich und in 35 Ländern. Überseegebiete (DOM-TOM): ja, spezifische Tarife.",
       "useCases": [
@@ -788,7 +788,7 @@
       "title": "Grenzversicherung für ausländische Fahrzeuge | TempAssur",
       "metaDescription": "Fahrzeug außerhalb der EU oder im Ausland zugelassen? Die Grenzversicherung deckt Sie in Frankreich und 35 Ländern ab. 30 oder 90 Tage, sofortige Bescheinigung.",
       "h1": "Grenzversicherung, um in Frankreich und Europa zu fahren",
-      "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen  oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung, um auf die Straße zu gehen. Und bei TempAssur deckt sie nicht nur Frankreich ab: Sie sind in 35 Ländern versichert, der gleichen Liste wie unsere Kurzzeitversicherungen. Verfügbar für 30 oder 90 Tage  Bescheinigung per E-Mail oder WhatsApp.",
+      "intro": "Ihr Fahrzeug ist außerhalb der Europäischen Union und außerhalb des Grüne-Karte-Systems zugelassen, oder im Ausland zugelassen und muss in Frankreich fahren? Die Grenzversicherung ist die legale und obligatorische Lösung und deckt Sie in 35 Ländern ab. Verfügbar für 30 oder 90 Tage, Bescheinigung per E-Mail oder WhatsApp.",
       "vehiclesParagraph": "An Reisende, die mit ihrem Fahrzeug nach Europa kommen (Maghreb, Balkanländer außerhalb der Grünen Karte, Naher Osten, Amerika...), an im Ausland lebende Franzosen bei vorübergehender Rückkehr mit einem außerhalb der EU zugelassenen Fahrzeug, sowie an Fahrzeuge im Transit oder in der Einfuhr.",
       "guaranteesIncluded": "Haftpflichtversicherung (obligatorisch) + strafrechtlicher Beistand und Regress nach einem Unfall. Sie erhalten eine internationale Versicherungskarte, die in den 35 versicherten Ländern gültig ist.",
       "whereCovered": "In 35 Ländern, nicht nur in Frankreich  das ist einer der großen Vorteile unseres Grenzversicherungsvertrags.",

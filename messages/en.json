@@ -562,13 +562,13 @@
       "seeAlso": "See also",
       "coveredCountriesLink": "Countries covered",
       "priceFrom": "From {price}/day",
-      "durationsAvailable": "Durations available: {durations} day{plural}"
+      "durationsAvailable": "Durations available: {durations} {count, plural, one {day} other {days}}"
     },
     "automobiles": {
       "title": "Temporary car insurance from [PRIX] €/day | TempAssur",
       "metaDescription": "Insure a car or a van for 1 to 90 days. Subscribe online in 5 minutes, instant certificate by e-mail or WhatsApp. From [PRIX] €/day.",
       "h1": "Temporary car insurance from 1 to 90 days",
-      "intro": "Need to insure a car or a van under 3.5 tonnes for a few days? TempAssur's temporary car insurance covers you from 1 to 90 days, with no long-term commitment and no automatic renewal. 100% online subscription in 5 minutes, certificate sent immediately by e-mail or WhatsApp.",
+      "intro": "Insure a car or a van under 3.5 tonnes for 1 to 90 days, with no commitment and no automatic renewal. Subscribe online in 5 minutes, instant certificate by e-mail or WhatsApp.",
       "vehiclesParagraph": "All private and commercial vehicles under 3.5 tonnes, regardless of power: city car, saloon, SUV, small van... The rate depends on the fiscal power and the duration chosen.",
       "guaranteesIncluded": "Included: third-party liability (mandatory  damage caused to others) and legal defence and recourse following an accident.",
       "options": [
@@ -621,7 +621,7 @@
       "title": "Temporary HGV insurance from [PRIX] €/day | TempAssur",
       "metaDescription": "Truck, carrier, road tractor: temporary HGV insurance online. Instant certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for heavy goods vehicles (over 3.5 T)",
-      "intro": "Carrier truck, road tractor, semi-trailer: insure your HGV for a delivery run, a purchase, an import or a one-off assignment, for the durations set out in our rate table. Instant certificate by e-mail or WhatsApp.",
+      "intro": "Carrier truck, road tractor, semi-trailer: insure your HGV for a delivery run, a purchase, an import or a one-off assignment. Instant certificate by e-mail or WhatsApp.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 countries. Overseas territories: yes, with specific rates.",
       "useCases": [
@@ -651,7 +651,7 @@
       "title": "Temporary motorhome insurance 1 to 90 days | TempAssur",
       "metaDescription": "Temporary insurance for motorhomes and converted vans, from 1 to 90 days. Subscribe online, certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for motorhomes and converted vans",
-      "intro": "Travel with peace of mind: temporary motorhome insurance from 1 to 90 days, ideal for a one-off trip, a loan, a purchase or bringing a vehicle back home. The price shown corresponds to models under 3.5 T; it is adjusted for weight during subscription.",
+      "intro": "Temporary motorhome insurance from 1 to 90 days for a trip, a loan, a purchase or bringing a vehicle back home. Price shown for models under 3.5 T, adjusted for weight at subscription.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 European countries  perfect for a road trip. Overseas territories: yes, specific rates.",
       "useCases": [
@@ -682,7 +682,7 @@
       "title": "Temporary quad, microcar, buggy insurance | TempAssur",
       "metaDescription": "Approved quad, licence-free microcar or buggy: temporary insurance online, certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for quadricycles: quads, microcars, buggies",
-      "intro": "Approved quad, licence-free microcar or buggy: insure your quadricycle for exactly the duration you need. The headline price shown corresponds to the cheapest sub-type; the exact rate is adjusted for your vehicle at subscription.",
+      "intro": "Approved quad, licence-free microcar or buggy: insure your quadricycle for the duration you need. Price shown for the cheapest sub-type, adjusted for your vehicle at subscription.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
       "useCases": [
@@ -712,7 +712,7 @@
       "title": "Temporary insurance for buses and coaches | TempAssur",
       "metaDescription": "Insure a bus or coach for a delivery run, a purchase or a sale. Subscribe online, instant certificate.",
       "h1": "Temporary insurance for buses and coaches",
-      "intro": "Insure a bus or coach for a delivery run, a purchase, a sale or a vehicle transfer. 100% online subscription, instant certificate by e-mail or WhatsApp.",
+      "intro": "Insure a bus or coach for a delivery run, a purchase, a sale or a transfer. Subscribe online, instant certificate by e-mail or WhatsApp.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
       "useCases": [
@@ -737,7 +737,7 @@
       "title": "Temporary tractor insurance from [PRIX] €/day | TempAssur",
       "metaDescription": "Harvest, delivery, purchase: temporary agricultural tractor insurance online, certificate by e-mail or WhatsApp.",
       "h1": "Temporary insurance for agricultural tractors",
-      "intro": "Harvest, delivery, purchase or sale: insure your tractor or farm machinery for a few days, with no annual commitment. Subscribe online, certificate by e-mail or WhatsApp.",
+      "intro": "Harvest, delivery, purchase or sale: insure your tractor or farm machinery for a few days, with no annual commitment. Certificate by e-mail or WhatsApp.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
       "useCases": [
@@ -762,7 +762,7 @@
       "title": "Temporary trailer and caravan insurance | TempAssur",
       "metaDescription": "Trailer, semi-trailer or caravan: temporary insurance mandatory above 750 kg. Instant online subscription.",
       "h1": "Temporary insurance for trailers, semi-trailers and caravans",
-      "intro": "Light or heavy trailer, semi-trailer, caravan: above 750 kg gross weight, dedicated third-party liability insurance is mandatory  the towing vehicle's cover is no longer sufficient. Insure yours for a delivery run, a purchase or a one-off trip.",
+      "intro": "Above 750 kg gross weight, your trailer, semi-trailer or caravan needs its own third-party liability insurance. Insure it for a delivery run, a purchase or a one-off trip.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident.",
       "whereCovered": "In France and in 35 countries. Overseas territories: yes, specific rates.",
       "useCases": [
@@ -788,7 +788,7 @@
       "title": "Border insurance for foreign vehicles in France | TempAssur",
       "metaDescription": "Vehicle registered outside the EU or abroad? Border insurance covers you in France and in 35 countries. 30 or 90 days, instant certificate.",
       "h1": "Border insurance for driving in France and Europe",
-      "intro": "Is your vehicle registered outside the European Union and outside the green card system  or registered abroad and needs to travel in France? Border insurance is the legal, mandatory solution for taking to the road. And at TempAssur, it doesn't just cover France: you're covered in 35 countries, the same list as our temporary insurance products. Available for 30 or 90 days  certificate by e-mail or WhatsApp.",
+      "intro": "Is your vehicle registered outside the European Union and outside the green card system, or registered abroad and needs to travel in France? Border insurance is the legal, mandatory solution, and it covers you in 35 countries. Available for 30 or 90 days, certificate by e-mail or WhatsApp.",
       "vehiclesParagraph": "For travellers coming to Europe with their vehicle (Maghreb, Balkans outside the green card system, Middle East, Americas...), for French nationals returning temporarily from abroad with a vehicle registered outside the EU, and for vehicles in transit or being imported.",
       "guaranteesIncluded": "Third-party liability (mandatory) + legal defence and recourse following an accident. You receive an international insurance card valid in the 35 countries covered.",
       "whereCovered": "In 35 countries, not just France  one of the major advantages of our border contract.",

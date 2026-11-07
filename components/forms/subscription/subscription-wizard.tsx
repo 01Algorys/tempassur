@@ -43,7 +43,6 @@ import { PaymentStep, type PaymentStepHandle } from "./steps/payment-step"
 
 interface SubscriptionWizardProps {
   initialCategory?: VehicleSlug
-  initialDuree?: number
 }
 
 type StepId = "duration" | "details" | "payment"
@@ -99,7 +98,7 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
   payment: [],
 }
 
-export function SubscriptionWizard({ initialCategory = "automobiles", initialDuree }: SubscriptionWizardProps) {
+export function SubscriptionWizard({ initialCategory = "automobiles" }: SubscriptionWizardProps) {
   const router = useRouter()
   const locale = useLocale()
   const searchParams = useSearchParams()
@@ -154,7 +153,8 @@ export function SubscriptionWizard({ initialCategory = "automobiles", initialDur
       paysResidence: "",
       territoireResidence: "",
       categorie: initialCategory,
-      duree: initialDuree ?? 1,
+      // ?duree= est transmis par le tarificateur de l'accueil.
+      duree: Number(searchParams.get("duree")) || 1,
       cvTier: getPricingConfig(initialCategory).needsCvTier ? "moins-16cv" : undefined,
       ptacTier: getPricingConfig(initialCategory).needsPtacTier ? "moins-3500kg" : undefined,
       quadSubtype: getPricingConfig(initialCategory).needsQuadSubtype ? "voiturette-sans-permis" : undefined,
