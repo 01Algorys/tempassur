@@ -248,8 +248,8 @@
       "cta": "Ver la lista completa de países cubiertos"
     },
     "vehicleVignettes": {
-      "eyebrow": "Nuestros vehículos",
-      "title": "Nuestros seguros",
+      "title": "Nuestras categorías",
+      "description": "Elija su tipo de vehículo y obtenga su seguro temporal en unos minutos.",
       "priceFrom": "desde <strong>{price}/día</strong>",
       "cta": "Saber más"
     }

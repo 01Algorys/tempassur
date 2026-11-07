@@ -248,8 +248,8 @@
       "cta": "Die vollständige Liste der versicherten Länder ansehen"
     },
     "vehicleVignettes": {
-      "eyebrow": "Unsere Fahrzeuge",
-      "title": "Unsere Versicherungen",
+      "title": "Unsere Kategorien",
+      "description": "Wählen Sie Ihren Fahrzeugtyp und erhalten Sie Ihre Kurzzeitversicherung in wenigen Minuten.",
       "priceFrom": "ab <strong>{price}/Tag</strong>",
       "cta": "Mehr erfahren"
     }

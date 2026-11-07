@@ -248,8 +248,8 @@
       "cta": "Vezi lista completă a țărilor acoperite"
     },
     "vehicleVignettes": {
-      "eyebrow": "Vehiculele noastre",
-      "title": "Asigurările noastre",
+      "title": "Categoriile noastre",
+      "description": "Alegeți tipul de vehicul și obțineți asigurarea temporară în câteva minute.",
       "priceFrom": "de la <strong>{price}/zi</strong>",
       "cta": "Află mai multe"
     }

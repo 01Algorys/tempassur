@@ -248,8 +248,8 @@
       "cta": "See the full list of countries covered"
     },
     "vehicleVignettes": {
-      "eyebrow": "Our vehicles",
-      "title": "Our insurance products",
+      "title": "Our categories",
+      "description": "Choose your vehicle type and get your temporary insurance in minutes.",
       "priceFrom": "from <strong>{price}/day</strong>",
       "cta": "Learn more"
     }

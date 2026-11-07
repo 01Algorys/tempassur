@@ -248,8 +248,8 @@
       "cta": "Voir la liste complète des pays couverts"
     },
     "vehicleVignettes": {
-      "eyebrow": "Nos véhicules",
-      "title": "Nos assurances",
+      "title": "Nos Catégories",
+      "description": "Choisissez votre type de véhicule et obtenez votre assurance temporaire en quelques minutes.",
       "priceFrom": "à partir de <strong>{price}/jour</strong>",
       "cta": "En savoir plus"
     }
