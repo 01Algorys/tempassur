@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Zone Überseegebiete (DOM-TOM)",
       "selectDuration": "Wählen Sie eine Dauer, um den Tarif anzuzeigen.",
       "totalToPay": "Zu zahlender Gesamtbetrag",
-      "installments": "<strong>Zahlen Sie in 3 Raten</strong> mit Klarna, vorbehaltlich der Annahme.",
+      "installments": "<strong>Zahlen Sie in 3 Raten</strong> mit Klarna.",
       "securePayment": "Sichere Zahlung, sofortiger Versicherungsbeginn.",
       "durationValue": "{count, plural, one {# Tag} other {# Tage}}",
       "noValue": ""
@@ -1318,7 +1318,7 @@
       "metaTitle": "Länder der Kurzzeitversicherung | TempAssur",
       "metaDescription": "Ihre Kurzzeitversicherung gilt in 35 Ländern, mit der Gebietserweiterung in bis zu 42. Vollständige Liste und so lesen Sie Ihre Grüne Karte.",
       "heroTitle": "Kurzzeitversicherung: Wo dürfen Sie fahren?",
-      "introCard": "Mit der <strong>Kurzzeit-Kfz-Versicherung von TempAssur</strong> erhalten Sie eine <strong>internationale Kfz-Versicherungskarte</strong>, auch „<strong>Grüne Karte</strong>“ genannt. Dieses Dokument weist nach, dass Ihr Fahrzeug versichert ist, in Frankreich wie im Ausland.",
+      "introCard": "Mit der <strong>Kurzzeit-Kfz-Versicherung</strong> erhalten Sie eine <strong>internationale Kfz-Versicherungskarte</strong>, auch „<strong>Grüne Karte</strong>“ genannt. Dieses Dokument weist nach, dass Ihr Fahrzeug versichert ist, in Frankreich wie im Ausland.",
       "introCoverage": "Sie gilt in <strong>35 Ländern</strong> und mit der Gebietserweiterung in bis zu <strong>42 Ländern</strong>.",
       "cardHeading": "Wie lesen Sie Ihre Grüne Karte?",
       "cardIntro": "Unten auf Ihrer Karte befindet sich eine Tabelle mit den Kennzeichen der einzelnen Länder (F für Frankreich, E für Spanien, I für Italien…).",

@@ -4,6 +4,7 @@ import { useEffect, useMemo } from "react"
 import type { UseFormReturn } from "react-hook-form"
 import { useLocale, useTranslations } from "next-intl"
 
+import { MostChosenBadge } from "@/components/shared/most-chosen-badge"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { calculatePrice, getAvailableDurations, getPreselectedDuration } from "@/lib/pricing"
@@ -74,11 +75,7 @@ export function DurationStep({ form }: DurationStepProps) {
                           {t("durationOption", { count: d })}
                           {price != null ? ` — ${currency.format(price)}` : ""}
                         </span>
-                        {d === preselected ? (
-                          <span className="inline-flex shrink-0 items-center rounded-full bg-orange px-2 py-0.5 text-[10px] font-bold tracking-wide text-white uppercase">
-                            {t("mostChosen")}
-                          </span>
-                        ) : null}
+                        {d === preselected ? <MostChosenBadge label={t("mostChosen")} /> : null}
                       </span>
                     </SelectItem>
                   )

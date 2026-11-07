@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Zonă DOM-TOM",
       "selectDuration": "Selectați o durată pentru a afișa tariful.",
       "totalToPay": "Total de plată",
-      "installments": "<strong>Plătiți în 3 rate</strong> cu Klarna, sub rezerva aprobării.",
+      "installments": "<strong>Plătiți în 3 rate</strong> cu Klarna.",
       "securePayment": "Plată securizată, intrare în vigoare imediată.",
       "durationValue": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
       "noValue": ""
@@ -1318,7 +1318,7 @@
       "metaTitle": "Țări acoperite de asigurarea temporară | TempAssur",
       "metaDescription": "Asigurarea temporară vă acoperă în 35 de țări și în până la 42 de țări cu extensia teritorială. Consultați lista completă și aflați cum să citiți Cartea Verde.",
       "heroTitle": "Asigurare temporară: unde puteți circula?",
-      "introCard": "Cu <strong>asigurarea auto temporară TempAssur</strong> primiți un <strong>card internațional de asigurare auto</strong>, numit și „<strong>Carte Verde</strong>”. Acesta este documentul care dovedește că vehiculul dumneavoastră este asigurat, atât în Franța, cât și în străinătate.",
+      "introCard": "Cu <strong>asigurarea auto temporară</strong> primiți un <strong>card internațional de asigurare auto</strong>, numit și „<strong>Carte Verde</strong>”. Acesta este documentul care dovedește că vehiculul dumneavoastră este asigurat, atât în Franța, cât și în străinătate.",
       "introCoverage": "Vă acoperă în <strong>35 de țări</strong> și în până la <strong>42 de țări</strong> cu extensia teritorială.",
       "cardHeading": "Cum citiți Cartea Verde?",
       "cardIntro": "În partea de jos a cardului există un tabel cu codurile fiecărei țări (F pentru Franța, E pentru Spania, I pentru Italia…).",

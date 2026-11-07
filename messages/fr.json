@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Zone DOM-TOM",
       "selectDuration": "Sélectionnez une durée pour afficher le tarif.",
       "totalToPay": "Total à payer",
-      "installments": "<strong>Payez en 3 fois</strong> avec Klarna, sous réserve d’acceptation.",
+      "installments": "<strong>Payez en 3 fois</strong> avec Klarna.",
       "securePayment": "Paiement sécurisé, prise d'effet immédiate.",
       "durationValue": "{count, plural, one {# jour} other {# jours}}",
       "noValue": ""
@@ -1329,7 +1329,7 @@
       "metaTitle": "Pays couverts par l’assurance temporaire | TempAssur",
       "metaDescription": "Votre assurance temporaire vous couvre dans 35 pays, jusqu’à 42 avec l’extension territoriale. Liste complète et lecture de votre carte verte.",
       "heroTitle": "Assurance temporaire : où pouvez-vous circuler ?",
-      "introCard": "Avec l’<strong>assurance auto temporaire TempAssur</strong>, vous recevez une <strong>carte internationale d’assurance automobile</strong>, aussi appelée « <strong>carte verte</strong> ». C’est le document qui prouve que votre véhicule est assuré, en France comme à l’étranger.",
+      "introCard": "Avec l’<strong>assurance auto temporaire</strong>, vous recevez une <strong>carte internationale d’assurance automobile</strong>, aussi appelée « <strong>carte verte</strong> ». C’est le document qui prouve que votre véhicule est assuré, en France comme à l’étranger.",
       "introCoverage": "Elle vous couvre dans <strong>35 pays</strong>, et jusqu’à <strong>42 pays</strong> avec l’extension territoriale.",
       "cardHeading": "Comment lire votre carte verte ?",
       "cardIntro": "En bas de votre carte figure un tableau avec les codes de chaque pays (F pour France, E pour Espagne, I pour Italie…).",

@@ -5,6 +5,7 @@ import { useRouter } from "@/i18n/navigation"
 import { ArrowRight } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 
+import { MostChosenBadge } from "@/components/shared/most-chosen-badge"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { VEHICLE_TYPES } from "@/lib/constants"
@@ -88,9 +89,13 @@ export function Tarificateur() {
                 const optionPrice = getMinPriceForDuration(category, d, false)
                 return (
                   <SelectItem key={d} value={String(d)}>
-                    {t("durationOption", { count: d })}
-                    {optionPrice != null ? ` — ${currency.format(optionPrice)}` : ""}
-                    {d === preselected ? ` · ${t("mostChosen")}` : ""}
+                    <span className="flex w-full items-center justify-between gap-2">
+                      <span>
+                        {t("durationOption", { count: d })}
+                        {optionPrice != null ? ` — ${currency.format(optionPrice)}` : ""}
+                      </span>
+                      {d === preselected ? <MostChosenBadge label={t("mostChosen")} /> : null}
+                    </span>
                   </SelectItem>
                 )
               })}

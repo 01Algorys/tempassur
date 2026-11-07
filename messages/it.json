@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Zona DOM-TOM",
       "selectDuration": "Seleziona una durata per visualizzare la tariffa.",
       "totalToPay": "Totale da pagare",
-      "installments": "<strong>Paga in 3 rate</strong> con Klarna, previa accettazione.",
+      "installments": "<strong>Paga in 3 rate</strong> con Klarna.",
       "securePayment": "Pagamento sicuro, decorrenza immediata.",
       "durationValue": "{count, plural, one {# giorno} other {# giorni}}",
       "noValue": ""
@@ -1318,7 +1318,7 @@
       "metaTitle": "Paesi coperti dall’assicurazione temporanea | TempAssur",
       "metaDescription": "La tua assicurazione temporanea ti copre in 35 paesi, fino a 42 con l’estensione territoriale. Elenco completo e come leggere la carta verde.",
       "heroTitle": "Assicurazione temporanea: dove puoi circolare?",
-      "introCard": "Con l’<strong>assicurazione auto temporanea TempAssur</strong> ricevi una <strong>carta internazionale di assicurazione auto</strong>, chiamata anche «<strong>carta verde</strong>». È il documento che prova che il tuo veicolo è assicurato, in Francia e all’estero.",
+      "introCard": "Con l’<strong>assicurazione auto temporanea</strong> ricevi una <strong>carta internazionale di assicurazione auto</strong>, chiamata anche «<strong>carta verde</strong>». È il documento che prova che il tuo veicolo è assicurato, in Francia e all’estero.",
       "introCoverage": "Ti copre in <strong>35 paesi</strong> e fino a <strong>42 paesi</strong> con l’estensione territoriale.",
       "cardHeading": "Come leggere la tua carta verde?",
       "cardIntro": "In fondo alla carta trovi una tabella con i codici di ogni paese (F per Francia, E per Spagna, I per Italia…).",

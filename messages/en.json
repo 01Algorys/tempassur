@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Overseas territory zone",
       "selectDuration": "Select a duration to display the rate.",
       "totalToPay": "Total to pay",
-      "installments": "<strong>Pay in 3 instalments</strong> with Klarna, subject to approval.",
+      "installments": "<strong>Pay in 3 instalments</strong> with Klarna.",
       "securePayment": "Secure payment, cover starts immediately.",
       "durationValue": "{count, plural, one {# day} other {# days}}",
       "noValue": ""
@@ -1318,7 +1318,7 @@
       "metaTitle": "Countries covered by temporary insurance | TempAssur",
       "metaDescription": "Your temporary insurance covers you in 35 countries, up to 42 with the territorial extension. Full list and how to read your Green Card.",
       "heroTitle": "Temporary insurance: where can you drive?",
-      "introCard": "With <strong>TempAssur temporary car insurance</strong>, you receive an <strong>international motor insurance card</strong>, also known as a “<strong>Green Card</strong>”. This is the document that proves your vehicle is insured, in France and abroad.",
+      "introCard": "With <strong>temporary car insurance</strong>, you receive an <strong>international motor insurance card</strong>, also known as a “<strong>Green Card</strong>”. This is the document that proves your vehicle is insured, in France and abroad.",
       "introCoverage": "It covers you in <strong>35 countries</strong>, and up to <strong>42 countries</strong> with the territorial extension.",
       "cardHeading": "How to read your Green Card",
       "cardIntro": "At the bottom of your card there is a table with a code for each country (F for France, E for Spain, I for Italy…).",
