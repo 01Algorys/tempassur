@@ -25,7 +25,11 @@ import {
 } from "@/lib/pricing"
 import { CV_TIER_OPTIONS, PTAC_TIER_OPTIONS, QUAD_SUBTYPE_OPTIONS } from "@/lib/pricing-data"
 import { isFrontierRedirectRequired, isResidenceRequirementViolated } from "@/lib/countries"
-import { createSubscriptionSchema, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
+import {
+  createSubscriptionSchema,
+  getStepOneIssues,
+  type SubscriptionFormValues,
+} from "@/lib/validations/subscription-schema"
 import type { VehicleSlug } from "@/types"
 
 import { StepIndicator } from "./step-indicator"
@@ -255,6 +259,14 @@ export function SubscriptionWizard({ initialCategory = "automobiles" }: Subscrip
 
   async function goNext() {
     const isValid = await form.trigger(STEP_FIELDS[currentStep.id])
+    // Rechecked on step 2 too: the effect time can pass while the customer fills it in.
+    const stepOneIssues = getStepOneIssues(form.getValues(), tValidation)
+    if (stepOneIssues.length > 0) {
+      setStepIndex(0)
+      stepOneIssues.forEach((issue) => form.setError(issue.path, { message: issue.message }))
+      scrollToFirstError()
+      return
+    }
     if (!isValid) {
       scrollToFirstError()
       return

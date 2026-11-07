@@ -169,21 +169,8 @@ export function createSubscriptionSchema(t: (key: string) => string) {
         }
       }
 
-      if (data.dateEffet && data.heureEffet) {
-        const effectDate = new Date(`${data.dateEffet}T${data.heureEffet}`)
-        if (Number.isNaN(effectDate.getTime())) {
-          ctx.addIssue({
-            code: "custom",
-            message: t("dateEffetInvalid"),
-            path: ["dateEffet"],
-          })
-        } else if (effectDate < new Date()) {
-          ctx.addIssue({
-            code: "custom",
-            message: t("effectDateInPast"),
-            path: ["heureEffet"],
-          })
-        }
+      for (const issue of getStepOneIssues(data, t)) {
+        ctx.addIssue({ code: "custom", message: issue.message, path: [issue.path] })
       }
 
       if (data.motifSouscription === "autre" && !data.motifSouscriptionAutre?.trim()) {
@@ -193,15 +180,41 @@ export function createSubscriptionSchema(t: (key: string) => string) {
           path: ["motifSouscriptionAutre"],
         })
       }
-
-      if (data.estVehiculeLocation && !data.nomAgenceLocation) {
-        ctx.addIssue({
-          code: "custom",
-          message: t("nomAgenceRequired"),
-          path: ["nomAgenceLocation"],
-        })
-      }
     })
 }
 
 export type SubscriptionFormValues = z.infer<ReturnType<typeof createSubscriptionSchema>>
+
+interface StepOneValues {
+  dateEffet?: string
+  heureEffet?: string
+  estVehiculeLocation?: boolean
+  nomAgenceLocation?: string
+}
+
+export interface StepOneIssue {
+  path: "dateEffet" | "heureEffet" | "nomAgenceLocation"
+  message: string
+}
+
+// superRefine ne s'exécute que lorsque tous les champs du formulaire sont lisibles : à
+// l'étape 1, ceux de l'étape 2 sont encore vides. Le tunnel appelle donc aussi ces règles
+// directement, sinon elles ne seraient jamais appliquées aux champs de l'étape 1.
+export function getStepOneIssues(values: StepOneValues, t: (key: string) => string): StepOneIssue[] {
+  const issues: StepOneIssue[] = []
+
+  if (values.dateEffet && values.heureEffet) {
+    const effectDate = new Date(`${values.dateEffet}T${values.heureEffet}`)
+    if (Number.isNaN(effectDate.getTime())) {
+      issues.push({ path: "dateEffet", message: t("dateEffetInvalid") })
+    } else if (effectDate < new Date()) {
+      issues.push({ path: "heureEffet", message: t("effectDateInPast") })
+    }
+  }
+
+  if (values.estVehiculeLocation && !values.nomAgenceLocation) {
+    issues.push({ path: "nomAgenceLocation", message: t("nomAgenceRequired") })
+  }
+
+  return issues
+}
