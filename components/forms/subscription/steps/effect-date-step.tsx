@@ -4,9 +4,9 @@ import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { EuDateInput } from "../eu-date-input"
+import { EuTimeInput } from "../eu-time-input"
 
 const fieldClass = "h-11 rounded-lg"
 
@@ -41,7 +41,7 @@ export function EffectDateStep({ form }: EffectDateStepProps) {
             <FormItem>
               <FormLabel>{t("effectTime")}</FormLabel>
               <FormControl>
-                <Input type="time" lang="fr-FR" className={fieldClass} {...field} />
+                <EuTimeInput className={fieldClass} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
