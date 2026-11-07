@@ -506,7 +506,7 @@
       "zoneDomTomSurcharge": "Zona DOM-TOM",
       "selectDuration": "Seleccione una duración para ver la tarifa.",
       "totalToPay": "Total a pagar",
-      "installments": "<strong>Pague en 3 plazos</strong> con Klarna, sujeto a aprobación.",
+      "installments": "<strong>Pague en 3 plazos</strong> con Klarna.",
       "securePayment": "Pago seguro, efecto inmediato.",
       "durationValue": "{count, plural, one {# día} other {# días}}",
       "noValue": ""
@@ -1318,7 +1318,7 @@
       "metaTitle": "Países cubiertos por el seguro temporal | TempAssur",
       "metaDescription": "Su seguro temporal le cubre en 35 países, y hasta en 42 países con la extensión territorial. Consulte la lista completa y aprenda a leer su Carta Verde.",
       "heroTitle": "Seguro temporal: ¿por dónde puede circular?",
-      "introCard": "Con el <strong>seguro de coche temporal TempAssur</strong>, recibe una <strong>tarjeta internacional de seguro de automóvil</strong>, también llamada «<strong>Carta Verde</strong>». Es el documento que demuestra que su vehículo está asegurado, tanto en Francia como en el extranjero.",
+      "introCard": "Con el <strong>seguro de coche temporal</strong>, recibe una <strong>tarjeta internacional de seguro de automóvil</strong>, también llamada «<strong>Carta Verde</strong>». Es el documento que demuestra que su vehículo está asegurado, tanto en Francia como en el extranjero.",
       "introCoverage": "Le cubre en <strong>35 países</strong>, y hasta en <strong>42 países</strong> con la extensión territorial.",
       "cardHeading": "¿Cómo leer su Carta Verde?",
       "cardIntro": "En la parte inferior de su tarjeta figura una tabla con los códigos de cada país (F para Francia, E para España, I para Italia…).",
