@@ -8,7 +8,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { MostChosenBadge } from "@/components/shared/most-chosen-badge"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { VEHICLE_TYPES } from "@/lib/constants"
+import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
 import { getAvailableDurations, getMinPriceForDuration, getPreselectedDuration, getPricingConfig } from "@/lib/pricing"
 import type { VehicleSlug } from "@/types"
 
@@ -44,11 +44,7 @@ export function Tarificateur() {
 
   function handleSouscription() {
     const dureeValue = duree || preselected
-    router.push(
-      category === "assurance-frontiere"
-        ? `/souscription-frontiere?duree=${dureeValue}`
-        : `/souscription?categorie=${category}&duree=${dureeValue}`,
-    )
+    router.push(`${PRODUCT_ROUTES[category]}?duree=${dureeValue}`)
   }
 
   return (

@@ -562,13 +562,13 @@
       "seeAlso": "Ver también",
       "coveredCountriesLink": "Países cubiertos",
       "priceFrom": "Desde {price}/día",
-      "durationsAvailable": "Duraciones disponibles: {durations} día{plural}"
+      "durationsAvailable": "Duraciones disponibles: {durations} {count, plural, one {día} other {días}}"
     },
     "automobiles": {
       "title": "Seguro de coche temporal desde [PRIX] €/día | TempAssur",
       "metaDescription": "Asegure un coche o un vehículo comercial de 1 a 90 días. Contratación en línea en 5 minutos, certificado inmediato por e-mail o WhatsApp. Desde [PRIX] €/día.",
       "h1": "Seguro de coche temporal de 1 a 90 días",
-      "intro": "¿Necesita asegurar un coche o un vehículo comercial de menos de 3,5 toneladas durante unos días? El seguro de coche temporal de TempAssur le cubre de 1 a 90 días, sin permanencia y sin renovación tácita. Contratación 100 % en línea en 5 minutos, certificado enviado de inmediato por correo electrónico o WhatsApp.",
+      "intro": "Asegure un coche o un vehículo comercial de menos de 3,5 toneladas de 1 a 90 días, sin permanencia y sin renovación tácita. Contratación en línea en 5 minutos, certificado inmediato por correo electrónico o WhatsApp.",
       "vehiclesParagraph": "Todos los vehículos particulares y comerciales de menos de 3,5 toneladas, sea cual sea su potencia: utilitario urbano, berlina, SUV, furgoneta... La tarifa depende de la potencia fiscal y de la duración elegida.",
       "guaranteesIncluded": "Incluidas: responsabilidad civil (obligatoria  daños causados a terceros) y defensa penal y reclamación tras accidente.",
       "options": [
@@ -621,7 +621,7 @@
       "title": "Seguro temporal vehículo pesado | TempAssur",
       "metaDescription": "Camión, vehículo de carga, tractocamión: seguro temporal de vehículo pesado en línea. Certificado inmediato por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de vehículo pesado (+ de 3,5 T)",
-      "intro": "Camión de carga, tractocamión, semirremolque: asegure su vehículo pesado para un traslado, una compra, una importación o una misión puntual, con las duraciones previstas en nuestra tabla de tarifas. Certificado inmediato por correo electrónico o WhatsApp.",
+      "intro": "Camión de carga, tractocamión, semirremolque: asegure su vehículo pesado para un traslado, una compra, una importación o una misión puntual. Certificado inmediato por correo electrónico o WhatsApp.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, con tarifas específicas.",
       "useCases": [
@@ -651,7 +651,7 @@
       "title": "Seguro temporal de autocaravana de 1 a 90 días | TempAssur",
       "metaDescription": "Seguro temporal de autocaravana y furgoneta camper, de 1 a 90 días. Contratación en línea, certificado por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de autocaravana y furgoneta camper",
-      "intro": "Viaje tranquilo: seguro temporal de autocaravana de 1 a 90 días, ideal para un viaje puntual, un préstamo, una compra o una repatriación. El precio mostrado corresponde a los modelos de menos de 3,5 T; se ajusta según el peso en el momento de la contratación.",
+      "intro": "Seguro temporal de autocaravana de 1 a 90 días para un viaje, un préstamo, una compra o una repatriación. Precio mostrado para modelos de menos de 3,5 T, ajustado según el peso en la contratación.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países de Europa  perfecto para un road trip. DOM-TOM: sí, tarifas específicas.",
       "useCases": [
@@ -682,7 +682,7 @@
       "title": "Seguro temporal de quad, coche sin carné y buggy | TempAssur",
       "metaDescription": "Quad homologado, coche sin carné o buggy: seguro temporal en línea, certificado por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de cuadriciclos: quad, coche sin carné, buggy",
-      "intro": "Quad homologado, coche sin carné o buggy: asegure su cuadriciclo durante la duración que realmente necesita. El precio de referencia mostrado corresponde al subtipo más económico; la tarifa exacta se ajusta según su vehículo en el momento de la contratación.",
+      "intro": "Quad homologado, coche sin carné o buggy: asegure su cuadriciclo durante el tiempo que necesite. Precio mostrado para el subtipo más económico, ajustado según su vehículo en la contratación.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
       "useCases": [
@@ -712,7 +712,7 @@
       "title": "Seguro temporal de autobús y autocar | TempAssur",
       "metaDescription": "Asegure un autobús o un autocar para un traslado, una compra o una venta. Contratación en línea, certificado inmediato.",
       "h1": "Seguro temporal de autobuses y autocares",
-      "intro": "Asegure un autobús o un autocar para un traslado, una compra, una venta o una transferencia de vehículo. Contratación 100 % en línea, certificado inmediato por correo electrónico o WhatsApp.",
+      "intro": "Asegure un autobús o un autocar para un traslado, una compra, una venta o una transferencia. Contratación en línea, certificado inmediato por correo electrónico o WhatsApp.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
       "useCases": [
@@ -737,7 +737,7 @@
       "title": "Seguro temporal tractor agrícola | TempAssur",
       "metaDescription": "Cosechas, traslado, compra: seguro temporal de tractor agrícola en línea, certificado por correo electrónico o WhatsApp.",
       "h1": "Seguro temporal de tractor agrícola",
-      "intro": "Cosechas, traslado, compra o venta: asegure su tractor o maquinaria agrícola durante unos días, sin permanencia anual. Contratación en línea, certificado por correo electrónico o WhatsApp.",
+      "intro": "Cosechas, traslado, compra o venta: asegure su tractor o maquinaria agrícola durante unos días, sin permanencia anual. Certificado por correo electrónico o WhatsApp.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
       "useCases": [
@@ -762,7 +762,7 @@
       "title": "Seguro temporal de remolque y caravana | TempAssur",
       "metaDescription": "Remolque, semirremolque o caravana: seguro temporal obligatorio a partir de 750 kg. Contratación en línea inmediata.",
       "h1": "Seguro temporal de remolques, semirremolques y caravanas",
-      "intro": "Remolque ligero o pesado, semirremolque, caravana: a partir de 750 kg de MMA, es obligatorio un seguro de responsabilidad civil específico  el del vehículo tractor ya no es suficiente. Asegure el suyo para un traslado, una compra o un desplazamiento puntual.",
+      "intro": "A partir de 750 kg de MMA, su remolque, semirremolque o caravana necesita su propio seguro de responsabilidad civil. Asegúrelo para un traslado, una compra o un desplazamiento puntual.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente.",
       "whereCovered": "En Francia y en 35 países. DOM-TOM: sí, tarifas específicas.",
       "useCases": [
@@ -788,7 +788,7 @@
       "title": "Seguro de frontera para vehículos extranjeros | TempAssur",
       "metaDescription": "¿Vehículo matriculado fuera de la UE o en el extranjero? El seguro de frontera le cubre en Francia y en 35 países. 30 o 90 días, certificado inmediato.",
       "h1": "Seguro de frontera para circular por Francia y Europa",
-      "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria para poder circular. Y en TempAssur no cubre solo Francia: está cubierto en 35 países, la misma lista que nuestros seguros temporales. Disponible en 30 o 90 días  certificado por correo electrónico o WhatsApp.",
+      "intro": "¿Su vehículo está matriculado fuera de la Unión Europea y fuera del sistema de la tarjeta verde, o matriculado en el extranjero y necesita circular por Francia? El seguro de frontera es la solución legal y obligatoria, y le cubre en 35 países. Disponible en 30 o 90 días, certificado por correo electrónico o WhatsApp.",
       "vehiclesParagraph": "A los viajeros que llegan a Europa con su vehículo (Magreb, Balcanes fuera de la tarjeta verde, Oriente Medio, América...), a los franceses residentes en el extranjero que regresan temporalmente con un vehículo matriculado fuera de la UE, y a los vehículos en tránsito o en proceso de importación.",
       "guaranteesIncluded": "Responsabilidad civil (obligatoria) + defensa penal y reclamación tras accidente. Recibirá una tarjeta internacional de seguro válida en los 35 países cubiertos.",
       "whereCovered": "En 35 países, no solo en Francia  es una de las grandes ventajas de nuestro contrato de frontera.",

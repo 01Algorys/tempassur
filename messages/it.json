@@ -562,13 +562,13 @@
       "seeAlso": "Vedi anche",
       "coveredCountriesLink": "Paesi coperti",
       "priceFrom": "A partire da {price}/giorno",
-      "durationsAvailable": "Durate disponibili: {durations} giorno{plural}"
+      "durationsAvailable": "Durate disponibili: {durations} {count, plural, one {giorno} other {giorni}}"
     },
     "automobiles": {
       "title": "Assicurazione auto temporanea da [PRIX] €/giorno | TempAssur",
       "metaDescription": "Assicura un'auto o un veicolo commerciale da 1 a 90 giorni. Sottoscrizione online in 5 minuti, attestato immediato via e-mail o WhatsApp. Da [PRIX] €/giorno.",
       "h1": "Assicurazione auto temporanea da 1 a 90 giorni",
-      "intro": "Hai bisogno di assicurare un'auto o un veicolo commerciale di peso inferiore a 3,5 tonnellate per qualche giorno? L'assicurazione auto temporanea TempAssur ti copre da 1 a 90 giorni, senza vincoli e senza rinnovo tacito. Sottoscrizione 100% online in 5 minuti, attestato inviato immediatamente via e-mail o WhatsApp.",
+      "intro": "Assicura un'auto o un veicolo commerciale di peso inferiore a 3,5 tonnellate da 1 a 90 giorni, senza vincoli e senza rinnovo tacito. Sottoscrizione online in 5 minuti, attestato immediato via e-mail o WhatsApp.",
       "vehiclesParagraph": "Tutti i veicoli privati e commerciali di peso inferiore a 3,5 tonnellate, qualunque sia la potenza: city car, berlina, SUV, furgone… La tariffa dipende dalla potenza fiscale e dalla durata scelta.",
       "guaranteesIncluded": "Incluse: responsabilità civile (obbligatoria  danni causati a terzi) e tutela legale e ricorso in caso di incidente.",
       "options": [
@@ -621,7 +621,7 @@
       "title": "Assicurazione temporanea mezzi pesanti | TempAssur",
       "metaDescription": "Camion, autocarro, trattore stradale: assicurazione temporanea per mezzi pesanti online. Attestato immediato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea mezzi pesanti (oltre 3,5 t)",
-      "intro": "Autocarro, trattore stradale, semirimorchio: assicura il tuo mezzo pesante per un trasferimento, un acquisto, un'importazione o una missione occasionale, con le durate previste dalla nostra griglia tariffaria. Attestato immediato via e-mail o WhatsApp.",
+      "intro": "Autocarro, trattore stradale, semirimorchio: assicura il tuo mezzo pesante per un trasferimento, un acquisto, un'importazione o una missione occasionale. Attestato immediato via e-mail o WhatsApp.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi. DOM-TOM: sì, con tariffe specifiche.",
       "useCases": [
@@ -651,7 +651,7 @@
       "title": "Assicurazione camper temporanea 1-90 giorni | TempAssur",
       "metaDescription": "Assicurazione temporanea camper e furgone attrezzato, da 1 a 90 giorni. Sottoscrizione online, attestato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea camper e furgone attrezzato",
-      "intro": "Parti con la mente serena: assicurazione temporanea camper da 1 a 90 giorni, ideale per un viaggio occasionale, un prestito, un acquisto o un rimpatrio. Il prezzo indicato corrisponde ai modelli di peso inferiore a 3,5 t; viene adeguato in base al peso al momento della sottoscrizione.",
+      "intro": "Assicurazione temporanea camper da 1 a 90 giorni per un viaggio, un prestito, un acquisto o un rimpatrio. Prezzo indicato per i modelli di peso inferiore a 3,5 t, adeguato in base al peso alla sottoscrizione.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi d'Europa  perfetto per un road-trip. DOM-TOM: sì, tariffe specifiche.",
       "useCases": [
@@ -682,7 +682,7 @@
       "title": "Assicurazione temporanea quad e microcar | TempAssur",
       "metaDescription": "Quad omologato, microcar senza patente o buggy: assicurazione temporanea online, attestato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea quadricicli: quad, microcar, buggy",
-      "intro": "Quad omologato, microcar senza patente o buggy: assicura il tuo quadriciclo per la durata di cui hai realmente bisogno. Il prezzo di richiamo indicato corrisponde al sottotipo meno costoso; la tariffa esatta si adegua in base al tuo veicolo al momento della sottoscrizione.",
+      "intro": "Quad omologato, microcar senza patente o buggy: assicura il tuo quadriciclo per la durata di cui hai bisogno. Prezzo indicato per il sottotipo meno costoso, adeguato in base al tuo veicolo alla sottoscrizione.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi. DOM-TOM: sì, tariffe specifiche.",
       "useCases": [
@@ -712,7 +712,7 @@
       "title": "Assicurazione temporanea bus e pullman | TempAssur",
       "metaDescription": "Assicura un bus o un pullman per un trasferimento, un acquisto o una vendita. Sottoscrizione online, attestato immediato.",
       "h1": "Assicurazione temporanea bus e pullman",
-      "intro": "Assicura un bus o un pullman per un trasferimento, un acquisto, una vendita o uno spostamento di veicolo. Sottoscrizione 100% online, attestato immediato via e-mail o WhatsApp.",
+      "intro": "Assicura un bus o un pullman per un trasferimento, un acquisto, una vendita o uno spostamento. Sottoscrizione online, attestato immediato via e-mail o WhatsApp.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi. DOM-TOM: sì, tariffe specifiche.",
       "useCases": [
@@ -737,7 +737,7 @@
       "title": "Assicurazione temporanea trattore agricolo | TempAssur",
       "metaDescription": "Mietitura, trasferimento, acquisto: assicurazione temporanea trattore agricolo online, attestato via e-mail o WhatsApp.",
       "h1": "Assicurazione temporanea trattore agricolo",
-      "intro": "Mietitura, trasferimento, acquisto o vendita: assicura il tuo trattore o mezzo agricolo per qualche giorno, senza vincolo annuale. Sottoscrizione online, attestato via e-mail o WhatsApp.",
+      "intro": "Mietitura, trasferimento, acquisto o vendita: assicura il tuo trattore o mezzo agricolo per qualche giorno, senza vincolo annuale. Attestato via e-mail o WhatsApp.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi. DOM-TOM: sì, tariffe specifiche.",
       "useCases": [
@@ -762,7 +762,7 @@
       "title": "Assicurazione temporanea rimorchio e caravan | TempAssur",
       "metaDescription": "Rimorchio, semirimorchio o caravan: assicurazione temporanea obbligatoria oltre i 750 kg. Sottoscrizione online immediata.",
       "h1": "Assicurazione temporanea rimorchi, semirimorchi e caravan",
-      "intro": "Rimorchio leggero o pesante, semirimorchio, caravan: oltre i 750 kg di peso totale a pieno carico, è obbligatoria un'assicurazione di responsabilità civile dedicata  quella del veicolo trainante non è più sufficiente. Assicura il tuo per un trasferimento, un acquisto o uno spostamento occasionale.",
+      "intro": "Oltre i 750 kg di peso totale a pieno carico, il tuo rimorchio, semirimorchio o caravan deve avere una propria assicurazione di responsabilità civile. Assicuralo per un trasferimento, un acquisto o uno spostamento occasionale.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente.",
       "whereCovered": "In Francia e in 35 paesi. DOM-TOM: sì, tariffe specifiche.",
       "useCases": [
@@ -788,7 +788,7 @@
       "title": "Assicurazione di frontiera veicoli stranieri | TempAssur",
       "metaDescription": "Veicolo immatricolato fuori dall'UE o all'estero? L'assicurazione di frontiera ti copre in Francia e in 35 paesi. 30 o 90 giorni, attestato immediato.",
       "h1": "Assicurazione di frontiera per circolare in Francia e in Europa",
-      "intro": "Il tuo veicolo è immatricolato fuori dall'Unione Europea e fuori dal sistema carta verde  oppure immatricolato all'estero e deve circolare in Francia? L'assicurazione di frontiera è la soluzione legale e obbligatoria per mettersi in viaggio. E con TempAssur, non copre solo la Francia: sei coperto in 35 paesi, la stessa lista delle nostre assicurazioni temporanee. Disponibile per 30 o 90 giorni  attestato via e-mail o WhatsApp.",
+      "intro": "Il tuo veicolo è immatricolato fuori dall'Unione Europea e fuori dal sistema carta verde, oppure immatricolato all'estero e deve circolare in Francia? L'assicurazione di frontiera è la soluzione legale e obbligatoria, e ti copre in 35 paesi. Disponibile per 30 o 90 giorni, attestato via e-mail o WhatsApp.",
       "vehiclesParagraph": "Ai viaggiatori che vengono in Europa con il proprio veicolo (Maghreb, Balcani fuori carta verde, Medio Oriente, Americhe…), ai francesi residenti all'estero di rientro temporaneo con un veicolo immatricolato fuori UE, e ai veicoli in transito o in corso di importazione.",
       "guaranteesIncluded": "Responsabilità civile (obbligatoria) + tutela legale e ricorso in caso di incidente. Riceverai una carta internazionale di assicurazione valida nei 35 paesi coperti.",
       "whereCovered": "In 35 paesi, non solo in Francia  è uno dei grandi vantaggi del nostro contratto di frontiera.",
