@@ -6,7 +6,9 @@ export const runtime = "edge"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logo = await fetch(new URL("../public/tempassur-logo-white.png", import.meta.url)).then((res) => res.arrayBuffer())
+
   return new ImageResponse(
     (
       <div
@@ -21,25 +23,8 @@ export default function OpengraphImage() {
           backgroundImage: "linear-gradient(135deg, #072F5F 0%, #0A4D9E 60%, #072F5F 100%)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              display: "flex",
-              width: 64,
-              height: 64,
-              borderRadius: 18,
-              backgroundColor: "rgba(255,255,255,0.15)",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 34,
-            }}
-          >
-            🛡️
-          </div>
-          <div style={{ display: "flex", fontSize: 40, fontWeight: 800, color: "white" }}>
-            Temp<span style={{ color: "#FF7A00" }}>Assur</span>
-          </div>
-        </div>
+        {/* eslint-disable-next-line jsx-a11y/alt-text -- ImageResponse only renders plain img */}
+        <img src={logo as unknown as string} width={400} height={108} />
         <div
           style={{
             display: "flex",

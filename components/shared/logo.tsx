@@ -17,10 +17,10 @@ export function Logo({ className, light = false }: LogoProps) {
       <Image
         src={light ? "/tempassur-logo-white.png" : "/tempassur-logo.png"}
         alt={t("logoAria")}
-        width={466}
-        height={136}
+        width={1160}
+        height={312}
         priority
-        className="h-9 w-auto"
+        className="h-11 w-auto xl:h-9 2xl:h-11"
       />
     </Link>
   )
