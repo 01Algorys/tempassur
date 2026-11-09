@@ -238,6 +238,57 @@ export function getMinPricePerDay(slug: VehicleSlug, isDomTom = false): number {
   return best
 }
 
+export type PriceGridColumn =
+  | { kind: "cvTier"; value: CvTier }
+  | { kind: "quadSubtype"; value: QuadSubtype }
+  | { kind: "from" }
+
+const PRICE_TABLE_MAX_ROWS = 16
+const PRICE_TABLE_MILESTONES = [1, 2, 3, 5, 7, 10, 15, 20, 21, 30, 45, 60, 90]
+
+export interface PriceGrid {
+  columns: PriceGridColumn[]
+  rows: { duree: number; prices: (number | null)[] }[]
+}
+
+// Product page price table: metropolitan base prices (no options) read straight from the
+// grid, one column per CV tier or quad subtype. Camping-cars are priced on two dimensions
+// and the other categories on none, so they get a single "à partir de" column instead.
+export function getPriceGrid(slug: VehicleSlug): PriceGrid {
+  const config = getPricingConfig(slug)
+  const columns: PriceGridColumn[] =
+    slug === "camping-cars"
+      ? [{ kind: "from" }]
+      : config.needsCvTier
+        ? CV_TIER_OPTIONS.map((o) => ({ kind: "cvTier" as const, value: o.value }))
+        : config.needsQuadSubtype
+          ? QUAD_SUBTYPE_OPTIONS.map((o) => ({ kind: "quadSubtype" as const, value: o.value }))
+          : [{ kind: "from" }]
+
+  const allDurations = [
+    ...new Set(
+      subSelections(slug).flatMap((sub) => getAvailableDurations(slug, { duree: null, isDomTom: false, ...sub }))
+    ),
+  ].sort((a, b) => a - b)
+  // Quadricycles are sold for every day from 1 to 30: past PRICE_TABLE_MAX_ROWS the table
+  // keeps the usual milestones only (every duration stays bookable in the tarificateur).
+  const durations =
+    allDurations.length > PRICE_TABLE_MAX_ROWS
+      ? allDurations.filter((duree) => PRICE_TABLE_MILESTONES.includes(duree))
+      : allDurations
+
+  const priceFor = (column: PriceGridColumn, duree: number): number | null => {
+    if (column.kind === "from") return getMinPriceForDuration(slug, duree)
+    const sub = column.kind === "cvTier" ? { cvTier: column.value } : { quadSubtype: column.value }
+    return calculatePrice(slug, { ...sub, duree, isDomTom: false })?.basePrice ?? null
+  }
+
+  return {
+    columns,
+    rows: durations.map((duree) => ({ duree, prices: columns.map((column) => priceFor(column, duree)) })),
+  }
+}
+
 export interface DurationShortcuts {
   candidates: number[]
   preselect: number

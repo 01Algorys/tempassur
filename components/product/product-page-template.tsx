@@ -17,7 +17,14 @@ import { BLOG_ARTICLES } from "@/lib/blog-content"
 import { PRODUCT_RELATIONS } from "@/lib/product-content"
 import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
-import { fillPricePlaceholders, getAvailableDurations, getMinPrice, getMinPricePerDay } from "@/lib/pricing"
+import {
+  fillPricePlaceholders,
+  getAvailableDurations,
+  getMinPrice,
+  getMinPricePerDay,
+  getPriceGrid,
+  type PriceGridColumn,
+} from "@/lib/pricing"
 import { whatsappQuoteMessage } from "@/lib/site"
 import type { VehicleSlug } from "@/types"
 
@@ -34,6 +41,14 @@ interface ProductGuaranteeOption {
   description: string
 }
 
+// Long-form editorial sections (optional, per locale): only rendered when
+// messages/*.json "product.<slug>.guide" exists.
+interface ProductGuideSection {
+  heading: string
+  paragraphs: string[]
+  items?: string[]
+}
+
 interface ProductPageTemplateProps {
   slug: VehicleSlug
 }
@@ -44,6 +59,7 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
   const tVehicles = useTranslations("vehicleTypes")
   const tNav = useTranslations("nav")
   const tArticles = useTranslations("blog.articles")
+  const tPricing = useTranslations("pricingLabels")
   const locale = useLocale()
   const currency = new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
 
@@ -61,6 +77,22 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
   const vehiclesParagraph = t.has(`${slug}.vehiclesParagraph`) ? t(`${slug}.vehiclesParagraph`) : null
   const options = t.has(`${slug}.options`) ? (t.raw(`${slug}.options`) as ProductGuaranteeOption[]) : null
   const useCases = t.raw(`${slug}.useCases`) as string[]
+  const guide = t.has(`${slug}.guide`)
+    ? (t.raw(`${slug}.guide`) as ProductGuideSection[]).map((section) => ({
+        ...section,
+        paragraphs: section.paragraphs.map((paragraph) => fillPricePlaceholders(paragraph, slug)),
+      }))
+    : []
+  const priceGrid = getPriceGrid(slug)
+  const priceTableHeading = t.has(`${slug}.priceTableHeading`)
+    ? t(`${slug}.priceTableHeading`)
+    : tSection("priceTableHeading")
+  const columnLabel = (column: PriceGridColumn) =>
+    column.kind === "cvTier"
+      ? tPricing(`cvTier.${column.value}`)
+      : column.kind === "quadSubtype"
+        ? tPricing(`quadSubtype.${column.value}`)
+        : tSection("priceTableFrom")
   const faq = (t.raw(`${slug}.faq`) as ProductFaqItem[]).map((item) => ({
     ...item,
     answer: fillPricePlaceholders(item.answer, slug),
@@ -148,6 +180,49 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
         </section>
       ) : null}
 
+      {priceGrid.rows.length > 0 ? (
+        <section className="pb-10">
+          <Container className="mx-auto max-w-3xl">
+            <h2 className="text-xl font-bold text-navy">{priceTableHeading}</h2>
+            <div className="mt-4 overflow-x-auto rounded-2xl border border-border">
+              <table className="w-full text-sm">
+                <thead className="bg-surface text-navy">
+                  <tr>
+                    <th scope="col" className="px-3 py-3 text-start align-bottom font-semibold sm:px-4">
+                      {tSection("priceTableDuration")}
+                    </th>
+                    {priceGrid.columns.map((column) => (
+                      <th
+                        key={column.kind === "from" ? column.kind : column.value}
+                        scope="col"
+                        className="px-3 py-3 text-end align-bottom leading-snug font-semibold sm:px-4"
+                      >
+                        {columnLabel(column)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {priceGrid.rows.map((row) => (
+                    <tr key={row.duree}>
+                      <th scope="row" className="px-3 py-2.5 text-start font-medium whitespace-nowrap text-foreground/80 sm:px-4">
+                        {tSection("priceTableDays", { count: row.duree })}
+                      </th>
+                      {row.prices.map((value, index) => (
+                        <td key={index} className="px-3 py-2.5 text-end whitespace-nowrap text-foreground/80 tabular-nums sm:px-4">
+                          {value == null ? "–" : currency.format(value)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">{tSection("priceTableNote")}</p>
+          </Container>
+        </section>
+      ) : null}
+
       <section id={GUARANTEES_ANCHOR} className="scroll-mt-24 pb-10">
         <Container className="mx-auto max-w-3xl">
           <h2 className="text-xl font-bold text-navy">{tSection("guaranteesHeading")}</h2>
@@ -193,6 +268,29 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
           <p className="mt-3 leading-relaxed text-muted-foreground">{eligibility}</p>
         </Container>
       </section>
+
+      {guide.map((section) => (
+        <section key={section.heading} className="pb-10">
+          <Container className="mx-auto max-w-3xl">
+            <h2 className="text-xl font-bold text-navy">{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="mt-3 leading-relaxed text-muted-foreground">
+                {paragraph}
+              </p>
+            ))}
+            {section.items?.length ? (
+              <ul className="mt-4 flex flex-col gap-2">
+                {section.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
+                    <Check className="mt-0.5 size-4 shrink-0 text-primary" strokeWidth={3} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </Container>
+        </section>
+      ))}
 
       <section className="section-y bg-surface">
         <Container className="mx-auto max-w-3xl">

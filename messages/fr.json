@@ -17,7 +17,7 @@
   "vehicleTypes": {
     "automobiles": {
       "label": "Automobile",
-      "description": "Véhicules privés et utilitaires de moins de 3,5 T."
+      "description": "Voitures particulières et utilitaires de moins de 3,5 T."
     },
     "poids-lourds": {
       "label": "Poids lourd",
@@ -139,7 +139,7 @@
   "home": {
     "meta": {
       "title": "Assurance temporaire en ligne de 1 à 90 jours | TempAssur",
-      "description": "Assurance temporaire immédiate de 1 à 90 jours : auto, poids lourd, camping-car, quad, remorque, frontière. Attestation par e-mail ou WhatsApp. Dès {price} €/jour."
+      "description": "Assurance temporaire immédiate de 1 à 90 jours : voiture, poids lourd, camping-car, quad, remorque, frontière. Attestation par e-mail ou WhatsApp. Dès {price} €/jour."
     },
     "hero": {
       "title": "Assurance temporaire de 1 à 90 jours, attestation immédiate par e-mail ou WhatsApp",
@@ -563,15 +563,20 @@
       "coveredCountriesLink": "Pays couverts",
       "guaranteesAndCountriesLink": "Garanties et pays couverts",
       "priceFrom": "À partir de {price}/jour",
-      "durationsAvailable": "Durées disponibles : {durations} {count, plural, one {jour} other {jours}}"
+      "durationsAvailable": "Durées disponibles : {durations} {count, plural, one {jour} other {jours}}",
+      "priceTableHeading": "Tarifs selon la durée",
+      "priceTableDuration": "Durée",
+      "priceTableFrom": "À partir de",
+      "priceTableDays": "{count, plural, one {# jour} other {# jours}}",
+      "priceTableNote": "Tarif de base en France métropolitaine, hors options. Les tarifs DOM-TOM diffèrent. Le prix exact s'affiche dans le tarificateur."
     },
     "automobiles": {
-      "title": "Assurance auto temporaire dès [PRIX] €/jour | TempAssur",
-      "metaDescription": "Assurez une voiture ou un utilitaire de 1 à 90 jours. Souscription en ligne en 5 minutes, attestation immédiate par e-mail ou WhatsApp. Dès [PRIX] €/jour.",
-      "h1": "Assurance auto temporaire de 1 à 90 jours",
-      "intro": "Assurez une voiture ou un utilitaire de moins de 3,5 tonnes de 1 à 90 jours, sans engagement ni tacite reconduction. Souscription en ligne en 5 minutes, attestation immédiate par e-mail ou WhatsApp.",
+      "title": "Assurance temporaire voiture dès [PRIX] €/jour | TempAssur",
+      "metaDescription": "Assurance temporaire voiture de 1 à 90 jours, sans engagement. Souscription en ligne en 5 min, attestation par e-mail ou WhatsApp. Dès [PRIX] €/jour.",
+      "h1": "Assurance temporaire voiture de 1 à 90 jours",
+      "intro": "Besoin d'assurer une voiture ou un utilitaire de moins de 3,5 tonnes pour quelques jours ? Notre assurance auto temporaire vous couvre de 1 à 90 jours, sans engagement ni tacite reconduction. Souscription en ligne en 5 minutes, attestation immédiate par e-mail ou WhatsApp.",
       "vehiclesParagraph": "Tous les véhicules particuliers et utilitaires de moins de 3,5 tonnes, quelle que soit la puissance : citadine, berline, SUV, fourgonnette… Le tarif dépend de la puissance fiscale et de la durée choisie.",
-      "guaranteesIncluded": "Incluses : responsabilité civile (obligatoire  dommages causés aux tiers) et défense pénale et recours suite à accident.",
+      "guaranteesIncluded": "Incluses : responsabilité civile (obligatoire : dommages causés aux tiers) et défense pénale et recours suite à accident.",
       "options": [
         {
           "label": "Garantie du conducteur",
@@ -610,11 +615,96 @@
         },
         {
           "question": "Suis-je couvert dans les DOM-TOM ?",
-          "answer": "Oui  les tarifs DOM-TOM diffèrent de la métropole et les options n'y sont pas disponibles."
+          "answer": "Oui : les tarifs DOM-TOM diffèrent de la métropole et les options n'y sont pas disponibles."
         },
         {
           "question": "Quels documents vais-je recevoir ?",
           "answer": "Votre contrat, votre attestation d'assurance et votre carte internationale d'assurance, par e-mail ou WhatsApp, après signature électronique."
+        },
+        {
+          "question": "Peut-on assurer une voiture pour 1 jour ?",
+          "answer": "Oui, à partir de 1 jour et jusqu'à 90 jours. Les durées disponibles et leur prix s'affichent dans le tarificateur."
+        },
+        {
+          "question": "Quand l'assurance prend-elle effet ?",
+          "answer": "À la date et à l'heure que vous choisissez pendant la souscription, au plus tôt immédiatement. Votre attestation est envoyée par e-mail ou WhatsApp après le paiement et la signature électronique."
+        },
+        {
+          "question": "Le contrat se renouvelle-t-il automatiquement ?",
+          "answer": "Non. L'assurance temporaire s'arrête d'elle-même à la fin de la durée choisie : pas de tacite reconduction, rien à résilier."
+        },
+        {
+          "question": "Puis-je assurer une voiture en plaque WW ?",
+          "answer": "Oui. Sélectionnez France comme pays d'immatriculation dans le formulaire. La durée de la garantie ne peut pas dépasser la date de fin de validité du certificat provisoire d'immatriculation (CPI)."
+        },
+        {
+          "question": "Puis-je rouler en Algérie ?",
+          "answer": "Non. Aucune formule, avec ou sans extension, ne couvre l'Algérie. La Biélorussie, l'Iran, la Russie et l'Ukraine ne sont jamais couverts non plus."
+        },
+        {
+          "question": "Puis-je payer en plusieurs fois ?",
+          "answer": "Oui, en 3 fois avec Klarna, à choisir parmi les moyens de paiement à l'étape du paiement."
+        }
+      ],
+      "priceTableHeading": "Prix de l'assurance temporaire voiture selon la durée",
+      "guide": [
+        {
+          "heading": "Qu'est-ce qu'une assurance temporaire voiture ?",
+          "paragraphs": [
+            "L'assurance temporaire voiture, aussi appelée assurance auto provisoire ou assurance courte durée, est un contrat d'assurance automobile conclu pour une durée fixe, de 1 à 90 jours. Il s'arrête de lui-même à la date de fin choisie : rien à résilier, pas de tacite reconduction.",
+            "Elle répond à un besoin ponctuel : rapatrier une voiture que vous venez d'acheter, la conduire au contrôle technique, la récupérer à la fourrière ou la préparer à l'export. En France, la responsabilité civile est obligatoire dès le premier mètre parcouru. Rouler sans assurance expose à une amende pouvant atteindre 3 750 € et à une suspension du permis."
+          ]
+        },
+        {
+          "heading": "Combien coûte une assurance auto temporaire ?",
+          "paragraphs": [
+            "Le prix dépend de deux critères : la durée du contrat et la puissance fiscale de la voiture (moins de 16 CV, de 16 à 29 CV, 30 CV et plus). Plus la durée est longue, plus le coût par jour baisse : à partir de [PRIX] €/jour sur 90 jours.",
+            "Les options s'ajoutent au tarif de base et leur prix dépend aussi de la durée : garantie du conducteur, assistance et extension de pays. Le tableau des tarifs indique le prix de base en France métropolitaine ; le prix exact, options comprises, s'affiche dans le tarificateur dès que vous choisissez votre durée.",
+            "Le paiement se fait en ligne par carte bancaire, ou en 3 fois avec Klarna."
+          ]
+        },
+        {
+          "heading": "Dans quels cas assurer sa voiture pour quelques jours ?",
+          "paragraphs": [
+            "L'assurance temporaire couvre les voitures immatriculées en France, dans toutes ces situations. Une voiture immatriculée à l'étranger relève de l'assurance frontière, conçue pour les véhicules étrangers qui circulent en Europe."
+          ],
+          "items": [
+            "Achat d'une voiture d'occasion : repartir assuré le jour même, avant de choisir un contrat annuel.",
+            "Vente d'un véhicule : le faire essayer ou le livrer alors que votre contrat annuel est déjà résilié.",
+            "Plaque provisoire WW : circuler avec un certificat provisoire d'immatriculation, la garantie ne dépassant pas la date de fin de validité du CPI.",
+            "Import ou export d'un véhicule.",
+            "Sortie de fourrière : une attestation d'assurance valide fait partie des documents à présenter pour récupérer la voiture.",
+            "Contrôle technique d'une voiture qui n'est plus assurée.",
+            "Résiliation par votre assureur pour non-paiement : continuer à rouler le temps de retrouver un contrat. Une résiliation pour sinistre au cours des 5 dernières années n'est pas éligible.",
+            "Véhicule en succession : le déplacer pour une expertise, une vente ou un contrôle technique.",
+            "Prêt de véhicule et conduite occasionnelle."
+          ]
+        },
+        {
+          "heading": "Comment souscrire en ligne ?",
+          "paragraphs": [
+            "La souscription est 100 % en ligne, 7j/7. Une question ? Notre équipe répond par téléphone et WhatsApp au +33 6 05 93 84 79, 7 jours sur 7."
+          ],
+          "items": [
+            "Choisissez la durée, de 1 à 90 jours, et la puissance fiscale de la voiture : le prix s'affiche immédiatement.",
+            "Indiquez la date et l'heure de prise d'effet : tout de suite, ou plus tard si vous anticipez.",
+            "Renseignez le conducteur et le véhicule, puis ajoutez votre permis de conduire (recto et verso) et la carte grise.",
+            "Répondez aux déclarations du conducteur, payez en ligne et signez électroniquement.",
+            "Recevez votre contrat, votre attestation d'assurance et votre carte internationale d'assurance par e-mail ou WhatsApp."
+          ]
+        },
+        {
+          "heading": "Documents et déclarations à prévoir",
+          "paragraphs": [
+            "Préparez votre permis de conduire (recto et verso) et le certificat d'immatriculation (carte grise) de la voiture. Si votre permis n'est pas français, un justificatif de domicile en France de moins de 3 mois vous sera demandé.",
+            "Avant le paiement, le conducteur doit pouvoir répondre NON aux déclarations présentées : sinistres récents, résiliation pour sinistre au cours des 5 dernières années, condamnation pour infraction au code de la route, alcoolémie ou stupéfiants, malus à la recherche d'un nouvel assureur ou attente d'une décision du Bureau Central de Tarification. Une fausse déclaration peut entraîner la nullité du contrat."
+          ]
+        },
+        {
+          "heading": "Assurance temporaire ou assurance auto annuelle ?",
+          "paragraphs": [
+            "L'assurance temporaire est faite pour un besoin court et daté : elle démarre quand vous le décidez et s'arrête seule à la fin de la durée choisie. Pour rouler régulièrement pendant plusieurs mois, un contrat annuel reste généralement plus adapté. L'assurance temporaire vous laisse le temps de le choisir sans vous précipiter."
+          ]
         }
       ]
     },

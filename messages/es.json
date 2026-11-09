@@ -563,7 +563,12 @@
       "coveredCountriesLink": "Países cubiertos",
       "guaranteesAndCountriesLink": "Garantías y países cubiertos",
       "priceFrom": "Desde {price}/día",
-      "durationsAvailable": "Duraciones disponibles: {durations} {count, plural, one {día} other {días}}"
+      "durationsAvailable": "Duraciones disponibles: {durations} {count, plural, one {día} other {días}}",
+      "priceTableHeading": "Precios según la duración",
+      "priceTableDuration": "Duración",
+      "priceTableFrom": "Desde",
+      "priceTableDays": "{count, plural, one {# día} other {# días}}",
+      "priceTableNote": "Precio base en Francia metropolitana, sin opciones. Las tarifas DOM-TOM son diferentes. El precio exacto aparece en el tarificador."
     },
     "automobiles": {
       "title": "Seguro de coche temporal desde [PRIX] €/día | TempAssur",

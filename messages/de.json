@@ -563,7 +563,12 @@
       "coveredCountriesLink": "Versicherte Länder",
       "guaranteesAndCountriesLink": "Leistungen und versicherte Länder",
       "priceFrom": "Ab {price}/Tag",
-      "durationsAvailable": "Verfügbare Dauern: {durations} {count, plural, one {Tag} other {Tage}}"
+      "durationsAvailable": "Verfügbare Dauern: {durations} {count, plural, one {Tag} other {Tage}}",
+      "priceTableHeading": "Preise nach Dauer",
+      "priceTableDuration": "Dauer",
+      "priceTableFrom": "Ab",
+      "priceTableDays": "{count, plural, one {# Tag} other {# Tage}}",
+      "priceTableNote": "Grundpreis für das französische Mutterland, ohne Optionen. Die Tarife für die Überseegebiete (DOM-TOM) unterscheiden sich. Der genaue Preis wird im Tarifrechner angezeigt."
     },
     "automobiles": {
       "title": "Kurzzeit-Autoversicherung ab [PRIX] €/Tag | TempAssur",

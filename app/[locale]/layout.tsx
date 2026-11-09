@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 import { NextIntlClientProvider, hasLocale } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { CookieConsentBanner } from "@/components/shared/cookie-consent-banner"
 import { FloatingWhatsappButton } from "@/components/shared/floating-whatsapp-button"
+import { getMinPricePerDay } from "@/lib/pricing"
 import { isPreprodEnv, siteConfig } from "@/lib/site"
 import { routing, RTL_LOCALES, type Locale } from "@/i18n/routing"
 
@@ -117,6 +119,13 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
   }
 
   const dir = RTL_LOCALES.includes(locale as Locale) ? "rtl" : "ltr"
+  // The agency description follows the page language (siteConfig.description is French only).
+  const tMeta = await getTranslations({ locale, namespace: "home.meta" })
+  const localizedJsonLd = {
+    ...jsonLd,
+    description: tMeta("description", { price: Math.round(getMinPricePerDay("automobiles")) }),
+    inLanguage: locale,
+  }
 
   return (
     <html
@@ -128,7 +137,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...jsonLd, inLanguage: locale }) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localizedJsonLd) }}
         />
         <NextIntlClientProvider>
           <Header />
