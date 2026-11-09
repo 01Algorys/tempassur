@@ -563,7 +563,12 @@
       "coveredCountriesLink": "Countries covered",
       "guaranteesAndCountriesLink": "Coverage and countries covered",
       "priceFrom": "From {price}/day",
-      "durationsAvailable": "Durations available: {durations} {count, plural, one {day} other {days}}"
+      "durationsAvailable": "Durations available: {durations} {count, plural, one {day} other {days}}",
+      "priceTableHeading": "Prices by duration",
+      "priceTableDuration": "Duration",
+      "priceTableFrom": "From",
+      "priceTableDays": "{count, plural, one {# day} other {# days}}",
+      "priceTableNote": "Base price in metropolitan France, excluding options. Overseas territory (DOM-TOM) rates differ. The exact price is shown in the quote tool."
     },
     "automobiles": {
       "title": "Temporary car insurance from [PRIX] €/day | TempAssur",

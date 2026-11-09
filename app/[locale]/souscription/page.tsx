@@ -1,6 +1,6 @@
 import { getLocale } from "next-intl/server"
 
-import { permanentRedirect, redirect } from "@/i18n/navigation"
+import { permanentRedirect } from "@/i18n/navigation"
 import { PRODUCT_ROUTES } from "@/lib/constants"
 import { VEHICLE_SLUGS } from "@/types"
 import type { VehicleSlug } from "@/types"
@@ -19,8 +19,10 @@ export default async function SouscriptionPage({ searchParams }: SouscriptionPag
   const { categorie, duree, paiement } = await searchParams
   const locale = await getLocale()
 
+  // Permanent: /souscription is an old WordPress URL that search engines still have
+  // indexed, so it must hand its signals over to the homepage instead of staying listed.
   if (!isVehicleSlug(categorie) && !paiement) {
-    redirect({ href: "/#tarificateur", locale })
+    permanentRedirect({ href: "/#tarificateur", locale })
   }
 
   const pathname = PRODUCT_ROUTES[isVehicleSlug(categorie) ? categorie : "automobiles"]

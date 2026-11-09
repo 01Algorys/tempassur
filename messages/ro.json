@@ -563,7 +563,12 @@
       "coveredCountriesLink": "Țări acoperite",
       "guaranteesAndCountriesLink": "Garanții și țări acoperite",
       "priceFrom": "De la {price}/zi",
-      "durationsAvailable": "Durate disponibile: {durations} {count, plural, one {zi} other {zile}}"
+      "durationsAvailable": "Durate disponibile: {durations} {count, plural, one {zi} other {zile}}",
+      "priceTableHeading": "Prețuri în funcție de durată",
+      "priceTableDuration": "Durată",
+      "priceTableFrom": "De la",
+      "priceTableDays": "{count, plural, one {# zi} few {# zile} other {# de zile}}",
+      "priceTableNote": "Preț de bază pentru Franța metropolitană, fără opțiuni. Tarifele DOM-TOM diferă. Prețul exact este afișat în calculatorul de tarife."
     },
     "automobiles": {
       "title": "Asigurare auto temporară de la [PRIX] €/zi | TempAssur",

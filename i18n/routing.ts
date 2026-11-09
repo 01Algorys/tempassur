@@ -35,4 +35,8 @@ export const routing = defineRouting({
   // (/en/..., /ar/..., etc.).
   localePrefix: "as-needed",
   localeDetection: true,
+  // hreflang comes from each page's metadata (lib/seo.ts) and the sitemap. The
+  // middleware's Link header would also advertise 7 languages for French-only pages
+  // (lib/landing-content.ts, use-case drafts), whose /en/... versions only redirect.
+  alternateLinks: false,
 })

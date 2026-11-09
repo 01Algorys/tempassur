@@ -563,7 +563,12 @@
       "coveredCountriesLink": "الدول المشمولة",
       "guaranteesAndCountriesLink": "الضمانات والدول المشمولة",
       "priceFrom": "ابتداءً من {price}/يوم",
-      "durationsAvailable": "المدد المتاحة: {durations} {count, plural, one {يوم} other {يوم}}"
+      "durationsAvailable": "المدد المتاحة: {durations} {count, plural, one {يوم} other {يوم}}",
+      "priceTableHeading": "الأسعار حسب المدة",
+      "priceTableDuration": "المدة",
+      "priceTableFrom": "ابتداءً من",
+      "priceTableDays": "{count, plural, one {يوم واحد} two {يومان} few {# أيام} other {# يومًا}}",
+      "priceTableNote": "السعر الأساسي في فرنسا القارية، بدون خيارات. تختلف تعرفات أقاليم ما وراء البحار (DOM-TOM). يظهر السعر الدقيق في أداة التسعير."
     },
     "automobiles": {
       "title": "تأمين سيارات مؤقت ابتداءً من [PRIX] يورو/يوم | TempAssur",

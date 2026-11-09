@@ -6,6 +6,11 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 // Redirections 301 (dossier §8) : anciennes URLs WordPress + ancien schéma de routing
 // dynamique /assurance/[slug] de cette même refonte, vers les nouvelles pages produit.
 const nextConfig: NextConfig = {
+  // Next 15 streams <title>, meta description, canonical and Open Graph tags at the END
+  // of <body> for every user agent outside its "HTML-limited bots" list, and that list
+  // does not include Googlebot. Google only honours rel=canonical inside <head>, so we
+  // match every user agent here: metadata is always rendered in <head>.
+  htmlLimitedBots: /.*/,
   async redirects() {
     return [
       // Ancien schéma /assurance/[slug] (préproduction) -> nouvelles URLs dédiées.

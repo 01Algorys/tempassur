@@ -563,7 +563,12 @@
       "coveredCountriesLink": "Paesi coperti",
       "guaranteesAndCountriesLink": "Garanzie e paesi coperti",
       "priceFrom": "A partire da {price}/giorno",
-      "durationsAvailable": "Durate disponibili: {durations} {count, plural, one {giorno} other {giorni}}"
+      "durationsAvailable": "Durate disponibili: {durations} {count, plural, one {giorno} other {giorni}}",
+      "priceTableHeading": "Prezzi in base alla durata",
+      "priceTableDuration": "Durata",
+      "priceTableFrom": "A partire da",
+      "priceTableDays": "{count, plural, one {# giorno} other {# giorni}}",
+      "priceTableNote": "Prezzo base per la Francia metropolitana, opzioni escluse. Le tariffe DOM-TOM sono diverse. Il prezzo esatto è indicato nel calcolatore."
     },
     "automobiles": {
       "title": "Assicurazione auto temporanea da [PRIX] €/giorno | TempAssur",
