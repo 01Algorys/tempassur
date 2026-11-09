@@ -14,6 +14,7 @@ import {
 import { SubscriptionWizard } from "@/components/forms/subscription/subscription-wizard"
 import { PRODUCT_ROUTES, VEHICLE_TYPES } from "@/lib/constants"
 import { BLOG_ARTICLES } from "@/lib/blog-content"
+import { CAR_DURATION_LINKS, COUNTRY_LANDING_LINKS } from "@/lib/landing-content"
 import { PRODUCT_RELATIONS } from "@/lib/product-content"
 import { breadcrumbJsonLd, localizedUrl } from "@/lib/seo-urls"
 import { siteConfig } from "@/lib/site"
@@ -102,6 +103,16 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
     .sort((a, b) => (a.date < b.date ? 1 : -1))
     .slice(0, 3)
   const coveredCountriesHref = slug === "assurance-frontiere" ? "/pays-couverts-frontiere" : "/pays-couverts"
+  // The duration and country landing pages exist in French only (lib/landing-content.ts).
+  const countryGroup = { heading: "Maghreb et Turquie", links: COUNTRY_LANDING_LINKS }
+  const landingLinkGroups =
+    locale !== "fr"
+      ? []
+      : slug === "automobiles"
+        ? [{ heading: "Assurance auto par durée", links: CAR_DURATION_LINKS }, countryGroup]
+        : slug === "assurance-frontiere"
+          ? [countryGroup]
+          : []
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -345,6 +356,20 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
               </li>
             ))}
           </ul>
+          {landingLinkGroups.map((group) => (
+            <div key={group.heading} className="mt-6">
+              <h2 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">{group.heading}</h2>
+              <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm font-semibold text-primary hover:underline">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </Container>
       </section>
     </>

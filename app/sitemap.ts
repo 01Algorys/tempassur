@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 
 import { PRODUCT_ROUTES } from "@/lib/constants"
 import { BLOG_ARTICLES } from "@/lib/blog-content"
+import { LANDING_PAGES } from "@/lib/landing-content"
 import { routing } from "@/i18n/routing"
 import { localizedLanguages, localizedUrl } from "@/lib/seo-urls"
 
@@ -41,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified?: string
   }[] = [...STATIC_ROUTES, ...productRoutes, ...blogRoutes]
 
-  return allRoutes.flatMap(({ path, priority, changeFrequency, lastModified }) =>
+  const localizedEntries = allRoutes.flatMap(({ path, priority, changeFrequency, lastModified }) =>
     routing.locales.map((locale) => ({
       url: localizedUrl(path, locale),
       ...(lastModified ? { lastModified } : {}),
@@ -50,4 +51,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: localizedLanguages(path) },
     }))
   )
+
+  // Duration and country landing pages exist in French only: no alternates.
+  const landingEntries = Object.values(LANDING_PAGES).map((page) => ({
+    url: localizedUrl(page.route, routing.defaultLocale),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+
+  return [...localizedEntries, ...landingEntries]
 }
