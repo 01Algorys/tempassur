@@ -561,6 +561,7 @@
       "ctaEstimate": "قدّروا تكلفة تأميني في 30 ثانية",
       "seeAlso": "شاهدوا أيضًا",
       "coveredCountriesLink": "الدول المشمولة",
+      "guaranteesAndCountriesLink": "الضمانات والدول المشمولة",
       "priceFrom": "ابتداءً من {price}/يوم",
       "durationsAvailable": "المدد المتاحة: {durations} {count, plural, one {يوم} other {يوم}}"
     },

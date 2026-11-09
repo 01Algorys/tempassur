@@ -122,14 +122,12 @@ export function ProductPageTemplate({ slug }: ProductPageTemplateProps) {
             {tSection("priceFrom", { price: currency.format(pricePerDay) })} ·{" "}
             {tSection("durationsAvailable", { durations: durations.join(", "), count: durations.length })}
           </p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm font-semibold text-primary">
+          {/* Mène aux sections garanties et « Où êtes-vous couvert ? », qui contient le lien vers la liste des pays. */}
+          <p className="mt-3 text-sm font-semibold text-primary">
             <Link href={`#${GUARANTEES_ANCHOR}`} className="hover:underline">
-              {tSection("guaranteesHeading")}
+              {tSection("guaranteesAndCountriesLink")}
             </Link>
-            <Link href={coveredCountriesHref} className="hover:underline">
-              {tSection("coveredCountriesLink")}
-            </Link>
-          </div>
+          </p>
         </Container>
       </section>
 
