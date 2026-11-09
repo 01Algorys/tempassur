@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google"
 import { NextIntlClientProvider, hasLocale } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import { notFound } from "next/navigation"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
@@ -146,6 +147,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
           <FloatingWhatsappButton />
           <CookieConsentBanner gtmId={GTM_CONTAINER_ID} />
         </NextIntlClientProvider>
+        {/* Vercel Speed Insights : mesure des performances réelles (Core Web Vitals), sans cookie. */}
+        <SpeedInsights />
       </body>
     </html>
   )
