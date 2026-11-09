@@ -561,6 +561,7 @@
       "ctaEstimate": "Estimer mon tarif en 30 secondes",
       "seeAlso": "Voir aussi",
       "coveredCountriesLink": "Pays couverts",
+      "guaranteesAndCountriesLink": "Garanties et pays couverts",
       "priceFrom": "À partir de {price}/jour",
       "durationsAvailable": "Durées disponibles : {durations} {count, plural, one {jour} other {jours}}"
     },

@@ -561,6 +561,7 @@
       "ctaEstimate": "Get my quote in 30 seconds",
       "seeAlso": "See also",
       "coveredCountriesLink": "Countries covered",
+      "guaranteesAndCountriesLink": "Coverage and countries covered",
       "priceFrom": "From {price}/day",
       "durationsAvailable": "Durations available: {durations} {count, plural, one {day} other {days}}"
     },

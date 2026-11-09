@@ -561,6 +561,7 @@
       "ctaEstimate": "Estimează-mi tariful în 30 de secunde",
       "seeAlso": "Vezi și",
       "coveredCountriesLink": "Țări acoperite",
+      "guaranteesAndCountriesLink": "Garanții și țări acoperite",
       "priceFrom": "De la {price}/zi",
       "durationsAvailable": "Durate disponibile: {durations} {count, plural, one {zi} other {zile}}"
     },
