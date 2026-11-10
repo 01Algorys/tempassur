@@ -111,7 +111,13 @@ export async function POST(req: NextRequest) {
         dateEffet: dateEffet ?? "",
         heureEffet: heureEffet ?? "",
         conducteur: `${prenom ?? ""} ${nom ?? ""}`.trim(),
+        // Site web de la souscription (tempassur, assurtempo…) — même code que la clé CRM.
+        site: process.env.SITE_CODE || "tempassur",
       },
+      // Libellé sur le relevé bancaire du client (ex. "ASSURTEMPO"), si défini.
+      ...(process.env.STRIPE_STATEMENT_DESCRIPTOR_SUFFIX
+        ? { statement_descriptor_suffix: process.env.STRIPE_STATEMENT_DESCRIPTOR_SUFFIX.slice(0, 22) }
+        : {}),
     })
 
     if (!paymentIntent.client_secret) {

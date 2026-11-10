@@ -5,15 +5,14 @@ import { ArrowLeft } from "lucide-react"
 import { getAdminToken } from "@/lib/admin/server-session"
 import { crmAdminJson } from "@/lib/admin/crm-client"
 import { DEVIS_PIPELINE_LABELS, DEVIS_PIPELINE_BADGE, dateFmt } from "@/lib/admin/labels"
-import { allEmails, allPhones, clientFullName, type DevisRecord, type DocumentRecord, type TacheRecord } from "@/lib/admin/crm-types"
+import { clientFullName, type DevisRecord, type DocumentRecord, type TacheRecord } from "@/lib/admin/crm-types"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { DocumentsCard } from "@/components/admin/documents-card"
-import { DetailField } from "@/components/admin/detail-field"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { DossierDetailActions } from "@/components/admin/dossier-detail-actions"
+import { DossierClientCard } from "@/components/admin/dossier-client-card"
 import { TachesCard } from "@/components/admin/taches-card"
 import { StatutHistorique } from "@/components/admin/statut-historique"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const dynamic = "force-dynamic"
 
@@ -79,26 +78,7 @@ export default async function QuoteDetailPage({ params }: { params: Promise<{ id
       <div className="grid gap-4 lg:grid-cols-3">
         <DossierDetails kind="devis" record={devis} />
 
-        <Card className="self-start">
-          <CardHeader>
-            <CardTitle>
-              {devis.client ? (
-                <Link href={`/admin-panel/clients/${devis.client.id}`} className="hover:underline">Client</Link>
-              ) : (
-                "Client"
-              )}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm">
-            <DetailField label="Nom" value={clientFullName(devis.client) || "—"} />
-            <DetailField label="Emails" value={allEmails(devis.client).join("\n") || "—"} />
-            <DetailField label="Téléphones" value={allPhones(devis.client).join("\n") || "—"} />
-            <DetailField
-              label="Adresse"
-              value={[devis.client?.adresse, devis.client?.codePostal, devis.client?.ville].filter(Boolean).join(", ") || "—"}
-            />
-          </CardContent>
-        </Card>
+        <DossierClientCard client={devis.client} retour={`/admin-panel/quotes/${devis.id}`} />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">

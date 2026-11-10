@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DetailField, DetailSectionLabel } from "@/components/admin/detail-field"
+import { SiteBadge } from "@/components/admin/site-badge"
 import { VehicleDetailsCard } from "@/components/admin/vehicle-details-card"
 import {
   CATEGORIES,
@@ -65,6 +66,7 @@ export function DossierDetails({ kind, record }: { kind: "devis" | "contrat"; re
           )}
           <DetailField label="Produit" value={(devis ? devis.produit?.nom : contrat?.produitRef?.nom) ?? "—"} />
           <DetailField label="Distributeur" value={record.distributeur?.nom ?? "—"} />
+          <DetailField label="Site d'origine" value={<SiteBadge site={record.siteOrigine} />} />
           {devis ? (
             <>
               <DetailField label="Montant estimé" value={money(devis.montantEstime)} />

@@ -11,7 +11,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card } from "@/components/ui/card"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { PaginationBar } from "@/components/admin/pagination-bar"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { DateRangeFilter, EMPTY_RANGE, applyRange, type DateRange } from "@/components/admin/date-range-filter"
@@ -19,6 +18,8 @@ import { CATEGORIE_LABELS, CATEGORIE_OPTIONS, sousCategorieLabel, type Categorie
 import { devisColumns } from "@/lib/admin/export-columns"
 import { allPhones, clientFullName, type DevisRecord, type Reference } from "@/lib/admin/crm-types"
 import { DEVIS_PIPELINE_LABELS, DEVIS_PIPELINE_BADGE, currencyFmt, dateFmt } from "@/lib/admin/labels"
+import { SiteBadge } from "@/components/admin/site-badge"
+import { siteFilterOptions } from "@/lib/admin/sites"
 
 const PAGE_SIZE = 25
 
@@ -35,10 +36,11 @@ export default function QuotesPage() {
   const [statut, setStatut] = useState("all")
   const [produitId, setProduitId] = useState("all")
   const [categorie, setCategorie] = useState("all")
+  const [site, setSite] = useState("all")
+  const [sitesFound, setSitesFound] = useState<string[]>([])
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
   const [page, setPage] = useState(1)
   const [reloadKey, setReloadKey] = useState(0)
-  const [createOpen, setCreateOpen] = useState(false)
   const [exportOpen, setExportOpen] = useState(false)
   const [deleting, setDeleting] = useState<DevisRecord | null>(null)
 
@@ -53,9 +55,10 @@ export default function QuotesPage() {
     if (statut !== "all") params.set("statut", statut)
     if (produitId !== "all") params.set("produitId", produitId)
     if (categorie !== "all") params.set("categorie", categorie)
+    if (site !== "all") params.set("siteOrigine", site)
     applyRange(params, createdAt, "dateCreationFrom", "dateCreationTo")
     return params
-  }, [debouncedSearch, statut, produitId, categorie, createdAt])
+  }, [debouncedSearch, statut, produitId, categorie, site, createdAt])
 
   useEffect(() => {
     let cancelled = false
@@ -73,6 +76,7 @@ export default function QuotesPage() {
         if (cancelled) return
         setDevis(data.devis ?? [])
         setProduits(data.produits ?? [])
+        setSitesFound(data.sites ?? [])
         setTotal(data.total ?? 0)
       })
       .catch((err) => !cancelled && setError(err.message))
@@ -104,8 +108,10 @@ export default function QuotesPage() {
           <Button variant="outline" size="sm" onClick={() => setExportOpen(true)}>
             <Download /> Exporter
           </Button>
-          <Button size="sm" onClick={() => setCreateOpen(true)}>
-            <Plus /> Nouveau devis
+          <Button size="sm" asChild>
+            <Link href="/admin-panel/quotes/new">
+              <Plus /> Nouveau devis
+            </Link>
           </Button>
         </div>
       </div>
@@ -127,6 +133,16 @@ export default function QuotesPage() {
             {CATEGORIE_OPTIONS.map((o) => (
               <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
             ))}
+          </SelectContent>
+        </Select>
+        <Select value={site} onValueChange={resetPage(setSite)}>
+          <SelectTrigger className="w-40"><SelectValue placeholder="Site" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous les sites</SelectItem>
+            {siteFilterOptions(sitesFound).map((o) => (
+              <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+            ))}
+            <SelectItem value="none">Non renseigné</SelectItem>
           </SelectContent>
         </Select>
         <Select value={statut} onValueChange={resetPage(setStatut)}>
@@ -168,6 +184,7 @@ export default function QuotesPage() {
                   <th className="px-3 py-2.5 font-medium">Client</th>
                   <th className="px-3 py-2.5 font-medium">Contact</th>
                   <th className="px-3 py-2.5 font-medium">Catégorie</th>
+                  <th className="px-3 py-2.5 font-medium">Site</th>
                   <th className="px-3 py-2.5 font-medium">Montant</th>
                   <th className="px-3 py-2.5 font-medium">Statut</th>
                   <th className="px-3 py-2.5 font-medium">Créé le</th>
@@ -202,6 +219,7 @@ export default function QuotesPage() {
                       {d.categorie ? CATEGORIE_LABELS[d.categorie as Categorie] : "—"}
                       {d.sousCategorie ? <span className="block text-xs">{sousCategorieLabel(d.categorie, d.sousCategorie)}</span> : null}
                     </td>
+                    <td className="px-3 py-2.5"><SiteBadge site={d.siteOrigine} /></td>
                     <td className="px-3 py-2.5 font-medium text-foreground">{d.montantEstime ? currencyFmt(d.montantEstime) : "—"}</td>
                     <td className="px-3 py-2.5">
                       <StatusBadge label={DEVIS_PIPELINE_LABELS[d.statutPipeline] ?? d.statutPipeline} className={DEVIS_PIPELINE_BADGE[d.statutPipeline]} />
@@ -229,12 +247,6 @@ export default function QuotesPage() {
         )}
       </Card>
 
-      <DossierFormDialog
-        kind="devis"
-        open={createOpen}
-        onOpenChange={setCreateOpen}
-        onSaved={(saved) => router.push(`/admin-panel/quotes/${saved.id}`)}
-      />
 
       <ExportDialog
         open={exportOpen}

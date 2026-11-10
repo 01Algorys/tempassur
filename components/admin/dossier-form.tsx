@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Mic, Trash2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog"
+import { FormActions, FormField as Field, FormGrid, FormPage, FormSection as Section } from "@/components/admin/form-page"
 import { ClientPicker } from "@/components/admin/client-picker"
 import { ClientFields, toClientForm, toClientPayload, type ClientFormValues } from "@/components/admin/client-fields"
 import { CategoryFields } from "@/components/admin/dossier-fields"
@@ -22,12 +24,14 @@ import {
   type FieldDef,
 } from "@/lib/admin/categories"
 import { DEVIS_PIPELINE_LABELS, currencyFmt } from "@/lib/admin/labels"
+import { siteFilterOptions } from "@/lib/admin/sites"
+import { dateInputValue } from "@/lib/admin/date-input"
 import type { ClientRecord, ContratRecord, DevisRecord, Reference } from "@/lib/admin/crm-types"
 
 type Kind = "devis" | "contrat"
 type Dossier = DevisRecord | ContratRecord
 
-const dateInput = (v: string | null | undefined) => (v ? new Date(v).toISOString().slice(0, 10) : "")
+const dateInput = dateInputValue
 const numStr = (v: number | null | undefined) => (v === null || v === undefined ? "" : String(v))
 const toNum = (v: string) => (v.trim() === "" ? null : Number(v.replace(",", ".")))
 
@@ -48,6 +52,7 @@ interface FormState {
   prime: string
   natureRemuneration: string
   note: string
+  siteOrigine: string
   // devis
   montantEstime: string
   probabilite: string
@@ -64,7 +69,7 @@ interface FormState {
   dateRappel: string
 }
 
-function initialState(kind: Kind, record?: Dossier | null): FormState {
+function initialState(kind: Kind, record?: Dossier | null, defaultClient?: ClientRecord | null): FormState {
   const c = kind === "contrat" ? (record as ContratRecord | undefined) : undefined
   const d = kind === "devis" ? (record as DevisRecord | undefined) : undefined
   return {
@@ -81,6 +86,7 @@ function initialState(kind: Kind, record?: Dossier | null): FormState {
     prime: numStr(record?.prime),
     natureRemuneration: record?.natureRemuneration ?? "",
     note: (kind === "devis" ? d?.notes : c?.notesInternes) ?? "",
+    siteOrigine: (record ? record.siteOrigine : defaultClient?.siteOrigine) ?? "",
     montantEstime: numStr(d?.montantEstime),
     probabilite: numStr(d?.probabilite),
     dateRelance: dateInput(d?.dateRelance),
@@ -94,24 +100,6 @@ function initialState(kind: Kind, record?: Dossier | null): FormState {
     motifResiliation: c?.motifResiliation ?? "",
     dateRappel: dateInput(c?.dateRappel),
   }
-}
-
-function Field({ label, children, full }: { label: string; children: React.ReactNode; full?: boolean }) {
-  return (
-    <div className={full ? "space-y-1.5 sm:col-span-2" : "space-y-1.5"}>
-      <Label>{label}</Label>
-      {children}
-    </div>
-  )
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="space-y-3 rounded-xl border border-border p-4">
-      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-      {children}
-    </section>
-  )
 }
 
 function RefSelect({ value, onChange, options, placeholder = "Aucun" }: { value: string; onChange: (v: string) => void; options: Reference[]; placeholder?: string }) {
@@ -128,28 +116,25 @@ function RefSelect({ value, onChange, options, placeholder = "Aucun" }: { value:
   )
 }
 
-// Création / modification d'un devis ou d'un contrat. Tous les champs sont
-// optionnels ; chaque catégorie a son propre formulaire (catalogue
+// Création / modification d'un devis ou d'un contrat, en plein écran. Tous les
+// champs sont optionnels ; chaque catégorie a son propre formulaire (catalogue
 // lib/admin/categories.ts) ; un nouveau client saisi ici est créé par le CRM
-// avec le dossier.
-export function DossierFormDialog({
+// avec le dossier. Après enregistrement : `retour` ou la fiche du dossier.
+export function DossierForm({
   kind,
-  open,
-  onOpenChange,
   record,
   defaultClient,
-  onSaved,
+  retour,
 }: {
   kind: Kind
-  open: boolean
-  onOpenChange: (open: boolean) => void
   record?: Dossier | null
   defaultClient?: ClientRecord | null
-  onSaved: (record: Dossier) => void
+  retour?: string
 }) {
+  const router = useRouter()
   const isEdit = !!record
-  const [state, setState] = useState<FormState>(() => initialState(kind, record))
-  const [client, setClient] = useState<ClientRecord | null>(null)
+  const [state, setState] = useState<FormState>(() => initialState(kind, record, defaultClient))
+  const [client, setClient] = useState<ClientRecord | null>(record?.client ?? defaultClient ?? null)
   const [newClient, setNewClient] = useState<ClientFormValues | null>(null)
   const [audioFiles, setAudioFiles] = useState<File[]>([])
   const [refs, setRefs] = useState<{ statuts: Reference[]; produits: Reference[]; distributeurs: Reference[] }>({
@@ -163,22 +148,22 @@ export function DossierFormDialog({
   const [notifierClient, setNotifierClient] = useState(true)
 
   useEffect(() => {
-    if (!open) return
-    setState(initialState(kind, record))
-    setClient(record?.client ?? defaultClient ?? null)
-    setNewClient(null)
-    setAudioFiles([])
-    setError(null)
-    setNotifierClient(true)
     fetch("/api/admin/crm/contrats?full=1&page=1")
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (data) setRefs({ statuts: data.statuts ?? [], produits: data.produits ?? [], distributeurs: data.distributeurs ?? [] })
       })
       .catch(() => {})
-    // Réinitialisé à l'ouverture seulement, pas à chaque rendu du parent.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, kind, record?.id])
+  }, [])
+
+  const listHref = kind === "devis" ? "/admin-panel/quotes" : "/admin-panel/contracts"
+  const cancelHref = retour ?? (record ? `${listHref}/${record.id}` : listHref)
+
+  // Client choisi dans la liste : son site d'origine pré-remplit celui du dossier s'il est vide.
+  function pickClient(c: ClientRecord | null) {
+    setClient(c)
+    if (c?.siteOrigine) setState((s) => (s.siteOrigine ? s : { ...s, siteOrigine: c.siteOrigine ?? "" }))
+  }
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) => setState((s) => ({ ...s, [key]: value }))
   const text = (key: keyof FormState) => ({
@@ -232,6 +217,7 @@ export function DossierFormDialog({
       encaissement,
       prime,
       natureRemuneration: state.natureRemuneration || null,
+      siteOrigine: state.siteOrigine || null,
     }
     if (kind === "devis") {
       return {
@@ -294,17 +280,17 @@ export function DossierFormDialog({
       if (saved.notification && !saved.notification.sent) {
         window.alert(`Statut enregistré, mais l'email au client n'a pas été envoyé : ${saved.notification.reason ?? ""}`)
       }
-      onSaved(saved)
-      onOpenChange(false)
+      router.push(retour ?? `${listHref}/${saved.id}`)
+      router.refresh()
     } catch (err) {
       setError(err instanceof Error ? err.message : "Une erreur est survenue.")
-      throw err
-    } finally {
       setSaving(false)
+      throw err
     }
   }
 
-  function handleSubmit() {
+  function handleSubmit(e?: React.FormEvent) {
+    e?.preventDefault()
     if (statutChanged) {
       setConfirmStatut(true)
       return
@@ -316,194 +302,209 @@ export function DossierFormDialog({
   const nouveauStatutNom = refs.statuts.find((s) => s.id === state.statut)?.nom ?? "Aucun"
 
   return (
-    <>
-      <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="max-w-3xl">
-          <DialogHeader>
-            <DialogTitle>{isEdit ? `Modifier le ${label}` : `Nouveau ${label}`}</DialogTitle>
-            <DialogDescription>Tous les champs sont optionnels.</DialogDescription>
-          </DialogHeader>
-
-          <div className="space-y-4">
-            <Section title="Général">
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Numéro">
-                  <Input {...text("numero")} placeholder={isEdit ? "" : "Attribué automatiquement si vide"} />
-                </Field>
-                {kind === "contrat" ? (
-                  <Field label="N° de demande"><Input {...text("numeroDemande")} /></Field>
-                ) : (
-                  <Field label="Statut">
-                    <Select value={state.statut} onValueChange={(v) => set("statut", v)}>
-                      <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
-                      <SelectContent>
-                        {Object.entries(DEVIS_PIPELINE_LABELS).map(([v, l]) => (
-                          <SelectItem key={v} value={v}>{l}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </Field>
-                )}
-                {kind === "contrat" ? (
-                  <Field label="Statut">
-                    <RefSelect value={state.statut} onChange={(v) => set("statut", v)} options={refs.statuts} />
-                  </Field>
-                ) : null}
-                <Field label="Catégorie">
-                  <Select
-                    value={state.categorie || "__none"}
-                    onValueChange={(v) => setState((s) => ({ ...s, categorie: v === "__none" ? "" : (v as Categorie), sousCategorie: "" }))}
-                  >
-                    <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="__none">Aucune</SelectItem>
-                      {CATEGORIE_OPTIONS.map((o) => (
-                        <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </Field>
-                {categorieDef ? (
-                  <Field label={categorieDef.sousCategorieLabel}>
-                    {categorieDef.sousCategories ? (
-                      <Select value={state.sousCategorie || "__none"} onValueChange={(v) => set("sousCategorie", v === "__none" ? "" : v)}>
-                        <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="__none">—</SelectItem>
-                          {categorieDef.sousCategories.map((o) => (
-                            <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    ) : (
-                      <Input {...text("sousCategorie")} />
-                    )}
-                  </Field>
-                ) : null}
-                <Field label="Produit">
-                  <RefSelect value={state.produitId} onChange={(v) => set("produitId", v)} options={refs.produits} />
-                </Field>
-                <Field label="Distributeur">
-                  <RefSelect value={state.distributeurId} onChange={(v) => set("distributeurId", v)} options={refs.distributeurs} />
-                </Field>
-                {kind === "devis" ? (
-                  <>
-                    <Field label="Montant estimé (€)"><Input type="number" step="0.01" {...text("montantEstime")} /></Field>
-                    <Field label="Probabilité (%)"><Input type="number" min={0} max={100} {...text("probabilite")} /></Field>
-                    <Field label="Date de relance"><Input type="date" {...text("dateRelance")} /></Field>
-                    <Field label="Motif de perte"><Input {...text("motifPerte")} /></Field>
-                  </>
-                ) : null}
-              </div>
-            </Section>
-
-            <Section title="Client">
-              {newClient ? (
-                <div className="space-y-3">
-                  <ClientFields value={newClient} onChange={setNewClient} />
-                  <Button type="button" variant="outline" size="sm" onClick={() => setNewClient(null)}>
-                    Choisir un client existant
-                  </Button>
-                </div>
-              ) : (
-                <ClientPicker
-                  selected={client}
-                  onChange={setClient}
-                  onCreateNew={() => {
-                    setClient(null)
-                    setNewClient({ ...toClientForm(null), statutRelation: kind === "contrat" ? "CLIENT" : "PROSPECT" })
-                  }}
-                />
-              )}
-              {!client && !newClient && !isEdit ? (
-                <p className="text-xs text-muted-foreground">Sans client choisi, une fiche client vide sera créée.</p>
-              ) : null}
-            </Section>
-
-            {categorieDef ? (
-              <Section title={`Détails ${categorieDef.label}`}>
-                <CategoryFields
-                  categorie={categorieDef.value}
-                  sousCategorie={state.sousCategorie}
-                  details={state.details}
-                  getValue={getValue}
-                  setValue={setValue}
-                  hiddenKeys={hiddenKeys}
-                />
-              </Section>
-            ) : null}
-
+    <FormPage
+      title={isEdit ? `Modifier le ${label}${record?.numero ? ` ${record.numero}` : ""}` : `Nouveau ${label}`}
+      description="Tous les champs sont optionnels."
+      backHref={cancelHref}
+      backLabel="Retour"
+    >
+      <form
+        onSubmit={handleSubmit}
+        // Entrée dans un champ (recherche de client…) ne doit pas enregistrer le dossier.
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && (e.target as HTMLElement).tagName === "INPUT") e.preventDefault()
+        }}
+        className="space-y-4"
+      >
+        <Section title="Général">
+          <FormGrid>
+            <Field label="Numéro">
+              <Input {...text("numero")} placeholder={isEdit ? "" : "Attribué automatiquement si vide"} />
+            </Field>
             {kind === "contrat" ? (
-              <Section title="Dates">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <Field label="Date de souscription"><Input type="date" {...text("dateSouscription")} /></Field>
-                  <Field label="Date d'effet"><Input type="date" {...text("dateEffet")} /></Field>
-                  <Field label="Durée (jours)"><Input type="number" {...text("dureeJours")} /></Field>
-                  <Field label="Date de début"><Input type="date" {...text("dateDebut")} /></Field>
-                  <Field label="Date de fin"><Input type="date" {...text("dateFin")} /></Field>
-                  <Field label="Date de rappel"><Input type="date" {...text("dateRappel")} /></Field>
-                  <Field label="Date de résiliation"><Input type="date" {...text("dateResiliation")} /></Field>
-                  <Field label="Motif de résiliation" full><Input {...text("motifResiliation")} /></Field>
-                </div>
-              </Section>
+              <Field label="N° de demande"><Input {...text("numeroDemande")} /></Field>
+            ) : (
+              <Field label="Statut">
+                <Select value={state.statut} onValueChange={(v) => set("statut", v)}>
+                  <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+                  <SelectContent>
+                    {Object.entries(DEVIS_PIPELINE_LABELS).map(([v, l]) => (
+                      <SelectItem key={v} value={v}>{l}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </Field>
+            )}
+            {kind === "contrat" ? (
+              <Field label="Statut">
+                <RefSelect value={state.statut} onChange={(v) => set("statut", v)} options={refs.statuts} />
+              </Field>
             ) : null}
-
-            <Section title="Rémunération">
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Encaissement (€)"><Input type="number" step="0.01" {...text("encaissement")} /></Field>
-                <Field label="Prime (€)"><Input type="number" step="0.01" {...text("prime")} /></Field>
-                <Field label="Honoraires (encaissement − prime)">
-                  <Input readOnly value={honoraires === null ? "—" : currencyFmt(honoraires)} className="bg-muted" />
-                </Field>
-                <Field label="Nature de rémunération">
-                  <Select value={state.natureRemuneration || "__none"} onValueChange={(v) => set("natureRemuneration", v === "__none" ? "" : v)}>
+            <Field label="Catégorie">
+              <Select
+                value={state.categorie || "__none"}
+                onValueChange={(v) => setState((s) => ({ ...s, categorie: v === "__none" ? "" : (v as Categorie), sousCategorie: "" }))}
+              >
+                <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="__none">Aucune</SelectItem>
+                  {CATEGORIE_OPTIONS.map((o) => (
+                    <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+            {categorieDef ? (
+              <Field label={categorieDef.sousCategorieLabel}>
+                {categorieDef.sousCategories ? (
+                  <Select value={state.sousCategorie || "__none"} onValueChange={(v) => set("sousCategorie", v === "__none" ? "" : v)}>
                     <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="__none">—</SelectItem>
-                      {NATURE_REMUNERATION_OPTIONS.map((o) => (
+                      {categorieDef.sousCategories.map((o) => (
                         <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
-                </Field>
-              </div>
-            </Section>
+                ) : (
+                  <Input {...text("sousCategorie")} />
+                )}
+              </Field>
+            ) : null}
+            <Field label="Produit">
+              <RefSelect value={state.produitId} onChange={(v) => set("produitId", v)} options={refs.produits} />
+            </Field>
+            <Field label="Distributeur">
+              <RefSelect value={state.distributeurId} onChange={(v) => set("distributeurId", v)} options={refs.distributeurs} />
+            </Field>
+            <Field label="Site d'origine">
+              <Select value={state.siteOrigine || "__none"} onValueChange={(v) => set("siteOrigine", v === "__none" ? "" : v)}>
+                <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="__none">Non renseigné</SelectItem>
+                  {siteFilterOptions(state.siteOrigine ? [state.siteOrigine] : []).map((o) => (
+                    <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+            {kind === "devis" ? (
+              <>
+                <Field label="Montant estimé (€)"><Input type="number" step="0.01" {...text("montantEstime")} /></Field>
+                <Field label="Probabilité (%)"><Input type="number" min={0} max={100} {...text("probabilite")} /></Field>
+                <Field label="Date de relance"><Input type="date" {...text("dateRelance")} /></Field>
+                <Field label="Motif de perte"><Input {...text("motifPerte")} /></Field>
+              </>
+            ) : null}
+          </FormGrid>
+        </Section>
 
-            <Section title="Note & audio">
-              <Field label="Note"><Textarea rows={3} {...text("note")} /></Field>
-              <div className="space-y-1.5">
-                <Label className="flex items-center gap-1.5"><Mic className="size-4" /> Fichiers audio</Label>
-                <Input
-                  type="file"
-                  accept="audio/*"
-                  multiple
-                  onChange={(e) => {
-                    setAudioFiles((prev) => [...prev, ...Array.from(e.target.files ?? [])])
-                    e.target.value = ""
-                  }}
-                />
-                {audioFiles.map((f, i) => (
-                  <div key={`${f.name}-${i}`} className="flex items-center justify-between rounded-md border border-border px-2 py-1 text-xs">
-                    <span className="truncate">{f.name}</span>
-                    <Button type="button" variant="ghost" size="icon-sm" onClick={() => setAudioFiles((p) => p.filter((_, j) => j !== i))}>
-                      <Trash2 className="size-3.5" />
-                    </Button>
-                  </div>
-                ))}
-                {isEdit ? <p className="text-xs text-muted-foreground">Les audios déjà enregistrés sont gérés depuis la fiche.</p> : null}
+        <Section title="Client">
+          {newClient ? (
+            <div className="space-y-3">
+              <ClientFields value={newClient} onChange={setNewClient} wide />
+              <Button type="button" variant="outline" size="sm" onClick={() => setNewClient(null)}>
+                Choisir un client existant
+              </Button>
+            </div>
+          ) : (
+            <ClientPicker
+              selected={client}
+              onChange={pickClient}
+              onCreateNew={() => {
+                setClient(null)
+                setNewClient({ ...toClientForm(null), statutRelation: kind === "contrat" ? "CLIENT" : "PROSPECT" })
+              }}
+            />
+          )}
+          {!client && !newClient && !isEdit ? (
+            <p className="text-xs text-muted-foreground">Sans client choisi, une fiche client vide sera créée.</p>
+          ) : null}
+        </Section>
+
+        {categorieDef ? (
+          <Section title={`Détails ${categorieDef.label}`}>
+            <CategoryFields
+              categorie={categorieDef.value}
+              sousCategorie={state.sousCategorie}
+              details={state.details}
+              getValue={getValue}
+              setValue={setValue}
+              hiddenKeys={hiddenKeys}
+            />
+          </Section>
+        ) : null}
+
+        {kind === "contrat" ? (
+          <Section title="Dates">
+            <FormGrid>
+              <Field label="Date de souscription"><Input type="date" {...text("dateSouscription")} /></Field>
+              <Field label="Date d'effet"><Input type="date" {...text("dateEffet")} /></Field>
+              <Field label="Durée (jours)"><Input type="number" {...text("dureeJours")} /></Field>
+              <Field label="Date de début"><Input type="date" {...text("dateDebut")} /></Field>
+              <Field label="Date de fin"><Input type="date" {...text("dateFin")} /></Field>
+              <Field label="Date de rappel"><Input type="date" {...text("dateRappel")} /></Field>
+              <Field label="Date de résiliation"><Input type="date" {...text("dateResiliation")} /></Field>
+              <Field label="Motif de résiliation" full><Input {...text("motifResiliation")} /></Field>
+            </FormGrid>
+          </Section>
+        ) : null}
+
+        <Section title="Rémunération">
+          <FormGrid className="lg:grid-cols-4">
+            <Field label="Encaissement (€)"><Input type="number" step="0.01" {...text("encaissement")} /></Field>
+            <Field label="Prime (€)"><Input type="number" step="0.01" {...text("prime")} /></Field>
+            <Field label="Honoraires (encaissement − prime)">
+              <Input readOnly value={honoraires === null ? "—" : currencyFmt(honoraires)} className="bg-muted" />
+            </Field>
+            <Field label="Nature de rémunération">
+              <Select value={state.natureRemuneration || "__none"} onValueChange={(v) => set("natureRemuneration", v === "__none" ? "" : v)}>
+                <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="__none">—</SelectItem>
+                  {NATURE_REMUNERATION_OPTIONS.map((o) => (
+                    <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </Field>
+          </FormGrid>
+        </Section>
+
+        <Section title="Note & audio">
+          <Field label="Note"><Textarea rows={5} {...text("note")} /></Field>
+          <div className="space-y-1.5">
+            <Label className="flex items-center gap-1.5"><Mic className="size-4" /> Fichiers audio</Label>
+            <Input
+              type="file"
+              accept="audio/*"
+              multiple
+              onChange={(e) => {
+                setAudioFiles((prev) => [...prev, ...Array.from(e.target.files ?? [])])
+                e.target.value = ""
+              }}
+            />
+            {audioFiles.map((f, i) => (
+              <div key={`${f.name}-${i}`} className="flex items-center justify-between rounded-md border border-border px-2 py-1 text-xs">
+                <span className="truncate">{f.name}</span>
+                <Button type="button" variant="ghost" size="icon-sm" onClick={() => setAudioFiles((p) => p.filter((_, j) => j !== i))}>
+                  <Trash2 className="size-3.5" />
+                </Button>
               </div>
-            </Section>
+            ))}
+            {isEdit ? <p className="text-xs text-muted-foreground">Les audios déjà enregistrés sont gérés depuis la fiche.</p> : null}
           </div>
+        </Section>
 
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
-          <DialogFooter>
-            <Button variant="outline" onClick={() => onOpenChange(false)}>Annuler</Button>
-            <Button onClick={handleSubmit} disabled={saving}>
-              {saving ? "Enregistrement..." : isEdit ? "Enregistrer" : `Créer le ${label}`}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+        <FormActions error={error}>
+          <Button type="button" variant="outline" asChild>
+            <Link href={cancelHref}>Annuler</Link>
+          </Button>
+          <Button type="submit" disabled={saving}>
+            {saving ? "Enregistrement..." : isEdit ? "Enregistrer les modifications" : `Créer le ${label}`}
+          </Button>
+        </FormActions>
+      </form>
 
       <ConfirmDialog
         open={confirmStatut}
@@ -518,6 +519,6 @@ export function DossierFormDialog({
           Notifier le client par email
         </label>
       </ConfirmDialog>
-    </>
+    </FormPage>
   )
 }

@@ -6,12 +6,12 @@ import { getAdminToken } from "@/lib/admin/server-session"
 import { crmAdminJson } from "@/lib/admin/crm-client"
 import { dateFmt } from "@/lib/admin/labels"
 import { StatutHistorique } from "@/components/admin/statut-historique"
-import { allEmails, allPhones, clientFullName, type ContratRecord, type DocumentRecord, type Reference, type TacheRecord } from "@/lib/admin/crm-types"
+import { clientFullName, type ContratRecord, type DocumentRecord, type Reference, type TacheRecord } from "@/lib/admin/crm-types"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { DocumentsCard } from "@/components/admin/documents-card"
-import { DetailField } from "@/components/admin/detail-field"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { DossierDetailActions } from "@/components/admin/dossier-detail-actions"
+import { DossierClientCard } from "@/components/admin/dossier-client-card"
 import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
 import { TachesCard } from "@/components/admin/taches-card"
 import { FacturesCard } from "@/components/admin/factures-card"
@@ -85,26 +85,7 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
       <div className="grid gap-4 lg:grid-cols-3">
         <DossierDetails kind="contrat" record={contrat} />
 
-        <Card className="self-start">
-          <CardHeader>
-            <CardTitle>
-              {contrat.client ? (
-                <Link href={`/admin-panel/clients/${contrat.client.id}`} className="hover:underline">Client</Link>
-              ) : (
-                "Client"
-              )}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm">
-            <DetailField label="Nom" value={clientFullName(contrat.client) || "—"} />
-            <DetailField label="Emails" value={allEmails(contrat.client).join("\n") || "—"} />
-            <DetailField label="Téléphones" value={allPhones(contrat.client).join("\n") || "—"} />
-            <DetailField
-              label="Adresse"
-              value={[contrat.client?.adresse, contrat.client?.codePostal, contrat.client?.ville].filter(Boolean).join(", ") || "—"}
-            />
-          </CardContent>
-        </Card>
+        <DossierClientCard client={contrat.client} retour={`/admin-panel/contracts/${contrat.id}`} />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">

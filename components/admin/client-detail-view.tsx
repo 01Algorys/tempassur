@@ -12,12 +12,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { DetailField, DetailSectionLabel } from "@/components/admin/detail-field"
-import { ClientFormDialog } from "@/components/admin/client-form-dialog"
 import { LinkClientDialog } from "@/components/admin/link-client-dialog"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { RELATION_BADGE } from "@/components/admin/clients-list-view"
+import { SiteBadge } from "@/components/admin/site-badge"
+import { ConformiteBadge } from "@/components/admin/conformite-badge"
+import { ConformiteCard } from "@/components/admin/conformite-card"
+import { withReturn } from "@/lib/admin/return-path"
 import { CATEGORIE_LABELS, CATEGORIE_OPTIONS, sousCategorieLabel, type Categorie } from "@/lib/admin/categories"
 import { DEVIS_PIPELINE_LABELS, DEVIS_PIPELINE_BADGE, currencyFmt, dateFmt, dateTimeFmt } from "@/lib/admin/labels"
 import {
@@ -75,6 +77,9 @@ function ClientInfo({ client }: { client: ClientRecord }) {
       <DetailField label="N° de permis" value={d(client.numeroPermis)} />
       <DetailField label="Pays du permis" value={d(client.paysPermis)} />
       <DetailField label="Obtenu le" value={dateFmt(client.dateObtentionPermis)} />
+      <DetailSectionLabel>Suivi</DetailSectionLabel>
+      <DetailField label="Site d'origine" value={<SiteBadge site={client.siteOrigine} />} />
+      <DetailField label="Conformité" value={<ConformiteBadge statut={client.conformiteStatut} />} />
       <DetailField label="Créé le" value={dateTimeFmt(client.createdAt)} />
       <DetailField label="Notes" value={d(client.notes)} full />
     </CardContent>
@@ -89,15 +94,11 @@ export function ClientDetailView({ id }: { id: string }) {
   const [reloadKey, setReloadKey] = useState(0)
   const reload = useCallback(() => setReloadKey((k) => k + 1), [])
 
-  const [editOpen, setEditOpen] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
   const [linkOpen, setLinkOpen] = useState(false)
-  const [newDossier, setNewDossier] = useState<"devis" | "contrat" | null>(null)
   const [openDossier, setOpenDossier] = useState<DossierRow | null>(null)
-  const [editDossier, setEditDossier] = useState<DossierRow | null>(null)
   const [deleteDossier, setDeleteDossier] = useState<DossierRow | null>(null)
   const [openLinked, setOpenLinked] = useState<ClientDetail["liens"][number] | null>(null)
-  const [editLinked, setEditLinked] = useState<ClientRecord | null>(null)
   const [deleteLinked, setDeleteLinked] = useState<ClientRecord | null>(null)
   const [unlink, setUnlink] = useState<ClientDetail["liens"][number] | null>(null)
 
@@ -182,6 +183,7 @@ export function ClientDetailView({ id }: { id: string }) {
 
   const isProspect = client.statutRelation !== "CLIENT"
   const backHref = isProspect ? "/admin-panel/prospects" : "/admin-panel/clients"
+  const selfHref = `/admin-panel/clients/${client.id}`
 
   return (
     <div className="space-y-4">
@@ -193,19 +195,26 @@ export function ClientDetailView({ id }: { id: string }) {
         <div className="flex items-center gap-3">
           <h1 className="font-heading text-xl font-semibold text-foreground">{clientFullName(client) || "Client sans nom"}</h1>
           <StatusBadge label={isProspect ? "Prospect" : "Client"} className={RELATION_BADGE[client.statutRelation ?? "PROSPECT"]} />
+          {client.siteOrigine ? <SiteBadge site={client.siteOrigine} /> : null}
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={() => setNewDossier("devis")}>
-            <FilePlus2 /> Devis
+          <Button variant="outline" size="sm" asChild>
+            <Link href={withReturn(`/admin-panel/quotes/new?clientId=${client.id}`, selfHref)}>
+              <FilePlus2 /> Devis
+            </Link>
           </Button>
-          <Button variant="outline" size="sm" onClick={() => setNewDossier("contrat")}>
-            <FilePlus2 /> Contrat
+          <Button variant="outline" size="sm" asChild>
+            <Link href={withReturn(`/admin-panel/contracts/new?clientId=${client.id}`, selfHref)}>
+              <FilePlus2 /> Contrat
+            </Link>
           </Button>
           <Button variant="outline" size="sm" onClick={() => setLinkOpen(true)}>
             <Link2 /> Lier
           </Button>
-          <Button variant="outline" size="sm" onClick={() => setEditOpen(true)}>
-            <Pencil /> Modifier
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`/admin-panel/clients/${client.id}/edit`}>
+              <Pencil /> Modifier
+            </Link>
           </Button>
           <Button variant="destructive" size="sm" onClick={() => setDeleteOpen(true)}>
             <Trash2 /> Supprimer
@@ -223,27 +232,31 @@ export function ClientDetailView({ id }: { id: string }) {
           <ClientInfo client={client} />
         </Card>
 
-        <Card className="self-start">
-          <CardHeader><CardTitle>Documents ({client.documents.length})</CardTitle></CardHeader>
-          <CardContent className="space-y-1.5 text-sm">
-            {client.documents.length === 0 ? (
-              <p className="text-muted-foreground">Aucun document.</p>
-            ) : (
-              client.documents.map((doc) => (
-                <a
-                  key={doc.id}
-                  href={proxiedFileUrl(doc.url)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-2 rounded-md px-2 py-1 hover:bg-muted"
-                >
-                  <span className="truncate">{doc.typeDocumentRef?.nom ?? doc.nom}</span>
-                  <span className="shrink-0 text-xs text-muted-foreground">{dateFmt(doc.createdAt)}</span>
-                </a>
-              ))
-            )}
-          </CardContent>
-        </Card>
+        <div className="space-y-4 self-start">
+          <ConformiteCard clientId={client.id} onChecked={reload} />
+
+          <Card>
+            <CardHeader><CardTitle>Documents ({client.documents.length})</CardTitle></CardHeader>
+            <CardContent className="space-y-1.5 text-sm">
+              {client.documents.length === 0 ? (
+                <p className="text-muted-foreground">Aucun document.</p>
+              ) : (
+                client.documents.map((doc) => (
+                  <a
+                    key={doc.id}
+                    href={proxiedFileUrl(doc.url)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between gap-2 rounded-md px-2 py-1 hover:bg-muted"
+                  >
+                    <span className="truncate">{doc.typeDocumentRef?.nom ?? doc.nom}</span>
+                    <span className="shrink-0 text-xs text-muted-foreground">{dateFmt(doc.createdAt)}</span>
+                  </a>
+                ))
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       <Card>
@@ -414,8 +427,6 @@ export function ClientDetailView({ id }: { id: string }) {
 
       {/* --- Modales --- */}
 
-      <ClientFormDialog open={editOpen} onOpenChange={setEditOpen} client={client} onSaved={reload} />
-
       <LinkClientDialog
         open={linkOpen}
         onOpenChange={setLinkOpen}
@@ -424,14 +435,6 @@ export function ClientDetailView({ id }: { id: string }) {
           setMessage(m)
           reload()
         }}
-      />
-
-      <DossierFormDialog
-        kind={newDossier ?? "devis"}
-        open={!!newDossier}
-        onOpenChange={(o) => !o && setNewDossier(null)}
-        defaultClient={client}
-        onSaved={reload}
       />
 
       <Dialog open={!!openDossier} onOpenChange={(o) => !o && setOpenDossier(null)}>
@@ -454,15 +457,18 @@ export function ClientDetailView({ id }: { id: string }) {
                 </Link>
               </Button>
             ) : null}
-            <Button
-              variant="outline"
-              onClick={() => {
-                setEditDossier(openDossier)
-                setOpenDossier(null)
-              }}
-            >
-              <Pencil /> Modifier
-            </Button>
+            {openDossier ? (
+              <Button variant="outline" asChild>
+                <Link
+                  href={withReturn(
+                    `/admin-panel/${openDossier.kind === "contrat" ? "contracts" : "quotes"}/${openDossier.record.id}/edit`,
+                    selfHref
+                  )}
+                >
+                  <Pencil /> Modifier
+                </Link>
+              </Button>
+            ) : null}
             <Button
               variant="destructive"
               onClick={() => {
@@ -475,14 +481,6 @@ export function ClientDetailView({ id }: { id: string }) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
-      <DossierFormDialog
-        kind={editDossier?.kind ?? "devis"}
-        open={!!editDossier}
-        onOpenChange={(o) => !o && setEditDossier(null)}
-        record={editDossier?.record}
-        onSaved={reload}
-      />
 
       <ConfirmDialog
         open={!!deleteDossier}
@@ -515,15 +513,13 @@ export function ClientDetailView({ id }: { id: string }) {
                 </Link>
               </Button>
             ) : null}
-            <Button
-              variant="outline"
-              onClick={() => {
-                setEditLinked(openLinked?.client ?? null)
-                setOpenLinked(null)
-              }}
-            >
-              <Pencil /> Modifier
-            </Button>
+            {openLinked ? (
+              <Button variant="outline" asChild>
+                <Link href={withReturn(`/admin-panel/clients/${openLinked.client.id}/edit`, selfHref)}>
+                  <Pencil /> Modifier
+                </Link>
+              </Button>
+            ) : null}
             <Button
               variant="destructive"
               onClick={() => {
@@ -536,8 +532,6 @@ export function ClientDetailView({ id }: { id: string }) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
-      <ClientFormDialog open={!!editLinked} onOpenChange={(o) => !o && setEditLinked(null)} client={editLinked} onSaved={reload} />
 
       <ConfirmDialog
         open={!!deleteLinked}
