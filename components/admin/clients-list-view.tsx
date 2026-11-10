@@ -1,8 +1,9 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Download, Plus, RefreshCw, Search, Trash2 } from "lucide-react"
+import { Download, Plus, RefreshCw, Search, ShieldAlert, Trash2 } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -10,13 +11,15 @@ import { Card } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { PaginationBar } from "@/components/admin/pagination-bar"
-import { ClientFormDialog } from "@/components/admin/client-form-dialog"
+import { SiteBadge } from "@/components/admin/site-badge"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { DateRangeFilter, EMPTY_RANGE, applyRange, type DateRange } from "@/components/admin/date-range-filter"
 import { clientListColumns } from "@/lib/admin/export-columns"
 import { allEmails, allPhones, clientFullName, type ClientRecord } from "@/lib/admin/crm-types"
 import { dateFmt } from "@/lib/admin/labels"
+import { siteFilterOptions } from "@/lib/admin/sites"
+import { CONFORMITE_LABELS } from "@/lib/admin/conformite"
 
 const PAGE_SIZE = 25
 
@@ -37,10 +40,11 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
   const [search, setSearch] = useState("")
   const [debouncedSearch, setDebouncedSearch] = useState("")
   const [type, setType] = useState("all")
+  const [site, setSite] = useState("all")
+  const [conformite, setConformite] = useState("all")
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
   const [page, setPage] = useState(1)
   const [reloadKey, setReloadKey] = useState(0)
-  const [createOpen, setCreateOpen] = useState(false)
   const [exportOpen, setExportOpen] = useState(false)
   const [deleting, setDeleting] = useState<ClientRecord | null>(null)
 
@@ -53,9 +57,11 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
     const params = new URLSearchParams({ full: "1", statutRelation, orderBy: "createdAt" })
     if (debouncedSearch.trim()) params.set("q", debouncedSearch.trim())
     if (type !== "all") params.set("type", type)
+    if (site !== "all") params.set("siteOrigine", site)
+    if (conformite !== "all") params.set("conformiteStatut", conformite)
     applyRange(params, createdAt, "createdAtFrom", "createdAtTo")
     return params
-  }, [debouncedSearch, type, createdAt, statutRelation])
+  }, [debouncedSearch, type, site, conformite, createdAt, statutRelation])
 
   useEffect(() => {
     let cancelled = false
@@ -106,8 +112,10 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
           <Button variant="outline" size="sm" onClick={() => setExportOpen(true)}>
             <Download /> Exporter
           </Button>
-          <Button size="sm" onClick={() => setCreateOpen(true)}>
-            <Plus /> {isProspects ? "Nouveau prospect" : "Nouveau client"}
+          <Button size="sm" asChild>
+            <Link href={`/admin-panel/clients/new?statut=${statutRelation}`}>
+              <Plus /> {isProspects ? "Nouveau prospect" : "Nouveau client"}
+            </Link>
           </Button>
         </div>
       </div>
@@ -130,6 +138,26 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
             <SelectItem value="PROFESSIONNEL">Professionnels</SelectItem>
           </SelectContent>
         </Select>
+        <Select value={site} onValueChange={resetPage(setSite)}>
+          <SelectTrigger className="w-44"><SelectValue /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous les sites</SelectItem>
+            {siteFilterOptions().map((o) => (
+              <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+            ))}
+            <SelectItem value="none">Sans site (saisie admin)</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select value={conformite} onValueChange={resetPage(setConformite)}>
+          <SelectTrigger className="w-48"><SelectValue /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Toute conformité</SelectItem>
+            {Object.entries(CONFORMITE_LABELS).map(([value, label]) => (
+              <SelectItem key={value} value={value}>{label}</SelectItem>
+            ))}
+            <SelectItem value="none">Non contrôlé</SelectItem>
+          </SelectContent>
+        </Select>
         <DateRangeFilter value={createdAt} onChange={resetPage(setCreatedAt)} />
       </div>
 
@@ -150,6 +178,7 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
                   <th className="px-3 py-2.5 font-medium">Nom</th>
                   <th className="px-3 py-2.5 font-medium">Email</th>
                   <th className="px-3 py-2.5 font-medium">Téléphone</th>
+                  <th className="px-3 py-2.5 font-medium">Site</th>
                   <th className="px-3 py-2.5 font-medium">Ville</th>
                   <th className="px-3 py-2.5 font-medium">Devis</th>
                   <th className="px-3 py-2.5 font-medium">Contrats</th>
@@ -165,9 +194,17 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
                     onClick={() => router.push(`/admin-panel/clients/${c.id}`)}
                     className="cursor-pointer border-b border-border last:border-0 hover:bg-muted/50"
                   >
-                    <td className="px-3 py-2.5 font-medium text-foreground">{clientFullName(c) || "Sans nom"}</td>
+                    <td className="px-3 py-2.5 font-medium text-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        {clientFullName(c) || "Sans nom"}
+                        {c.conformiteStatut === "ALERTE" || c.conformiteStatut === "ALERTE_CONFIRMEE" ? (
+                          <ShieldAlert className="size-4 text-red-600" aria-label={CONFORMITE_LABELS[c.conformiteStatut]} />
+                        ) : null}
+                      </span>
+                    </td>
                     <td className="px-3 py-2.5 text-muted-foreground">{allEmails(c)[0] ?? "—"}</td>
                     <td className="px-3 py-2.5 text-muted-foreground">{allPhones(c)[0] ?? "—"}</td>
+                    <td className="px-3 py-2.5"><SiteBadge site={c.siteOrigine} /></td>
                     <td className="px-3 py-2.5 text-muted-foreground">{c.ville ?? "—"}</td>
                     <td className="px-3 py-2.5 text-muted-foreground">{c._count?.devis ?? 0}</td>
                     <td className="px-3 py-2.5 text-muted-foreground">{c._count?.contrats ?? 0}</td>
@@ -199,13 +236,6 @@ export function ClientsListView({ statutRelation }: { statutRelation: "CLIENT" |
           </div>
         )}
       </Card>
-
-      <ClientFormDialog
-        open={createOpen}
-        onOpenChange={setCreateOpen}
-        defaultStatut={statutRelation}
-        onSaved={(saved) => router.push(`/admin-panel/clients/${saved.id}`)}
-      />
 
       <ExportDialog
         open={exportOpen}

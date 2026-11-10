@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Search, Download, RefreshCw, Plus, Trash2 } from "lucide-react"
 
@@ -9,7 +10,6 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card } from "@/components/ui/card"
 import { PaginationBar } from "@/components/admin/pagination-bar"
-import { DossierFormDialog } from "@/components/admin/dossier-form-dialog"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
@@ -18,6 +18,8 @@ import { CATEGORIE_LABELS, CATEGORIE_OPTIONS, sousCategorieLabel, type Categorie
 import { contratColumns } from "@/lib/admin/export-columns"
 import { clientFullName, type ContratRecord, type Reference } from "@/lib/admin/crm-types"
 import { currencyFmt, dateFmt } from "@/lib/admin/labels"
+import { SiteBadge } from "@/components/admin/site-badge"
+import { siteFilterOptions, siteLabel, type SiteStat } from "@/lib/admin/sites"
 
 const PAGE_SIZE = 25
 
@@ -35,10 +37,11 @@ export default function ContractsPage() {
   const [statutId, setStatutId] = useState("all")
   const [produitId, setProduitId] = useState("all")
   const [categorie, setCategorie] = useState("all")
+  const [site, setSite] = useState("all")
+  const [siteStats, setSiteStats] = useState<SiteStat[]>([])
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
   const [page, setPage] = useState(1)
   const [reloadKey, setReloadKey] = useState(0)
-  const [createOpen, setCreateOpen] = useState(false)
   const [exportOpen, setExportOpen] = useState(false)
   const [deleting, setDeleting] = useState<ContratRecord | null>(null)
 
@@ -53,9 +56,10 @@ export default function ContractsPage() {
     if (statutId !== "all") params.set("statut", statutId)
     if (produitId !== "all") params.set("produitId", produitId)
     if (categorie !== "all") params.set("categorie", categorie)
+    if (site !== "all") params.set("siteOrigine", site)
     applyRange(params, createdAt, "createdAtFrom", "createdAtTo")
     return params
-  }, [debouncedSearch, statutId, produitId, categorie, createdAt])
+  }, [debouncedSearch, statutId, produitId, categorie, site, createdAt])
 
   useEffect(() => {
     let cancelled = false
@@ -74,6 +78,7 @@ export default function ContractsPage() {
         setContrats(data.contrats ?? [])
         setStatuts(data.statuts ?? [])
         setProduits(data.produits ?? [])
+        setSiteStats(data.sites ?? [])
         setTotal(data.total ?? 0)
       })
       .catch((err) => !cancelled && setError(err.message))
@@ -106,8 +111,10 @@ export default function ContractsPage() {
           <Button variant="outline" size="sm" onClick={() => setExportOpen(true)}>
             <Download /> Exporter
           </Button>
-          <Button size="sm" onClick={() => setCreateOpen(true)}>
-            <Plus /> Nouveau contrat
+          <Button size="sm" asChild>
+            <Link href="/admin-panel/contracts/new">
+              <Plus /> Nouveau contrat
+            </Link>
           </Button>
         </div>
       </div>
@@ -131,6 +138,16 @@ export default function ContractsPage() {
             ))}
           </SelectContent>
         </Select>
+        <Select value={site} onValueChange={resetPage(setSite)}>
+          <SelectTrigger className="w-40"><SelectValue placeholder="Site" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous les sites</SelectItem>
+            {siteFilterOptions(siteStats.map((s) => s.site)).map((o) => (
+              <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+            ))}
+            <SelectItem value="none">Non renseigné</SelectItem>
+          </SelectContent>
+        </Select>
         <Select value={statutId} onValueChange={resetPage(setStatutId)}>
           <SelectTrigger className="w-44"><SelectValue placeholder="Statut" /></SelectTrigger>
           <SelectContent>
@@ -152,6 +169,26 @@ export default function ContractsPage() {
         <DateRangeFilter value={createdAt} onChange={resetPage(setCreatedAt)} />
       </div>
 
+      {siteStats.length > 0 ? (
+        <div className="flex flex-wrap gap-2" aria-label="Contrats par site">
+          {siteStats.map((s) => (
+            <button
+              key={s.site ?? "none"}
+              type="button"
+              onClick={() => resetPage(setSite)(s.site ?? "none")}
+              className={`rounded-lg border px-3 py-2 text-left text-xs transition-colors hover:bg-muted/50 ${
+                site === (s.site ?? "none") ? "border-primary bg-muted/50" : "border-border"
+              }`}
+            >
+              <span className="block font-medium text-foreground">{siteLabel(s.site)}</span>
+              <span className="text-muted-foreground">
+                {s.count} contrat{s.count > 1 ? "s" : ""} · {currencyFmt(s.encaissement)}
+              </span>
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       <Card className="p-0">
         {loading ? (
           <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
@@ -169,6 +206,7 @@ export default function ContractsPage() {
                   <th className="px-3 py-2.5 font-medium">Numéro</th>
                   <th className="px-3 py-2.5 font-medium">Client</th>
                   <th className="px-3 py-2.5 font-medium">Catégorie</th>
+                  <th className="px-3 py-2.5 font-medium">Site</th>
                   <th className="px-3 py-2.5 font-medium">Encaissement</th>
                   <th className="px-3 py-2.5 font-medium">Début</th>
                   <th className="px-3 py-2.5 font-medium">Fin</th>
@@ -190,6 +228,7 @@ export default function ContractsPage() {
                       {c.categorie ? CATEGORIE_LABELS[c.categorie as Categorie] : "—"}
                       {c.sousCategorie ? <span className="block text-xs">{sousCategorieLabel(c.categorie, c.sousCategorie)}</span> : null}
                     </td>
+                    <td className="px-3 py-2.5"><SiteBadge site={c.siteOrigine} /></td>
                     <td className="px-3 py-2.5 font-medium text-foreground">
                       {c.encaissement !== null ? currencyFmt(c.encaissement) : "—"}
                     </td>
@@ -226,12 +265,6 @@ export default function ContractsPage() {
         )}
       </Card>
 
-      <DossierFormDialog
-        kind="contrat"
-        open={createOpen}
-        onOpenChange={setCreateOpen}
-        onSaved={(saved) => router.push(`/admin-panel/contracts/${saved.id}`)}
-      />
 
       <ExportDialog
         open={exportOpen}

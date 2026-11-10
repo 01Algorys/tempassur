@@ -7,6 +7,8 @@ import {
   type Categorie,
 } from "@/lib/admin/categories"
 import { DEVIS_PIPELINE_LABELS } from "@/lib/admin/labels"
+import { siteLabel } from "@/lib/admin/sites"
+import { conformiteLabel } from "@/lib/admin/conformite"
 import {
   allEmails,
   allPhones,
@@ -64,6 +66,8 @@ export function clientColumns<T>(get: (row: T) => ClientRecord | null | undefine
     c("paysNaissance", "Pays de naissance", (x) => x.paysNaissance),
     c("paysResidence", "Pays de résidence", (x) => x.paysResidence),
     c("territoireResidence", "Territoire de résidence", (x) => x.territoireResidence),
+    c("siteOrigine", "Site d'origine", (x) => (x.siteOrigine ? siteLabel(x.siteOrigine) : "")),
+    c("conformiteStatut", "Conformité", (x) => conformiteLabel(x.conformiteStatut)),
     c("numeroPermis", "N° de permis", (x) => x.numeroPermis),
     c("paysPermis", "Pays du permis", (x) => x.paysPermis),
     c("dateObtentionPermis", "Date d'obtention du permis", (x) => date(x.dateObtentionPermis)),
@@ -113,6 +117,7 @@ function categorieColumns<T extends DevisRecord | ContratRecord>(): ExportColumn
   return [
     { key: "categorie", label: "Catégorie", group: "Général", value: (r) => (r.categorie ? CATEGORIE_LABELS[r.categorie as Categorie] : "") },
     { key: "sousCategorie", label: "Sous-catégorie", group: "Général", value: (r) => sousCategorieLabel(r.categorie, r.sousCategorie) },
+    { key: "siteOrigine", label: "Site d'origine", group: "Général", value: (r) => (r.siteOrigine ? siteLabel(r.siteOrigine) : "") },
   ]
 }
 

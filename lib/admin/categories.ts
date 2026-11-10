@@ -7,7 +7,7 @@ import { VEHICLE_SLUGS, type VehicleSlug } from "@/types"
 const isVehicleSlug = (s: string): s is VehicleSlug => (VEHICLE_SLUGS as readonly string[]).includes(s)
 
 // Catalogue des formulaires devis/contrat par catégorie. Une seule source pour
-// le formulaire (dossier-form-dialog), la fiche détail (dossier-details) et les
+// le formulaire (dossier-form), la fiche détail (dossier-details) et les
 // exports (export-columns) : ajouter un champ ici le fait apparaître partout.
 // Les valeurs saisies sont stockées dans Devis/Contrat.details (JSON) côté CRM.
 

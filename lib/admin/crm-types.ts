@@ -35,6 +35,11 @@ export interface ClientRecord {
   dateObtentionPermis?: string | null
   notes?: string | null
   isVip?: boolean
+  // Site web d'où vient le client (null : saisi à la main dans l'admin).
+  siteOrigine?: string | null
+  // Dernier contrôle Efficiale : AUCUNE_CORRESPONDANCE | ALERTE | A_REVERIFIER, null si jamais contrôlé.
+  conformiteStatut?: string | null
+  conformiteVerifieeLe?: string | null
   createdAt?: string
   updatedAt?: string
   _count?: { contrats?: number; devis?: number; documents?: number }
@@ -48,6 +53,8 @@ interface DossierCommon {
   categorie: "TEMPASSUR" | "VITRE_ASSUR" | "AUTRE" | null
   sousCategorie: string | null
   details: Record<string, unknown> | null
+  // Site web d'origine (tempassur, assurtempo…) — voir lib/admin/sites.ts.
+  siteOrigine?: string | null
   natureRemuneration: string | null
   encaissement: number | null
   prime: number | null
