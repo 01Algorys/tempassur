@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} recensioni Google",
+      "selectionNote": "Una selezione di recensioni dei clienti pubblicate sul nostro profilo Google.",
+      "originalLanguage": "Le recensioni sono riportate nella lingua originale, il francese.",
       "eyebrow": "Recensioni dei clienti",
       "title": "Cosa dicono i nostri clienti",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "Vedi tutte le nostre recensioni Google →"
+      "cta": "Vedi tutte le {count} recensioni su Google →"
     },
     "coveredCountries": {
       "description": "La tua assicurazione temporanea ti copre in Francia e in 35 paesi d'Europa e del bacino del Mediterraneo  la stessa lista per l'assicurazione temporanea e l'assicurazione di frontiera. Hai bisogno del Marocco, della Tunisia o della Turchia? È possibile un'estensione per le automobili.",

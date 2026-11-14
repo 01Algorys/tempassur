@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} avis Google",
+      "selectionNote": "Sélection d'avis clients publiés sur notre fiche Google.",
+      "originalLanguage": "",
       "eyebrow": "Avis clients",
       "title": "Ce que disent nos clients",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "Voir tous nos avis Google →"
+      "cta": "Voir les {count} avis sur Google →"
     },
     "coveredCountries": {
       "description": "Votre assurance temporaire vous couvre en France et dans 35 pays d'Europe et du pourtour méditerranéen  la même liste pour l'assurance temporaire et l'assurance frontière. Besoin du Maroc, de la Tunisie ou de la Turquie ? Une extension est possible pour les automobiles.",

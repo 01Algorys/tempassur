@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} Google reviews",
+      "selectionNote": "A selection of customer reviews published on our Google profile.",
+      "originalLanguage": "Reviews are shown in their original language, French.",
       "eyebrow": "Customer reviews",
       "title": "What our customers say",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "See all our Google reviews →"
+      "cta": "See all {count} reviews on Google →"
     },
     "coveredCountries": {
       "description": "Your temporary insurance covers you in France and in 35 countries across Europe and the Mediterranean rim  the same list for temporary insurance and border insurance. Need Morocco, Tunisia or Turkey? An extension is available for cars.",

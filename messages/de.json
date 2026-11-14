@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} Google-Bewertungen",
+      "selectionNote": "Eine Auswahl von Kundenbewertungen aus unserem Google-Profil.",
+      "originalLanguage": "Die Bewertungen werden in ihrer Originalsprache Französisch angezeigt.",
       "eyebrow": "Kundenbewertungen",
       "title": "Was unsere Kunden sagen",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "Alle unsere Google-Bewertungen ansehen →"
+      "cta": "Alle {count} Bewertungen auf Google ansehen →"
     },
     "coveredCountries": {
       "description": "Ihre Kurzzeitversicherung deckt Sie in Frankreich und in 35 Ländern Europas und des Mittelmeerraums ab  die gleiche Liste für die Kurzzeit- und die Grenzversicherung. Sie benötigen Marokko, Tunesien oder die Türkei? Eine Erweiterung ist für Autos möglich.",
