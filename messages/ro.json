@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} recenzii Google",
+      "selectionNote": "O selecție de recenzii ale clienților publicate pe profilul nostru Google.",
+      "originalLanguage": "Recenziile sunt afișate în limba originală, franceza.",
       "eyebrow": "Recenzii ale clienților",
       "title": "Ce spun clienții noștri",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "Vezi toate recenziile noastre Google →"
+      "cta": "Vedeți toate cele {count} recenzii pe Google →"
     },
     "coveredCountries": {
       "description": "Asigurarea dvs. temporară vă acoperă în Franța și în 35 de țări din Europa și din bazinul mediteranean  aceeași listă pentru asigurarea temporară și pentru asigurarea de frontieră. Aveți nevoie de Maroc, Tunisia sau Turcia? O extindere este posibilă pentru automobile.",

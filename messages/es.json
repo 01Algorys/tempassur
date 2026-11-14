@@ -238,10 +238,13 @@
       ]
     },
     "reviews": {
+      "ratingCount": "{count} reseñas de Google",
+      "selectionNote": "Una selección de opiniones de clientes publicadas en nuestro perfil de Google.",
+      "originalLanguage": "Las opiniones se muestran en su idioma original, el francés.",
       "eyebrow": "Opiniones de clientes",
       "title": "Lo que dicen nuestros clientes",
       "address": "WN Conseil / TempAssur  {address}",
-      "cta": "Ver todas nuestras opiniones en Google →"
+      "cta": "Ver las {count} reseñas en Google →"
     },
     "coveredCountries": {
       "description": "Su seguro temporal le cubre en Francia y en 35 países de Europa y la cuenca mediterránea  la misma lista para el seguro temporal y el seguro de frontera. ¿Necesita Marruecos, Túnez o Turquía? Es posible ampliar la cobertura para automóviles.",
