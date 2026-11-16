@@ -68,6 +68,7 @@ const STEP_FIELDS: Record<StepId, (keyof SubscriptionFormValues)[]> = {
     "nomAgenceLocation",
     "paysImmatriculation",
     "territoireImmatriculation",
+    "carteGriseBarree",
     "paysResidence",
     "territoireResidence",
   ],
@@ -154,6 +155,7 @@ export function SubscriptionWizard({ initialCategory = "automobiles" }: Subscrip
     defaultValues: {
       paysImmatriculation: "",
       territoireImmatriculation: "",
+      carteGriseBarree: "",
       paysResidence: "",
       territoireResidence: "",
       categorie: initialCategory,

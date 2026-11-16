@@ -293,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "Country of registration is required",
     "paysResidenceRequired": "Country of residence is required",
+    "carteGriseBarreeRequired": "Please say whether the registration certificate is crossed out.",
     "dureeRequired": "Select a duration",
     "immatriculationRequired": "Registration number is required",
     "marqueRequired": "Make is required",
@@ -389,7 +390,11 @@
       "residenceCpiNotice": "Have you applied for a WW temporary registration certificate (CPI)? Please select France as the country of registration.",
       "residenceCpiPartner": "No CPI yet? Our partner can take care of it for you.",
       "residenceCpiPartnerCta": "Learn more",
-      "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France."
+      "residenceShouldBeFrance": "For a vehicle registered in this country, your residential address must be in France.",
+      "carteGriseBarree": "Is the registration certificate crossed out?",
+      "carteGriseBarreeOui": "Yes",
+      "carteGriseBarreeNon": "No",
+      "carteGriseBarreeHelp": "In France, when a vehicle is sold, the previous owner crosses out the registration certificate (carte grise). If that is the case for yours, answer Yes."
     },
     "driver": {
       "heading": "Driver information",
@@ -473,7 +478,10 @@
       "acceptCgv": "I accept the <link>Terms of Sale</link>",
       "acceptIpid": "I have read the insurance product information document (IPID)",
       "acceptContrat": "I have read the general contract terms",
-      "autresDocuments": "Other document (optional)",
+      "autresDocuments": "Other documents (optional)",
+      "autresDocumentsHint": "If you have any, you can add one or more documents about the vehicle: certificate of sale, purchase invoice or any other document. Otherwise, you can carry on with your subscription without adding anything.",
+      "carteGriseBarreeTitle": "Your registration certificate is crossed out: proof of purchase or sale",
+      "carteGriseBarreeText": "Please attach, in the “Other documents” field, the certificate of sale, the purchase invoice or any other document proving the purchase or sale of the vehicle, even if it is not in the driver’s name.",
       "maxSize": "Maximum file size: 40 MB",
       "fileTooLarge": "This file exceeds the 40 MB size limit. Please choose a smaller file.",
       "fileEmpty": "This file appears to be empty (0 KB). Please try selecting or capturing it again.",

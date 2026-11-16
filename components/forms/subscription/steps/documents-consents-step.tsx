@@ -3,6 +3,7 @@
 import { Link } from "@/i18n/navigation"
 import type { UseFormReturn } from "react-hook-form"
 import { useTranslations } from "next-intl"
+import { Info } from "lucide-react"
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -17,11 +18,22 @@ interface DocumentsConsentsStepProps {
 
 export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
   const t = useTranslations("wizard.documents")
+  const carteGriseBarree = form.watch("carteGriseBarree")
+  const paysImmatriculation = form.watch("paysImmatriculation")
 
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
         <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
+        {paysImmatriculation === "FR" && carteGriseBarree === "oui" ? (
+          <div className="flex items-start gap-3 rounded-xl border border-orange/30 bg-orange/10 px-4 py-3 text-sm text-navy">
+            <Info className="mt-0.5 size-4 shrink-0 text-orange" />
+            <div className="flex flex-col gap-1">
+              <p className="font-semibold">{t("carteGriseBarreeTitle")}</p>
+              <p className="leading-relaxed">{t("carteGriseBarreeText")}</p>
+            </div>
+          </div>
+        ) : null}
         <p className="text-xs text-muted-foreground">{t("optional")}</p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <FormField
@@ -62,6 +74,7 @@ export function DocumentsConsentsStep({ form }: DocumentsConsentsStepProps) {
                 <MultiFileUploadField
                   id="autresDocuments"
                   label={t("autresDocuments")}
+                  description={t("autresDocumentsHint")}
                   value={field.value}
                   onChange={field.onChange}
                 />

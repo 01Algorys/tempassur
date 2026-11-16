@@ -293,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "Le pays d'immatriculation est requis",
     "paysResidenceRequired": "Le pays de résidence est requis",
+    "carteGriseBarreeRequired": "Indiquez si la carte grise est barrée.",
     "dureeRequired": "Sélectionnez une durée",
     "immatriculationRequired": "L'immatriculation est requise",
     "marqueRequired": "La marque est requise",
@@ -389,7 +390,11 @@
       "residenceCpiNotice": "Vous avez demandé un certificat provisoire d’immatriculation WW (CPI) ? Merci de sélectionner France comme pays d’immatriculation.",
       "residenceCpiPartner": "Pas encore de CPI ? Notre partenaire s’en occupe pour vous.",
       "residenceCpiPartnerCta": "En savoir plus",
-      "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France."
+      "residenceShouldBeFrance": "Pour un véhicule immatriculé dans ce pays, votre adresse de résidence doit être située en France.",
+      "carteGriseBarree": "La carte grise est-elle barrée ?",
+      "carteGriseBarreeOui": "Oui",
+      "carteGriseBarreeNon": "Non",
+      "carteGriseBarreeHelp": "En France, quand un véhicule est vendu, l’ancien propriétaire barre la carte grise. Si c’est le cas de votre carte grise, répondez Oui."
     },
     "driver": {
       "heading": "Informations conducteur",
@@ -473,7 +478,10 @@
       "acceptCgv": "J'accepte les <link>Conditions générales de vente</link>",
       "acceptIpid": "J'ai pris connaissance du document d'information (IPID)",
       "acceptContrat": "J'ai pris connaissance des conditions générales du contrat",
-      "autresDocuments": "Autre document (optionnel)",
+      "autresDocuments": "Autres documents (facultatif)",
+      "autresDocumentsHint": "Si vous en avez, vous pouvez ajouter un ou plusieurs justificatifs liés au véhicule : certificat de cession, facture d’achat ou tout autre document. Sinon, vous pouvez continuer votre souscription sans rien ajouter.",
+      "carteGriseBarreeTitle": "Votre carte grise est barrée : justificatif d’achat ou de vente",
+      "carteGriseBarreeText": "Merci de joindre, dans le champ « Autres documents », le certificat de cession, la facture d’achat ou tout autre document justifiant l’achat ou la vente du véhicule, même s’il n’est pas au nom du conducteur.",
       "maxSize": "Taille maximale du fichier : 40 Mo",
       "fileTooLarge": "Ce fichier dépasse la limite de 40 Mo. Veuillez choisir un fichier plus petit.",
       "fileEmpty": "Ce fichier semble vide (0 Ko). Réessayez de le sélectionner ou de le photographier.",
