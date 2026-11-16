@@ -24,7 +24,7 @@ import { CATEGORIE_LABELS, CATEGORIE_OPTIONS, sousCategorieLabel, type Categorie
 import { DEVIS_PIPELINE_LABELS, DEVIS_PIPELINE_BADGE, currencyFmt, dateFmt, dateTimeFmt } from "@/lib/admin/labels"
 import {
   allEmails,
-  allPhones,
+  allPhones, labeledPhones,
   clientFullName,
   proxiedFileUrl,
   type ClientRecord,
@@ -68,7 +68,7 @@ function ClientInfo({ client }: { client: ClientRecord }) {
       <DetailField label="Nationalité" value={d(client.nationalite)} />
       <DetailField label="VIP" value={client.isVip ? "Oui" : "Non"} />
       <DetailSectionLabel>Coordonnées</DetailSectionLabel>
-      <DetailField label="Téléphones" value={allPhones(client).join("\n") || "—"} />
+      <DetailField label="Téléphones" value={labeledPhones(client).join("\n") || "—"} />
       <DetailField label="Emails" value={allEmails(client).join("\n") || "—"} />
       <DetailField label="Adresse" value={[client.adresse, client.codePostal, client.ville].filter(Boolean).join(", ") || "—"} full />
       <DetailField label="Pays" value={d(client.pays)} />

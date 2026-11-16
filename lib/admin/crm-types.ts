@@ -149,6 +149,20 @@ export function allPhones(client: ClientRecord | null | undefined): string[] {
   return [client.telephone, ...(client.telephones ?? [])].filter((v): v is string => !!v)
 }
 
+// Numéros français : 06/07 (ou +33 6/7) = mobile ; 01 à 05 et 09 = fixe. Les numéros
+// étrangers ne se distinguent pas de façon fiable et restent sans étiquette précise.
+export function phoneKind(phone: string): "Mobile" | "Fixe" | "Téléphone" {
+  const digits = phone.replace(/[^\d+]/g, "").replace(/^00/, "+")
+  const national = digits.startsWith("+33") ? `0${digits.slice(3)}` : digits
+  if (/^0[67]\d{8}$/.test(national)) return "Mobile"
+  if (/^0[1-59]\d{8}$/.test(national)) return "Fixe"
+  return "Téléphone"
+}
+
+export function labeledPhones(client: ClientRecord | null | undefined): string[] {
+  return allPhones(client).map((p) => `${phoneKind(p)} : ${p}`)
+}
+
 export function allEmails(client: ClientRecord | null | undefined): string[] {
   if (!client) return []
   return [client.email, ...(client.emails ?? [])].filter((v): v is string => !!v)

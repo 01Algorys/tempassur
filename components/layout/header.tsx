@@ -68,7 +68,6 @@ export function Header() {
     { label: t("quiSommesNous"), href: "/qui-sommes-nous" },
     { label: t("blog"), href: "/blog" },
     { label: t("contact"), href: "/contact" },
-    { label: t("monCompte"), href: "/mon-compte" },
     { label: t("faq"), href: "/faq" },
   ]
 
