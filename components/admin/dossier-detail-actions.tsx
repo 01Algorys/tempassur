@@ -11,7 +11,7 @@ import { TacheFormDialog } from "@/components/admin/tache-form-dialog"
 import type { ContratRecord, DevisRecord } from "@/lib/admin/crm-types"
 
 // Boutons de la fiche devis/contrat : modifier (page plein écran), dupliquer (nouveau
-// dossier pré-rempli, sans lien), ajouter une tâche de suivi, supprimer (avec confirmation).
+// dossier pré-rempli sauf le numéro, sans lien), ajouter une tâche de suivi, supprimer (avec confirmation).
 export function DossierDetailActions({
   kind,
   record,

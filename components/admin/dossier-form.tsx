@@ -104,33 +104,11 @@ function initialState(kind: Kind, record?: Dossier | null, defaultClient?: Clien
   }
 }
 
-// Duplication : on reprend client, catégorie, détails (véhicule, conducteur…), produit,
-// distributeur et durée, mais pas ce qui appartient à l'ancien dossier (numéro, statut,
-// dates, sommes encaissées, note). Le nouveau dossier est créé sans lien avec la source.
+// Duplication : le nouveau dossier reprend toutes les informations de l'original
+// (client, statut, dates, montants, détails, note…) sauf son numéro, attribué à
+// nouveau à l'enregistrement. Il est créé sans aucun lien avec l'original.
 function duplicateState(kind: Kind, source: Dossier): FormState {
-  const base = initialState(kind, source)
-  const details = { ...base.details }
-  delete details.dateEffet
-  delete details.heureEffet
-  return {
-    ...base,
-    numero: "",
-    numeroDemande: "",
-    details,
-    statut: kind === "devis" ? "NOUVEAU" : "",
-    encaissement: "",
-    prime: "",
-    note: "",
-    dateRelance: "",
-    motifPerte: "",
-    dateSouscription: "",
-    dateEffet: "",
-    dateDebut: "",
-    dateFin: "",
-    dateResiliation: "",
-    motifResiliation: "",
-    dateRappel: "",
-  }
+  return { ...initialState(kind, source), numero: "" }
 }
 
 function RefSelect({ value, onChange, options, placeholder = "Aucun" }: { value: string; onChange: (v: string) => void; options: Reference[]; placeholder?: string }) {
@@ -349,7 +327,7 @@ export function DossierForm({
       }
       description={
         duplicateFrom && !isEdit
-          ? `Pré-rempli à partir du ${label}${duplicateFrom.numero ? ` ${duplicateFrom.numero}` : ""}, sans numéro, statut, dates, montants encaissés ni note. Il sera créé comme un nouveau ${label}, sans lien avec l'original.`
+          ? `Copie du ${label}${duplicateFrom.numero ? ` ${duplicateFrom.numero}` : ""} : tout est repris sauf le numéro. Modifiez ce qu'il faut, puis créez-le ; il n'aura aucun lien avec l'original.`
           : "Tous les champs sont optionnels."
       }
       backHref={cancelHref}
