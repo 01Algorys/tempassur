@@ -7,6 +7,7 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { EuDateInput } from "../eu-date-input"
 import { EuTimeInput } from "../eu-time-input"
+import { startOfToday } from "../date-bounds"
 
 const fieldClass = "h-11 rounded-lg"
 
@@ -28,7 +29,7 @@ export function EffectDateStep({ form }: EffectDateStepProps) {
             <FormItem >
               <FormLabel>{t("effectDate")}</FormLabel>
               <FormControl>
-                    <EuDateInput className={fieldClass} {...field} />
+                    <EuDateInput className={fieldClass} minDate={startOfToday()} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Per WhatsApp abschließen",
     "whatsappFloatingAria": "Per WhatsApp abschließen",
     "logoAria": "TempAssur, Startseite",
-    "otherCountry": "Anderes Land"
+    "otherCountry": "Anderes Land",
+    "openCalendar": "Kalender öffnen",
+    "chooseTime": "Uhrzeit wählen"
   },
   "nav": {
     "accueil": "Startseite",

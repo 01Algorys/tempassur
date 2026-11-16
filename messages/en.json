@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Subscribe via WhatsApp",
     "whatsappFloatingAria": "Subscribe via WhatsApp",
     "logoAria": "TempAssur, home",
-    "otherCountry": "Other country"
+    "otherCountry": "Other country",
+    "openCalendar": "Open calendar",
+    "chooseTime": "Choose a time"
   },
   "nav": {
     "accueil": "Home",

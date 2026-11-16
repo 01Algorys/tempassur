@@ -136,9 +136,7 @@ export function FileUploadField({ id, label, value, onChange, accept = "image/*,
         <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
       ) : empty ? (
         <p className="text-xs text-destructive">{t("fileEmpty")}</p>
-      ) : (
-        <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
-      )}
+      ) : null}
     </div>
   )
 }
