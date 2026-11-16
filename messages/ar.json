@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "الاشتراك عبر واتساب",
     "whatsappFloatingAria": "الاشتراك عبر واتساب",
     "logoAria": "TempAssur، الصفحة الرئيسية",
-    "otherCountry": "بلد آخر"
+    "otherCountry": "بلد آخر",
+    "openCalendar": "فتح التقويم",
+    "chooseTime": "اختيار الوقت"
   },
   "nav": {
     "accueil": "الرئيسية",
@@ -291,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "بلد التسجيل مطلوب",
     "paysResidenceRequired": "بلد الإقامة مطلوب",
+    "carteGriseBarreeRequired": "يرجى تحديد ما إذا كانت شهادة التسجيل مشطوبة.",
     "dureeRequired": "اختر مدة",
     "immatriculationRequired": "رقم التسجيل مطلوب",
     "marqueRequired": "الماركة مطلوبة",
@@ -387,7 +390,11 @@
       "residenceCpiNotice": "هل طلبتم شهادة تسجيل مؤقتة WW (CPI)؟ يرجى اختيار فرنسا كبلد تسجيل.",
       "residenceCpiPartner": "ليست لديكم شهادة CPI بعد؟ يتولى شريكنا ذلك نيابةً عنكم.",
       "residenceCpiPartnerCta": "معرفة المزيد",
-      "residenceShouldBeFrance": "بالنسبة لمركبة مسجّلة في هذا البلد، يجب أن يكون عنوان إقامتك في فرنسا."
+      "residenceShouldBeFrance": "بالنسبة لمركبة مسجّلة في هذا البلد، يجب أن يكون عنوان إقامتك في فرنسا.",
+      "carteGriseBarree": "هل شهادة تسجيل المركبة مشطوبة؟",
+      "carteGriseBarreeOui": "نعم",
+      "carteGriseBarreeNon": "لا",
+      "carteGriseBarreeHelp": "في فرنسا، عند بيع مركبة، يشطب المالك السابق شهادة التسجيل (carte grise). إذا كانت شهادتكم كذلك، أجيبوا بنعم."
     },
     "driver": {
       "heading": "معلومات السائق",
@@ -471,7 +478,10 @@
       "acceptCgv": "أوافق على <link>الشروط العامة للبيع</link>",
       "acceptIpid": "اطّلعت على وثيقة المعلومات (IPID)",
       "acceptContrat": "اطّلعت على الشروط العامة للعقد",
-      "autresDocuments": "مستند آخر (اختياري)",
+      "autresDocuments": "مستندات أخرى (اختياري)",
+      "autresDocumentsHint": "إن وُجدت، يمكنكم إضافة مستند أو أكثر يتعلق بالمركبة: شهادة التنازل أو فاتورة الشراء أو أي مستند آخر. وإلا يمكنكم متابعة الاشتراك دون إضافة أي شيء.",
+      "carteGriseBarreeTitle": "شهادة تسجيل مركبتكم مشطوبة: إثبات الشراء أو البيع",
+      "carteGriseBarreeText": "يرجى إرفاق شهادة التنازل أو فاتورة الشراء أو أي مستند آخر يثبت شراء المركبة أو بيعها في حقل «مستندات أخرى»، حتى لو لم يكن باسم السائق.",
       "maxSize": "الحجم الأقصى للملف: 40 ميغابايت",
       "fileTooLarge": "يتجاوز هذا الملف الحد الأقصى البالغ 40 ميغابايت. يرجى اختيار ملف أصغر.",
       "fileEmpty": "يبدو أن هذا الملف فارغ (0 كيلوبايت). يرجى إعادة اختياره أو تصويره.",

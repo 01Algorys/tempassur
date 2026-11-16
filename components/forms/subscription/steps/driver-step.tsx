@@ -9,9 +9,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { PhoneInput } from "@/components/ui/phone-input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel, getRegistrationCase } from "@/lib/countries"
+import { getCountryLabel, getCountryOptions, getRegistrationCase } from "@/lib/countries"
 import { CIVILITE_OPTIONS, type SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 
+import { yearsAgo } from "../date-bounds"
 import { EuDateInput } from "../eu-date-input"
 
 const fieldClass = "h-11 rounded-lg"
@@ -45,6 +46,7 @@ export function DriverStep({ form }: DriverStepProps) {
   const tCommon = useTranslations("common")
   const tCivilite = useTranslations("pricingLabels.civilite")
   const locale = useLocale()
+  const countryOptions = getCountryOptions(locale)
 
   const phones = useFieldArray({ control: form.control, name: "telephonesSupplementaires" })
   const emails = useFieldArray({ control: form.control, name: "emailsSupplementaires" })
@@ -127,7 +129,7 @@ export function DriverStep({ form }: DriverStepProps) {
                   <FormItem >
                     <FormLabel>{t("dateNaissance")}</FormLabel>
                     <FormControl>
-                      <EuDateInput className={fieldClass} {...field} />
+                      <EuDateInput className={fieldClass} minDate={new Date(1920, 0, 1)} maxDate={yearsAgo(21)} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -147,7 +149,7 @@ export function DriverStep({ form }: DriverStepProps) {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {COUNTRIES.map((country) => (
+                      {countryOptions.map((country) => (
                         <SelectItem key={country.code} value={country.code}>
                           {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                         </SelectItem>
@@ -333,7 +335,7 @@ export function DriverStep({ form }: DriverStepProps) {
               <FormItem>
                 <FormLabel>{t("dateObtention")}</FormLabel>
                 <FormControl>
-                  <EuDateInput className={fieldClass} {...field} />
+                  <EuDateInput className={fieldClass} minDate={new Date(1940, 0, 1)} maxDate={yearsAgo(2)} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -352,7 +354,7 @@ export function DriverStep({ form }: DriverStepProps) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {COUNTRIES.map((country) => (
+                    {countryOptions.map((country) => (
                       <SelectItem key={country.code} value={country.code}>
                         {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                       </SelectItem>

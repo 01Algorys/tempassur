@@ -50,8 +50,44 @@ export const COUNTRIES: Country[] = [
   { code: "TN" },
   { code: "US" },
   { code: "CA" },
-  { code: "OTHER" },
 ]
+
+// Tous les autres pays, proposés après la liste ci-dessus (qui remplace l'ancien choix
+// « Autre pays »). Les territoires français d'outre-mer n'y figurent pas : ils passent par
+// France + territoire, qui détermine le tarif DOM-TOM. Les territoires inhabités non plus.
+const OTHER_COUNTRY_CODES: string[] = [
+  "AF","AX","AL","DZ","AS","AD","AO","AI","AG","AR","AM","AW","AU","AT","AZ","BS",
+  "BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BQ","BA","BW","BR","IO","BN",
+  "BG","BF","BI","CV","KH","CM","CA","KY","CF","TD","CL","CN","CX","CC","CO","KM",
+  "CG","CD","CK","CR","CI","HR","CU","CW","CY","CZ","DK","DJ","DM","DO","EC","EG",
+  "SV","GQ","ER","EE","SZ","ET","FK","FO","FJ","FI","FR","GA","GM","GE","DE","GH",
+  "GI","GR","GL","GD","GU","GT","GG","GN","GW","GY","HT","VA","HN","HK","HU","IS",
+  "IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KP",
+  "KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MG","MW","MY",
+  "MV","ML","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM",
+  "NA","NR","NP","NL","NZ","NI","NE","NG","NU","NF","MK","MP","NO","OM","PK","PW",
+  "PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RO","RU","RW","SH","KN",
+  "LC","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SX","SK","SI","SB","SO",
+  "ZA","GS","SS","ES","LK","SD","SR","SJ","SE","CH","SY","TW","TJ","TZ","TH","TL",
+  "TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","US","UY","UZ",
+  "VU","VE","VN","VG","VI","EH","YE","ZM","ZW","XK",
+].filter((code) => !COUNTRIES.some((c) => c.code === code))
+
+const countryOptionsCache = new Map<string, Country[]>()
+
+// Liste complète pour un formulaire : pays prioritaires d'abord, puis tous les autres
+// par ordre alphabétique dans la langue affichée.
+export function getCountryOptions(locale: string): Country[] {
+  const cached = countryOptionsCache.get(locale)
+  if (cached) return cached
+  const collator = new Intl.Collator(locale)
+  const others = OTHER_COUNTRY_CODES.map((code) => ({ code, label: getCountryLabel(code, locale, code) }))
+    .sort((a, b) => collator.compare(a.label, b.label))
+    .map(({ code }) => ({ code }))
+  const options = [...COUNTRIES, ...others]
+  countryOptionsCache.set(locale, options)
+  return options
+}
 
 const displayNamesCache = new Map<string, Intl.DisplayNames>()
 
@@ -60,6 +96,7 @@ const LABEL_OVERRIDES: Record<string, Record<string, string>> = {
   fr: { CZ: "République tchèque" },
 }
 
+// « OTHER » n'est plus proposé, mais d'anciens dossiers peuvent encore le contenir.
 export function getCountryLabel(code: string, locale: string, otherLabel: string): string {
   if (code === "OTHER") return otherLabel
 

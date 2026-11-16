@@ -35,6 +35,8 @@ export function createSubscriptionSchema(t: (key: string) => string) {
       // Localisation (dossier §4.1)
       paysImmatriculation: z.string().min(1, t("paysImmatriculationRequired")),
       territoireImmatriculation: z.string().optional().or(z.literal("")),
+      // Seulement pour une immatriculation française (obligatoire dans ce cas, voir getStepOneIssues).
+      carteGriseBarree: z.enum(["oui", "non"]).optional().or(z.literal("")),
       paysResidence: z.string().min(1, t("paysResidenceRequired")),
       territoireResidence: z.string().optional().or(z.literal("")),
 
@@ -186,6 +188,8 @@ export function createSubscriptionSchema(t: (key: string) => string) {
 export type SubscriptionFormValues = z.infer<ReturnType<typeof createSubscriptionSchema>>
 
 interface StepOneValues {
+  paysImmatriculation?: string
+  carteGriseBarree?: string
   dateEffet?: string
   heureEffet?: string
   estVehiculeLocation?: boolean
@@ -193,7 +197,7 @@ interface StepOneValues {
 }
 
 export interface StepOneIssue {
-  path: "dateEffet" | "heureEffet" | "nomAgenceLocation"
+  path: "dateEffet" | "heureEffet" | "nomAgenceLocation" | "carteGriseBarree"
   message: string
 }
 
@@ -202,6 +206,10 @@ export interface StepOneIssue {
 // directement, sinon elles ne seraient jamais appliquées aux champs de l'étape 1.
 export function getStepOneIssues(values: StepOneValues, t: (key: string) => string): StepOneIssue[] {
   const issues: StepOneIssue[] = []
+
+  if (values.paysImmatriculation === "FR" && !values.carteGriseBarree) {
+    issues.push({ path: "carteGriseBarree", message: t("carteGriseBarreeRequired") })
+  }
 
   if (values.dateEffet && values.heureEffet) {
     const effectDate = new Date(`${values.dateEffet}T${values.heureEffet}`)

@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Încheie asigurarea prin WhatsApp",
     "whatsappFloatingAria": "Încheie asigurarea prin WhatsApp",
     "logoAria": "TempAssur, pagina principală",
-    "otherCountry": "Altă țară"
+    "otherCountry": "Altă țară",
+    "openCalendar": "Deschideți calendarul",
+    "chooseTime": "Alegeți ora"
   },
   "nav": {
     "accueil": "Acasă",
@@ -291,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "Țara de înmatriculare este obligatorie",
     "paysResidenceRequired": "Țara de reședință este obligatorie",
+    "carteGriseBarreeRequired": "Indicați dacă certificatul de înmatriculare este tăiat.",
     "dureeRequired": "Selectați o durată",
     "immatriculationRequired": "Numărul de înmatriculare este obligatoriu",
     "marqueRequired": "Marca este obligatorie",
@@ -387,7 +390,11 @@
       "residenceCpiNotice": "Ați solicitat un certificat provizoriu de înmatriculare WW (CPI)? Vă rugăm să selectați Franța ca țară de înmatriculare.",
       "residenceCpiPartner": "Nu aveți încă un CPI? Partenerul nostru se ocupă de asta pentru dumneavoastră.",
       "residenceCpiPartnerCta": "Aflați mai multe",
-      "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța."
+      "residenceShouldBeFrance": "Pentru un vehicul înmatriculat în această țară, adresa dumneavoastră de reședință trebuie să fie în Franța.",
+      "carteGriseBarree": "Este certificatul de înmatriculare tăiat?",
+      "carteGriseBarreeOui": "Da",
+      "carteGriseBarreeNon": "Nu",
+      "carteGriseBarreeHelp": "În Franța, când un vehicul este vândut, fostul proprietar taie certificatul de înmatriculare (carte grise). Dacă este cazul certificatului dvs., răspundeți Da."
     },
     "driver": {
       "heading": "Informații conducător auto",
@@ -471,7 +478,10 @@
       "acceptCgv": "Accept <link>Condițiile generale de vânzare</link>",
       "acceptIpid": "Am luat cunoștință de documentul de informare (IPID)",
       "acceptContrat": "Am luat cunoștință de condițiile generale ale contractului",
-      "autresDocuments": "Alt document (opțional)",
+      "autresDocuments": "Alte documente (opțional)",
+      "autresDocumentsHint": "Dacă aveți, puteți adăuga unul sau mai multe documente legate de vehicul: certificat de vânzare, factură de cumpărare sau orice alt document. Altfel, puteți continua subscrierea fără să adăugați nimic.",
+      "carteGriseBarreeTitle": "Certificatul dvs. de înmatriculare este tăiat: dovada cumpărării sau a vânzării",
+      "carteGriseBarreeText": "Vă rugăm să atașați, în câmpul „Alte documente”, certificatul de vânzare, factura de cumpărare sau orice alt document care dovedește cumpărarea sau vânzarea vehiculului, chiar dacă nu este pe numele conducătorului auto.",
       "maxSize": "Dimensiune maximă a fișierului: 40 MB",
       "fileTooLarge": "Acest fișier depășește limita de 40 MB. Alegeți un fișier mai mic.",
       "fileEmpty": "Acest fișier pare gol (0 KB). Încercați să îl selectați sau fotografiați din nou.",

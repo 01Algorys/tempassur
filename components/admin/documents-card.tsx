@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { StatusBadge } from "@/components/admin/status-badge"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
+import { oversizedFiles, oversizedMessage, uploadAdminDocuments } from "@/lib/admin/upload-documents"
 import { DOCUMENT_STATUS_LABELS, DOCUMENT_STATUS_BADGE, formatFileSize, dateTimeFmt } from "@/lib/admin/labels"
 import { proxiedFileUrl, type DocumentRecord, type Reference } from "@/lib/admin/crm-types"
 
@@ -78,7 +79,7 @@ export function UploadDocumentDialog({
       if (note.trim()) formData.append("note", note.trim())
       if (accept === "audio/*") formData.append("libelleAutre", "Audio")
       for (const f of files) formData.append("file", f)
-      const res = await fetch("/api/admin/crm/documents", { method: "POST", body: formData })
+      const res = await uploadAdminDocuments(formData)
       await ensureOk(res, "Échec de l'envoi du document.")
       onUploaded()
       onOpenChange(false)
@@ -98,7 +99,18 @@ export function UploadDocumentDialog({
         <div className="space-y-3">
           <div className="space-y-1.5">
             <Label>Fichier(s)</Label>
-            <Input type="file" multiple accept={accept} onChange={(e) => setFiles(Array.from(e.target.files ?? []))} />
+            <Input
+              type="file"
+              multiple
+              accept={accept}
+              onChange={(e) => {
+                const picked = Array.from(e.target.files ?? [])
+                const tooBig = oversizedFiles(picked)
+                setError(tooBig.length > 0 ? oversizedMessage(tooBig) : null)
+                setFiles(picked.filter((f) => !tooBig.includes(f)))
+              }}
+            />
+            <p className="text-xs text-muted-foreground">40 Mo maximum par fichier.</p>
           </div>
           {accept === "audio/*" ? null : (
             <div className="space-y-1.5">
@@ -238,7 +250,8 @@ function DocumentRow({
             {name} · {formatFileSize(doc.taille)} · {dateTimeFmt(doc.createdAt)}
           </p>
         </a>
-        {isAudio(doc) ? null : (
+        {/* « En attente de validation » n'est plus affiché ; les autres statuts restent visibles. */}
+        {isAudio(doc) || doc.statutDocument === "EN_ATTENTE" ? null : (
           <StatusBadge
             label={DOCUMENT_STATUS_LABELS[doc.statutDocument] ?? doc.statutDocument}
             className={DOCUMENT_STATUS_BADGE[doc.statutDocument]}

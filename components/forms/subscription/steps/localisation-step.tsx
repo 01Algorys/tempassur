@@ -7,9 +7,10 @@ import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
-  COUNTRIES,
+  getCountryOptions,
   getCountryLabel,
   getRegistrationCase,
   isFrontierRedirectRequired,
@@ -31,6 +32,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
   const tCommon = useTranslations("common")
   const tTerritory = useTranslations("pricingLabels.territory")
   const locale = useLocale()
+  const countryOptions = getCountryOptions(locale)
 
   const categorie = form.watch("categorie")
   const paysImmatriculation = form.watch("paysImmatriculation")
@@ -60,7 +62,11 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
               <Select
                 onValueChange={(value) => {
                   field.onChange(value)
-                  if (value !== "FR") form.setValue("territoireImmatriculation", "")
+                  if (value !== "FR") {
+                    form.setValue("territoireImmatriculation", "")
+                    form.setValue("carteGriseBarree", "")
+                    form.clearErrors("carteGriseBarree")
+                  }
                 }}
                 value={field.value}
               >
@@ -70,7 +76,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {COUNTRIES.map((country) => (
+                  {countryOptions.map((country) => (
                     <SelectItem key={country.code} value={country.code}>
                       {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                     </SelectItem>
@@ -109,6 +115,32 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
           />
         ) : null}
 
+        {paysImmatriculation === "FR" ? (
+          <FormField
+            control={form.control}
+            name="carteGriseBarree"
+            render={({ field }) => (
+              <FormItem className="flex flex-col gap-2 rounded-2xl bg-surface p-4 sm:col-span-2">
+                <FormLabel className="font-medium text-foreground">{t("carteGriseBarree")}</FormLabel>
+                <FormControl>
+                  <RadioGroup value={field.value || ""} onValueChange={field.onChange} className="flex items-center gap-6">
+                    <label className="flex items-center gap-2 text-sm font-medium text-foreground">
+                      <RadioGroupItem value="oui" />
+                      {t("carteGriseBarreeOui")}
+                    </label>
+                    <label className="flex items-center gap-2 text-sm font-medium text-foreground">
+                      <RadioGroupItem value="non" />
+                      {t("carteGriseBarreeNon")}
+                    </label>
+                  </RadioGroup>
+                </FormControl>
+                <p className="text-xs leading-relaxed text-muted-foreground">{t("carteGriseBarreeHelp")}</p>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ) : null}
+
         {!isFrontierCase ? (
           <FormField
             control={form.control}
@@ -129,7 +161,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {COUNTRIES.map((country) => (
+                    {countryOptions.map((country) => (
                       <SelectItem key={country.code} value={country.code}>
                         {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                       </SelectItem>

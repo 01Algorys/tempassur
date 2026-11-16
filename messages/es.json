@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Contratar por WhatsApp",
     "whatsappFloatingAria": "Contratar por WhatsApp",
     "logoAria": "TempAssur, inicio",
-    "otherCountry": "Otro país"
+    "otherCountry": "Otro país",
+    "openCalendar": "Abrir el calendario",
+    "chooseTime": "Elegir una hora"
   },
   "nav": {
     "accueil": "Inicio",
@@ -291,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "El país de matriculación es obligatorio",
     "paysResidenceRequired": "El país de residencia es obligatorio",
+    "carteGriseBarreeRequired": "Indique si el permiso de circulación está tachado.",
     "dureeRequired": "Seleccione una duración",
     "immatriculationRequired": "La matrícula es obligatoria",
     "marqueRequired": "La marca es obligatoria",
@@ -387,7 +390,11 @@
       "residenceCpiNotice": "¿Ha solicitado un certificado provisional de matriculación WW (CPI)? Seleccione Francia como país de matriculación.",
       "residenceCpiPartner": "¿Aún no tiene CPI? Nuestro socio se encarga por usted.",
       "residenceCpiPartnerCta": "Más información",
-      "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia."
+      "residenceShouldBeFrance": "Para un vehículo matriculado en este país, su dirección de residencia debe estar en Francia.",
+      "carteGriseBarree": "¿Está tachado el permiso de circulación?",
+      "carteGriseBarreeOui": "Sí",
+      "carteGriseBarreeNon": "No",
+      "carteGriseBarreeHelp": "En Francia, cuando se vende un vehículo, el antiguo propietario tacha el permiso de circulación (carte grise). Si es el caso del suyo, responda Sí."
     },
     "driver": {
       "heading": "Información del conductor",
@@ -471,7 +478,10 @@
       "acceptCgv": "Acepto las <link>Condiciones generales de venta</link>",
       "acceptIpid": "He tomado conocimiento del documento de información (IPID)",
       "acceptContrat": "He tomado conocimiento de las condiciones generales del contrato",
-      "autresDocuments": "Otro documento (opcional)",
+      "autresDocuments": "Otros documentos (opcional)",
+      "autresDocumentsHint": "Si los tiene, puede añadir uno o varios justificantes del vehículo: certificado de cesión, factura de compra o cualquier otro documento. Si no, puede continuar su contratación sin añadir nada.",
+      "carteGriseBarreeTitle": "Su permiso de circulación está tachado: justificante de compra o de venta",
+      "carteGriseBarreeText": "Adjunte, en el campo «Otros documentos», el certificado de cesión, la factura de compra o cualquier otro documento que justifique la compra o la venta del vehículo, aunque no esté a nombre del conductor.",
       "maxSize": "Tamaño máximo del archivo: 40 MB",
       "fileTooLarge": "Este archivo supera el límite de 40 MB. Elija un archivo más pequeño.",
       "fileEmpty": "Este archivo parece estar vacío (0 KB). Vuelva a seleccionarlo o fotografiarlo.",

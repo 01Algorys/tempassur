@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Per WhatsApp abschließen",
     "whatsappFloatingAria": "Per WhatsApp abschließen",
     "logoAria": "TempAssur, Startseite",
-    "otherCountry": "Anderes Land"
+    "otherCountry": "Anderes Land",
+    "openCalendar": "Kalender öffnen",
+    "chooseTime": "Uhrzeit wählen"
   },
   "nav": {
     "accueil": "Startseite",
@@ -291,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "Das Zulassungsland ist erforderlich",
     "paysResidenceRequired": "Das Wohnsitzland ist erforderlich",
+    "carteGriseBarreeRequired": "Bitte geben Sie an, ob die Zulassungsbescheinigung durchgestrichen ist.",
     "dureeRequired": "Wählen Sie eine Dauer",
     "immatriculationRequired": "Das Kennzeichen ist erforderlich",
     "marqueRequired": "Die Marke ist erforderlich",
@@ -387,7 +390,11 @@
       "residenceCpiNotice": "Haben Sie ein vorläufiges WW-Zulassungszertifikat (CPI) beantragt? Bitte wählen Sie Frankreich als Zulassungsland aus.",
       "residenceCpiPartner": "Noch kein CPI? Unser Partner kümmert sich für Sie darum.",
       "residenceCpiPartnerCta": "Mehr erfahren",
-      "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden."
+      "residenceShouldBeFrance": "Für ein in diesem Land zugelassenes Fahrzeug muss sich Ihr Wohnsitz in Frankreich befinden.",
+      "carteGriseBarree": "Ist die Zulassungsbescheinigung durchgestrichen?",
+      "carteGriseBarreeOui": "Ja",
+      "carteGriseBarreeNon": "Nein",
+      "carteGriseBarreeHelp": "In Frankreich streicht der Vorbesitzer beim Verkauf eines Fahrzeugs die Zulassungsbescheinigung (carte grise) durch. Wenn das bei Ihrer der Fall ist, antworten Sie mit Ja."
     },
     "driver": {
       "heading": "Angaben zum Fahrer",
@@ -471,7 +478,10 @@
       "acceptCgv": "Ich akzeptiere die <link>Allgemeinen Geschäftsbedingungen</link>",
       "acceptIpid": "Ich habe das Informationsdokument (IPID) zur Kenntnis genommen",
       "acceptContrat": "Ich habe die Allgemeinen Vertragsbedingungen zur Kenntnis genommen",
-      "autresDocuments": "Weiteres Dokument (optional)",
+      "autresDocuments": "Weitere Dokumente (optional)",
+      "autresDocumentsHint": "Falls vorhanden, können Sie einen oder mehrere Nachweise zum Fahrzeug hinzufügen: Verkaufsbescheinigung, Kaufrechnung oder ein anderes Dokument. Andernfalls können Sie den Abschluss ohne Dokument fortsetzen.",
+      "carteGriseBarreeTitle": "Ihre Zulassungsbescheinigung ist durchgestrichen: Kauf- oder Verkaufsnachweis",
+      "carteGriseBarreeText": "Bitte fügen Sie im Feld „Weitere Dokumente“ die Verkaufsbescheinigung, die Kaufrechnung oder ein anderes Dokument bei, das den Kauf oder Verkauf des Fahrzeugs belegt, auch wenn es nicht auf den Namen des Fahrers lautet.",
       "maxSize": "Maximale Dateigröße: 40 MB",
       "fileTooLarge": "Diese Datei überschreitet das Limit von 40 MB. Bitte wählen Sie eine kleinere Datei.",
       "fileEmpty": "Diese Datei scheint leer zu sein (0 KB). Bitte wählen oder fotografieren Sie sie erneut.",

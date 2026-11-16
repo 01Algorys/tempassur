@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Sottoscrivi via WhatsApp",
     "whatsappFloatingAria": "Sottoscrivi via WhatsApp",
     "logoAria": "TempAssur, home",
-    "otherCountry": "Altro paese"
+    "otherCountry": "Altro paese",
+    "openCalendar": "Apri il calendario",
+    "chooseTime": "Scegli un orario"
   },
   "nav": {
     "accueil": "Home",
@@ -291,6 +293,7 @@
   "validation": {
     "paysImmatriculationRequired": "Il paese di immatricolazione è obbligatorio",
     "paysResidenceRequired": "Il paese di residenza è obbligatorio",
+    "carteGriseBarreeRequired": "Indicate se la carta di circolazione è barrata.",
     "dureeRequired": "Seleziona una durata",
     "immatriculationRequired": "La targa è obbligatoria",
     "marqueRequired": "La marca è obbligatoria",
@@ -387,7 +390,11 @@
       "residenceCpiNotice": "Avete richiesto un certificato provvisorio di immatricolazione WW (CPI)? Selezionate la Francia come paese di immatricolazione.",
       "residenceCpiPartner": "Non avete ancora il CPI? Se ne occupa il nostro partner.",
       "residenceCpiPartnerCta": "Scopri di più",
-      "residenceShouldBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia."
+      "residenceShouldBeFrance": "Per un veicolo immatricolato in questo paese, il vostro indirizzo di residenza deve trovarsi in Francia.",
+      "carteGriseBarree": "La carta di circolazione è barrata?",
+      "carteGriseBarreeOui": "Sì",
+      "carteGriseBarreeNon": "No",
+      "carteGriseBarreeHelp": "In Francia, quando un veicolo viene venduto, il precedente proprietario barra la carta di circolazione (carte grise). Se è il caso della vostra, rispondete Sì."
     },
     "driver": {
       "heading": "Informazioni sul conducente",
@@ -471,7 +478,10 @@
       "acceptCgv": "Accetto le <link>Condizioni generali di vendita</link>",
       "acceptIpid": "Ho preso visione del documento informativo (IPID)",
       "acceptContrat": "Ho preso visione delle condizioni generali del contratto",
-      "autresDocuments": "Altro documento (facoltativo)",
+      "autresDocuments": "Altri documenti (facoltativo)",
+      "autresDocumentsHint": "Se li avete, potete aggiungere uno o più documenti relativi al veicolo: certificato di cessione, fattura d’acquisto o qualsiasi altro documento. Altrimenti potete proseguire la sottoscrizione senza aggiungere nulla.",
+      "carteGriseBarreeTitle": "La vostra carta di circolazione è barrata: prova di acquisto o di vendita",
+      "carteGriseBarreeText": "Allegate, nel campo «Altri documenti», il certificato di cessione, la fattura d’acquisto o qualsiasi altro documento che provi l’acquisto o la vendita del veicolo, anche se non è intestato al conducente.",
       "maxSize": "Dimensione massima del file: 40 MB",
       "fileTooLarge": "Questo file supera il limite di 40 MB. Scegli un file più piccolo.",
       "fileEmpty": "Questo file sembra vuoto (0 KB). Prova a selezionarlo o fotografarlo di nuovo.",

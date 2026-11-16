@@ -16,6 +16,7 @@ import { ClientPicker } from "@/components/admin/client-picker"
 import { ClientFields, toClientForm, toClientPayload, type ClientFormValues } from "@/components/admin/client-fields"
 import { CategoryFields } from "@/components/admin/dossier-fields"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
+import { oversizedFiles, oversizedMessage, uploadAdminDocuments } from "@/lib/admin/upload-documents"
 import {
   CATEGORIES,
   CATEGORIE_OPTIONS,
@@ -25,6 +26,7 @@ import {
 } from "@/lib/admin/categories"
 import { DEVIS_PIPELINE_LABELS, currencyFmt } from "@/lib/admin/labels"
 import { siteFilterOptions } from "@/lib/admin/sites"
+import { generateContratNumero } from "@/lib/admin/contrat-numero"
 import { dateInputValue } from "@/lib/admin/date-input"
 import type { ClientRecord, ContratRecord, DevisRecord, Reference } from "@/lib/admin/crm-types"
 
@@ -267,8 +269,9 @@ export function DossierForm({
     }
     return {
       ...common,
-      // Numéro vide à la création -> attribué par le CRM ; en modification il reste inchangé.
-      numero: state.numero.trim() || undefined,
+      // Numéro vide à la création -> WN-<année>-<8 caractères>, comme les contrats du site ;
+      // en modification il reste inchangé.
+      numero: state.numero.trim() || (isEdit ? undefined : generateContratNumero()),
       numeroDemande: state.numeroDemande || null,
       statutRefId: state.statut || null,
       notifierClient: notify,
@@ -294,7 +297,7 @@ export function DossierForm({
     formData.append(kind === "devis" ? "devisId" : "contratId", saved.id)
     formData.append("libelleAutre", "Audio")
     for (const f of audioFiles) formData.append("file", f)
-    const res = await fetch("/api/admin/crm/documents", { method: "POST", body: formData })
+    const res = await uploadAdminDocuments(formData)
     await ensureOk(res, "Dossier enregistré, mais l'envoi de l'audio a échoué.")
   }
 
@@ -524,7 +527,10 @@ export function DossierForm({
               accept="audio/*"
               multiple
               onChange={(e) => {
-                setAudioFiles((prev) => [...prev, ...Array.from(e.target.files ?? [])])
+                const picked = Array.from(e.target.files ?? [])
+                const tooBig = oversizedFiles(picked)
+                if (tooBig.length > 0) window.alert(oversizedMessage(tooBig))
+                setAudioFiles((prev) => [...prev, ...picked.filter((f) => !tooBig.includes(f))])
                 e.target.value = ""
               }}
             />

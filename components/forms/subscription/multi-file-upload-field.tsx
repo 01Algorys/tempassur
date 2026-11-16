@@ -15,6 +15,8 @@ import { formatFileSize } from "./format-file-size"
 interface MultiFileUploadFieldProps {
   id: string
   label: string
+  // Texte d'aide affiché sous le titre.
+  description?: string
   value?: File[]
   onChange: (files: File[]) => void
   accept?: string
@@ -29,6 +31,7 @@ function isSameFile(a: File, b: File) {
 export function MultiFileUploadField({
   id,
   label,
+  description,
   value = [],
   onChange,
   accept = "image/*,.pdf",
@@ -81,6 +84,7 @@ export function MultiFileUploadField({
   return (
     <div className="flex flex-col gap-1.5">
       <Label htmlFor={id}>{label}</Label>
+      {description ? <p className="text-xs leading-relaxed text-muted-foreground">{description}</p> : null}
 
       {isCompressing ? (
         <div className="flex items-center gap-2 rounded-xl border-2 border-dashed border-input px-4 py-5 text-center text-sm text-muted-foreground">
@@ -157,9 +161,7 @@ export function MultiFileUploadField({
         <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
       ) : empty ? (
         <p className="text-xs text-destructive">{t("fileEmpty")}</p>
-      ) : (
-        <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
-      )}
+      ) : null}
     </div>
   )
 }

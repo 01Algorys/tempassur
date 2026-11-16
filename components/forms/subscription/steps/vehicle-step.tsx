@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { EXCLUDED_RENTAL_AGENCIES, RENTAL_ELIGIBLE_SLUGS } from "@/lib/pricing-data"
 import type { SubscriptionFormValues } from "@/lib/validations/subscription-schema"
 import { EuDateInput } from "../eu-date-input"
+import { startOfToday } from "../date-bounds"
 import { VehicleTierFields } from "./vehicle-tier-fields"
 
 const fieldClass = "h-11 rounded-lg"
@@ -28,7 +29,24 @@ export function VehicleStep({ form }: VehicleStepProps) {
       <h3 className="text-lg font-bold text-navy">{t("heading")}</h3>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <VehicleTierFields form={form} />
+        <VehicleTierFields
+          form={form}
+          afterMarque={
+            <FormField
+              control={form.control}
+              name="modele"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("modele")}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t("modele")} className={fieldClass} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          }
+        />
         <FormField
           control={form.control}
           name="immatriculation"
@@ -44,25 +62,12 @@ export function VehicleStep({ form }: VehicleStepProps) {
         />
         <FormField
           control={form.control}
-          name="modele"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t("modele")}</FormLabel>
-              <FormControl>
-                <Input placeholder={t("modele")} className={fieldClass} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
           name="dateMiseEnCirculation"
           render={({ field }) => (
             <FormItem>
               <FormLabel>{t("dateMiseEnCirculation")}</FormLabel>
               <FormControl>
-                <EuDateInput className={fieldClass} {...field} />
+                <EuDateInput className={fieldClass} minDate={new Date(1900, 0, 1)} maxDate={startOfToday()} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
