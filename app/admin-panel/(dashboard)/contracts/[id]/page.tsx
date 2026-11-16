@@ -12,6 +12,7 @@ import { DocumentsCard } from "@/components/admin/documents-card"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { DossierDetailActions } from "@/components/admin/dossier-detail-actions"
 import { DossierClientCard } from "@/components/admin/dossier-client-card"
+import { DossierConformiteCard } from "@/components/admin/dossier-conformite-card"
 import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
 import { TachesCard } from "@/components/admin/taches-card"
 import { FacturesCard } from "@/components/admin/factures-card"
@@ -85,7 +86,10 @@ export default async function ContractDetailPage({ params }: { params: Promise<{
       <div className="grid gap-4 lg:grid-cols-3">
         <DossierDetails kind="contrat" record={contrat} />
 
-        <DossierClientCard client={contrat.client} retour={`/admin-panel/contracts/${contrat.id}`} />
+        <div className="space-y-4 self-start">
+          <DossierClientCard client={contrat.client} retour={`/admin-panel/contracts/${contrat.id}`} />
+          {contrat.client?.id ? <DossierConformiteCard clientId={contrat.client.id} /> : null}
+        </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
