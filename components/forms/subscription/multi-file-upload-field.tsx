@@ -157,9 +157,7 @@ export function MultiFileUploadField({
         <p className="text-xs text-destructive">{t("fileTooLarge")}</p>
       ) : empty ? (
         <p className="text-xs text-destructive">{t("fileEmpty")}</p>
-      ) : (
-        <p className="text-xs text-muted-foreground">{t("maxSize")}</p>
-      )}
+      ) : null}
     </div>
   )
 }

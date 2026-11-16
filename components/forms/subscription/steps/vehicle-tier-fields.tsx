@@ -16,10 +16,12 @@ const MARQUE_MIN_CHARS = 4
 
 interface VehicleTierFieldsProps {
   form: UseFormReturn<SubscriptionFormValues>
+  // Rendu juste après la marque (le modèle), pour les avoir côte à côte.
+  afterMarque?: React.ReactNode
 }
 
 // Rendu dans la grille de la section Véhicule : pas de titre ni de conteneur propre.
-export function VehicleTierFields({ form }: VehicleTierFieldsProps) {
+export function VehicleTierFields({ form, afterMarque }: VehicleTierFieldsProps) {
   const t = useTranslations("wizard.vehicleTier")
   const tVehicle = useTranslations("wizard.vehicle")
   const tCvTier = useTranslations("pricingLabels.cvTier")
@@ -52,6 +54,7 @@ export function VehicleTierFields({ form }: VehicleTierFieldsProps) {
           </FormItem>
         )}
       />
+      {afterMarque}
 
       {showCvTier ? (
         <FormField

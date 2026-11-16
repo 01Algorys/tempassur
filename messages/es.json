@@ -3,7 +3,9 @@
     "whatsappDefaultCta": "Contratar por WhatsApp",
     "whatsappFloatingAria": "Contratar por WhatsApp",
     "logoAria": "TempAssur, inicio",
-    "otherCountry": "Otro país"
+    "otherCountry": "Otro país",
+    "openCalendar": "Abrir el calendario",
+    "chooseTime": "Elegir una hora"
   },
   "nav": {
     "accueil": "Inicio",
