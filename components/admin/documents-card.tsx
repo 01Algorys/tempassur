@@ -238,7 +238,8 @@ function DocumentRow({
             {name} · {formatFileSize(doc.taille)} · {dateTimeFmt(doc.createdAt)}
           </p>
         </a>
-        {isAudio(doc) ? null : (
+        {/* « En attente de validation » n'est plus affiché ; les autres statuts restent visibles. */}
+        {isAudio(doc) || doc.statutDocument === "EN_ATTENTE" ? null : (
           <StatusBadge
             label={DOCUMENT_STATUS_LABELS[doc.statutDocument] ?? doc.statutDocument}
             className={DOCUMENT_STATUS_BADGE[doc.statutDocument]}
