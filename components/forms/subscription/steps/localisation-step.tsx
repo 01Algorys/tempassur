@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
-  COUNTRIES,
+  getCountryOptions,
   getCountryLabel,
   getRegistrationCase,
   isFrontierRedirectRequired,
@@ -31,6 +31,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
   const tCommon = useTranslations("common")
   const tTerritory = useTranslations("pricingLabels.territory")
   const locale = useLocale()
+  const countryOptions = getCountryOptions(locale)
 
   const categorie = form.watch("categorie")
   const paysImmatriculation = form.watch("paysImmatriculation")
@@ -70,7 +71,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {COUNTRIES.map((country) => (
+                  {countryOptions.map((country) => (
                     <SelectItem key={country.code} value={country.code}>
                       {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                     </SelectItem>
@@ -129,7 +130,7 @@ export function LocalisationStep({ form }: LocalisationStepProps) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {COUNTRIES.map((country) => (
+                    {countryOptions.map((country) => (
                       <SelectItem key={country.code} value={country.code}>
                         {getCountryLabel(country.code, locale, tCommon("otherCountry"))}
                       </SelectItem>

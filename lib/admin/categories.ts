@@ -1,4 +1,4 @@
-import { COUNTRIES, getCountryLabel } from "@/lib/countries"
+import { getCountryLabel, getCountryOptions } from "@/lib/countries"
 import { MOTIF_SOUSCRIPTION_LABELS_FR, MOTIF_SOUSCRIPTION_VALUES } from "@/lib/motif-souscription"
 import { TIER_LABELS } from "@/lib/admin/labels"
 import { getPricingConfig } from "@/lib/pricing"
@@ -51,7 +51,11 @@ export const CATEGORIE_LABELS: Record<Categorie, string> = {
 
 const opts = (labels: string[]): Option[] => labels.map((l) => ({ value: l, label: l }))
 
-const COUNTRY_OPTIONS: Option[] = COUNTRIES.map((c) => ({ value: c.code, label: getCountryLabel(c.code, "fr", "Autre pays") }))
+// « OTHER » reste en fin de liste pour afficher les anciens dossiers qui le contiennent.
+const COUNTRY_OPTIONS: Option[] = [
+  ...getCountryOptions("fr").map((c) => ({ value: c.code, label: getCountryLabel(c.code, "fr", c.code) })),
+  { value: "OTHER", label: "Autre pays (ancienne valeur)" },
+]
 
 const TERRITORY_OPTIONS: Option[] = [
   { value: "metropole", label: "France métropolitaine" },

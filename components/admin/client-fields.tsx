@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { COUNTRIES, getCountryLabel } from "@/lib/countries"
+import { getCountryLabel, getCountryOptions } from "@/lib/countries"
 import { dateInputValue } from "@/lib/admin/date-input"
 import type { ClientRecord } from "@/lib/admin/crm-types"
 import { siteFilterOptions } from "@/lib/admin/sites"
@@ -97,7 +97,7 @@ export function toClientPayload(values: ClientFormValues) {
   }
 }
 
-const COUNTRY_NAMES = COUNTRIES.filter((c) => c.code !== "OTHER").map((c) => getCountryLabel(c.code, "fr", ""))
+const COUNTRY_NAMES = getCountryOptions("fr").map((c) => getCountryLabel(c.code, "fr", ""))
 
 function Field({ label, children, full }: { label: string; children: React.ReactNode; full?: boolean }) {
   return (
