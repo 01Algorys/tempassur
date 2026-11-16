@@ -113,6 +113,7 @@ export async function createDevis({
         immatriculation: values.immatriculation,
         dateMiseEnCirculation: values.dateMiseEnCirculation,
         estVehiculeLocation: values.estVehiculeLocation,
+        carteGriseBarree: values.carteGriseBarree,
         nomAgenceLocation: values.nomAgenceLocation,
         duree: values.duree,
         dateEffet: values.dateEffet,

@@ -122,6 +122,7 @@ const TEMPASSUR_FIELDS: FieldDef[] = [
     section: "Véhicule",
     showIf: (d) => d.paysImmatriculation === "FR",
   },
+  { key: "carteGriseBarree", label: "Carte grise barrée", type: "boolean", section: "Véhicule" },
   { key: "estVehiculeLocation", label: "Véhicule de location", type: "boolean", section: "Véhicule" },
   {
     key: "nomAgenceLocation",

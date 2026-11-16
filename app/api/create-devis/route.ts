@@ -29,6 +29,7 @@ interface CreateDevisBody {
   immatriculation?: string
   dateMiseEnCirculation?: string
   estVehiculeLocation?: boolean
+  carteGriseBarree?: string
   nomAgenceLocation?: string
   duree?: number
   dateEffet?: string
@@ -58,6 +59,11 @@ function buildDetails(body: Partial<CreateDevisBody>): Record<string, unknown> {
     paysImmatriculation: body.paysImmatriculation,
     territoireImmatriculation: body.territoireImmatriculation,
     estVehiculeLocation: body.estVehiculeLocation,
+    // Question posée seulement pour une immatriculation française.
+    carteGriseBarree:
+      body.paysImmatriculation === "FR" && (body.carteGriseBarree === "oui" || body.carteGriseBarree === "non")
+        ? body.carteGriseBarree === "oui"
+        : undefined,
     nomAgenceLocation: body.estVehiculeLocation ? body.nomAgenceLocation : undefined,
     duree: body.duree,
     dateEffet: body.dateEffet,
@@ -95,6 +101,9 @@ function buildBesoinsExprimes(body: Partial<CreateDevisBody>): string {
     body.dateMiseEnCirculation ? `1ère mise en circulation : ${body.dateMiseEnCirculation}` : null,
     body.paysImmatriculation
       ? `Pays d'immatriculation : ${body.paysImmatriculation}${body.territoireImmatriculation ? ` (${body.territoireImmatriculation})` : ""}`
+      : null,
+    body.paysImmatriculation === "FR" && body.carteGriseBarree
+      ? `Carte grise barrée : ${body.carteGriseBarree === "oui" ? "Oui" : "Non"}`
       : null,
     body.estVehiculeLocation ? `Véhicule de location (${body.nomAgenceLocation || "agence non précisée"})` : null,
     body.paysResidence
