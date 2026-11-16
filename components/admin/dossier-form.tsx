@@ -16,6 +16,7 @@ import { ClientPicker } from "@/components/admin/client-picker"
 import { ClientFields, toClientForm, toClientPayload, type ClientFormValues } from "@/components/admin/client-fields"
 import { CategoryFields } from "@/components/admin/dossier-fields"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
+import { oversizedFiles, oversizedMessage, uploadAdminDocuments } from "@/lib/admin/upload-documents"
 import {
   CATEGORIES,
   CATEGORIE_OPTIONS,
@@ -260,7 +261,7 @@ export function DossierForm({
     formData.append(kind === "devis" ? "devisId" : "contratId", saved.id)
     formData.append("libelleAutre", "Audio")
     for (const f of audioFiles) formData.append("file", f)
-    const res = await fetch("/api/admin/crm/documents", { method: "POST", body: formData })
+    const res = await uploadAdminDocuments(formData)
     await ensureOk(res, "Dossier enregistré, mais l'envoi de l'audio a échoué.")
   }
 
@@ -480,7 +481,10 @@ export function DossierForm({
               accept="audio/*"
               multiple
               onChange={(e) => {
-                setAudioFiles((prev) => [...prev, ...Array.from(e.target.files ?? [])])
+                const picked = Array.from(e.target.files ?? [])
+                const tooBig = oversizedFiles(picked)
+                if (tooBig.length > 0) window.alert(oversizedMessage(tooBig))
+                setAudioFiles((prev) => [...prev, ...picked.filter((f) => !tooBig.includes(f))])
                 e.target.value = ""
               }}
             />
