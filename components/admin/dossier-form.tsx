@@ -104,6 +104,13 @@ function initialState(kind: Kind, record?: Dossier | null, defaultClient?: Clien
   }
 }
 
+// Duplication : le nouveau dossier reprend toutes les informations de l'original
+// (client, statut, dates, montants, détails, note…) sauf son numéro, attribué à
+// nouveau à l'enregistrement. Il est créé sans aucun lien avec l'original.
+function duplicateState(kind: Kind, source: Dossier): FormState {
+  return { ...initialState(kind, source), numero: "" }
+}
+
 function RefSelect({ value, onChange, options, placeholder = "Aucun" }: { value: string; onChange: (v: string) => void; options: Reference[]; placeholder?: string }) {
   return (
     <Select value={value || "__none"} onValueChange={(v) => onChange(v === "__none" ? "" : v)}>
@@ -126,17 +133,22 @@ export function DossierForm({
   kind,
   record,
   defaultClient,
+  duplicateFrom,
   retour,
 }: {
   kind: Kind
   record?: Dossier | null
   defaultClient?: ClientRecord | null
+  // Dossier copié dans un nouveau formulaire de création (aucun lien conservé).
+  duplicateFrom?: Dossier | null
   retour?: string
 }) {
   const router = useRouter()
   const isEdit = !!record
-  const [state, setState] = useState<FormState>(() => initialState(kind, record, defaultClient))
-  const [client, setClient] = useState<ClientRecord | null>(record?.client ?? defaultClient ?? null)
+  const [state, setState] = useState<FormState>(() =>
+    duplicateFrom && !record ? duplicateState(kind, duplicateFrom) : initialState(kind, record, defaultClient)
+  )
+  const [client, setClient] = useState<ClientRecord | null>(record?.client ?? duplicateFrom?.client ?? defaultClient ?? null)
   const [newClient, setNewClient] = useState<ClientFormValues | null>(null)
   const [audioFiles, setAudioFiles] = useState<File[]>([])
   const [refs, setRefs] = useState<{ statuts: Reference[]; produits: Reference[]; distributeurs: Reference[] }>({
@@ -159,7 +171,7 @@ export function DossierForm({
   }, [])
 
   const listHref = kind === "devis" ? "/admin-panel/quotes" : "/admin-panel/contracts"
-  const cancelHref = retour ?? (record ? `${listHref}/${record.id}` : listHref)
+  const cancelHref = retour ?? (record ? `${listHref}/${record.id}` : duplicateFrom ? `${listHref}/${duplicateFrom.id}` : listHref)
 
   // Client choisi dans la liste : son site d'origine pré-remplit celui du dossier s'il est vide.
   function pickClient(c: ClientRecord | null) {
@@ -306,8 +318,18 @@ export function DossierForm({
 
   return (
     <FormPage
-      title={isEdit ? `Modifier le ${label}${record?.numero ? ` ${record.numero}` : ""}` : `Nouveau ${label}`}
-      description="Tous les champs sont optionnels."
+      title={
+        isEdit
+          ? `Modifier le ${label}${record?.numero ? ` ${record.numero}` : ""}`
+          : duplicateFrom
+            ? `Nouveau ${label} (copie${duplicateFrom.numero ? ` de ${duplicateFrom.numero}` : ""})`
+            : `Nouveau ${label}`
+      }
+      description={
+        duplicateFrom && !isEdit
+          ? `Copie du ${label}${duplicateFrom.numero ? ` ${duplicateFrom.numero}` : ""} : tout est repris sauf le numéro. Modifiez ce qu'il faut, puis créez-le ; il n'aura aucun lien avec l'original.`
+          : "Tous les champs sont optionnels."
+      }
       backHref={cancelHref}
       backLabel="Retour"
     >

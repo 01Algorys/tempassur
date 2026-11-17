@@ -3,15 +3,15 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ListTodo, Pencil, Trash2 } from "lucide-react"
+import { Copy, ListTodo, Pencil, Trash2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { TacheFormDialog } from "@/components/admin/tache-form-dialog"
 import type { ContratRecord, DevisRecord } from "@/lib/admin/crm-types"
 
-// Boutons de la fiche devis/contrat : modifier (page plein écran), ajouter une
-// tâche de suivi, supprimer (avec confirmation).
+// Boutons de la fiche devis/contrat : modifier (page plein écran), dupliquer (nouveau
+// dossier pré-rempli sauf le numéro, sans lien), ajouter une tâche de suivi, supprimer (avec confirmation).
 export function DossierDetailActions({
   kind,
   record,
@@ -35,6 +35,11 @@ export function DossierDetailActions({
       <Button variant="outline" size="sm" asChild>
         <Link href={`/admin-panel/${kind === "devis" ? "quotes" : "contracts"}/${record.id}/edit`}>
           <Pencil /> Modifier
+        </Link>
+      </Button>
+      <Button variant="outline" size="sm" asChild>
+        <Link href={`/admin-panel/${kind === "devis" ? "quotes" : "contracts"}/new?dupliquer=${record.id}`}>
+          <Copy /> Dupliquer
         </Link>
       </Button>
       <Button variant="destructive" size="sm" onClick={() => setDeleteOpen(true)}>
