@@ -11,6 +11,7 @@ import { DocumentsCard } from "@/components/admin/documents-card"
 import { DossierDetails } from "@/components/admin/dossier-details"
 import { DossierDetailActions } from "@/components/admin/dossier-detail-actions"
 import { DossierClientCard } from "@/components/admin/dossier-client-card"
+import { DossierConformiteCard } from "@/components/admin/dossier-conformite-card"
 import { TachesCard } from "@/components/admin/taches-card"
 import { StatutHistorique } from "@/components/admin/statut-historique"
 
@@ -78,7 +79,10 @@ export default async function QuoteDetailPage({ params }: { params: Promise<{ id
       <div className="grid gap-4 lg:grid-cols-3">
         <DossierDetails kind="devis" record={devis} />
 
-        <DossierClientCard client={devis.client} retour={`/admin-panel/quotes/${devis.id}`} />
+        <div className="space-y-4 self-start">
+          <DossierClientCard client={devis.client} retour={`/admin-panel/quotes/${devis.id}`} />
+          {devis.client?.id ? <DossierConformiteCard clientId={devis.client.id} /> : null}
+        </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
