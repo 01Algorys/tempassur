@@ -136,11 +136,20 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl container-px flex flex-col items-center gap-2 py-6 text-center text-xs text-white/50 sm:flex-row sm:justify-between sm:text-left">
           <p>
-            {siteConfig.legalName} — {t("brokerLine")} · ORIAS n°{siteConfig.orias} (
+            {t("brandOf")}{" "}
+            <a href="https://www.wnconseil.com" className="font-semibold text-white/70 hover:text-white">
+              {siteConfig.legalName}
+            </a>{" "}
+            — {t("brokerLine")} · ORIAS n°{siteConfig.orias} (
             <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               www.orias.fr
             </a>
             ) · {t("reassuranceStatement")} · {t("securePayment")}
+          </p>
+          <p>
+            <a href="https://www.assurance-domtom.fr" className="hover:text-white">
+              {t("domTomLink")}
+            </a>
           </p>
           <p>{t("copyright", { name: siteConfig.name, year: new Date().getFullYear() })}</p>
         </div>
