@@ -74,7 +74,7 @@ export default async function FaqPage() {
                     <AccordionTrigger className="py-5 text-left text-base font-semibold text-navy hover:no-underline [&>svg]:text-primary">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
+                    <AccordionContent forceMount className="pb-5 text-sm leading-relaxed text-muted-foreground">
                       {item.answer}
                       {item.link ? (
                         <>

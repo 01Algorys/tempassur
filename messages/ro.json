@@ -838,6 +838,7 @@
   "blog": {
     "index": {
       "title": "Blog",
+      "seoTitle": "Blog asigurare temporară: sfaturi și demersuri",
       "metaDescription": "Noutăți și sfaturi despre asigurarea temporară: vehicule, țări acoperite, eligibilitate și demersuri.",
       "heading": "Blog",
       "description": "Sfaturile și noutățile noastre despre asigurarea temporară."
@@ -850,6 +851,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Asigurare temporară pentru remorcă, semiremorcă sau rulotă",
+        "seoTitle": "Asigurare temporară pentru remorcă și rulotă",
         "metaDescription": "Remorcă, semiremorcă sau rulotă de asigurat pentru câteva zile? Soluția temporară TempAssur, fără angajament anual.",
         "body": [
           {
@@ -906,6 +908,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Eliminarea vinietei verzi: ce se schimbă pentru asigurarea temporară",
+        "seoTitle": "Vinieta verde eliminată: ce se schimbă",
         "metaDescription": "Din aprilie 2024, vinieta verde a dispărut: cum dovediți asigurarea temporară în timpul unui control?",
         "body": [
           {
@@ -996,6 +999,7 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Să circulați în Maroc, Tunisia sau Turcia cu o asigurare temporară: opțiunea de extindere de țară",
+        "seoTitle": "Asigurare temporară: Maroc, Tunisia, Turcia",
         "metaDescription": "Asigurare temporară Maroc, asigurare auto Tunisia, Cartea Verde Turcia: cum se încheie opțiunea de extindere a circulației cu TempAssur.",
         "body": [
           {
@@ -1082,6 +1086,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 situații în care asigurarea auto temporară face diferența",
+        "seoTitle": "5 situații pentru asigurarea auto temporară",
         "metaDescription": "Achiziție/vânzare, utilizare punctuală, vehicul în tranzit: situațiile în care asigurarea temporară se impune.",
         "body": [
           {
@@ -1158,6 +1163,7 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Mașină cumpărată în weekend: cum plecați asigurat chiar în aceeași zi",
+        "seoTitle": "Mașină cumpărată în weekend: asigurată imediat",
         "metaDescription": "Asigurare auto imediată, asigurare mașină în aceeași zi, asigurare la achiziția unei mașini: soluția TempAssur.",
         "body": [
           {
@@ -1192,6 +1198,7 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Recuperarea vehiculului din depozitul auto: ce asigurare pentru a vă recupera vehiculul?",
+        "seoTitle": "Recuperare din depozitul auto: ce asigurare?",
         "metaDescription": "Asigurare pentru recuperarea din depozitul auto, certificat de asigurare pentru depozitul auto, recuperarea mașinii din depozit cu TempAssur.",
         "body": [
           {

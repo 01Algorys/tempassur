@@ -838,6 +838,7 @@
   "blog": {
     "index": {
       "title": "Blog",
+      "seoTitle": "Blog zur Kurzzeitversicherung: Tipps und Vorgehen",
       "metaDescription": "Neuigkeiten und Ratschläge zur Kurzzeitversicherung: Fahrzeuge, versicherte Länder, Zulassungsvoraussetzungen und Vorgehen.",
       "heading": "Blog",
       "description": "Unsere Ratschläge und Neuigkeiten rund um die Kurzzeitversicherung."
@@ -850,6 +851,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Kurzzeitversicherung für Anhänger, Sattelanhänger oder Wohnwagen",
+        "seoTitle": "Kurzzeitversicherung für Anhänger und Wohnwagen",
         "metaDescription": "Anhänger, Sattelanhänger oder Wohnwagen für einige Tage zu versichern? Die Kurzzeitlösung von TempAssur, ohne Jahresverpflichtung.",
         "body": [
           {
@@ -880,6 +882,7 @@
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "Kann man ein Fahrzeug mit WW-Kennzeichen kurzzeitig versichern?",
+        "seoTitle": "WW-Kennzeichen kurzzeitig versichern",
         "metaDescription": "Vorläufiger Zulassungsschein (WW-Kennzeichen): So versichern Sie ihn kurzzeitig mit TempAssur.",
         "body": [
           {
@@ -906,6 +909,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Wegfall der grünen Versicherungsplakette: Was sich für die Kurzzeitversicherung ändert",
+        "seoTitle": "Grüne Plakette entfällt: was sich ändert",
         "metaDescription": "Seit April 2024 ist die grüne Versicherungsplakette abgeschafft: Wie weisen Sie Ihre Kurzzeitversicherung bei einer Kontrolle nach?",
         "body": [
           {
@@ -932,6 +936,7 @@
       },
       "garanties-assurance-auto-provisoire": {
         "title": "Welche Leistungen umfasst eine Kurzzeit-Autoversicherung?",
+        "seoTitle": "Leistungen der Kurzzeit-Autoversicherung",
         "metaDescription": "Haftpflichtversicherung, strafrechtlicher Beistand und Regress, Auto-Optionen: die Leistungen von TempAssur im Detail.",
         "body": [
           {
@@ -996,6 +1001,7 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Mit einer Kurzzeitversicherung nach Marokko, Tunesien oder in die Türkei fahren: die Option Länder-Erweiterung",
+        "seoTitle": "Kurzzeitversicherung für Marokko, Tunesien, Türkei",
         "metaDescription": "Kurzzeitversicherung Marokko, Autoversicherung Tunesien, grüne Karte Türkei: So schließen Sie die Option Fahrerweiterung mit TempAssur ab.",
         "body": [
           {
@@ -1038,6 +1044,7 @@
       },
       "assurance-temporaire-pour-tracteur-agricole": {
         "title": "Kurzzeitversicherung für landwirtschaftliche Traktoren",
+        "seoTitle": "Kurzzeitversicherung für Traktoren",
         "metaDescription": "Ernte, Überführung, Kauf oder Verkauf: Kurzzeitversicherung für landwirtschaftliche Traktoren online mit TempAssur.",
         "body": [
           {
@@ -1082,6 +1089,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 Situationen, in denen die Kurzzeit-Autoversicherung den Unterschied macht",
+        "seoTitle": "5 Fälle für eine Kurzzeit-Autoversicherung",
         "metaDescription": "Kauf/Verkauf, punktuelle Nutzung, Fahrzeug im Transit: die Situationen, in denen die Kurzzeitversicherung sich durchsetzt.",
         "body": [
           {
@@ -1158,6 +1166,7 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Am Wochenende gekauftes Auto: Wie Sie noch am selben Tag versichert losfahren",
+        "seoTitle": "Auto am Wochenende gekauft: sofort versichert",
         "metaDescription": "Sofortige Autoversicherung, Auto noch am selben Tag versichern, Autokaufversicherung: die Lösung von TempAssur.",
         "body": [
           {
@@ -1192,6 +1201,7 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Abholung aus dem Abschleppdienst: Welche Versicherung für die Rückgabe Ihres Fahrzeugs?",
+        "seoTitle": "Fahrzeug aus dem Abschlepphof: welche Versicherung?",
         "metaDescription": "Versicherung für die Abholung aus dem Abschleppdienst, Versicherungsbescheinigung Abschleppdienst, Auto aus dem Abschleppdienst holen mit TempAssur.",
         "body": [
           {
@@ -1226,7 +1236,7 @@
       },
       "certificat-provisoire-immatriculation-ww": {
         "title": "Vorläufiges WW-Zulassungszertifikat (CPI): Wozu dient es und wie erhält man es?",
-        "seoTitle": "WW-CPI: vorläufiges Zertifikat, Antrag und Versicherung",
+        "seoTitle": "WW-CPI: vorläufige Zulassung und Versicherung",
         "metaDescription": "WW-CPI: Wann es ausgestellt wird, wie Sie es über unseren Partner Certimat beantragen und wie Sie Ihr Fahrzeug bei TempAssur versichern.",
         "body": [
           {

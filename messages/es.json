@@ -838,6 +838,7 @@
   "blog": {
     "index": {
       "title": "Blog",
+      "seoTitle": "Blog del seguro temporal: consejos y trámites",
       "metaDescription": "Noticias y consejos sobre el seguro temporal: vehículos, países cubiertos, elegibilidad y trámites.",
       "heading": "Blog",
       "description": "Nuestros consejos y noticias sobre el seguro temporal."
@@ -850,6 +851,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Seguro temporal para remolque, semirremolque o caravana",
+        "seoTitle": "Seguro temporal para remolque y caravana",
         "metaDescription": "¿Remolque, semirremolque o caravana que asegurar durante unos días? La solución temporal de TempAssur, sin permanencia anual.",
         "body": [
           {
@@ -880,6 +882,7 @@
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "¿Se puede asegurar temporalmente un vehículo con matrícula WW?",
+        "seoTitle": "Asegurar un vehículo con matrícula WW",
         "metaDescription": "Certificado provisional de matriculación (matrícula WW): cómo asegurarlo temporalmente con TempAssur.",
         "body": [
           {
@@ -906,6 +909,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Supresión del distintivo verde: lo que cambia para el seguro temporal",
+        "seoTitle": "Adiós al distintivo verde: lo que cambia",
         "metaDescription": "Desde abril de 2024, el distintivo verde ha desaparecido: ¿cómo demostrar su seguro temporal durante un control?",
         "body": [
           {
@@ -996,6 +1000,7 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Circular por Marruecos, Túnez o Turquía con un seguro temporal: la opción de extensión de países",
+        "seoTitle": "Seguro temporal: Marruecos, Túnez y Turquía",
         "metaDescription": "Seguro temporal Marruecos, seguro de coche Túnez, tarjeta verde Turquía: cómo contratar la opción de extensión de circulación con TempAssur.",
         "body": [
           {
@@ -1082,6 +1087,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 situaciones en las que el seguro de coche temporal marca la diferencia",
+        "seoTitle": "5 casos para un seguro de coche temporal",
         "metaDescription": "Compra/venta, uso puntual, vehículo en tránsito: las situaciones en las que el seguro temporal es la mejor opción.",
         "body": [
           {
@@ -1158,6 +1164,7 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Coche comprado el fin de semana: cómo volver a circular asegurado el mismo día",
+        "seoTitle": "Coche comprado en fin de semana: asegurado hoy",
         "metaDescription": "Seguro de coche inmediato, asegurar coche el mismo día, seguro de compra de coche: la solución de TempAssur.",
         "body": [
           {
@@ -1192,6 +1199,7 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Salida del depósito municipal: ¿qué seguro para recuperar su vehículo?",
+        "seoTitle": "Salida del depósito: ¿qué seguro necesita?",
         "metaDescription": "Seguro para salida del depósito municipal, certificado de seguro para el depósito, recuperar el coche del depósito con TempAssur.",
         "body": [
           {
