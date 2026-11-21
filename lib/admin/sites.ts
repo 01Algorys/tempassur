@@ -4,8 +4,19 @@
 export const SITE_LABELS: Record<string, string> = {
   tempassur: "TempAssur",
   assurtempo: "AssurTempo",
-  "assurance-eclair": "Assurance Éclair",
+  // Les codes restent ceux d'origine ; les libellés suivent les noms de domaine (20/11/2026).
+  "assurance-eclair": "ExpressAssur",
   transitauto: "TransitAuto",
+  minitempo: "MiniTempo",
+  "escapade-assur": "Escapade Assur",
+  convoipro: "ConvoiPro",
+  "outremer-assur": "Assurance DOM-TOM",
+  "traversee-assur": "Traversée Assur",
+  "passeport-auto": "GreenPass Insurance",
+  "cap-frontiere": "EuroBorder Cover",
+  "chauffeur-assur": "Assurance VTC Taxi",
+  decennalefrance: "Décennale France",
+  wnconseil: "WN Conseil",
 }
 
 // Couleur de la pastille par site (classes Tailwind), gris pour un site inconnu.
@@ -14,6 +25,16 @@ export const SITE_BADGE_CLASSES: Record<string, string> = {
   assurtempo: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300",
   "assurance-eclair": "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300",
   transitauto: "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300",
+  minitempo: "bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300",
+  "escapade-assur": "bg-lime-100 text-lime-800 dark:bg-lime-950 dark:text-lime-300",
+  convoipro: "bg-yellow-100 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-300",
+  "outremer-assur": "bg-cyan-100 text-cyan-800 dark:bg-cyan-950 dark:text-cyan-300",
+  "traversee-assur": "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300",
+  "passeport-auto": "bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-300",
+  "cap-frontiere": "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300",
+  "chauffeur-assur": "bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-200",
+  decennalefrance: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300",
+  wnconseil: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300",
 }
 
 export function siteLabel(code: string | null | undefined): string {
