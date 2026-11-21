@@ -195,7 +195,7 @@ export async function LandingPageTemplate({ slug }: { slug: LandingSlug }) {
                 <AccordionTrigger className="py-4 text-left text-sm font-semibold text-navy hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="pb-4 text-sm leading-relaxed text-muted-foreground">
+                <AccordionContent forceMount className="pb-4 text-sm leading-relaxed text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

@@ -838,6 +838,7 @@
   "blog": {
     "index": {
       "title": "Blog",
+      "seoTitle": "Temporary insurance blog: tips and procedures",
       "metaDescription": "News and advice on temporary insurance: vehicles, countries covered, eligibility and procedures.",
       "heading": "Blog",
       "description": "Our advice and news on temporary insurance."
@@ -850,6 +851,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Temporary insurance for a trailer, semi-trailer or caravan",
+        "seoTitle": "Temporary trailer and caravan insurance",
         "metaDescription": "Trailer, semi-trailer or caravan to insure for a few days? TempAssur's temporary solution, with no annual commitment.",
         "body": [
           {
@@ -906,6 +908,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Removal of the green sticker: what changes for temporary insurance",
+        "seoTitle": "Green insurance sticker removed: what changes",
         "metaDescription": "Since April 2024, the green sticker has disappeared: how do you prove your temporary insurance during a check?",
         "body": [
           {
@@ -996,6 +999,7 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Driving in Morocco, Tunisia or Turkey with temporary insurance: the country extension option",
+        "seoTitle": "Temporary insurance for Morocco, Tunisia, Turkey",
         "metaDescription": "Temporary insurance for Morocco, car insurance for Tunisia, green card for Turkey: how to subscribe to the country extension option with TempAssur.",
         "body": [
           {
@@ -1082,6 +1086,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 situations where temporary car insurance makes all the difference",
+        "seoTitle": "5 cases where temporary car insurance helps",
         "metaDescription": "Purchase/sale, one-off use, vehicle in transit: the situations where temporary insurance is the right call.",
         "body": [
           {
@@ -1158,6 +1163,7 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Car bought at the weekend: how to drive away insured the same day",
+        "seoTitle": "Car bought at the weekend: insured the same day",
         "metaDescription": "Instant car insurance, insure a car the same day, insurance for a car purchase: the TempAssur solution.",
         "body": [
           {
@@ -1192,6 +1198,7 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Vehicle impound release: which insurance to get your vehicle back?",
+        "seoTitle": "Impound release: which insurance do you need?",
         "metaDescription": "Impound release insurance, impound insurance certificate, getting your car back from the pound with TempAssur.",
         "body": [
           {
@@ -1226,7 +1233,7 @@
       },
       "certificat-provisoire-immatriculation-ww": {
         "title": "WW temporary registration certificate (CPI): what it is for and how to get one",
-        "seoTitle": "WW CPI: temporary certificate, application and insurance",
+        "seoTitle": "WW CPI: temporary registration and insurance",
         "metaDescription": "WW CPI: when it is issued, how to apply with our partner Certimat and how to insure your vehicle with TempAssur.",
         "body": [
           {

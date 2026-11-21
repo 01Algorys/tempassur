@@ -838,6 +838,7 @@
   "blog": {
     "index": {
       "title": "Blog",
+      "seoTitle": "Blog assicurazione temporanea: consigli e pratiche",
       "metaDescription": "Notizie e consigli sull'assicurazione temporanea: veicoli, paesi coperti, idoneità e procedure.",
       "heading": "Blog",
       "description": "I nostri consigli e le nostre notizie sull'assicurazione temporanea."
@@ -850,6 +851,7 @@
     "articles": {
       "assurance-temporaire-caravane-remorque-semi": {
         "title": "Assicurazione temporanea per rimorchio, semirimorchio o caravan",
+        "seoTitle": "Assicurazione temporanea rimorchio e caravan",
         "metaDescription": "Rimorchio, semirimorchio o caravan da assicurare per qualche giorno? La soluzione temporanea TempAssur, senza vincolo annuale.",
         "body": [
           {
@@ -880,6 +882,7 @@
       },
       "souscrire-assurance-temporaire-plaque-ww": {
         "title": "È possibile assicurare temporaneamente un veicolo con targa WW?",
+        "seoTitle": "Assicurare un veicolo con targa WW",
         "metaDescription": "Certificato provvisorio di immatricolazione (targa WW): come assicurarlo temporaneamente con TempAssur.",
         "body": [
           {
@@ -906,6 +909,7 @@
       },
       "suppression-vignette-assurance-temporaire": {
         "title": "Soppressione del contrassegno verde: cosa cambia per l'assicurazione temporanea",
+        "seoTitle": "Addio contrassegno verde: cosa cambia",
         "metaDescription": "Da aprile 2024, il contrassegno verde è scomparso: come dimostrare la tua assicurazione temporanea durante un controllo?",
         "body": [
           {
@@ -932,6 +936,7 @@
       },
       "garanties-assurance-auto-provisoire": {
         "title": "Quali garanzie include un'assicurazione auto temporanea?",
+        "seoTitle": "Garanzie dell'assicurazione auto temporanea",
         "metaDescription": "Responsabilità civile, tutela legale e ricorso, opzioni automobile: il dettaglio delle garanzie TempAssur.",
         "body": [
           {
@@ -996,6 +1001,7 @@
       },
       "assurance-temporaire-auto-maghreb-turquie": {
         "title": "Guidare in Marocco, Tunisia o Turchia con un'assicurazione temporanea: l'opzione estensione paesi",
+        "seoTitle": "Assicurazione temporanea: Marocco, Tunisia, Turchia",
         "metaDescription": "Assicurazione temporanea marocco, assicurazione auto tunisia, carta verde turchia: come sottoscrivere l'opzione estensione di circolazione con TempAssur.",
         "body": [
           {
@@ -1060,6 +1066,7 @@
       },
       "assurance-provisoire-automobile": {
         "title": "Assicurazione temporanea automobile per i professionisti",
+        "seoTitle": "Assicurazione auto temporanea per professionisti",
         "metaDescription": "Trasportatori, artigiani, importatori: l'assicurazione temporanea automobile TempAssur per le tue esigenze occasionali.",
         "body": [
           {
@@ -1082,6 +1089,7 @@
       },
       "assurance-automobile-temporaire": {
         "title": "5 situazioni in cui l'assicurazione auto temporanea fa la differenza",
+        "seoTitle": "5 casi in cui serve l'assicurazione auto temporanea",
         "metaDescription": "Acquisto/vendita, uso occasionale, veicolo in transito: le situazioni in cui l'assicurazione temporanea è indispensabile.",
         "body": [
           {
@@ -1158,6 +1166,7 @@
       },
       "voiture-achetee-week-end-assurance-jour-meme": {
         "title": "Auto acquistata nel weekend: come ripartire assicurati lo stesso giorno",
+        "seoTitle": "Auto comprata nel weekend: assicurata in giornata",
         "metaDescription": "Assicurazione auto immediata, assicurare l'auto lo stesso giorno, assicurazione acquisto auto: la soluzione TempAssur.",
         "body": [
           {
@@ -1192,6 +1201,7 @@
       },
       "assurance-sortie-fourriere": {
         "title": "Uscita dal deposito auto: quale assicurazione per recuperare il tuo veicolo?",
+        "seoTitle": "Ritiro dal deposito auto: quale assicurazione?",
         "metaDescription": "Assicurazione uscita dal deposito auto, attestato assicurazione deposito auto, recuperare l'auto dal deposito con TempAssur.",
         "body": [
           {
@@ -1226,7 +1236,7 @@
       },
       "certificat-provisoire-immatriculation-ww": {
         "title": "Certificato provvisorio di immatricolazione WW (CPI): a cosa serve e come ottenerlo",
-        "seoTitle": "CPI WW: certificato provvisorio, pratica e assicurazione",
+        "seoTitle": "CPI WW: certificato provvisorio e assicurazione",
         "metaDescription": "CPI WW: in quali casi viene rilasciato, come fare la pratica con il nostro partner Certimat e come assicurare il veicolo con TempAssur.",
         "body": [
           {

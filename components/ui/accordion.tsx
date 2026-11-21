@@ -63,7 +63,12 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up"
+      // forceMount (FAQ) : la réponse reste dans le HTML pour les moteurs de recherche,
+      // masquée tant que la question est fermée.
+      className={cn(
+        "overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up",
+        props.forceMount && "data-closed:hidden"
+      )}
       {...props}
     >
       <div
