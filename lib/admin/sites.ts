@@ -4,15 +4,19 @@
 export const SITE_LABELS: Record<string, string> = {
   tempassur: "TempAssur",
   assurtempo: "AssurTempo",
-  "assurance-eclair": "Assurance Éclair",
+  // Les codes restent ceux d'origine ; les libellés suivent les noms de domaine (20/11/2026).
+  "assurance-eclair": "ExpressAssur",
   transitauto: "TransitAuto",
   minitempo: "MiniTempo",
   "escapade-assur": "Escapade Assur",
   convoipro: "ConvoiPro",
-  "outremer-assur": "Outremer Assur",
+  "outremer-assur": "Assurance DOM-TOM",
   "traversee-assur": "Traversée Assur",
-  "passeport-auto": "Passeport Auto",
-  "cap-frontiere": "Cap Frontière",
+  "passeport-auto": "GreenPass Insurance",
+  "cap-frontiere": "EuroBorder Cover",
+  "chauffeur-assur": "Assurance VTC Taxi",
+  decennalefrance: "Décennale France",
+  wnconseil: "WN Conseil",
 }
 
 // Couleur de la pastille par site (classes Tailwind), gris pour un site inconnu.
@@ -28,6 +32,9 @@ export const SITE_BADGE_CLASSES: Record<string, string> = {
   "traversee-assur": "bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300",
   "passeport-auto": "bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-300",
   "cap-frontiere": "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300",
+  "chauffeur-assur": "bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-200",
+  decennalefrance: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300",
+  wnconseil: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300",
 }
 
 export function siteLabel(code: string | null | undefined): string {
