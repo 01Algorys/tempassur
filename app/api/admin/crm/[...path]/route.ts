@@ -23,6 +23,8 @@ const ALLOWED_PREFIXES = [
   "factures",
   "taches",
   "sauvegardes",
+  // Statistiques de fréquentation des sites (lecture seule : GET /api/analytics/summary).
+  "analytics",
 ]
 
 async function proxy(req: NextRequest, path: string[]) {

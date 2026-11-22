@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
+  Activity,
   LayoutDashboard,
   FileText,
   FileSignature,
@@ -34,6 +35,7 @@ export const ADMIN_NAV_ITEMS = [
   { href: "/admin-panel/payments", label: "Paiements", icon: CreditCard },
   { href: "/admin-panel/emails", label: "Emails", icon: Mail },
   { href: "/admin-panel/reports", label: "Rapports", icon: BarChart3 },
+  { href: "/admin-panel/web-stats", label: "Statistiques web", icon: Activity },
   { href: "/admin-panel/audit-logs", label: "Journaux d'audit", icon: ScrollText },
   { href: "/admin-panel/sauvegardes", label: "Sauvegardes", icon: DatabaseBackup },
   { href: "/admin-panel/settings", label: "Paramètres", icon: Settings },

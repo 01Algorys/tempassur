@@ -18,6 +18,7 @@ import { routing, RTL_LOCALES, type Locale } from "@/i18n/routing"
 const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
 import "../globals.css"
+import SiteStats from "@/components/SiteStats"
 
 const fontSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -149,6 +150,8 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
         </NextIntlClientProvider>
         {/* Vercel Speed Insights : mesure des performances réelles (Core Web Vitals), sans cookie. */}
         <SpeedInsights />
+        {/* Mesure d'audience sans cookie (panneau admin › Statistiques web). */}
+        <SiteStats />
       </body>
     </html>
   )
