@@ -30,10 +30,10 @@ export async function POST(req: Request) {
 
   const { token, user } = (await apiRes.json()) as { token: string; user: { role: string } }
 
-  // The admin panel is superadmin-only: a valid CRM login with a lesser role is
-  // still rejected here, even though the same credentials work fine on the CRM itself.
-  if (user.role !== "SUPER_ADMIN") {
-    return NextResponse.json({ message: "Accès réservé aux super administrateurs." }, { status: 403 })
+  // Panneau admin : comptes à accès complet (SUPER_ADMIN) ou limité (ADMIN, rubriques choisies
+  // par un super administrateur). Les autres rôles du CRM restent refusés ici.
+  if (user.role !== "SUPER_ADMIN" && user.role !== "ADMIN") {
+    return NextResponse.json({ message: "Accès réservé aux administrateurs." }, { status: 403 })
   }
 
   let remember = true

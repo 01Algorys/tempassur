@@ -3,11 +3,15 @@ import { crmAdminJson } from "@/lib/admin/crm-client"
 import { returnParam } from "@/lib/admin/return-path"
 import { DossierForm } from "@/components/admin/dossier-form"
 import type { ClientRecord, DevisRecord } from "@/lib/admin/crm-types"
+import { pageAccessDenied } from "@/lib/admin/page-guard"
 
 export const dynamic = "force-dynamic"
 
 // Nouveau devis en plein écran. ?clientId=… pré-sélectionne le client, ?retour=… la page de retour.
 export default async function NewQuotePage({ searchParams }: { searchParams: Promise<{ clientId?: string; dupliquer?: string; retour?: string }> }) {
+  // Rubrique non ouverte pour ce compte : écran d'accès refusé au lieu d'une erreur.
+  const denied = await pageAccessDenied()
+  if (denied) return denied
   const { clientId, dupliquer, retour } = await searchParams
   const token = await getAdminToken()
   if (!token) return null

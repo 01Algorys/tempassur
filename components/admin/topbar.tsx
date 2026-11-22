@@ -18,6 +18,7 @@ import {
 import { useAdminNotifications } from "@/lib/admin/hooks/use-admin-notifications"
 import type { AdminTokenPayload } from "@/lib/admin/auth-token"
 import { AdminMobileNav } from "@/components/admin/mobile-nav"
+import type { AdminAccess } from "@/lib/admin/permissions"
 
 function timeAgo(iso: string): string {
   const diffMs = Date.now() - new Date(iso).getTime()
@@ -29,7 +30,7 @@ function timeAgo(iso: string): string {
   return `il y a ${Math.floor(hours / 24)} j`
 }
 
-export function AdminTopbar({ user }: { user: AdminTokenPayload }) {
+export function AdminTopbar({ user, access }: { user: AdminTokenPayload; access: AdminAccess }) {
   const router = useRouter()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -46,7 +47,7 @@ export function AdminTopbar({ user }: { user: AdminTokenPayload }) {
   return (
     <header className="flex h-14 shrink-0 items-center justify-between border-b border-border bg-background px-4 lg:px-6 print:hidden">
       <div className="flex items-center gap-2 lg:hidden">
-        <AdminMobileNav />
+        <AdminMobileNav access={access} />
         <span className="font-heading text-sm font-semibold">Admin TempAssur</span>
       </div>
       <div className="hidden lg:block" />

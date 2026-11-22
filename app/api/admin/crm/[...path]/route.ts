@@ -37,7 +37,7 @@ async function proxy(req: NextRequest, path: string[]) {
 
   const token = req.cookies.get(ADMIN_TOKEN_COOKIE)?.value
   const payload = token ? await verifyAdminToken(token) : null
-  if (!payload || payload.role !== "SUPER_ADMIN") {
+  if (!payload || (payload.role !== "SUPER_ADMIN" && payload.role !== "ADMIN")) {
     return NextResponse.json({ message: "Non autorisé." }, { status: 401 })
   }
 
@@ -57,6 +57,11 @@ async function proxy(req: NextRequest, path: string[]) {
     cache: "no-store",
   })
 
+  // Compte à accès limité : le CRM répond 401 hors de ses rubriques. On renvoie 403 pour que le
+  // panneau affiche « accès non autorisé » sans fermer la session.
+  if (apiRes.status === 401 && payload.role === "ADMIN") {
+    return NextResponse.json({ message: "Accès non autorisé pour votre compte." }, { status: 403 })
+  }
   return new NextResponse(apiRes.body, { status: apiRes.status, headers: apiRes.headers })
 }
 

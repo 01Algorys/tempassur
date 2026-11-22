@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 import { encode } from "next-auth/jwt"
 
-import { getAdminSession } from "@/lib/admin/server-session"
+import { getAdminAccess, getAdminSession } from "@/lib/admin/server-session"
+import { hasPermission } from "@/lib/admin/permissions"
 import { crmUploadBaseUrl } from "@/lib/crm"
 
 // Envoi direct des documents de l'admin vers le CRM (Railway) : une fonction Vercel
@@ -14,7 +15,7 @@ const UPLOAD_SESSION_SECONDS = 10 * 60
 
 export async function POST() {
   const session = await getAdminSession()
-  if (!session || session.role !== "SUPER_ADMIN") {
+  if (!session || !hasPermission(await getAdminAccess(), "documents", "clients", "devis", "contrats")) {
     return NextResponse.json({ message: "Non autorisé." }, { status: 401 })
   }
   const secret = process.env.AUTH_SECRET

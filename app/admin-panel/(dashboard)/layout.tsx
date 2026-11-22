@@ -1,6 +1,9 @@
+import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 
-import { getAdminSession, getAdminToken } from "@/lib/admin/server-session"
+import { getAdminAccess, getAdminSession, getAdminToken } from "@/lib/admin/server-session"
+import { canAccessPage } from "@/lib/admin/permissions"
+import { AdminAccessDenied } from "@/components/admin/access-denied"
 import { crmAdminJson } from "@/lib/admin/crm-client"
 import { AdminSidebar } from "@/components/admin/sidebar"
 import { AdminTopbar } from "@/components/admin/topbar"
@@ -11,9 +14,16 @@ export default async function AdminDashboardLayout({ children }: { children: Rea
   // (and every server component under it) re-checks so a stale/tampered cookie
   // can never render protected content even if the middleware step is bypassed.
   const session = await getAdminSession()
-  if (!session || session.role !== "SUPER_ADMIN") {
+  if (!session || (session.role !== "SUPER_ADMIN" && session.role !== "ADMIN")) {
     redirect("/admin-panel/login")
   }
+  // Rôle et rubriques actuels, lus auprès du CRM : compte supprimé ou modifié = effet immédiat.
+  const access = await getAdminAccess()
+  if (!access || (access.role !== "SUPER_ADMIN" && access.role !== "ADMIN")) {
+    redirect("/admin-panel/login")
+  }
+  const pathname = (await headers()).get("x-admin-path") ?? "/admin-panel"
+  const allowed = canAccessPage(access, pathname)
 
   const token = await getAdminToken()
   let idleTimeoutMs: number | undefined
@@ -29,10 +39,12 @@ export default async function AdminDashboardLayout({ children }: { children: Rea
 
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
-      <AdminSidebar />
+      <AdminSidebar access={access} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <AdminTopbar user={session} />
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6">{children}</main>
+        <AdminTopbar user={{ ...session, role: access.role }} access={access} />
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6">
+          {allowed ? children : <AdminAccessDenied access={access} firstName={session.firstName} isHome={pathname === "/admin-panel"} />}
+        </main>
       </div>
       <AdminInactivityWatcher timeoutMs={idleTimeoutMs} />
     </div>

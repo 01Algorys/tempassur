@@ -2,46 +2,13 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import {
-  Activity,
-  LayoutDashboard,
-  FileText,
-  FileSignature,
-  Users,
-  UserSearch,
-  ListTodo,
-  FolderOpen,
-  Receipt,
-  CreditCard,
-  Mail,
-  BarChart3,
-  ScrollText,
-  DatabaseBackup,
-  Settings,
-  ShieldCheck,
-} from "lucide-react"
+import { ShieldCheck } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import type { AdminAccess } from "@/lib/admin/permissions"
+import { navItemsFor } from "@/components/admin/nav-items"
 
-export const ADMIN_NAV_ITEMS = [
-  { href: "/admin-panel", label: "Vue d'ensemble", icon: LayoutDashboard, exact: true },
-  { href: "/admin-panel/clients", label: "Clients", icon: Users },
-  { href: "/admin-panel/prospects", label: "Prospects", icon: UserSearch },
-  { href: "/admin-panel/quotes", label: "Devis", icon: FileText },
-  { href: "/admin-panel/contracts", label: "Contrats", icon: FileSignature },
-  { href: "/admin-panel/taches", label: "Tâches", icon: ListTodo },
-  { href: "/admin-panel/documents", label: "Documents", icon: FolderOpen },
-  { href: "/admin-panel/invoices", label: "Factures", icon: Receipt },
-  { href: "/admin-panel/payments", label: "Paiements", icon: CreditCard },
-  { href: "/admin-panel/emails", label: "Emails", icon: Mail },
-  { href: "/admin-panel/reports", label: "Rapports", icon: BarChart3 },
-  { href: "/admin-panel/web-stats", label: "Statistiques web", icon: Activity },
-  { href: "/admin-panel/audit-logs", label: "Journaux d'audit", icon: ScrollText },
-  { href: "/admin-panel/sauvegardes", label: "Sauvegardes", icon: DatabaseBackup },
-  { href: "/admin-panel/settings", label: "Paramètres", icon: Settings },
-]
-
-export function AdminSidebar() {
+export function AdminSidebar({ access }: { access: AdminAccess }) {
   const pathname = usePathname()
 
   return (
@@ -54,7 +21,7 @@ export function AdminSidebar() {
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto p-3">
-        {ADMIN_NAV_ITEMS.map((item) => {
+        {navItemsFor(access).map((item) => {
           const active = item.exact ? pathname === item.href : pathname.startsWith(item.href)
           const Icon = item.icon
           return (

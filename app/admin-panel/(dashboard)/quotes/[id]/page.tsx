@@ -14,6 +14,7 @@ import { DossierClientCard } from "@/components/admin/dossier-client-card"
 import { DossierConformiteCard } from "@/components/admin/dossier-conformite-card"
 import { TachesCard } from "@/components/admin/taches-card"
 import { StatutHistorique } from "@/components/admin/statut-historique"
+import { pageAccessDenied } from "@/lib/admin/page-guard"
 
 export const dynamic = "force-dynamic"
 
@@ -24,6 +25,9 @@ interface DevisDetail extends DevisRecord {
 }
 
 export default async function QuoteDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  // Rubrique non ouverte pour ce compte : écran d'accès refusé au lieu d'une erreur.
+  const denied = await pageAccessDenied()
+  if (denied) return denied
   const { id } = await params
   const token = await getAdminToken()
   if (!token) return null

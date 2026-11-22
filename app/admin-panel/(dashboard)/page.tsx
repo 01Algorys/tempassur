@@ -10,18 +10,23 @@ import { KpiCard } from "@/components/admin/kpi-card"
 import { RevenueTrendChart, ContractTrendChart, EmailActivityChart, PipelineDonut } from "@/components/admin/overview/overview-charts"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { pageAccessDenied } from "@/lib/admin/page-guard"
 
 export const metadata: Metadata = { title: "Vue d'ensemble" }
 
 export const dynamic = "force-dynamic"
 
 export default async function AdminOverviewPage() {
+  // Rubrique non ouverte pour ce compte : écran d'accès refusé au lieu d'une erreur.
+  const denied = await pageAccessDenied()
+  if (denied) return denied
   const token = await getAdminToken()
   if (!token) return null
 
   const [stats, emailStats, payments] = await Promise.all([
     crmAdminJson<CrmStats>("/api/stats", token),
-    crmAdminJson<EmailStatsResponse>("/api/emails/stats?days=14", token),
+    // Rubrique « Emails » non ouverte (compte à accès limité) : bloc emails masqué.
+    crmAdminJson<EmailStatsResponse>("/api/emails/stats?days=14", token).catch(() => null),
     getPaymentsAnalytics(12).catch(() => null),
   ])
 
@@ -59,8 +64,12 @@ export default async function AdminOverviewPage() {
         <KpiCard label="Paiements échoués" value={String(payments?.failedCount ?? 0)} icon={XCircle} tone="negative" />
         <KpiCard label="Taux de succès paiement" value={`${payments?.successRate ?? 0}%`} icon={CreditCard} tone="positive" />
 
-        <KpiCard label="Emails envoyés aujourd'hui" value={String(emailStats.todayCount)} icon={Mail} />
-        <KpiCard label="Emails envoyés ce mois" value={String(emailStats.monthCount)} icon={Mail} />
+        {emailStats ? (
+          <>
+            <KpiCard label="Emails envoyés aujourd'hui" value={String(emailStats.todayCount)} icon={Mail} />
+            <KpiCard label="Emails envoyés ce mois" value={String(emailStats.monthCount)} icon={Mail} />
+          </>
+        ) : null}
         <KpiCard label="Clients" value={String(stats.clientsCount)} icon={FileText} />
         <KpiCard label="Contrats échéance <30j" value={String(stats.contratsEcheance)} icon={Clock} tone="warning" />
       </div>
@@ -68,7 +77,7 @@ export default async function AdminOverviewPage() {
       <div className="grid gap-4 lg:grid-cols-2">
         <RevenueTrendChart data={payments?.revenueByMonth ?? []} />
         <ContractTrendChart data={stats.evolutionMensuelle} />
-        <EmailActivityChart data={emailStats.trend} />
+        {emailStats ? <EmailActivityChart data={emailStats.trend} /> : null}
         <PipelineDonut data={pipelineData} />
       </div>
 
