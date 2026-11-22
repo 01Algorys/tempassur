@@ -39,7 +39,7 @@ function sseMessage(event: string, data: unknown): string {
 export async function GET(req: NextRequest) {
   const session = await getAdminSession()
   const token = await getAdminToken()
-  if (!session || session.role !== "SUPER_ADMIN" || !token) {
+  if (!session || (session.role !== "SUPER_ADMIN" && session.role !== "ADMIN") || !token) {
     return new Response("Unauthorized", { status: 401 })
   }
 

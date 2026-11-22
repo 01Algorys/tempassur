@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { getAdminSession } from "@/lib/admin/server-session"
+import { getAdminAccess, getAdminSession } from "@/lib/admin/server-session"
+import { hasPermission } from "@/lib/admin/permissions"
 import { getPaymentsAnalytics } from "@/lib/admin/payments-analytics"
 
 export async function GET(req: NextRequest) {
   const session = await getAdminSession()
-  if (!session || session.role !== "SUPER_ADMIN") {
+  if (!session) {
     return NextResponse.json({ message: "Non autorisé." }, { status: 401 })
+  }
+  if (!hasPermission(await getAdminAccess(), "paiements")) {
+    return NextResponse.json({ message: "Accès non autorisé pour votre compte." }, { status: 403 })
   }
 
   const months = Number(req.nextUrl.searchParams.get("months") ?? "12")

@@ -7,10 +7,11 @@ import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ADMIN_NAV_ITEMS } from "@/components/admin/sidebar"
+import { navItemsFor } from "@/components/admin/nav-items"
+import type { AdminAccess } from "@/lib/admin/permissions"
 import { cn } from "@/lib/utils"
 
-export function AdminMobileNav() {
+export function AdminMobileNav({ access }: { access: AdminAccess }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
@@ -31,7 +32,7 @@ export function AdminMobileNav() {
           </SheetTitle>
         </SheetHeader>
         <nav className="flex-1 space-y-1 overflow-y-auto p-3">
-          {ADMIN_NAV_ITEMS.map((item) => {
+          {navItemsFor(access).map((item) => {
             const active = item.exact ? pathname === item.href : pathname.startsWith(item.href)
             const Icon = item.icon
             return (

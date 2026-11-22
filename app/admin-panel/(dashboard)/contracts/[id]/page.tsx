@@ -17,6 +17,7 @@ import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
 import { TachesCard } from "@/components/admin/taches-card"
 import { FacturesCard } from "@/components/admin/factures-card"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { pageAccessDenied } from "@/lib/admin/page-guard"
 
 export const dynamic = "force-dynamic"
 
@@ -30,6 +31,9 @@ interface ContratDetail extends ContratRecord {
 }
 
 export default async function ContractDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  // Rubrique non ouverte pour ce compte : écran d'accès refusé au lieu d'une erreur.
+  const denied = await pageAccessDenied()
+  if (denied) return denied
   const { id } = await params
   const token = await getAdminToken()
   if (!token) return null
