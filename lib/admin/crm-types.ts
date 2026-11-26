@@ -107,6 +107,8 @@ export interface TacheRecord {
   id: string
   titre: string
   type: string
+  // Précision saisie quand le type est « Autre ».
+  typeAutre?: string | null
   description: string | null
   statut: "A_TRAITER" | "EN_COURS" | "TRAITE" | "ANNULE"
   priorite: string

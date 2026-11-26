@@ -19,6 +19,7 @@ import {
   type DocumentRecord,
   type TacheRecord,
 } from "@/lib/admin/crm-types"
+import { tacheTypeAffiche } from "@/lib/admin/tache-types"
 
 // Colonnes proposées dans la modale d'export. "Tout sélectionner" = toutes ces
 // colonnes, qui couvrent chaque champ de l'enregistrement : champs propres,
@@ -199,6 +200,7 @@ export function documentColumns(): ExportColumn<DocumentRecord>[] {
 
 export function tacheColumns(): ExportColumn<TacheRecord>[] {
   return [
+    { key: "type", label: "Type", group: "Tâche", value: (r) => tacheTypeAffiche(r) },
     { key: "titre", label: "Titre", group: "Tâche", value: (r) => r.titre },
     { key: "description", label: "Note", group: "Tâche", value: (r) => r.description ?? "" },
     { key: "statut", label: "Statut", group: "Tâche", value: (r) => (r.statut === "TRAITE" ? "Terminée" : r.statut === "ANNULE" ? "Annulée" : "En attente") },
