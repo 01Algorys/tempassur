@@ -11,6 +11,7 @@ import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { TacheFormDialog, TACHE_STATUT_OPTIONS, type DossierLink } from "@/components/admin/tache-form-dialog"
 import { dateTimeFmt } from "@/lib/admin/labels"
 import type { TacheRecord } from "@/lib/admin/crm-types"
+import { tacheTypeAffiche } from "@/lib/admin/tache-types"
 
 export const TACHE_STATUT_BADGE: Record<string, string> = {
   A_TRAITER: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
@@ -55,7 +56,9 @@ export function TachesCard({ taches, link }: { taches: TacheRecord[]; link: Doss
               <div key={t.id} className="flex items-start gap-3 rounded-lg border border-border px-3 py-2 text-sm">
                 <div className="min-w-0 flex-1">
                   <p className="font-medium text-foreground">{t.titre}</p>
-                  <p className="text-xs text-muted-foreground">{t.echeance ? dateTimeFmt(t.echeance) : "Sans date"}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {tacheTypeAffiche(t)} · {t.echeance ? dateTimeFmt(t.echeance) : "Sans date"}
+                  </p>
                   {t.description ? <p className="mt-1 whitespace-pre-line text-xs text-foreground">{t.description}</p> : null}
                 </div>
                 <StatusBadge label={tacheStatutLabel(t.statut)} className={TACHE_STATUT_BADGE[t.statut]} />

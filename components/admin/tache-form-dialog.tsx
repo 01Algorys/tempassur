@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog"
 import { ensureOk } from "@/components/admin/confirm-dialog"
 import { clientFullName, type ClientRecord, type TacheRecord } from "@/lib/admin/crm-types"
+import { TACHE_TYPE_OPTIONS, estTypePropose, tacheTypeLabel } from "@/lib/admin/tache-types"
 
 export interface DossierLink {
   kind: "contrat" | "devis"
@@ -138,6 +139,8 @@ export function TacheFormDialog({
   const [echeance, setEcheance] = useState("")
   const [note, setNote] = useState("")
   const [statut, setStatut] = useState<string>("A_TRAITER")
+  const [type, setType] = useState<string>("RAPPEL_CLIENT")
+  const [typeAutre, setTypeAutre] = useState("")
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -148,6 +151,8 @@ export function TacheFormDialog({
     setEcheance(toLocalInput(tache?.echeance))
     setNote(tache?.description ?? "")
     setStatut(tache?.statut ?? "A_TRAITER")
+    setType(tache?.type ?? "RAPPEL_CLIENT")
+    setTypeAutre(tache?.typeAutre ?? "")
     if (tache?.contrat) setLink({ kind: "contrat", id: tache.contrat.id, numero: tache.contrat.numero, client: tache.contrat.client })
     else if (tache?.devis) setLink({ kind: "devis", id: tache.devis.id, numero: tache.devis.numero, client: tache.devis.client })
     else setLink(defaultLink ?? null)
@@ -164,6 +169,8 @@ export function TacheFormDialog({
         description: note.trim() || null,
         echeance: echeance ? new Date(echeance).toISOString() : null,
         statut,
+        type,
+        typeAutre: type === "AUTRE" ? typeAutre.trim() || null : null,
         contratId: link?.kind === "contrat" ? link.id : null,
         devisId: link?.kind === "devis" ? link.id : null,
       }
@@ -196,6 +203,31 @@ export function TacheFormDialog({
             <Label>Contrat ou devis</Label>
             <DossierPicker value={link} onChange={setLink} />
           </div>
+          <div className="space-y-1.5">
+            <Label>Type de tâche</Label>
+            <Select value={type} onValueChange={setType}>
+              <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                {TACHE_TYPE_OPTIONS.map((o) => (
+                  <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+                ))}
+                {/* Tâche existante d'un ancien type : il reste sélectionnable tant qu'on ne le change pas. */}
+                {estTypePropose(type) ? null : <SelectItem value={type}>{tacheTypeLabel(type)}</SelectItem>}
+              </SelectContent>
+            </Select>
+          </div>
+          {type === "AUTRE" ? (
+            <div className="space-y-1.5">
+              <Label htmlFor="tache-type-autre">Précisez</Label>
+              <Input
+                id="tache-type-autre"
+                value={typeAutre}
+                maxLength={200}
+                placeholder="De quoi s’agit-il ?"
+                onChange={(e) => setTypeAutre(e.target.value)}
+              />
+            </div>
+          ) : null}
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label>Date de rappel</Label>

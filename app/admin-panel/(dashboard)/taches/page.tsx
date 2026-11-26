@@ -15,6 +15,7 @@ import { TacheFormDialog, TACHE_STATUT_OPTIONS } from "@/components/admin/tache-
 import { TACHE_STATUT_BADGE, tacheStatutLabel } from "@/components/admin/taches-card"
 import { DateRangeFilter, EMPTY_RANGE, applyRange, type DateRange } from "@/components/admin/date-range-filter"
 import { tacheColumns } from "@/lib/admin/export-columns"
+import { TACHE_TYPE_OPTIONS, tacheTypeAffiche } from "@/lib/admin/tache-types"
 import { clientFullName, type TacheRecord } from "@/lib/admin/crm-types"
 import { dateFmt, dateTimeFmt } from "@/lib/admin/labels"
 import { cn } from "@/lib/utils"
@@ -37,6 +38,7 @@ export default function TachesPage() {
   const [search, setSearch] = useState("")
   const [debouncedSearch, setDebouncedSearch] = useState("")
   const [statut, setStatut] = useState("ouvertes")
+  const [type, setType] = useState("all")
   const [lien, setLien] = useState("all")
   const [echeance, setEcheance] = useState<DateRange>(EMPTY_RANGE)
   const [createdAt, setCreatedAt] = useState<DateRange>(EMPTY_RANGE)
@@ -58,11 +60,12 @@ export default function TachesPage() {
     const params = new URLSearchParams({ full: "1" })
     if (debouncedSearch.trim()) params.set("q", debouncedSearch.trim())
     if (statut !== "all" && statut !== "ouvertes") params.set("statut", statut)
+    if (type !== "all") params.set("type", type)
     if (lien !== "all") params.set("lien", lien)
     applyRange(params, echeance, "echeanceFrom", "echeanceTo")
     applyRange(params, createdAt, "createdAtFrom", "createdAtTo")
     return params
-  }, [debouncedSearch, statut, lien, echeance, createdAt])
+  }, [debouncedSearch, statut, type, lien, echeance, createdAt])
 
   const fetchTaches = useCallback(async () => {
     const res = await ensureOk(await fetch(`/api/admin/crm/taches?${filterParams().toString()}`), "Échec du chargement des tâches.")
@@ -127,6 +130,15 @@ export default function TachesPage() {
             ))}
           </SelectContent>
         </Select>
+        <Select value={type} onValueChange={setType}>
+          <SelectTrigger className="w-48" aria-label="Type de tâche"><SelectValue /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Tous les types</SelectItem>
+            {TACHE_TYPE_OPTIONS.map((o) => (
+              <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <Select value={lien} onValueChange={setLien}>
           <SelectTrigger className="w-40"><SelectValue /></SelectTrigger>
           <SelectContent>
@@ -154,6 +166,7 @@ export default function TachesPage() {
               <thead>
                 <tr className="border-b border-border text-left text-xs text-muted-foreground">
                   <th className="px-3 py-2.5 font-medium">Date</th>
+                  <th className="px-3 py-2.5 font-medium">Type</th>
                   <th className="px-3 py-2.5 font-medium">Tâche</th>
                   <th className="px-3 py-2.5 font-medium">Dossier</th>
                   <th className="px-3 py-2.5 font-medium">Client</th>
@@ -171,6 +184,7 @@ export default function TachesPage() {
                       <td className={cn("px-3 py-2.5 whitespace-nowrap", late ? "font-medium text-destructive" : "text-muted-foreground")}>
                         {t.echeance ? dateTimeFmt(t.echeance) : "—"}
                       </td>
+                      <td className="px-3 py-2.5 text-muted-foreground">{tacheTypeAffiche(t)}</td>
                       <td className="px-3 py-2.5">
                         <p className="font-medium text-foreground">{t.titre}</p>
                         {t.description ? <p className="line-clamp-2 text-xs text-muted-foreground">{t.description}</p> : null}
