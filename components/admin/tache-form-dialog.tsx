@@ -188,7 +188,7 @@ export function TacheFormDialog({
         <DialogHeader>
           <DialogTitle>{tache ? "Modifier la tâche" : "Nouvelle tâche"}</DialogTitle>
           <DialogDescription>
-            Le contrat (ou devis) rattaché passe à « À traiter » ; il retrouve son statut quand la tâche est terminée.
+            Un contrat garde son statut : la tâche s’affiche à côté. Un devis rattaché passe à « À traiter » et retrouve son statut quand la tâche est terminée.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-3">

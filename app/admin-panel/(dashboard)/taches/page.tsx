@@ -240,7 +240,11 @@ export default function TachesPage() {
         open={!!completing}
         onOpenChange={(o) => !o && setCompleting(null)}
         title="Terminer la tâche"
-        description="Le dossier retrouvera son statut précédent et un email récapitulatif vous sera envoyé."
+        description={
+          completing?.contratId
+            ? "Le statut du contrat ne change pas. Un email récapitulatif vous sera envoyé."
+            : "Le dossier retrouvera son statut précédent et un email récapitulatif vous sera envoyé."
+        }
         confirmLabel="Marquer terminée"
         onConfirm={async () => {
           if (!completing) return

@@ -13,6 +13,7 @@ import { PaginationBar } from "@/components/admin/pagination-bar"
 import { ConfirmDialog, ensureOk } from "@/components/admin/confirm-dialog"
 import { ExportDialog } from "@/components/admin/export-dialog"
 import { ContratStatutControl } from "@/components/admin/contrat-statut-control"
+import { TachesOuvertesBadge } from "@/components/admin/taches-ouvertes-badge"
 import { DateRangeFilter, EMPTY_RANGE, applyRange, type DateRange } from "@/components/admin/date-range-filter"
 import { CATEGORIE_LABELS, CATEGORIE_OPTIONS, sousCategorieLabel, type Categorie } from "@/lib/admin/categories"
 import { contratColumns } from "@/lib/admin/export-columns"
@@ -241,6 +242,9 @@ export default function ContractsPage() {
                         statuts={statuts}
                         onChanged={() => setReloadKey((k) => k + 1)}
                       />
+                      <div>
+                        <TachesOuvertesBadge taches={c.taches} />
+                      </div>
                     </td>
                     <td className="px-3 py-2.5 text-muted-foreground">{dateFmt(c.createdAt)}</td>
                     <td className="px-3 py-2.5 text-right">

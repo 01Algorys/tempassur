@@ -84,6 +84,8 @@ export interface ContratRecord extends DossierCommon {
   numeroDemande: string | null
   statutRefId: string | null
   statutRef?: Reference | null
+  // Tâches ouvertes du contrat, renvoyées avec la liste des contrats.
+  taches?: Pick<TacheRecord, "id" | "titre" | "statut" | "echeance">[]
   produitRef?: Reference | null
   marque: string | null
   modele: string | null

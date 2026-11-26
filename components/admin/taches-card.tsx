@@ -90,7 +90,11 @@ export function TachesCard({ taches, link }: { taches: TacheRecord[]; link: Doss
         open={!!completing}
         onOpenChange={(o) => !o && setCompleting(null)}
         title="Terminer la tâche"
-        description="Le dossier retrouvera son statut précédent et un email récapitulatif vous sera envoyé."
+        description={
+          link.kind === "contrat"
+            ? "Le statut du contrat ne change pas. Un email récapitulatif vous sera envoyé."
+            : "Le dossier retrouvera son statut précédent et un email récapitulatif vous sera envoyé."
+        }
         confirmLabel="Marquer terminée"
         onConfirm={async () => {
           if (!completing) return
