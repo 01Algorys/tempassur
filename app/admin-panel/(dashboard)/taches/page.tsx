@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Check, Download, Pencil, Plus, RefreshCw, Search, Trash2 } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
@@ -31,6 +32,7 @@ interface TachesResponse {
 const isOpen = (t: TacheRecord) => t.statut === "A_TRAITER" || t.statut === "EN_COURS"
 
 export default function TachesPage() {
+  const router = useRouter()
   const [data, setData] = useState<TachesResponse | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -180,13 +182,23 @@ export default function TachesPage() {
                   const late = isOpen(t) && t.echeance && new Date(t.echeance).getTime() < now
                   const client = t.client ?? t.contrat?.client ?? t.devis?.client
                   return (
-                    <tr key={t.id} className="border-b border-border last:border-0 hover:bg-muted/50">
+                    <tr
+                      key={t.id}
+                      onClick={(e) => {
+                        // Clic sur la ligne : ouvre la fiche, sauf sur un lien ou un bouton de la ligne.
+                        if ((e.target as HTMLElement).closest("a, button")) return
+                        router.push(`/admin-panel/taches/${t.id}`)
+                      }}
+                      className="cursor-pointer border-b border-border last:border-0 hover:bg-muted/50"
+                    >
                       <td className={cn("px-3 py-2.5 whitespace-nowrap", late ? "font-medium text-destructive" : "text-muted-foreground")}>
                         {t.echeance ? dateTimeFmt(t.echeance) : "—"}
                       </td>
                       <td className="px-3 py-2.5 text-muted-foreground">{tacheTypeAffiche(t)}</td>
                       <td className="px-3 py-2.5">
-                        <p className="font-medium text-foreground">{t.titre}</p>
+                        <Link href={`/admin-panel/taches/${t.id}`} className="font-medium text-foreground hover:underline">
+                          {t.titre}
+                        </Link>
                         {t.description ? <p className="line-clamp-2 text-xs text-muted-foreground">{t.description}</p> : null}
                       </td>
                       <td className="px-3 py-2.5">

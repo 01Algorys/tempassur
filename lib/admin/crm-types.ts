@@ -122,6 +122,14 @@ export interface TacheRecord {
   createdAt: string
 }
 
+// Note de suivi d'une tâche (horodatée, jamais écrasée).
+export interface TacheNoteRecord {
+  id: string
+  texte: string
+  auteurNom: string | null
+  createdAt: string
+}
+
 export interface DocumentRecord {
   id: string
   nom: string
