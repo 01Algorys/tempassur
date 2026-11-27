@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
   // does not include Googlebot. Google only honours rel=canonical inside <head>, so we
   // match every user agent here: metadata is always rendered in <head>.
   htmlLimitedBots: /.*/,
+  // Adresse du CRM : en-tête noindex sur toutes les réponses (pages, API, fichiers), en plus du robots.txt.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: process.env.CRM_HOST ?? "gestion.wnconseil.com" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+      },
+    ]
+  },
   async redirects() {
     return [
       // Ancien schéma /assurance/[slug] (préproduction) -> nouvelles URLs dédiées.
